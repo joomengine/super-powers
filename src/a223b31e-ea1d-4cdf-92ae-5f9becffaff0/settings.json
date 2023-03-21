@@ -1,0 +1,32 @@
+{
+    "add_head": "1",
+    "extends": "0",
+    "extends_custom": "",
+    "guid": "a223b31e-ea1d-4cdf-92ae-5f9becffaff0",
+    "implements": null,
+    "implements_custom": "",
+    "load_selection": {
+        "load_selection0": {
+            "load": "0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a"
+        },
+        "load_selection1": {
+            "load": "1f28cb53-60d9-4db1-b517-3c7dc6b429ef"
+        },
+        "load_selection2": {
+            "load": "91004529-94a9-4590-b842-e7c6b624ecf5"
+        }
+    },
+    "name": "FileHelper",
+    "power_version": "1.0.0",
+    "system_name": "Utilities FileHelper",
+    "type": "abstract class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "640b5352-fb09-425f-a26e-cd44eda03f15",
+            "as": "default"
+        }
+    },
+    "namespace": "VDM\\Joomla\\Utilities.FileHelper",
+    "description": "File helper\r\n\r\n@since  3.0.9",
+    "head": "use Joomla\\CMS\\Uri\\Uri;\r\nuse Joomla\\CMS\\Factory;\r\nuse Joomla\\CMS\\Language\\Text;\r\nuse Joomla\\CMS\\Filesystem\\Path;\r\nuse Joomla\\CMS\\Filesystem\\File;\r\nuse Joomla\\CMS\\Filesystem\\Folder;\r\nuse Joomla\\Archive\\Archive;"
+}

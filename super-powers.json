@@ -1,0 +1,92 @@
+{
+    "0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a": {
+        "name": "ArrayHelper",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Utilities",
+        "code": "src\/0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a\/code.php",
+        "settings": "src\/0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a\/settings.json",
+        "path": "src\/0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a",
+        "guid": "0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a"
+    },
+    "640b5352-fb09-425f-a26e-cd44eda03f15": {
+        "name": "Helper",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Utilities\\Component",
+        "code": "src\/640b5352-fb09-425f-a26e-cd44eda03f15\/code.php",
+        "settings": "src\/640b5352-fb09-425f-a26e-cd44eda03f15\/settings.json",
+        "path": "src\/640b5352-fb09-425f-a26e-cd44eda03f15",
+        "guid": "640b5352-fb09-425f-a26e-cd44eda03f15"
+    },
+    "1f28cb53-60d9-4db1-b517-3c7dc6b429ef": {
+        "name": "StringHelper",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Utilities",
+        "code": "src\/1f28cb53-60d9-4db1-b517-3c7dc6b429ef\/code.php",
+        "settings": "src\/1f28cb53-60d9-4db1-b517-3c7dc6b429ef\/settings.json",
+        "path": "src\/1f28cb53-60d9-4db1-b517-3c7dc6b429ef",
+        "guid": "1f28cb53-60d9-4db1-b517-3c7dc6b429ef"
+    },
+    "db87c339-5bb6-4291-a7ef-2c48ea1b06bc": {
+        "name": "GetHelper",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Utilities",
+        "code": "src\/db87c339-5bb6-4291-a7ef-2c48ea1b06bc\/code.php",
+        "settings": "src\/db87c339-5bb6-4291-a7ef-2c48ea1b06bc\/settings.json",
+        "path": "src\/db87c339-5bb6-4291-a7ef-2c48ea1b06bc",
+        "guid": "db87c339-5bb6-4291-a7ef-2c48ea1b06bc"
+    },
+    "4b225c51-d293-48e4-b3f6-5136cf5c3f18": {
+        "name": "JsonHelper",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Utilities",
+        "code": "src\/4b225c51-d293-48e4-b3f6-5136cf5c3f18\/code.php",
+        "settings": "src\/4b225c51-d293-48e4-b3f6-5136cf5c3f18\/settings.json",
+        "path": "src\/4b225c51-d293-48e4-b3f6-5136cf5c3f18",
+        "guid": "4b225c51-d293-48e4-b3f6-5136cf5c3f18"
+    },
+    "91004529-94a9-4590-b842-e7c6b624ecf5": {
+        "name": "ObjectHelper",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Utilities",
+        "code": "src\/91004529-94a9-4590-b842-e7c6b624ecf5\/code.php",
+        "settings": "src\/91004529-94a9-4590-b842-e7c6b624ecf5\/settings.json",
+        "path": "src\/91004529-94a9-4590-b842-e7c6b624ecf5",
+        "guid": "91004529-94a9-4590-b842-e7c6b624ecf5"
+    },
+    "152c8793-8b75-4715-996a-257b9f65451c": {
+        "name": "MathHelper",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Utilities",
+        "code": "src\/152c8793-8b75-4715-996a-257b9f65451c\/code.php",
+        "settings": "src\/152c8793-8b75-4715-996a-257b9f65451c\/settings.json",
+        "path": "src\/152c8793-8b75-4715-996a-257b9f65451c",
+        "guid": "152c8793-8b75-4715-996a-257b9f65451c"
+    },
+    "9c513baf-b279-43fd-ae29-a585c8cbc4f0": {
+        "name": "GuidHelper",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Utilities",
+        "code": "src\/9c513baf-b279-43fd-ae29-a585c8cbc4f0\/code.php",
+        "settings": "src\/9c513baf-b279-43fd-ae29-a585c8cbc4f0\/settings.json",
+        "path": "src\/9c513baf-b279-43fd-ae29-a585c8cbc4f0",
+        "guid": "9c513baf-b279-43fd-ae29-a585c8cbc4f0"
+    },
+    "a223b31e-ea1d-4cdf-92ae-5f9becffaff0": {
+        "name": "FileHelper",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Utilities",
+        "code": "src\/a223b31e-ea1d-4cdf-92ae-5f9becffaff0\/code.php",
+        "settings": "src\/a223b31e-ea1d-4cdf-92ae-5f9becffaff0\/settings.json",
+        "path": "src\/a223b31e-ea1d-4cdf-92ae-5f9becffaff0",
+        "guid": "a223b31e-ea1d-4cdf-92ae-5f9becffaff0"
+    },
+    "79d765b3-7319-4988-9730-446c7f347020": {
+        "name": "Utilities",
+        "type": "trait",
+        "namespace": "VDM\\Joomla",
+        "code": "src\/79d765b3-7319-4988-9730-446c7f347020\/code.php",
+        "settings": "src\/79d765b3-7319-4988-9730-446c7f347020\/settings.json",
+        "path": "src\/79d765b3-7319-4988-9730-446c7f347020",
+        "guid": "79d765b3-7319-4988-9730-446c7f347020"
+    }
+}

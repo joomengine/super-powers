@@ -1,0 +1,26 @@
+{
+    "add_head": "1",
+    "extends": "0",
+    "extends_custom": "",
+    "guid": "1f28cb53-60d9-4db1-b517-3c7dc6b429ef",
+    "implements": null,
+    "implements_custom": "",
+    "load_selection": {
+        "load_selection0": {
+            "load": "0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a"
+        }
+    },
+    "name": "StringHelper",
+    "power_version": "1.0.0",
+    "system_name": "Utilities String Helper",
+    "type": "abstract class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "640b5352-fb09-425f-a26e-cd44eda03f15",
+            "as": "default"
+        }
+    },
+    "namespace": "VDM\\Joomla\\Utilities.StringHelper",
+    "description": "Some string tricks\r\n\r\n@since  3.0.9",
+    "head": "use Joomla\\CMS\\Filter\\InputFilter;\r\nuse Joomla\\CMS\\Language\\Language;"
+}

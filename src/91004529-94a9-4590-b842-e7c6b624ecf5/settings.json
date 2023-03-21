@@ -1,0 +1,16 @@
+{
+    "add_head": "0",
+    "extends": "0",
+    "extends_custom": "",
+    "guid": "91004529-94a9-4590-b842-e7c6b624ecf5",
+    "implements": null,
+    "implements_custom": "",
+    "load_selection": null,
+    "name": "ObjectHelper",
+    "power_version": "1.0.0",
+    "system_name": "Utilities Object Helper",
+    "type": "abstract class",
+    "use_selection": null,
+    "namespace": "VDM\\Joomla\\Utilities.ObjectHelper",
+    "description": "Some object tricks\r\n\r\n@since  3.0.9"
+}

@@ -1,0 +1,26 @@
+{
+    "add_head": "0",
+    "extends": "0",
+    "extends_custom": "",
+    "guid": "4b225c51-d293-48e4-b3f6-5136cf5c3f18",
+    "implements": null,
+    "implements_custom": "",
+    "load_selection": {
+        "load_selection0": {
+            "load": "1f28cb53-60d9-4db1-b517-3c7dc6b429ef"
+        },
+        "load_selection1": {
+            "load": "0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a"
+        },
+        "load_selection2": {
+            "load": "db87c339-5bb6-4291-a7ef-2c48ea1b06bc"
+        }
+    },
+    "name": "JsonHelper",
+    "power_version": "1.0.0",
+    "system_name": "Utilities Json Helper",
+    "type": "abstract class",
+    "use_selection": null,
+    "namespace": "VDM\\Joomla\\Utilities.JsonHelper",
+    "description": "The json checker\r\n\r\n@since  3.0.9"
+}

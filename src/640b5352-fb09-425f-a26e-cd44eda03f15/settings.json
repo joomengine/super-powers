@@ -1,0 +1,17 @@
+{
+    "add_head": "1",
+    "extends": "0",
+    "extends_custom": "",
+    "guid": "640b5352-fb09-425f-a26e-cd44eda03f15",
+    "implements": null,
+    "implements_custom": "",
+    "load_selection": null,
+    "name": "Helper",
+    "power_version": "1.0.0",
+    "system_name": "Utilities Component Helper",
+    "type": "abstract class",
+    "use_selection": null,
+    "namespace": "VDM\\Joomla\\Utilities.Component.Helper",
+    "description": "Some component helper\r\n\r\n@since  3.0.11",
+    "head": "use Joomla\\Input\\Input;\r\nuse Joomla\\CMS\\Component\\ComponentHelper;\r\nuse Joomla\\Registry\\Registry;"
+}

@@ -1,0 +1,73 @@
+{
+    "add_head": "0",
+    "extends": "0",
+    "extends_custom": "",
+    "guid": "79d765b3-7319-4988-9730-446c7f347020",
+    "implements": null,
+    "implements_custom": "",
+    "load_selection": null,
+    "name": "Utilities",
+    "power_version": "1.0.0",
+    "system_name": "Utilities",
+    "type": "trait",
+    "use_selection": {
+        "use_selection0": {
+            "use": "1f28cb53-60d9-4db1-b517-3c7dc6b429ef",
+            "as": "default"
+        },
+        "use_selection1": {
+            "use": "4b225c51-d293-48e4-b3f6-5136cf5c3f18",
+            "as": "default"
+        },
+        "use_selection2": {
+            "use": "0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a",
+            "as": "default"
+        },
+        "use_selection3": {
+            "use": "91004529-94a9-4590-b842-e7c6b624ecf5",
+            "as": "default"
+        },
+        "use_selection4": {
+            "use": "152c8793-8b75-4715-996a-257b9f65451c",
+            "as": "default"
+        },
+        "use_selection5": {
+            "use": "db87c339-5bb6-4291-a7ef-2c48ea1b06bc",
+            "as": "default"
+        },
+        "use_selection6": {
+            "use": "9c513baf-b279-43fd-ae29-a585c8cbc4f0",
+            "as": "default"
+        },
+        "use_selection7": {
+            "use": "a223b31e-ea1d-4cdf-92ae-5f9becffaff0",
+            "as": "default"
+        },
+        "use_selection8": {
+            "use": "9ef0eb24-aae4-4f5a-99af-d724db44808f",
+            "as": "default"
+        },
+        "use_selection9": {
+            "use": "a8935cbe-7701-40dc-bfd5-675f2d600954",
+            "as": "default"
+        },
+        "use_selection10": {
+            "use": "30c5b4c2-f75f-4d15-869a-f8bfedd87358",
+            "as": "default"
+        },
+        "use_selection11": {
+            "use": "ce8cf834-6bac-44fb-941c-861f7e046cc0",
+            "as": "default"
+        },
+        "use_selection12": {
+            "use": "3cf76fbf-fd95-4a33-878e-7aff6d36b7f6",
+            "as": "default"
+        },
+        "use_selection13": {
+            "use": "640b5352-fb09-425f-a26e-cd44eda03f15",
+            "as": "default"
+        }
+    },
+    "namespace": "VDM\\Joomla\\Utilities",
+    "description": "Basic shared utilities, a legacy implementation\r\n\r\n@since  3.0.9"
+}

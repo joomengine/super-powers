@@ -1,0 +1,29 @@
+{
+    "add_head": "1",
+    "extends": "0",
+    "extends_custom": "",
+    "guid": "db87c339-5bb6-4291-a7ef-2c48ea1b06bc",
+    "implements": null,
+    "implements_custom": "",
+    "load_selection": {
+        "load_selection0": {
+            "load": "0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a"
+        },
+        "load_selection1": {
+            "load": "1f28cb53-60d9-4db1-b517-3c7dc6b429ef"
+        }
+    },
+    "name": "GetHelper",
+    "power_version": "1.0.0",
+    "system_name": "Utilities GetHelper",
+    "type": "abstract class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "640b5352-fb09-425f-a26e-cd44eda03f15",
+            "as": "default"
+        }
+    },
+    "namespace": "VDM\\Joomla\\Utilities.GetHelper",
+    "description": "Some easy get...\r\n\r\n@since  3.0.9",
+    "head": "use Joomla\\CMS\\Factory;"
+}
