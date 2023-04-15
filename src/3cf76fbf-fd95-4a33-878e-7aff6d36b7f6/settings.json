@@ -1,0 +1,18 @@
+{
+    "add_head": "0",
+    "add_licensing_template": "2",
+    "extends": "0",
+    "guid": "3cf76fbf-fd95-4a33-878e-7aff6d36b7f6",
+    "implements": null,
+    "load_selection": null,
+    "name": "PluginHelper",
+    "power_version": "1.0.0",
+    "system_name": "String Plugin Helper",
+    "type": "abstract class",
+    "use_selection": null,
+    "namespace": "VDM\\Joomla\\Utilities.String.PluginHelper",
+    "description": "Control the naming of a plugin\r\n\r\n@since  3.0.9",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    3rd September, 2020\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}

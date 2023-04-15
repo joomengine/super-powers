@@ -1,0 +1,80 @@
+	/**
+	 * Database object to query local DB
+	 *
+	 * @var   \JDatabaseDriver
+	 * @since 3.2.0
+	 */
+	protected \JDatabaseDriver $db;
+
+	/**
+	 * Core Component Table Name
+	 *
+	 * @var   string
+	 * @since 3.2.0
+	 */
+	protected string $table;
+
+	/**
+	 * Constructor
+	 *
+	 * @param \JDatabaseDriver|null   $db  The database driver
+	 *
+	 * @throws \Exception
+	 * @since 3.2.0
+	 */
+	public function __construct(?\JDatabaseDriver $db = null)
+	{
+		$this->db = $db ?: JoomlaFactory::getDbo();
+
+		// set the component table
+		$this->table = '#__' . Helper::getCode();
+	}
+
+	/**
+	 * Set a value based on data type
+	 *
+	 * @param   mixed  $value   The value to set
+	 *
+	 * @return  mixed
+	 * @since   3.2.0
+	 **/
+	protected function quote($value)
+	{
+		if (is_numeric($value))
+		{
+			if (filter_var($value, FILTER_VALIDATE_INT))
+			{
+				return (int) $value;
+			}
+			elseif (filter_var($value, FILTER_VALIDATE_FLOAT))
+			{
+				return (float) $value;
+			}
+		}
+		elseif (is_bool($value))
+		{
+			return (int) $value;
+		}
+
+		// default just escape it
+		return $this->db->quote($value);
+	}
+
+	/**
+	 * Set a table name, adding the
+	 *     core component as needed
+	 *
+	 * @param   string  $table   The table string
+	 *
+	 * @return  string
+	 * @since   3.2.0
+	 **/
+	protected function getTable(string $table): string
+	{
+		if (strpos($table, '#__') === false)
+		{
+			return $this->table . '_' . $table;
+		}
+
+		return $table;
+	}

@@ -36,9 +36,35 @@ This repository contains an index (see below) of all the approved powers within 
   - **abstract class MathHelper** | [Details](src/152c8793-8b75-4715-996a-257b9f65451c) | [Code](src/152c8793-8b75-4715-996a-257b9f65451c/code.php) | [Settings](src/152c8793-8b75-4715-996a-257b9f65451c/settings.json) | [152c8793-8b75-4715-996a-257b9f65451c](src/152c8793-8b75-4715-996a-257b9f65451c)
   - **abstract class ObjectHelper** | [Details](src/91004529-94a9-4590-b842-e7c6b624ecf5) | [Code](src/91004529-94a9-4590-b842-e7c6b624ecf5/code.php) | [Settings](src/91004529-94a9-4590-b842-e7c6b624ecf5/settings.json) | [91004529-94a9-4590-b842-e7c6b624ecf5](src/91004529-94a9-4590-b842-e7c6b624ecf5)
   - **abstract class StringHelper** | [Details](src/1f28cb53-60d9-4db1-b517-3c7dc6b429ef) | [Code](src/1f28cb53-60d9-4db1-b517-3c7dc6b429ef/code.php) | [Settings](src/1f28cb53-60d9-4db1-b517-3c7dc6b429ef/settings.json) | [1f28cb53-60d9-4db1-b517-3c7dc6b429ef](src/1f28cb53-60d9-4db1-b517-3c7dc6b429ef)
+- **Namespace**: [VDM\Joomla\Componentbuilder\Abstraction](#vdm-joomla-componentbuilder-abstraction)
+
+  - **abstract class BaseConfig** | [Details](src/9769f3b2-17bf-4f20-b54b-3a4ebe572b36) | [Code](src/9769f3b2-17bf-4f20-b54b-3a4ebe572b36/code.php) | [Settings](src/9769f3b2-17bf-4f20-b54b-3a4ebe572b36/settings.json) | [9769f3b2-17bf-4f20-b54b-3a4ebe572b36](src/9769f3b2-17bf-4f20-b54b-3a4ebe572b36)
+  - **abstract class BaseRegistry** | [Details](src/b84e947d-2a13-44f7-ac0f-3902ae55ae0c) | [Code](src/b84e947d-2a13-44f7-ac0f-3902ae55ae0c/code.php) | [Settings](src/b84e947d-2a13-44f7-ac0f-3902ae55ae0c/settings.json) | [b84e947d-2a13-44f7-ac0f-3902ae55ae0c](src/b84e947d-2a13-44f7-ac0f-3902ae55ae0c)
+  - **abstract class Database** | [Details](src/6cbef8f8-4813-48e3-b05a-65e1aea95171) | [Code](src/6cbef8f8-4813-48e3-b05a-65e1aea95171/code.php) | [Settings](src/6cbef8f8-4813-48e3-b05a-65e1aea95171/settings.json) | [6cbef8f8-4813-48e3-b05a-65e1aea95171](src/6cbef8f8-4813-48e3-b05a-65e1aea95171)
+  - **abstract class Mapper** | [Details](src/44a3367c-f9e4-406b-b396-0f452bde0f03) | [Code](src/44a3367c-f9e4-406b-b396-0f452bde0f03/code.php) | [Settings](src/44a3367c-f9e4-406b-b396-0f452bde0f03/settings.json) | [44a3367c-f9e4-406b-b396-0f452bde0f03](src/44a3367c-f9e4-406b-b396-0f452bde0f03)
+  - **abstract class MapperSingle** | [Details](src/c6bbc3ee-58e7-4463-adba-5c5ae839ee36) | [Code](src/c6bbc3ee-58e7-4463-adba-5c5ae839ee36/code.php) | [Settings](src/c6bbc3ee-58e7-4463-adba-5c5ae839ee36/settings.json) | [c6bbc3ee-58e7-4463-adba-5c5ae839ee36](src/c6bbc3ee-58e7-4463-adba-5c5ae839ee36)
+  - **abstract class Model** | [Details](src/584747d1-3a86-453d-b7a3-a2219de8d777) | [Code](src/584747d1-3a86-453d-b7a3-a2219de8d777/code.php) | [Settings](src/584747d1-3a86-453d-b7a3-a2219de8d777/settings.json) | [584747d1-3a86-453d-b7a3-a2219de8d777](src/584747d1-3a86-453d-b7a3-a2219de8d777)
+- **Namespace**: [VDM\Joomla\Componentbuilder\Database](#vdm-joomla-componentbuilder-database)
+
+  - **final class Insert** | [Details](src/524eb8f6-38d4-47dc-92ad-98b94e099ac0) | [Code](src/524eb8f6-38d4-47dc-92ad-98b94e099ac0/code.php) | [Settings](src/524eb8f6-38d4-47dc-92ad-98b94e099ac0/settings.json) | [524eb8f6-38d4-47dc-92ad-98b94e099ac0](src/524eb8f6-38d4-47dc-92ad-98b94e099ac0)
+  - **final class Load** | [Details](src/06f8eada-d59b-441c-b287-0aea1793da5a) | [Code](src/06f8eada-d59b-441c-b287-0aea1793da5a/code.php) | [Settings](src/06f8eada-d59b-441c-b287-0aea1793da5a/settings.json) | [06f8eada-d59b-441c-b287-0aea1793da5a](src/06f8eada-d59b-441c-b287-0aea1793da5a)
+- **Namespace**: [VDM\Joomla\Componentbuilder\Interfaces](#vdm-joomla-componentbuilder-interfaces)
+
+  - **interface ModelInterface** | [Details](src/8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff) | [Code](src/8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff/code.php) | [Settings](src/8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff/settings.json) | [8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff](src/8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff)
+- **Namespace**: [VDM\Joomla\Componentbuilder\Utilities](#vdm-joomla-componentbuilder-utilities)
+
+  - **abstract class FilterHelper** | [Details](src/cddcac51-9a46-47c4-ba59-105c70453bd6) | [Code](src/cddcac51-9a46-47c4-ba59-105c70453bd6/code.php) | [Settings](src/cddcac51-9a46-47c4-ba59-105c70453bd6/settings.json) | [cddcac51-9a46-47c4-ba59-105c70453bd6](src/cddcac51-9a46-47c4-ba59-105c70453bd6)
+  - **abstract class FormHelper** | [Details](src/1198aecf-84c6-45d2-aea8-d531aa4afdfa) | [Code](src/1198aecf-84c6-45d2-aea8-d531aa4afdfa/code.php) | [Settings](src/1198aecf-84c6-45d2-aea8-d531aa4afdfa/settings.json) | [1198aecf-84c6-45d2-aea8-d531aa4afdfa](src/1198aecf-84c6-45d2-aea8-d531aa4afdfa)
 - **Namespace**: [VDM\Joomla\Utilities\Component](#vdm-joomla-utilities-component)
 
   - **abstract class Helper** | [Details](src/640b5352-fb09-425f-a26e-cd44eda03f15) | [Code](src/640b5352-fb09-425f-a26e-cd44eda03f15/code.php) | [Settings](src/640b5352-fb09-425f-a26e-cd44eda03f15/settings.json) | [640b5352-fb09-425f-a26e-cd44eda03f15](src/640b5352-fb09-425f-a26e-cd44eda03f15)
+- **Namespace**: [VDM\Joomla\Utilities\String](#vdm-joomla-utilities-string)
+
+  - **abstract class ClassfunctionHelper** | [Details](src/30c5b4c2-f75f-4d15-869a-f8bfedd87358) | [Code](src/30c5b4c2-f75f-4d15-869a-f8bfedd87358/code.php) | [Settings](src/30c5b4c2-f75f-4d15-869a-f8bfedd87358/settings.json) | [30c5b4c2-f75f-4d15-869a-f8bfedd87358](src/30c5b4c2-f75f-4d15-869a-f8bfedd87358)
+  - **abstract class FieldHelper** | [Details](src/9ef0eb24-aae4-4f5a-99af-d724db44808f) | [Code](src/9ef0eb24-aae4-4f5a-99af-d724db44808f/code.php) | [Settings](src/9ef0eb24-aae4-4f5a-99af-d724db44808f/settings.json) | [9ef0eb24-aae4-4f5a-99af-d724db44808f](src/9ef0eb24-aae4-4f5a-99af-d724db44808f)
+  - **abstract class NamespaceHelper** | [Details](src/ce8cf834-6bac-44fb-941c-861f7e046cc0) | [Code](src/ce8cf834-6bac-44fb-941c-861f7e046cc0/code.php) | [Settings](src/ce8cf834-6bac-44fb-941c-861f7e046cc0/settings.json) | [ce8cf834-6bac-44fb-941c-861f7e046cc0](src/ce8cf834-6bac-44fb-941c-861f7e046cc0)
+  - **abstract class PluginHelper** | [Details](src/3cf76fbf-fd95-4a33-878e-7aff6d36b7f6) | [Code](src/3cf76fbf-fd95-4a33-878e-7aff6d36b7f6/code.php) | [Settings](src/3cf76fbf-fd95-4a33-878e-7aff6d36b7f6/settings.json) | [3cf76fbf-fd95-4a33-878e-7aff6d36b7f6](src/3cf76fbf-fd95-4a33-878e-7aff6d36b7f6)
+  - **abstract class TypeHelper** | [Details](src/a8935cbe-7701-40dc-bfd5-675f2d600954) | [Code](src/a8935cbe-7701-40dc-bfd5-675f2d600954/code.php) | [Settings](src/a8935cbe-7701-40dc-bfd5-675f2d600954/settings.json) | [a8935cbe-7701-40dc-bfd5-675f2d600954](src/a8935cbe-7701-40dc-bfd5-675f2d600954)
 
 # Class Diagrams
 
@@ -164,6 +190,190 @@ namespace VDM\Joomla\Utilities #DarkCyan {
 @enduml
 ```
 
+## VDM Joomla Componentbuilder Abstraction
+> namespace VDM\Joomla\Componentbuilder\Abstraction
+```uml
+@startuml
+
+namespace VDM\Joomla\Componentbuilder\Abstraction #Olive {
+
+
+  abstract BaseConfig  #Orange {
+    # Input $input
+    # JoomlaRegistry $params
+    + __construct()
+    + __set()
+    + __get()
+    + get() : mixed
+    + appendArray() : mixed
+  }
+
+  abstract BaseRegistry  #Orange {
+    + _() : ?\ArrayIterator
+    + appendArray() : mixed
+    + isArray() : bool
+    + isString() : bool
+    + isNumeric() : bool
+  }
+
+  abstract Database  #Orange {
+    # \JDatabaseDriver $db
+    # string $table
+    + __construct()
+    # quote() : mixed
+    # getTable() : string
+  }
+
+  abstract Mapper  #Orange {
+    + array $active
+    + isActive() : bool
+    + set() : void
+    + get() : mixed
+    + exist() : bool
+    + add() : void
+    + remove() : void
+    # {abstract} key() : string
+    + isActive_() : bool
+    + set_() : void
+    + get_() : mixed
+    + exist_() : bool
+    + add_() : void
+    + remove_() : void
+    # {abstract} firstKey() : string
+    # {abstract} secondKey() : string
+  }
+
+  abstract MapperSingle  #Orange {
+    + array $active
+    + isActive() : bool
+    + set() : void
+    + get() : mixed
+    + exist() : bool
+    + add() : void
+    + remove() : void
+    # {abstract} key() : string
+  }
+
+  abstract Model  #Orange {
+    # array $last
+    # Table $table
+    + __construct()
+    + {abstract} value() : mixed
+    + item() : ?object
+    + items() : ?array
+    + row() : ?array
+    + rows() : ?array
+    + last() : ?int
+    # getTableFields() : ?array
+    # {abstract} validateBefore() : bool
+    # {abstract} validateAfter() : bool
+    # {abstract} getTable() : string
+  }
+}
+
+
+@enduml
+```
+
+## VDM Joomla Componentbuilder Database
+> namespace VDM\Joomla\Componentbuilder\Database
+```uml
+@startuml
+
+namespace VDM\Joomla\Componentbuilder\Database #Olive {
+
+
+  class Insert << (F,LightGreen) >> #Green {
+    # bool $defaults
+    + defaults() : void
+    + rows() : bool
+    + items() : bool
+    + row() : bool
+    + item() : bool
+    # getArrayColumns() : array
+    # getObjectsColumns() : array
+    # insert() : bool
+  }
+
+  class Load << (F,LightGreen) >> #Green {
+    + rows() : ?array
+    + items() : ?array
+    + row() : ?array
+    + item() : ?object
+    + value() : mixed
+    # many() : bool
+    # one() : bool
+    # query() : ?object
+  }
+}
+
+
+@enduml
+```
+
+## VDM Joomla Componentbuilder Interfaces
+> namespace VDM\Joomla\Componentbuilder\Interfaces
+```uml
+@startuml
+
+namespace VDM\Joomla\Componentbuilder\Interfaces #Olive {
+
+
+  interface ModelInterface  #Lavender {
+    + value() : mixed
+    + item() : ?object
+    + items() : ?array
+    + row() : ?array
+    + rows() : ?array
+    + last() : ?int
+  }
+}
+
+
+@enduml
+```
+
+## VDM Joomla Componentbuilder Utilities
+> namespace VDM\Joomla\Componentbuilder\Utilities
+```uml
+@startuml
+
+namespace VDM\Joomla\Componentbuilder\Utilities #Olive {
+
+
+  abstract FilterHelper  #Orange {
+    + {static} extensions() : string
+    + {static} names() : ?array
+    + {static} linked() : ?array
+    + {static} namespaces() : ?array
+    + {static} namegroup() : ?array
+    + {static} translation() : ?array
+    + {static} translations() : ?array
+    + {static} languages() : ?array
+    + {static} paths() : ?array
+    - {static} joomla_component_admin_views() : ?array
+    - {static} joomla_component_custom_admin_views() : ?array
+    - {static} joomla_component_site_views() : ?array
+    - {static} joomla_component() : ?array
+    - {static} joomla_module() : ?array
+    - {static} joomla_plugin() : ?array
+    - {static} admin_view() : ?array
+  }
+
+  abstract FormHelper  #Orange {
+    + {static} xml() : ?\SimpleXMLElement
+    + {static} append() : void
+    + {static} comment() : void
+    + {static} attributes() : void
+    + {static} options() : void
+    + {static} field() : ?FormField
+  }
+}
+
+
+@enduml
+```
+
 ## VDM Joomla Utilities Component
 > namespace VDM\Joomla\Utilities\Component
 ```uml
@@ -179,6 +389,44 @@ namespace VDM\Joomla\Utilities\Component #Olive {
     + {static} get() : ?string
     + {static} methodExists() : bool
     + {static} _() : mixed
+  }
+}
+
+
+@enduml
+```
+
+## VDM Joomla Utilities String
+> namespace VDM\Joomla\Utilities\String
+```uml
+@startuml
+
+namespace VDM\Joomla\Utilities\String #Olive {
+
+
+  abstract ClassfunctionHelper  #Orange {
+    + {static} safe() : string
+  }
+
+  abstract FieldHelper  #Orange {
+    # static $builder
+    + {static} safe()
+  }
+
+  abstract NamespaceHelper  #Orange {
+    + {static} safe() : string
+  }
+
+  abstract PluginHelper  #Orange {
+    + {static} safeFolderName() : string
+    + {static} safeClassName() : string
+    + {static} safeInstallClassName() : string
+    + {static} safeLangPrefix() : string
+  }
+
+  abstract TypeHelper  #Orange {
+    # static $builder
+    + {static} safe()
   }
 }
 

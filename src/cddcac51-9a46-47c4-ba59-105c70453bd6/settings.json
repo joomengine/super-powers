@@ -1,0 +1,31 @@
+{
+    "add_head": "1",
+    "add_licensing_template": "2",
+    "extends": "0",
+    "guid": "cddcac51-9a46-47c4-ba59-105c70453bd6",
+    "implements": null,
+    "load_selection": null,
+    "name": "FilterHelper",
+    "power_version": "1.0.0",
+    "system_name": "JCB.Utilities.FilterHelper",
+    "type": "abstract class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a",
+            "as": "default"
+        },
+        "use_selection1": {
+            "use": "4b225c51-d293-48e4-b3f6-5136cf5c3f18",
+            "as": "default"
+        },
+        "use_selection2": {
+            "use": "db87c339-5bb6-4291-a7ef-2c48ea1b06bc",
+            "as": "default"
+        }
+    },
+    "namespace": "VDM\\Joomla\\Componentbuilder.Utilities.FilterHelper",
+    "description": "Filter Helper\r\n\r\n@since 3.2.0",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "use Joomla\\CMS\\Factory;\r\nuse Joomla\\CMS\\Language\\Text;",
+    "composer": ""
+}
