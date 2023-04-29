@@ -181,12 +181,6 @@ final class Insert extends Database implements InsertInterface
 	 **/
 	protected function insert(array &$data, string $table, array $columns, bool $isArray): bool
 	{
-		// get a query object
-		$query = $this->db->getQuery(true);
-
-		// set the query targets
-		$query->insert($this->db->quoteName($this->getTable($table)))->columns($this->db->quoteName(array_keys($columns)));
-
 		// set joomla default columns
 		$add_created = false;
 		$add_version = false;
@@ -200,23 +194,29 @@ final class Insert extends Database implements InsertInterface
 
 			if (!isset($columns['created']))
 			{
-				$columns['created'] = '_|-v-|_';
+				$columns['created'] = ' (o_O) ';
 				$add_created = true;
 			}
 
 			if (!isset($columns['version']))
 			{
-				$columns['version'] = '_|-v-|_';
+				$columns['version'] = ' (o_O) ';
 				$add_version = true;
 			}
 
 			if (!isset($columns['version']))
 			{
-				$columns['published'] = '_|-v-|_';
+				$columns['published'] = ' (o_O) ';
 				$add_published = true;
 			}
-			// the _|-v-|_ prevents an empty value from being loaded
+			// the (o_O) prevents an empty value from being loaded
 		}
+
+		// get a query object
+		$query = $this->db->getQuery(true);
+
+		// set the query targets
+		$query->insert($this->db->quoteName($this->getTable($table)))->columns($this->db->quoteName(array_keys($columns)));
 
 		// limiting factor on the amount of rows to insert before we reset the query
 		$limit = 300;
@@ -244,7 +244,7 @@ final class Insert extends Database implements InsertInterface
 			$row = [];
 			foreach ($columns as $column => $key)
 			{
-				if ('_|-v-|_' !== $key)
+				if (' (o_O) ' !== $key)
 				{
 					$row[] = ($isArray && isset($value[$key])) ? $this->quote($value[$key])
 						: ((!$isArray && isset($value->{$key})) ? $this->quote($value->{$key}) : '');
@@ -286,6 +286,5 @@ final class Insert extends Database implements InsertInterface
 
 		return true;
 	}
-
 }
 

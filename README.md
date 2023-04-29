@@ -48,6 +48,7 @@ This repository contains an index (see below) of all the approved powers within 
 
   - **final class Insert** | [Details](src/524eb8f6-38d4-47dc-92ad-98b94e099ac0) | [Code](src/524eb8f6-38d4-47dc-92ad-98b94e099ac0/code.php) | [Settings](src/524eb8f6-38d4-47dc-92ad-98b94e099ac0/settings.json) | [524eb8f6-38d4-47dc-92ad-98b94e099ac0](src/524eb8f6-38d4-47dc-92ad-98b94e099ac0)
   - **final class Load** | [Details](src/06f8eada-d59b-441c-b287-0aea1793da5a) | [Code](src/06f8eada-d59b-441c-b287-0aea1793da5a/code.php) | [Settings](src/06f8eada-d59b-441c-b287-0aea1793da5a/settings.json) | [06f8eada-d59b-441c-b287-0aea1793da5a](src/06f8eada-d59b-441c-b287-0aea1793da5a)
+  - **final class Update** | [Details](src/cce56585-58b0-4f72-a92c-e2635ea52d83) | [Code](src/cce56585-58b0-4f72-a92c-e2635ea52d83/code.php) | [Settings](src/cce56585-58b0-4f72-a92c-e2635ea52d83/settings.json) | [cce56585-58b0-4f72-a92c-e2635ea52d83](src/cce56585-58b0-4f72-a92c-e2635ea52d83)
 - **Namespace**: [VDM\Joomla\Componentbuilder\Interfaces](#vdm-joomla-componentbuilder-interfaces)
 
   - **interface ModelInterface** | [Details](src/8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff) | [Code](src/8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff/code.php) | [Settings](src/8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff/settings.json) | [8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff](src/8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff)
@@ -304,6 +305,13 @@ namespace VDM\Joomla\Componentbuilder\Database #Olive {
     # many() : bool
     # one() : bool
     # query() : ?object
+  }
+
+  class Update << (F,LightGreen) >> #Green {
+    + rows() : bool
+    + items() : bool
+    + row() : bool
+    + item() : bool
   }
 }
 

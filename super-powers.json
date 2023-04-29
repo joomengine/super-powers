@@ -209,6 +209,16 @@
         "path": "src\/584747d1-3a86-453d-b7a3-a2219de8d777",
         "guid": "584747d1-3a86-453d-b7a3-a2219de8d777"
     },
+    "cce56585-58b0-4f72-a92c-e2635ea52d83": {
+        "name": "Update",
+        "type": "final class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Database",
+        "code": "src\/cce56585-58b0-4f72-a92c-e2635ea52d83\/code.php",
+        "power": "src\/cce56585-58b0-4f72-a92c-e2635ea52d83\/code.power",
+        "settings": "src\/cce56585-58b0-4f72-a92c-e2635ea52d83\/settings.json",
+        "path": "src\/cce56585-58b0-4f72-a92c-e2635ea52d83",
+        "guid": "cce56585-58b0-4f72-a92c-e2635ea52d83"
+    },
     "b84e947d-2a13-44f7-ac0f-3902ae55ae0c": {
         "name": "BaseRegistry",
         "type": "abstract class",
