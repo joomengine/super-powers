@@ -169,6 +169,16 @@
         "path": "src\/06f8eada-d59b-441c-b287-0aea1793da5a",
         "guid": "06f8eada-d59b-441c-b287-0aea1793da5a"
     },
+    "ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48": {
+        "name": "InsertInterface",
+        "type": "interface",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Interfaces",
+        "code": "src\/ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48\/code.php",
+        "power": "src\/ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48\/code.power",
+        "settings": "src\/ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48\/settings.json",
+        "path": "src\/ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48",
+        "guid": "ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48"
+    },
     "524eb8f6-38d4-47dc-92ad-98b94e099ac0": {
         "name": "Insert",
         "type": "final class",
@@ -208,6 +218,16 @@
         "settings": "src\/584747d1-3a86-453d-b7a3-a2219de8d777\/settings.json",
         "path": "src\/584747d1-3a86-453d-b7a3-a2219de8d777",
         "guid": "584747d1-3a86-453d-b7a3-a2219de8d777"
+    },
+    "7179fde6-1e51-4b51-8545-7ca18f74a0f4": {
+        "name": "UpdateInterface",
+        "type": "interface",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Interfaces",
+        "code": "src\/7179fde6-1e51-4b51-8545-7ca18f74a0f4\/code.php",
+        "power": "src\/7179fde6-1e51-4b51-8545-7ca18f74a0f4\/code.power",
+        "settings": "src\/7179fde6-1e51-4b51-8545-7ca18f74a0f4\/settings.json",
+        "path": "src\/7179fde6-1e51-4b51-8545-7ca18f74a0f4",
+        "guid": "7179fde6-1e51-4b51-8545-7ca18f74a0f4"
     },
     "cce56585-58b0-4f72-a92c-e2635ea52d83": {
         "name": "Update",

@@ -51,7 +51,9 @@ This repository contains an index (see below) of all the approved powers within 
   - **final class Update** | [Details](src/cce56585-58b0-4f72-a92c-e2635ea52d83) | [Code](src/cce56585-58b0-4f72-a92c-e2635ea52d83/code.php) | [Settings](src/cce56585-58b0-4f72-a92c-e2635ea52d83/settings.json) | [cce56585-58b0-4f72-a92c-e2635ea52d83](src/cce56585-58b0-4f72-a92c-e2635ea52d83)
 - **Namespace**: [VDM\Joomla\Componentbuilder\Interfaces](#vdm-joomla-componentbuilder-interfaces)
 
+  - **interface InsertInterface** | [Details](src/ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48) | [Code](src/ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48/code.php) | [Settings](src/ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48/settings.json) | [ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48](src/ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48)
   - **interface ModelInterface** | [Details](src/8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff) | [Code](src/8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff/code.php) | [Settings](src/8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff/settings.json) | [8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff](src/8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff)
+  - **interface UpdateInterface** | [Details](src/7179fde6-1e51-4b51-8545-7ca18f74a0f4) | [Code](src/7179fde6-1e51-4b51-8545-7ca18f74a0f4/code.php) | [Settings](src/7179fde6-1e51-4b51-8545-7ca18f74a0f4/settings.json) | [7179fde6-1e51-4b51-8545-7ca18f74a0f4](src/7179fde6-1e51-4b51-8545-7ca18f74a0f4)
 - **Namespace**: [VDM\Joomla\Componentbuilder\Utilities](#vdm-joomla-componentbuilder-utilities)
 
   - **abstract class FilterHelper** | [Details](src/cddcac51-9a46-47c4-ba59-105c70453bd6) | [Code](src/cddcac51-9a46-47c4-ba59-105c70453bd6/code.php) | [Settings](src/cddcac51-9a46-47c4-ba59-105c70453bd6/settings.json) | [cddcac51-9a46-47c4-ba59-105c70453bd6](src/cddcac51-9a46-47c4-ba59-105c70453bd6)
@@ -327,6 +329,14 @@ namespace VDM\Joomla\Componentbuilder\Database #Olive {
 namespace VDM\Joomla\Componentbuilder\Interfaces #Olive {
 
 
+  interface InsertInterface  #Lavender {
+    + defaults() : void
+    + rows() : bool
+    + items() : bool
+    + row() : bool
+    + item() : bool
+  }
+
   interface ModelInterface  #Lavender {
     + value() : mixed
     + item() : ?object
@@ -334,6 +344,13 @@ namespace VDM\Joomla\Componentbuilder\Interfaces #Olive {
     + row() : ?array
     + rows() : ?array
     + last() : ?int
+  }
+
+  interface UpdateInterface  #Lavender {
+    + rows() : bool
+    + items() : bool
+    + row() : bool
+    + item() : bool
   }
 }
 
