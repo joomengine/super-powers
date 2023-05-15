@@ -208,6 +208,17 @@
         "spk": "Super__524eb8f6_38d4_47dc_92ad_98b94e099ac0__Power",
         "guid": "524eb8f6-38d4-47dc-92ad-98b94e099ac0"
     },
+    "bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8": {
+        "name": "Table",
+        "type": "class",
+        "namespace": "VDM\\Joomla\\Componentbuilder",
+        "code": "src\/bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8\/code.php",
+        "power": "src\/bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8\/code.power",
+        "settings": "src\/bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8\/settings.json",
+        "path": "src\/bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8",
+        "spk": "Super__bfd1d6d5_56c1_4fe9_9fee_1c5910e1f5d8__Power",
+        "guid": "bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8"
+    },
     "9769f3b2-17bf-4f20-b54b-3a4ebe572b36": {
         "name": "BaseConfig",
         "type": "abstract class",

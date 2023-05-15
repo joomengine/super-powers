@@ -26,6 +26,9 @@ This repository contains an index (see below) of all the approved powers within 
 - **Namespace**: [VDM\Joomla](#vdm-joomla)
 
   - **trait Utilities** | [Details](src/79d765b3-7319-4988-9730-446c7f347020) | [Code](src/79d765b3-7319-4988-9730-446c7f347020/code.php) | [Settings](src/79d765b3-7319-4988-9730-446c7f347020/settings.json) | Super__79d765b3_7319_4988_9730_446c7f347020__Power
+- **Namespace**: [VDM\Joomla\Componentbuilder](#vdm-joomla-componentbuilder)
+
+  - **class Table** | [Details](src/bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8) | [Code](src/bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8/code.php) | [Settings](src/bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8/settings.json) | Super__bfd1d6d5_56c1_4fe9_9fee_1c5910e1f5d8__Power
 - **Namespace**: [VDM\Joomla\Utilities](#vdm-joomla-utilities)
 
   - **abstract class ArrayHelper** | [Details](src/0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a) | [Code](src/0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a/code.php) | [Settings](src/0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a/settings.json) | Super__0a59c65c_9daf_4bc9_baf4_e063ff9e6a8a__Power
@@ -116,6 +119,29 @@ namespace VDM\Joomla #Azure {
     + {static} getFilePath() : string
     + {static} urlExists() : bool
     + {static} setComponentOption()
+  }
+}
+
+
+@enduml
+```
+
+## VDM Joomla Componentbuilder
+> namespace VDM\Joomla\Componentbuilder
+```uml
+@startuml
+
+namespace VDM\Joomla\Componentbuilder #DarkCyan {
+
+
+  class Table  #Gold {
+    + get() : mixed
+    + title() : ?array
+    + titleName() : string
+    + tables() : array
+    + exist() : bool
+    + fields() : ?array
+    # addDefault() : array
   }
 }
 
