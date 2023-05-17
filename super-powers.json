@@ -164,6 +164,17 @@
         "spk": "Super__79d765b3_7319_4988_9730_446c7f347020__Power",
         "guid": "79d765b3-7319-4988-9730-446c7f347020"
     },
+    "caf33c5d-858c-4f9a-894f-ab302ec5445a": {
+        "name": "FactoryInterface",
+        "type": "interface",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Interfaces",
+        "code": "src\/caf33c5d-858c-4f9a-894f-ab302ec5445a\/code.php",
+        "power": "src\/caf33c5d-858c-4f9a-894f-ab302ec5445a\/code.power",
+        "settings": "src\/caf33c5d-858c-4f9a-894f-ab302ec5445a\/settings.json",
+        "path": "src\/caf33c5d-858c-4f9a-894f-ab302ec5445a",
+        "spk": "Super__caf33c5d_858c_4f9a_894f_ab302ec5445a__Power",
+        "guid": "caf33c5d-858c-4f9a-894f-ab302ec5445a"
+    },
     "6cbef8f8-4813-48e3-b05a-65e1aea95171": {
         "name": "Database",
         "type": "abstract class",

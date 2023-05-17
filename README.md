@@ -54,6 +54,7 @@ This repository contains an index (see below) of all the approved powers within 
   - **final class Update** | [Details](src/cce56585-58b0-4f72-a92c-e2635ea52d83) | [Code](src/cce56585-58b0-4f72-a92c-e2635ea52d83/code.php) | [Settings](src/cce56585-58b0-4f72-a92c-e2635ea52d83/settings.json) | Super__cce56585_58b0_4f72_a92c_e2635ea52d83__Power
 - **Namespace**: [VDM\Joomla\Componentbuilder\Interfaces](#vdm-joomla-componentbuilder-interfaces)
 
+  - **interface FactoryInterface** | [Details](src/caf33c5d-858c-4f9a-894f-ab302ec5445a) | [Code](src/caf33c5d-858c-4f9a-894f-ab302ec5445a/code.php) | [Settings](src/caf33c5d-858c-4f9a-894f-ab302ec5445a/settings.json) | Super__caf33c5d_858c_4f9a_894f_ab302ec5445a__Power
   - **interface InsertInterface** | [Details](src/ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48) | [Code](src/ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48/code.php) | [Settings](src/ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48/settings.json) | Super__ad12ca1c_d3ce_4e7f_88c5_c6c92bdedc48__Power
   - **interface ModelInterface** | [Details](src/8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff) | [Code](src/8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff/code.php) | [Settings](src/8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff/settings.json) | Super__8aef58c1_3f70_4bd4_b9e4_3f29fcd41cff__Power
   - **interface UpdateInterface** | [Details](src/7179fde6-1e51-4b51-8545-7ca18f74a0f4) | [Code](src/7179fde6-1e51-4b51-8545-7ca18f74a0f4/code.php) | [Settings](src/7179fde6-1e51-4b51-8545-7ca18f74a0f4/settings.json) | Super__7179fde6_1e51_4b51_8545_7ca18f74a0f4__Power
@@ -354,6 +355,11 @@ namespace VDM\Joomla\Componentbuilder\Database #Olive {
 
 namespace VDM\Joomla\Componentbuilder\Interfaces #Olive {
 
+
+  interface FactoryInterface  #Lavender {
+    + {static} _() : Mixed
+    + {static} getContainer() : Container
+  }
 
   interface InsertInterface  #Lavender {
     + defaults() : void
