@@ -6,50 +6,83 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# abstract class BaseConfig (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Abstraction**
+# interface LoadInterface (Details)
+> namespace: **VDM\Joomla\Interfaces**
 ```uml
 @startuml
-abstract BaseConfig  #Orange {
-  # Input $input
-  # JoomlaRegistry $params
-  + __construct(?Input $input = null, ?JoomlaRegistry $params = null)
-  + __set(string $key, mixed $value)
-  + __get(string $key)
-  + get(string $path, mixed $default = null) : mixed
-  + appendArray(string $path, mixed $value) : mixed
+interface LoadInterface  #Lavender {
+  + rows(array $select, array $tables, ...) : ?array
+  + items(array $select, array $tables, ...) : ?array
+  + row(array $select, array $tables, ...) : ?array
+  + item(array $select, array $tables, ...) : ?object
+  + value(array $select, array $tables, ...) : mixed
 }
 
-note right of BaseConfig::__construct
-  Constructor
+note right of LoadInterface::rows
+  Load data rows as an array of associated arrays
 
   since: 3.2.0
+  return: ?array
+  
+  arguments:
+    array $select
+    array $tables
+    ?array $where = null
+    ?array $order = null
+    ?int $limit = null
 end note
 
-note right of BaseConfig::__set
-  setting any config value
+note right of LoadInterface::items
+  Load data rows as an array of objects
 
   since: 3.2.0
+  return: ?array
+  
+  arguments:
+    array $select
+    array $tables
+    ?array $where = null
+    ?array $order = null
+    ?int $limit = null
 end note
 
-note right of BaseConfig::__get
-  getting any valid value
+note right of LoadInterface::row
+  Load data row as an associated array
 
   since: 3.2.0
+  return: ?array
+  
+  arguments:
+    array $select
+    array $tables
+    ?array $where = null
+    ?array $order = null
 end note
 
-note right of BaseConfig::get
-  Get a config value.
+note right of LoadInterface::item
+  Load data row as an object
+
+  since: 3.2.0
+  return: ?object
+  
+  arguments:
+    array $select
+    array $tables
+    ?array $where = null
+    ?array $order = null
+end note
+
+note right of LoadInterface::value
+  Load one value from a row
 
   since: 3.2.0
   return: mixed
-end note
-
-note right of BaseConfig::appendArray
-  Append value to a path in registry of an array
-
-  since: 3.2.0
-  return: mixed
+  
+  arguments:
+    array $select
+    array $tables
+    ?array $where = null
+    ?array $order = null
 end note
  
 @enduml

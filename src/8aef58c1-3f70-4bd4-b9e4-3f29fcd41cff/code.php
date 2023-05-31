@@ -9,7 +9,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Interfaces;
+namespace VDM\Joomla\Interfaces;
 
 
 /**
@@ -90,6 +90,5 @@ interface ModelInterface
 	 * @since 3.2.0
 	 */
 	public function last(?string $table = null): ?int;
-
 }
 

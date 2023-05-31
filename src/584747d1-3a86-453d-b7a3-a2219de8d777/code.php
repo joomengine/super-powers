@@ -9,12 +9,12 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Abstraction;
+namespace VDM\Joomla\Abstraction;
 
 
 use VDM\Joomla\Utilities\StringHelper;
 use VDM\Joomla\Utilities\ArrayHelper;
-use VDM\Joomla\Componentbuilder\Table;
+use VDM\Joomla\Interfaces\Tableinterface as Table;
 
 
 /**

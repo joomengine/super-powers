@@ -12,7 +12,7 @@
 namespace VDM\Joomla\Componentbuilder;
 
 
-use VDM\Joomla\Componentbuilder\Interfaces\Tableinterface;
+use VDM\Joomla\Interfaces\Tableinterface;
 
 
 /**

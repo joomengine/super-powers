@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # interface ModelInterface (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Interfaces**
+> namespace: **VDM\Joomla\Interfaces**
 ```uml
 @startuml
 interface ModelInterface  #Lavender {

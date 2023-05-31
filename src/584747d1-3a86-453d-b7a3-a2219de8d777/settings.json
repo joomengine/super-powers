@@ -7,7 +7,7 @@
     "load_selection": null,
     "name": "Model",
     "power_version": "1.0.0",
-    "system_name": "JCB.Abstraction.Model",
+    "system_name": "VDM.Abstraction.Model",
     "type": "abstract class",
     "use_selection": {
         "use_selection0": {
@@ -19,11 +19,11 @@
             "as": "default"
         },
         "use_selection2": {
-            "use": "bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8",
-            "as": "default"
+            "use": "2da6d6c4-eb29-4d69-8bc2-36d96e916adf",
+            "as": "Table"
         }
     },
-    "namespace": "VDM\\Joomla\\Componentbuilder.Abstraction.Model",
+    "namespace": "VDM\\Joomla\\Abstraction.Model",
     "description": "Our base Model\r\n\r\n@since 3.2.0",
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
     "head": "",

@@ -9,7 +9,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Abstraction;
+namespace VDM\Joomla\Abstraction;
 
 
 use Joomla\CMS\Factory as JoomlaFactory;
@@ -114,6 +114,5 @@ abstract class Database
 
 		return $table;
 	}
-
 }
 

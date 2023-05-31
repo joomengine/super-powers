@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # final class Load (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Database**
+> namespace: **VDM\Joomla\Database**
 ```uml
 @startuml
 class Load << (F,LightGreen) >> #Green {

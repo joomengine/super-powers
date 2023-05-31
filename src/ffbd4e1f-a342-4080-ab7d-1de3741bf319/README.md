@@ -6,37 +6,48 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# abstract class Database (Details)
+# abstract class BaseConfig (Details)
 > namespace: **VDM\Joomla\Abstraction**
 ```uml
 @startuml
-abstract Database  #Orange {
-  # \JDatabaseDriver $db
-  # string $table
-  + __construct(?\JDatabaseDriver $db = null)
-  # quote(mixed $value) : mixed
-  # getTable(string $table) : string
+abstract BaseConfig  #Orange {
+  + __construct()
+  + __set(string $key, mixed $value)
+  + __get(string $key)
+  + get(string $path, mixed $default = null) : mixed
+  + appendArray(string $path, mixed $value) : mixed
 }
 
-note right of Database::__construct
+note right of BaseConfig::__construct
   Constructor
 
   since: 3.2.0
 end note
 
-note right of Database::quote
-  Set a value based on data type
+note right of BaseConfig::__set
+  setting any config value
+
+  since: 3.2.0
+end note
+
+note right of BaseConfig::__get
+  getting any valid value
+
+  since: 3.2.0
+end note
+
+note right of BaseConfig::get
+  Get a config value.
 
   since: 3.2.0
   return: mixed
 end note
 
-note right of Database::getTable
-  Set a table name, adding the
-core component as needed
+note right of BaseConfig::appendArray
+  Append value to a path in registry of an array
 
   since: 3.2.0
-  return: string
+  return: mixed
 end note
  
 @enduml

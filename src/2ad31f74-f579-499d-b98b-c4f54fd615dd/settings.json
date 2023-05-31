@@ -1,24 +1,17 @@
 {
     "add_head": "0",
     "add_licensing_template": "2",
-    "extends": "6cbef8f8-4813-48e3-b05a-65e1aea95171",
-    "guid": "06f8eada-d59b-441c-b287-0aea1793da5a",
-    "implements": [
-        "2ad31f74-f579-499d-b98b-c4f54fd615dd"
-    ],
+    "extends": "0",
+    "guid": "2ad31f74-f579-499d-b98b-c4f54fd615dd",
+    "implements": null,
     "load_selection": null,
-    "name": "Load",
+    "name": "LoadInterface",
     "power_version": "1.0.0",
-    "system_name": "VDM.Database.Load",
-    "type": "final class",
-    "use_selection": {
-        "use_selection0": {
-            "use": "0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a",
-            "as": "default"
-        }
-    },
-    "namespace": "VDM\\Joomla\\Database.Load",
-    "description": "Database Load\r\n\r\n@since 3.2.0",
+    "system_name": "VDM.Interfaces.LoadInterface",
+    "type": "interface",
+    "use_selection": null,
+    "namespace": "VDM\\Joomla\\Interfaces.LoadInterface",
+    "description": "Database Load Interface\r\n\r\n@since 3.2.0",
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
     "head": "",
     "composer": ""

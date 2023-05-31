@@ -9,11 +9,11 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Database;
+namespace VDM\Joomla\Database;
 
 
-use VDM\Joomla\Componentbuilder\Interfaces\UpdateInterface;
-use VDM\Joomla\Componentbuilder\Abstraction\Database;
+use VDM\Joomla\Interfaces\UpdateInterface;
+use VDM\Joomla\Abstraction\Database;
 
 
 /**
@@ -184,6 +184,5 @@ final class Update extends Database implements UpdateInterface
 		// convert to an array
 		return $this->row((array) get_object_vars($data), $key, $table);
 	}
-
 }
 

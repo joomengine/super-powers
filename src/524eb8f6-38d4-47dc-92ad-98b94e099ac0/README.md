@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # final class Insert (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Database**
+> namespace: **VDM\Joomla\Database**
 ```uml
 @startuml
 class Insert << (F,LightGreen) >> #Green {

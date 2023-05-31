@@ -9,12 +9,12 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Database;
+namespace VDM\Joomla\Database;
 
 
 use VDM\Joomla\Utilities\ArrayHelper;
-use VDM\Joomla\Componentbuilder\Interfaces\LoadInterface;
-use VDM\Joomla\Componentbuilder\Abstraction\Database;
+use VDM\Joomla\Interfaces\LoadInterface;
+use VDM\Joomla\Abstraction\Database;
 
 
 /**

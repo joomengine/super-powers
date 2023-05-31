@@ -9,13 +9,13 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Database;
+namespace VDM\Joomla\Database;
 
 
 use Joomla\CMS\Date\Date;
 use VDM\Joomla\Utilities\ArrayHelper;
-use VDM\Joomla\Componentbuilder\Interfaces\InsertInterface;
-use VDM\Joomla\Componentbuilder\Abstraction\Database;
+use VDM\Joomla\Interfaces\InsertInterface;
+use VDM\Joomla\Abstraction\Database;
 
 
 /**

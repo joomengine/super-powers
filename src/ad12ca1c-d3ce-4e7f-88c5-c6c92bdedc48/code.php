@@ -9,7 +9,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Interfaces;
+namespace VDM\Joomla\Interfaces;
 
 
 /**
@@ -74,6 +74,5 @@ interface InsertInterface
 	 * @since   3.2.0
 	 **/
 	public function item(object $data, string $table): bool;
-
 }
 

@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # final class Update (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Database**
+> namespace: **VDM\Joomla\Database**
 ```uml
 @startuml
 class Update << (F,LightGreen) >> #Green {
