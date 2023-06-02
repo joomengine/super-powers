@@ -9,7 +9,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Interfaces;
+namespace VDM\Joomla\Interfaces;
 
 
 use Joomla\DI\Container;
@@ -37,6 +37,5 @@ interface FactoryInterface
 	 * @since 3.2.0
 	 */
 	public static function getContainer(): Container;
-
 }
 

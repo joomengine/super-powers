@@ -18,7 +18,7 @@ use VDM\Joomla\Interfaces\Tableinterface as Table;
 
 
 /**
- * Our base Model
+ * Base Model
  * 
  * @since 3.2.0
  */
@@ -114,7 +114,7 @@ abstract class Model
 				}
 			}
 
-			// all items must have more than one field or its empty (1 = id or guid)
+			// all items must have more than one field or its empty (1 = key)
 			if ($field_number > 1)
 			{
 				return $item_bucket;
@@ -342,6 +342,5 @@ abstract class Model
 	 * @since 3.2.0
 	 */
 	abstract protected function getTable(): string;
-
 }
 

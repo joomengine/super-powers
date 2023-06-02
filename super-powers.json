@@ -299,7 +299,7 @@
     "caf33c5d-858c-4f9a-894f-ab302ec5445a": {
         "name": "FactoryInterface",
         "type": "interface",
-        "namespace": "VDM\\Joomla\\Componentbuilder\\Interfaces",
+        "namespace": "VDM\\Joomla\\Interfaces",
         "code": "src\/caf33c5d-858c-4f9a-894f-ab302ec5445a\/code.php",
         "power": "src\/caf33c5d-858c-4f9a-894f-ab302ec5445a\/code.power",
         "settings": "src\/caf33c5d-858c-4f9a-894f-ab302ec5445a\/settings.json",
@@ -350,6 +350,17 @@
         "path": "src\/db87c339-5bb6-4291-a7ef-2c48ea1b06bc",
         "spk": "Super__db87c339_5bb6_4291_a7ef_2c48ea1b06bc__Power",
         "guid": "db87c339-5bb6-4291-a7ef-2c48ea1b06bc"
+    },
+    "e0f6ddbe-2a35-4537-942c-faff2ebd04f6": {
+        "name": "BaseTable",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Abstraction",
+        "code": "src\/e0f6ddbe-2a35-4537-942c-faff2ebd04f6\/code.php",
+        "power": "src\/e0f6ddbe-2a35-4537-942c-faff2ebd04f6\/code.power",
+        "settings": "src\/e0f6ddbe-2a35-4537-942c-faff2ebd04f6\/settings.json",
+        "path": "src\/e0f6ddbe-2a35-4537-942c-faff2ebd04f6",
+        "spk": "Super__e0f6ddbe_2a35_4537_942c_faff2ebd04f6__Power",
+        "guid": "e0f6ddbe-2a35-4537-942c-faff2ebd04f6"
     },
     "ffbd4e1f-a342-4080-ab7d-1de3741bf319": {
         "name": "BaseConfig",

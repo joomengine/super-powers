@@ -186,7 +186,7 @@ final class Load extends Database implements LoadInterface
 		if (isset($tables['a']))
 		{
 			// get the query
-			$query = $this->query($select, $tables, $where, $order);
+			$query = $this->query($select, $tables, $where, $order, $limit);
 
 			// Load the items
 			$this->db->setQuery($query);
