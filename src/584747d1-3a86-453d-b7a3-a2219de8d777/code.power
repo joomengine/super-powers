@@ -43,14 +43,20 @@
 	 * Model the values of an item
 	 *          Example: $this->item(Object, 'table_name');
 	 *
-	 * @param   object         $item      The item object
+	 * @param   object|null    $item      The item object
 	 * @param   string|null    $table     The table
 	 *
 	 * @return  object|null
 	 * @since 3.2.0
 	 */
-	public function item(object $item, ?string $table = null): ?object
+	public function item(?object $item, ?string $table = null): ?object
 	{
+		// we must have an object
+		if (empty($item))
+		{
+			return null;
+		}
+
 		// set the table name
 		if (empty($table))
 		{
@@ -146,14 +152,20 @@
 	 * Model the values of an row
 	 *          Example: $this->item(Array, 'table_name');
 	 *
-	 * @param   array          $item      The item array
+	 * @param   array|null     $item      The item array
 	 * @param   string|null    $table     The table
 	 *
 	 * @return  array|null
 	 * @since 3.2.0
 	 */
-	public function row(array $item, ?string $table = null): ?array
+	public function row(?array $item, ?string $table = null): ?array
 	{
+		// we must have an array
+		if (empty($item))
+		{
+			return null;
+		}
+
 		// set the table name
 		if (empty($table))
 		{

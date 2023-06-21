@@ -15,9 +15,9 @@ abstract Model  #Orange {
   # Table $table
   + __construct(Table $table)
   + {abstract} value(mixed $value, string $field, ...) : mixed
-  + item(object $item, ?string $table = null) : ?object
+  + item(?object $item, ?string $table = null) : ?object
   + items(?array $items = null, ?string $table = null) : ?array
-  + row(array $item, ?string $table = null) : ?array
+  + row(?array $item, ?string $table = null) : ?array
   + rows(?array $items = null, ?string $table = null) : ?array
   + last(?string $table = null) : ?int
   # getTableFields(string $table, bool $default = false) : ?array
