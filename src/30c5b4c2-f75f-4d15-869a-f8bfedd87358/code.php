@@ -9,39 +9,4 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Utilities\String;
-
-
-use VDM\Joomla\Utilities\StringHelper;
-
-
-/**
- * Control the naming of a class and function
- * 
- * @since  3.0.9
- */
-abstract class ClassfunctionHelper
-{
-	/**
-	 * Making class or function name safe
-	 *
-	 * @input	string       The name you would like to make safe
-	 *
-	 * @returns string on success
-	 * 
-	 * @since  3.0.9
-	 */
-	public static function safe($name): string
-	{
-		// remove numbers if the first character is a number
-		if (is_numeric(substr((string) $name, 0, 1)))
-		{
-			$name = StringHelper::numbers($name);
-		}
-
-		// remove all spaces and strange characters
-		return trim(preg_replace("/[^A-Za-z0-9_-]/", '', (string) $name));
-	}
-
-}
-
+###POWERCODE###
