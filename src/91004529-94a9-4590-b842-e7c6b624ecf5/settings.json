@@ -1,1 +1,18 @@
-###POWERLINKER###
+{
+    "add_head": "0",
+    "add_licensing_template": "2",
+    "extends": "0",
+    "guid": "91004529-94a9-4590-b842-e7c6b624ecf5",
+    "implements": null,
+    "load_selection": null,
+    "name": "ObjectHelper",
+    "power_version": "1.0.0",
+    "system_name": "Utilities Object Helper",
+    "type": "abstract class",
+    "use_selection": null,
+    "namespace": "VDM\\Joomla\\Utilities.ObjectHelper",
+    "description": "Some object tricks\r\n\r\n@since  3.0.9",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    3rd September, 2020\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}
