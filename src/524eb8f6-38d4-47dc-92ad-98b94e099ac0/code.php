@@ -204,7 +204,7 @@ final class Insert extends Database implements InsertInterface
 				$add_version = true;
 			}
 
-			if (!isset($columns['version']))
+			if (!isset($columns['published']))
 			{
 				$columns['published'] = ' (o_O) ';
 				$add_published = true;
