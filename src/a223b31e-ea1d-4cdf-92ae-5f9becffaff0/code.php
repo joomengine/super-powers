@@ -132,7 +132,7 @@ abstract class FileHelper
 			elseif (!self::$curlError)
 			{
 				// set the notice
-				Factory::getApplication()->enqueueMessage(Text::_('COM_GETBIBLE_HTWOCURL_NOT_FOUNDHTWOPPLEASE_SETUP_CURL_ON_YOUR_SYSTEM_OR_BGETBIBLEB_WILL_NOT_FUNCTION_CORRECTLYP'), 'Error');
+				Factory::getApplication()->enqueueMessage(Text::_('COM_COMPONENTBUILDER_HTWOCURL_NOT_FOUNDHTWOPPLEASE_SETUP_CURL_ON_YOUR_SYSTEM_OR_BCOMPONENTBUILDERB_WILL_NOT_FUNCTION_CORRECTLYP'), 'Error');
 				// load this notice only once
 				self::$curlError = true;
 			}
