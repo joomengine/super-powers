@@ -31,6 +31,97 @@ abstract class BaseTable implements Tableinterface
 	protected array $tables;
 
 	/**
+	 * All default fields
+	 *
+	 * @var     array
+	 * @since 3.2.0
+	 **/
+	protected array $defaults = [
+		'id' => [
+			'order' => -1,
+			'name' => 'id',
+			'label' => 'ID',
+			'type' => 'text',
+			'title' => false,
+			'list' => NULL,
+			'store' => NULL,
+			'tab_name' => NULL
+		],
+		'ordering' => [
+			'name' => 'ordering',
+			'label' => 'Ordering',
+			'type' => 'number',
+			'title' => false,
+			'list' => NULL,
+			'store' => NULL,
+			'tab_name' => NULL
+		],
+		'published' => [
+			'name' => 'published',
+			'label' => 'Status',
+			'type' => 'list',
+			'title' => false,
+			'list' => NULL,
+			'store' => NULL,
+			'tab_name' => NULL
+		],
+		'modified_by' => [
+			'name' => 'modified_by',
+			'label' => 'Modified by',
+			'type' => 'user',
+			'title' => false,
+			'list' => NULL,
+			'store' => NULL,
+			'tab_name' => NULL
+		],
+		'modified' => [
+			'name' => 'modified',
+			'label' => 'Modified',
+			'type' => 'calendar',
+			'title' => false,
+			'list' => NULL,
+			'store' => NULL,
+			'tab_name' => NULL
+		],
+		'created_by' => [
+			'name' => 'created_by',
+			'label' => 'Created by',
+			'type' => 'user',
+			'title' => false,
+			'list' => NULL,
+			'store' => NULL,
+			'tab_name' => NULL
+		],
+		'created' => [
+			'name' => 'created',
+			'label' => 'Created',
+			'type' => 'calendar',
+			'title' => false,
+			'list' => NULL,
+			'store' => NULL,
+			'tab_name' => NULL
+		],
+		'hits' => [
+			'name' => 'hits',
+			'label' => 'Hits',
+			'type' => 'number',
+			'title' => false,
+			'list' => NULL,
+			'store' => NULL,
+			'tab_name' => NULL
+		],
+		'version' => [
+			'name' => 'version',
+			'label' => 'Version',
+			'type' => 'text',
+			'title' => false,
+			'list' => NULL,
+			'store' => NULL,
+			'tab_name' => NULL
+		]
+	];
+
+	/**
 	 * Get any value from a item/field/column of an area/view/table
 	 *          Example: $this->get('table_name', 'field_name', 'value_key');
 	 * Get an item/field/column of an area/view/table
@@ -57,7 +148,8 @@ abstract class BaseTable implements Tableinterface
 			{
 				return $this->tables[$table][$field][$key];
 			}
-			return null;
+
+			return $this->getDefaultKey($field, $key);
 		}
 		// return the item/field/column of an area/view/table 
 		elseif (is_string($field))
@@ -66,7 +158,8 @@ abstract class BaseTable implements Tableinterface
 			{
 				return $this->tables[$table][$field];
 			}
-			return null;
+
+			return  $this->getDefault($field);
 		}
 		// return an area/view/table
 		elseif ($table !== 'All')
@@ -167,7 +260,7 @@ abstract class BaseTable implements Tableinterface
 			}
 		}
 
-		return false;
+		return $this->isDefault($field);
 	}
 
 	/**
@@ -201,7 +294,7 @@ abstract class BaseTable implements Tableinterface
 	/**
 	 * Add the default fields
 	 *
-	 * @param   array  $fields     The table dynamic fields
+	 * @param   array  $fields   The table dynamic fields
 	 *
 	 * @return  array   Fields (with defaults added)
 	 * @since 3.2.0
@@ -209,17 +302,63 @@ abstract class BaseTable implements Tableinterface
 	protected function addDefault(array $fields): array
 	{
 		// add default fields
-		array_unshift($fields, 'id');
-		$fields[] = 'ordering';
-		$fields[] = 'published';
-		$fields[] = 'modified_by';
-		$fields[] = 'modified';
-		$fields[] = 'created_by';
-		$fields[] = 'created';
-		$fields[] = 'hits';
-		$fields[] = 'version';
+		foreach ($this->defaults as $default)
+		{
+			// used just for loading the fields
+			$order = $default['order'] ?? 1;
+			unset($default['order']);
+
+			if ($order < 0)
+			{
+				array_unshift($fields, $default['name']);
+			}
+			else
+			{
+				$fields[] = $default['name'];
+			}
+		}
 
 		return $fields;
+	}
+
+	/**
+	 * Check if the field is a default field
+	 *
+	 * @param   string  $field  The field to check
+	 *
+	 * @return  bool   True if a default field
+	 * @since 3.2.0
+	 */
+	protected function isDefault(string $field): bool
+	{
+		return isset($this->defaults[$field]);
+	}
+
+	/**
+	 * Get a default field
+	 *
+	 * @param   string  $field  The field to check
+	 *
+	 * @return  array|null   True if a default field
+	 * @since 3.2.0
+	 */
+	protected function getDefault(string $field): ?array
+	{
+		return $this->defaults[$field] ?? null;
+	}
+
+	/**
+	 * Get a default field property
+	 *
+	 * @param   string  $field   The field to check
+	 * @param   string  $key     The field key/property to check
+	 *
+	 * @return  string|null   String value if a default field property exist
+	 * @since 3.2.0
+	 */
+	protected function getDefaultKey(string $field, string $key): ?string
+	{
+		return $this->defaults[$field][$key] ?? null;
 	}
 }
 

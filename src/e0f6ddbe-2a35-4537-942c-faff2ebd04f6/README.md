@@ -19,6 +19,9 @@ abstract BaseTable  #Orange {
   + exist(string $table, ?string $field = null) : bool
   + fields(string $table, bool $default = false) : ?array
   # addDefault(array $fields) : array
+  # isDefault(string $field) : bool
+  # getDefault(string $field) : ?array
+  # getDefaultKey(string $field, string $key) : ?string
 }
 
 note right of BaseTable::get
@@ -40,7 +43,7 @@ Example: $this->get('All');
     ?string $key = null
 end note
 
-note right of BaseTable::title
+note left of BaseTable::title
   Get title field from an area/view/table
 
   since: 3.2.0
@@ -54,7 +57,7 @@ note right of BaseTable::titleName
   return: string
 end note
 
-note right of BaseTable::tables
+note left of BaseTable::tables
   Get all tables
 
   since: 3.2.0
@@ -68,7 +71,7 @@ note right of BaseTable::exist
   return: bool
 end note
 
-note right of BaseTable::fields
+note left of BaseTable::fields
   Get all fields of an area/view/table
 
   since: 3.2.0
@@ -80,6 +83,27 @@ note right of BaseTable::addDefault
 
   since: 3.2.0
   return: array
+end note
+
+note left of BaseTable::isDefault
+  Check if the field is a default field
+
+  since: 3.2.0
+  return: bool
+end note
+
+note right of BaseTable::getDefault
+  Get a default field
+
+  since: 3.2.0
+  return: ?array
+end note
+
+note left of BaseTable::getDefaultKey
+  Get a default field property
+
+  since: 3.2.0
+  return: ?string
 end note
  
 @enduml
