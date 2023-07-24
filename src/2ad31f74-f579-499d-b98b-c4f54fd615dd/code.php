@@ -76,6 +76,29 @@ interface LoadInterface
 	public function item(array $select, array $tables, ?array $where = null, ?array $order = null): ?object;
 
 	/**
+	 * Get the max value based on a filtered result from a given table
+	 *
+	 * @param   string     $field     The field key
+	 * @param   string     $tables    The table
+	 * @param   array      $filter    The filter keys
+	 *
+	 * @return  int|null
+	 * @since   3.2.0
+	 **/
+	public function max($field, array $tables, array $filter): ?int;
+
+	/**
+	 * Count the number of items based on filter result from a given table
+	 *
+	 * @param   string     $tables    The table
+	 * @param   array      $filter    The filter keys
+	 *
+	 * @return  int|null
+	 * @since   3.2.0
+	 **/
+	public function count(array $tables, array $filter): ?int;
+
+	/**
 	 * Load one value from a row
 	 *
 	 * @param   array        $select   Array of selection keys
@@ -87,6 +110,5 @@ interface LoadInterface
 	 * @since   3.2.0
 	 **/
 	public function value(array $select, array $tables, ?array $where = null, ?array $order = null);
-
 }
 

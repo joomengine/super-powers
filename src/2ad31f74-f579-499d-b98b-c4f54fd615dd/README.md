@@ -15,6 +15,8 @@ interface LoadInterface  #Lavender {
   + items(array $select, array $tables, ...) : ?array
   + row(array $select, array $tables, ...) : ?array
   + item(array $select, array $tables, ...) : ?object
+  + max(string $field, array $tables, ...) : ?int
+  + count(array $tables, array $filter) : ?int
   + value(array $select, array $tables, ...) : mixed
 }
 
@@ -70,6 +72,25 @@ note right of LoadInterface::item
     array $tables
     ?array $where = null
     ?array $order = null
+end note
+
+note right of LoadInterface::max
+  Get the max value based on a filtered result from a given table
+
+  since: 3.2.0
+  return: ?int
+  
+  arguments:
+    string $field
+    array $tables
+    array $filter
+end note
+
+note right of LoadInterface::count
+  Count the number of items based on filter result from a given table
+
+  since: 3.2.0
+  return: ?int
 end note
 
 note right of LoadInterface::value

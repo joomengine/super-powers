@@ -145,6 +145,71 @@ final class Load extends Database implements LoadInterface
 	}
 
 	/**
+	 * Get the max value based on a filtered result from a given table
+	 *
+	 * @param   string     $field     The field key
+	 * @param   string     $tables    The tables
+	 * @param   array      $filter    The filter keys
+	 *
+	 * @return  int|null
+	 * @since   3.2.0
+	 **/
+	public function max($field, array $tables, array $filter): ?int
+	{
+		// only do check if we have the table set
+		if (isset($tables['a']))
+		{
+			// get the query
+			$query = $this->query(["all" => "MAX(`$field`)"], $tables, $filter);
+
+			// Load the max number
+			$this->db->setQuery($query);
+			$this->db->execute();
+
+			// check if we have values
+			if ($this->db->getNumRows())
+			{
+				return (int) $this->db->loadResult();
+			}
+		}
+
+		// data does not exist
+		return null;
+	}
+
+	/**
+	 * Count the number of items based on filter result from a given table
+	 *
+	 * @param   string     $tables    The table
+	 * @param   array      $filter    The filter keys
+	 *
+	 * @return  int|null
+	 * @since   3.2.0
+	 **/
+	public function count(array $tables, array $filter): ?int
+	{
+		// only do check if we have the table set
+		if (isset($tables['a']))
+		{
+			// get the query
+			$query = $this->query(["all" => 'COUNT(*)'], $tables, $filter);
+
+			// Load the max number
+			$this->db->setQuery($query);
+			$this->db->execute();
+
+			// check if we have values
+			if ($this->db->getNumRows())
+			{
+				return (int) $this->db->loadResult();
+			}
+		}
+
+		// data does not exist
+		return null;
+	}
+
+	/**
 	 * Load one value from a row
 	 *
 	 * @param   array        $select   Array of selection keys
