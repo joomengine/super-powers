@@ -101,7 +101,7 @@
 			elseif (!self::$curlError)
 			{
 				// set the notice
-				Factory::getApplication()->enqueueMessage(Text::_('<h2>Curl Not Found!</h2><p>Please setup curl on your system, or <b>[[[component]]]</b> will not function correctly!</p>'), 'Error');
+				Factory::getApplication()->enqueueMessage('<h2>Curl Not Found!</h2><p>Please setup curl on your system, or the <b>Joomla Component</b> will not function correctly!</p>', 'Error');
 				// load this notice only once
 				self::$curlError = true;
 			}
