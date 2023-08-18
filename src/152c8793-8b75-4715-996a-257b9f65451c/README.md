@@ -11,7 +11,8 @@
 ```uml
 @startuml
 abstract MathHelper  #Orange {
-  + {static} bc(string $type, int $val1, ...) : int
+  + {static} bc(string $type, int $val1, ...) : string|int|null|bool
+  + {static} sum(array $array, int $scale = 4) : float
   + {static} sum(array $array, int $scale = 4) : float
 }
 
@@ -19,7 +20,7 @@ note right of MathHelper::bc
   bc math wrapper (very basic not for accounting)
 
   since: 3.0.9
-  return: int
+  return: string|int|null|bool
   
   arguments:
     string $type
@@ -29,6 +30,10 @@ note right of MathHelper::bc
 end note
 
 note right of MathHelper::sum
+  Basic sum of an array with more precision
+
+  since: 3.0.9
+  return: float
   Basic sum of an array with more precision
 
   since: 3.0.9
