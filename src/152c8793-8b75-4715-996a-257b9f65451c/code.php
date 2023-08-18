@@ -98,33 +98,5 @@ abstract class MathHelper
 		return array_sum($array);
 	}
 
-	/**
-	 * Basic sum of an array with more precision
-	 *
-	 * @param   array   $array    The values to sum
-	 * @param   int      $scale   The scale value
-	 *
-	 * @return float
-	 * 
-	 * @since  3.0.9
-	 */
-	public static function sum($array, $scale = 4)
-	{
-		// use the bcadd function if available
-		if (function_exists('bcadd'))
-		{
-			// set the start value
-			$value = 0.0;
-			// loop the values and run bcadd
-			foreach($array as $val)
-			{
-				$value = bcadd($value, (string) $val, $scale);
-			}
-			return $value;
-		}
-		// fall back on array sum
-		return array_sum($array);
-	}
-
 }
 
