@@ -12,7 +12,7 @@
 namespace VDM\Joomla\Componentbuilder\Abstraction;
 
 
-use VDM\Joomla\Componentbuilder\Interfaces\Mapperdoubleinterface;
+use VDM\Joomla\Componentbuilder\Interfaces\Mapperdoublejoininterface;
 use VDM\Joomla\Componentbuilder\Interfaces\Mappersingleinterface;
 
 
@@ -21,7 +21,7 @@ use VDM\Joomla\Componentbuilder\Interfaces\Mappersingleinterface;
  * 
  * @since 3.2.0
  */
-abstract class Mapper implements Mapperdoubleinterface, Mappersingleinterface
+abstract class Mapper implements Mapperdoublejoininterface, Mappersingleinterface
 {
 
 	/**
@@ -52,7 +52,7 @@ abstract class Mapper implements Mapperdoubleinterface, Mappersingleinterface
 	 * @return  void
 	 * @since 3.2.0
 	 */
-	public function set(string $key, $value)
+	public function set(string $key, $value): void
 	{
 		$this->active[$this->key($key)] = $value;
 	}
@@ -92,19 +92,34 @@ abstract class Mapper implements Mapperdoubleinterface, Mappersingleinterface
 	 *
 	 * @param   string  $key    The main string key
 	 * @param   mixed   $value  The values to set
+	 * @param   bool    $array  The is array switch
 	 *
 	 * @return  void
 	 * @since 3.2.0
 	 */
-	public function add(string $key, $value)
+	public function add(string $key, $value, bool $array = false): void
 	{
 		if (isset($this->active[$this->key($key)]))
 		{
-			$this->active[$this->key($key)] .= $value;
+			if (is_array($this->active[$this->key($key)]))
+			{
+				$this->active[$this->key($key)][] = $value;
+			}
+			else
+			{
+				$this->active[$this->key($key)] .= $value;
+			}
 		}
 		else
 		{
-			$this->active[$this->key($key)] = $value;
+			if ($array)
+			{
+				$this->active[$this->key($key)] = [$value];
+			}
+			else
+			{
+				$this->active[$this->key($key)] = $value;
+			}
 		}
 	}
 
@@ -116,7 +131,7 @@ abstract class Mapper implements Mapperdoubleinterface, Mappersingleinterface
 	 * @return  void
 	 * @since 3.2.0
 	 */
-	public function remove(string $key)
+	public function remove(string $key): void
 	{
 		unset($this->active[$this->key($key)]);
 	}
@@ -175,7 +190,7 @@ abstract class Mapper implements Mapperdoubleinterface, Mappersingleinterface
 	 * @return  void
 	 * @since 3.2.0
 	 */
-	public function set_(string $firstKey, string $secondKey, $value)
+	public function set_(string $firstKey, string $secondKey, $value): void
 	{
 		$this->_active[$this->firstKey($firstKey)]
 			[$this->secondKey($secondKey)] = $value;
@@ -217,7 +232,7 @@ abstract class Mapper implements Mapperdoubleinterface, Mappersingleinterface
 		{
 			return true;
 		}
-		elseif (is_null($secondKey) && isset($this->_active[$this->firstKey($firstKey)]))
+		elseif ($secondKey === null && isset($this->_active[$this->firstKey($firstKey)]))
 		{
 			return true;
 		}
@@ -230,23 +245,41 @@ abstract class Mapper implements Mapperdoubleinterface, Mappersingleinterface
 	 * @param   string    $firstKey     The first key
 	 * @param   string    $secondKey    The second key
 	 * @param   mixed     $value        The values to set
+	 * @param   bool      $array        The is array switch
 	 *
 	 * @return  void
 	 * @since 3.2.0
 	 */
-	public function add_(string $firstKey, string $secondKey, $value)
+	public function add_(string $firstKey, string $secondKey, $value, bool $array = false): void
 	{
 		if (isset($this->_active[$this->firstKey($firstKey)]) &&
 			isset($this->_active[$this->firstKey($firstKey)]
 				[$this->secondKey($secondKey)]))
 		{
-			$this->_active[$this->firstKey($firstKey)]
-				[$this->secondKey($secondKey)] .= $value;
+			if (is_array($this->_active[$this->firstKey($firstKey)]
+				[$this->secondKey($secondKey)]))
+			{
+				$this->_active[$this->firstKey($firstKey)]
+					[$this->secondKey($secondKey)][] = $value;
+			}
+			else
+			{
+				$this->_active[$this->firstKey($firstKey)]
+					[$this->secondKey($secondKey)] .= $value;
+			}
 		}
 		else
 		{
-			$this->_active[$this->firstKey($firstKey)]
-				[$this->secondKey($secondKey)] = $value;
+			if ($array)
+			{
+				$this->_active[$this->firstKey($firstKey)]
+					[$this->secondKey($secondKey)] = [$value];
+			}
+			else
+			{
+				$this->_active[$this->firstKey($firstKey)]
+					[$this->secondKey($secondKey)] = $value;
+			}
 		}
 	}
 
@@ -259,7 +292,7 @@ abstract class Mapper implements Mapperdoubleinterface, Mappersingleinterface
 	 * @return  void
 	 * @since 3.2.0
 	 */
-	public function remove_(string $firstKey, ?string $secondKey = null)
+	public function remove_(string $firstKey, ?string $secondKey = null): void
 	{
 		if (is_string($secondKey))
 		{

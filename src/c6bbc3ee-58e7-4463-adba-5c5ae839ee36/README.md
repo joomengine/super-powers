@@ -16,7 +16,7 @@ abstract MapperSingle  #Orange {
   + set(string $key, mixed $value) : void
   + get(string $key) : mixed
   + exist(string $key) : bool
-  + add(string $key, mixed $value) : void
+  + add(string $key, mixed $value, ...) : void
   + remove(string $key) : void
   # {abstract} key(string $key) : string
 }
@@ -54,6 +54,11 @@ note right of MapperSingle::add
 
   since: 3.2.0
   return: void
+  
+  arguments:
+    string $key
+    mixed $value
+    bool $array = false
 end note
 
 note right of MapperSingle::remove

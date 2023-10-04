@@ -7,7 +7,7 @@
     "load_selection": null,
     "name": "InsertInterface",
     "power_version": "1.0.0",
-    "system_name": "JCB.Interfaces.InsertInterface",
+    "system_name": "VDM.Interfaces.InsertInterface",
     "type": "interface",
     "use_selection": null,
     "namespace": "VDM\\Joomla\\Interfaces.InsertInterface",

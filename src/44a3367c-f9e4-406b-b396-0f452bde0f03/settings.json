@@ -4,7 +4,7 @@
     "extends": "0",
     "guid": "44a3367c-f9e4-406b-b396-0f452bde0f03",
     "implements": [
-        "fbc58009-fa16-4d49-a0dd-419c3b62d42f",
+        "7921a2b3-b58c-4184-af3f-f58094f695a8",
         "78527c29-24ad-4735-ad4c-ec33a4952d9b"
     ],
     "load_selection": null,

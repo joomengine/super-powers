@@ -8,9 +8,10 @@
 ```
 # final class Insert (Details)
 > namespace: **VDM\Joomla\Database**
+> extends: **Database**
 ```uml
 @startuml
-class Insert << (F,LightGreen) >> #Green {
+class Insert << (F,LightGreen) >> #RoyalBlue {
   # bool $defaults
   + defaults(bool $trigger = true) : void
   + rows(array $data, string $table, ...) : bool

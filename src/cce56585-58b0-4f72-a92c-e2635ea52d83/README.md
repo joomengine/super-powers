@@ -8,9 +8,10 @@
 ```
 # final class Update (Details)
 > namespace: **VDM\Joomla\Database**
+> extends: **Database**
 ```uml
 @startuml
-class Update << (F,LightGreen) >> #Green {
+class Update << (F,LightGreen) >> #RoyalBlue {
   + rows(array $data, string $key, ...) : bool
   + items(array $data, string $key, ...) : bool
   + row(array $data, string $key, ...) : bool

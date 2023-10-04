@@ -8,6 +8,7 @@
 ```
 # abstract class BaseRegistry (Details)
 > namespace: **VDM\Joomla\Componentbuilder\Abstraction**
+> extends: **JoomlaRegistry**
 ```uml
 @startuml
 abstract BaseRegistry  #Orange {

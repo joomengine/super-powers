@@ -8,6 +8,7 @@
 ```
 # class Table (Details)
 > namespace: **VDM\Joomla\Componentbuilder**
+> extends: **BaseTable**
 ```uml
 @startuml
 class Table  #Gold {

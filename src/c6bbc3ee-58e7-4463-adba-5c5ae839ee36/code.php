@@ -51,7 +51,7 @@ abstract class MapperSingle implements Mappersingleinterface
 	 * @return  void
 	 * @since 3.2.0
 	 */
-	public function set(string $key, $value)
+	public function set(string $key, $value): void
 	{
 		$this->active[$this->key($key)] = $value;
 	}
@@ -91,19 +91,34 @@ abstract class MapperSingle implements Mappersingleinterface
 	 *
 	 * @param   string  $key    The main string key
 	 * @param   mixed   $value  The values to set
+	 * @param   bool    $array  The is array switch
 	 *
 	 * @return  void
 	 * @since 3.2.0
 	 */
-	public function add(string $key, $value)
+	public function add(string $key, $value, bool $array = false): void
 	{
 		if (isset($this->active[$this->key($key)]))
 		{
-			$this->active[$this->key($key)] .= $value;
+			if (is_array($this->active[$this->key($key)]))
+			{
+				$this->active[$this->key($key)][] = $value;
+			}
+			else
+			{
+				$this->active[$this->key($key)] .= $value;
+			}
 		}
 		else
 		{
-			$this->active[$this->key($key)] = $value;
+			if ($array)
+			{
+				$this->active[$this->key($key)] = [$value];
+			}
+			else
+			{
+				$this->active[$this->key($key)] = $value;
+			}
 		}
 	}
 
@@ -115,7 +130,7 @@ abstract class MapperSingle implements Mappersingleinterface
 	 * @return  void
 	 * @since 3.2.0
 	 */
-	public function remove(string $key)
+	public function remove(string $key): void
 	{
 		unset($this->active[$this->key($key)]);
 	}

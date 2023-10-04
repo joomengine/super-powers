@@ -1,0 +1,58 @@
+	/**
+	 * Registers the service provider with a DI container.
+	 *
+	 * @param   Container  $container  The DI container.
+	 *
+	 * @return  void
+	 * @since 3.2.0
+	 */
+	public function register(Container $container)
+	{
+		$container->alias(Load::class, 'Load')
+			->share('Load', [$this, 'getLoad'], true);
+
+		$container->alias(Insert::class, 'Insert')
+			->share('Insert', [$this, 'getInsert'], true);
+
+		$container->alias(Update::class, 'Update')
+			->share('Update', [$this, 'getUpdate'], true);
+	}
+
+	/**
+	 * Get the Core Load Database
+	 *
+	 * @param   Container  $container  The DI container.
+	 *
+	 * @return  Load
+	 * @since 3.2.0
+	 */
+	public function getLoad(Container $container): Load
+	{
+		return new Load();
+	}
+
+	/**
+	 * Get the Core Insert Database
+	 *
+	 * @param   Container  $container  The DI container.
+	 *
+	 * @return  Insert
+	 * @since 3.2.0
+	 */
+	public function getInsert(Container $container): Insert
+	{
+		return new Insert();
+	}
+
+	/**
+	 * Get the Core Update Database
+	 *
+	 * @param   Container  $container  The DI container.
+	 *
+	 * @return  Update
+	 * @since 3.2.0
+	 */
+	public function getUpdate(Container $container): Update
+	{
+		return new Update();
+	}

@@ -8,9 +8,10 @@
 ```
 # final class Load (Details)
 > namespace: **VDM\Joomla\Database**
+> extends: **Database**
 ```uml
 @startuml
-class Load << (F,LightGreen) >> #Green {
+class Load << (F,LightGreen) >> #RoyalBlue {
   + rows(array $select, array $tables, ...) : ?array
   + items(array $select, array $tables, ...) : ?array
   + row(array $select, array $tables, ...) : ?array

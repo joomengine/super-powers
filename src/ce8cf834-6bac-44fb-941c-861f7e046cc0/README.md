@@ -11,7 +11,7 @@
 ```uml
 @startuml
 abstract NamespaceHelper  #Orange {
-  + {static} safe(string $string, bool $removeNumbers = true) : string
+  + {static} safe(string $string) : string
 }
 
 note right of NamespaceHelper::safe

@@ -1,0 +1,27 @@
+	/**
+	 * Check if a value is found in an array
+	 *
+	 * @param  mixed $value  The value to check for
+	 * @param  string|null  $path    Registry path (e.g. joomla.content.showauthor)
+	 *
+	 * @return  bool
+	 * @since 3.2.0
+	 */
+	public function inArray($value, ?string $path = null): bool
+	{
+		// Check base array if no path is given
+		if (empty($path))
+		{
+			return in_array($value, $this->active);
+		}
+
+		// get the value
+		if (($node = $this->get($path)) !== null
+			&& is_array($node)
+			&& in_array($value, $node))
+		{
+			return true;
+		}
+
+		return false;
+	}

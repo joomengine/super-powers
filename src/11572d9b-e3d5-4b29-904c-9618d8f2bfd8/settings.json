@@ -1,0 +1,18 @@
+{
+    "add_head": "0",
+    "add_licensing_template": "2",
+    "extends": "0",
+    "guid": "11572d9b-e3d5-4b29-904c-9618d8f2bfd8",
+    "implements": null,
+    "load_selection": null,
+    "name": "Count",
+    "power_version": "1.0.0",
+    "system_name": "VDM.Abstraction.StorageRegistry.Traits.Count",
+    "type": "trait",
+    "use_selection": null,
+    "namespace": "VDM\\Joomla\\Abstraction.StorageRegistry.Traits.Count",
+    "description": "Count Values\r\n\r\n@since 3.2.0",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}

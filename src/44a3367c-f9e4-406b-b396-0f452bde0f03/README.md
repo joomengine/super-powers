@@ -16,7 +16,7 @@ abstract Mapper  #Orange {
   + set(string $key, mixed $value) : void
   + get(string $key) : mixed
   + exist(string $key) : bool
-  + add(string $key, mixed $value) : void
+  + add(string $key, mixed $value, ...) : void
   + remove(string $key) : void
   # {abstract} key(string $key) : string
   + isActive_(string $firstKey = null) : bool
@@ -62,6 +62,11 @@ note right of Mapper::add
 
   since: 3.2.0
   return: void
+  
+  arguments:
+    string $key
+    mixed $value
+    bool $array = false
 end note
 
 note left of Mapper::remove
@@ -121,6 +126,7 @@ note left of Mapper::add_
     string $firstKey
     string $secondKey
     mixed $value
+    bool $array = false
 end note
 
 note right of Mapper::remove_

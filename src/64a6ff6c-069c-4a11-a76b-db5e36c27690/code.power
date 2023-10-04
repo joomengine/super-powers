@@ -1,0 +1,39 @@
+	/**
+	 * open base64 string if stored as base64 (in JCB)
+	 *
+	 * @param   string|null   $data     The base64 string
+	 * @param   string|null   $key      We store the string with that suffix :)
+	 * @param   string|null   $default  The default switch
+	 *
+	 * @return  string|null   The opened string
+	 * @since 3.2.0
+	 */
+	public static function open(?string $data, ?string $key = '__.o0=base64=Oo.__', ?string $default = 'string'): ?string
+	{
+		// check that we have a string
+		if (StringHelper::check($data))
+		{
+			// check if we have a key
+			if (StringHelper::check($key))
+			{
+				if (strpos($data, $key) !== false)
+				{
+					return base64_decode(str_replace($key, '', $data));
+				}
+			}
+
+			// fallback to this, not perfect method
+			if (base64_encode(base64_decode($data, true)) === $data)
+			{
+				return base64_decode($data);
+			}
+		}
+
+		// check if we should just return the string
+		if ('string' === $default)
+		{
+			return $data;
+		}
+
+		return $default;
+	}
