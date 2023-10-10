@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # trait GetString (Details)
-> namespace: **VDM\Joomla\Abstraction\StorageRegistry\Traits**
+> namespace: **VDM\Joomla\Abstraction\Registry\Traits**
 ```uml
 @startuml
 class GetString << (T,Orange) >> #Turquoise {

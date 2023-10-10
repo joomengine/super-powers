@@ -1,5 +1,5 @@
 	/**
-	 * The main storage array.
+	 * The registry array.
 	 *
 	 * @var    array
 	 * @since 3.2.0
@@ -7,7 +7,7 @@
 	protected array $active = [];
 
 	/**
-	 * Check if the main storage has any content.
+	 * Check if the registry has any content.
 	 *
 	 * @return bool  Returns true if the active array is not empty, false otherwise.
 	 * @since 3.2.0
@@ -18,7 +18,7 @@
 	}
 
 	/**
-	 * Get all value from the active storage.
+	 * Get all value from the active registry.
 	 *
 	 * @return array   The values or empty array.
 	 * @since 3.2.0
@@ -29,7 +29,7 @@
 	}
 
 	/**
-	 * Sets a value into the storage using multiple keys.
+	 * Sets a value into the registry using multiple keys.
 	 *
 	 * @param mixed   $value     The value to set.
 	 * @param string  ...$keys   The keys to determine the location.
@@ -51,6 +51,12 @@
 		{
 			if (!isset($array[$key]))
 			{
+				if (!is_array($array))
+				{
+					$path = '[' . implode('][', $keys) . ']';
+					throw new \InvalidArgumentException("Attempted to use key '{$key}' on a non-array value: {$array}. Path: {$path} Value: {$value}");
+				}
+
 				$array[$key] = [];
 			}
 			$array = &$array[$key];
@@ -60,7 +66,7 @@
 	}
 
 	/**
-	 * Adds content into the storage. If a key exists,
+	 * Adds content into the registry. If a key exists,
 	 * it either appends or concatenates based on the value's type.
 	 *
 	 * @param mixed   $value     The value to set.
@@ -84,6 +90,12 @@
 		{
 			if (!isset($array[$key]))
 			{
+				if (!is_array($array))
+				{
+					$path = '[' . implode('][', $keys) . ']';
+					throw new \InvalidArgumentException("Attempted to use key '{$key}' on a non-array value: {$array}. Path: {$path} Value: {$value}");
+				}
+
 				$array[$key] = [];
 			}
 			$array = &$array[$key];
@@ -119,7 +131,7 @@
 	}
 
 	/**
-	 * Retrieves a value (or sub-array) from the storage using multiple keys.
+	 * Retrieves a value (or sub-array) from the registry using multiple keys.
 	 *
 	 * @param mixed   $default     The default value if not set.
 	 * @param string  ...$keys      The keys to determine the location.
@@ -150,7 +162,7 @@
 	}
 
 	/**
-	 * Removes a value (or sub-array) from the storage using multiple keys.
+	 * Removes a value (or sub-array) from the registry using multiple keys.
 	 *
 	 * @param string ...$keys The keys to determine the location.
 	 *
@@ -181,7 +193,7 @@
 	}
 
 	/**
-	 * Checks the existence of a particular location in the storage using multiple keys.
+	 * Checks the existence of a particular location in the registry using multiple keys.
 	 *
 	 * @param string ...$keys The keys to determine the location.
 	 *

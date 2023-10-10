@@ -6,12 +6,12 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# abstract class StorageRegistry (Details)
+# abstract class Registry (Details)
 > namespace: **VDM\Joomla\Abstraction**
-> extends: **ActiveStorageRegistry**
+> extends: **ActiveRegistry**
 ```uml
 @startuml
-abstract StorageRegistry  #Orange {
+abstract Registry  #Orange {
   # ?string $separator
   + set(string $path, mixed $value) : void
   + add(string $path, mixed $value, ...) : void
@@ -22,15 +22,15 @@ abstract StorageRegistry  #Orange {
   # getActiveKeys(string $path) : ?array
 }
 
-note right of StorageRegistry::set
-  Sets a value into the storage using multiple keys.
+note right of Registry::set
+  Sets a value into the registry using multiple keys.
 
   since: 3.2.0
   return: void
 end note
 
-note right of StorageRegistry::add
-  Adds content into the storage. If a key exists,
+note right of Registry::add
+  Adds content into the registry. If a key exists,
 it either appends or concatenates based on $asArray switch.
 
   since: 3.2.0
@@ -42,35 +42,35 @@ it either appends or concatenates based on $asArray switch.
     bool $asArray = false
 end note
 
-note right of StorageRegistry::get
-  Retrieves a value (or sub-array) from the storage using multiple keys.
+note right of Registry::get
+  Retrieves a value (or sub-array) from the registry using multiple keys.
 
   since: 3.2.0
   return: mixed
 end note
 
-note right of StorageRegistry::remove
-  Removes a value (or sub-array) from the storage using multiple keys.
+note right of Registry::remove
+  Removes a value (or sub-array) from the registry using multiple keys.
 
   since: 3.2.0
   return: void
 end note
 
-note right of StorageRegistry::exists
-  Checks the existence of a particular location in the storage using multiple keys.
+note right of Registry::exists
+  Checks the existence of a particular location in the registry using multiple keys.
 
   since: 3.2.0
   return: bool
 end note
 
-note right of StorageRegistry::setSeparator
+note right of Registry::setSeparator
   Sets a separator value
 
   since: 3.2.0
   return: void
 end note
 
-note right of StorageRegistry::getActiveKeys
+note right of Registry::getActiveKeys
   Get that the active keys from a path
 
   since: 3.2.0

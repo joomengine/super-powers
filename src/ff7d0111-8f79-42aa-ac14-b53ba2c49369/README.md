@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # trait IsString (Details)
-> namespace: **VDM\Joomla\Abstraction\StorageRegistry\Traits**
+> namespace: **VDM\Joomla\Abstraction\Registry\Traits**
 ```uml
 @startuml
 class IsString << (T,Orange) >> #Turquoise {

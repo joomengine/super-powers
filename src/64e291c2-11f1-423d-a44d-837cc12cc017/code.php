@@ -13,16 +13,16 @@ namespace VDM\Joomla\Interfaces;
 
 
 /**
- * The Storage Registry Interface
+ * The Registry Interface
  * 
  * @since 3.2.0
  */
-interface Storageregistryinterface
+interface Registryinterface
 {
 	/**
-	 * Sets a value into the storage using multiple keys.
+	 * Sets a value into the registry using multiple keys.
 	 *
-	 * @param  string  $path      Storage path (e.g. vdm.content.builder)
+	 * @param  string  $path      Registry path (e.g. vdm.content.builder)
 	 * @param  mixed   $value     Value of entry
 	 *
 	 * @throws \InvalidArgumentException If any of the path values are not a number or string.
@@ -32,10 +32,10 @@ interface Storageregistryinterface
 	public function set(string $path, $value): void;
 
 	/**
-	 * Adds content into the storage. If a key exists,
+	 * Adds content into the registry. If a key exists,
 	 * it either appends or concatenates based on $asArray switch.
 	 *
-	 * @param  string  $path      Storage path (e.g. vdm.content.builder)
+	 * @param  string  $path      Registry path (e.g. vdm.content.builder)
 	 * @param  mixed   $value     Value of entry
 	 * @param  bool    $asArray   Determines if the new value should be treated as an array. Default is false.
 	 *
@@ -46,9 +46,9 @@ interface Storageregistryinterface
 	public function add(string $path, $value, bool $asArray = false): void;
 
 	/**
-	 * Retrieves a value (or sub-array) from the storage using multiple keys.
+	 * Retrieves a value (or sub-array) from the registry using multiple keys.
 	 *
-	 * @param  string  $path     Storage path (e.g. vdm.content.builder)
+	 * @param  string  $path     Registry path (e.g. vdm.content.builder)
 	 * @param  mixed   $default  Optional default value, returned if the internal doesn't exist.
 	 *
 	 * @throws \InvalidArgumentException If any of the path values are not a number or string.
@@ -58,9 +58,9 @@ interface Storageregistryinterface
 	public function get(string $path, $default = null);
 
 	/**
-	 * Removes a value (or sub-array) from the storage using multiple keys.
+	 * Removes a value (or sub-array) from the registry using multiple keys.
 	 *
-	 * @param  string  $path  Storage path (e.g. vdm.content.builder)
+	 * @param  string  $path  Registry path (e.g. vdm.content.builder)
 	 *
 	 * @throws \InvalidArgumentException If any of the path values are not a number or string.
 	 * @return void
@@ -69,9 +69,9 @@ interface Storageregistryinterface
 	public function remove(string $path): void;
 
 	/**
-	 * Checks the existence of a particular location in the storage using multiple keys.
+	 * Checks the existence of a particular location in the registry using multiple keys.
 	 *
-	 * @param  string  $path  Storage path (e.g. vdm.content.builder)
+	 * @param  string  $path  Registry path (e.g. vdm.content.builder)
 	 *
 	 * @throws \InvalidArgumentException If any of the path values are not a number or string.
 	 * @return bool True if the location exists, false otherwise.

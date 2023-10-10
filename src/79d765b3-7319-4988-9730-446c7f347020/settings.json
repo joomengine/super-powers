@@ -4,7 +4,11 @@
     "extends": "0",
     "guid": "79d765b3-7319-4988-9730-446c7f347020",
     "implements": null,
-    "load_selection": null,
+    "load_selection": {
+        "load_selection0": {
+            "load": "1198aecf-84c6-45d2-aea8-d531aa4afdfa"
+        }
+    },
     "name": "Utilities",
     "power_version": "1.0.0",
     "system_name": "Utilities",

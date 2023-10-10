@@ -6,11 +6,11 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# interface Storageregistryinterface (Details)
+# interface Registryinterface (Details)
 > namespace: **VDM\Joomla\Interfaces**
 ```uml
 @startuml
-interface Storageregistryinterface  #Lavender {
+interface Registryinterface  #Lavender {
   + set(string $path, mixed $value) : void
   + add(string $path, mixed $value, ...) : void
   + get(string $path, mixed $default = null) : mixed
@@ -19,15 +19,15 @@ interface Storageregistryinterface  #Lavender {
   + setSeparator(?string $value) : void
 }
 
-note right of Storageregistryinterface::set
-  Sets a value into the storage using multiple keys.
+note right of Registryinterface::set
+  Sets a value into the registry using multiple keys.
 
   since: 3.2.0
   return: void
 end note
 
-note right of Storageregistryinterface::add
-  Adds content into the storage. If a key exists,
+note right of Registryinterface::add
+  Adds content into the registry. If a key exists,
 it either appends or concatenates based on $asArray switch.
 
   since: 3.2.0
@@ -39,28 +39,28 @@ it either appends or concatenates based on $asArray switch.
     bool $asArray = false
 end note
 
-note right of Storageregistryinterface::get
-  Retrieves a value (or sub-array) from the storage using multiple keys.
+note right of Registryinterface::get
+  Retrieves a value (or sub-array) from the registry using multiple keys.
 
   since: 3.2.0
   return: mixed
 end note
 
-note right of Storageregistryinterface::remove
-  Removes a value (or sub-array) from the storage using multiple keys.
+note right of Registryinterface::remove
+  Removes a value (or sub-array) from the registry using multiple keys.
 
   since: 3.2.0
   return: void
 end note
 
-note right of Storageregistryinterface::exists
-  Checks the existence of a particular location in the storage using multiple keys.
+note right of Registryinterface::exists
+  Checks the existence of a particular location in the registry using multiple keys.
 
   since: 3.2.0
   return: bool
 end note
 
-note right of Storageregistryinterface::setSeparator
+note right of Registryinterface::setSeparator
   Sets a separator value
 
   since: 3.2.0

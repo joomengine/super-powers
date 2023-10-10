@@ -12,19 +12,19 @@
 namespace VDM\Joomla\Abstraction;
 
 
-use VDM\Joomla\Interfaces\Activestorageregistryinterface;
-use VDM\Joomla\Interfaces\Storageregistryinterface;
-use VDM\Joomla\Abstraction\ActiveStorageRegistry;
+use VDM\Joomla\Interfaces\Activeregistryinterface;
+use VDM\Joomla\Interfaces\Registryinterface;
+use VDM\Joomla\Abstraction\ActiveRegistry;
 
 
 /**
- * Storage Registry.
+ * VDM Basic Registry.
  * 
  * Don't use this beyond 10 dimensional depth for best performance.
  * 
  * @since 3.2.0
  */
-abstract class StorageRegistry extends ActiveStorageRegistry implements Activestorageregistryinterface, Storageregistryinterface
+abstract class Registry extends ActiveRegistry implements Activeregistryinterface, Registryinterface
 {
 	/**
 	 * Path separator
@@ -35,9 +35,9 @@ abstract class StorageRegistry extends ActiveStorageRegistry implements Activest
 	protected ?string $separator = '.';
 
 	/**
-	 * Sets a value into the storage using multiple keys.
+	 * Sets a value into the registry using multiple keys.
 	 *
-	 * @param  string  $path      Storage path (e.g. vdm.content.builder)
+	 * @param  string  $path      Registry path (e.g. vdm.content.builder)
 	 * @param  mixed   $value     Value of entry
 	 *
 	 * @throws \InvalidArgumentException If any of the path values are not a number or string.
@@ -55,10 +55,10 @@ abstract class StorageRegistry extends ActiveStorageRegistry implements Activest
 	}
 
 	/**
-	 * Adds content into the storage. If a key exists,
+	 * Adds content into the registry. If a key exists,
 	 * it either appends or concatenates based on $asArray switch.
 	 *
-	 * @param  string  $path      Storage path (e.g. vdm.content.builder)
+	 * @param  string  $path      Registry path (e.g. vdm.content.builder)
 	 * @param  mixed   $value     Value of entry
 	 * @param  bool    $asArray   Determines if the new value should be treated as an array. Default is false.
 	 *
@@ -77,9 +77,9 @@ abstract class StorageRegistry extends ActiveStorageRegistry implements Activest
 	}
 
 	/**
-	 * Retrieves a value (or sub-array) from the storage using multiple keys.
+	 * Retrieves a value (or sub-array) from the registry using multiple keys.
 	 *
-	 * @param  string  $path     Storage path (e.g. vdm.content.builder)
+	 * @param  string  $path     Registry path (e.g. vdm.content.builder)
 	 * @param  mixed   $default  Optional default value, returned if the internal doesn't exist.
 	 *
 	 * @throws \InvalidArgumentException If any of the path values are not a number or string.
@@ -97,9 +97,9 @@ abstract class StorageRegistry extends ActiveStorageRegistry implements Activest
 	}
 
 	/**
-	 * Removes a value (or sub-array) from the storage using multiple keys.
+	 * Removes a value (or sub-array) from the registry using multiple keys.
 	 *
-	 * @param  string  $path  Storage path (e.g. vdm.content.builder)
+	 * @param  string  $path  Registry path (e.g. vdm.content.builder)
 	 *
 	 * @throws \InvalidArgumentException If any of the path values are not a number or string.
 	 * @return void
@@ -116,9 +116,9 @@ abstract class StorageRegistry extends ActiveStorageRegistry implements Activest
 	}
 
 	/**
-	 * Checks the existence of a particular location in the storage using multiple keys.
+	 * Checks the existence of a particular location in the registry using multiple keys.
 	 *
-	 * @param  string  $path  Storage path (e.g. vdm.content.builder)
+	 * @param  string  $path  Registry path (e.g. vdm.content.builder)
 	 *
 	 * @throws \InvalidArgumentException If any of the path values are not a number or string.
 	 * @return bool True if the location exists, false otherwise.
@@ -150,7 +150,7 @@ abstract class StorageRegistry extends ActiveStorageRegistry implements Activest
 	/**
 	 * Get that the active keys from a path
 	 *
-	 * @param string  $path   The path to determine the location storage.
+	 * @param string  $path   The path to determine the location registry.
 	 *
 	 * @return array|null      The valid array of keys
 	 * @since 3.2.0

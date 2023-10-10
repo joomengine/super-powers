@@ -12,7 +12,7 @@
 namespace VDM\Joomla\Abstraction;
 
 
-use VDM\Joomla\Interfaces\Activestorageregistryinterface;
+use VDM\Joomla\Interfaces\Activeregistryinterface;
 
 
 /**
@@ -22,10 +22,10 @@ use VDM\Joomla\Interfaces\Activestorageregistryinterface;
  * 
  * @since 3.2.0
  */
-abstract class ActiveStorageRegistry implements Activestorageregistryinterface
+abstract class ActiveRegistry implements Activeregistryinterface
 {
 	/**
-	 * The main storage array.
+	 * The registry array.
 	 *
 	 * @var    array
 	 * @since 3.2.0
@@ -33,7 +33,7 @@ abstract class ActiveStorageRegistry implements Activestorageregistryinterface
 	protected array $active = [];
 
 	/**
-	 * Check if the main storage has any content.
+	 * Check if the registry has any content.
 	 *
 	 * @return bool  Returns true if the active array is not empty, false otherwise.
 	 * @since 3.2.0
@@ -44,7 +44,7 @@ abstract class ActiveStorageRegistry implements Activestorageregistryinterface
 	}
 
 	/**
-	 * Get all value from the active storage.
+	 * Get all value from the active registry.
 	 *
 	 * @return array   The values or empty array.
 	 * @since 3.2.0
@@ -55,7 +55,7 @@ abstract class ActiveStorageRegistry implements Activestorageregistryinterface
 	}
 
 	/**
-	 * Sets a value into the storage using multiple keys.
+	 * Sets a value into the registry using multiple keys.
 	 *
 	 * @param mixed   $value     The value to set.
 	 * @param string  ...$keys   The keys to determine the location.
@@ -77,6 +77,12 @@ abstract class ActiveStorageRegistry implements Activestorageregistryinterface
 		{
 			if (!isset($array[$key]))
 			{
+				if (!is_array($array))
+				{
+					$path = '[' . implode('][', $keys) . ']';
+					throw new \InvalidArgumentException("Attempted to use key '{$key}' on a non-array value: {$array}. Path: {$path} Value: {$value}");
+				}
+
 				$array[$key] = [];
 			}
 			$array = &$array[$key];
@@ -86,7 +92,7 @@ abstract class ActiveStorageRegistry implements Activestorageregistryinterface
 	}
 
 	/**
-	 * Adds content into the storage. If a key exists,
+	 * Adds content into the registry. If a key exists,
 	 * it either appends or concatenates based on the value's type.
 	 *
 	 * @param mixed   $value     The value to set.
@@ -110,6 +116,12 @@ abstract class ActiveStorageRegistry implements Activestorageregistryinterface
 		{
 			if (!isset($array[$key]))
 			{
+				if (!is_array($array))
+				{
+					$path = '[' . implode('][', $keys) . ']';
+					throw new \InvalidArgumentException("Attempted to use key '{$key}' on a non-array value: {$array}. Path: {$path} Value: {$value}");
+				}
+
 				$array[$key] = [];
 			}
 			$array = &$array[$key];
@@ -145,7 +157,7 @@ abstract class ActiveStorageRegistry implements Activestorageregistryinterface
 	}
 
 	/**
-	 * Retrieves a value (or sub-array) from the storage using multiple keys.
+	 * Retrieves a value (or sub-array) from the registry using multiple keys.
 	 *
 	 * @param mixed   $default     The default value if not set.
 	 * @param string  ...$keys      The keys to determine the location.
@@ -176,7 +188,7 @@ abstract class ActiveStorageRegistry implements Activestorageregistryinterface
 	}
 
 	/**
-	 * Removes a value (or sub-array) from the storage using multiple keys.
+	 * Removes a value (or sub-array) from the registry using multiple keys.
 	 *
 	 * @param string ...$keys The keys to determine the location.
 	 *
@@ -207,7 +219,7 @@ abstract class ActiveStorageRegistry implements Activestorageregistryinterface
 	}
 
 	/**
-	 * Checks the existence of a particular location in the storage using multiple keys.
+	 * Checks the existence of a particular location in the registry using multiple keys.
 	 *
 	 * @param string ...$keys The keys to determine the location.
 	 *

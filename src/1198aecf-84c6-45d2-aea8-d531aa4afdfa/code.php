@@ -9,12 +9,11 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Utilities;
+namespace VDM\Joomla\Utilities;
 
 
 use Joomla\CMS\Form\FormHelper as JoomlaFormHelper;
 use Joomla\CMS\Form\FormField;
-use VDM\Joomla\Utilities\ArrayHelper;
 
 
 /**
@@ -184,6 +183,5 @@ abstract class FormHelper
 
 		return null;
 	}
-
 }
 

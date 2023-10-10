@@ -6,11 +6,11 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# interface Activestorageregistryinterface (Details)
+# interface Activeregistryinterface (Details)
 > namespace: **VDM\Joomla\Interfaces**
 ```uml
 @startuml
-interface Activestorageregistryinterface  #Lavender {
+interface Activeregistryinterface  #Lavender {
   + isActive() : bool
   + allActive() : array
   + setActive(mixed $value, $keys) : void
@@ -20,29 +20,29 @@ interface Activestorageregistryinterface  #Lavender {
   + existsActive($keys) : bool
 }
 
-note right of Activestorageregistryinterface::isActive
-  Check if the main storage has any content.
+note right of Activeregistryinterface::isActive
+  Check if the registry has any content.
 
   since: 3.2.0
   return: bool
 end note
 
-note right of Activestorageregistryinterface::allActive
-  Retrieves all value from the storage.
+note right of Activeregistryinterface::allActive
+  Retrieves all value from the registry.
 
   since: 3.2.0
   return: array
 end note
 
-note right of Activestorageregistryinterface::setActive
-  Sets a value into the storage using multiple keys.
+note right of Activeregistryinterface::setActive
+  Sets a value into the registry using multiple keys.
 
   since: 3.2.0
   return: void
 end note
 
-note right of Activestorageregistryinterface::addActive
-  Adds content into the storage. If a key exists,
+note right of Activeregistryinterface::addActive
+  Adds content into the registry. If a key exists,
 it either appends or concatenates based on the value's type.
 
   since: 3.2.0
@@ -54,22 +54,22 @@ it either appends or concatenates based on the value's type.
     $keys
 end note
 
-note right of Activestorageregistryinterface::getActive
-  Retrieves a value (or sub-array) from the storage using multiple keys.
+note right of Activeregistryinterface::getActive
+  Retrieves a value (or sub-array) from the registry using multiple keys.
 
   since: 3.2.0
   return: mixed
 end note
 
-note right of Activestorageregistryinterface::removeActive
-  Removes a value (or sub-array) from the storage using multiple keys.
+note right of Activeregistryinterface::removeActive
+  Removes a value (or sub-array) from the registry using multiple keys.
 
   since: 3.2.0
   return: void
 end note
 
-note right of Activestorageregistryinterface::existsActive
-  Checks the existence of a particular location in the storage using multiple keys.
+note right of Activeregistryinterface::existsActive
+  Checks the existence of a particular location in the registry using multiple keys.
 
   since: 3.2.0
   return: bool
