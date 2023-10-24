@@ -1,0 +1,25 @@
+	/**
+	 * Check if a path is an array
+	 *
+	 * @param  string  $path    Registry path (e.g. joomla.content.showauthor)
+	 *
+	 * @return  bool
+	 * @since 3.2.0
+	 */
+	public function isArray(string $path): bool
+	{
+		// Check base array if no path is given
+		if (empty($path))
+		{
+			return false;
+		}
+
+		// get the value
+		if (($node = $this->get($path)) !== null
+			&& is_array($node))
+		{
+			return true;
+		}
+
+		return false;
+	}
