@@ -13,7 +13,7 @@
 abstract GuidHelper  #Orange {
   + {static} get(bool $trim = true) : string
   + {static} valid(string $guid, ?string $table = null, ...) : bool
-  + {static} item(string $guid, string $table, ...) : mix
+  + {static} item(string $guid, string $table, ...) : mixed
   # {static} validate(string $guid) : bool
 }
 
@@ -46,7 +46,7 @@ note right of GuidHelper::item
   get the item by guid in a table
 
   since: 3.0.9
-  return: mix
+  return: mixed
   
   arguments:
     string $guid

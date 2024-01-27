@@ -11,9 +11,9 @@
 ```uml
 @startuml
 abstract Database  #Orange {
-  # \JDatabaseDriver $db
+  # $db
   # string $table
-  + __construct(?\JDatabaseDriver $db = null)
+  + __construct()
   # quote(mixed $value) : mixed
   # getTable(string $table) : string
 }

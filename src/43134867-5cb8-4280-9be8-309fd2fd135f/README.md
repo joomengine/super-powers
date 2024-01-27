@@ -12,10 +12,11 @@
 @startuml
 abstract ActiveRegistry  #Orange {
   # array $active
+  # bool $addAsArray
   + isActive() : bool
   + allActive() : array
   + setActive(mixed $value, $keys) : void
-  + addActive(mixed $value, bool $asArray, ...) : void
+  + addActive(mixed $value, ?bool $asArray, ...) : void
   + getActive(mixed $default, $keys) : mixed
   + removeActive($keys) : void
   + existsActive($keys) : bool
@@ -46,13 +47,15 @@ end note
 note left of ActiveRegistry::addActive
   Adds content into the registry. If a key exists,
 it either appends or concatenates based on the value's type.
+Default is $addAsArray = false (if null) in base class.
+Override in child class allowed set class property $addAsArray = true.
 
   since: 3.2.0
   return: void
   
   arguments:
     mixed $value
-    bool $asArray
+    ?bool $asArray
     $keys
 end note
 

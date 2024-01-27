@@ -32,6 +32,8 @@ end note
 note right of Registry::add
   Adds content into the registry. If a key exists,
 it either appends or concatenates based on $asArray switch.
+Default is $addAsArray = false (if null) in base class.
+Override in child class allowed set class property $addAsArray = true.
 
   since: 3.2.0
   return: void
@@ -39,7 +41,7 @@ it either appends or concatenates based on $asArray switch.
   arguments:
     string $path
     mixed $value
-    bool $asArray = false
+    ?bool $asArray = null
 end note
 
 note right of Registry::get

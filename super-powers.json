@@ -252,17 +252,6 @@
         "spk": "Super__7179fde6_1e51_4b51_8545_7ca18f74a0f4__Power",
         "guid": "7179fde6-1e51-4b51-8545-7ca18f74a0f4"
     },
-    "79d765b3-7319-4988-9730-446c7f347020": {
-        "name": "Utilities",
-        "type": "trait",
-        "namespace": "VDM\\Joomla",
-        "code": "src\/79d765b3-7319-4988-9730-446c7f347020\/code.php",
-        "power": "src\/79d765b3-7319-4988-9730-446c7f347020\/code.power",
-        "settings": "src\/79d765b3-7319-4988-9730-446c7f347020\/settings.json",
-        "path": "src\/79d765b3-7319-4988-9730-446c7f347020",
-        "spk": "Super__79d765b3_7319_4988_9730_446c7f347020__Power",
-        "guid": "79d765b3-7319-4988-9730-446c7f347020"
-    },
     "7d494d91-ab60-43cd-aecf-d50e07f7f30e": {
         "name": "ToString",
         "type": "trait",

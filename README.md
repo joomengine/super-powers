@@ -23,9 +23,6 @@ This repository contains an index (see below) of all the approved powers within 
 
 # Index of powers
 
-- **Namespace**: [VDM\Joomla](#vdm-joomla)
-
-  - **trait Utilities** | [Details](src/79d765b3-7319-4988-9730-446c7f347020) | [Code](src/79d765b3-7319-4988-9730-446c7f347020/code.php) | [Settings](src/79d765b3-7319-4988-9730-446c7f347020/settings.json) | Super__79d765b3_7319_4988_9730_446c7f347020__Power
 - **Namespace**: [VDM\Joomla\Abstraction](#vdm-joomla-abstraction)
 
   - **abstract class ActiveRegistry** | [Details](src/43134867-5cb8-4280-9be8-309fd2fd135f) | [Code](src/43134867-5cb8-4280-9be8-309fd2fd135f/code.php) | [Settings](src/43134867-5cb8-4280-9be8-309fd2fd135f/settings.json) | Super__43134867_5cb8_4280_9be8_309fd2fd135f__Power

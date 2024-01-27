@@ -13,9 +13,9 @@
 abstract FileHelper  #Orange {
   # static $curlError
   + {static} zip(string $workingDirectory, string $filepath) : bool
-  + {static} getContent(string $path, string/bool $none = '') : string
+  + {static} getContent(string $path, mixed $none = '') : string
   + {static} write(string $path, string $data) : bool
-  + {static} getPaths(string $folder, array $fileTypes = array('\.php') : void
+  + {static} getPaths(string $folder, array $fileTypes = array('\.php') : array|null
   + {static} getPath(string $type = 'path', string $target = 'filepath', ...) : string
   + {static} exists(string $path) : bool
 }
@@ -45,7 +45,7 @@ note right of FileHelper::getPaths
   get all the file paths in folder and sub folders
 
   since: 3.0.9
-  return: void
+  return: array|null
 end note
 
 note right of FileHelper::getPath

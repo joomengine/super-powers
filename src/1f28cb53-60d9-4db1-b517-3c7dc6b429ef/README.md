@@ -32,7 +32,7 @@ end note
 note left of StringHelper::shorten
   Shorten a string
 
-  since: 3.0.9
+  since: 3.2.0
   
   arguments:
     $string
