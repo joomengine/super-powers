@@ -25,7 +25,7 @@
             "as": "default"
         }
     },
-    "namespace": "VDM\\Joomla\\Utilities.FileHelper",
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Utilities.FileHelper",
     "description": "File helper\r\n\r\n@since  3.0.9",
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    3rd September, 2020\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
     "head": "use Joomla\\CMS\\Uri\\Uri;\r\nuse Joomla\\CMS\\Factory;\r\nuse Joomla\\CMS\\Language\\Text;\r\nuse Joomla\\CMS\\Filesystem\\Path;\r\nuse Joomla\\CMS\\Filesystem\\File;\r\nuse Joomla\\CMS\\Filesystem\\Folder;\r\nuse Joomla\\Archive\\Archive;",

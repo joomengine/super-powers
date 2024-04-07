@@ -12,7 +12,7 @@
     "system_name": "JCB.Abstraction.BaseRegistry",
     "type": "abstract class",
     "use_selection": null,
-    "namespace": "VDM\\Joomla\\Componentbuilder.Abstraction.BaseRegistry",
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Componentbuilder.Abstraction.BaseRegistry",
     "description": "Registry\r\n\r\nSo we have full control over this class\r\n\r\n@since 3.2.0",
     "implements_custom": "\\JsonSerializable, \\ArrayAccess, \\IteratorAggregate, \\Countable",
     "extends_custom": "JoomlaRegistry",

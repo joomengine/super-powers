@@ -439,6 +439,17 @@
         "spk": "Super__ce8cf834_6bac_44fb_941c_861f7e046cc0__Power",
         "guid": "ce8cf834-6bac-44fb-941c-861f7e046cc0"
     },
+    "cefe4092-a4c2-41a6-a683-bd3ab5419cc6": {
+        "name": "GetHelperExtrusion",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Utilities",
+        "code": "src\/cefe4092-a4c2-41a6-a683-bd3ab5419cc6\/code.php",
+        "power": "src\/cefe4092-a4c2-41a6-a683-bd3ab5419cc6\/code.power",
+        "settings": "src\/cefe4092-a4c2-41a6-a683-bd3ab5419cc6\/settings.json",
+        "path": "src\/cefe4092-a4c2-41a6-a683-bd3ab5419cc6",
+        "spk": "Super__cefe4092_a4c2_41a6_a683_bd3ab5419cc6__Power",
+        "guid": "cefe4092-a4c2-41a6-a683-bd3ab5419cc6"
+    },
     "db87c339-5bb6-4291-a7ef-2c48ea1b06bc": {
         "name": "GetHelper",
         "type": "abstract class",

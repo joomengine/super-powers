@@ -25,7 +25,7 @@
             "as": "default"
         }
     },
-    "namespace": "VDM\\Joomla\\Componentbuilder.Service.Database",
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Componentbuilder.Service.Database",
     "description": "Database Service Provider\r\n\r\n@since 3.2.0",
     "implements_custom": "ServiceProviderInterface",
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
