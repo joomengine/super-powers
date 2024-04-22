@@ -11,19 +11,19 @@
 ```uml
 @startuml
 interface Registryinterface  #Lavender {
-  + set(string $path, mixed $value) : void
-  + add(string $path, mixed $value, ...) : void
+  + set(string $path, mixed $value) : static
+  + add(string $path, mixed $value, ...) : static
   + get(string $path, mixed $default = null) : mixed
-  + remove(string $path) : void
+  + remove(string $path) : static
   + exists(string $path) : bool
-  + setSeparator(?string $value) : void
+  + setSeparator(?string $value) : static
 }
 
 note right of Registryinterface::set
   Sets a value into the registry using multiple keys.
 
   since: 3.2.0
-  return: void
+  return: static
 end note
 
 note right of Registryinterface::add
@@ -33,7 +33,7 @@ Default is $addAsArray = false (if null) in base class.
 Override in child class allowed set class property $addAsArray = true.
 
   since: 3.2.0
-  return: void
+  return: static
   
   arguments:
     string $path
@@ -52,7 +52,7 @@ note right of Registryinterface::remove
   Removes a value (or sub-array) from the registry using multiple keys.
 
   since: 3.2.0
-  return: void
+  return: static
 end note
 
 note right of Registryinterface::exists
@@ -66,7 +66,7 @@ note right of Registryinterface::setSeparator
   Sets a separator value
 
   since: 3.2.0
-  return: void
+  return: static
 end note
  
 @enduml

@@ -1,0 +1,178 @@
+```
+██████╗  ██████╗ ██╗    ██╗███████╗██████╗
+██╔══██╗██╔═══██╗██║    ██║██╔════╝██╔══██╗
+██████╔╝██║   ██║██║ █╗ ██║█████╗  ██████╔╝
+██╔═══╝ ██║   ██║██║███╗██║██╔══╝  ██╔══██╗
+██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
+╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
+```
+# abstract class Schema (Details)
+> namespace: **VDM\Joomla\Abstraction**
+```uml
+@startuml
+abstract Schema  #Orange {
+  # Table $table
+  # $db
+  - array $tables
+  - string $prefix
+  - array $uniqueKeys
+  - array $keys
+  - array $columns
+  - array $success
+  + __construct(Table $table)
+  + update() : array
+  + createTable(string $table) : void
+  + updateSchema(string $table) : void
+  # {abstract} getCode() : string
+  # addMissingColumns(string $table, array $columns) : void
+  # checkColumnsDataType(string $table, array $columns) : void
+  # updateColumnsDataType(string $table, array $columns) : void
+  # updateColumnDataType(string $updateString, string $table, ...) : bool
+  # getTableKeys() : string
+  # setUniqueKey(array $column) : void
+  # setKey(array $column) : void
+  # getTable(string $table) : string
+  - tableExists(string $table) : bool
+  - getExistingColumns(string $table) : array
+  - getColumnDefinition(string $table, string $field) : ?string
+  - setKeys(array $column) : void
+}
+
+note right of Schema::__construct
+  Constructor.
+
+  since: 3.2.1
+end note
+
+note left of Schema::update
+  Check and update database schema for missing fields or tables.
+
+  since: 3.2.1
+  return: array
+end note
+
+note right of Schema::createTable
+  Create a table with all necessary fields.
+
+  since: 3.2.1
+  return: void
+end note
+
+note left of Schema::updateSchema
+  Update the schema of an existing table.
+
+  since: 3.2.1
+  return: void
+end note
+
+note right of Schema::getCode
+  Get the targeted component code
+
+  since: 3.2.1
+  return: string
+end note
+
+note left of Schema::addMissingColumns
+  Add missing columns to a table.
+
+  since: 3.2.1
+  return: void
+end note
+
+note right of Schema::checkColumnsDataType
+  Validate and update the data type of existing fields/columns
+
+  since: 3.2.1
+  return: void
+end note
+
+note left of Schema::updateColumnsDataType
+  Update the data type of the given fields.
+
+  since: 3.2.1
+  return: void
+end note
+
+note right of Schema::updateColumnDataType
+  Update the data type of the given field.
+
+  since: 3.2.1
+  return: bool
+  
+  arguments:
+    string $updateString
+    string $table
+    string $field
+end note
+
+note left of Schema::getTableKeys
+  Key all needed keys for this table
+
+  since: 3.2.1
+  return: string
+end note
+
+note right of Schema::setUniqueKey
+  Function to set the unique key
+
+  since: 3.2.1
+  return: void
+end note
+
+note left of Schema::setKey
+  Function to set the key
+
+  since: 3.2.1
+  return: void
+end note
+
+note right of Schema::getTable
+  Add the component name to get the full table name.
+
+  since: 3.2.1
+  return: string
+end note
+
+note left of Schema::tableExists
+  Check if a table exists in the database.
+
+  since: 3.2.1
+  return: bool
+end note
+
+note right of Schema::getExistingColumns
+  Fetch existing columns from a database table.
+
+  since: 3.2.1
+  return: array
+end note
+
+note left of Schema::getColumnDefinition
+  Generates a SQL snippet for defining a table column, incorporating column type,
+default value, nullability, and auto-increment properties.
+
+  since: 3.2.1
+  return: ?string
+end note
+
+note right of Schema::setKeys
+  Function to set the view keys
+
+  since: 3.2.1
+  return: void
+end note
+ 
+@enduml
+```
+
+---
+```
+     ██╗ ██████╗██████╗
+     ██║██╔════╝██╔══██╗
+     ██║██║     ██████╔╝
+██   ██║██║     ██╔══██╗
+╚█████╔╝╚██████╗██████╔╝
+ ╚════╝  ╚═════╝╚═════╝
+```
+> Build with [Joomla Component Builder](https://git.vdm.dev/joomla/Component-Builder)
+

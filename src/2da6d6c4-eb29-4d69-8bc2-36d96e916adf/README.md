@@ -11,12 +11,12 @@
 ```uml
 @startuml
 interface Tableinterface  #Lavender {
-  + get(string $table, ?string $field = null, ...) : mixed
+  + get(?string $table = null, ?string $field = null, ...) : mixed
   + title(string $table) : ?array
   + titleName(string $table) : string
   + tables() : array
   + exist(string $table, ?string $field = null) : bool
-  + fields(string $table, bool $default = false) : ?array
+  + fields(string $table, bool $default = false, ...) : ?array
 }
 
 note right of Tableinterface::get
@@ -28,12 +28,13 @@ Get all items/fields/columns of an area/view/table
 Example: $this->get('table_name');
 Get all areas/views/tables with all their item/field/column details
 Example: $this->get('All');
+Example: $this->get();
 
   since: 3.2.0
   return: mixed
   
   arguments:
-    string $table
+    ?string $table = null
     ?string $field = null
     ?string $key = null
 end note
@@ -71,6 +72,11 @@ note right of Tableinterface::fields
 
   since: 3.2.0
   return: ?array
+  
+  arguments:
+    string $table
+    bool $default = false
+    bool $details = false
 end note
  
 @enduml

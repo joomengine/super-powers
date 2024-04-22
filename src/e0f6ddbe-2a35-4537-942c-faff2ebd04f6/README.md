@@ -12,16 +12,17 @@
 @startuml
 abstract BaseTable  #Orange {
   # array $tables
-  + get(string $table, ?string $field = null, ...) : mixed
+  + get(?string $table = null, ?string $field = null, ...) : mixed
   + title(string $table) : ?array
   + titleName(string $table) : string
   + tables() : array
   + exist(string $table, ?string $field = null) : bool
-  + fields(string $table, bool $default = false) : ?array
+  + fields(string $table, bool $default = false, ...) : ?array
   # addDefault(array $fields) : array
+  # addDefaultDetails(array $fields) : array
   # isDefault(string $field) : bool
   # getDefault(string $field) : ?array
-  # getDefaultKey(string $field, string $key) : ?string
+  # getDefaultKey(string $field, string $key) : mixed
 }
 
 note right of BaseTable::get
@@ -33,12 +34,13 @@ Get all items/fields/columns of an area/view/table
 Example: $this->get('table_name');
 Get all areas/views/tables with all their item/field/column details
 Example: $this->get('All');
+Example: $this->get();
 
-  since: 3.2.0
+  since: 3.2.1
   return: mixed
   
   arguments:
-    string $table
+    ?string $table = null
     ?string $field = null
     ?string $key = null
 end note
@@ -76,6 +78,11 @@ note left of BaseTable::fields
 
   since: 3.2.0
   return: ?array
+  
+  arguments:
+    string $table
+    bool $default = false
+    bool $details = false
 end note
 
 note right of BaseTable::addDefault
@@ -85,25 +92,32 @@ note right of BaseTable::addDefault
   return: array
 end note
 
-note left of BaseTable::isDefault
+note left of BaseTable::addDefaultDetails
+  Add the default fields
+
+  since: 3.2.0
+  return: array
+end note
+
+note right of BaseTable::isDefault
   Check if the field is a default field
 
   since: 3.2.0
   return: bool
 end note
 
-note right of BaseTable::getDefault
+note left of BaseTable::getDefault
   Get a default field
 
   since: 3.2.0
   return: ?array
 end note
 
-note left of BaseTable::getDefaultKey
+note right of BaseTable::getDefaultKey
   Get a default field property
 
   since: 3.2.0
-  return: ?string
+  return: mixed
 end note
  
 @enduml

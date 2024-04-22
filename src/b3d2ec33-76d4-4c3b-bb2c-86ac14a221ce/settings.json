@@ -1,0 +1,25 @@
+{
+    "add_head": "0",
+    "add_licensing_template": "2",
+    "extends": "f3c04c28-bce4-422e-be93-7d163e4e342b",
+    "guid": "b3d2ec33-76d4-4c3b-bb2c-86ac14a221ce",
+    "implements": [
+        "4dd11b9b-3c64-460b-aaa6-62ba467db7aa"
+    ],
+    "load_selection": null,
+    "name": "Schema",
+    "power_version": "2.0.0",
+    "system_name": "JCB.Table.Schema",
+    "type": "final class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8",
+            "as": "default"
+        }
+    },
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Componentbuilder.Table.Schema",
+    "description": "JCB Tables Schema\r\n\r\n@since 3.2.1",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}
