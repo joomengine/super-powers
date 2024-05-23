@@ -13,6 +13,7 @@
 abstract ActiveRegistry  #Orange {
   # array $active
   # bool $addAsArray
+  # bool $uniqueArray
   + isActive() : bool
   + allActive() : array
   + setActive(mixed $value, $keys) : void

@@ -342,9 +342,16 @@ abstract class Schema implements SchemaInterface
 					'current' => $current->Type,
 					'expected' => $expected['type']
 				];
+			}
 
-				// check if update of default values is needed
-				$this->checkDefault($table, $column);
+			// check if update of default values is needed
+			if ($this->checkDefault($table, $column) && !isset($requireUpdate[$column]))
+			{
+				$requireUpdate[$column] = [
+					'column' => $column,
+					'current' => $current->Type,
+					'expected' => $expected['type']
+				];
 			}
 		}
 
@@ -402,28 +409,22 @@ abstract class Schema implements SchemaInterface
 	 * @param string $table   The table to update.
 	 * @param string $column  The column/field to check.
 	 *
-	 * @return void
+	 * @return bool
 	 * @since  3.2.1
 	 */
-	protected function checkDefault(string $table, string $column): void
+	protected function checkDefault(string $table, string $column): bool
 	{
 		// Retrieve the expected column configuration
 		$expected = $this->table->get($table, $column, 'db');
 
 		// Skip updates if the column is auto_increment
-		if (isset($expected['auto_increment']) && $expected['auto_increment'])
+		if (isset($expected['auto_increment']) && $expected['auto_increment'] === true)
 		{
-			return;
+			return false;
 		}
 
 		// Retrieve the current column configuration
 		$current = $this->columns[$column];
-
-		// Check if default should be empty and current default is null, skip processing
-		if (strtoupper($expected['default']) === 'EMPTY' && $current->Default === NULL)
-		{
-			return;
-		}
 
 		// Determine the new default value based on the expected settings
 		$type = $expected['type'] ??  'TEXT';
@@ -434,7 +435,17 @@ abstract class Schema implements SchemaInterface
 		if (is_numeric($newDefault) && $this->adjustExistingDefaults($table, $column, $current->Default, $newDefault))
 		{
 			$this->success[] = "Success: updated the ($column) defaults in $table table.";
+
+			return true;
 		}
+
+		if (is_string($expected['default']) && strtoupper($expected['default']) === 'EMPTY' &&
+			is_string($current->Default) && strpos($current->Default, 'EMPTY') !== false)
+		{
+			return true; // little fix
+		}
+
+		return false;
 	}
 
 	/**
@@ -486,56 +497,52 @@ abstract class Schema implements SchemaInterface
 	 *
 	 * This function checks if there's a significant difference between the current
 	 * data type and the expected data type that would require updating the database schema.
-	 * It ignores size and other modifiers for certain data types where MySQL considers
-	 * these attributes irrelevant for storage.
+	 * It ignores display width for numeric types where MySQL considers these attributes
+	 * irrelevant for storage but considers size and other modifiers for types like VARCHAR.
 	 *
-	 * @param string $currentType   The current data type from the database schema.
-	 * @param string $expectedType  The expected data type to validate against.
+	 * @param string  $currentType    The current data type from the database schema.
+	 * @param string  $expectedType   The expected data type to validate against.
 	 *
-	 * @return bool Returns true if the data type change is significant, otherwise false.
+	 * @return bool  Returns true if the data type change is significant, otherwise false.
 	 * @since  3.2.1
 	 */
-	function isDataTypeChangeSignificant(string $currentType, string $expectedType): bool
+	protected function isDataTypeChangeSignificant(string $currentType, string $expectedType): bool
 	{
-		// we only do this for Joomla 4+
-		if ($this->currentVersion != 3)
+		// Normalize both input types to lowercase for case-insensitive comparison
+		$currentType = strtolower($currentType);
+		$expectedType = strtolower($expectedType);
+
+		// Regex to extract the base data type and numeric parameters with named groups
+		$typePattern = '/^(?<datatype>\w+)(\((?<params>\d+(,\d+)?)\))?/';
+
+		// Match types and parameters
+		preg_match($typePattern, $currentType, $currentMatches);
+		preg_match($typePattern, $expectedType, $expectedMatches);
+
+		// Compare base types
+		if ($currentMatches['datatype'] !== $expectedMatches['datatype'])
 		{
-			// Normalize both input types to lowercase for case-insensitive comparison
-			$currentType = strtolower($currentType);
-			$expectedType = strtolower($expectedType);
-
-			// Define types where size or other modifiers are irrelevant
-			$sizeIrrelevantTypes = [
-				'int', 'tinyint', 'smallint', 'mediumint', 'bigint', // Standard integer types
-				'int unsigned', 'tinyint unsigned', 'smallint unsigned', 'mediumint unsigned', 'bigint unsigned', // Unsigned integer types
-			];
-
-			// Check if the type involves size-irrelevant types
-			foreach ($sizeIrrelevantTypes as $type)
-			{
-				if (strpos($expectedType, $type) !== false)
-				{
-					// Remove any numeric sizes and modifiers for comparison
-					$pattern = '/\(\d+\)|unsigned|\s*/';
-					$cleanCurrentType = preg_replace($pattern, '', $currentType);
-					$cleanExpectedType = preg_replace($pattern, '', $expectedType);
-
-					// Compare the cleaned types
-					if ($cleanCurrentType === $cleanExpectedType)
-					{
-						return false; // No significant change
-					}
-				}
-			}
+			return true; // Base types differ
 		}
 
-		// Perform a standard case-insensitive comparison for other types
-		if (strcasecmp($currentType, $expectedType) == 0)
+		// Define types where size and other modifiers are irrelevant
+		$sizeIrrelevantTypes = [
+			'int', 'tinyint', 'smallint', 'mediumint', 'bigint',
+			'float', 'double', 'decimal', 'numeric' // Numeric types where display width is irrelevant
+		];
+
+		// If the type is not in the size irrelevant list, compare full definitions
+		if (!in_array($currentMatches['datatype'], $sizeIrrelevantTypes))
 		{
-			return false; // No significant change
+			return $currentType !== $expectedType; // Use full definition for types where size matters
 		}
 
-		return true; // Significant datatype change detected
+		// For size irrelevant types, only compare base type, ignoring size and unsigned
+		$currentBaseType = preg_replace('/\(\d+(,\d+)?\)|unsigned/', '', $currentType);
+		$expectedBaseType = preg_replace('/\(\d+(,\d+)?\)|unsigned/', '', $expectedType);
+
+		// Perform a final comparison for numeric types ignoring size
+		return $currentBaseType !== $expectedBaseType;
 	}
 
 	/**
@@ -684,7 +691,7 @@ abstract class Schema implements SchemaInterface
 	 */
 	protected function getDefaultValue(string $type, ?string $defaultValue, bool $pure = false): string
 	{
-		if ($defaultValue === null || strtoupper($defaultValue) === 'EMPTY')
+		if ($defaultValue === null)
 		{
 			return '';
 		}
@@ -696,7 +703,52 @@ abstract class Schema implements SchemaInterface
 		}
 
 		// Apply and quote the default value
-		return $pure ? $defaultValue : " DEFAULT " . $this->db->quote($defaultValue);
+		$sql_default = $this->quote($defaultValue);
+		return $pure ? $defaultValue : " DEFAULT $sql_default";
+	}
+
+	/**
+	 * Set a value based on data type
+	 *
+	 * @param   mixed  $value   The value to set
+	 *
+	 * @return  mixed
+	 * @since   3.2.0
+	 **/
+	protected function quote($value)
+	{
+		if ($value === null) // hmm the null does pose an issue (will keep an eye on this)
+		{
+			return 'NULL';
+		}
+
+		if (is_string($value) && strtoupper($value) === 'EMPTY')
+		{
+			return "''";
+		}
+		elseif (is_numeric($value))
+		{
+			if (filter_var($value, FILTER_VALIDATE_INT))
+			{
+				return (int) $value;
+			}
+			elseif (filter_var($value, FILTER_VALIDATE_FLOAT))
+			{
+				return (float) $value;
+			}
+		}
+		elseif (is_bool($value)) // not sure if this will work well (but its correct)
+		{
+			return $value ? 'TRUE' : 'FALSE';
+		}
+		// For date and datetime values
+		elseif ($value instanceof \DateTime)
+		{
+			return $this->db->quote($value->format('Y-m-d H:i:s'));
+		}
+
+		// For other data types, just escape it
+		return $this->db->quote($value);
 	}
 }
 

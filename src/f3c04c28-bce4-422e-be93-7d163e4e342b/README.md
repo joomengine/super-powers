@@ -30,10 +30,10 @@ abstract Schema  #Orange {
   # addMissingColumns(string $table, array $columns) : void
   # checkColumnsDataType(string $table, array $columns) : void
   # getColumnDefinition(string $table, string $field) : ?string
-  # checkDefault(string $table, string $column) : void
+  # checkDefault(string $table, string $column) : bool
   # updateColumnsDataType(string $table, array $columns) : void
   # getTable(string $table) : string
-   isDataTypeChangeSignificant(string $currentType, string $expectedType) : bool
+  # isDataTypeChangeSignificant(string $currentType, string $expectedType) : bool
   # adjustExistingDefaults(string $table, string $column, ...) : bool
   # updateColumnDataType(string $updateString, string $table, ...) : bool
   # getTableKeys() : string
@@ -41,6 +41,7 @@ abstract Schema  #Orange {
   # setUniqueKey(array $column) : void
   # setKey(array $column) : void
   # getDefaultValue(string $type, ?string $defaultValue, ...) : string
+  # quote(mixed $value) : mixed
 }
 
 note right of Schema::__construct
@@ -117,7 +118,7 @@ note right of Schema::checkDefault
   Check and Update the default values if needed, including existing data adjustments
 
   since: 3.2.1
-  return: void
+  return: bool
 end note
 
 note left of Schema::updateColumnsDataType
@@ -138,8 +139,8 @@ note left of Schema::isDataTypeChangeSignificant
   Determines if the change in data type between two definitions is significant.
 This function checks if there's a significant difference between the current
 data type and the expected data type that would require updating the database schema.
-It ignores size and other modifiers for certain data types where MySQL considers
-these attributes irrelevant for storage.
+It ignores display width for numeric types where MySQL considers these attributes
+irrelevant for storage but considers size and other modifiers for types like VARCHAR.
 
   since: 3.2.1
   return: bool
@@ -211,6 +212,13 @@ defaults by either leaving them unset or applying the provided default, properly
     string $type
     ?string $defaultValue
     bool $pure = false
+end note
+
+note left of Schema::quote
+  Set a value based on data type
+
+  since: 3.2.0
+  return: mixed
 end note
  
 @enduml
