@@ -1,0 +1,18 @@
+	/**
+	 * Get all remote powers GUID's
+	 *
+	 * @return array|null
+	 * @since 3.2.0
+	 */
+	public function getRemotePowersGuid(): ?array;
+
+	/**
+	 * Get a power
+	 *
+	 * @param string   $guid    The global unique id of the power
+	 * @param array    $order   The search order
+	 *
+	 * @return object|null
+	 * @since 3.2.0
+	 */
+	public function get(string $guid, array $order = ['local', 'remote']): ?object;

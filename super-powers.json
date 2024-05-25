@@ -43,6 +43,17 @@
         "spk": "Super__1198aecf_84c6_45d2_aea8_d531aa4afdfa__Power",
         "guid": "1198aecf-84c6-45d2-aea8-d531aa4afdfa"
     },
+    "1401a167-0ce4-4f4a-afee-2d8b02ed339b": {
+        "name": "Grep",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Abstraction",
+        "code": "src\/1401a167-0ce4-4f4a-afee-2d8b02ed339b\/code.php",
+        "power": "src\/1401a167-0ce4-4f4a-afee-2d8b02ed339b\/code.power",
+        "settings": "src\/1401a167-0ce4-4f4a-afee-2d8b02ed339b\/settings.json",
+        "path": "src\/1401a167-0ce4-4f4a-afee-2d8b02ed339b",
+        "spk": "Super__1401a167_0ce4_4f4a_afee_2d8b02ed339b__Power",
+        "guid": "1401a167-0ce4-4f4a-afee-2d8b02ed339b"
+    },
     "152c8793-8b75-4715-996a-257b9f65451c": {
         "name": "MathHelper",
         "type": "abstract class",
@@ -427,6 +438,17 @@
         "path": "src\/c09e8968-c767-4175-bb3d-8432f206a2c7",
         "spk": "Super__c09e8968_c767_4175_bb3d_8432f206a2c7__Power",
         "guid": "c09e8968-c767-4175-bb3d-8432f206a2c7"
+    },
+    "c182506a-ab84-439c-b962-1e606b58d545": {
+        "name": "GrepInterface",
+        "type": "interface",
+        "namespace": "VDM\\Joomla\\Interfaces",
+        "code": "src\/c182506a-ab84-439c-b962-1e606b58d545\/code.php",
+        "power": "src\/c182506a-ab84-439c-b962-1e606b58d545\/code.power",
+        "settings": "src\/c182506a-ab84-439c-b962-1e606b58d545\/settings.json",
+        "path": "src\/c182506a-ab84-439c-b962-1e606b58d545",
+        "spk": "Super__c182506a_ab84_439c_b962_1e606b58d545__Power",
+        "guid": "c182506a-ab84-439c-b962-1e606b58d545"
     },
     "caf33c5d-858c-4f9a-894f-ab302ec5445a": {
         "name": "FactoryInterface",
