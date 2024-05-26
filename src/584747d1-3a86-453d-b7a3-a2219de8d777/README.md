@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # abstract class Model (Details)
-> namespace: **VDM\Joomla\Abstraction**
+> namespace: **VastDevelopmentMethod\Joomla\Abstraction**
 ```uml
 @startuml
 abstract Model  #Orange {

@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # abstract class FilterHelper (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Utilities**
+> namespace: **VastDevelopmentMethod\Joomla\Componentbuilder\Utilities**
 ```uml
 @startuml
 abstract FilterHelper  #Orange {

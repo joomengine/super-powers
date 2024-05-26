@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # abstract class Schema (Details)
-> namespace: **VDM\Joomla\Abstraction**
+> namespace: **VastDevelopmentMethod\Joomla\Abstraction**
 ```uml
 @startuml
 abstract Schema  #Orange {

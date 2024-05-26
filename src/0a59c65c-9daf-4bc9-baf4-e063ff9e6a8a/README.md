@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # abstract class ArrayHelper (Details)
-> namespace: **VDM\Joomla\Utilities**
+> namespace: **VastDevelopmentMethod\Joomla\Utilities**
 ```uml
 @startuml
 abstract ArrayHelper  #Orange {

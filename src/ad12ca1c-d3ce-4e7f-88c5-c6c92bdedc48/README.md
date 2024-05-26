@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # interface InsertInterface (Details)
-> namespace: **VDM\Joomla\Interfaces**
+> namespace: **VastDevelopmentMethod\Joomla\Interfaces**
 ```uml
 @startuml
 interface InsertInterface  #Lavender {

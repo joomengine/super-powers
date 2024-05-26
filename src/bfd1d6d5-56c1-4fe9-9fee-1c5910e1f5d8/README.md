@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # class Table (Details)
-> namespace: **VDM\Joomla\Componentbuilder**
+> namespace: **VastDevelopmentMethod\Joomla\Componentbuilder**
 > extends: **BaseTable**
 ```uml
 @startuml

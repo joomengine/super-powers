@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # abstract class ActiveRegistry (Details)
-> namespace: **VDM\Joomla\Abstraction**
+> namespace: **VastDevelopmentMethod\Joomla\Abstraction**
 ```uml
 @startuml
 abstract ActiveRegistry  #Orange {

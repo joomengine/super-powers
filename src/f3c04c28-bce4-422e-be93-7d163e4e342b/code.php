@@ -9,13 +9,13 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Abstraction;
+namespace VastDevelopmentMethod\Joomla\Abstraction;
 
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Version;
-use VDM\Joomla\Interfaces\Tableinterface as Table;
-use VDM\Joomla\Interfaces\SchemaInterface;
+use VastDevelopmentMethod\Joomla\Interfaces\Tableinterface as Table;
+use VastDevelopmentMethod\Joomla\Interfaces\SchemaInterface;
 
 
 /**

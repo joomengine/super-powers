@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # interface Activeregistryinterface (Details)
-> namespace: **VDM\Joomla\Interfaces**
+> namespace: **VastDevelopmentMethod\Joomla\Interfaces**
 ```uml
 @startuml
 interface Activeregistryinterface  #Lavender {

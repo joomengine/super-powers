@@ -9,14 +9,14 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Service;
+namespace VastDevelopmentMethod\Joomla\Componentbuilder\Service;
 
 
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
-use VDM\Joomla\Database\Load;
-use VDM\Joomla\Database\Insert;
-use VDM\Joomla\Database\Update;
+use VastDevelopmentMethod\Joomla\Database\Load;
+use VastDevelopmentMethod\Joomla\Database\Insert;
+use VastDevelopmentMethod\Joomla\Database\Update;
 
 
 /**

@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # abstract class MathHelper (Details)
-> namespace: **VDM\Joomla\Utilities**
+> namespace: **VastDevelopmentMethod\Joomla\Utilities**
 ```uml
 @startuml
 abstract MathHelper  #Orange {

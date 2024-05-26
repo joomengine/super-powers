@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # abstract class Registry (Details)
-> namespace: **VDM\Joomla\Abstraction**
+> namespace: **VastDevelopmentMethod\Joomla\Abstraction**
 > extends: **ActiveRegistry**
 ```uml
 @startuml

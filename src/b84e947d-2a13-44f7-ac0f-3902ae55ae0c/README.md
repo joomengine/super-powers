@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # abstract class BaseRegistry (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Abstraction**
+> namespace: **VastDevelopmentMethod\Joomla\Componentbuilder\Abstraction**
 > extends: **JoomlaRegistry**
 ```uml
 @startuml

@@ -9,11 +9,11 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Database;
+namespace VastDevelopmentMethod\Joomla\Database;
 
 
-use VDM\Joomla\Interfaces\UpdateInterface;
-use VDM\Joomla\Abstraction\Database;
+use VastDevelopmentMethod\Joomla\Interfaces\UpdateInterface;
+use VastDevelopmentMethod\Joomla\Abstraction\Database;
 
 
 /**

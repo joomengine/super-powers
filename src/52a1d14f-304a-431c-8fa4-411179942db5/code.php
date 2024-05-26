@@ -9,7 +9,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Abstraction\Registry\Traits;
+namespace VastDevelopmentMethod\Joomla\Abstraction\Registry\Traits;
 
 
 use VDM\Joomla\Componentbuilder\Compiler\Utilities\Indent;

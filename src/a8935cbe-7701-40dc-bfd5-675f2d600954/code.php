@@ -9,12 +9,12 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Utilities\String;
+namespace VastDevelopmentMethod\Joomla\Utilities\String;
 
 
 use Joomla\CMS\Component\ComponentHelper;
-use VDM\Joomla\Utilities\StringHelper;
-use VDM\Joomla\Utilities\Component\Helper;
+use VastDevelopmentMethod\Joomla\Utilities\StringHelper;
+use VastDevelopmentMethod\Joomla\Utilities\Component\Helper;
 
 
 /**

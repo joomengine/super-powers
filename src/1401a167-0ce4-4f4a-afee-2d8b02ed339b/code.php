@@ -9,17 +9,17 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Abstraction;
+namespace VastDevelopmentMethod\Joomla\Abstraction;
 
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Filesystem\Folder;
 use Joomla\CMS\Application\CMSApplication;
 use Joomla\CMS\Language\Text;
-use VDM\Joomla\Gitea\Repository\Contents;
-use VDM\Joomla\Utilities\FileHelper;
-use VDM\Joomla\Utilities\JsonHelper;
-use VDM\Joomla\Interfaces\GrepInterface;
+use VastDevelopmentMethod\Joomla\Gitea\Repository\Contents;
+use VastDevelopmentMethod\Joomla\Utilities\FileHelper;
+use VastDevelopmentMethod\Joomla\Utilities\JsonHelper;
+use VastDevelopmentMethod\Joomla\Interfaces\GrepInterface;
 
 
 /**

@@ -23,7 +23,7 @@ This repository contains an index (see below) of all the approved powers within 
 
 # Index of powers
 
-- **Namespace**: [VDM\Joomla\Abstraction](#vdm-joomla-abstraction)
+- **Namespace**: [VastDevelopmentMethod\Joomla\Abstraction](#vastdevelopmentmethod-joomla-abstraction)
 
   - **abstract class ActiveRegistry** | [Details](src/43134867-5cb8-4280-9be8-309fd2fd135f) | [Code](src/43134867-5cb8-4280-9be8-309fd2fd135f/code.php) | [Settings](src/43134867-5cb8-4280-9be8-309fd2fd135f/settings.json) | Super__43134867_5cb8_4280_9be8_309fd2fd135f__Power
   - **abstract class BaseConfig** | [Details](src/ffbd4e1f-a342-4080-ab7d-1de3741bf319) | [Code](src/ffbd4e1f-a342-4080-ab7d-1de3741bf319/code.php) | [Settings](src/ffbd4e1f-a342-4080-ab7d-1de3741bf319/settings.json) | Super__ffbd4e1f_a342_4080_ab7d_1de3741bf319__Power
@@ -33,15 +33,15 @@ This repository contains an index (see below) of all the approved powers within 
   - **abstract class Model** | [Details](src/584747d1-3a86-453d-b7a3-a2219de8d777) | [Code](src/584747d1-3a86-453d-b7a3-a2219de8d777/code.php) | [Settings](src/584747d1-3a86-453d-b7a3-a2219de8d777/settings.json) | Super__584747d1_3a86_453d_b7a3_a2219de8d777__Power
   - **abstract class Registry** | [Details](src/7e822c03-1b20-41d1-9427-f5b8d5836af7) | [Code](src/7e822c03-1b20-41d1-9427-f5b8d5836af7/code.php) | [Settings](src/7e822c03-1b20-41d1-9427-f5b8d5836af7/settings.json) | Super__7e822c03_1b20_41d1_9427_f5b8d5836af7__Power
   - **abstract class Schema** | [Details](src/f3c04c28-bce4-422e-be93-7d163e4e342b) | [Code](src/f3c04c28-bce4-422e-be93-7d163e4e342b/code.php) | [Settings](src/f3c04c28-bce4-422e-be93-7d163e4e342b/settings.json) | Super__f3c04c28_bce4_422e_be93_7d163e4e342b__Power
-- **Namespace**: [VDM\Joomla\Componentbuilder](#vdm-joomla-componentbuilder)
+- **Namespace**: [VastDevelopmentMethod\Joomla\Componentbuilder](#vastdevelopmentmethod-joomla-componentbuilder)
 
   - **class Table** | [Details](src/bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8) | [Code](src/bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8/code.php) | [Settings](src/bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8/settings.json) | Super__bfd1d6d5_56c1_4fe9_9fee_1c5910e1f5d8__Power
-- **Namespace**: [VDM\Joomla\Database](#vdm-joomla-database)
+- **Namespace**: [VastDevelopmentMethod\Joomla\Database](#vastdevelopmentmethod-joomla-database)
 
   - **final class Insert** | [Details](src/524eb8f6-38d4-47dc-92ad-98b94e099ac0) | [Code](src/524eb8f6-38d4-47dc-92ad-98b94e099ac0/code.php) | [Settings](src/524eb8f6-38d4-47dc-92ad-98b94e099ac0/settings.json) | Super__524eb8f6_38d4_47dc_92ad_98b94e099ac0__Power
   - **final class Load** | [Details](src/06f8eada-d59b-441c-b287-0aea1793da5a) | [Code](src/06f8eada-d59b-441c-b287-0aea1793da5a/code.php) | [Settings](src/06f8eada-d59b-441c-b287-0aea1793da5a/settings.json) | Super__06f8eada_d59b_441c_b287_0aea1793da5a__Power
   - **final class Update** | [Details](src/cce56585-58b0-4f72-a92c-e2635ea52d83) | [Code](src/cce56585-58b0-4f72-a92c-e2635ea52d83/code.php) | [Settings](src/cce56585-58b0-4f72-a92c-e2635ea52d83/settings.json) | Super__cce56585_58b0_4f72_a92c_e2635ea52d83__Power
-- **Namespace**: [VDM\Joomla\Interfaces](#vdm-joomla-interfaces)
+- **Namespace**: [VastDevelopmentMethod\Joomla\Interfaces](#vastdevelopmentmethod-joomla-interfaces)
 
   - **interface Activeregistryinterface** | [Details](src/af0eedbe-603b-4671-8e5a-28165d88254b) | [Code](src/af0eedbe-603b-4671-8e5a-28165d88254b/code.php) | [Settings](src/af0eedbe-603b-4671-8e5a-28165d88254b/settings.json) | Super__af0eedbe_603b_4671_8e5a_28165d88254b__Power
   - **interface FactoryInterface** | [Details](src/caf33c5d-858c-4f9a-894f-ab302ec5445a) | [Code](src/caf33c5d-858c-4f9a-894f-ab302ec5445a/code.php) | [Settings](src/caf33c5d-858c-4f9a-894f-ab302ec5445a/settings.json) | Super__caf33c5d_858c_4f9a_894f_ab302ec5445a__Power
@@ -53,7 +53,7 @@ This repository contains an index (see below) of all the approved powers within 
   - **interface SchemaInterface** | [Details](src/4dd11b9b-3c64-460b-aaa6-62ba467db7aa) | [Code](src/4dd11b9b-3c64-460b-aaa6-62ba467db7aa/code.php) | [Settings](src/4dd11b9b-3c64-460b-aaa6-62ba467db7aa/settings.json) | Super__4dd11b9b_3c64_460b_aaa6_62ba467db7aa__Power
   - **interface Tableinterface** | [Details](src/2da6d6c4-eb29-4d69-8bc2-36d96e916adf) | [Code](src/2da6d6c4-eb29-4d69-8bc2-36d96e916adf/code.php) | [Settings](src/2da6d6c4-eb29-4d69-8bc2-36d96e916adf/settings.json) | Super__2da6d6c4_eb29_4d69_8bc2_36d96e916adf__Power
   - **interface UpdateInterface** | [Details](src/7179fde6-1e51-4b51-8545-7ca18f74a0f4) | [Code](src/7179fde6-1e51-4b51-8545-7ca18f74a0f4/code.php) | [Settings](src/7179fde6-1e51-4b51-8545-7ca18f74a0f4/settings.json) | Super__7179fde6_1e51_4b51_8545_7ca18f74a0f4__Power
-- **Namespace**: [VDM\Joomla\Utilities](#vdm-joomla-utilities)
+- **Namespace**: [VastDevelopmentMethod\Joomla\Utilities](#vastdevelopmentmethod-joomla-utilities)
 
   - **abstract class ArrayHelper** | [Details](src/0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a) | [Code](src/0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a/code.php) | [Settings](src/0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a/settings.json) | Super__0a59c65c_9daf_4bc9_baf4_e063ff9e6a8a__Power
   - **abstract class Base64Helper** | [Details](src/64a6ff6c-069c-4a11-a76b-db5e36c27690) | [Code](src/64a6ff6c-069c-4a11-a76b-db5e36c27690/code.php) | [Settings](src/64a6ff6c-069c-4a11-a76b-db5e36c27690/settings.json) | Super__64a6ff6c_069c_4a11_a76b_db5e36c27690__Power
@@ -66,22 +66,22 @@ This repository contains an index (see below) of all the approved powers within 
   - **abstract class MathHelper** | [Details](src/152c8793-8b75-4715-996a-257b9f65451c) | [Code](src/152c8793-8b75-4715-996a-257b9f65451c/code.php) | [Settings](src/152c8793-8b75-4715-996a-257b9f65451c/settings.json) | Super__152c8793_8b75_4715_996a_257b9f65451c__Power
   - **abstract class ObjectHelper** | [Details](src/91004529-94a9-4590-b842-e7c6b624ecf5) | [Code](src/91004529-94a9-4590-b842-e7c6b624ecf5/code.php) | [Settings](src/91004529-94a9-4590-b842-e7c6b624ecf5/settings.json) | Super__91004529_94a9_4590_b842_e7c6b624ecf5__Power
   - **abstract class StringHelper** | [Details](src/1f28cb53-60d9-4db1-b517-3c7dc6b429ef) | [Code](src/1f28cb53-60d9-4db1-b517-3c7dc6b429ef/code.php) | [Settings](src/1f28cb53-60d9-4db1-b517-3c7dc6b429ef/settings.json) | Super__1f28cb53_60d9_4db1_b517_3c7dc6b429ef__Power
-- **Namespace**: [VDM\Joomla\Componentbuilder\Abstraction](#vdm-joomla-componentbuilder-abstraction)
+- **Namespace**: [VastDevelopmentMethod\Joomla\Componentbuilder\Abstraction](#vastdevelopmentmethod-joomla-componentbuilder-abstraction)
 
   - **abstract class BaseRegistry** | [Details](src/b84e947d-2a13-44f7-ac0f-3902ae55ae0c) | [Code](src/b84e947d-2a13-44f7-ac0f-3902ae55ae0c/code.php) | [Settings](src/b84e947d-2a13-44f7-ac0f-3902ae55ae0c/settings.json) | Super__b84e947d_2a13_44f7_ac0f_3902ae55ae0c__Power
-- **Namespace**: [VDM\Joomla\Componentbuilder\Service](#vdm-joomla-componentbuilder-service)
+- **Namespace**: [VastDevelopmentMethod\Joomla\Componentbuilder\Service](#vastdevelopmentmethod-joomla-componentbuilder-service)
 
   - **class Database** | [Details](src/4815e1c7-a433-443d-a112-d1e03d7df84b) | [Code](src/4815e1c7-a433-443d-a112-d1e03d7df84b/code.php) | [Settings](src/4815e1c7-a433-443d-a112-d1e03d7df84b/settings.json) | Super__4815e1c7_a433_443d_a112_d1e03d7df84b__Power
-- **Namespace**: [VDM\Joomla\Componentbuilder\Table](#vdm-joomla-componentbuilder-table)
+- **Namespace**: [VastDevelopmentMethod\Joomla\Componentbuilder\Table](#vastdevelopmentmethod-joomla-componentbuilder-table)
 
   - **final class Schema** | [Details](src/b3d2ec33-76d4-4c3b-bb2c-86ac14a221ce) | [Code](src/b3d2ec33-76d4-4c3b-bb2c-86ac14a221ce/code.php) | [Settings](src/b3d2ec33-76d4-4c3b-bb2c-86ac14a221ce/settings.json) | Super__b3d2ec33_76d4_4c3b_bb2c_86ac14a221ce__Power
-- **Namespace**: [VDM\Joomla\Componentbuilder\Utilities](#vdm-joomla-componentbuilder-utilities)
+- **Namespace**: [VastDevelopmentMethod\Joomla\Componentbuilder\Utilities](#vastdevelopmentmethod-joomla-componentbuilder-utilities)
 
   - **abstract class FilterHelper** | [Details](src/cddcac51-9a46-47c4-ba59-105c70453bd6) | [Code](src/cddcac51-9a46-47c4-ba59-105c70453bd6/code.php) | [Settings](src/cddcac51-9a46-47c4-ba59-105c70453bd6/settings.json) | Super__cddcac51_9a46_47c4_ba59_105c70453bd6__Power
-- **Namespace**: [VDM\Joomla\Utilities\Component](#vdm-joomla-utilities-component)
+- **Namespace**: [VastDevelopmentMethod\Joomla\Utilities\Component](#vastdevelopmentmethod-joomla-utilities-component)
 
   - **abstract class Helper** | [Details](src/640b5352-fb09-425f-a26e-cd44eda03f15) | [Code](src/640b5352-fb09-425f-a26e-cd44eda03f15/code.php) | [Settings](src/640b5352-fb09-425f-a26e-cd44eda03f15/settings.json) | Super__640b5352_fb09_425f_a26e_cd44eda03f15__Power
-- **Namespace**: [VDM\Joomla\Utilities\String](#vdm-joomla-utilities-string)
+- **Namespace**: [VastDevelopmentMethod\Joomla\Utilities\String](#vastdevelopmentmethod-joomla-utilities-string)
 
   - **abstract class ClassfunctionHelper** | [Details](src/30c5b4c2-f75f-4d15-869a-f8bfedd87358) | [Code](src/30c5b4c2-f75f-4d15-869a-f8bfedd87358/code.php) | [Settings](src/30c5b4c2-f75f-4d15-869a-f8bfedd87358/settings.json) | Super__30c5b4c2_f75f_4d15_869a_f8bfedd87358__Power
   - **abstract class ComponentCodeNameHelper** | [Details](src/491dbe41-f26c-4de9-8a95-fcf87b35b56f) | [Code](src/491dbe41-f26c-4de9-8a95-fcf87b35b56f/code.php) | [Settings](src/491dbe41-f26c-4de9-8a95-fcf87b35b56f/settings.json) | Super__491dbe41_f26c_4de9_8a95_fcf87b35b56f__Power
@@ -89,7 +89,7 @@ This repository contains an index (see below) of all the approved powers within 
   - **abstract class NamespaceHelper** | [Details](src/ce8cf834-6bac-44fb-941c-861f7e046cc0) | [Code](src/ce8cf834-6bac-44fb-941c-861f7e046cc0/code.php) | [Settings](src/ce8cf834-6bac-44fb-941c-861f7e046cc0/settings.json) | Super__ce8cf834_6bac_44fb_941c_861f7e046cc0__Power
   - **abstract class PluginHelper** | [Details](src/3cf76fbf-fd95-4a33-878e-7aff6d36b7f6) | [Code](src/3cf76fbf-fd95-4a33-878e-7aff6d36b7f6/code.php) | [Settings](src/3cf76fbf-fd95-4a33-878e-7aff6d36b7f6/settings.json) | Super__3cf76fbf_fd95_4a33_878e_7aff6d36b7f6__Power
   - **abstract class TypeHelper** | [Details](src/a8935cbe-7701-40dc-bfd5-675f2d600954) | [Code](src/a8935cbe-7701-40dc-bfd5-675f2d600954/code.php) | [Settings](src/a8935cbe-7701-40dc-bfd5-675f2d600954/settings.json) | Super__a8935cbe_7701_40dc_bfd5_675f2d600954__Power
-- **Namespace**: [VDM\Joomla\Abstraction\Registry\Traits](#vdm-joomla-abstraction-registry-traits)
+- **Namespace**: [VastDevelopmentMethod\Joomla\Abstraction\Registry\Traits](#vastdevelopmentmethod-joomla-abstraction-registry-traits)
 
   - **trait Count** | [Details](src/11572d9b-e3d5-4b29-904c-9618d8f2bfd8) | [Code](src/11572d9b-e3d5-4b29-904c-9618d8f2bfd8/code.php) | [Settings](src/11572d9b-e3d5-4b29-904c-9618d8f2bfd8/settings.json) | Super__11572d9b_e3d5_4b29_904c_9618d8f2bfd8__Power
   - **trait GetString** | [Details](src/59b1a2ea-d77e-4040-ac8c-e65cd8743e9b) | [Code](src/59b1a2ea-d77e-4040-ac8c-e65cd8743e9b/code.php) | [Settings](src/59b1a2ea-d77e-4040-ac8c-e65cd8743e9b/settings.json) | Super__59b1a2ea_d77e_4040_ac8c_e65cd8743e9b__Power

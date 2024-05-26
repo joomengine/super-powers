@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # abstract class BaseTable (Details)
-> namespace: **VDM\Joomla\Abstraction**
+> namespace: **VastDevelopmentMethod\Joomla\Abstraction**
 ```uml
 @startuml
 abstract BaseTable  #Orange {

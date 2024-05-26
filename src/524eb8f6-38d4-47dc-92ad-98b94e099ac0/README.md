@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # final class Insert (Details)
-> namespace: **VDM\Joomla\Database**
+> namespace: **VastDevelopmentMethod\Joomla\Database**
 > extends: **Database**
 ```uml
 @startuml

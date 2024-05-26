@@ -9,11 +9,11 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder;
+namespace VastDevelopmentMethod\Joomla\Componentbuilder;
 
 
-use VDM\Joomla\Interfaces\Tableinterface;
-use VDM\Joomla\Abstraction\BaseTable;
+use VastDevelopmentMethod\Joomla\Interfaces\Tableinterface;
+use VastDevelopmentMethod\Joomla\Abstraction\BaseTable;
 
 
 /**

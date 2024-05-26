@@ -9,7 +9,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Abstraction;
+namespace VastDevelopmentMethod\Joomla\Componentbuilder\Abstraction;
 
 
 use Joomla\Registry\Registry as JoomlaRegistry;

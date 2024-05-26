@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # abstract class Helper (Details)
-> namespace: **VDM\Joomla\Utilities\Component**
+> namespace: **VastDevelopmentMethod\Joomla\Utilities\Component**
 ```uml
 @startuml
 abstract Helper  #Orange {

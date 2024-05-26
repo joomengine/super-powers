@@ -9,14 +9,14 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Utilities\Component;
+namespace VastDevelopmentMethod\Joomla\Utilities\Component;
 
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Component\ComponentHelper;
 use Joomla\Input\Input;
 use Joomla\Registry\Registry;
-use VDM\Joomla\Utilities\String\NamespaceHelper;
+use VastDevelopmentMethod\Joomla\Utilities\String\NamespaceHelper;
 
 
 /**

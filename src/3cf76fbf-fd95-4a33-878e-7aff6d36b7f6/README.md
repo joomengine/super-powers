@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # abstract class PluginHelper (Details)
-> namespace: **VDM\Joomla\Utilities\String**
+> namespace: **VastDevelopmentMethod\Joomla\Utilities\String**
 ```uml
 @startuml
 abstract PluginHelper  #Orange {

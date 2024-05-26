@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # abstract class ComponentCodeNameHelper (Details)
-> namespace: **VDM\Joomla\Utilities\String**
+> namespace: **VastDevelopmentMethod\Joomla\Utilities\String**
 ```uml
 @startuml
 abstract ComponentCodeNameHelper  #Orange {

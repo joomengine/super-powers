@@ -9,14 +9,14 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Utilities;
+namespace VastDevelopmentMethod\Joomla\Componentbuilder\Utilities;
 
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
-use VDM\Joomla\Utilities\ArrayHelper;
-use VDM\Joomla\Utilities\JsonHelper;
-use VDM\Joomla\Utilities\GetHelper;
+use VastDevelopmentMethod\Joomla\Utilities\ArrayHelper;
+use VastDevelopmentMethod\Joomla\Utilities\JsonHelper;
+use VastDevelopmentMethod\Joomla\Utilities\GetHelper;
 
 
 /**

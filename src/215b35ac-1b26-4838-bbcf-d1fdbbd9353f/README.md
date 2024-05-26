@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # trait InArray (Details)
-> namespace: **VDM\Joomla\Abstraction\Registry\Traits**
+> namespace: **VastDevelopmentMethod\Joomla\Abstraction\Registry\Traits**
 ```uml
 @startuml
 class InArray << (T,Orange) >> #Turquoise {
