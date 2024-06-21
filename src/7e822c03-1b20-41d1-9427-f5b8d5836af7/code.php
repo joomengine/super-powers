@@ -9,12 +9,11 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VastDevelopmentMethod\Joomla\Abstraction;
+namespace VDM\Joomla\Abstraction;
 
 
-use VastDevelopmentMethod\Joomla\Interfaces\Activeregistryinterface;
-use VastDevelopmentMethod\Joomla\Interfaces\Registryinterface;
-use VastDevelopmentMethod\Joomla\Abstraction\ActiveRegistry;
+use VDM\Joomla\Interfaces\Registryinterface;
+use VDM\Joomla\Abstraction\ActiveRegistry;
 
 
 /**
@@ -24,7 +23,7 @@ use VastDevelopmentMethod\Joomla\Abstraction\ActiveRegistry;
  * 
  * @since 3.2.0
  */
-abstract class Registry extends ActiveRegistry implements Activeregistryinterface, Registryinterface
+abstract class Registry extends ActiveRegistry implements Registryinterface
 {
 	/**
 	 * Path separator

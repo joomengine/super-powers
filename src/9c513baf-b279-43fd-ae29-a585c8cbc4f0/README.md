@@ -7,7 +7,8 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # abstract class GuidHelper (Details)
-> namespace: **VastDevelopmentMethod\Joomla\Utilities**
+> namespace: **VDM\Joomla\Utilities**
+> extends: ****
 ```uml
 @startuml
 abstract GuidHelper  #Orange {

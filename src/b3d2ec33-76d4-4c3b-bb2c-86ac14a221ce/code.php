@@ -9,12 +9,12 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VastDevelopmentMethod\Joomla\Componentbuilder\Table;
+namespace VDM\Joomla\Componentbuilder\Table;
 
 
-use VastDevelopmentMethod\Joomla\Componentbuilder\Table;
-use VastDevelopmentMethod\Joomla\Interfaces\SchemaInterface;
-use VastDevelopmentMethod\Joomla\Abstraction\Schema as ExtendingSchema;
+use VDM\Joomla\Componentbuilder\Table;
+use VDM\Joomla\Interfaces\SchemaInterface;
+use VDM\Joomla\Abstraction\Schema as ExtendingSchema;
 
 
 /**

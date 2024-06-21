@@ -9,14 +9,14 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VastDevelopmentMethod\Joomla\Componentbuilder\Utilities;
+namespace VDM\Joomla\Componentbuilder\Utilities;
 
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
-use VastDevelopmentMethod\Joomla\Utilities\ArrayHelper;
-use VastDevelopmentMethod\Joomla\Utilities\JsonHelper;
-use VastDevelopmentMethod\Joomla\Utilities\GetHelper;
+use VDM\Joomla\Utilities\ArrayHelper;
+use VDM\Joomla\Utilities\JsonHelper;
+use VDM\Joomla\Utilities\GetHelper;
 
 
 /**
@@ -460,6 +460,42 @@ abstract class FilterHelper
 			{
 				return $ids;
 			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * get available repositories of target area
+	 *
+	 * @param int   $target    The target area
+	 *
+	 * @return array|null   The result ids
+	 * @since 3.2.0
+	 **/
+	public static function repositories(int $target): ?array
+	{
+		$db = Factory::getDbo();
+		$query = $db->getQuery(true);
+		$query
+			->select($db->quoteName(array('repository', 'organisation')))
+			->from($db->quoteName('#__componentbuilder_repository'))
+			->where($db->quoteName('published') . ' >= 1')
+			->where($db->quoteName('target') . ' = ' . $target)
+			->order($db->quoteName('ordering') . ' desc');
+		$db->setQuery($query);
+		$db->execute();
+
+		if ($db->getNumRows())
+		{
+			$items = $db->loadObjectList();
+			$options = [];
+			foreach($items as $item)
+			{
+				$path = $item->organisation . '/' . $item->repository;
+				$options[$path] =  $path;
+			}
+			return $options;
 		}
 
 		return null;

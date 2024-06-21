@@ -9,11 +9,11 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VastDevelopmentMethod\Joomla\Abstraction;
+namespace VDM\Joomla\Abstraction;
 
 
 use Joomla\Registry\Registry as JoomlaRegistry;
-use VastDevelopmentMethod\Joomla\Utilities\String\ClassfunctionHelper;
+use VDM\Joomla\Utilities\String\ClassfunctionHelper;
 
 
 /**

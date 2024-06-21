@@ -7,7 +7,8 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # abstract class TypeHelper (Details)
-> namespace: **VastDevelopmentMethod\Joomla\Utilities\String**
+> namespace: **VDM\Joomla\Utilities\String**
+> extends: ****
 ```uml
 @startuml
 abstract TypeHelper  #Orange {

@@ -9,11 +9,11 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VastDevelopmentMethod\Joomla\Abstraction;
+namespace VDM\Joomla\Abstraction;
 
 
 use Joomla\CMS\Factory as JoomlaFactory;
-use VastDevelopmentMethod\Joomla\Utilities\Component\Helper;
+use VDM\Joomla\Utilities\Component\Helper;
 
 
 /**

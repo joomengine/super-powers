@@ -9,12 +9,12 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VastDevelopmentMethod\Joomla\Utilities;
+namespace VDM\Joomla\Utilities;
 
 
 use Joomla\Filter\InputFilter;
 use Joomla\CMS\Language\Language;
-use VastDevelopmentMethod\Joomla\Utilities\Component\Helper;
+use VDM\Joomla\Utilities\Component\Helper;
 
 
 /**

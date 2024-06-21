@@ -7,7 +7,8 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # interface GrepInterface (Details)
-> namespace: **VastDevelopmentMethod\Joomla\Interfaces**
+> namespace: **VDM\Joomla\Interfaces**
+> extends: ****
 ```uml
 @startuml
 interface GrepInterface  #Lavender {

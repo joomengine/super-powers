@@ -7,7 +7,8 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # abstract class Grep (Details)
-> namespace: **VastDevelopmentMethod\Joomla\Abstraction**
+> namespace: **VDM\Joomla\Abstraction**
+> extends: ****
 ```uml
 @startuml
 abstract Grep  #Orange {
@@ -16,12 +17,12 @@ abstract Grep  #Orange {
   # array $order
   # Contents $contents
   # CMSApplication $app
-  + __construct(string $path, array $paths, ...)
+  + __construct(Contents $contents, array $paths, ...)
   + getRemotePowersGuid() : ?array
   + get(string $guid, ?array $order = null) : ?object
   # {abstract} remoteIndex(object $path) : void
   # getFunctionName(string $name) : ?string
-  - init() : void
+  # init() : void
 }
 
 note right of Grep::__construct
@@ -30,9 +31,9 @@ note right of Grep::__construct
   since: 3.2.0
   
   arguments:
-    string $path
-    array $paths
     Contents $contents
+    array $paths
+    ?string $path = null
     ?CMSApplication $app = null
 end note
 

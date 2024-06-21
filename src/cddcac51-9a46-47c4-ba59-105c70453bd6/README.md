@@ -7,7 +7,8 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # abstract class FilterHelper (Details)
-> namespace: **VastDevelopmentMethod\Joomla\Componentbuilder\Utilities**
+> namespace: **VDM\Joomla\Componentbuilder\Utilities**
+> extends: ****
 ```uml
 @startuml
 abstract FilterHelper  #Orange {
@@ -20,6 +21,7 @@ abstract FilterHelper  #Orange {
   + {static} translations($language, $translated = true) : ?array
   + {static} languages() : ?array
   + {static} paths(string $path) : ?array
+  + {static} repositories(int $target) : ?array
   - {static} joomla_component_admin_views(int $id) : ?array
   - {static} joomla_component_custom_admin_views(int $id) : ?array
   - {static} joomla_component_site_views(int $id) : ?array
@@ -92,49 +94,56 @@ note right of FilterHelper::paths
   return: ?array
 end note
 
-note left of FilterHelper::joomla_component_admin_views
+note left of FilterHelper::repositories
+  get available repositories of target area
+
+  since: 3.2.0
+  return: ?array
+end note
+
+note right of FilterHelper::joomla_component_admin_views
   Get a component admin views IDs
 
   since: 3.2.0
   return: ?array
 end note
 
-note right of FilterHelper::joomla_component_custom_admin_views
+note left of FilterHelper::joomla_component_custom_admin_views
   get a component custom admin views IDs
 
   since: 3.2.0
   return: ?array
 end note
 
-note left of FilterHelper::joomla_component_site_views
+note right of FilterHelper::joomla_component_site_views
   get a component site views IDs
 
   since: 3.2.0
   return: ?array
 end note
 
-note right of FilterHelper::joomla_component
+note left of FilterHelper::joomla_component
   get a component fields IDs
 
   since: 3.2.0
   return: ?array
 end note
 
-note left of FilterHelper::joomla_module
+note right of FilterHelper::joomla_module
   get a module fields IDs
 
   since: 3.2.0
   return: ?array
 end note
 
-note right of FilterHelper::joomla_plugin
+note left of FilterHelper::joomla_plugin
   get a plugin fields IDs
 
   since: 3.2.0
   return: ?array
 end note
 
-note left of FilterHelper::admin_view
+note right of FilterHelper::admin_view
   get an admin view fields IDs
 
   since: 3.2.0

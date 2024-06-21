@@ -9,10 +9,10 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VastDevelopmentMethod\Joomla\Utilities;
+namespace VDM\Joomla\Utilities;
 
 
-use VastDevelopmentMethod\Joomla\Utilities\GetHelper;
+use VDM\Joomla\Utilities\GetHelper;
 
 
 /**

@@ -9,17 +9,14 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VastDevelopmentMethod\Joomla\Abstraction;
+namespace VDM\Joomla\Abstraction;
 
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Filesystem\Folder;
 use Joomla\CMS\Application\CMSApplication;
-use Joomla\CMS\Language\Text;
-use VastDevelopmentMethod\Joomla\Gitea\Repository\Contents;
-use VastDevelopmentMethod\Joomla\Utilities\FileHelper;
-use VastDevelopmentMethod\Joomla\Utilities\JsonHelper;
-use VastDevelopmentMethod\Joomla\Interfaces\GrepInterface;
+use VDM\Joomla\Gitea\Repository\Contents;
+use VDM\Joomla\Interfaces\GrepInterface;
 
 
 /**
@@ -77,19 +74,19 @@ abstract class Grep implements GrepInterface
 	/**
 	 * Constructor.
 	 *
-	 * @param string                 $path      The local path
-	 * @param array                  $paths     The approved paths
 	 * @param Contents               $contents  The Gitea Repository Contents object.
+	 * @param array                  $paths     The approved paths
+	 * @param string|null            $path      The local path
 	 * @param CMSApplication|null    $app       The CMS Application object.
 	 *
 	 * @throws \Exception
 	 * @since 3.2.0
 	 */
-	public function __construct(string $path, array $paths, Contents $contents, ?CMSApplication $app = null)
+	public function __construct(Contents $contents, array $paths, ?string $path = null, ?CMSApplication $app = null)
 	{
-		$this->path = $path;
 		$this->paths = $paths;
 		$this->contents = $contents;
+		$this->path = $path;
 		$this->app = $app ?: Factory::getApplication();
 
 		$this->init();
@@ -186,22 +183,28 @@ abstract class Grep implements GrepInterface
 	 * @return void
 	 * @since 3.2.0
 	 */
-	private function init(): void
+	protected function init(): void
 	{
 		if (is_array($this->paths) && $this->paths !== [])
 		{
 			foreach ($this->paths as $n => &$path)
 			{
-				if (isset($path->owner) && strlen($path->owner) > 1 &&
-						isset($path->repo) && strlen($path->repo) > 1)
+				if (isset($path->organisation) && strlen($path->organisation) > 1 &&
+						isset($path->repository) && strlen($path->repository) > 1)
 				{
 					// build the path
-					$path->path = trim($path->owner) . '/' . trim($path->repo);
+					$path->path = trim($path->organisation) . '/' . trim($path->repository);
 
 					// update the branch
-					if ($path->branch === 'default' || empty($path->branch))
+					if ($path->read_branch === 'default' || empty($path->read_branch))
 					{
-						$path->branch = null;
+						$path->read_branch = null;
+					}
+
+					// only update the write branch if set
+					if (isset($path->write_branch) && ($path->write_branch === 'default' || empty($path->write_branch)))
+					{
+						$path->write_branch = null;
 					}
 
 					// set local path

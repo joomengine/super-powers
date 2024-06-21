@@ -7,7 +7,8 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # trait VarExport (Details)
-> namespace: **VastDevelopmentMethod\Joomla\Abstraction\Registry\Traits**
+> namespace: **VDM\Joomla\Abstraction\Registry\Traits**
+> extends: ****
 ```uml
 @startuml
 class VarExport << (T,Orange) >> #Turquoise {

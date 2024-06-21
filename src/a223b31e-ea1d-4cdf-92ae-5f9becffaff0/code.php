@@ -9,7 +9,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VastDevelopmentMethod\Joomla\Utilities;
+namespace VDM\Joomla\Utilities;
 
 
 use Joomla\CMS\Uri\Uri;
@@ -19,7 +19,7 @@ use Joomla\CMS\Filesystem\Path;
 use Joomla\CMS\Filesystem\File;
 use Joomla\CMS\Filesystem\Folder;
 use Joomla\Archive\Archive;
-use VastDevelopmentMethod\Joomla\Utilities\Component\Helper;
+use VDM\Joomla\Utilities\Component\Helper;
 
 
 /**

@@ -1,0 +1,30 @@
+{
+    "add_head": "0",
+    "add_licensing_template": "2",
+    "extends": "",
+    "guid": "a455d916-cfe4-41df-9245-bafb709aacdb",
+    "implements": [
+        "03bbc8d5-86e8-4d2f-ae5f-0d44a4f7af13"
+    ],
+    "load_selection": null,
+    "name": "Insert",
+    "power_version": "1.0.0",
+    "system_name": "VDM.Data.Action.Insert",
+    "type": "class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff",
+            "as": "Model"
+        },
+        "use_selection1": {
+            "use": "ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48",
+            "as": "Database"
+        }
+    },
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Data.Action.Insert",
+    "description": "Data Insert (GUID)\r\n\r\n@since 3.2.2",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}

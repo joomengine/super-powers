@@ -7,7 +7,8 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # interface FactoryInterface (Details)
-> namespace: **VastDevelopmentMethod\Joomla\Interfaces**
+> namespace: **VDM\Joomla\Interfaces**
+> extends: ****
 ```uml
 @startuml
 interface FactoryInterface  #Lavender {

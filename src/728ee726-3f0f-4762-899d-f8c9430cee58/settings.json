@@ -1,0 +1,30 @@
+{
+    "add_head": "0",
+    "add_licensing_template": "2",
+    "extends": "",
+    "guid": "728ee726-3f0f-4762-899d-f8c9430cee58",
+    "implements": [
+        "51de80f2-2868-4c2c-8198-ef79349e9bd7"
+    ],
+    "load_selection": null,
+    "name": "Remote",
+    "power_version": "1.0.0",
+    "system_name": "VDM.Data.Remote",
+    "type": "class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "c182506a-ab84-439c-b962-1e606b58d545",
+            "as": "Grep"
+        },
+        "use_selection1": {
+            "use": "05744dd3-4030-4cf8-8dda-a93ab809b473",
+            "as": "Item"
+        }
+    },
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Data.Remote",
+    "description": "Load data based on global unique ids from remote system\r\n\r\n@since 3.2.0",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}

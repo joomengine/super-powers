@@ -15,6 +15,7 @@
             "as": "default"
         }
     },
+    "extendsinterfaces": null,
     "namespace": "[[[NamespacePrefix]]]\\Joomla\\Abstraction.BaseConfig",
     "description": "Config\r\n\r\n@since 3.2.0",
     "extends_custom": "JoomlaRegistry",

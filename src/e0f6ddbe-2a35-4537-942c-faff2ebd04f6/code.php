@@ -9,10 +9,10 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VastDevelopmentMethod\Joomla\Abstraction;
+namespace VDM\Joomla\Abstraction;
 
 
-use VastDevelopmentMethod\Joomla\Interfaces\Tableinterface;
+use VDM\Joomla\Interfaces\Tableinterface;
 
 
 /**

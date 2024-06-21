@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # final class Update (Details)
-> namespace: **VastDevelopmentMethod\Joomla\Database**
+> namespace: **VDM\Joomla\Database**
 > extends: **Database**
 ```uml
 @startuml

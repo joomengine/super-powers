@@ -9,14 +9,15 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VastDevelopmentMethod\Joomla\Componentbuilder\Service;
+namespace VDM\Joomla\Service;
 
 
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
-use VastDevelopmentMethod\Joomla\Database\Load;
-use VastDevelopmentMethod\Joomla\Database\Insert;
-use VastDevelopmentMethod\Joomla\Database\Update;
+use VDM\Joomla\Database\Load;
+use VDM\Joomla\Database\Insert;
+use VDM\Joomla\Database\Update;
+use VDM\Joomla\Database\Delete;
 
 
 /**
@@ -44,6 +45,9 @@ class Database implements ServiceProviderInterface
 
 		$container->alias(Update::class, 'Update')
 			->share('Update', [$this, 'getUpdate'], true);
+
+		$container->alias(Delete::class, 'Delete')
+			->share('Delete', [$this, 'getDelete'], true);
 	}
 
 	/**
@@ -83,6 +87,19 @@ class Database implements ServiceProviderInterface
 	public function getUpdate(Container $container): Update
 	{
 		return new Update();
+	}
+
+	/**
+	 * Get the Core Delete Database
+	 *
+	 * @param   Container  $container  The DI container.
+	 *
+	 * @return  Delete
+	 * @since 3.2.2
+	 */
+	public function getDelete(Container $container): Delete
+	{
+		return new Delete();
 	}
 }
 

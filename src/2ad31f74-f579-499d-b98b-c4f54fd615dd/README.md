@@ -7,7 +7,8 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # interface LoadInterface (Details)
-> namespace: **VastDevelopmentMethod\Joomla\Interfaces**
+> namespace: **VDM\Joomla\Interfaces**
+> extends: ****
 ```uml
 @startuml
 interface LoadInterface  #Lavender {

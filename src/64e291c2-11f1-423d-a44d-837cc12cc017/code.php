@@ -9,7 +9,10 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VastDevelopmentMethod\Joomla\Interfaces;
+namespace VDM\Joomla\Interfaces;
+
+
+use VDM\Joomla\Interfaces\Activeregistryinterface;
 
 
 /**
@@ -17,7 +20,7 @@ namespace VastDevelopmentMethod\Joomla\Interfaces;
  * 
  * @since 3.2.0
  */
-interface Registryinterface
+interface Registryinterface extends Activeregistryinterface
 {
 	/**
 	 * Sets a value into the registry using multiple keys.

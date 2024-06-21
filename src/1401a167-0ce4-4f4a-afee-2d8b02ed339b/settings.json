@@ -1,7 +1,7 @@
 {
     "add_head": "1",
     "add_licensing_template": "2",
-    "extends": "0",
+    "extends": "",
     "guid": "1401a167-0ce4-4f4a-afee-2d8b02ed339b",
     "implements": [
         "c182506a-ab84-439c-b962-1e606b58d545"
@@ -15,19 +15,12 @@
         "use_selection0": {
             "use": "8d1baef6-fcad-49a9-848f-428009cdb989",
             "as": "default"
-        },
-        "use_selection1": {
-            "use": "a223b31e-ea1d-4cdf-92ae-5f9becffaff0",
-            "as": "default"
-        },
-        "use_selection2": {
-            "use": "4b225c51-d293-48e4-b3f6-5136cf5c3f18",
-            "as": "default"
         }
     },
+    "extendsinterfaces": null,
     "namespace": "[[[NamespacePrefix]]]\\Joomla\\Abstraction.Grep",
     "description": "Global Resource Empowerment Platform\r\n\r\n   The Grep feature will try to find your power in the repositories listed in the global\r\n   Options of JCB in the super powers tab, and if it can't be found there will try the global core\r\n   Super powers of JCB. All searches are performed according the the [algorithm:cascading]\r\n   See documentation for more details: https:\/\/git.vdm.dev\/joomla\/super-powers\/wiki\r\n\r\n@since 3.2.1",
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "head": "use Joomla\\CMS\\Factory;\r\nuse Joomla\\CMS\\Filesystem\\Folder;\r\nuse Joomla\\CMS\\Application\\CMSApplication;\r\nuse Joomla\\CMS\\Language\\Text;",
+    "head": "use Joomla\\CMS\\Factory;\r\nuse Joomla\\CMS\\Filesystem\\Folder;\r\nuse Joomla\\CMS\\Application\\CMSApplication;",
     "composer": ""
 }

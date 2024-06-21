@@ -9,10 +9,10 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VastDevelopmentMethod\Joomla\Utilities\String;
+namespace VDM\Joomla\Utilities\String;
 
 
-use VastDevelopmentMethod\Joomla\Utilities\StringHelper;
+use VDM\Joomla\Utilities\StringHelper;
 
 
 /**

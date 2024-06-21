@@ -7,7 +7,8 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # abstract class Schema (Details)
-> namespace: **VastDevelopmentMethod\Joomla\Abstraction**
+> namespace: **VDM\Joomla\Abstraction**
+> extends: ****
 ```uml
 @startuml
 abstract Schema  #Orange {
@@ -31,6 +32,7 @@ abstract Schema  #Orange {
   # checkColumnsDataType(string $table, array $columns) : void
   # getColumnDefinition(string $table, string $field) : ?string
   # checkDefault(string $table, string $column) : bool
+  # checkNull(string $table, string $column) : bool
   # updateColumnsDataType(string $table, array $columns) : void
   # getTable(string $table) : string
   # isDataTypeChangeSignificant(string $currentType, string $expectedType) : bool
@@ -121,21 +123,28 @@ note right of Schema::checkDefault
   return: bool
 end note
 
-note left of Schema::updateColumnsDataType
+note left of Schema::checkNull
+  Check and Update the null value if needed, including existing data adjustments
+
+  since: 3.2.2
+  return: bool
+end note
+
+note right of Schema::updateColumnsDataType
   Update the data type of the given fields.
 
   since: 3.2.1
   return: void
 end note
 
-note right of Schema::getTable
+note left of Schema::getTable
   Add the component name to get the full table name.
 
   since: 3.2.1
   return: string
 end note
 
-note left of Schema::isDataTypeChangeSignificant
+note right of Schema::isDataTypeChangeSignificant
   Determines if the change in data type between two definitions is significant.
 This function checks if there's a significant difference between the current
 data type and the expected data type that would require updating the database schema.
@@ -146,7 +155,7 @@ irrelevant for storage but considers size and other modifiers for types like VAR
   return: bool
 end note
 
-note right of Schema::adjustExistingDefaults
+note left of Schema::adjustExistingDefaults
   Updates existing rows in a column to a new default value
 
   since: 3.2.1
@@ -159,7 +168,7 @@ note right of Schema::adjustExistingDefaults
     mixed $newDefault
 end note
 
-note left of Schema::updateColumnDataType
+note right of Schema::updateColumnDataType
   Update the data type of the given field.
 
   since: 3.2.1
@@ -171,39 +180,39 @@ note left of Schema::updateColumnDataType
     string $field
 end note
 
-note right of Schema::getTableKeys
+note left of Schema::getTableKeys
   Key all needed keys for this table
 
   since: 3.2.1
   return: string
 end note
 
-note left of Schema::setKeys
+note right of Schema::setKeys
   Function to set the view keys
 
   since: 3.2.1
   return: void
 end note
 
-note right of Schema::setUniqueKey
+note left of Schema::setUniqueKey
   Function to set the unique key
 
   since: 3.2.1
   return: void
 end note
 
-note left of Schema::setKey
+note right of Schema::setKey
   Function to set the key
 
   since: 3.2.1
   return: void
 end note
 
-note right of Schema::getDefaultValue
+note left of Schema::getDefaultValue
   Adjusts the default value SQL fragment for a database field based on its type and specific rules.
 If the field is of type DATETIME and the Joomla version is not 3, it sets the default to CURRENT_TIMESTAMP
-if not explicitly specified otherwise. For all other types, or when a 'EMPTY' default is specified, it handles
-defaults by either leaving them unset or applying the provided default, properly quoted for SQL safety.
+if not explicitly specified otherwise. For all other types it handles defaults by either leaving them unset or applying
+the provided default, properly quoted for SQL safety. When a 'EMPTY' default is specified, it returns no default at all. (:)
 
   since: 3.2.1
   return: string
@@ -214,7 +223,7 @@ defaults by either leaving them unset or applying the provided default, properly
     bool $pure = false
 end note
 
-note left of Schema::quote
+note right of Schema::quote
   Set a value based on data type
 
   since: 3.2.0

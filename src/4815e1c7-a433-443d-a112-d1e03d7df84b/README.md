@@ -7,7 +7,8 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # class Database (Details)
-> namespace: **VastDevelopmentMethod\Joomla\Componentbuilder\Service**
+> namespace: **VDM\Joomla\Service**
+> extends: ****
 ```uml
 @startuml
 class Database  #Gold {
@@ -15,6 +16,7 @@ class Database  #Gold {
   + getLoad(Container $container) : Load
   + getInsert(Container $container) : Insert
   + getUpdate(Container $container) : Update
+  + getDelete(Container $container) : Delete
 }
 
 note right of Database::register
@@ -43,6 +45,13 @@ note right of Database::getUpdate
 
   since: 3.2.0
   return: Update
+end note
+
+note right of Database::getDelete
+  Get the Core Delete Database
+
+  since: 3.2.2
+  return: Delete
 end note
  
 @enduml

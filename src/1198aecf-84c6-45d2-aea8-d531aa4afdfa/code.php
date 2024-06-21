@@ -9,7 +9,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VastDevelopmentMethod\Joomla\Utilities;
+namespace VDM\Joomla\Utilities;
 
 
 use Joomla\CMS\Form\FormHelper as JoomlaFormHelper;

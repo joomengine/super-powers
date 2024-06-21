@@ -9,13 +9,13 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VastDevelopmentMethod\Joomla\Database;
+namespace VDM\Joomla\Database;
 
 
 use Joomla\CMS\Date\Date;
-use VastDevelopmentMethod\Joomla\Utilities\ArrayHelper;
-use VastDevelopmentMethod\Joomla\Interfaces\InsertInterface;
-use VastDevelopmentMethod\Joomla\Abstraction\Database;
+use VDM\Joomla\Utilities\ArrayHelper;
+use VDM\Joomla\Interfaces\InsertInterface;
+use VDM\Joomla\Abstraction\Database;
 
 
 /**

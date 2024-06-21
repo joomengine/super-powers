@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # final class Load (Details)
-> namespace: **VastDevelopmentMethod\Joomla\Database**
+> namespace: **VDM\Joomla\Database**
 > extends: **Database**
 ```uml
 @startuml
@@ -22,6 +22,7 @@ class Load << (F,LightGreen) >> #RoyalBlue {
   # many(array $select, array $tables, ...) : bool
   # one(array $select, array $tables, ...) : bool
   # query(array $select, array $tables, ...) : ?object
+  # getKey(array $select) : ?string
 }
 
 note right of Load::rows
@@ -149,6 +150,15 @@ note left of Load::query
     ?array $where = null
     ?array $order = null
     ?int $limit = null
+end note
+
+note right of Load::getKey
+  Get the key from the selection array.
+This function retrieves a key from the provided selection array.
+The key is removed from the array after being retrieved.
+
+  since: 3.2.2
+  return: ?string
 end note
  
 @enduml

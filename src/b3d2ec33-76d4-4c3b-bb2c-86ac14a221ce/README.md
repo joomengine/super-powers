@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # final class Schema (Details)
-> namespace: **VastDevelopmentMethod\Joomla\Componentbuilder\Table**
+> namespace: **VDM\Joomla\Componentbuilder\Table**
 > extends: **ExtendingSchema**
 ```uml
 @startuml
