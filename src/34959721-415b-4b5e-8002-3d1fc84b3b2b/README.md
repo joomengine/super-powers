@@ -13,8 +13,8 @@
 @startuml
 interface SubformInterface  #Lavender {
   + table(string $table) : self
-  + get(string $value, string $key, ...) : ?array
-  + set(array $items, string $key) : bool
+  + get(string $linkValue, string $linkKey, ...) : ?array
+  + set(array $items, string $indexKey, ...) : bool
   + getTable() : string
 }
 
@@ -32,8 +32,8 @@ note right of SubformInterface::get
   return: ?array
   
   arguments:
-    string $value
-    string $key
+    string $linkValue
+    string $linkKey
     string $field
     array $set
 end note
@@ -43,6 +43,12 @@ note right of SubformInterface::set
 
   since: 3.2.2
   return: bool
+  
+  arguments:
+    array $items
+    string $indexKey
+    string $linkKey
+    string $linkValue
 end note
 
 note right of SubformInterface::getTable

@@ -173,7 +173,7 @@
 	 * @return bool
 	 * @since 3.2.2
 	 */
-	public function delete(string $values, string $key = 'guid'): bool
+	public function delete(array $values, string $key = 'guid'): bool
 	{
 		return $this->delete->table($this->getTable())->items([$key => ['operator' => 'IN', 'value' => $values]]);
 	}

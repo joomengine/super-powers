@@ -23,7 +23,7 @@ class Items << (F,LightGreen) >> #RoyalBlue {
   + get(array $values, string $key = 'guid') : ?array
   + values(array $values, string $key = 'guid', ...) : ?array
   + set(array $items, string $key = 'guid') : bool
-  + delete(string $values, string $key = 'guid') : bool
+  + delete(array $values, string $key = 'guid') : bool
   + getTable() : string
   - insert(array $items) : bool
   - update(array $items, string $key) : bool

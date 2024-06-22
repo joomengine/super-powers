@@ -16,11 +16,12 @@ class Subform  #Gold {
   # string $table
   + __construct(Items $items, ?string $table = null)
   + table(string $table) : self
-  + get(string $value, string $key, ...) : ?array
-  + set(array $items, string $key) : bool
+  + get(string $linkValue, string $linkKey, ...) : ?array
+  + set(array $items, string $indexKey, ...) : bool
   + getTable() : string
+  - purge(array $items, string $indexKey, ...) : void
   - converter(array $items, array $keySet, ...) : array
-  - process(array $items, string $key) : array
+  - process(array $items, string $indexKey, ...) : array
   - setGuid(string $key, bool $trim = true) : string
 }
 
@@ -44,8 +45,8 @@ note right of Subform::get
   return: ?array
   
   arguments:
-    string $value
-    string $key
+    string $linkValue
+    string $linkKey
     string $field
     array $set
 end note
@@ -55,6 +56,12 @@ note left of Subform::set
 
   since: 3.2.2
   return: bool
+  
+  arguments:
+    array $items
+    string $indexKey
+    string $linkKey
+    string $linkValue
 end note
 
 note right of Subform::getTable
@@ -64,7 +71,20 @@ note right of Subform::getTable
   return: string
 end note
 
-note left of Subform::converter
+note left of Subform::purge
+  Purge all items no longer in subform
+
+  since: 3.2.2
+  return: void
+  
+  arguments:
+    array $items
+    string $indexKey
+    string $linkKey
+    string $linkValue
+end note
+
+note right of Subform::converter
   Filters the specified keys from an array of objects or arrays, converts them to arrays,
 and sets them by association with a specified key and an incrementing integer.
 
@@ -74,17 +94,23 @@ and sets them by association with a specified key and an incrementing integer.
   arguments:
     array $items
     array $keySet
-    string $key
+    string $field
 end note
 
-note right of Subform::process
+note left of Subform::process
   Processes an array of arrays based on the specified key.
 
   since: 3.2.2
   return: array
+  
+  arguments:
+    array $items
+    string $indexKey
+    string $linkKey
+    string $linkValue
 end note
 
-note left of Subform::setGuid
+note right of Subform::setGuid
   Returns a GUIDv4 string
 Thanks to Dave Pearson (and other)
 https://www.php.net/manual/en/function.com-create-guid.php#119168

@@ -17,7 +17,7 @@ use VDM\Joomla\Interfaces\Data\SubformInterface;
 
 
 /**
- * Store the data of a sub-form
+ * CRUD the data of any sub-form to another view (table)
  * 
  * @since  3.2.2
  */
@@ -74,17 +74,17 @@ class Subform implements SubformInterface
 	/**
 	 * Get a subform items
 	 *
-	 * @param string   $value  The ids/values of the parent
-	 * @param string   $key    The parent key on which the items are linked
-	 * @param string   $field  The parent field name of the subform
-	 * @param array    $set    The array SET of the keys of each row in the subform
+	 * @param string   $linkValue  The value of the link key in child table.
+	 * @param string   $linkKey    The link key on which the items where linked in the child table.
+	 * @param string   $field      The parent field name of the subform in the parent view.
+	 * @param array    $set        The array SET of the keys of each row in the subform.
 	 *
 	 * @return array|null   The subform
 	 * @since 3.2.2
 	 */
-	public function get(string $value, string $key, string $field, array $set): ?array
+	public function get(string $linkValue, string $linkKey, string $field, array $set): ?array
 	{
-		if (($items = $this->items->table($this->getTable())->get([$value], $key)) !== null)
+		if (($items = $this->items->table($this->getTable())->get([$linkValue], $linkKey)) !== null)
 		{
 			return $this->converter($items, $set, $field);
 		}
@@ -94,16 +94,22 @@ class Subform implements SubformInterface
 	/**
 	 * Set a subform items
 	 *
-	 * @param array     $items       The list of items to set
-	 * @param string    $key         The child key on which the items should be linked
+	 * @param array    $items      The list of items from the subform to set
+	 * @param string   $indexKey   The index key on which the items should be observed as it relates to insert/update/delete.
+	 * @param string   $linkKey    The link key on which the items where linked in the child table.
+	 * @param string   $linkValue  The value of the link key in child table.
 	 *
 	 * @return bool
 	 * @since 3.2.2
 	 */
-	public function set(array $items, string $key): bool
+	public function set(array $items, string $indexKey, string $linkKey, string $linkValue): bool
 	{
+		$items = $this->process($items, $indexKey, $linkKey, $linkValue);
+
+		$this->purge($items, $indexKey, $linkKey, $linkValue);
+
 		return $this->items->table($this->getTable())->set(
-			$this->process($items, $key), $key
+			$items, $indexKey
 		);
 	}
 
@@ -119,17 +125,51 @@ class Subform implements SubformInterface
 	}
 
 	/**
+	 * Purge all items no longer in subform
+	 *
+	 * @param array    $items      The list of items to set.
+	 * @param string   $indexKey   The index key on which the items should be observed as it relates to insert/update/delete
+	 * @param string   $linkKey    The link key on which the items where linked in the child table.
+	 * @param string   $linkValue  The value of the link key in child table.
+	 *
+	 * @return void
+	 * @since 3.2.2
+	 */
+	private function purge(array $items, string $indexKey, string $linkKey, string $linkValue): void
+	{
+		// Get the current index values from the database
+		$currentIndexValues = $this->items->table($this->getTable())->values([$linkValue], $linkKey, $indexKey);
+
+		if ($currentIndexValues !== null)
+		{
+			// Extract the index values from the items array
+			$activeIndexValues = array_values(array_map(function($item) use ($indexKey) {
+				return $item[$indexKey] ?? null;
+			}, $items));
+
+			// Find the index values that are no longer in the items array
+			$inactiveIndexValues = array_diff($currentIndexValues, $activeIndexValues);
+
+			// Delete the inactive index values
+			if (!empty($inactiveIndexValues))
+			{
+				$this->items->table($this->getTable())->delete($inactiveIndexValues, $indexKey);
+			}
+		}
+	}
+
+	/**
 	 * Filters the specified keys from an array of objects or arrays, converts them to arrays,
 	 * and sets them by association with a specified key and an incrementing integer.
 	 *
 	 * @param array  $items  Array of objects or arrays to be filtered.
 	 * @param array  $keySet Array of keys to retain in each item.
-	 * @param string $key    The key prefix for the resulting associative array.
+	 * @param string $field  The field prefix for the resulting associative array.
 	 *
 	 * @return array Array of filtered arrays set by association.
 	 * @since 3.2.2
 	 */
-	private function converter(array $items, array $keySet, string $key): array
+	private function converter(array $items, array $keySet, string $field): array
 	{
 		/**
 		 * Filters keys for a single item and converts it to an array.
@@ -144,7 +184,7 @@ class Subform implements SubformInterface
 			$filteredArray = [];
 			foreach ($keySet as $key) {
 				if (is_object($item) && property_exists($item, $key)) {
-					$filteredArray[$key] = $item->$key;
+					$filteredArray[$key] = $item->{$key};
 				} elseif (is_array($item) && array_key_exists($key, $item)) {
 					$filteredArray[$key] = $item[$key];
 				}
@@ -156,7 +196,7 @@ class Subform implements SubformInterface
 		foreach ($items as $index => $item)
 		{
 			$filteredArray = $filterKeys($item, $keySet);
-			$result[$key . $index] = $filteredArray;
+			$result[$field . $index] = $filteredArray;
 		}
 
 		return $result;
@@ -165,34 +205,39 @@ class Subform implements SubformInterface
 	/**
 	 * Processes an array of arrays based on the specified key.
 	 *
-	 * @param array   $items  Array of arrays to be processed.
-	 * @param string  $key    The key to check and modify values.
+	 * @param array    $items      Array of arrays to be processed.
+	 * @param string   $indexKey   The index key on which the items should be observed as it relates to insert/update/delete
+	 * @param string   $linkKey    The link key on which the items where linked in the child table.
+	 * @param string   $linkValue  The value of the link key in child table.
 	 *
 	 * @return array  The processed array of arrays.
 	 * @since 3.2.2
 	 */
-	private function process(array $items, string $key): array
+	private function process(array $items, string $indexKey, string $linkKey, string $linkValue): array
 	{
 		foreach ($items as &$item)
 		{
-			$value = $item[$key] ?? '';
-			switch ($key) {
+			$value = $item[$indexKey] ?? '';
+			switch ($indexKey) {
 				case 'guid':
 					if (empty($value))
 					{
-						$item[$key] = $this->setGuid($key);
+						// set INDEX
+						$item[$indexKey] = $this->setGuid($indexKey);
 					}
 					break;
 				case 'id':
-					if ($value === '')
+					if (empty($value))
 					{
-						$item[$key] = 0;
+						$item[$indexKey] = 0;
 					}
 					break;
 				default:
 					// No action for other keys if empty
 					break;
 			}
+			// set LINK
+			$item[$linkKey] = $linkValue;
 		}
 
 		return array_values($items);
