@@ -1,0 +1,38 @@
+{
+    "add_head": "1",
+    "add_licensing_template": "2",
+    "extends": "2e5bf608-de5c-4b00-a20d-47c26aa350d9",
+    "guid": "9d76b8dc-3883-4755-b11c-131d19ca8a53",
+    "implements": [
+        "caf33c5d-858c-4f9a-894f-ab302ec5445a"
+    ],
+    "load_selection": null,
+    "name": "Factory",
+    "power_version": "1.0.0",
+    "system_name": "VDM.Data.Factory",
+    "type": "abstract class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "19b2ba92-1655-4384-acfb-979c80de8b6d",
+            "as": "default"
+        },
+        "use_selection1": {
+            "use": "4815e1c7-a433-443d-a112-d1e03d7df84b",
+            "as": "default"
+        },
+        "use_selection2": {
+            "use": "2dcedd6c-c95b-4a37-9cac-95d28faedca3",
+            "as": "default"
+        },
+        "use_selection3": {
+            "use": "a5daf189-3345-4b13-8716-c51f686f545b",
+            "as": "default"
+        }
+    },
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Data.Factory",
+    "description": "Data Factory\r\n\r\n@since 3.2.2",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "use Joomla\\DI\\Container;",
+    "composer": ""
+}

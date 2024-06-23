@@ -10,7 +10,7 @@
     "name": "Subform",
     "power_version": "1.0.0",
     "system_name": "VDM.Data.Subform",
-    "type": "class",
+    "type": "final class",
     "use_selection": {
         "use_selection0": {
             "use": "7212e4db-371f-4cfd-8122-32e9bb100d83",

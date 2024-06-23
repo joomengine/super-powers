@@ -19,6 +19,7 @@ class Load << (F,LightGreen) >> #RoyalBlue {
   + max(string $field, array $tables, ...) : ?int
   + count(array $tables, array $filter) : ?int
   + value(array $select, array $tables, ...) : mixed
+  + values(array $select, array $tables, ...) : ?array
   # many(array $select, array $tables, ...) : bool
   # one(array $select, array $tables, ...) : bool
   # query(array $select, array $tables, ...) : ?object
@@ -111,7 +112,21 @@ note right of Load::value
     ?array $order = null
 end note
 
-note left of Load::many
+note left of Load::values
+  Load values from multiple rows
+
+  since: 3.2.2
+  return: ?array
+  
+  arguments:
+    array $select
+    array $tables
+    ?array $where = null
+    ?array $order = null
+    ?int $limit = null
+end note
+
+note right of Load::many
   Load many
 
   since: 3.2.0
@@ -125,7 +140,7 @@ note left of Load::many
     ?int $limit = null
 end note
 
-note right of Load::one
+note left of Load::one
   Load one
 
   since: 3.2.0
@@ -138,7 +153,7 @@ note right of Load::one
     ?array $order = null
 end note
 
-note left of Load::query
+note right of Load::query
   Get the query object
 
   since: 3.2.0
@@ -152,7 +167,7 @@ note left of Load::query
     ?int $limit = null
 end note
 
-note right of Load::getKey
+note left of Load::getKey
   Get the key from the selection array.
 This function retrieves a key from the provided selection array.
 The key is removed from the array after being retrieved.

@@ -14,6 +14,7 @@
 interface ModelInterface  #Lavender {
   + table(string $table) : self
   + value(mixed $value, string $field, ...) : mixed
+  + values(?array $items = null, string $field, ...) : ?array
   + item(?object $item, ?string $table = null) : ?object
   + items(?array $items = null, ?string $table = null) : ?array
   + row(?array $item, ?string $table = null) : ?array
@@ -43,7 +44,20 @@ Example: $this->value(value, 'value_key', 'table_name');
     ?string $table = null
 end note
 
-note right of ModelInterface::item
+note right of ModelInterface::values
+  Model a value of multiple items
+Example: $this->items(Array, 'value_key', 'table_name');
+
+  since: 3.2.0
+  return: ?array
+  
+  arguments:
+    ?array $items = null
+    string $field
+    ?string $table = null
+end note
+
+note left of ModelInterface::item
   Model the values of an item
 Example: $this->item(Object, 'table_name');
 
@@ -51,7 +65,7 @@ Example: $this->item(Object, 'table_name');
   return: ?object
 end note
 
-note left of ModelInterface::items
+note right of ModelInterface::items
   Model the values of multiple items
 Example: $this->items(Array, 'table_name');
 
@@ -59,7 +73,7 @@ Example: $this->items(Array, 'table_name');
   return: ?array
 end note
 
-note right of ModelInterface::row
+note left of ModelInterface::row
   Model the values of an row
 Example: $this->item(Array, 'table_name');
 
@@ -67,7 +81,7 @@ Example: $this->item(Array, 'table_name');
   return: ?array
 end note
 
-note left of ModelInterface::rows
+note right of ModelInterface::rows
   Model the values of multiple rows
 Example: $this->items(Array, 'table_name');
 
@@ -75,7 +89,7 @@ Example: $this->items(Array, 'table_name');
   return: ?array
 end note
 
-note right of ModelInterface::last
+note left of ModelInterface::last
   Get last modeled ID
 Example: $this->last('table_name');
 
@@ -83,14 +97,14 @@ Example: $this->last('table_name');
   return: ?int
 end note
 
-note left of ModelInterface::setTable
+note right of ModelInterface::setTable
   Set the current active table
 
   since: 3.2.2
   return: void
 end note
 
-note right of ModelInterface::setAllowEmpty
+note left of ModelInterface::setAllowEmpty
   Set the switch to control the behaviour of empty values
 
   since: 3.2.2

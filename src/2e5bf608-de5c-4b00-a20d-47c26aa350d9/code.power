@@ -1,0 +1,44 @@
+	/**
+	 * Global Package Container
+	 *
+	 * @var   Container|null
+	 * @since 0.0.0
+	 **/
+	protected static ?Container $container = null;
+
+	/**
+	 * Get any class from the package container
+	 *
+	 * @param   string  $key  The container class key
+	 *
+	 * @return  Mixed
+	 * @since 0.0.0
+	 */
+	public static function _($key)
+	{
+		return static::getContainer()->get($key);
+	}
+
+	/**
+	 * Get the global package container
+	 *
+	 * @return  Container
+	 * @since 0.0.0
+	 */
+	public static function getContainer(): Container
+	{
+		if (!static::$container)
+		{
+			static::$container = static::createContainer();
+		}
+
+		return static::$container;
+	}
+
+	/**
+	 * Create a container object
+	 *
+	 * @return  Container
+	 * @since 0.0.0
+	 */
+	abstract protected static function createContainer(): Container;

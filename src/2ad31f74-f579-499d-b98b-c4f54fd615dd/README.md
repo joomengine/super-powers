@@ -19,6 +19,7 @@ interface LoadInterface  #Lavender {
   + max(string $field, array $tables, ...) : ?int
   + count(array $tables, array $filter) : ?int
   + value(array $select, array $tables, ...) : mixed
+  + values(array $select, array $tables, ...) : ?array
 }
 
 note right of LoadInterface::rows
@@ -35,7 +36,7 @@ note right of LoadInterface::rows
     ?int $limit = null
 end note
 
-note right of LoadInterface::items
+note left of LoadInterface::items
   Load data rows as an array of objects
 
   since: 3.2.0
@@ -62,7 +63,7 @@ note right of LoadInterface::row
     ?array $order = null
 end note
 
-note right of LoadInterface::item
+note left of LoadInterface::item
   Load data row as an object
 
   since: 3.2.0
@@ -87,7 +88,7 @@ note right of LoadInterface::max
     array $filter
 end note
 
-note right of LoadInterface::count
+note left of LoadInterface::count
   Count the number of items based on filter result from a given table
 
   since: 3.2.0
@@ -105,6 +106,20 @@ note right of LoadInterface::value
     array $tables
     ?array $where = null
     ?array $order = null
+end note
+
+note left of LoadInterface::values
+  Load values from multiple rows
+
+  since: 3.2.2
+  return: ?array
+  
+  arguments:
+    array $select
+    array $tables
+    ?array $where = null
+    ?array $order = null
+    ?int $limit = null
 end note
  
 @enduml

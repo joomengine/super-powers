@@ -4,7 +4,7 @@
 	 * @param   string  $key  The container class key
 	 *
 	 * @return  Mixed
-	 * @since 3.2.0
+	 * @since 0.0.0
 	 */
 	public static function _(string $key);
 
@@ -12,6 +12,6 @@
 	 * Get the global container
 	 *
 	 * @return  Container
-	 * @since 3.2.0
+	 * @since 0.0.0
 	 */
 	public static function getContainer(): Container;

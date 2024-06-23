@@ -98,6 +98,17 @@
         "spk": "Super__152c8793_8b75_4715_996a_257b9f65451c__Power",
         "guid": "152c8793-8b75-4715-996a-257b9f65451c"
     },
+    "19b2ba92-1655-4384-acfb-979c80de8b6d": {
+        "name": "Table",
+        "type": "class",
+        "namespace": "VDM\\Joomla\\Service",
+        "code": "src\/19b2ba92-1655-4384-acfb-979c80de8b6d\/code.php",
+        "power": "src\/19b2ba92-1655-4384-acfb-979c80de8b6d\/code.power",
+        "settings": "src\/19b2ba92-1655-4384-acfb-979c80de8b6d\/settings.json",
+        "path": "src\/19b2ba92-1655-4384-acfb-979c80de8b6d",
+        "spk": "Super__19b2ba92_1655_4384_acfb_979c80de8b6d__Power",
+        "guid": "19b2ba92-1655-4384-acfb-979c80de8b6d"
+    },
     "1f28cb53-60d9-4db1-b517-3c7dc6b429ef": {
         "name": "StringHelper",
         "type": "abstract class",
@@ -163,6 +174,17 @@
         "path": "src\/2dcedd6c-c95b-4a37-9cac-95d28faedca3",
         "spk": "Super__2dcedd6c_c95b_4a37_9cac_95d28faedca3__Power",
         "guid": "2dcedd6c-c95b-4a37-9cac-95d28faedca3"
+    },
+    "2e5bf608-de5c-4b00-a20d-47c26aa350d9": {
+        "name": "Factory",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Abstraction",
+        "code": "src\/2e5bf608-de5c-4b00-a20d-47c26aa350d9\/code.php",
+        "power": "src\/2e5bf608-de5c-4b00-a20d-47c26aa350d9\/code.power",
+        "settings": "src\/2e5bf608-de5c-4b00-a20d-47c26aa350d9\/settings.json",
+        "path": "src\/2e5bf608-de5c-4b00-a20d-47c26aa350d9",
+        "spk": "Super__2e5bf608_de5c_4b00_a20d_47c26aa350d9__Power",
+        "guid": "2e5bf608-de5c-4b00-a20d-47c26aa350d9"
     },
     "30c5b4c2-f75f-4d15-869a-f8bfedd87358": {
         "name": "ClassfunctionHelper",
@@ -441,7 +463,7 @@
     },
     "85785701-07b2-4f81-bc1e-0f423700c254": {
         "name": "Subform",
-        "type": "class",
+        "type": "final class",
         "namespace": "VDM\\Joomla\\Data",
         "code": "src\/85785701-07b2-4f81-bc1e-0f423700c254\/code.php",
         "power": "src\/85785701-07b2-4f81-bc1e-0f423700c254\/code.power",
@@ -526,6 +548,17 @@
         "path": "src\/9c513baf-b279-43fd-ae29-a585c8cbc4f0",
         "spk": "Super__9c513baf_b279_43fd_ae29_a585c8cbc4f0__Power",
         "guid": "9c513baf-b279-43fd-ae29-a585c8cbc4f0"
+    },
+    "9d76b8dc-3883-4755-b11c-131d19ca8a53": {
+        "name": "Factory",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Data",
+        "code": "src\/9d76b8dc-3883-4755-b11c-131d19ca8a53\/code.php",
+        "power": "src\/9d76b8dc-3883-4755-b11c-131d19ca8a53\/code.power",
+        "settings": "src\/9d76b8dc-3883-4755-b11c-131d19ca8a53\/settings.json",
+        "path": "src\/9d76b8dc-3883-4755-b11c-131d19ca8a53",
+        "spk": "Super__9d76b8dc_3883_4755_b11c_131d19ca8a53__Power",
+        "guid": "9d76b8dc-3883-4755-b11c-131d19ca8a53"
     },
     "9ef0eb24-aae4-4f5a-99af-d724db44808f": {
         "name": "FieldHelper",
@@ -639,7 +672,7 @@
     },
     "bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8": {
         "name": "Table",
-        "type": "class",
+        "type": "final class",
         "namespace": "VDM\\Joomla\\Componentbuilder",
         "code": "src\/bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8\/code.php",
         "power": "src\/bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8\/code.power",

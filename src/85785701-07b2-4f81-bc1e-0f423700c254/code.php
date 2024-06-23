@@ -21,7 +21,7 @@ use VDM\Joomla\Interfaces\Data\SubformInterface;
  * 
  * @since  3.2.2
  */
-class Subform implements SubformInterface
+final class Subform implements SubformInterface
 {
 	/**
 	 * The ItemsInterface Class.

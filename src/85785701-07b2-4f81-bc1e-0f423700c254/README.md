@@ -6,12 +6,12 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# class Subform (Details)
+# final class Subform (Details)
 > namespace: **VDM\Joomla\Data**
 > extends: ****
 ```uml
 @startuml
-class Subform  #Gold {
+class Subform << (F,LightGreen) >> #RoyalBlue {
   # Items $items
   # string $table
   + __construct(Items $items, ?string $table = null)

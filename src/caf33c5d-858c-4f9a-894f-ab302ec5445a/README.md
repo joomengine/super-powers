@@ -19,14 +19,14 @@ interface FactoryInterface  #Lavender {
 note right of FactoryInterface::_
   Get any class from the container
 
-  since: 3.2.0
+  since: 0.0.0
   return: Mixed
 end note
 
 note right of FactoryInterface::getContainer
   Get the global container
 
-  since: 3.2.0
+  since: 0.0.0
   return: Container
 end note
  

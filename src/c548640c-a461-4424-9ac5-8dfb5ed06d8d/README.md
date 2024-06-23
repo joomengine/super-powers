@@ -14,6 +14,7 @@
 interface LoadInterface  #Lavender {
   + table(?string $table) : self
   + value(array $keys, string $field) : mixed
+  + values(array $keys, string $field) : ?array
   + item(array $keys) : ?object
   + items(array $keys) : ?array
   + getTable() : string
@@ -36,6 +37,18 @@ Example: $this->value(
 
   since: 2.0.1
   return: mixed
+end note
+
+note right of LoadInterface::values
+  Get a value from multiple rows from a given table
+Example: $this->values(
+[
+'guid' => 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+], 'value_key'
+);
+
+  since: 3.2.2
+  return: ?array
 end note
 
 note right of LoadInterface::item

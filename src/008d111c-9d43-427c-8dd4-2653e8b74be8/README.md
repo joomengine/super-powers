@@ -18,6 +18,7 @@ class Load  #Gold {
   + __construct(Model $model, Database $load, ...)
   + table(?string $table) : self
   + value(array $keys, string $field) : mixed
+  + values(array $keys, string $field) : ?array
   + item(array $keys) : ?object
   + items(array $keys) : ?array
   + getTable() : string
@@ -35,7 +36,7 @@ note right of Load::__construct
     ?string $table = null
 end note
 
-note right of Load::table
+note left of Load::table
   Set the current active table
 
   since: 3.2.2
@@ -54,6 +55,18 @@ Example: $this->value(
   return: mixed
 end note
 
+note left of Load::values
+  Get a value from multiple rows from a given table
+Example: $this->values(
+[
+'guid' => 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+], 'value_key'
+);
+
+  since: 3.2.2
+  return: ?array
+end note
+
 note right of Load::item
   Get values from a given table
 Example: $this->item(
@@ -66,7 +79,7 @@ Example: $this->item(
   return: ?object
 end note
 
-note right of Load::items
+note left of Load::items
   Get values from a given table
 Example: $this->items(
 [
@@ -89,7 +102,7 @@ note right of Load::getTable
   return: string
 end note
 
-note right of Load::prefix
+note left of Load::prefix
   Add prefix to the keys
 
   since: 2.0.1
