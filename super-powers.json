@@ -791,6 +791,17 @@
         "spk": "Super__db87c339_5bb6_4291_a7ef_2c48ea1b06bc__Power",
         "guid": "db87c339-5bb6-4291-a7ef-2c48ea1b06bc"
     },
+    "e0198c3f-777a-4a0b-87b7-e6a198afc8f9": {
+        "name": "MultiSubform",
+        "type": "final class",
+        "namespace": "VDM\\Joomla\\Data",
+        "code": "src\/e0198c3f-777a-4a0b-87b7-e6a198afc8f9\/code.php",
+        "power": "src\/e0198c3f-777a-4a0b-87b7-e6a198afc8f9\/code.power",
+        "settings": "src\/e0198c3f-777a-4a0b-87b7-e6a198afc8f9\/settings.json",
+        "path": "src\/e0198c3f-777a-4a0b-87b7-e6a198afc8f9",
+        "spk": "Super__e0198c3f_777a_4a0b_87b7_e6a198afc8f9__Power",
+        "guid": "e0198c3f-777a-4a0b-87b7-e6a198afc8f9"
+    },
     "e0f6ddbe-2a35-4537-942c-faff2ebd04f6": {
         "name": "BaseTable",
         "type": "abstract class",

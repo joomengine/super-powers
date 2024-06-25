@@ -48,7 +48,7 @@ note right of Subform::get
     string $linkValue
     string $linkKey
     string $field
-    array $set
+    array $get
 end note
 
 note left of Subform::set

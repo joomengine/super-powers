@@ -20,6 +20,7 @@ class Data  #Gold {
   + getItem(Container $container) : Item
   + getItems(Container $container) : Items
   + getSubform(Container $container) : Subform
+  + getMultiSubform(Container $container) : MultiSubform
 }
 
 note right of Data::register
@@ -76,6 +77,13 @@ note left of Data::getSubform
 
   since: 3.2.0
   return: Subform
+end note
+
+note right of Data::getMultiSubform
+  Get The MultiSubform Class.
+
+  since: 3.2.0
+  return: MultiSubform
 end note
  
 @enduml

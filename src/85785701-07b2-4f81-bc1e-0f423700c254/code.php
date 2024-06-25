@@ -77,16 +77,16 @@ final class Subform implements SubformInterface
 	 * @param string   $linkValue  The value of the link key in child table.
 	 * @param string   $linkKey    The link key on which the items where linked in the child table.
 	 * @param string   $field      The parent field name of the subform in the parent view.
-	 * @param array    $set        The array SET of the keys of each row in the subform.
+	 * @param array    $get        The array get:set of the keys of each row in the subform.
 	 *
 	 * @return array|null   The subform
 	 * @since 3.2.2
 	 */
-	public function get(string $linkValue, string $linkKey, string $field, array $set): ?array
+	public function get(string $linkValue, string $linkKey, string $field, array $get): ?array
 	{
 		if (($items = $this->items->table($this->getTable())->get([$linkValue], $linkKey)) !== null)
 		{
-			return $this->converter($items, $set, $field);
+			return $this->converter($items, $get, $field);
 		}
 		return null;
 	}
