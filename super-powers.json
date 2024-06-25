@@ -670,6 +670,17 @@
         "spk": "Super__bb29a833_73f7_4283_9327_bc7e41f0723b__Power",
         "guid": "bb29a833-73f7-4283-9327-bc7e41f0723b"
     },
+    "bb30f709-53d2-446a-ab3d-300fe6de0bc8": {
+        "name": "MultiSubformInterface",
+        "type": "interface",
+        "namespace": "VDM\\Joomla\\Interfaces\\Data",
+        "code": "src\/bb30f709-53d2-446a-ab3d-300fe6de0bc8\/code.php",
+        "power": "src\/bb30f709-53d2-446a-ab3d-300fe6de0bc8\/code.power",
+        "settings": "src\/bb30f709-53d2-446a-ab3d-300fe6de0bc8\/settings.json",
+        "path": "src\/bb30f709-53d2-446a-ab3d-300fe6de0bc8",
+        "spk": "Super__bb30f709_53d2_446a_ab3d_300fe6de0bc8__Power",
+        "guid": "bb30f709-53d2-446a-ab3d-300fe6de0bc8"
+    },
     "bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8": {
         "name": "Table",
         "type": "final class",

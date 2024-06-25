@@ -13,7 +13,7 @@
 	 *
 	 * @since 3.2.2
 	 */
-	public function __construct(Items $subform)
+	public function __construct(Subform $subform)
 	{
 		$this->subform = $subform;
 	}

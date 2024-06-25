@@ -13,6 +13,7 @@ namespace VDM\Joomla\Data;
 
 
 use VDM\Joomla\Interfaces\Data\SubformInterface as Subform;
+use VDM\Joomla\Interfaces\Data\MultiSubformInterface;
 
 
 /**
@@ -20,7 +21,7 @@ use VDM\Joomla\Interfaces\Data\SubformInterface as Subform;
  * 
  * @since  3.2.2
  */
-final class MultiSubform
+final class MultiSubform implements MultiSubformInterface
 {
 	/**
 	 * The Subform Class.
@@ -37,7 +38,7 @@ final class MultiSubform
 	 *
 	 * @since 3.2.2
 	 */
-	public function __construct(Items $subform)
+	public function __construct(Subform $subform)
 	{
 		$this->subform = $subform;
 	}

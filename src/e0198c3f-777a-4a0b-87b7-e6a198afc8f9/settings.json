@@ -3,7 +3,9 @@
     "add_licensing_template": "2",
     "extends": "",
     "guid": "e0198c3f-777a-4a0b-87b7-e6a198afc8f9",
-    "implements": null,
+    "implements": [
+        "bb30f709-53d2-446a-ab3d-300fe6de0bc8"
+    ],
     "load_selection": null,
     "name": "MultiSubform",
     "power_version": "1.0.0",
