@@ -120,7 +120,7 @@ final class MultiSubform implements MultiSubformInterface
 	public function set(array $items, array $setMap): bool
 	{
 		// Validate the core map presence and structure
-		if (!isset($setMap['_core']) || !is_array($getMap['_core']) || !$this->validSetMap($setMap['_core']))
+		if (!isset($setMap['_core']) || !is_array($setMap['_core']) || !$this->validSetMap($setMap['_core']))
 		{
 			return false;
 		}
