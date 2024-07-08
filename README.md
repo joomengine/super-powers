@@ -45,6 +45,7 @@ This repository contains an index (see below) of all the approved powers within 
   - **final class MultiSubform** | [Details](src/e0198c3f-777a-4a0b-87b7-e6a198afc8f9) | [Code](src/e0198c3f-777a-4a0b-87b7-e6a198afc8f9/code.php) | [Settings](src/e0198c3f-777a-4a0b-87b7-e6a198afc8f9/settings.json) | Super__e0198c3f_777a_4a0b_87b7_e6a198afc8f9__Power
   - **final class Subform** | [Details](src/85785701-07b2-4f81-bc1e-0f423700c254) | [Code](src/85785701-07b2-4f81-bc1e-0f423700c254/code.php) | [Settings](src/85785701-07b2-4f81-bc1e-0f423700c254/settings.json) | Super__85785701_07b2_4f81_bc1e_0f423700c254__Power
   - **class Remote** | [Details](src/728ee726-3f0f-4762-899d-f8c9430cee58) | [Code](src/728ee726-3f0f-4762-899d-f8c9430cee58/code.php) | [Settings](src/728ee726-3f0f-4762-899d-f8c9430cee58/settings.json) | Super__728ee726_3f0f_4762_899d_f8c9430cee58__Power
+  - **class Repository** | [Details](src/eb7d69c2-4ee9-4bd0-aacc-ab51a12be895) | [Code](src/eb7d69c2-4ee9-4bd0-aacc-ab51a12be895/code.php) | [Settings](src/eb7d69c2-4ee9-4bd0-aacc-ab51a12be895/settings.json) | Super__eb7d69c2_4ee9_4bd0_aacc_ab51a12be895__Power
 - **Namespace**: [VDM\Joomla\Database](#vdm-joomla-database)
 
   - **final class Delete** | [Details](src/92291f1f-f248-4ec0-9f2a-3d47c49eeac1) | [Code](src/92291f1f-f248-4ec0-9f2a-3d47c49eeac1/code.php) | [Settings](src/92291f1f-f248-4ec0-9f2a-3d47c49eeac1/settings.json) | Super__92291f1f_f248_4ec0_9f2a_3d47c49eeac1__Power
@@ -93,9 +94,6 @@ This repository contains an index (see below) of all the approved powers within 
 - **Namespace**: [VDM\Joomla\Componentbuilder\Table](#vdm-joomla-componentbuilder-table)
 
   - **final class Schema** | [Details](src/b3d2ec33-76d4-4c3b-bb2c-86ac14a221ce) | [Code](src/b3d2ec33-76d4-4c3b-bb2c-86ac14a221ce/code.php) | [Settings](src/b3d2ec33-76d4-4c3b-bb2c-86ac14a221ce/settings.json) | Super__b3d2ec33_76d4_4c3b_bb2c_86ac14a221ce__Power
-- **Namespace**: [VDM\Joomla\Componentbuilder\Utilities](#vdm-joomla-componentbuilder-utilities)
-
-  - **abstract class FilterHelper** | [Details](src/cddcac51-9a46-47c4-ba59-105c70453bd6) | [Code](src/cddcac51-9a46-47c4-ba59-105c70453bd6/code.php) | [Settings](src/cddcac51-9a46-47c4-ba59-105c70453bd6/settings.json) | Super__cddcac51_9a46_47c4_ba59_105c70453bd6__Power
 - **Namespace**: [VDM\Joomla\Data\Action](#vdm-joomla-data-action)
 
   - **class Delete** | [Details](src/3fc72954-a303-4cac-b53c-554be38b85e7) | [Code](src/3fc72954-a303-4cac-b53c-554be38b85e7/code.php) | [Settings](src/3fc72954-a303-4cac-b53c-554be38b85e7/settings.json) | Super__3fc72954_a303_4cac_b53c_554be38b85e7__Power

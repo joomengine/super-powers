@@ -1,0 +1,32 @@
+{
+    "add_head": "0",
+    "add_licensing_template": "2",
+    "extends": "",
+    "guid": "eb7d69c2-4ee9-4bd0-aacc-ab51a12be895",
+    "implements": null,
+    "load_selection": null,
+    "name": "Repository",
+    "power_version": "1.0.0",
+    "system_name": "VDM.Data.Repository",
+    "type": "class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "c182506a-ab84-439c-b962-1e606b58d545",
+            "as": "Grep"
+        },
+        "use_selection1": {
+            "use": "7212e4db-371f-4cfd-8122-32e9bb100d83",
+            "as": "Items"
+        },
+        "use_selection2": {
+            "use": "8d1baef6-fcad-49a9-848f-428009cdb989",
+            "as": "Git"
+        }
+    },
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Data.Repository",
+    "description": "Set data based on global unique ids to remote repository\r\n\r\n@since 3.2.2",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}

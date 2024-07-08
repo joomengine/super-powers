@@ -13,6 +13,7 @@
 @startuml
 interface GrepInterface  #Lavender {
   + getRemotePowersGuid() : ?array
+  + setBranchField(string $field) : void
   + get(string $guid, array $order = ['local', 'remote']) : ?object
 }
 
@@ -21,6 +22,13 @@ note right of GrepInterface::getRemotePowersGuid
 
   since: 3.2.0
   return: ?array
+end note
+
+note right of GrepInterface::setBranchField
+  Set the branch field
+
+  since: 3.2.2
+  return: void
 end note
 
 note right of GrepInterface::get

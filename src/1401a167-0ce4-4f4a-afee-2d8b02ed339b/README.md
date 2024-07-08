@@ -19,10 +19,12 @@ abstract Grep  #Orange {
   # CMSApplication $app
   + __construct(Contents $contents, array $paths, ...)
   + getRemotePowersGuid() : ?array
+  + setBranchField(string $field) : void
   + get(string $guid, ?array $order = null) : ?object
   # {abstract} remoteIndex(object $path) : void
   # getFunctionName(string $name) : ?string
   # init() : void
+  + getBranchField() : string
 }
 
 note right of Grep::__construct
@@ -37,14 +39,21 @@ note right of Grep::__construct
     ?CMSApplication $app = null
 end note
 
-note right of Grep::getRemotePowersGuid
+note left of Grep::getRemotePowersGuid
   Get all remote powers GUID's
 
   since: 3.2.0
   return: ?array
 end note
 
-note right of Grep::get
+note right of Grep::setBranchField
+  Set the branch field
+
+  since: 3.2.2
+  return: void
+end note
+
+note left of Grep::get
   Get a power
 
   since: 3.2.0
@@ -58,7 +67,7 @@ note right of Grep::remoteIndex
   return: void
 end note
 
-note right of Grep::getFunctionName
+note left of Grep::getFunctionName
   Get function name
 
   since: 3.2.0
@@ -70,6 +79,13 @@ note right of Grep::init
 
   since: 3.2.0
   return: void
+end note
+
+note left of Grep::getBranchField
+  Get the branch field
+
+  since: 3.2.2
+  return: string
 end note
  
 @enduml
