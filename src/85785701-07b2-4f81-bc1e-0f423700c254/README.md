@@ -17,11 +17,11 @@ class Subform << (F,LightGreen) >> #RoyalBlue {
   + __construct(Items $items, ?string $table = null)
   + table(string $table) : self
   + get(string $linkValue, string $linkKey, ...) : ?array
-  + set(array $items, string $indexKey, ...) : bool
+  + set(mixed $items, string $indexKey, ...) : bool
   + getTable() : string
   - purge(array $items, string $indexKey, ...) : void
   - converter(array $items, array $keySet, ...) : array
-  - process(array $items, string $indexKey, ...) : array
+  - process(mixed $items, string $indexKey, ...) : array
   - setGuid(string $key, bool $trim = true) : string
 }
 
@@ -58,7 +58,7 @@ note left of Subform::set
   return: bool
   
   arguments:
-    array $items
+    mixed $items
     string $indexKey
     string $linkKey
     string $linkValue
@@ -104,7 +104,7 @@ note left of Subform::process
   return: array
   
   arguments:
-    array $items
+    mixed $items
     string $indexKey
     string $linkKey
     string $linkValue

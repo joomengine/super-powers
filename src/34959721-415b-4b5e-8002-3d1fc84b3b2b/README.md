@@ -14,7 +14,7 @@
 interface SubformInterface  #Lavender {
   + table(string $table) : self
   + get(string $linkValue, string $linkKey, ...) : ?array
-  + set(array $items, string $indexKey, ...) : bool
+  + set(mixed $items, string $indexKey, ...) : bool
   + getTable() : string
 }
 
@@ -35,7 +35,7 @@ note right of SubformInterface::get
     string $linkValue
     string $linkKey
     string $field
-    array $set
+    array $get
 end note
 
 note right of SubformInterface::set
@@ -45,7 +45,7 @@ note right of SubformInterface::set
   return: bool
   
   arguments:
-    array $items
+    mixed $items
     string $indexKey
     string $linkKey
     string $linkValue
