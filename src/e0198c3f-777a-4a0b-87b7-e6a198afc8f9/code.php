@@ -94,7 +94,7 @@ final class MultiSubform implements MultiSubformInterface
 	/**
 	 * Set a subform items
 	 *
-	 * @param array   $items    The list of items from the subform to set
+	 * @param mixed   $items    The list of items from the subform to set
 	 * @param array   $setMap   The the map to set the subfrom data
 	 *
 	 *     Example:
@@ -117,12 +117,18 @@ final class MultiSubform implements MultiSubformInterface
 	 * @return bool
 	 * @since 3.2.2
 	 */
-	public function set(array $items, array $setMap): bool
+	public function set(mixed $items, array $setMap): bool
 	{
 		// Validate the core map presence and structure
 		if (!isset($setMap['_core']) || !is_array($setMap['_core']) || !$this->validSetMap($setMap['_core']))
 		{
 			return false;
+		}
+
+		// catch an empty set
+		if (!is_array($items))
+		{
+			$items = []; // will delete all exisitng linked items :( not ideal, but real
 		}
 
 		// Save the core data

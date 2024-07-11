@@ -13,7 +13,7 @@
 @startuml
 interface MultiSubformInterface  #Lavender {
   + get(array $getMap) : ?array
-  + set(array $items, array $setMap) : bool
+  + set(mixed $items, array $setMap) : bool
 }
 
 note right of MultiSubformInterface::get

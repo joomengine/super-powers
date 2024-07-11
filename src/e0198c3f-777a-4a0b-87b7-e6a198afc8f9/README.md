@@ -15,7 +15,7 @@ class MultiSubform << (F,LightGreen) >> #RoyalBlue {
   # Subform $subform
   + __construct(Subform $subform)
   + get(array $getMap) : ?array
-  + set(array $items, array $setMap) : bool
+  + set(mixed $items, array $setMap) : bool
   - getSubformData(array $map, ?array $coreData = null) : ?array
   - setSubformData(array $items, array $map, ...) : bool
   - setLinkValue(string $linkValue, ?array $data = null) : ?string
