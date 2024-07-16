@@ -1,0 +1,34 @@
+{
+    "add_head": "1",
+    "add_licensing_template": "2",
+    "extends": "",
+    "guid": "5f0205fa-5c43-424a-af7d-abc943c17c8c",
+    "implements": [
+        "b6e9854c-3672-42ec-8843-26c24b4635bd"
+    ],
+    "load_selection": null,
+    "name": "SchemaChecker",
+    "power_version": "1.0.0",
+    "system_name": "VDM.SchemaChecker",
+    "type": "abstract class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "4dd11b9b-3c64-460b-aaa6-62ba467db7aa",
+            "as": "Schema"
+        },
+        "use_selection1": {
+            "use": "2da6d6c4-eb29-4d69-8bc2-36d96e916adf",
+            "as": "Table"
+        },
+        "use_selection2": {
+            "use": "13c2cac1-a70d-42d7-99fc-eb7ac3443069",
+            "as": "default"
+        }
+    },
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Abstraction.SchemaChecker",
+    "description": "Schema Checker\r\n\r\n@since 3.2.2",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "use Joomla\\CMS\\Factory;\r\nuse Joomla\\CMS\\Application\\CMSApplication;",
+    "composer": ""
+}

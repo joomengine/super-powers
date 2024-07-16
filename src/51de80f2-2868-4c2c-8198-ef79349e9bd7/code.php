@@ -17,7 +17,7 @@ namespace VDM\Joomla\Interfaces\Data;
  * 
  * @since 3.2.2
  */
-interface RemoteInterface
+interface RemoteGetInterface
 {
 	/**
 	 * Set the current active table
@@ -48,7 +48,7 @@ interface RemoteInterface
 	public function reset(array $items): bool;
 
 	/**
-	 * Load a item
+	 * Load an item
 	 *
 	 * @param string   $guid    The global unique id of the item
 	 * @param array    $order   The search order
@@ -56,7 +56,7 @@ interface RemoteInterface
 	 * @return bool
 	 * @since 3.2.2
 	 */
-	public function load(string $guid, array $order = ['remote', 'local']): bool;
+	public function item(string $guid, array $order = ['remote', 'local']): bool;
 
 	/**
 	 * Get the current active table

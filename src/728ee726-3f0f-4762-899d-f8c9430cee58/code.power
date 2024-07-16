@@ -64,7 +64,7 @@
 	 */
 	public function init(): bool
 	{
-		if (($items = $this->grep->getRemotePowersGuid()) !== null)
+		if (($items = $this->grep->getRemoteGuid()) !== null)
 		{
 			foreach($items as $guid)
 			{
@@ -100,7 +100,7 @@
 
 		foreach($items as $guid)
 		{
-			if (!$this->load($guid, ['remote']))
+			if (!$this->item($guid, ['remote']))
 			{
 				$success = false;
 			}
@@ -110,7 +110,7 @@
 	}
 
 	/**
-	 * Load a item
+	 * Load an item
 	 *
 	 * @param string   $guid    The global unique id of the item
 	 * @param array    $order   The search order
@@ -119,7 +119,7 @@
 	 * @return bool
 	 * @since 3.2.0
 	 */
-	public function load(string $guid, array $order = ['remote', 'local'], ?string $action = null): bool
+	public function item(string $guid, array $order = ['remote', 'local'], ?string $action = null): bool
 	{
 		if (($item = $this->grep->get($guid, $order)) !== null)
 		{

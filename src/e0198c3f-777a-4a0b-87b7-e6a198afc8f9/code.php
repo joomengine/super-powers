@@ -46,7 +46,7 @@ final class MultiSubform implements MultiSubformInterface
 	/**
 	 * Get a subform items
 	 *
-	 * @param array   $getMap  The the map to get the subfrom data
+	 * @param array   $getMap  The map to get the subfrom data
 	 *
 	 *     Example:
 	 *        $getMap = [
@@ -95,7 +95,7 @@ final class MultiSubform implements MultiSubformInterface
 	 * Set a subform items
 	 *
 	 * @param mixed   $items    The list of items from the subform to set
-	 * @param array   $setMap   The the map to set the subfrom data
+	 * @param array   $setMap   The map to set the subfrom data
 	 *
 	 *     Example:
 	 *        $items,
@@ -128,7 +128,7 @@ final class MultiSubform implements MultiSubformInterface
 		// catch an empty set
 		if (!is_array($items))
 		{
-			$items = []; // will delete all exisitng linked items :( not ideal, but real
+			$items = []; // will delete all existing linked items :( not ideal, but real
 		}
 
 		// Save the core data
@@ -173,7 +173,7 @@ final class MultiSubform implements MultiSubformInterface
 	 * Set data based on provided map configuration.
 	 *
 	 * @param array       $items     The list of items from the subform to set
-	 * @param array       $map       The the map to set the subfrom data
+	 * @param array       $map       The map to set the subfrom data
 	 * @param array|null  $coreData  The core data to be appended with subform data
 	 *
 	 * @return bool

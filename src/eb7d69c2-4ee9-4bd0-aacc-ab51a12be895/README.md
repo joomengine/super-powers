@@ -6,34 +6,42 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# class Repository (Details)
-> namespace: **VDM\Joomla\Data**
-> extends: ****
+# class Set (Details)
+> namespace: **VDM\Joomla\Data\Remote**
+
 ```uml
 @startuml
-class Repository  #Gold {
+class Set  #Gold {
   # Grep $grep
   # Items $items
+  # ItemReadme $itemReadme
+  # MainReadme $mainReadme
   # Git $git
   + array $repos
   # string $table
   # array $map
+  # array $settings
   + __construct(array $repos, Grep $grep, ...)
   + table(string $table) : self
-  + set(array $guids) : bool
+  + setSettingsPath(string $settingsPath) : self
+  + items(array $guids) : bool
   + getTable() : string
-  + getLocalItems(array $guids) : ?array
+  # {abstract} updateItem(object $item, object $existing, ...) : bool
+  # {abstract} createItem(object $item, object $repo) : void
+  # {abstract} updateItemReadme(object $item, object $existing, ...) : void
+  # {abstract} createItemReadme(object $item, object $repo) : void
+  # {abstract} saveRepoMainSettings(array $repo) : void
+  # getLocalItems(array $guids) : ?array
+  # save(object $item) : void
   # fetchLocalItems(array $guids) : ?array
   # mapItems(array $items) : array
   # mapItem(object $item) : object
-  # getRepoItems(array $guids) : ?array
   # canWrite() : bool
   # areObjectsEqual(object $obj1, object $obj2) : bool
-  # updateItem(object $item, object $existing) : void
-  # createItem(object $item) : void
+  # getSettingsPath() : string
 }
 
-note right of Repository::__construct
+note right of Set::__construct
   Constructor.
 
   since: 3.2.2
@@ -42,74 +50,129 @@ note right of Repository::__construct
     array $repos
     Grep $grep
     Items $items
+    ItemReadme $itemReadme
+    MainReadme $mainReadme
     Git $git
     ?string $table = null
+    ?string $settingsPath = null
 end note
 
-note left of Repository::table
+note left of Set::table
   Set the current active table
 
   since: 3.2.2
   return: self
 end note
 
-note right of Repository::set
-  Set items
+note right of Set::setSettingsPath
+  Set the settings path
 
-  since: 3.2.0
+  since: 3.2.2
+  return: self
+end note
+
+note left of Set::items
+  Save items remotely
+
+  since: 3.2.2
   return: bool
 end note
 
-note left of Repository::getTable
+note right of Set::getTable
   Get the current active table
 
   since: 3.2.2
   return: string
 end note
 
-note right of Repository::getLocalItems
+note left of Set::updateItem
+  update an existing item (if changed)
+
+  since: 3.2.2
+  return: bool
+  
+  arguments:
+    object $item
+    object $existing
+    object $repo
+end note
+
+note right of Set::createItem
+  create a new item
+
+  since: 3.2.2
+  return: void
+end note
+
+note left of Set::updateItemReadme
+  update an existing item readme
+
+  since: 3.2.2
+  return: void
+  
+  arguments:
+    object $item
+    object $existing
+    object $repo
+end note
+
+note right of Set::createItemReadme
+  create a new item readme
+
+  since: 3.2.2
+  return: void
+end note
+
+note left of Set::saveRepoMainSettings
+  Update/Create the repo main readme and index
+
+  since: 3.2.2
+  return: void
+end note
+
+note right of Set::getLocalItems
   Get items
 
   since: 3.2.2
   return: ?array
 end note
 
-note left of Repository::fetchLocalItems
+note left of Set::save
+  Save an item remotely
+
+  since: 3.2.2
+  return: void
+end note
+
+note right of Set::fetchLocalItems
   Fetch items from the database
 
   since: 3.2.2
   return: ?array
 end note
 
-note right of Repository::mapItems
+note left of Set::mapItems
   Map items to their properties
 
   since: 3.2.2
   return: array
 end note
 
-note left of Repository::mapItem
+note right of Set::mapItem
   Map a single item to its properties
 
   since: 3.2.2
   return: object
 end note
 
-note right of Repository::getRepoItems
-  get existing items
-
-  since: 3.2.2
-  return: ?array
-end note
-
-note left of Repository::canWrite
+note left of Set::canWrite
   check that we have an active repo towards which we can write data
 
   since: 3.2.2
   return: bool
 end note
 
-note right of Repository::areObjectsEqual
+note right of Set::areObjectsEqual
   Checks if two objects are equal by comparing their JSON representations.
 This method converts both input objects to JSON strings and compares these strings.
 If the JSON strings are identical, the objects are considered equal.
@@ -118,22 +181,29 @@ If the JSON strings are identical, the objects are considered equal.
   return: bool
 end note
 
-note left of Repository::updateItem
-  update an existing item (if changed)
+note left of Set::getSettingsPath
+  Get the settings path
 
   since: 3.2.2
-  return: void
-end note
-
-note right of Repository::createItem
-  create a new item
-
-  since: 3.2.2
-  return: void
+  return: string
 end note
  
 @enduml
 ```
+
+The Power feature in JCB allows you to write PHP classes and their implementations, making it easy to include them in your Joomla project. JCB handles linking, autoloading, namespacing, and folder structure creation for you.
+
+By using the SPK (Super Power Key) in your custom code (replacing the class name in your code with the SPK), JCB will automatically pull the power from the repository into your project. This makes it available in your JCB instance, allowing you to edit it and include the class in your generated Joomla component.
+
+JCB uses placeholders like [[[`NamespacePrefix`]]] and [[[`ComponentNamespace`]]] in namespacing to prevent collisions and improve reusability across different JCB systems. You can also set the **JCB powers path** globally or per component under the **Dynamic Integration** tab, providing flexibility and easy maintainability.
+
+To add this specific Power to your project in JCB:
+
+> simply use this SPK
+```
+Super---eb7d69c2_4ee9_4bd0_aacc_ab51a12be895---Power
+```
+> remember to replace the `---` with `___` to activate this Power in your code
 
 ---
 ```

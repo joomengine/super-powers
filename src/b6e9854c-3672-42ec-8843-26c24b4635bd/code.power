@@ -1,0 +1,7 @@
+	/**
+	 * Make sure that the database schema is up-to-date.
+	 *
+	 * @return void
+	 * @since 3.2.2
+	 */
+	public function run(): void;

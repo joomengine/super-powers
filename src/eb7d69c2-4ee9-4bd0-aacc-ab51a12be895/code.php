@@ -9,12 +9,15 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Data;
+namespace VDM\Joomla\Data\Remote;
 
 
 use VDM\Joomla\Interfaces\GrepInterface as Grep;
 use VDM\Joomla\Interfaces\Data\ItemsInterface as Items;
+use VDM\Joomla\Interfaces\Readme\ItemInterface as ItemReadme;
+use VDM\Joomla\Interfaces\Readme\MainInterface as MainReadme;
 use VDM\Joomla\Gitea\Repository\Contents as Git;
+use VDM\Joomla\Interfaces\Data\RemoteSetInterface;
 
 
 /**
@@ -22,10 +25,10 @@ use VDM\Joomla\Gitea\Repository\Contents as Git;
  * 
  * @since 3.2.2
  */
-class Repository
+class Set implements RemoteSetInterface
 {
 	/**
-	 * The GrepInterface Class.
+	 * The Grep Class.
 	 *
 	 * @var   Grep
 	 * @since 3.2.2
@@ -33,12 +36,28 @@ class Repository
 	protected Grep $grep;
 
 	/**
-	 * The ItemsInterface Class.
+	 * The Items Class.
 	 *
 	 * @var   Items
 	 * @since 3.2.2
 	 */
 	protected Items $items;
+
+	/**
+	 * The Item Readme Class.
+	 *
+	 * @var   ItemReadme
+	 * @since 3.2.2
+	 */
+	protected ItemReadme $itemReadme;
+
+	/**
+	 * The Main Readme Class.
+	 *
+	 * @var   MainReadme
+	 * @since 3.2.2
+	 */
+	protected MainReadme $mainReadme;
 
 	/**
 	 * The Contents Class.
@@ -51,7 +70,7 @@ class Repository
 	/**
 	 * All active repos
 	 *
-	 * @var    array
+	 * @var   array
 	 * @since 3.2.0
 	 **/
 	public array $repos;
@@ -59,7 +78,7 @@ class Repository
 	/**
 	 * Table Name
 	 *
-	 * @var    string
+	 * @var   string
 	 * @since 3.2.1
 	 */
 	protected string $table;
@@ -67,32 +86,62 @@ class Repository
 	/**
 	 * The item map
 	 *
-	 * @var    array
+	 * @var   array
 	 * @since 3.2.2
 	 */
 	protected array $map;
 
 	/**
+	 * The repo main settings
+	 *
+	 * @var   array
+	 * @since 3.2.2
+	 */
+	protected array $settings;
+
+	/**
+	 * The item settings file path
+	 *
+	 * @var   string
+	 * @since 3.2.2
+	 */
+	protected string $settings_path = 'item.json';
+
+	/**
 	 * Constructor.
 	 *
-	 * @param array        $repos      The active repos
-	 * @param Grep         $grep       The GrepInterface Class.
-	 * @param Items        $items      The ItemsInterface Class.
-	 * @param Git          $git        The Contents Class.
-	 * @param string|null  $table      The table name.
+	 * @param array        $repos          The active repos
+	 * @param Grep         $grep           The Grep Class.
+	 * @param Items        $items          The Items Class.
+	 * @param ItemReadme   $itemReadme     The Item Readme Class.
+	 * @param MainReadme   $mainReadme     The Main Readme Class.
+	 * @param Git          $git            The Contents Class.
+	 * @param string|null  $table          The table name.
+	 * @param string|null  $settingsPath   The settings path.
 	 *
 	 * @since 3.2.2
 	 */
-	public function __construct(array $repos, Grep $grep, Items $items, Git $git, ?string $table = null)
+	public function __construct(array $repos, Grep $grep, Items $items,
+		ItemReadme $itemReadme, MainReadme $mainReadme, Git $git,
+		?string $table = null, ?string $settingsPath = null)
 	{
 		$this->repos = $repos;
 		$this->grep = $grep;
 		$this->items = $items;
+		$this->itemReadme = $itemReadme;
+		$this->mainReadme = $mainReadme;
 		$this->git = $git;
+
 		if ($table !== null)
 		{
 			$this->table = $table;
 		}
+
+		if ($settingsPath !== null)
+		{
+			$this->settings_path = $settingsPath;
+		}
+
 		// set the branch to writing
 		$this->grep->setBranchField('write_branch');
 	}
@@ -113,43 +162,56 @@ class Repository
 	}
 
 	/**
-	 * Set items
+	 * Set the settings path
+	 *
+	 * @param string    $settingsPath    The repository settings path
+	 *
+	 * @return self
+	 * @since 3.2.2
+	 */
+	public function setSettingsPath(string $settingsPath): self
+	{
+		$this->settings_path = $settingsPath;
+
+		return $this;
+	}
+
+	/**
+	 * Save items remotely
 	 *
 	 * @param array   $guids    The global unique id of the item
 	 *
 	 * @return bool
 	 * @throws \Exception
-	 * @since 3.2.0
+	 * @since 3.2.2
 	 */
-	public function set(array $guids): bool
+	public function items(array $guids): bool
 	{
-		if (($items = $this->getLocalItems($guids)) === null)
-		{
-			throw new \Exception("At least one valid local [Joomla Power] must exist for the push function to operate correctly.");
-		}
-
 		if (!$this->canWrite())
 		{
-			throw new \Exception("At least one [Joomla Power] content repository must be configured with a [Write Branch] value in the repositories area for the push function to operate correctly.");
+			throw new \Exception("At least one [Item] content repository must be configured with a [Write Branch] value in the repositories area for the push function to operate correctly.");
 		}
 
-		// update the existing found
-		if (($existing_items = $this->getRepoItems($guids)) !== [])
+		// we reset the index settings
+		$this->settings = [];
+
+		if (($items = $this->getLocalItems($guids)) === null)
 		{
-			foreach ($existing_items as $e_guid => $item)
-			{
-				if (isset($items[$e_guid]))
-				{
-					$this->updateItem($items[$e_guid], $item);
-					unset($items[$e_guid]);
-				}
-			}
+			throw new \Exception("At least one valid local [Item] must exist for the push function to operate correctly.");
 		}
 
-		// create the new items
 		foreach ($items as $item)
 		{
-			$this->createItem($item);
+			$this->save($item);
+		}
+
+		// update the repos main readme and index settings
+		if ($this->settings !== [])
+		{
+			foreach ($this->settings as $repo)
+			{
+				$this->saveRepoMainSettings($repo);
+			}
 		}
 
 		return true;
@@ -167,6 +229,62 @@ class Repository
 	}
 
 	/**
+	 * update an existing item (if changed)
+	 *
+	 * @param object $item
+	 * @param object $existing
+	 * @param object $repo
+	 *
+	 * @return bool
+	 * @since 3.2.2
+	 */
+	abstract protected function updateItem(object $item, object $existing, object $repo): bool;
+
+	/**
+	 * create a new item
+	 *
+	 * @param object  $item
+	 * @param object  $repo
+	 *
+	 * @return void
+	 * @since 3.2.2
+	 */
+	abstract protected function createItem(object $item, object $repo): void;
+
+	/**
+	 * update an existing item readme
+	 *
+	 * @param object $item
+	 * @param object $existing
+	 * @param object $repo
+	 *
+	 * @return void
+	 * @since 3.2.2
+	 */
+	abstract protected function updateItemReadme(object $item, object $existing, object $repo): void;
+
+	/**
+	 * create a new item readme
+	 *
+	 * @param object  $item
+	 * @param object  $repo
+	 *
+	 * @return void
+	 * @since 3.2.2
+	 */
+	abstract protected function createItemReadme(object $item, object $repo): void;
+
+	/**
+	 * Update/Create the repo main readme and index
+	 *
+	 * @param array  $repo
+	 *
+	 * @return void
+	 * @since 3.2.2
+	 */
+	abstract protected function saveRepoMainSettings(array $repo): void;
+
+	/**
 	 * Get items
 	 *
 	 * @param array $guids The global unique id of the item
@@ -174,7 +292,7 @@ class Repository
 	 * @return array|null
 	 * @since 3.2.2
 	 */
-	public function getLocalItems(array $guids): ?array
+	protected function getLocalItems(array $guids): ?array
 	{
 		$items = $this->fetchLocalItems($guids);
 
@@ -187,9 +305,55 @@ class Repository
 	}
 
 	/**
+	 * Save an item remotely
+	 *
+	 * @param  object   $item    The item to save
+	 *
+	 * @return void
+	 * @since 3.2.2
+	 */
+	protected function save(object $item): void
+	{
+		foreach ($this->repos as $key => $repo)
+		{
+			if (empty($repo->write_branch) || $repo->write_branch === 'default')
+			{
+				continue;
+			}
+
+			$this->git->load_($repo->base ?? null, $repo->token ?? null);
+
+			if (($existing = $this->grep->get($guid, ['remote'], $repo)) !== null)
+			{
+				if ($this->updateItem($item, $existing, $repo))
+				{
+					$this->updateItemReadme($item, $existing, $repo);
+				}
+			}
+			else
+			{
+				$this->createItem($item, $repo);
+
+				$this->createItemReadme($item, $repo);
+
+				if (!isset($this->settings[$key]))
+				{
+					$this->settings[$key] = ['repo' => $repo, 'items' => [$item]);
+				}
+				else
+				{
+					$this->settings[$key]['items'][] = $item;
+				}
+			}
+
+			$this->git->reset_();
+		}
+	}
+
+	/**
 	 * Fetch items from the database
 	 *
-	 * @param array $guids The global unique id of the item
+	 * @param array $guids The global unique ids of the items
 	 *
 	 * @return array|null
 	 * @since 3.2.2
@@ -245,28 +409,6 @@ class Repository
 	}
 
 	/**
-	 * get existing items
-	 *
-	 * @param array   $guids    The global unique id of the item
-	 *
-	 * @return array|null
-	 * @since 3.2.2
-	 */
-	protected function getRepoItems(array $guids): ?array
-	{
-		$bucket = [];
-		foreach ($guids as $guid)
-		{
-			if (($item = $this->grep->get($guid)) !== null)
-			{
-				$bucket[$guid] = (object) $item;
-			}
-		}
-
-		return $bucket ?? null;
-	}
-
-	/**
 	 * check that we have an active repo towards which we can write data
 	 *
 	 * @return bool
@@ -308,79 +450,14 @@ class Repository
 	}
 
 	/**
-	 * update an existing item (if changed)
+	 * Get the settings path
 	 *
-	 * @param object $item
-	 * @param object $existing
-	 *
-	 * @return void
+	 * @return string
 	 * @since 3.2.2
 	 */
-	protected function updateItem(object $item, object $existing): void
+	protected function getSettingsPath(): string
 	{
-		if (isset($existing->params->source) && is_array($existing->params->source))
-		{
-			// get the source values
-			$source = $existing->params->source;
-
-			// make sure there was a change
-			$existing = $this->mapItem($existing);
-			if ($this->areObjectsEqual($item, $existing))
-			{
-				return;
-			}
-
-			foreach ($this->repos as $repo)
-			{
-				if (isset($source[$repo->guid]))
-				{
-					$this->git->load_($repo->base ?? null, $repo->token ?? null);
-					$this->git->update(
-						$repo->organisation, // The owner name.
-						$repo->repository, // The repository name.
-						'src/' . $item->guid . '/item.json', // The file path.
-						json_encode($item, JSON_PRETTY_PRINT), // The file content.
-						'Update ' . $item->system_name, // The commit message.
-						$source[$repo->guid], // The blob SHA of the old file.
-						$repo->write_branch // The branch name.
-					);
-					$this->git->reset_();
-
-					// only update in the first found repo
-					return;
-				}
-			}
-		}
-	}
-
-	/**
-	 * create a new item
-	 *
-	 * @param object $item
-	 *
-	 * @return void
-	 * @since 3.2.2
-	 */
-	protected function createItem(object $item): void
-	{
-		foreach ($this->repos as $repo)
-		{
-			if (!empty($repo->write_branch) && $repo->write_branch !== 'default')
-			{
-				$this->git->load_($repo->base ?? null, $repo->token ?? null);
-				$this->git->create(
-					$repo->organisation, // The owner name.
-					$repo->repository, // The repository name.
-					'src/' . $item->guid . '/item.json', // The file path.
-					json_encode($item, JSON_PRETTY_PRINT), // The file content.
-					'Create ' . $item->system_name, // The commit message.
-					$repo->write_branch // The branch name.
-				);
-				$this->git->reset_();
-				// only create in the first found repo
-				return;
-			}
-		}
+		return $this->settings_path;
 	}
 }
 
