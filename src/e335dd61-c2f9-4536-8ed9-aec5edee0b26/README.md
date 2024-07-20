@@ -6,44 +6,52 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# interface RemoteSetInterface (Details)
-> namespace: **VDM\Joomla\Interfaces\Data**
+# interface SetInterface (Details)
+> namespace: **VDM\Joomla\Interfaces\Remote**
 
 ```uml
 @startuml
-interface RemoteSetInterface  #Lavender {
+interface SetInterface  #Lavender {
   + table(string $table) : self
+  + area(string $area) : self
   + setSettingsPath(string $settingsPath) : self
+  + setIndexSettingsPath(string $settingsIndexPath) : self
   + items(array $guids) : bool
-  + getTable() : string
 }
 
-note right of RemoteSetInterface::table
+note right of SetInterface::table
   Set the current active table
 
   since: 3.2.2
   return: self
 end note
 
-note right of RemoteSetInterface::setSettingsPath
+note right of SetInterface::area
+  Set the current active area
+
+  since: 3.2.2
+  return: self
+end note
+
+note right of SetInterface::setSettingsPath
   Set the settings path
 
   since: 3.2.2
   return: self
 end note
 
-note right of RemoteSetInterface::items
+note right of SetInterface::setIndexSettingsPath
+  Set the index settings path
+
+  since: 3.2.2
+  return: self
+end note
+
+note right of SetInterface::items
   Save items remotely
 
   since: 3.2.2
   return: bool
-end note
-
-note right of RemoteSetInterface::getTable
-  Get the current active table
-
-  since: 3.2.2
-  return: string
 end note
  
 @enduml

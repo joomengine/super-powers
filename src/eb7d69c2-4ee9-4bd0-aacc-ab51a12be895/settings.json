@@ -9,8 +9,8 @@
     "load_selection": null,
     "name": "Set",
     "power_version": "1.0.0",
-    "system_name": "VDM.Data.Remote.Set",
-    "type": "class",
+    "system_name": "VDM.Abstraction.Remote.Set",
+    "type": "abstract class",
     "use_selection": {
         "use_selection0": {
             "use": "c182506a-ab84-439c-b962-1e606b58d545",
@@ -29,12 +29,12 @@
             "as": "MainReadme"
         },
         "use_selection4": {
-            "use": "8d1baef6-fcad-49a9-848f-428009cdb989",
+            "use": "d1de5d5b-bf29-4031-8094-76c4f6c75900",
             "as": "Git"
         }
     },
     "extendsinterfaces": null,
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Data.Remote.Set",
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Abstraction.Remote.Set",
     "description": "Set data based on global unique ids to remote repository\r\n\r\n@since 3.2.2",
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
     "head": "",

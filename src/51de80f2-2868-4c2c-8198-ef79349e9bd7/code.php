@@ -9,7 +9,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Interfaces\Data;
+namespace VDM\Joomla\Interfaces\Remote;
 
 
 /**
@@ -17,7 +17,7 @@ namespace VDM\Joomla\Interfaces\Data;
  * 
  * @since 3.2.2
  */
-interface RemoteGetInterface
+interface GetInterface
 {
 	/**
 	 * Set the current active table

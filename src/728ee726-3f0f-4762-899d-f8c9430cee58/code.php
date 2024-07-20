@@ -9,12 +9,12 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Data\Remote;
+namespace VDM\Joomla\Abstraction\Remote;
 
 
 use VDM\Joomla\Interfaces\GrepInterface as Grep;
 use VDM\Joomla\Interfaces\Data\ItemInterface as Item;
-use VDM\Joomla\Interfaces\Data\RemoteGetInterface;
+use VDM\Joomla\Interfaces\Remote\GetInterface;
 
 
 /**
@@ -22,7 +22,7 @@ use VDM\Joomla\Interfaces\Data\RemoteGetInterface;
  * 
  * @since 3.2.0
  */
-class Get implements RemoteGetInterface
+abstract class Get implements GetInterface
 {
 	/**
 	 * The Grep Class.
@@ -94,7 +94,7 @@ class Get implements RemoteGetInterface
 		{
 			foreach($items as $guid)
 			{
-				if ($this->item->table($this->getTable())->value($guid) !== null &&
+				if ($this->item->table($this->getTable())->value($guid) === null &&
 					($item = $this->grep->get($guid, ['remote'])) !== null)
 				{
 					$this->item->set($item);

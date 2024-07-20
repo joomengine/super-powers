@@ -9,7 +9,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Interfaces\Data;
+namespace VDM\Joomla\Interfaces\Remote;
 
 
 /**
@@ -17,7 +17,7 @@ namespace VDM\Joomla\Interfaces\Data;
  * 
  * @since 3.2.2
  */
-interface RemoteSetInterface
+interface SetInterface
 {
 	/**
 	 * Set the current active table
@@ -30,6 +30,16 @@ interface RemoteSetInterface
 	public function table(string $table): self;
 
 	/**
+	 * Set the current active area
+	 *
+	 * @param string $area The area that should be active
+	 *
+	 * @return self
+	 * @since 3.2.2
+	 */
+	public function area(string $area): self;
+
+	/**
 	 * Set the settings path
 	 *
 	 * @param string    $settingsPath    The repository settings path
@@ -38,6 +48,16 @@ interface RemoteSetInterface
 	 * @since 3.2.2
 	 */
 	public function setSettingsPath(string $settingsPath): self;
+
+	/**
+	 * Set the index settings path
+	 *
+	 * @param string    $settingsIndexPath    The repository index settings path
+	 *
+	 * @return self
+	 * @since 3.2.2
+	 */
+	public function setIndexSettingsPath(string $settingsIndexPath): self;
 
 	/**
 	 * Save items remotely
@@ -49,13 +69,5 @@ interface RemoteSetInterface
 	 * @since 3.2.2
 	 */
 	public function items(array $guids): bool;
-
-	/**
-	 * Get the current active table
-	 *
-	 * @return  string
-	 * @since 3.2.2
-	 */
-	public function getTable(): string;
 }
 

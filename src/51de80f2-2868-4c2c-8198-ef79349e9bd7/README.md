@@ -6,12 +6,12 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# interface RemoteGetInterface (Details)
-> namespace: **VDM\Joomla\Interfaces\Data**
+# interface GetInterface (Details)
+> namespace: **VDM\Joomla\Interfaces\Remote**
 
 ```uml
 @startuml
-interface RemoteGetInterface  #Lavender {
+interface GetInterface  #Lavender {
   + table(string $table) : self
   + init() : bool
   + reset(array $items) : bool
@@ -19,35 +19,35 @@ interface RemoteGetInterface  #Lavender {
   + getTable() : string
 }
 
-note right of RemoteGetInterface::table
+note right of GetInterface::table
   Set the current active table
 
   since: 3.2.2
   return: self
 end note
 
-note right of RemoteGetInterface::init
+note right of GetInterface::init
   Init all items not found in database
 
   since: 3.2.0
   return: bool
 end note
 
-note right of RemoteGetInterface::reset
+note right of GetInterface::reset
   Reset the items
 
   since: 3.2.0
   return: bool
 end note
 
-note right of RemoteGetInterface::item
+note right of GetInterface::item
   Load an item
 
   since: 3.2.2
   return: bool
 end note
 
-note right of RemoteGetInterface::getTable
+note right of GetInterface::getTable
   Get the current active table
 
   since: 3.2.2

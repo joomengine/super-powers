@@ -14,7 +14,7 @@
 abstract SchemaChecker  #Orange {
   # ?Table $table
   # ?Schema $schema
-  # CMSApplication $app
+  # $app
   + __construct(?Schema $schema = null, ?Table $table = null, ...)
   + run() : void
   # initializeInstances() : void
@@ -34,7 +34,7 @@ note right of SchemaChecker::__construct
   arguments:
     ?Schema $schema = null
     ?Table $table = null
-    ?CMSApplication $app = null
+    $app = null
 end note
 
 note left of SchemaChecker::run

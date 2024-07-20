@@ -6,71 +6,40 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# abstract class Get (Details)
-> namespace: **VDM\Joomla\Abstraction\Remote**
+# interface ApiInterface (Details)
+> namespace: **VDM\Joomla\Interfaces\Git**
 
 ```uml
 @startuml
-abstract Get  #Orange {
-  # Grep $grep
-  # Item $item
-  # string $table
-  + __construct(Grep $grep, Item $item, ...)
-  + table(string $table) : self
-  + init() : bool
-  + reset(array $items) : bool
-  + item(string $guid, array $order = ['remote', 'local'], ...) : bool
-  + getTable() : string
+interface ApiInterface  #Lavender {
+  + load_(?string $url = null, ?string $token = null, ...) : void
+  + reset_() : void
+  + api() : string
 }
 
-note right of Get::__construct
-  Constructor.
+note right of ApiInterface::load_
+  Load/Reload API.
 
   since: 3.2.0
+  return: void
   
   arguments:
-    Grep $grep
-    Item $item
-    ?string $table = null
+    ?string $url = null
+    ?string $token = null
+    bool $backup = true
 end note
 
-note right of Get::table
-  Set the current active table
-
-  since: 3.2.2
-  return: self
-end note
-
-note right of Get::init
-  Init all items not found in database
+note right of ApiInterface::reset_
+  Reset to previous toke, url it set
 
   since: 3.2.0
-  return: bool
+  return: void
 end note
 
-note right of Get::reset
-  Reset the items
+note right of ApiInterface::api
+  Get the API url
 
   since: 3.2.0
-  return: bool
-end note
-
-note right of Get::item
-  Load an item
-
-  since: 3.2.0
-  return: bool
-  
-  arguments:
-    string $guid
-    array $order = ['remote', 'local']
-    ?string $action = null
-end note
-
-note right of Get::getTable
-  Get the current active table
-
-  since: 3.2.2
   return: string
 end note
  
@@ -87,7 +56,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---728ee726_3f0f_4762_899d_f8c9430cee58---Power
+Super---17ed2fec_49d6_4731_92c3_f9cd78fb6273---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

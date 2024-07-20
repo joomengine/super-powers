@@ -9,15 +9,15 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Data\Remote;
+namespace VDM\Joomla\Abstraction\Remote;
 
 
 use VDM\Joomla\Interfaces\GrepInterface as Grep;
 use VDM\Joomla\Interfaces\Data\ItemsInterface as Items;
 use VDM\Joomla\Interfaces\Readme\ItemInterface as ItemReadme;
 use VDM\Joomla\Interfaces\Readme\MainInterface as MainReadme;
-use VDM\Joomla\Gitea\Repository\Contents as Git;
-use VDM\Joomla\Interfaces\Data\RemoteSetInterface;
+use VDM\Joomla\Interfaces\Git\Repository\ContentsInterface as Git;
+use VDM\Joomla\Interfaces\Remote\SetInterface;
 
 
 /**
@@ -25,7 +25,7 @@ use VDM\Joomla\Interfaces\Data\RemoteSetInterface;
  * 
  * @since 3.2.2
  */
-class Set implements RemoteSetInterface
+abstract class Set implements SetInterface
 {
 	/**
 	 * The Grep Class.
@@ -71,7 +71,7 @@ class Set implements RemoteSetInterface
 	 * All active repos
 	 *
 	 * @var   array
-	 * @since 3.2.0
+	 * @since 3.2.2
 	 **/
 	public array $repos;
 
@@ -79,9 +79,17 @@ class Set implements RemoteSetInterface
 	 * Table Name
 	 *
 	 * @var   string
-	 * @since 3.2.1
+	 * @since 3.2.2
 	 */
 	protected string $table;
+
+	/**
+	 * Area Name
+	 *
+	 * @var   string
+	 * @since 3.2.2
+	 */
+	protected string $area;
 
 	/**
 	 * The item map
@@ -92,12 +100,36 @@ class Set implements RemoteSetInterface
 	protected array $map;
 
 	/**
+	 * The index map
+	 *
+	 * @var   array
+	 * @since 3.2.2
+	 */
+	protected array $index_map;
+
+	/**
 	 * The repo main settings
 	 *
 	 * @var   array
 	 * @since 3.2.2
 	 */
 	protected array $settings;
+
+	/**
+	 * Prefix Key
+	 *
+	 * @var    string
+	 * @since 3.2.2
+	 */
+	protected string $prefix_key = 'Super---';
+
+	/**
+	 * Suffix Key
+	 *
+	 * @var    string
+	 * @since 3.2.2
+	 */
+	protected string $suffix_key = '---Power';
 
 	/**
 	 * The item settings file path
@@ -108,22 +140,31 @@ class Set implements RemoteSetInterface
 	protected string $settings_path = 'item.json';
 
 	/**
+	 * The index settings file path
+	 *
+	 * @var    string
+	 * @since 3.2.2
+	 */
+	protected string $index_settings_path = 'index.json';
+
+	/**
 	 * Constructor.
 	 *
-	 * @param array        $repos          The active repos
-	 * @param Grep         $grep           The Grep Class.
-	 * @param Items        $items          The Items Class.
-	 * @param ItemReadme   $itemReadme     The Item Readme Class.
-	 * @param MainReadme   $mainReadme     The Main Readme Class.
-	 * @param Git          $git            The Contents Class.
-	 * @param string|null  $table          The table name.
-	 * @param string|null  $settingsPath   The settings path.
+	 * @param array        $repos               The active repos
+	 * @param Grep         $grep                The Grep Class.
+	 * @param Items        $items               The Items Class.
+	 * @param ItemReadme   $itemReadme          The Item Readme Class.
+	 * @param MainReadme   $mainReadme          The Main Readme Class.
+	 * @param Git          $git                 The Contents Class.
+	 * @param string|null  $table               The table name.
+	 * @param string|null  $settingsPath        The settings path.
+	 * @param string|null  $settingsIndexPath   The index settings path.
 	 *
 	 * @since 3.2.2
 	 */
 	public function __construct(array $repos, Grep $grep, Items $items,
 		ItemReadme $itemReadme, MainReadme $mainReadme, Git $git,
-		?string $table = null, ?string $settingsPath = null)
+		?string $table = null, ?string $settingsPath = null, ?string $settingsIndexPath = null)
 	{
 		$this->repos = $repos;
 		$this->grep = $grep;
@@ -140,6 +181,16 @@ class Set implements RemoteSetInterface
 		if ($settingsPath !== null)
 		{
 			$this->settings_path = $settingsPath;
+		}
+
+		if ($settingsIndexPath !== null)
+		{
+			$this->setIndexSettingsPath($settingsIndexPath);
+		}
+
+		if (empty($this->area))
+		{
+			$this->area = ucfirst(str_replace('_', ' ', $this->table));
 		}
 
 		// set the branch to writing
@@ -162,6 +213,21 @@ class Set implements RemoteSetInterface
 	}
 
 	/**
+	 * Set the current active area
+	 *
+	 * @param string $area The area that should be active
+	 *
+	 * @return self
+	 * @since 3.2.2
+	 */
+	public function area(string $area): self
+	{
+		$this->area = ucfirst(str_replace('_', ' ', $area));
+
+		return $this;
+	}
+
+	/**
 	 * Set the settings path
 	 *
 	 * @param string    $settingsPath    The repository settings path
@@ -172,6 +238,23 @@ class Set implements RemoteSetInterface
 	public function setSettingsPath(string $settingsPath): self
 	{
 		$this->settings_path = $settingsPath;
+
+		return $this;
+	}
+
+	/**
+	 * Set the index settings path
+	 *
+	 * @param string    $settingsIndexPath    The repository index settings path
+	 *
+	 * @return self
+	 * @since 3.2.2
+	 */
+	public function setIndexSettingsPath(string $settingsIndexPath): self
+	{
+		$this->index_settings_path = $settingsIndexPath;
+
+		$this->grep->setIndexPath($settingsIndexPath);
 
 		return $this;
 	}
@@ -189,7 +272,7 @@ class Set implements RemoteSetInterface
 	{
 		if (!$this->canWrite())
 		{
-			throw new \Exception("At least one [Item] content repository must be configured with a [Write Branch] value in the repositories area for the push function to operate correctly.");
+			throw new \Exception("At least one [{$this->getArea()}] content repository must be configured with a [Write Branch] value in the repositories area for the push function to operate correctly.");
 		}
 
 		// we reset the index settings
@@ -197,7 +280,7 @@ class Set implements RemoteSetInterface
 
 		if (($items = $this->getLocalItems($guids)) === null)
 		{
-			throw new \Exception("At least one valid local [Item] must exist for the push function to operate correctly.");
+			throw new \Exception("At least one valid local [{$this->getArea()}] must exist for the push function to operate correctly.");
 		}
 
 		foreach ($items as $item)
@@ -215,17 +298,6 @@ class Set implements RemoteSetInterface
 		}
 
 		return true;
-	}
-
-	/**
-	 * Get the current active table
-	 *
-	 * @return  string
-	 * @since 3.2.2
-	 */
-	public function getTable(): string
-	{
-		return $this->table;
 	}
 
 	/**
@@ -275,14 +347,148 @@ class Set implements RemoteSetInterface
 	abstract protected function createItemReadme(object $item, object $repo): void;
 
 	/**
+	 * Get the current active table
+	 *
+	 * @return  string
+	 * @since 3.2.2
+	 */
+	protected function getTable(): string
+	{
+		return $this->table;
+	}
+
+	/**
+	 * Get the current active area
+	 *
+	 * @return  string
+	 * @since 3.2.2
+	 */
+	protected function getArea(): string
+	{
+		return $this->area;
+	}
+
+	/**
 	 * Update/Create the repo main readme and index
 	 *
-	 * @param array  $repo
-	 *
+	 * @param array $repoBucket
+	 * 
 	 * @return void
 	 * @since 3.2.2
 	 */
-	abstract protected function saveRepoMainSettings(array $repo): void;
+	protected function saveRepoMainSettings(array $repoBucket): void
+	{
+		$repo = $repoBucket['repo'] ?? null;
+		$settings = $repoBucket['items'] ?? null;
+
+		if ($this->isInvalidIndexRepo($repo, $settings))
+		{
+			return;
+		}
+
+		$repoGuid = $repo->guid ?? null;
+		if (empty($repoGuid))
+		{
+			return;
+		}
+
+		$settings = $this->mergeIndexSettings($repoGuid, $settings);
+
+		$this->updateIndexMainFile(
+			$repo,
+			$this->getIndexSettingsPath(),
+			json_encode($settings, JSON_PRETTY_PRINT),
+			'Update main index file'
+		);
+
+		$this->updateIndexMainFile(
+			$repo,
+			'README.md',
+			$this->mainReadme->get($settings),
+			'Update main readme file'
+		);
+	}
+
+	/**
+	 * Validate repository and settings
+	 *
+	 * @param mixed $repo
+	 * @param mixed $settings
+	 * 
+	 * @return bool
+	 * @since 3.2.2
+	 */
+	protected function isInvalidIndexRepo($repo, $settings): bool
+	{
+		return empty($repo) || empty($settings);
+	}
+
+	/**
+	 * Merge current settings with new settings
+	 *
+	 * @param string $repoGuid
+	 * @param array $settings
+	 * 
+	 * @return array
+	 * @since 3.2.2
+	 */
+	protected function mergeIndexSettings(string $repoGuid, array $settings): array
+	{
+		$current_settings = $this->grep->getRemoteIndex($repoGuid);
+
+		if ($current_settings === null || (array) $current_settings === [])
+		{
+			return $settings;
+		}
+
+		$mergedSettings = [];
+		foreach ($current_settings as $guid => $setting)
+		{
+			$mergedSettings[$guid] = (array) $setting;
+		}
+
+		foreach ($settings as $guid => $setting)
+		{
+			$mergedSettings[$guid] = (array) $setting;
+		}
+
+		return $mergedSettings;
+	}
+
+	/**
+	 * Update a file in the repository
+	 *
+	 * @param object $repo
+	 * @param string $path
+	 * @param string $content
+	 * @param string $message
+	 * 
+	 * @return void
+	 * @since 3.2.2
+	 */
+	protected function updateIndexMainFile(object $repo, string $path,
+		string $content, string $message): void
+	{
+		$meta = $this->git->metadata(
+			$repo->organisation,
+			$repo->repository,
+			$path,
+			$repo->write_branch
+		);
+
+		if ($meta !== null && isset($meta->sha))
+		{
+			$this->git->update(
+				$repo->organisation,
+				$repo->repository,
+				$path,
+				$content,
+				$message,
+				$meta->sha,
+				$repo->write_branch
+			);
+		}
+	}
 
 	/**
 	 * Get items
@@ -305,52 +511,6 @@ class Set implements RemoteSetInterface
 	}
 
 	/**
-	 * Save an item remotely
-	 *
-	 * @param  object   $item    The item to save
-	 *
-	 * @return void
-	 * @since 3.2.2
-	 */
-	protected function save(object $item): void
-	{
-		foreach ($this->repos as $key => $repo)
-		{
-			if (empty($repo->write_branch) || $repo->write_branch === 'default')
-			{
-				continue;
-			}
-
-			$this->git->load_($repo->base ?? null, $repo->token ?? null);
-
-			if (($existing = $this->grep->get($guid, ['remote'], $repo)) !== null)
-			{
-				if ($this->updateItem($item, $existing, $repo))
-				{
-					$this->updateItemReadme($item, $existing, $repo);
-				}
-			}
-			else
-			{
-				$this->createItem($item, $repo);
-
-				$this->createItemReadme($item, $repo);
-
-				if (!isset($this->settings[$key]))
-				{
-					$this->settings[$key] = ['repo' => $repo, 'items' => [$item]);
-				}
-				else
-				{
-					$this->settings[$key]['items'][] = $item;
-				}
-			}
-
-			$this->git->reset_();
-		}
-	}
-
-	/**
 	 * Fetch items from the database
 	 *
 	 * @param array $guids The global unique ids of the items
@@ -360,7 +520,7 @@ class Set implements RemoteSetInterface
 	 */
 	protected function fetchLocalItems(array $guids): ?array
 	{
-		return $this->items->table($this->table)->get($guids);
+		return $this->items->table($this->getTable())->get($guids);
 	}
 
 	/**
@@ -406,6 +566,87 @@ class Set implements RemoteSetInterface
 		}
 
 		return (object) $power;
+	}
+
+	/**
+	 * Save an item remotely
+	 *
+	 * @param  object   $item    The item to save
+	 *
+	 * @return void
+	 * @since 3.2.2
+	 */
+	protected function save(object $item): void
+	{
+		if (empty($item->guid))
+		{
+			return;
+		}
+
+		$index_item = null;
+		foreach ($this->repos as $key => $repo)
+		{
+			if (empty($repo->write_branch) || $repo->write_branch === 'default')
+			{
+				continue;
+			}
+
+			$this->git->load_($repo->base ?? null, $repo->token ?? null);
+
+			if (($existing = $this->grep->get($item->guid, ['remote'], $repo)) !== null)
+			{
+				if ($this->updateItem($item, $existing, $repo))
+				{
+					$this->updateItemReadme($item, $existing, $repo);
+				}
+			}
+			else
+			{
+				$this->createItem($item, $repo);
+
+				$this->createItemReadme($item, $repo);
+
+				$index_item ??= $this->getIndexItem($item);
+
+				if (!isset($this->settings[$key]))
+				{
+					$this->settings[$key] = ['repo' => $repo, 'items' => [$item->guid => $index_item]];
+				}
+				else
+				{
+					$this->settings[$key]['items'][$item->guid] = $index_item;
+				}
+			}
+
+			$this->git->reset_();
+		}
+	}
+
+	/**
+	 * Get index values
+	 *
+	 * @param object  $item  The item
+	 *
+	 * @return array|null
+	 * @since 3.2.2
+	 */
+	protected function getIndexItem(object $item): ?array
+	{
+		if (empty($this->index_map))
+		{
+			return null;
+		}
+
+		$index_item = [];
+		foreach ($this->index_map as $key => $function_name)
+		{
+			if (method_exists($this, $function_name))
+			{
+				$index_item[$key] = $this->{$function_name}($item);
+			}
+		}
+
+		return $index_item ?? null;
 	}
 
 	/**
@@ -458,6 +699,84 @@ class Set implements RemoteSetInterface
 	protected function getSettingsPath(): string
 	{
 		return $this->settings_path;
+	}
+
+	/**
+	 * Get the index settings path
+	 *
+	 * @return string
+	 * @since 3.2.2
+	 */
+	protected function getIndexSettingsPath(): string
+	{
+		return $this->index_settings_path;
+	}
+
+	//// index_map_ (area) /////////////////////////////////////////////
+
+	/**
+	 * Get the item name for the index values
+	 *
+	 * @param object $item
+	 *
+	 * @return string|null
+	 * @since 3.2.2
+	 */
+	protected function index_map_IndexName(object $item): ?string
+	{
+		return $item->system_name ?? null;
+	}
+
+	/**
+	 * Get the item settings path for the index values
+	 *
+	 * @param object $item
+	 *
+	 * @return string
+	 * @since 3.2.2
+	 */
+	protected function index_map_IndexSettingsPath(object $item): string
+	{
+		return "src/{$item->guid}/" . $this->getSettingsPath();
+	}
+
+	/**
+	 * Get the item path for the index values
+	 *
+	 * @param object $item
+	 *
+	 * @return string
+	 * @since 3.2.2
+	 */
+	protected function index_map_IndexPath(object $item): string
+	{
+		return "src/{$item->guid}";
+	}
+
+	/**
+	 * Get the item JPK for the index values
+	 *
+	 * @param object $item
+	 *
+	 * @return string
+	 * @since 3.2.2
+	 */
+	protected function index_map_IndexKey(object $item): string
+	{
+		return $this->prefix_key . str_replace('-', '_', $item->guid) . $this->suffix_key;
+	}
+
+	/**
+	 * Get the item GUID for the index values
+	 *
+	 * @param object $item
+	 *
+	 * @return string
+	 * @since 3.2.2
+	 */
+	protected function index_map_IndexGUID(object $item): string
+	{
+		return $item->guid;
 	}
 }
 
