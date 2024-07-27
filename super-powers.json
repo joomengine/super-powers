@@ -307,6 +307,17 @@
         "spk": "Super---4b225c51_d293_48e4_b3f6_5136cf5c3f18---Power",
         "guid": "4b225c51-d293-48e4-b3f6-5136cf5c3f18"
     },
+    "4b2d6f28-346e-46ec-bf24-d470319cca2d": {
+        "name": "PHPConfigurationChecker",
+        "type": "final class",
+        "namespace": "VDM\\Joomla\\Componentbuilder",
+        "code": "src\/4b2d6f28-346e-46ec-bf24-d470319cca2d\/code.php",
+        "power": "src\/4b2d6f28-346e-46ec-bf24-d470319cca2d\/code.power",
+        "settings": "src\/4b2d6f28-346e-46ec-bf24-d470319cca2d\/settings.json",
+        "path": "src\/4b2d6f28-346e-46ec-bf24-d470319cca2d",
+        "spk": "Super---4b2d6f28_346e_46ec_bf24_d470319cca2d---Power",
+        "guid": "4b2d6f28-346e-46ec-bf24-d470319cca2d"
+    },
     "4dd11b9b-3c64-460b-aaa6-62ba467db7aa": {
         "name": "SchemaInterface",
         "type": "interface",
@@ -560,6 +571,17 @@
         "spk": "Super---8f83fb79_f92b_4f1f_952b_325f6c22d11e---Power",
         "guid": "8f83fb79-f92b-4f1f-952b-325f6c22d11e"
     },
+    "900456a2-feb5-48b9-9f05-c5a032a32c59": {
+        "name": "PHPConfigurationChecker",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Abstraction",
+        "code": "src\/900456a2-feb5-48b9-9f05-c5a032a32c59\/code.php",
+        "power": "src\/900456a2-feb5-48b9-9f05-c5a032a32c59\/code.power",
+        "settings": "src\/900456a2-feb5-48b9-9f05-c5a032a32c59\/settings.json",
+        "path": "src\/900456a2-feb5-48b9-9f05-c5a032a32c59",
+        "spk": "Super---900456a2_feb5_48b9_9f05_c5a032a32c59---Power",
+        "guid": "900456a2-feb5-48b9-9f05-c5a032a32c59"
+    },
     "91004529-94a9-4590-b842-e7c6b624ecf5": {
         "name": "ObjectHelper",
         "type": "abstract class",
@@ -592,6 +614,17 @@
         "path": "src\/92291f1f-f248-4ec0-9f2a-3d47c49eeac1",
         "spk": "Super---92291f1f_f248_4ec0_9f2a_3d47c49eeac1---Power",
         "guid": "92291f1f-f248-4ec0-9f2a-3d47c49eeac1"
+    },
+    "95c02df3-fe0a-405b-b506-b7a5b8605b66": {
+        "name": "PHPConfigurationCheckerInterface",
+        "type": "interface",
+        "namespace": "VDM\\Joomla\\Interfaces",
+        "code": "src\/95c02df3-fe0a-405b-b506-b7a5b8605b66\/code.php",
+        "power": "src\/95c02df3-fe0a-405b-b506-b7a5b8605b66\/code.power",
+        "settings": "src\/95c02df3-fe0a-405b-b506-b7a5b8605b66\/settings.json",
+        "path": "src\/95c02df3-fe0a-405b-b506-b7a5b8605b66",
+        "spk": "Super---95c02df3_fe0a_405b_b506_b7a5b8605b66---Power",
+        "guid": "95c02df3-fe0a-405b-b506-b7a5b8605b66"
     },
     "9c3aa650-e536-4eea-a2d4-73cc3e184aa9": {
         "name": "DeleteInterface",

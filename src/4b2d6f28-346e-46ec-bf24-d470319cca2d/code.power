@@ -1,0 +1,61 @@
+	/**
+	 * The upload max filesize value
+	 *
+	 * @var    string
+	 * @since  5.0.2
+	 **/
+	protected  string $upload_max_filesize = '[[[upload_max_filesize]]]';
+
+	/**
+	 * The post max size value
+	 *
+	 * @var    string
+	 * @since  5.0.2
+	 **/
+	protected  string $post_max_size = '[[[post_max_size]]]';
+
+	/**
+	 * The max execution time value
+	 *
+	 * @var    int
+	 * @since  5.0.2
+	 **/
+	protected  int $max_execution_time = [[[max_execution_time]]];
+
+	/**
+	 * The max input vars value
+	 *
+	 * @var    int
+	 * @since  5.0.2
+	 **/
+	protected  int $max_input_vars = [[[max_input_vars]]];
+
+	/**
+	 * The max input time value
+	 *
+	 * @var    int
+	 * @since  5.0.2
+	 **/
+	protected  int $max_input_time = [[[max_input_time]]];
+
+	/**
+	 * The memory limit value
+	 *
+	 * @var    string
+	 * @since  5.0.2
+	 **/
+	protected  string $memory_limit = '[[[memory_limit]]]';
+
+	/**
+	 * Constructor.
+	 *
+	 * @since  5.0.2
+	 */
+	public function __construct($app = null)
+	{
+		parent::__construct($app);
+
+		// set the required PHP Configures
+		$this->set('environment.name', '[[[Component]]] environment');
+		$this->set('environment.wiki_url', '[[[environment_wiki_url]]]');
+	}

@@ -1,0 +1,7 @@
+	/**
+	 * Check that the required configurations are set for PHP
+	 *
+	 * @return void
+	 * @since  5.0.2
+	 **/
+	public function run(): void;
