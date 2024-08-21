@@ -31,6 +31,10 @@
         "use_selection4": {
             "use": "d1de5d5b-bf29-4031-8094-76c4f6c75900",
             "as": "Git"
+        },
+        "use_selection5": {
+            "use": "91004529-94a9-4590-b842-e7c6b624ecf5",
+            "as": "default"
         }
     },
     "extendsinterfaces": null,

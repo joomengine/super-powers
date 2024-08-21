@@ -22,6 +22,7 @@ abstract Set  #Orange {
   # string $area
   # array $map
   # array $settings
+  # array $repoPlaceholders
   + __construct(array $repos, Grep $grep, ...)
   + table(string $table) : self
   + area(string $area) : self
@@ -39,13 +40,14 @@ abstract Set  #Orange {
   # mergeIndexSettings(string $repoGuid, array $settings) : array
   # updateIndexMainFile(object $repo, string $path, ...) : void
   # getLocalItems(array $guids) : ?array
-  # fetchLocalItems(array $guids) : ?array
-  # mapItems(array $items) : array
   # mapItem(object $item) : object
   # save(object $item) : void
+  # setRepoPlaceholders(object $repo) : void
+  # updatePlaceholders(string $string) : string
   # getIndexItem(object $item) : ?array
   # canWrite() : bool
-  # areObjectsEqual(object $obj1, object $obj2) : bool
+  # targetRepo(object $item, object $repo) : bool
+  # areObjectsEqual(?object $obj1, ?object $obj2) : bool
   # getSettingsPath() : string
   # getIndexSettingsPath() : string
   # index_map_IndexName(object $item) : ?string
@@ -200,20 +202,6 @@ note right of Set::getLocalItems
   return: ?array
 end note
 
-note left of Set::fetchLocalItems
-  Fetch items from the database
-
-  since: 3.2.2
-  return: ?array
-end note
-
-note right of Set::mapItems
-  Map items to their properties
-
-  since: 3.2.2
-  return: array
-end note
-
 note left of Set::mapItem
   Map a single item to its properties
 
@@ -226,6 +214,20 @@ note right of Set::save
 
   since: 3.2.2
   return: void
+end note
+
+note left of Set::setRepoPlaceholders
+  Set the Repo Placeholders
+
+  since: 5.0.3
+  return: void
+end note
+
+note right of Set::updatePlaceholders
+  Update Placeholders in String
+
+  since: 5.0.3
+  return: string
 end note
 
 note left of Set::getIndexItem
@@ -242,58 +244,66 @@ note right of Set::canWrite
   return: bool
 end note
 
-note left of Set::areObjectsEqual
-  Checks if two objects are equal by comparing their JSON representations.
-This method converts both input objects to JSON strings and compares these strings.
-If the JSON strings are identical, the objects are considered equal.
+note left of Set::targetRepo
+  check that we have a target repo of this item
 
-  since: 3.2.2
+  since: 5.0.3
   return: bool
 end note
 
-note right of Set::getSettingsPath
+note right of Set::areObjectsEqual
+  Checks if two objects are equal by comparing their properties and values.
+This method converts both input objects to associative arrays, sorts the arrays by keys,
+and compares these sorted arrays.
+If the arrays are identical, the objects are considered equal.
+
+  since: 5.0.2
+  return: bool
+end note
+
+note left of Set::getSettingsPath
   Get the settings path
 
   since: 3.2.2
   return: string
 end note
 
-note left of Set::getIndexSettingsPath
+note right of Set::getIndexSettingsPath
   Get the index settings path
 
   since: 3.2.2
   return: string
 end note
 
-note right of Set::index_map_IndexName
+note left of Set::index_map_IndexName
   Get the item name for the index values
 
   since: 3.2.2
   return: ?string
 end note
 
-note left of Set::index_map_IndexSettingsPath
+note right of Set::index_map_IndexSettingsPath
   Get the item settings path for the index values
 
   since: 3.2.2
   return: string
 end note
 
-note right of Set::index_map_IndexPath
+note left of Set::index_map_IndexPath
   Get the item path for the index values
 
   since: 3.2.2
   return: string
 end note
 
-note left of Set::index_map_IndexKey
+note right of Set::index_map_IndexKey
   Get the item JPK for the index values
 
   since: 3.2.2
   return: string
 end note
 
-note right of Set::index_map_IndexGUID
+note left of Set::index_map_IndexGUID
   Get the item GUID for the index values
 
   since: 3.2.2

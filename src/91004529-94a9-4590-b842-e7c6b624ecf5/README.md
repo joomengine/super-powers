@@ -14,6 +14,7 @@
 abstract ObjectHelper  #Orange {
   + {static} check($object)
   + {static} equal(?object $obj1, ?object $obj2) : bool
+  # {static} recursiveKsort($array) : void
 }
 
 note right of ObjectHelper::check
@@ -23,13 +24,22 @@ note right of ObjectHelper::check
 end note
 
 note right of ObjectHelper::equal
-  Compare two objects for equality based on their property values.
-Note that this method works only for simple objects that don't
-contain any nested objects or resource references. If you need
-to compare more complex objects, you may need to use a
-more advanced method such as serialization or reflection.
+  Checks if two objects are equal by comparing their properties and values.
+This method converts both input objects to
+associative arrays, sorts the arrays by keys,
+and compares these sorted arrays.
+If the arrays are identical, the objects are considered equal.
 
+  since: 5.0.2
   return: bool
+end note
+
+note right of ObjectHelper::recursiveKsort
+  Recursively sorts an associative array by keys.
+This method will sort an associative array by its keys at all levels.
+
+  since: 5.0.2
+  return: void
 end note
  
 @enduml
