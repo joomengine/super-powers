@@ -29,6 +29,9 @@
 		$container->alias(Subform::class, 'Data.Subform')
 			->share('Data.Subform', [$this, 'getSubform'], true);
 
+		$container->alias(UsersSubform::class, 'Data.UsersSubform')
+			->share('Data.UsersSubform', [$this, 'getUsersSubform'], true);
+
 		$container->alias(MultiSubform::class, 'Data.MultiSubform')
 			->share('Data.MultiSubform', [$this, 'getMultiSubform'], true);
 	}
@@ -145,6 +148,21 @@
 	public function getSubform(Container $container): Subform
 	{
 		return new Subform(
+			$container->get('Data.Items')
+		);
+	}
+
+	/**
+	 * Get The Users Subform Class.
+	 *
+	 * @param   Container  $container  The DI container.
+	 *
+	 * @return  UsersSubform
+	 * @since  5.0.2
+	 */
+	public function getUsersSubform(Container $container): UsersSubform
+	{
+		return new UsersSubform(
 			$container->get('Data.Items')
 		);
 	}

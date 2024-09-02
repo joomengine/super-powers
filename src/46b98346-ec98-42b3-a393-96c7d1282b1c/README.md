@@ -6,38 +6,43 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# final class Subform (Details)
+# final class UsersSubform (Details)
 > namespace: **VDM\Joomla\Data**
 
 ```uml
 @startuml
-class Subform << (F,LightGreen) >> #RoyalBlue {
+class UsersSubform << (F,LightGreen) >> #RoyalBlue {
   # Items $items
   # string $table
+  # array $user
   + __construct(Items $items, ?string $table = null)
   + table(string $table) : self
   + get(string $linkValue, string $linkKey, ...) : ?array
   + set(mixed $items, string $indexKey, ...) : bool
   + getTable() : string
+  # initializeUserProperties() : void
   - purge(array $items, string $indexKey, ...) : void
+  - getUsersDetails(array $items) : array
+  - getUserDetails(array $item) : void
   - converter(array $items, array $keySet, ...) : array
   - process(mixed $items, string $indexKey, ...) : array
+  - setUserDetails(array $item) : int
 }
 
-note right of Subform::__construct
+note right of UsersSubform::__construct
   Constructor.
 
   since: 3.2.2
 end note
 
-note left of Subform::table
+note left of UsersSubform::table
   Set the current active table
 
   since: 3.2.2
   return: self
 end note
 
-note right of Subform::get
+note right of UsersSubform::get
   Get a subform items
 
   since: 3.2.2
@@ -50,7 +55,7 @@ note right of Subform::get
     array $get
 end note
 
-note left of Subform::set
+note left of UsersSubform::set
   Set a subform items
 
   since: 3.2.2
@@ -63,14 +68,21 @@ note left of Subform::set
     string $linkValue
 end note
 
-note right of Subform::getTable
+note right of UsersSubform::getTable
   Get the current active table
 
   since: 3.2.2
   return: string
 end note
 
-note left of Subform::purge
+note left of UsersSubform::initializeUserProperties
+  Initializes the user properties.
+
+  since: 5.0.2
+  return: void
+end note
+
+note right of UsersSubform::purge
   Purge all items no longer in subform
 
   since: 3.2.2
@@ -83,7 +95,21 @@ note left of Subform::purge
     string $linkValue
 end note
 
-note right of Subform::converter
+note left of UsersSubform::getUsersDetails
+  Get the users details found in the user table.
+
+  since: 5.0.2
+  return: array
+end note
+
+note right of UsersSubform::getUserDetails
+  Get the user details found in the user table.
+
+  since: 5.0.2
+  return: void
+end note
+
+note left of UsersSubform::converter
   Filters the specified keys from an array of objects or arrays, converts them to arrays,
 and sets them by association with a specified key and an incrementing integer.
 
@@ -96,7 +122,7 @@ and sets them by association with a specified key and an incrementing integer.
     string $field
 end note
 
-note left of Subform::process
+note right of UsersSubform::process
   Processes an array of arrays based on the specified key.
 
   since: 3.2.2
@@ -107,6 +133,13 @@ note left of Subform::process
     string $indexKey
     string $linkKey
     string $linkValue
+end note
+
+note left of UsersSubform::setUserDetails
+  Set the user details.
+
+  since: 5.0.2
+  return: int
 end note
  
 @enduml
@@ -122,7 +155,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---85785701_07b2_4f81_bc1e_0f423700c254---Power
+Super---46b98346_ec98_42b3_a393_96c7d1282b1c---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

@@ -6,107 +6,38 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# final class Subform (Details)
+# trait Guid (Details)
 > namespace: **VDM\Joomla\Data**
 
 ```uml
 @startuml
-class Subform << (F,LightGreen) >> #RoyalBlue {
-  # Items $items
-  # string $table
-  + __construct(Items $items, ?string $table = null)
-  + table(string $table) : self
-  + get(string $linkValue, string $linkKey, ...) : ?array
-  + set(mixed $items, string $indexKey, ...) : bool
-  + getTable() : string
-  - purge(array $items, string $indexKey, ...) : void
-  - converter(array $items, array $keySet, ...) : array
-  - process(mixed $items, string $indexKey, ...) : array
+class Guid << (T,Orange) >> #Turquoise {
+  + getGuid(string $key) : string
+  - fallbackGuid(string $key) : string
+  - checkGuid(string $guid, string $key) : string
 }
 
-note right of Subform::__construct
-  Constructor.
+note right of Guid::getGuid
+  Returns a GUIDv4 string.
+This function uses the best cryptographically secure method
+available on the platform with a fallback to an older, less secure version.
 
-  since: 3.2.2
-end note
-
-note left of Subform::table
-  Set the current active table
-
-  since: 3.2.2
-  return: self
-end note
-
-note right of Subform::get
-  Get a subform items
-
-  since: 3.2.2
-  return: ?array
-  
-  arguments:
-    string $linkValue
-    string $linkKey
-    string $field
-    array $get
-end note
-
-note left of Subform::set
-  Set a subform items
-
-  since: 3.2.2
-  return: bool
-  
-  arguments:
-    mixed $items
-    string $indexKey
-    string $linkKey
-    string $linkValue
-end note
-
-note right of Subform::getTable
-  Get the current active table
-
-  since: 3.2.2
+  since: 5.0.2
   return: string
 end note
 
-note left of Subform::purge
-  Purge all items no longer in subform
+note right of Guid::fallbackGuid
+  Generates a fallback GUIDv4 using less secure methods.
 
-  since: 3.2.2
-  return: void
-  
-  arguments:
-    array $items
-    string $indexKey
-    string $linkKey
-    string $linkValue
+  since: 5.0.2
+  return: string
 end note
 
-note right of Subform::converter
-  Filters the specified keys from an array of objects or arrays, converts them to arrays,
-and sets them by association with a specified key and an incrementing integer.
+note right of Guid::checkGuid
+  Checks if the GUID value is unique and does not already exist.
 
-  since: 3.2.2
-  return: array
-  
-  arguments:
-    array $items
-    array $keySet
-    string $field
-end note
-
-note left of Subform::process
-  Processes an array of arrays based on the specified key.
-
-  since: 3.2.2
-  return: array
-  
-  arguments:
-    mixed $items
-    string $indexKey
-    string $linkKey
-    string $linkValue
+  since: 5.0.2
+  return: string
 end note
  
 @enduml
@@ -122,7 +53,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---85785701_07b2_4f81_bc1e_0f423700c254---Power
+Super---5acded67_0e3d_4c6b_a6ea_b533b076de0c---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

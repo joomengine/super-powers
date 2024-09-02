@@ -1,30 +1,3 @@
-<?php
-/**
- * @package    Joomla.Component.Builder
- *
- * @created    3rd September, 2020
- * @author     Llewellyn van der Merwe <https://dev.vdm.io>
- * @git        Joomla Component Builder <https://git.vdm.dev/joomla/Component-Builder>
- * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.
- * @license    GNU General Public License version 2 or later; see LICENSE.txt
- */
-
-namespace VDM\Joomla\Data;
-
-
-use VDM\Joomla\Interfaces\Data\ItemsInterface as Items;
-use VDM\Joomla\Data\Guid;
-use VDM\Joomla\Interfaces\Data\GuidInterface;
-use VDM\Joomla\Interfaces\Data\SubformInterface;
-
-
-/**
- * CRUD the data of any sub-form to another view (table)
- * 
- * @since  3.2.2
- */
-final class Subform implements GuidInterface, SubformInterface
-{
 	/**
 	 * The Globally Unique Identifier.
 	 *
@@ -49,9 +22,17 @@ final class Subform implements GuidInterface, SubformInterface
 	protected string $table;
 
 	/**
+	 * The user properties
+	 *
+	 * @var    array
+	 * @since 5.0.2
+	 */
+	protected array $user;
+
+	/**
 	 * Constructor.
 	 *
-	 * @param Items       $items   The Items Class.
+	 * @param Items       $items   The items Class.
 	 * @param string|null $table   The table name.
 	 *
 	 * @since 3.2.2
@@ -63,6 +44,9 @@ final class Subform implements GuidInterface, SubformInterface
 		{
 			$this->table = $table;
 		}
+
+		// Retrieve the user properties
+		$this->initializeUserProperties();
 	}
 
 	/**
@@ -95,8 +79,13 @@ final class Subform implements GuidInterface, SubformInterface
 	{
 		if (($items = $this->items->table($this->getTable())->get([$linkValue], $linkKey)) !== null)
 		{
-			return $this->converter($items, $get, $field);
+			return $this->converter(
+				$this->getUsersDetails($items),
+				$get,
+				$field
+			);
 		}
+
 		return null;
 	}
 
@@ -139,6 +128,27 @@ final class Subform implements GuidInterface, SubformInterface
 	}
 
 	/**
+	 * Initializes the user properties.
+	 *
+	 * @return void
+	 * @since  5.0.2
+	 */
+	protected function initializeUserProperties(): void
+	{
+		$user = UserHelper::getUserById(0);
+
+		// Populate user properties array excluding the 'id'
+		foreach (get_object_vars($user) as $property => $value)
+		{
+			if ($property !== 'id')
+			{
+				$this->user[$property] = $property;
+			}
+		}
+		$this->user['password2'] = 'password2';
+	}
+
+	/**
 	 * Purge all items no longer in subform
 	 *
 	 * @param array    $items      The list of items to set.
@@ -177,6 +187,61 @@ final class Subform implements GuidInterface, SubformInterface
 			if (!empty($inactiveIndexValues))
 			{
 				$this->items->table($this->getTable())->delete($inactiveIndexValues, $indexKey);
+
+				// $this->deleteUsers($inactiveIndexValues); (soon)
+			}
+		}
+	}
+
+	/**
+	 * Get the users details found in the user table.
+	 *
+	 * @param array  $items  Array of objects or arrays to be filtered.
+	 *
+	 * @return array
+	 * @since 5.0.2
+	 */
+	private function getUsersDetails(array $items): array
+	{
+		foreach ($items as $index => &$item)
+		{
+			$item = (array) $item;
+			$this->getUserDetails($item);
+		}
+
+		return $items;
+	}
+
+	/**
+	 * Get the user details found in the user table.
+	 *
+	 * @param array  $item  The user map array
+	 *
+	 * @return void
+	 * @since 5.0.2
+	 */
+	private function getUserDetails(array &$item): void
+	{
+		// Validate the user_id and ensure it is numeric and greater than 0
+		if (empty($item['user_id']) || !is_numeric($item['user_id']) || $item['user_id'] <= 0)
+		{
+			return;
+		}
+
+		// Retrieve the user by ID
+		$user = UserHelper::getUserById((int)$item['user_id']);
+
+		// Verify if the user exists and the ID matches
+		if ($user && $user->id === (int) $item['user_id'])
+		{
+			// Iterate over public properties of the user object
+			foreach (get_object_vars($user) as $property => $value)
+			{
+				// Avoid overwriting the id in the item
+				if ($property !== 'id')
+				{
+					$item[$property] = $value;
+				}
 			}
 		}
 	}
@@ -256,6 +321,9 @@ final class Subform implements GuidInterface, SubformInterface
 						$item[$indexKey] = 0;
 					}
 					break;
+				case 'user_id':
+					$item[$indexKey] = $this->setUserDetails($item);
+					break;
 				default:
 					// No action for other keys if empty
 					break;
@@ -266,5 +334,39 @@ final class Subform implements GuidInterface, SubformInterface
 
 		return array_values($items);
 	}
-}
 
+	/**
+	 * Set the user details.
+	 *
+	 * @param array  $item  The user details
+	 *
+	 * @return int
+	 * @since 5.0.2
+	 */
+	private function setUserDetails(array &$item): int
+	{
+		$user = [];
+
+		// now load the user ID
+		if (isset($item['user_id']) && is_numeric($item['user_id']) && $item['user_id'] > 0)
+		{
+			$user['id'] = (int) $item['user_id'];
+		}
+
+		foreach ($this->user as $property)
+		{
+			if (isset($item[$property]))
+			{
+				$user[$property] = $item[$property];
+				unset($item[$property]);
+			}
+		}
+
+		try {
+			return UserHelper::save($user);
+		} catch(\Exception $e) {
+			Factory::getApplication()->enqueueMessage($e->getMessage(), 'warning');
+		}
+
+		return 0;
+	}

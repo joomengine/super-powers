@@ -6,107 +6,109 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# final class Subform (Details)
-> namespace: **VDM\Joomla\Data**
+# abstract class UserHelper (Details)
+> namespace: **VDM\Joomla\Componentbuilder\Utilities**
 
 ```uml
 @startuml
-class Subform << (F,LightGreen) >> #RoyalBlue {
-  # Items $items
-  # string $table
-  + __construct(Items $items, ?string $table = null)
-  + table(string $table) : self
-  + get(string $linkValue, string $linkKey, ...) : ?array
-  + set(mixed $items, string $indexKey, ...) : bool
-  + getTable() : string
-  - purge(array $items, string $indexKey, ...) : void
-  - converter(array $items, array $keySet, ...) : array
-  - process(mixed $items, string $indexKey, ...) : array
+abstract UserHelper  #Orange {
+  + {static} save(array $credentials, int $autologin, ...) : int
+  + {static} create(array $credentials, int $autologin, ...) : int
+  + {static} update(array $userDetails) : int
+  + {static} getUserById(int $id) : User
+  + {static} getUserIdByUsername(string $username) : ?int
+  + {static} getUserIdByEmail(string $email) : ?int
+  # {static} getModelByMode(int $mode) : BaseDatabaseModel
+  # {static} prepareUserData(array $credentials, int $mode) : array
+  - {static} adminRegister(BaseDatabaseModel $model, array $data) : int
+  - {static} handlePostRegistration(int $userId, int $autologin, ...) : int
 }
 
-note right of Subform::__construct
-  Constructor.
+note right of UserHelper::save
+  Save user details by either creating a new user or updating an existing user.
 
-  since: 3.2.2
-end note
-
-note left of Subform::table
-  Set the current active table
-
-  since: 3.2.2
-  return: self
-end note
-
-note right of Subform::get
-  Get a subform items
-
-  since: 3.2.2
-  return: ?array
+  since: 5.0.3
+  return: int
   
   arguments:
-    string $linkValue
-    string $linkKey
-    string $field
-    array $get
+    array $credentials
+    int $autologin
+    array $params = ['useractivation' => 0, 'sendpassword' => 1]
+    int $mode = 1
 end note
 
-note left of Subform::set
-  Set a subform items
+note left of UserHelper::create
+  Create a user and update the given table.
 
-  since: 3.2.2
-  return: bool
+  since: 5.0.3
+  return: int
   
   arguments:
-    mixed $items
-    string $indexKey
-    string $linkKey
-    string $linkValue
+    array $credentials
+    int $autologin
+    array $params = ['useractivation' => 0, 'sendpassword' => 1]
+    int $mode = 1
 end note
 
-note right of Subform::getTable
-  Get the current active table
+note right of UserHelper::update
+  Update user details.
 
-  since: 3.2.2
-  return: string
+  since: 5.0.3
+  return: int
 end note
 
-note left of Subform::purge
-  Purge all items no longer in subform
+note left of UserHelper::getUserById
+  Method to get an instance of a user for the given id.
 
-  since: 3.2.2
-  return: void
-  
-  arguments:
-    array $items
-    string $indexKey
-    string $linkKey
-    string $linkValue
+  since: 5.0.3
+  return: User
 end note
 
-note right of Subform::converter
-  Filters the specified keys from an array of objects or arrays, converts them to arrays,
-and sets them by association with a specified key and an incrementing integer.
+note right of UserHelper::getUserIdByUsername
+  Retrieve the user ID by username.
 
-  since: 3.2.2
+  since: 5.0.3
+  return: ?int
+end note
+
+note left of UserHelper::getUserIdByEmail
+  Retrieve the user ID by email.
+
+  since: 5.0.3
+  return: ?int
+end note
+
+note right of UserHelper::getModelByMode
+  Load the correct user model based on the registration mode.
+
+  since: 5.0.3
+  return: BaseDatabaseModel
+end note
+
+note left of UserHelper::prepareUserData
+  Prepare user data array for registration or update.
+
+  since: 5.0.3
   return: array
-  
-  arguments:
-    array $items
-    array $keySet
-    string $field
 end note
 
-note left of Subform::process
-  Processes an array of arrays based on the specified key.
+note right of UserHelper::adminRegister
+  Handle the registration process for admin mode.
 
-  since: 3.2.2
-  return: array
+  since: 5.0.3
+  return: int
+end note
+
+note left of UserHelper::handlePostRegistration
+  Handle post-registration processes like auto-login.
+
+  since: 5.0.3
+  return: int
   
   arguments:
-    mixed $items
-    string $indexKey
-    string $linkKey
-    string $linkValue
+    int $userId
+    int $autologin
+    array $credentials
 end note
  
 @enduml
@@ -122,7 +124,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---85785701_07b2_4f81_bc1e_0f423700c254---Power
+Super---7832a726_87b6_4e95_887e_7b725d3fab8f---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

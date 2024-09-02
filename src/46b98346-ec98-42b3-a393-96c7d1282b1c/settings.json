@@ -2,27 +2,34 @@
     "add_head": "1",
     "add_licensing_template": "2",
     "extends": "",
-    "guid": "640b5352-fb09-425f-a26e-cd44eda03f15",
-    "implements": null,
+    "guid": "46b98346-ec98-42b3-a393-96c7d1282b1c",
+    "implements": [
+        "576685fd-263c-46bb-9fdc-1f5eb234cbb6",
+        "34959721-415b-4b5e-8002-3d1fc84b3b2b"
+    ],
     "load_selection": null,
-    "name": "Helper",
+    "name": "UsersSubform",
     "power_version": "1.0.0",
-    "system_name": "Utilities Component Helper",
-    "type": "abstract class",
+    "system_name": "VDM.Data.UsersSubform",
+    "type": "final class",
     "use_selection": {
         "use_selection0": {
-            "use": "ce8cf834-6bac-44fb-941c-861f7e046cc0",
-            "as": "default"
+            "use": "7212e4db-371f-4cfd-8122-32e9bb100d83",
+            "as": "Items"
         },
         "use_selection1": {
-            "use": "1f28cb53-60d9-4db1-b517-3c7dc6b429ef",
+            "use": "5acded67-0e3d-4c6b-a6ea-b533b076de0c",
+            "as": "default"
+        },
+        "use_selection2": {
+            "use": "7832a726-87b6-4e95-887e-7b725d3fab8f",
             "as": "default"
         }
     },
     "extendsinterfaces": null,
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Utilities.Component.Helper",
-    "description": "Some component helper\r\n\r\n@since  3.0.11",
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Data.UsersSubform",
+    "description": "CRUD the user data of any sub-form to another view (table)\r\n\r\n@since  5.0.2",
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    3rd September, 2020\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "head": "use Joomla\\CMS\\Factory;\r\nuse Joomla\\CMS\\Component\\ComponentHelper;\r\nuse Joomla\\CMS\\MVC\\Model\\BaseDatabaseModel;\r\nuse Joomla\\Input\\Input;\r\nuse Joomla\\Registry\\Registry;",
+    "head": "use Joomla\\CMS\\Factory;",
     "composer": ""
 }

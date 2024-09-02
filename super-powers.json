@@ -274,6 +274,17 @@
         "spk": "Super---43134867_5cb8_4280_9be8_309fd2fd135f---Power",
         "guid": "43134867-5cb8-4280-9be8-309fd2fd135f"
     },
+    "46b98346-ec98-42b3-a393-96c7d1282b1c": {
+        "name": "UsersSubform",
+        "type": "final class",
+        "namespace": "VDM\\Joomla\\Data",
+        "code": "src\/46b98346-ec98-42b3-a393-96c7d1282b1c\/code.php",
+        "power": "src\/46b98346-ec98-42b3-a393-96c7d1282b1c\/code.power",
+        "settings": "src\/46b98346-ec98-42b3-a393-96c7d1282b1c\/settings.json",
+        "path": "src\/46b98346-ec98-42b3-a393-96c7d1282b1c",
+        "spk": "Super---46b98346_ec98_42b3_a393_96c7d1282b1c---Power",
+        "guid": "46b98346-ec98-42b3-a393-96c7d1282b1c"
+    },
     "4815e1c7-a433-443d-a112-d1e03d7df84b": {
         "name": "Database",
         "type": "class",
@@ -362,6 +373,17 @@
         "spk": "Super---52a1d14f_304a_431c_8fa4_411179942db5---Power",
         "guid": "52a1d14f-304a-431c-8fa4-411179942db5"
     },
+    "576685fd-263c-46bb-9fdc-1f5eb234cbb6": {
+        "name": "GuidInterface",
+        "type": "interface",
+        "namespace": "VDM\\Joomla\\Interfaces\\Data",
+        "code": "src\/576685fd-263c-46bb-9fdc-1f5eb234cbb6\/code.php",
+        "power": "src\/576685fd-263c-46bb-9fdc-1f5eb234cbb6\/code.power",
+        "settings": "src\/576685fd-263c-46bb-9fdc-1f5eb234cbb6\/settings.json",
+        "path": "src\/576685fd-263c-46bb-9fdc-1f5eb234cbb6",
+        "spk": "Super---576685fd_263c_46bb_9fdc_1f5eb234cbb6---Power",
+        "guid": "576685fd-263c-46bb-9fdc-1f5eb234cbb6"
+    },
     "584747d1-3a86-453d-b7a3-a2219de8d777": {
         "name": "Model",
         "type": "abstract class",
@@ -383,6 +405,17 @@
         "path": "src\/59b1a2ea-d77e-4040-ac8c-e65cd8743e9b",
         "spk": "Super---59b1a2ea_d77e_4040_ac8c_e65cd8743e9b---Power",
         "guid": "59b1a2ea-d77e-4040-ac8c-e65cd8743e9b"
+    },
+    "5acded67-0e3d-4c6b-a6ea-b533b076de0c": {
+        "name": "Guid",
+        "type": "trait",
+        "namespace": "VDM\\Joomla\\Data",
+        "code": "src\/5acded67-0e3d-4c6b-a6ea-b533b076de0c\/code.php",
+        "power": "src\/5acded67-0e3d-4c6b-a6ea-b533b076de0c\/code.power",
+        "settings": "src\/5acded67-0e3d-4c6b-a6ea-b533b076de0c\/settings.json",
+        "path": "src\/5acded67-0e3d-4c6b-a6ea-b533b076de0c",
+        "spk": "Super---5acded67_0e3d_4c6b_a6ea_b533b076de0c---Power",
+        "guid": "5acded67-0e3d-4c6b-a6ea-b533b076de0c"
     },
     "5f0205fa-5c43-424a-af7d-abc943c17c8c": {
         "name": "SchemaChecker",
@@ -504,6 +537,17 @@
         "path": "src\/728ee726-3f0f-4762-899d-f8c9430cee58",
         "spk": "Super---728ee726_3f0f_4762_899d_f8c9430cee58---Power",
         "guid": "728ee726-3f0f-4762-899d-f8c9430cee58"
+    },
+    "7832a726-87b6-4e95-887e-7b725d3fab8f": {
+        "name": "UserHelper",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Utilities",
+        "code": "src\/7832a726-87b6-4e95-887e-7b725d3fab8f\/code.php",
+        "power": "src\/7832a726-87b6-4e95-887e-7b725d3fab8f\/code.power",
+        "settings": "src\/7832a726-87b6-4e95-887e-7b725d3fab8f\/settings.json",
+        "path": "src\/7832a726-87b6-4e95-887e-7b725d3fab8f",
+        "spk": "Super---7832a726_87b6_4e95_887e_7b725d3fab8f---Power",
+        "guid": "7832a726-87b6-4e95-887e-7b725d3fab8f"
     },
     "7c1fb50f-8fb1-4627-8705-6fedf7182ca5": {
         "name": "Upsert",

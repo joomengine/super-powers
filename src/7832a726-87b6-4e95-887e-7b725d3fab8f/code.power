@@ -1,0 +1,381 @@
+	/**
+	 * Save user details by either creating a new user or updating an existing user.
+	 *
+	 * @param   array  $credentials  User credentials including 'name', 'username', 'email', 'password', and 'password2'.
+	 * @param   int    $autologin    Flag to determine whether to auto-login the user after registration.
+	 * @param   array  $params       Parameters for user activation, password sending, and user registration allowance.
+	 * @param   int    $mode         Mode of registration: 1 = Site Registration, 0 = Admin Registration, 2 = Custom Helper Method.
+	 *
+	 * @return  int  User ID on success.
+	 *
+	 * @throws  \InvalidArgumentException  If required credentials are missing.
+	 * @throws  \RuntimeException          If the user update or creation fails.
+	 *
+	 * @since   5.0.3
+	 */
+	public static function save(array $credentials, int $autologin = 0,
+		array $params = ['useractivation' => 0, 'sendpassword' => 1], int $mode = 1): int
+	{
+		// can not continue without an email
+		if (empty($credentials['email']))
+		{
+			throw new \InvalidArgumentException(Text::_('Can not save user without email value.'));
+		}
+
+		// Ensure the 'username' key exists in the credentials array, set to an empty string if not provided.
+		$username = $credentials['username'] ?? $credentials['email'];
+
+		// Check for an existing user by email or username.
+		$existingEmailUserId = static::getUserIdByEmail($credentials['email']);
+		$existingUserId = static::getUserIdByUsername($username);
+
+		// If either the email or username already exists, handle the update logic.
+		if ($existingEmailUserId !== null || $existingUserId !== null || (isset($credentials['id']) && $credentials['id'] > 0))
+		{
+			// Prevent updating other users or reusing an email by different users.
+			if (
+				(
+					isset($credentials['id']) &&
+					(
+						($existingEmailUserId !== null && $existingEmailUserId != $credentials['id']) ||
+						($existingUserId !== null && $existingUserId != $credentials['id'])
+					)
+				) || ($existingUserId !== null && $existingEmailUserId !== null && $existingEmailUserId != $existingUserId)
+			)
+			{
+				throw new \RuntimeException(Text::sprintf('User ID mismatch detected when trying to save %s (%s) credentials.', $username, $credentials['email']));
+			}
+
+			// Update the existing user.
+			$credentials['id'] = $credentials['id'] ?? $existingEmailUserId ?? $existingUserId;
+			return static::update($credentials);
+		}
+
+		// Create a new user if no existing user is found.
+		return static::create($credentials, $autologin, $params, $mode);
+	}
+
+	/**
+	 * Create a user and update the given table.
+	 *
+	 * @param   array  $credentials  User credentials including 'name', 'username', 'email', 'password', and 'password2'.
+	 * @param   int    $autologin    Flag to determine whether to auto-login the user after registration.
+	 * @param   array  $params       Parameters for user activation, password sending, and user registration allowance.
+	 * @param   int    $mode         Mode of registration: 1 = Site Registration, 0 = Admin Registration, 2 = Custom Helper Method.
+	 *
+	 * @return  int User ID on success.
+	 *
+	 * @throws  \RuntimeException  If user creation fails.
+	 *
+	 * @since   5.0.3
+	 */
+	public static function create(array $credentials, int $autologin = 0,
+		array $params = ['useractivation' => 0, 'sendpassword' => 1], int $mode = 1): int
+	{
+		$lang = Factory::getLanguage();
+		$lang->load('com_users', JPATH_SITE, 'en-GB', true);
+
+		// Handle custom registration mode
+		if ($mode === 2 && method_exists(ComponentbuilderHelper::class, 'registerUser'))
+		{
+			$params['autologin'] = $autologin;
+			$userId = ComponentbuilderHelper::registerUser($credentials, $params);
+
+			if (is_numeric($userId))
+			{
+				return $userId;
+			}
+
+			throw new \RuntimeException(Text::_('User creation failed!'));
+		}
+
+		// Check if we have params/config
+		if (ArrayHelper::check($params))
+		{
+			// Make changes to user config
+			foreach ($params as $param => $set)
+			{
+				// If you know of a better path, let me know
+				$params[$param] = Component::setParams($param, $set, 'com_users');
+			}
+		}
+
+		// Fallback to Site Registrations if mode is set to 2 but the method doesn't exist
+		$mode = $mode === 2 ? 1 : $mode;
+
+		// Load the appropriate user model
+		$model = static::getModelByMode($mode);
+
+		// Set default values for missing credentials
+		$credentials['username'] = $credentials['username'] ?? $credentials['email'];
+
+		// Prepare user data
+		$data = static::prepareUserData($credentials, $mode);
+
+		// Handle user creation
+		$userId = $mode === 1 ? $model->register($data) : static::adminRegister($model, $data);
+
+		// Check if we have params
+		if (ArrayHelper::check($params))
+		{
+			// Change user params/config back
+			foreach ($params as $param => $set)
+			{
+				// If you know of a better path, let me know
+				Component::setParams($param, $set, 'com_users');
+			}
+		}
+
+		if (is_numeric($userId) && $userId > 0)
+		{
+			// Handle post-registration processes
+			return static::handlePostRegistration($userId, $autologin, $credentials);
+		}
+
+		$error_messages = '';
+		if (method_exists($model, 'getError'))
+		{
+			$errors = $model->getError();
+			if (!empty($errors))
+			{
+				$error_messages = '<br>' . implode('<br>', $errors);
+			}
+		}
+
+		throw new \RuntimeException(
+			Text::sprintf('User %s (%s) creation failed!%s',
+				(string) $credentials['username'],
+				(string) $credentials['email'],
+				$error_messages
+			)
+		);
+	}
+
+	/**
+	 * Update user details.
+	 *
+	 * @param   array  $userDetails  Array containing user details to be updated.
+	 *
+	 * @return  int   Updated user ID on success.
+	 *
+	 * @throws  \RuntimeException  If user update fails.
+	 *
+	 * @since   5.0.3
+	 */
+	public static function update(array $userDetails): int
+	{
+		$lang = Factory::getLanguage();
+		$lang->load('com_users', JPATH_ADMINISTRATOR, 'en-GB', true);
+
+		$model = Component::getModel('User', 'Administrator', 'com_users');
+
+		// Set default values for missing credentials
+		$userDetails['username'] = $userDetails['username'] ?? $userDetails['email'];
+
+		// Prepare user data for update
+		$data = [
+			'id' => $userDetails['id'],
+			'username' => $userDetails['username'],
+			'name' => $userDetails['name'],
+			'email' => $userDetails['email'],
+			'password' => $userDetails['password'] ?? null,
+			'password2' => $userDetails['password2'] ?? null,
+			'block' => 0
+		];
+
+		// set groups if found
+		if (isset($userDetails['groups']) && ArrayHelper::check($userDetails['groups']))
+		{
+			$data['groups'] = $userDetails['groups'];
+		}
+
+		// Update the user
+		if ($model->save($data))
+		{
+			return $userDetails['id'];
+		}
+
+		$error_messages = '';
+		if (method_exists($model, 'getError'))
+		{
+			$errors = $model->getError();
+			if (!empty($errors))
+			{
+				$error_messages =  '<br>' . implode('<br>', $errors);
+			}
+		}
+
+		throw new \RuntimeException(
+			Text::sprintf('Update of user %s (%s) failed!%s',
+				(string) $userDetails['username'],
+				(string) $userDetails['email'],
+				(string) $error_messages
+			)
+		);
+	}
+
+	/**
+	 * Method to get an instance of a user for the given id.
+	 *
+	 * @param   int  $id  The id
+	 *
+	 * @return  User
+	 *
+	 * @since   5.0.3
+	 */
+	public static function getUserById(int $id): User
+	{
+		 return new User($id);
+	}
+
+	/**
+	 * Retrieve the user ID by username.
+	 *
+	 * @param   string  $username  The username to check.
+	 *
+	 * @return  int|null  The user ID if the user exists, null otherwise.
+	 *
+	 * @since   5.0.3
+	 */
+	public static function getUserIdByUsername(string $username): ?int
+	{
+		$userId = JoomlaUserHelper::getUserId($username);
+		return $userId ?: null;
+	}
+
+	/**
+	 * Retrieve the user ID by email.
+	 *
+	 * @param   string  $email  The email address to check.
+	 *
+	 * @return  int|null  The user ID if the user exists, null otherwise.
+	 *
+	 * @since   5.0.3
+	 */
+	public static function getUserIdByEmail(string $email): ?int
+	{
+		// Initialise some variables
+		$db = Factory::getDbo();
+		$query = $db->getQuery(true)
+			->select($db->quoteName('id'))
+			->from($db->quoteName('#__users'))
+			->where($db->quoteName('email') . ' = :email')
+			->bind(':email', $email)
+			->setLimit(1);
+		$db->setQuery($query);
+
+		$userId = $db->loadResult();
+		return $userId ?: null;
+	}
+
+	/**
+	 * Load the correct user model based on the registration mode.
+	 *
+	 * @param   int  $mode  The registration mode.
+	 *
+	 * @return  BaseDatabaseModel  The appropriate user model.
+	 *
+	 * @since   5.0.3
+	 */
+	protected static function getModelByMode(int $mode): BaseDatabaseModel
+	{
+		if ($mode === 1)
+		{
+			return Component::getModel('Registration', 'Site', 'com_users');
+		}
+
+		return Component::getModel('User', 'Administrator', 'com_users');
+	}
+
+	/**
+	 * Prepare user data array for registration or update.
+	 *
+	 * @param   array  $credentials  User credentials.
+	 * @param   int    $mode         The registration mode.
+	 *
+	 * @return  array  The prepared user data array.
+	 *
+	 * @since   5.0.3
+	 */
+	protected static function prepareUserData(array $credentials, int $mode)
+	{
+		$data = [
+			'username' => $credentials['username'],
+			'name' => $credentials['name'],
+			'block' => 0
+		];
+
+		if ($mode === 1)
+		{
+			$data['email1'] = $credentials['email'];
+		}
+		else
+		{
+			$data['email'] = $credentials['email'];
+			$data['registerDate'] = Factory::getDate()->toSql();
+		}
+
+		if ($mode === 1 && empty($credentials['password']))
+		{
+			$credentials['password'] = StringHelper::random(10);
+			$credentials['password2'] = $credentials['password'];
+		}
+
+		if (!empty($credentials['password']) && !empty($credentials['password2']))
+		{
+			$data['password1'] = $credentials['password'];
+			$data['password2'] = $credentials['password2'];
+		}
+
+		if ($mode === 0 && isset($credentials['groups']) && ArrayHelper::check($credentials['groups']))
+		{
+			$data['groups'] = $credentials['groups'];
+		}
+
+		return $data;
+	}
+
+	/**
+	 * Handle the registration process for admin mode.
+	 *
+	 * @param   BaseDatabaseModel  $model  The user model.
+	 * @param   array              $data   The user data.
+	 *
+	 * @return  int  The ID of the created user.
+	 *
+	 * @since   5.0.3
+	 */
+	private static function adminRegister(BaseDatabaseModel $model, array $data): int
+	{
+		$model->save($data);
+
+		return $model->getState('user.id', 0);
+	}
+
+	/**
+	 * Handle post-registration processes like auto-login.
+	 *
+	 * @param   int    $userId      The ID of the created user.
+	 * @param   int    $autologin   Flag to determine whether to auto-login the user.
+	 * @param   array  $credentials The user credentials.
+	 *
+	 * @return  int The user ID on success.
+	 *
+	 * @since   5.0.3
+	 */
+	private static function handlePostRegistration(int $userId, int $autologin, array $credentials): int
+	{
+		if ($autologin && isset($credentials['password']))
+		{
+			try
+			{
+				Factory::getApplication()->login($credentials);
+			}
+			catch (\Exception $e)
+			{
+				// we might need to redirect here?
+			}
+		}
+
+		return $userId;
+	}

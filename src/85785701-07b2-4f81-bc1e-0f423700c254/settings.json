@@ -4,6 +4,7 @@
     "extends": "",
     "guid": "85785701-07b2-4f81-bc1e-0f423700c254",
     "implements": [
+        "576685fd-263c-46bb-9fdc-1f5eb234cbb6",
         "34959721-415b-4b5e-8002-3d1fc84b3b2b"
     ],
     "load_selection": null,
@@ -15,6 +16,10 @@
         "use_selection0": {
             "use": "7212e4db-371f-4cfd-8122-32e9bb100d83",
             "as": "Items"
+        },
+        "use_selection1": {
+            "use": "5acded67-0e3d-4c6b-a6ea-b533b076de0c",
+            "as": "default"
         }
     },
     "extendsinterfaces": null,

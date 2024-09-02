@@ -12,6 +12,7 @@
 ```uml
 @startuml
 abstract Helper  #Orange {
+  + {static} setParams(string $target, mixed $value, ...) : mixed
   + {static} getParams(?string $option = null) : Registry
   + {static} setOption(?string $option) : void
   + {static} getOption(?string $default = 'empty') : ?string
@@ -21,65 +22,82 @@ abstract Helper  #Orange {
   + {static} getManifest(?string $option = null) : ?object
   + {static} methodExists(string $method, ?string $option = null) : bool
   + {static} _(string $method, array $arguments = [], ...) : mixed
+  + {static} getModel(string $type, string $prefix = 'Administrator', ...) : BaseDatabaseModel
+  - {static} getPrefixFromModelPath(string $path) : string
 }
 
-note right of Helper::getParams
+note right of Helper::setParams
+  Sets a parameter value for the given target in the specified option's params.
+If no option is provided, it falls back to the default option.
+This method updates the parameters for a given extension in the database,
+only if the new value differs from the existing one.
+
+  since: 5.0.3
+  return: mixed
+  
+  arguments:
+    string $target
+    mixed $value
+    ?string $option = null
+end note
+
+note left of Helper::getParams
   Gets the parameter object for the component
 
   since: 3.0.11
   return: Registry
 end note
 
-note left of Helper::setOption
+note right of Helper::setOption
   Set the component option
 
   since: 3.2.0
   return: void
 end note
 
-note right of Helper::getOption
+note left of Helper::getOption
   Get the component option
 
   since: 3.0.11
   return: ?string
 end note
 
-note left of Helper::getCode
+note right of Helper::getCode
   Gets the component code name
 
   since: 3.0.11
   return: ?string
 end note
 
-note right of Helper::get
+note left of Helper::get
   Gets the component abstract helper class
 
   since: 3.0.11
   return: ?string
 end note
 
-note left of Helper::getNamespace
+note right of Helper::getNamespace
   Gets the component namespace if set
 
   since: 3.0.11
   return: ?string
 end note
 
-note right of Helper::getManifest
+note left of Helper::getManifest
   Gets the component abstract helper class
 
   since: 3.0.11
   return: ?object
 end note
 
-note left of Helper::methodExists
+note right of Helper::methodExists
   Check if the helper class of this component has a method
 
   since: 3.0.11
   return: bool
 end note
 
-note right of Helper::_
+note left of Helper::_
   Check if the helper class of this component has a method, and call it with the arguments
 
   since: 3.2.0
@@ -89,6 +107,26 @@ note right of Helper::_
     string $method
     array $arguments = []
     ?string $option = null
+end note
+
+note right of Helper::getModel
+  Returns a Model object based on the specified type, prefix, and configuration.
+
+  since: 5.0.3
+  return: BaseDatabaseModel
+  
+  arguments:
+    string $type
+    string $prefix = 'Administrator'
+    ?string $option = null
+    array $config = []
+end note
+
+note left of Helper::getPrefixFromModelPath
+  Get the prefix from the model path
+
+  since: 5.0.3
+  return: string
 end note
  
 @enduml

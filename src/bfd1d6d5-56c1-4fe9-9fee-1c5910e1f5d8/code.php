@@ -7019,7 +7019,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TINYINT(1)',
 					'default' => '0',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
