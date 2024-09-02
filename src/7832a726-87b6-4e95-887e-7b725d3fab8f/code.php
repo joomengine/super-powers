@@ -170,7 +170,14 @@ abstract class UserHelper
 			$errors = $model->getError();
 			if (!empty($errors))
 			{
-				$error_messages = '<br>' . implode('<br>', $errors);
+				if (is_array($errors))
+				{
+					$error_messages = '<br>' . implode('<br>', $errors);
+				}
+				elseif (is_string($errors))
+				{
+					$error_messages = '<br>' . $errors;
+				}
 			}
 		}
 
@@ -233,7 +240,14 @@ abstract class UserHelper
 			$errors = $model->getError();
 			if (!empty($errors))
 			{
-				$error_messages =  '<br>' . implode('<br>', $errors);
+				if (is_array($errors))
+				{
+					$error_messages = '<br>' . implode('<br>', $errors);
+				}
+				elseif (is_string($errors))
+				{
+					$error_messages = '<br>' . $errors;
+				}
 			}
 		}
 
