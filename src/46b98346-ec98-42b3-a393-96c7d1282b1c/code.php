@@ -350,15 +350,14 @@ final class UsersSubform implements GuidInterface, SubformInterface
 						$item[$indexKey] = 0;
 					}
 					break;
-				case 'user_id':
-					$item[$indexKey] = $this->setUserDetails($item);
-					break;
 				default:
 					// No action for other keys if empty
 					break;
 			}
 			// set LINK
 			$item[$linkKey] = $linkValue;
+			// create/update user
+			$item['user_id'] = $this->setUserDetails($item);
 		}
 
 		return array_values($items);

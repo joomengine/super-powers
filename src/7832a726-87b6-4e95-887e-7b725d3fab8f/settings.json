@@ -4,14 +4,7 @@
     "extends": "",
     "guid": "7832a726-87b6-4e95-887e-7b725d3fab8f",
     "implements": null,
-    "load_selection": {
-        "load_selection0": {
-            "load": "0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a"
-        },
-        "load_selection1": {
-            "load": "1f28cb53-60d9-4db1-b517-3c7dc6b429ef"
-        }
-    },
+    "load_selection": null,
     "name": "UserHelper",
     "power_version": "1.0.0",
     "system_name": "Joomla.Utilities.UserHelper",
@@ -20,6 +13,14 @@
         "use_selection0": {
             "use": "640b5352-fb09-425f-a26e-cd44eda03f15",
             "as": "Component"
+        },
+        "use_selection1": {
+            "use": "0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a",
+            "as": "default"
+        },
+        "use_selection2": {
+            "use": "1f28cb53-60d9-4db1-b517-3c7dc6b429ef",
+            "as": "default"
         }
     },
     "extendsinterfaces": null,
