@@ -24,6 +24,10 @@
         "use_selection2": {
             "use": "7832a726-87b6-4e95-887e-7b725d3fab8f",
             "as": "default"
+        },
+        "use_selection3": {
+            "use": "1c10a5f1-204d-4f17-ad9f-0e0684f2030d",
+            "as": "default"
         }
     },
     "extendsinterfaces": null,

@@ -363,8 +363,11 @@
 
 		try {
 			return UserHelper::save($user);
+		} catch(NoUserIdFoundException $e) {
+			Factory::getApplication()->enqueueMessage($e->getMessage(), 'error');
 		} catch(\Exception $e) {
 			Factory::getApplication()->enqueueMessage($e->getMessage(), 'warning');
+			return $item['user_id'];
 		}
 
 		return 0;

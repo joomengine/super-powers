@@ -156,6 +156,9 @@ This repository contains an index (see below) of all the approved powers within 
   - **trait IsString** | [Details](src/ff7d0111-8f79-42aa-ac14-b53ba2c49369) | [Code](src/ff7d0111-8f79-42aa-ac14-b53ba2c49369/code.php) | [Settings](src/ff7d0111-8f79-42aa-ac14-b53ba2c49369/settings.json) | SPK: `Super---ff7d0111_8f79_42aa_ac14_b53ba2c49369---Power`
   - **trait ToString** | [Details](src/7d494d91-ab60-43cd-aecf-d50e07f7f30e) | [Code](src/7d494d91-ab60-43cd-aecf-d50e07f7f30e/code.php) | [Settings](src/7d494d91-ab60-43cd-aecf-d50e07f7f30e/settings.json) | SPK: `Super---7d494d91_ab60_43cd_aecf_d50e07f7f30e---Power`
   - **trait VarExport** | [Details](src/52a1d14f-304a-431c-8fa4-411179942db5) | [Code](src/52a1d14f-304a-431c-8fa4-411179942db5/code.php) | [Settings](src/52a1d14f-304a-431c-8fa4-411179942db5/settings.json) | SPK: `Super---52a1d14f_304a_431c_8fa4_411179942db5---Power`
+- **Namespace**: [VDM\Joomla\Componentbuilder\Utilities\Exception](#vdm-joomla-componentbuilder-utilities-exception)
+
+  - **class NoUserIdFoundException** | [Details](src/1c10a5f1-204d-4f17-ad9f-0e0684f2030d) | [Code](src/1c10a5f1-204d-4f17-ad9f-0e0684f2030d/code.php) | [Settings](src/1c10a5f1-204d-4f17-ad9f-0e0684f2030d/settings.json) | SPK: `Super---1c10a5f1_204d_4f17_ad9f_0e0684f2030d---Power`
 - **Namespace**: [VDM\Joomla\Interfaces\Git\Repository](#vdm-joomla-interfaces-git-repository)
 
   - **interface ContentsInterface** | [Details](src/d1de5d5b-bf29-4031-8094-76c4f6c75900) | [Code](src/d1de5d5b-bf29-4031-8094-76c4f6c75900/code.php) | [Settings](src/d1de5d5b-bf29-4031-8094-76c4f6c75900/settings.json) | SPK: `Super---d1de5d5b_bf29_4031_8094_76c4f6c75900---Power`

@@ -20,6 +20,7 @@ use Joomla\CMS\MVC\Model\BaseDatabaseModel;
 use VDM\Joomla\Utilities\Component\Helper as Component;
 use VDM\Joomla\Utilities\ArrayHelper;
 use VDM\Joomla\Utilities\StringHelper;
+use VDM\Joomla\Componentbuilder\Utilities\Exception\NoUserIdFoundException;
 use VDM\Component\Componentbuilder\Administrator\Helper\ComponentbuilderHelper;
 
 
@@ -42,6 +43,7 @@ abstract class UserHelper
 	 *
 	 * @throws  \InvalidArgumentException  If required credentials are missing.
 	 * @throws  \RuntimeException          If the user update or creation fails.
+	 * @throws  NoUserIdFoundException     If the user is not found.
 	 *
 	 * @since   5.0.3
 	 */
@@ -75,7 +77,7 @@ abstract class UserHelper
 				) || ($existingUserId !== null && $existingEmailUserId !== null && $existingEmailUserId != $existingUserId)
 			)
 			{
-				throw new \RuntimeException(Text::sprintf('COM_COMPONENTBUILDER_USER_ID_MISMATCH_DETECTED_WHEN_TRYING_TO_SAVE_S_S_CREDENTIALS', $username, $credentials['email']));
+				throw new NoUserIdFoundException(Text::sprintf('COM_COMPONENTBUILDER_USER_ID_MISMATCH_DETECTED_WHEN_TRYING_TO_SAVE_S_S_CREDENTIALS', $username, $credentials['email']));
 			}
 
 			// Update the existing user.
@@ -97,7 +99,8 @@ abstract class UserHelper
 	 *
 	 * @return  int User ID on success.
 	 *
-	 * @throws  \RuntimeException  If user creation fails.
+	 * @throws  \RuntimeException       If user creation fails.
+	 * @throws  NoUserIdFoundException  If the user is not found.
 	 *
 	 * @since   5.0.3
 	 */
@@ -118,7 +121,7 @@ abstract class UserHelper
 				return $userId;
 			}
 
-			throw new \RuntimeException(Text::_('COM_COMPONENTBUILDER_USER_CREATION_FAILED'));
+			throw new NoUserIdFoundException(Text::_('COM_COMPONENTBUILDER_USER_CREATION_FAILED'));
 		}
 
 		// Check if we have params/config
@@ -181,7 +184,7 @@ abstract class UserHelper
 			}
 		}
 
-		throw new \RuntimeException(
+		throw new NoUserIdFoundException(
 			Text::sprintf('COM_COMPONENTBUILDER_USER_S_S_CREATION_FAILEDS',
 				(string) $credentials['username'],
 				(string) $credentials['email'],

@@ -131,6 +131,17 @@
         "spk": "Super---19b2ba92_1655_4384_acfb_979c80de8b6d---Power",
         "guid": "19b2ba92-1655-4384-acfb-979c80de8b6d"
     },
+    "1c10a5f1-204d-4f17-ad9f-0e0684f2030d": {
+        "name": "NoUserIdFoundException",
+        "type": "class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Utilities\\Exception",
+        "code": "src\/1c10a5f1-204d-4f17-ad9f-0e0684f2030d\/code.php",
+        "power": "src\/1c10a5f1-204d-4f17-ad9f-0e0684f2030d\/code.power",
+        "settings": "src\/1c10a5f1-204d-4f17-ad9f-0e0684f2030d\/settings.json",
+        "path": "src\/1c10a5f1-204d-4f17-ad9f-0e0684f2030d",
+        "spk": "Super---1c10a5f1_204d_4f17_ad9f_0e0684f2030d---Power",
+        "guid": "1c10a5f1-204d-4f17-ad9f-0e0684f2030d"
+    },
     "1f28cb53-60d9-4db1-b517-3c7dc6b429ef": {
         "name": "StringHelper",
         "type": "abstract class",

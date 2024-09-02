@@ -16,6 +16,7 @@ use Joomla\CMS\Factory;
 use VDM\Joomla\Interfaces\Data\ItemsInterface as Items;
 use VDM\Joomla\Data\Guid;
 use VDM\Joomla\Componentbuilder\Utilities\UserHelper;
+use VDM\Joomla\Componentbuilder\Utilities\Exception\NoUserIdFoundException;
 use VDM\Joomla\Interfaces\Data\GuidInterface;
 use VDM\Joomla\Interfaces\Data\SubformInterface;
 
@@ -392,8 +393,11 @@ final class UsersSubform implements GuidInterface, SubformInterface
 
 		try {
 			return UserHelper::save($user);
+		} catch(NoUserIdFoundException $e) {
+			Factory::getApplication()->enqueueMessage($e->getMessage(), 'error');
 		} catch(\Exception $e) {
 			Factory::getApplication()->enqueueMessage($e->getMessage(), 'warning');
+			return $item['user_id'];
 		}
 
 		return 0;

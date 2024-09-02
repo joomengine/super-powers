@@ -10,6 +10,7 @@
 	 *
 	 * @throws  \InvalidArgumentException  If required credentials are missing.
 	 * @throws  \RuntimeException          If the user update or creation fails.
+	 * @throws  NoUserIdFoundException     If the user is not found.
 	 *
 	 * @since   5.0.3
 	 */
@@ -43,7 +44,7 @@
 				) || ($existingUserId !== null && $existingEmailUserId !== null && $existingEmailUserId != $existingUserId)
 			)
 			{
-				throw new \RuntimeException(Text::sprintf('User ID mismatch detected when trying to save %s (%s) credentials.', $username, $credentials['email']));
+				throw new NoUserIdFoundException(Text::sprintf('User ID mismatch detected when trying to save %s (%s) credentials.', $username, $credentials['email']));
 			}
 
 			// Update the existing user.
@@ -65,7 +66,8 @@
 	 *
 	 * @return  int User ID on success.
 	 *
-	 * @throws  \RuntimeException  If user creation fails.
+	 * @throws  \RuntimeException       If user creation fails.
+	 * @throws  NoUserIdFoundException  If the user is not found.
 	 *
 	 * @since   5.0.3
 	 */
@@ -86,7 +88,7 @@
 				return $userId;
 			}
 
-			throw new \RuntimeException(Text::_('User creation failed!'));
+			throw new NoUserIdFoundException(Text::_('User creation failed!'));
 		}
 
 		// Check if we have params/config
@@ -149,7 +151,7 @@
 			}
 		}
 
-		throw new \RuntimeException(
+		throw new NoUserIdFoundException(
 			Text::sprintf('User %s (%s) creation failed!%s',
 				(string) $credentials['username'],
 				(string) $credentials['email'],
