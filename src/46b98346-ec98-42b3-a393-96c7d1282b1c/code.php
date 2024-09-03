@@ -13,10 +13,12 @@ namespace VDM\Joomla\Data;
 
 
 use Joomla\CMS\Factory;
+use Joomla\CMS\User\User;
 use VDM\Joomla\Interfaces\Data\ItemsInterface as Items;
 use VDM\Joomla\Data\Guid;
 use VDM\Joomla\Componentbuilder\Utilities\UserHelper;
 use VDM\Joomla\Componentbuilder\Utilities\Exception\NoUserIdFoundException;
+use VDM\Joomla\Utilities\Component\Helper as Component;
 use VDM\Joomla\Interfaces\Data\GuidInterface;
 use VDM\Joomla\Interfaces\Data\SubformInterface;
 
@@ -85,7 +87,7 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	 * @param string $table The table that should be active
 	 *
 	 * @return self
-	 * @since 3.2.2
+	 * @since  3.2.2
 	 */
 	public function table(string $table): self
 	{
@@ -103,7 +105,7 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	 * @param array    $get        The array get:set of the keys of each row in the subform.
 	 *
 	 * @return array|null   The subform
-	 * @since 3.2.2
+	 * @since  3.2.2
 	 */
 	public function get(string $linkValue, string $linkKey, string $field, array $get): ?array
 	{
@@ -128,7 +130,7 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	 * @param string   $linkValue  The value of the link key in child table.
 	 *
 	 * @return bool
-	 * @since 3.2.2
+	 * @since  3.2.2
 	 */
 	public function set(mixed $items, string $indexKey, string $linkKey, string $linkValue): bool
 	{
@@ -150,7 +152,7 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	 * Get the current active table
 	 *
 	 * @return  string
-	 * @since 3.2.2
+	 * @since   3.2.2
 	 */
 	public function getTable(): string
 	{
@@ -163,7 +165,7 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	 * @return void
 	 * @since  5.0.2
 	 */
-	protected function initializeUserProperties(): void
+	private function initializeUserProperties(): void
 	{
 		$user = UserHelper::getUserById(0);
 
@@ -187,7 +189,7 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	 * @param string   $linkValue  The value of the link key in child table.
 	 *
 	 * @return void
-	 * @since 3.2.2
+	 * @since  3.2.2
 	 */
 	private function purge(array $items, string $indexKey, string $linkKey, string $linkValue): void
 	{
@@ -229,7 +231,7 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	 * @param array  $items  Array of objects or arrays to be filtered.
 	 *
 	 * @return array
-	 * @since 5.0.2
+	 * @since  5.0.2
 	 */
 	private function getUsersDetails(array $items): array
 	{
@@ -248,7 +250,7 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	 * @param array  $item  The user map array
 	 *
 	 * @return void
-	 * @since 5.0.2
+	 * @since  5.0.2
 	 */
 	private function getUserDetails(array &$item): void
 	{
@@ -285,7 +287,7 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	 * @param string $field  The field prefix for the resulting associative array.
 	 *
 	 * @return array Array of filtered arrays set by association.
-	 * @since 3.2.2
+	 * @since  3.2.2
 	 */
 	private function converter(array $items, array $keySet, string $field): array
 	{
@@ -329,7 +331,7 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	 * @param string   $linkValue  The value of the link key in child table.
 	 *
 	 * @return array  The processed array of arrays.
-	 * @since 3.2.2
+	 * @since  3.2.2
 	 */
 	private function process($items, string $indexKey, string $linkKey, string $linkValue): array
 	{
@@ -365,27 +367,66 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	}
 
 	/**
-	 * Set the user details.
+	 * Handles setting user details and saving them.
 	 *
-	 * @param array  $item  The user details
+	 * This function retrieves the user by ID, sets the user details, 
+	 * and adds appropriate user groups before saving the user.
 	 *
-	 * @return int
-	 * @since 5.0.2
+	 * @param array $item The user details passed by reference.
+	 *
+	 * @return int The ID of the saved user, or 0 on failure.
+	 * @since  5.0.2
 	 */
 	private function setUserDetails(array &$item): int
 	{
-		$details = [];
-		$user = null;
+		$user = $this->loadUser($item);
+		$details = $this->extractUserDetails($item, $user);
+		$this->assignUserGroups($details, $user, $item);
+		
+		return $this->saveUserDetails($details, $details['id'] ?? 0);
+	}
 
-		// now load the user ID
-		if (isset($item['user_id']) && is_numeric($item['user_id']) && $item['user_id'] > 0)
+	/**
+	 * Load the user based on the user ID from the item array.
+	 *
+	 * @param array $item The array containing user details.
+	 * 
+	 * @return User|null The user object if found, null otherwise.
+	 * @since  5.0.2
+	 */
+	private function loadUser(array $item): ?User
+	{
+		if (!isset($item['user_id']) || !is_numeric($item['user_id']) || $item['user_id'] <= 0)
 		{
-			// Retrieve the user by ID
-			$user = UserHelper::getUserById((int)$item['user_id']);
-			if ($user->id == $item['user_id'])
-			{
-				$details['id'] = (int) $item['user_id'];
-			}
+			return null;
+		}
+
+		$user = UserHelper::getUserById((int) $item['user_id']);
+
+		if ($user && $user->id == $item['user_id'])
+		{
+			return $user;
+		}
+
+		return null;
+	}
+
+	/**
+	 * Extract user details from the item array and prepare them for saving.
+	 *
+	 * @param array     $item The array containing user details.
+	 * @param User|null $user The user object if found, null otherwise.
+	 * 
+	 * @return array The prepared user details array.
+	 * @since  5.0.2
+	 */
+	private function extractUserDetails(array &$item, ?User $user): array
+	{
+		$details = [];
+
+		if ($user !== null)
+		{
+			$details['id'] = (int) $item['user_id'];
 		}
 
 		foreach ($this->user as $property)
@@ -397,18 +438,54 @@ final class UsersSubform implements GuidInterface, SubformInterface
 			}
 		}
 
-		if ($user !== null)
-		{
-			$details['group'] = $user->getAuthorisedGroups();
-		}
+		return $details;
+	}
 
+	/**
+	 * Assigns user groups based on existing groups and entity type.
+	 *
+	 * @param array     &$details The array to store user details including groups.
+	 * @param User|null $user     The user object if found, null otherwise.
+	 * @param array     $item     The array containing additional user details.
+	 *
+	 * @return void
+	 * @since 5.0.2
+	 */
+	private function assignUserGroups(array &$details, ?User $user, array $item): void
+	{
+		$details['groups'] = $user !== null ? $user->groups : [];
+
+		if (!empty($item['entity_type']))
+		{
+			$groups = Component::getParams()->get($item['entity_type'] . '_groups', []);
+			foreach ($groups as $group)
+			{
+				if (!in_array($group, $details['groups']))
+				{
+					$details['groups'][] = $group;
+				}
+			}
+		}
+	}
+
+	/**
+	 * Save the user details using UserHelper and handle exceptions.
+	 *
+	 * @param array $details The prepared user details array.
+	 * @param int   $userId  The ID of the user being processed.
+	 * 
+	 * @return int The ID of the saved user, or 0 on failure.
+	 * @since 5.0.2
+	 */
+	private function saveUserDetails(array $details, int $userId): int
+	{
 		try {
 			return UserHelper::save($details);
-		} catch(NoUserIdFoundException $e) {
+		} catch (NoUserIdFoundException $e) {
 			Factory::getApplication()->enqueueMessage($e->getMessage(), 'error');
-		} catch(\Exception $e) {
+		} catch (\Exception $e) {
 			Factory::getApplication()->enqueueMessage($e->getMessage(), 'warning');
-			return $item['user_id'];
+			return $userId;
 		}
 
 		return 0;

@@ -20,13 +20,17 @@ class UsersSubform << (F,LightGreen) >> #RoyalBlue {
   + get(string $linkValue, string $linkKey, ...) : ?array
   + set(mixed $items, string $indexKey, ...) : bool
   + getTable() : string
-  # initializeUserProperties() : void
+  - initializeUserProperties() : void
   - purge(array $items, string $indexKey, ...) : void
   - getUsersDetails(array $items) : array
   - getUserDetails(array $item) : void
   - converter(array $items, array $keySet, ...) : array
   - process(mixed $items, string $indexKey, ...) : array
   - setUserDetails(array $item) : int
+  - loadUser(array $item) : ?User
+  - extractUserDetails(array $item, ?User $user) : array
+  - assignUserGroups($details, ?User $user, ...) : void
+  - saveUserDetails(array $details, int $userId) : int
 }
 
 note right of UsersSubform::__construct
@@ -136,7 +140,42 @@ note right of UsersSubform::process
 end note
 
 note left of UsersSubform::setUserDetails
-  Set the user details.
+  Handles setting user details and saving them.
+This function retrieves the user by ID, sets the user details,
+and adds appropriate user groups before saving the user.
+
+  since: 5.0.2
+  return: int
+end note
+
+note right of UsersSubform::loadUser
+  Load the user based on the user ID from the item array.
+
+  since: 5.0.2
+  return: ?User
+end note
+
+note left of UsersSubform::extractUserDetails
+  Extract user details from the item array and prepare them for saving.
+
+  since: 5.0.2
+  return: array
+end note
+
+note right of UsersSubform::assignUserGroups
+  Assigns user groups based on existing groups and entity type.
+
+  since: 5.0.2
+  return: void
+  
+  arguments:
+    $details
+    ?User $user
+    array $item
+end note
+
+note left of UsersSubform::saveUserDetails
+  Save the user details using UserHelper and handle exceptions.
 
   since: 5.0.2
   return: int
