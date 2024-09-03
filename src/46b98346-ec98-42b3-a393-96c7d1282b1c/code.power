@@ -344,25 +344,36 @@
 	 */
 	private function setUserDetails(array &$item): int
 	{
-		$user = [];
+		$details = [];
+		$user = null;
 
 		// now load the user ID
 		if (isset($item['user_id']) && is_numeric($item['user_id']) && $item['user_id'] > 0)
 		{
-			$user['id'] = (int) $item['user_id'];
+			// Retrieve the user by ID
+			$user = UserHelper::getUserById((int)$item['user_id']);
+			if ($user->id == $item['user_id'])
+			{
+				$details['id'] = (int) $item['user_id'];
+			}
 		}
 
 		foreach ($this->user as $property)
 		{
 			if (isset($item[$property]))
 			{
-				$user[$property] = $item[$property];
+				$details[$property] = $item[$property];
 				unset($item[$property]);
 			}
 		}
 
+		if ($user !== null)
+		{
+			$details['group'] = $user->getAuthorisedGroups();
+		}
+
 		try {
-			return UserHelper::save($user);
+			return UserHelper::save($details);
 		} catch(NoUserIdFoundException $e) {
 			Factory::getApplication()->enqueueMessage($e->getMessage(), 'error');
 		} catch(\Exception $e) {
