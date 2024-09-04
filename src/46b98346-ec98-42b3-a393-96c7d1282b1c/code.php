@@ -62,6 +62,14 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	protected array $user;
 
 	/**
+	 * The active users
+	 *
+	 * @var    array
+	 * @since 5.0.2
+	 */
+	protected array $activeUsers = [];
+
+	/**
 	 * Constructor.
 	 *
 	 * @param Items       $items   The items Class.
@@ -336,7 +344,7 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	private function process($items, string $indexKey, string $linkKey, string $linkValue): array
 	{
 		$items = is_array($items) ? $items : [];
-		foreach ($items as &$item)
+		foreach ($items as $n => &$item)
 		{
 			$value = $item[$indexKey] ?? '';
 			switch ($indexKey) {
@@ -357,13 +365,52 @@ final class UsersSubform implements GuidInterface, SubformInterface
 					// No action for other keys if empty
 					break;
 			}
+
 			// set LINK
 			$item[$linkKey] = $linkValue;
+
 			// create/update user
-			$item['user_id'] = $this->setUserDetails($item);
+			$item['user_id'] = $this->setUserDetails(
+				$item,
+				$this->getActiveUsers(
+					$linkKey,
+					$linkValue
+				)
+			);
+
+			// remove empty row (means no user linked)
+			if ($item['user_id'] == 0)
+			{
+				unset($items[$n]);
+			}
 		}
 
 		return array_values($items);
+	}
+
+	/**
+	 * Get current active Users Linked to this entity
+	 *
+	 * @param string   $linkKey    The link key on which the items where linked in the child table.
+	 * @param string   $linkValue  The value of the link key in child table.
+	 *
+	 * @return array   The IDs of all active users.
+	 * @since  5.0.2
+	 */
+	private function getActiveUsers(string $linkKey, string $linkValue): array
+	{
+		if (isset($this->activeUsers[$linkKey . $linkValue]))
+		{
+			return $this->activeUsers[$linkKey . $linkValue];
+		}
+
+		if (($users = $this->items->table($this->getTable())->values([$linkValue], $linkKey, 'user_id')) !== null)
+		{
+			$this->activeUsers[$linkKey . $linkValue] = $users;
+			return $users;
+		}
+
+		return [];
 	}
 
 	/**
@@ -372,14 +419,15 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	 * This function retrieves the user by ID, sets the user details, 
 	 * and adds appropriate user groups before saving the user.
 	 *
-	 * @param array $item The user details passed by reference.
+	 * @param array $item        The user details passed by reference.
+	 * @param array $activeUsers The current active user linked to this entity.
 	 *
 	 * @return int The ID of the saved user, or 0 on failure.
 	 * @since  5.0.2
 	 */
-	private function setUserDetails(array &$item): int
+	private function setUserDetails(array &$item, array $activeUsers): int
 	{
-		$user = $this->loadUser($item);
+		$user = $this->loadUser($item, $activeUsers);
 		$details = $this->extractUserDetails($item, $user);
 		$this->assignUserGroups($details, $user, $item);
 		
@@ -389,14 +437,21 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	/**
 	 * Load the user based on the user ID from the item array.
 	 *
-	 * @param array $item The array containing user details.
+	 * @param array $item         The array containing user details.
+	 * @param array $activeUsers  The current active user linked to this entity.
 	 * 
 	 * @return User|null The user object if found, null otherwise.
 	 * @since  5.0.2
 	 */
-	private function loadUser(array $item): ?User
+	private function loadUser(array $item, array $activeUsers): ?User
 	{
 		if (!isset($item['user_id']) || !is_numeric($item['user_id']) || $item['user_id'] <= 0)
+		{
+			return null;
+		}
+
+		// only allow update to linked users
+		if (!in_array($item['user_id'], $activeUsers))
 		{
 			return null;
 		}

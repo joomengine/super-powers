@@ -15,6 +15,7 @@ class UsersSubform << (F,LightGreen) >> #RoyalBlue {
   # Items $items
   # string $table
   # array $user
+  # array $activeUsers
   + __construct(Items $items, ?string $table = null)
   + table(string $table) : self
   + get(string $linkValue, string $linkKey, ...) : ?array
@@ -26,8 +27,9 @@ class UsersSubform << (F,LightGreen) >> #RoyalBlue {
   - getUserDetails(array $item) : void
   - converter(array $items, array $keySet, ...) : array
   - process(mixed $items, string $indexKey, ...) : array
-  - setUserDetails(array $item) : int
-  - loadUser(array $item) : ?User
+  - getActiveUsers(string $linkKey, string $linkValue) : array
+  - setUserDetails(array $item, array $activeUsers) : int
+  - loadUser(array $item, array $activeUsers) : ?User
   - extractUserDetails(array $item, ?User $user) : array
   - assignUserGroups($details, ?User $user, ...) : void
   - saveUserDetails(array $details, int $userId) : int
@@ -139,7 +141,14 @@ note right of UsersSubform::process
     string $linkValue
 end note
 
-note left of UsersSubform::setUserDetails
+note left of UsersSubform::getActiveUsers
+  Get current active Users Linked to this entity
+
+  since: 5.0.2
+  return: array
+end note
+
+note right of UsersSubform::setUserDetails
   Handles setting user details and saving them.
 This function retrieves the user by ID, sets the user details,
 and adds appropriate user groups before saving the user.
@@ -148,21 +157,21 @@ and adds appropriate user groups before saving the user.
   return: int
 end note
 
-note right of UsersSubform::loadUser
+note left of UsersSubform::loadUser
   Load the user based on the user ID from the item array.
 
   since: 5.0.2
   return: ?User
 end note
 
-note left of UsersSubform::extractUserDetails
+note right of UsersSubform::extractUserDetails
   Extract user details from the item array and prepare them for saving.
 
   since: 5.0.2
   return: array
 end note
 
-note right of UsersSubform::assignUserGroups
+note left of UsersSubform::assignUserGroups
   Assigns user groups based on existing groups and entity type.
 
   since: 5.0.2
@@ -174,7 +183,7 @@ note right of UsersSubform::assignUserGroups
     array $item
 end note
 
-note left of UsersSubform::saveUserDetails
+note right of UsersSubform::saveUserDetails
   Save the user details using UserHelper and handle exceptions.
 
   since: 5.0.2

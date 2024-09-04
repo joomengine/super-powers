@@ -14,7 +14,7 @@
 interface ModelInterface  #Lavender {
   + table(string $table) : self
   + value(mixed $value, string $field, ...) : mixed
-  + values(?array $items = null, string $field, ...) : ?array
+  + values(?array $items, string $field, ...) : ?array
   + item(?object $item, ?string $table = null) : ?object
   + items(?array $items = null, ?string $table = null) : ?array
   + row(?array $item, ?string $table = null) : ?array
@@ -52,7 +52,7 @@ Example: $this->items(Array, 'value_key', 'table_name');
   return: ?array
   
   arguments:
-    ?array $items = null
+    ?array $items
     string $field
     ?string $table = null
 end note

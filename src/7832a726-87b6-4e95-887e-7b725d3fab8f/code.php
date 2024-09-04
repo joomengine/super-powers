@@ -13,6 +13,7 @@ namespace VDM\Joomla\Componentbuilder\Utilities;
 
 
 use Joomla\CMS\Factory;
+use Joomla\CMS\Form\Form;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\User\User;
 use Joomla\CMS\User\UserHelper as JoomlaUserHelper;
@@ -59,29 +60,32 @@ abstract class UserHelper
 		// Ensure the 'username' key exists in the credentials array, set to an empty string if not provided.
 		$username = $credentials['username'] ?? $credentials['email'];
 
-		// Check for an existing user by email or username.
-		$existingEmailUserId = static::getUserIdByEmail($credentials['email']);
-		$existingUserId = static::getUserIdByUsername($username);
-
-		// If either the email or username already exists, handle the update logic.
-		if ($existingEmailUserId !== null || $existingUserId !== null || (isset($credentials['id']) && $credentials['id'] > 0))
+		// If the user's ID is set and valid, handle the update logic.
+		if (!empty($credentials['id']) && $credentials['id'] > 0)
 		{
-			// Prevent updating other users or reusing an email by different users.
+			$userId = $credentials['id'];
+			$email = $credentials['email'];
+
+			// Fetch existing user by email and username.
+			$existingEmailUserId = static::getUserIdByEmail($email);
+			$existingUsernameId = static::getUserIdByUsername($username);
+
+			// Validate that we aren't attempting to update other users or reuse another user's email/username.
 			if (
-				(
-					isset($credentials['id']) &&
-					(
-						($existingEmailUserId !== null && $existingEmailUserId != $credentials['id']) ||
-						($existingUserId !== null && $existingUserId != $credentials['id'])
+				($existingEmailUserId && $existingEmailUserId != $userId) ||
+				($existingUsernameId && $existingUsernameId != $userId) ||
+				($existingEmailUserId && $existingUsernameId && $existingEmailUserId != $existingUsernameId)
+			) {
+				throw new NoUserIdFoundException(
+					Text::sprintf(
+						'User ID mismatch detected when trying to save %s (%s) credentials.',
+						$username,
+						$email
 					)
-				) || ($existingUserId !== null && $existingEmailUserId !== null && $existingEmailUserId != $existingUserId)
-			)
-			{
-				throw new NoUserIdFoundException(Text::sprintf('COM_COMPONENTBUILDER_USER_ID_MISMATCH_DETECTED_WHEN_TRYING_TO_SAVE_S_S_CREDENTIALS', $username, $credentials['email']));
+				);
 			}
 
 			// Update the existing user.
-			$credentials['id'] = $credentials['id'] ?? $existingEmailUserId ?? $existingUserId;
 			return static::update($credentials);
 		}
 
@@ -147,6 +151,9 @@ abstract class UserHelper
 		// Prepare user data
 		$data = static::prepareUserData($credentials, $mode);
 
+		// Set form path (bug fix for Joomla)
+		static::setFormPathForUserClass($mode);
+
 		// Handle user creation
 		$userId = $mode === 1 ? $model->register($data) : static::adminRegister($model, $data);
 
@@ -158,6 +165,17 @@ abstract class UserHelper
 			{
 				// If you know of a better path, let me know
 				Component::setParams($param, $set, 'com_users');
+			}
+		}
+
+		if (!$userId)
+		{
+			$current_user = Factory::getApplication()->getIdentity();
+
+			// only allow those with access to Users to ignore errors
+			if ($current_user->authorise('core.manage', 'com_users'))
+			{
+				$userId = static::getUserIdByUsername($credentials['username']);
 			}
 		}
 
@@ -427,6 +445,24 @@ abstract class UserHelper
 		}
 
 		return $userId;
+	}
+
+	/**
+	 * Address bug on \Joomla\CMS\MVC\Model\FormBehaviorTrait Line 76
+	 *   The use of JPATH_COMPONENT cause it to load the
+	 *   active component forms and fields, which breaks the registration model.
+	 *
+	 * @param int  $mode
+	 *
+	 * @since 5.0.3
+	 */
+	private static function setFormPathForUserClass(int $mode): void
+	{
+		if ($mode == 1) // 1 = use of the Registration Model
+		{
+			// Get the form.
+			Form::addFormPath(JPATH_ROOT . '/components/com_users/forms');
+		}
 	}
 }
 

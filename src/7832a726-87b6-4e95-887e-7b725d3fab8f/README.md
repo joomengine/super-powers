@@ -22,6 +22,7 @@ abstract UserHelper  #Orange {
   # {static} prepareUserData(array $credentials, int $mode) : array
   - {static} adminRegister(BaseDatabaseModel $model, array $data) : int
   - {static} handlePostRegistration(int $userId, int $autologin, ...) : int
+  - {static} setFormPathForUserClass(int $mode) : void
 }
 
 note right of UserHelper::save
@@ -109,6 +110,15 @@ note left of UserHelper::handlePostRegistration
     int $userId
     int $autologin
     array $credentials
+end note
+
+note right of UserHelper::setFormPathForUserClass
+  Address bug on \Joomla\CMS\MVC\Model\FormBehaviorTrait Line 76
+The use of JPATH_COMPONENT cause it to load the
+active component forms and fields, which breaks the registration model.
+
+  since: 5.0.3
+  return: void
 end note
  
 @enduml
