@@ -53,7 +53,7 @@ final class Display
 	 */
 	public function get(string $entity, string $target): ?array
 	{
-		if (($files = $this->items->table->('file')->get([$entity], 'entity')) !== null)
+		if (($files = $this->items->table('file')->get([$entity], 'entity')) !== null)
 		{
 			foreach ($files as $n => $file)
 			{

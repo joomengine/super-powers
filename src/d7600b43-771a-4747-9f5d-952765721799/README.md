@@ -14,7 +14,7 @@
 abstract UploadHelper  #Orange {
   + {static} get(string $field, string $type, ...) : ?array
   + {static} getError(bool $toString = false) : array|string
-  # {static} check(array $upload, string $type) : array|null
+  # {static} check(array $upload, string $type) : ?array
   # {static} remove(string $fullPath) : boolean
   # {static} setError(string $message) : void
 }
@@ -42,7 +42,7 @@ end note
 note right of UploadHelper::check
   Check a file and verifies it as a allowed file format file
 
-  return: array|null
+  return: ?array
 end note
 
 note right of UploadHelper::remove

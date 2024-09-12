@@ -12,13 +12,30 @@
 ```uml
 @startuml
 abstract MimeHelper  #Orange {
+  + {static} extension(string $file) : string
   + {static} mimeType(string $file) : string
+  # {static} mimeTypeFilename(string $file) : string
   + {static} getFileExtensions(string $target = null, boolean $sorted = false) : array
 }
 
-note right of MimeHelper::mimeType
-  Get the mime type based on file extension
+note right of MimeHelper::extension
+  Get the file extension from a full path OR file name.
 
+  since: 5.0.3
+  return: string
+end note
+
+note right of MimeHelper::mimeType
+  Get the mime type based on the full file path.
+
+  since: 5.0.3
+  return: string
+end note
+
+note right of MimeHelper::mimeTypeFilename
+  Get the mime type based on the file extension from a file name.
+
+  since: 5.0.3
   return: string
 end note
 

@@ -12,6 +12,7 @@
 namespace VDM\Joomla\Componentbuilder\File;
 
 
+use Joomla\CMS\Language\Text;
 use VDM\Joomla\Interfaces\Data\ItemInterface as Item;
 use VDM\Joomla\Interfaces\Data\ItemsInterface as Items;
 use VDM\Joomla\Data\Guid;
@@ -120,7 +121,7 @@ final class Manager
 
 		// store file in the file table
 		$this->item->set(
-			$this->modelFileDetails($details, $guid)
+			$this->modelFileDetails($details, $guid, $entity, $target)
 		);
 	}
 
@@ -153,13 +154,13 @@ final class Manager
 	protected function modelFileDetails(array $details, string $guid, string $entity, string $target): object
 	{
 		return (object) [
-			'name' => 'soon',
+			'name' => $details['name'],
 			'file_type' => $guid,
 			'ext' => 'me',
 			'size_kb' => 45,
 			'filepath' => $details['full_path'],
 			'entity_type' => $target,
-			'entity' => $guid,
+			'entity' => $entity,
 			'guid' => $this->getGuid('file'),
 		];
 	}

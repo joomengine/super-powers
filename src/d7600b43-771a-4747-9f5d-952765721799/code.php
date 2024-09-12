@@ -14,9 +14,9 @@ namespace VDM\Joomla\Utilities;
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
-use Joomla\CMS\Filesystem\File;
-use Joomla\CMS\Filesystem\Folder;
-use Joomla\CMS\Filesystem\Path;
+use Joomla\Filesystem\File;
+use Joomla\Filesystem\Folder;
+use Joomla\Filesystem\Path;
 use VDM\Joomla\Utilities\Component\Helper;
 
 
@@ -84,9 +84,9 @@ abstract class UploadHelper
 	/**
 	 * Get file/files from a HTTP upload.
 	 *
-	 * @param  string          $field        The input field name
-	 * @param  string          $type        The file type
-	 * @param  string|null   $filter        The filter to use when uploading the file
+	 * @param  string        $field       The input field name
+	 * @param  string        $type        The file type
+	 * @param  string|null   $filter      The filter to use when uploading the file
 	 * @param  string|null   $path        The path to the directory where the file must be placed
 	 *
 	 * @return  array|null   File details or false on failure.
@@ -187,7 +187,7 @@ abstract class UploadHelper
 			// check that his name has file format
 			if (is_string($name) && strpos($name, '.') === false)
 			{
-				$name = $name . '.' . MimeHelper::extension(null, $userfile['type']);
+				$name = $name . '.' . MimeHelper::extension($userfile['name']);
 			}
 			$userfile['file_name'] = $name;
 		}
@@ -231,10 +231,10 @@ abstract class UploadHelper
 	 * @return  array|null  of elements
 	 *
 	 */
-	protected static function check(array $upload, string $type)? ?array
+	protected static function check(array $upload, string $type): ?array
 	{
 		// Default formats
-		$formats = MimeHelper::extensions($type);
+		$formats = MimeHelper::getFileExtensions($type);
 
 		// Clean the path
 		$upload_path = Path::clean($upload['full_path']);
@@ -250,7 +250,7 @@ abstract class UploadHelper
 		{
 			// get allowed formats
 			$legal_formats = (array) Helper::getParams()->get($type . '_formats', []);
-			$legal = array_values(array_unique(array_merge($legal_formats, static::$legalFormats)))
+			$legal = array_values(array_unique(array_merge($legal_formats, static::$legalFormats)));
 		}
 
 		// check the extension
