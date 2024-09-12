@@ -1,0 +1,15 @@
+	/**
+	 * Create a container object
+	 *
+	 * @return  Container
+	 * @since 3.2.2
+	 */
+	protected static function createContainer(): Container
+	{
+		return (new Container())
+			->registerServiceProvider(new Table())
+			->registerServiceProvider(new Database())
+			->registerServiceProvider(new Model())
+			->registerServiceProvider(new Data())
+			->registerServiceProvider(new File());
+	}

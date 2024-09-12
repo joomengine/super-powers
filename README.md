@@ -92,8 +92,10 @@ This repository contains an index (see below) of all the approved powers within 
   - **abstract class GuidHelper** | [Details](src/9c513baf-b279-43fd-ae29-a585c8cbc4f0) | [Code](src/9c513baf-b279-43fd-ae29-a585c8cbc4f0/code.php) | [Settings](src/9c513baf-b279-43fd-ae29-a585c8cbc4f0/settings.json) | SPK: `Super---9c513baf_b279_43fd_ae29_a585c8cbc4f0---Power`
   - **abstract class JsonHelper** | [Details](src/4b225c51-d293-48e4-b3f6-5136cf5c3f18) | [Code](src/4b225c51-d293-48e4-b3f6-5136cf5c3f18/code.php) | [Settings](src/4b225c51-d293-48e4-b3f6-5136cf5c3f18/settings.json) | SPK: `Super---4b225c51_d293_48e4_b3f6_5136cf5c3f18---Power`
   - **abstract class MathHelper** | [Details](src/152c8793-8b75-4715-996a-257b9f65451c) | [Code](src/152c8793-8b75-4715-996a-257b9f65451c/code.php) | [Settings](src/152c8793-8b75-4715-996a-257b9f65451c/settings.json) | SPK: `Super---152c8793_8b75_4715_996a_257b9f65451c---Power`
+  - **abstract class MimeHelper** | [Details](src/f11dc790-713e-4706-9a85-a318ed3ad56e) | [Code](src/f11dc790-713e-4706-9a85-a318ed3ad56e/code.php) | [Settings](src/f11dc790-713e-4706-9a85-a318ed3ad56e/settings.json) | SPK: `Super---f11dc790_713e_4706_9a85_a318ed3ad56e---Power`
   - **abstract class ObjectHelper** | [Details](src/91004529-94a9-4590-b842-e7c6b624ecf5) | [Code](src/91004529-94a9-4590-b842-e7c6b624ecf5/code.php) | [Settings](src/91004529-94a9-4590-b842-e7c6b624ecf5/settings.json) | SPK: `Super---91004529_94a9_4590_b842_e7c6b624ecf5---Power`
   - **abstract class StringHelper** | [Details](src/1f28cb53-60d9-4db1-b517-3c7dc6b429ef) | [Code](src/1f28cb53-60d9-4db1-b517-3c7dc6b429ef/code.php) | [Settings](src/1f28cb53-60d9-4db1-b517-3c7dc6b429ef/settings.json) | SPK: `Super---1f28cb53_60d9_4db1_b517_3c7dc6b429ef---Power`
+  - **abstract class UploadHelper** | [Details](src/d7600b43-771a-4747-9f5d-952765721799) | [Code](src/d7600b43-771a-4747-9f5d-952765721799/code.php) | [Settings](src/d7600b43-771a-4747-9f5d-952765721799/settings.json) | SPK: `Super---d7600b43_771a_4747_9f5d_952765721799---Power`
 - **Namespace**: [VDM\Joomla\Abstraction\Remote](#vdm-joomla-abstraction-remote)
 
   - **abstract class Get** | [Details](src/728ee726-3f0f-4762-899d-f8c9430cee58) | [Code](src/728ee726-3f0f-4762-899d-f8c9430cee58/code.php) | [Settings](src/728ee726-3f0f-4762-899d-f8c9430cee58/settings.json) | SPK: `Super---728ee726_3f0f_4762_899d_f8c9430cee58---Power`
@@ -101,6 +103,13 @@ This repository contains an index (see below) of all the approved powers within 
 - **Namespace**: [VDM\Joomla\Componentbuilder\Abstraction](#vdm-joomla-componentbuilder-abstraction)
 
   - **abstract class BaseRegistry** | [Details](src/b84e947d-2a13-44f7-ac0f-3902ae55ae0c) | [Code](src/b84e947d-2a13-44f7-ac0f-3902ae55ae0c/code.php) | [Settings](src/b84e947d-2a13-44f7-ac0f-3902ae55ae0c/settings.json) | SPK: `Super---b84e947d_2a13_44f7_ac0f_3902ae55ae0c---Power`
+- **Namespace**: [VDM\Joomla\Componentbuilder\File](#vdm-joomla-componentbuilder-file)
+
+  - **abstract class Factory** | [Details](src/884eca78-281f-4eab-b962-d97e355af16d) | [Code](src/884eca78-281f-4eab-b962-d97e355af16d/code.php) | [Settings](src/884eca78-281f-4eab-b962-d97e355af16d/settings.json) | SPK: `Super---884eca78_281f_4eab_b962_d97e355af16d---Power`
+  - **final class Display** | [Details](src/d46c4667-378b-49e8-9782-ffb28d92415a) | [Code](src/d46c4667-378b-49e8-9782-ffb28d92415a/code.php) | [Settings](src/d46c4667-378b-49e8-9782-ffb28d92415a/settings.json) | SPK: `Super---d46c4667_378b_49e8_9782_ffb28d92415a---Power`
+  - **final class Handler** | [Details](src/4144ad3b-2ad5-401f-af0c-a3d856c1e688) | [Code](src/4144ad3b-2ad5-401f-af0c-a3d856c1e688/code.php) | [Settings](src/4144ad3b-2ad5-401f-af0c-a3d856c1e688/settings.json) | SPK: `Super---4144ad3b_2ad5_401f_af0c_a3d856c1e688---Power`
+  - **final class Manager** | [Details](src/67a5e0ca-0ff0-4979-9b41-da0b09988016) | [Code](src/67a5e0ca-0ff0-4979-9b41-da0b09988016/code.php) | [Settings](src/67a5e0ca-0ff0-4979-9b41-da0b09988016/settings.json) | SPK: `Super---67a5e0ca_0ff0_4979_9b41_da0b09988016---Power`
+  - **final class Type** | [Details](src/12a2a8de-a893-4dbb-a53d-b52de4f6cb0e) | [Code](src/12a2a8de-a893-4dbb-a53d-b52de4f6cb0e/code.php) | [Settings](src/12a2a8de-a893-4dbb-a53d-b52de4f6cb0e/settings.json) | SPK: `Super---12a2a8de_a893_4dbb_a53d_b52de4f6cb0e---Power`
 - **Namespace**: [VDM\Joomla\Componentbuilder\Table](#vdm-joomla-componentbuilder-table)
 
   - **final class Schema** | [Details](src/b3d2ec33-76d4-4c3b-bb2c-86ac14a221ce) | [Code](src/b3d2ec33-76d4-4c3b-bb2c-86ac14a221ce/code.php) | [Settings](src/b3d2ec33-76d4-4c3b-bb2c-86ac14a221ce/settings.json) | SPK: `Super---b3d2ec33_76d4_4c3b_bb2c_86ac14a221ce---Power`
@@ -156,6 +165,9 @@ This repository contains an index (see below) of all the approved powers within 
   - **trait IsString** | [Details](src/ff7d0111-8f79-42aa-ac14-b53ba2c49369) | [Code](src/ff7d0111-8f79-42aa-ac14-b53ba2c49369/code.php) | [Settings](src/ff7d0111-8f79-42aa-ac14-b53ba2c49369/settings.json) | SPK: `Super---ff7d0111_8f79_42aa_ac14_b53ba2c49369---Power`
   - **trait ToString** | [Details](src/7d494d91-ab60-43cd-aecf-d50e07f7f30e) | [Code](src/7d494d91-ab60-43cd-aecf-d50e07f7f30e/code.php) | [Settings](src/7d494d91-ab60-43cd-aecf-d50e07f7f30e/settings.json) | SPK: `Super---7d494d91_ab60_43cd_aecf_d50e07f7f30e---Power`
   - **trait VarExport** | [Details](src/52a1d14f-304a-431c-8fa4-411179942db5) | [Code](src/52a1d14f-304a-431c-8fa4-411179942db5/code.php) | [Settings](src/52a1d14f-304a-431c-8fa4-411179942db5/settings.json) | SPK: `Super---52a1d14f_304a_431c_8fa4_411179942db5---Power`
+- **Namespace**: [VDM\Joomla\Componentbuilder\File\Service](#vdm-joomla-componentbuilder-file-service)
+
+  - **class File** | [Details](src/202ccd9e-dfcf-4cde-a0ce-bde1fd27f088) | [Code](src/202ccd9e-dfcf-4cde-a0ce-bde1fd27f088/code.php) | [Settings](src/202ccd9e-dfcf-4cde-a0ce-bde1fd27f088/settings.json) | SPK: `Super---202ccd9e_dfcf_4cde_a0ce_bde1fd27f088---Power`
 - **Namespace**: [VDM\Joomla\Componentbuilder\Utilities\Exception](#vdm-joomla-componentbuilder-utilities-exception)
 
   - **class NoUserIdFoundException** | [Details](src/1c10a5f1-204d-4f17-ad9f-0e0684f2030d) | [Code](src/1c10a5f1-204d-4f17-ad9f-0e0684f2030d/code.php) | [Settings](src/1c10a5f1-204d-4f17-ad9f-0e0684f2030d/settings.json) | SPK: `Super---1c10a5f1_204d_4f17_ad9f_0e0684f2030d---Power`

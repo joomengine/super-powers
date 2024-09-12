@@ -15,6 +15,7 @@ class UsersSubform << (F,LightGreen) >> #RoyalBlue {
   # Items $items
   # string $table
   # array $user
+  # User $identity
   # array $activeUsers
   + __construct(Items $items, ?string $table = null)
   + table(string $table) : self

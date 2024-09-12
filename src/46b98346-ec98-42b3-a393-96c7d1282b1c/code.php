@@ -62,6 +62,14 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	protected array $user;
 
 	/**
+	 * The current active user
+	 *
+	 * @var    User
+	 * @since 5.0.2
+	 */
+	protected User $identity;
+
+	/**
 	 * The active users
 	 *
 	 * @var    array
@@ -84,6 +92,8 @@ final class UsersSubform implements GuidInterface, SubformInterface
 		{
 			$this->table = $table;
 		}
+
+		$this->identity = Factory::getApplication()->getIdentity();
 
 		// Retrieve the user properties
 		$this->initializeUserProperties();
@@ -429,8 +439,12 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	{
 		$user = $this->loadUser($item, $activeUsers);
 		$details = $this->extractUserDetails($item, $user);
-		$this->assignUserGroups($details, $user, $item);
-		
+
+		if ($this->identity->id != $user->id)
+		{
+			$this->assignUserGroups($details, $user, $item);
+		}
+
 		return $this->saveUserDetails($details, $details['id'] ?? 0);
 	}
 
@@ -535,7 +549,7 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	private function saveUserDetails(array $details, int $userId): int
 	{
 		try {
-			return UserHelper::save($details);
+			return UserHelper::save($details, 0, ['useractivation' => 0, 'sendpassword' => 1, 'allowUserRegistration' => 1]);
 		} catch (NoUserIdFoundException $e) {
 			Factory::getApplication()->enqueueMessage($e->getMessage(), 'error');
 		} catch (\Exception $e) {

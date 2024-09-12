@@ -6,26 +6,28 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# abstract class MimeHelper (Details)
-> namespace: **VDM\Joomla\Utilities**
+# final class Display (Details)
+> namespace: **VDM\Joomla\Componentbuilder\File**
 
 ```uml
 @startuml
-abstract MimeHelper  #Orange {
-  + {static} mimeType(string $file) : string
-  + {static} getFileExtensions(string $target = null, boolean $sorted = false) : array
+class Display << (F,LightGreen) >> #RoyalBlue {
+  # Items $items
+  + __construct(Items $items)
+  + get(string $entity, string $target) : ?array
 }
 
-note right of MimeHelper::mimeType
-  Get the mime type based on file extension
+note right of Display::__construct
+  Constructor.
 
-  return: string
+  since: 5.0.2
 end note
 
-note right of MimeHelper::getFileExtensions
-  Get the file extensions
+note right of Display::get
+  Get the file data that belong to this entity
 
-  return: array
+  since: 5.0.2
+  return: ?array
 end note
  
 @enduml
@@ -41,7 +43,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---f11dc790_713e_4706_9a85_a318ed3ad56e---Power
+Super---d46c4667_378b_49e8_9782_ffb28d92415a---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

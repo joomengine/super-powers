@@ -6,26 +6,75 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# abstract class MimeHelper (Details)
-> namespace: **VDM\Joomla\Utilities**
+# final class Handler (Details)
+> namespace: **VDM\Joomla\Componentbuilder\File**
+> extends: **UploadHelper**
 
 ```uml
 @startuml
-abstract MimeHelper  #Orange {
-  + {static} mimeType(string $file) : string
-  + {static} getFileExtensions(string $target = null, boolean $sorted = false) : array
+class Handler << (F,LightGreen) >> #RoyalBlue {
+  + setUseStreams(bool $useStreams) : self
+  + setAllowUnsafe(bool $allowUnsafe) : self
+  + setSafeFileOptions(array $safeFileOptions) : self
+  + setEnqueueError(bool $enqueueError) : self
+  + setLegalFormats(array $legalFormats) : self
+  + getFile(string $field, string $type, ...) : ?array
+  + getErrors(bool $toString = true) : string|array
 }
 
-note right of MimeHelper::mimeType
-  Get the mime type based on file extension
+note right of Handler::setUseStreams
+  Set the $useStreams property to use streams for file handling
 
-  return: string
+  since: 5.0.3
+  return: self
 end note
 
-note right of MimeHelper::getFileExtensions
-  Get the file extensions
+note right of Handler::setAllowUnsafe
+  Set the $allowUnsafe property to allow or disallow unsafe file uploads.
 
-  return: array
+  since: 5.0.3
+  return: self
+end note
+
+note right of Handler::setSafeFileOptions
+  Set the $safeFileOptions property to define options for file safety checks.
+
+  since: 5.0.3
+  return: self
+end note
+
+note right of Handler::setEnqueueError
+  Set the $enqueueError property to control error reporting behavior.
+
+  since: 5.0.3
+  return: self
+end note
+
+note right of Handler::setLegalFormats
+  Set the $legalFormats property to define legal file formats.
+
+  since: 5.0.3
+  return: self
+end note
+
+note right of Handler::getFile
+  Get a file from the input based on field name and file type, then process it.
+
+  since: 3.0.11
+  return: ?array
+  
+  arguments:
+    string $field
+    string $type
+    string $filter = null
+    string $path = null
+end note
+
+note right of Handler::getErrors
+  Get the error messages as a string.
+
+  since: 5.0.3
+  return: string|array
 end note
  
 @enduml
@@ -41,7 +90,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---f11dc790_713e_4706_9a85_a318ed3ad56e---Power
+Super---4144ad3b_2ad5_401f_af0c_a3d856c1e688---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

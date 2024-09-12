@@ -6,26 +6,56 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# abstract class MimeHelper (Details)
+# abstract class UploadHelper (Details)
 > namespace: **VDM\Joomla\Utilities**
 
 ```uml
 @startuml
-abstract MimeHelper  #Orange {
-  + {static} mimeType(string $file) : string
-  + {static} getFileExtensions(string $target = null, boolean $sorted = false) : array
+abstract UploadHelper  #Orange {
+  + {static} get(string $field, string $type, ...) : ?array
+  + {static} getError(bool $toString = false) : array|string
+  # {static} check(array $upload, string $type) : array|null
+  # {static} remove(string $fullPath) : boolean
+  # {static} setError(string $message) : void
 }
 
-note right of MimeHelper::mimeType
-  Get the mime type based on file extension
+note right of UploadHelper::get
+  Get file/files from a HTTP upload.
 
-  return: string
+  since: 3.0.11
+  return: ?array
+  
+  arguments:
+    string $field
+    string $type
+    string $filter = null
+    string $path = null
 end note
 
-note right of MimeHelper::getFileExtensions
-  Get the file extensions
+note right of UploadHelper::getError
+  Get the errors
 
-  return: array
+  since: 3.0.11
+  return: array|string
+end note
+
+note right of UploadHelper::check
+  Check a file and verifies it as a allowed file format file
+
+  return: array|null
+end note
+
+note right of UploadHelper::remove
+  Clean up temporary uploaded file
+
+  return: boolean
+end note
+
+note right of UploadHelper::setError
+  Set the errors
+
+  since: 3.0.11
+  return: void
 end note
  
 @enduml
@@ -41,7 +71,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---f11dc790_713e_4706_9a85_a318ed3ad56e---Power
+Super---d7600b43_771a_4747_9f5d_952765721799---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

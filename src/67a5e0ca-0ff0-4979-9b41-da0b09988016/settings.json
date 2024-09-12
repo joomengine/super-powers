@@ -1,0 +1,40 @@
+{
+    "add_head": "0",
+    "add_licensing_template": "2",
+    "extends": "",
+    "guid": "67a5e0ca-0ff0-4979-9b41-da0b09988016",
+    "implements": null,
+    "load_selection": null,
+    "name": "Manager",
+    "power_version": "1.0.0",
+    "system_name": "Joomla.File.Manager",
+    "type": "final class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "05744dd3-4030-4cf8-8dda-a93ab809b473",
+            "as": "Item"
+        },
+        "use_selection1": {
+            "use": "7212e4db-371f-4cfd-8122-32e9bb100d83",
+            "as": "Items"
+        },
+        "use_selection2": {
+            "use": "5acded67-0e3d-4c6b-a6ea-b533b076de0c",
+            "as": "default"
+        },
+        "use_selection3": {
+            "use": "12a2a8de-a893-4dbb-a53d-b52de4f6cb0e",
+            "as": "default"
+        },
+        "use_selection4": {
+            "use": "4144ad3b-2ad5-401f-af0c-a3d856c1e688",
+            "as": "default"
+        }
+    },
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].File.Manager",
+    "description": "File Manager Class\r\n\r\n@since  5.0.2",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    3rd September, 2020\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}

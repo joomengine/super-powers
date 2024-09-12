@@ -6,26 +6,69 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# abstract class MimeHelper (Details)
-> namespace: **VDM\Joomla\Utilities**
+# final class Manager (Details)
+> namespace: **VDM\Joomla\Componentbuilder\File**
 
 ```uml
 @startuml
-abstract MimeHelper  #Orange {
-  + {static} mimeType(string $file) : string
-  + {static} getFileExtensions(string $target = null, boolean $sorted = false) : array
+class Manager << (F,LightGreen) >> #RoyalBlue {
+  # Item $item
+  # Items $items
+  # Type $type
+  # Handler $handler
+  + __construct(Item $item, Items $items, ...)
+  + upload(string $guid, string $entity, ...) : void
+  + delete(string $guid, string $entity, ...) : void
+  # modelFileDetails(array $details, string $guid, ...) : object
 }
 
-note right of MimeHelper::mimeType
-  Get the mime type based on file extension
+note right of Manager::__construct
+  Constructor.
 
-  return: string
+  since: 5.0.2
+  
+  arguments:
+    Item $item
+    Items $items
+    Type $type
+    Handler $handler
 end note
 
-note right of MimeHelper::getFileExtensions
-  Get the file extensions
+note right of Manager::upload
+  Upload a file, of a given file type and link it to an entity.
 
-  return: array
+  since: 5.0.2
+  return: void
+  
+  arguments:
+    string $guid
+    string $entity
+    string $target
+end note
+
+note right of Manager::delete
+  Delete a file of a given entity.
+
+  since: 5.0.2
+  return: void
+  
+  arguments:
+    string $guid
+    string $entity
+    string $target
+end note
+
+note right of Manager::modelFileDetails
+  model the file details to store in the file table
+
+  since: 5.0.2
+  return: object
+  
+  arguments:
+    array $details
+    string $guid
+    string $entity
+    string $target
 end note
  
 @enduml
@@ -41,7 +84,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---f11dc790_713e_4706_9a85_a318ed3ad56e---Power
+Super---67a5e0ca_0ff0_4979_9b41_da0b09988016---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

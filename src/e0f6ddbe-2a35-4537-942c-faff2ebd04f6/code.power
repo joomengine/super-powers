@@ -41,7 +41,7 @@
 			'db' => [
 				'type' => 'INT(10) unsigned',
 				'default' => '0',
-				'null_switch' => 'NOT NULL',
+				'null_switch' => 'NULL',
 				'comment' => 'FK to the #__assets table.'
 			]
 		],
@@ -56,7 +56,7 @@
 			'db' => [
 				'type' => 'INT(11)',
 				'default' => '0',
-				'null_switch' => 'NOT NULL'
+				'null_switch' => 'NULL'
 			]
 		],
 		'published' => [
@@ -70,7 +70,7 @@
 			'db' => [
 				'type' => 'TINYINT(3)',
 				'default' => '1',
-				'null_switch' => 'NOT NULL',
+				'null_switch' => 'NULL',
 				'key' => true,
 				'key_name' => 'state'
 			]
@@ -86,7 +86,7 @@
 			'db' => [
 				'type' => 'INT(10) unsigned',
 				'default' => '0',
-				'null_switch' => 'NOT NULL',
+				'null_switch' => 'NULL',
 				'key' => true,
 				'key_name' => 'modifiedby'
 			]
@@ -102,7 +102,7 @@
 			'db' => [
 				'type' => 'DATETIME',
 				'default' => '0000-00-00 00:00:00',
-				'null_switch' => 'NOT NULL'
+				'null_switch' => 'NULL'
 			]
 		],
 		'created_by' => [
@@ -116,7 +116,7 @@
 			'db' => [
 				'type' => 'INT(10) unsigned',
 				'default' => '0',
-				'null_switch' => 'NOT NULL',
+				'null_switch' => 'NULL',
 				'key' => true,
 				'key_name' => 'createdby'
 			]
@@ -132,7 +132,7 @@
 			'db' => [
 				'type' => 'DATETIME',
 				'default' => '0000-00-00 00:00:00',
-				'null_switch' => 'NOT NULL'
+				'null_switch' => 'NULL'
 			]
 		],
 		'checked_out' => [
@@ -146,7 +146,7 @@
 			'db' => [
 				'type' => 'INT(10) unsigned',
 				'default' => '0',
-				'null_switch' => 'NOT NULL',
+				'null_switch' => 'NULL',
 				'key' => true,
 				'key_name' => 'checkout'
 			]
@@ -162,7 +162,7 @@
 			'db' => [
 				'type' => 'DATETIME',
 				'default' => '0000-00-00 00:00:00',
-				'null_switch' => 'NOT NULL'
+				'null_switch' => 'NULL'
 			]
 		],
 		'hits' => [
@@ -176,7 +176,7 @@
 			'db' => [
 				'type' => 'INT(10) unsigned',
 				'default' => '0',
-				'null_switch' => 'NOT NULL'
+				'null_switch' => 'NULL'
 			]
 		],
 		'version' => [
@@ -190,7 +190,7 @@
 			'db' => [
 				'type' => 'INT(10) unsigned',
 				'default' => '1',
-				'null_switch' => 'NOT NULL'
+				'null_switch' => 'NULL'
 			]
 		],
 		'params' => [

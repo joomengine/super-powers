@@ -6,26 +6,85 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# abstract class MimeHelper (Details)
-> namespace: **VDM\Joomla\Utilities**
+# final class Type (Details)
+> namespace: **VDM\Joomla\Componentbuilder\File**
 
 ```uml
 @startuml
-abstract MimeHelper  #Orange {
-  + {static} mimeType(string $file) : string
-  + {static} getFileExtensions(string $target = null, boolean $sorted = false) : array
+class Type << (F,LightGreen) >> #RoyalBlue {
+  # Item $item
+  # array $fileTypes
+  + __construct(Item $item)
+  + get(string $guid, string $target) : ?array
+  + load(string $guid, string $target) : ?array
+  + details(string $guid) : ?object
+  # validTarget(object $data, string $target) : bool
+  # getFieldName(object $data) : string
+  # getAllow(object $data) : string
+  # getAllowSpan(object $data) : string
+  # getAllowFormats(object $data) : ?array
 }
 
-note right of MimeHelper::mimeType
-  Get the mime type based on file extension
+note right of Type::__construct
+  Constructor.
 
+  since: 5.0.2
+end note
+
+note left of Type::get
+  Retrieves the file type details (ajax)
+
+  since: 5.0.2
+  return: ?array
+end note
+
+note right of Type::load
+  Retrieves the file type details (upload)
+
+  since: 5.0.2
+  return: ?array
+end note
+
+note left of Type::details
+  Retrieves the file type details
+
+  since: 5.0.2
+  return: ?object
+end note
+
+note right of Type::validTarget
+  Valid if this is a correct target trying to call this file type
+
+  since: 5.0.2
+  return: bool
+end note
+
+note left of Type::getFieldName
+  Retrieves the field name
+
+  since: 5.0.2
   return: string
 end note
 
-note right of MimeHelper::getFileExtensions
-  Get the file extensions
+note right of Type::getAllow
+  Retrieves the allow formats (for script)
 
-  return: array
+  since: 5.0.2
+  return: string
+end note
+
+note left of Type::getAllowSpan
+  Retrieves the allow formats (for span)
+
+  since: 5.0.2
+  return: string
+end note
+
+note right of Type::getAllowFormats
+  Retrieves the allow formats
+
+  since: 5.0.2
+  return: ?array
 end note
  
 @enduml
@@ -41,7 +100,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---f11dc790_713e_4706_9a85_a318ed3ad56e---Power
+Super---12a2a8de_a893_4dbb_a53d_b52de4f6cb0e---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 
