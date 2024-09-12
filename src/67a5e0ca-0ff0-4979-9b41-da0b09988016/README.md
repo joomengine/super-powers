@@ -16,9 +16,12 @@ class Manager << (F,LightGreen) >> #RoyalBlue {
   # Items $items
   # Type $type
   # Handler $handler
+  # string $table
   + __construct(Item $item, Items $items, ...)
   + upload(string $guid, string $entity, ...) : void
   + delete(string $guid, string $entity, ...) : void
+  + table(string $table) : self
+  + getTable() : string
   # modelFileDetails(array $details, string $guid, ...) : object
 }
 
@@ -56,6 +59,20 @@ note right of Manager::delete
     string $guid
     string $entity
     string $target
+end note
+
+note right of Manager::table
+  Set the current active table
+
+  since: 5.0.2
+  return: self
+end note
+
+note right of Manager::getTable
+  Get the current active table
+
+  since: 5.0.2
+  return: string
 end note
 
 note right of Manager::modelFileDetails

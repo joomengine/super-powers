@@ -240,7 +240,7 @@ abstract class UploadHelper
 		$upload_path = Path::clean($upload['full_path']);
 
 		// Get file extension/format
-		$format = MimeHelper::extension($upload_path);
+		$upload['extension'] = $format = MimeHelper::extension($upload_path);
 
 		// Legal file formats
 		$legal = [];

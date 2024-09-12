@@ -67,6 +67,14 @@ final class Manager
 	protected Handler $handler;
 
 	/**
+	 * Table Name
+	 *
+	 * @var    string
+	 * @since 5.0.2
+	 */
+	protected string $table = 'file';
+
+	/**
 	 * Constructor.
 	 *
 	 * @param Item      $item      The Item Class.
@@ -120,7 +128,7 @@ final class Manager
 		}
 
 		// store file in the file table
-		$this->item->set(
+		$this->item->table($this->getTable())->set(
 			$this->modelFileDetails($details, $guid, $entity, $target)
 		);
 	}
@@ -141,6 +149,32 @@ final class Manager
 	}
 
 	/**
+	 * Set the current active table
+	 *
+	 * @param string $table The table that should be active
+	 *
+	 * @return self
+	 * @since  5.0.2
+	 */
+	public function table(string $table): self
+	{
+		$this->table = $table;
+
+		return $this;
+	}
+
+	/**
+	 * Get the current active table
+	 *
+	 * @return  string
+	 * @since   5.0.2
+	 */
+	public function getTable(): string
+	{
+		return $this->table;
+	}
+
+	/**
 	 * model the file details to store in the file table
 	 *
 	 * @param array  $details  The uploaded file details.
@@ -156,12 +190,12 @@ final class Manager
 		return (object) [
 			'name' => $details['name'],
 			'file_type' => $guid,
-			'ext' => 'me',
-			'size_kb' => 45,
+			'ext' => $details['extension'] ?? 'error',
+			'size_kb' => $details['size'] ?? 0,
 			'filepath' => $details['full_path'],
 			'entity_type' => $target,
 			'entity' => $entity,
-			'guid' => $this->getGuid('file'),
+			'guid' => $this->getGuid('guid'),
 		];
 	}
 }
