@@ -1,18 +1,18 @@
 	/**
-	 * The Items Class.
-	 *
-	 * @var   Items
-	 * @since 5.0.2
-	 */
-	protected Items $items;
-
-	/**
 	 * The Item Class.
 	 *
 	 * @var   Item
 	 * @since 5.0.2
 	 */
 	protected Item $item;
+
+	/**
+	 * The Items Class.
+	 *
+	 * @var   Items
+	 * @since 5.0.2
+	 */
+	protected Items $items;
 
 	/**
 	 * The file types
@@ -33,15 +33,15 @@
 	/**
 	 * Constructor.
 	 *
-	 * @param Items   $items   The Items Class.
 	 * @param Item    $item    The Item Class.
+	 * @param Items   $items   The Items Class.
 	 *
 	 * @since 5.0.2
 	 */
-	public function __construct(Items $items, Item $item)
+	public function __construct(Item $item, Items $items, )
 	{
-		$this->items = $items;
 		$this->item = $item;
+		$this->items = $items;
 	}
 
 	/**

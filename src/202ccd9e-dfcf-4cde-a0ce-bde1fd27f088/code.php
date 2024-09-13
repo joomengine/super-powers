@@ -107,6 +107,7 @@ class File implements ServiceProviderInterface
 	public function getDisplay(Container $container): Display
 	{
 		return new Display(
+			$container->get('Data.Item'),
 			$container->get('Data.Items')
 		);
 	}

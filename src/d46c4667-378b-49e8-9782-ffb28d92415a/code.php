@@ -14,8 +14,8 @@ namespace VDM\Joomla\Componentbuilder\File;
 
 use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\Router\Route;
-use VDM\Joomla\Interfaces\Data\ItemsInterface as Items;
 use VDM\Joomla\Interfaces\Data\ItemInterface as Item;
+use VDM\Joomla\Interfaces\Data\ItemsInterface as Items;
 
 
 /**
@@ -26,20 +26,20 @@ use VDM\Joomla\Interfaces\Data\ItemInterface as Item;
 final class Display
 {
 	/**
-	 * The Items Class.
-	 *
-	 * @var   Items
-	 * @since 5.0.2
-	 */
-	protected Items $items;
-
-	/**
 	 * The Item Class.
 	 *
 	 * @var   Item
 	 * @since 5.0.2
 	 */
 	protected Item $item;
+
+	/**
+	 * The Items Class.
+	 *
+	 * @var   Items
+	 * @since 5.0.2
+	 */
+	protected Items $items;
 
 	/**
 	 * The file types
@@ -60,15 +60,15 @@ final class Display
 	/**
 	 * Constructor.
 	 *
-	 * @param Items   $items   The Items Class.
 	 * @param Item    $item    The Item Class.
+	 * @param Items   $items   The Items Class.
 	 *
 	 * @since 5.0.2
 	 */
-	public function __construct(Items $items, Item $item)
+	public function __construct(Item $item, Items $items, )
 	{
-		$this->items = $items;
 		$this->item = $item;
+		$this->items = $items;
 	}
 
 	/**

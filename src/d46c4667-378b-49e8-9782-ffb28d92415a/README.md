@@ -12,11 +12,11 @@
 ```uml
 @startuml
 class Display << (F,LightGreen) >> #RoyalBlue {
-  # Items $items
   # Item $item
+  # Items $items
   # array $fileTypes
   # array $fileTypeTasks
-  + __construct(Items $items, Item $item)
+  + __construct(Item $item, Items $items)
   + get(string $entity, string $target) : ?array
   # setFileTypeTask(object $file) : void
   # setFileDownloadLink(object $file) : void
