@@ -12,12 +12,16 @@
 namespace VDM\Joomla\Componentbuilder\File;
 
 
+use Joomla\CMS\Factory;
+use Joomla\CMS\User\User;
 use Joomla\CMS\Language\Text;
+use Joomla\Filesystem\File;
 use VDM\Joomla\Interfaces\Data\ItemInterface as Item;
 use VDM\Joomla\Interfaces\Data\ItemsInterface as Items;
 use VDM\Joomla\Data\Guid;
 use VDM\Joomla\Componentbuilder\File\Type;
 use VDM\Joomla\Componentbuilder\File\Handler;
+use VDM\Joomla\Utilities\MimeHelper;
 
 
 /**
@@ -67,6 +71,14 @@ final class Manager
 	protected Handler $handler;
 
 	/**
+	 * The active user
+	 *
+	 * @var    User
+	 * @since 5.0.2
+	 */
+	protected User $user;
+
+	/**
 	 * Table Name
 	 *
 	 * @var    string
@@ -90,6 +102,7 @@ final class Manager
 		$this->items = $items;
 		$this->type = $type;
 		$this->handler = $handler;
+		$this->user = Factory::getApplication()->getIdentity();
 	}
 
 	/**
@@ -111,6 +124,12 @@ final class Manager
 			throw new \InvalidArgumentException(Text::sprintf('COM_COMPONENTBUILDER_FILE_TYPE_NOT_VALID_IN_S_AREA', $target));
 		}
 
+		// make sure the user have permissions to upload this file type
+		if (!in_array($fileType['access'], $this->user->getAuthorisedViewLevels()))
+		{
+			throw new \InvalidArgumentException(Text::sprintf('COM_COMPONENTBUILDER_YOU_DO_NOT_HAVE_PERMISSIONS_TO_UPLOAD_S', $fileType['name']));
+		}
+
 		$details = $this->handler
 			->setEnqueueError(false)
 			->setLegalFormats($fileType['formats'])
@@ -127,25 +146,57 @@ final class Manager
 			throw new \RuntimeException($this->handler->getErrors());
 		}
 
+		// we might need to crop images
+		if ($fileType['type'] === 'image')
+		{
+			// $this->cropImage($details, $guid);
+		}
+
 		// store file in the file table
 		$this->item->table($this->getTable())->set(
-			$this->modelFileDetails($details, $guid, $entity, $target)
+			$this->modelFileDetails($details, $guid, $entity, $target, $fileType)
 		);
 	}
 
 	/**
-	 * Delete a file of a given entity.
+	 * Get the file details for download
 	 *
-	 * @param string $guid    The file guid
-	 * @param string $entity  The entity guid
-	 * @param string $target  The target entity name
+	 * @param string $guid The file guid
+	 *
+	 * @return array|null
+	 * @since 5.0.2
+	 */
+	public function download(string $guid): ?array
+	{
+		if (($file = $this->item->table($this->getTable())->get($guid)) !== null &&
+			in_array($file->access, $this->user->getAuthorisedViewLevels()))
+		{
+			return (array) $file;
+		}
+
+		return null;
+	}
+
+	/**
+	 * Delete a file.
+	 *
+	 * @param string $guid  The file guid
 	 *
 	 * @return void
 	 * @since 5.0.2
 	 */
-	public function delete(string $guid, string $entity, string $target): void
+	public function delete(string $guid): void
 	{
-		
+		if (($file = $this->item->table($this->getTable())->get($guid)) !== null &&
+			in_array($file->access, $this->user->getAuthorisedViewLevels()))
+		{
+			$this->item->table($this->getTable())->delete($guid); // from DB
+
+			if (is_file($file->file_path) && is_writable($file->file_path))
+			{
+				File::delete($file->file_path); // from file system
+			}
+		}
 	}
 
 	/**
@@ -177,24 +228,27 @@ final class Manager
 	/**
 	 * model the file details to store in the file table
 	 *
-	 * @param array  $details  The uploaded file details.
-	 * @param string $guid     The file type guid
-	 * @param string $entity   The entity guid
-	 * @param string $target   The target entity name
+	 * @param array  $details   The uploaded file details.
+	 * @param string $guid      The file type guid
+	 * @param string $entity    The entity guid
+	 * @param string $target    The target entity name
+	 * @param array $fileType   The file type
 	 *
 	 * @return object
 	 * @since 5.0.2
 	 */
-	protected function modelFileDetails(array $details, string $guid, string $entity, string $target): object
+	protected function modelFileDetails(array $details, string $guid, string $entity, string $target, array $fileType): object
 	{
 		return (object) [
 			'name' => $details['name'],
 			'file_type' => $guid,
-			'ext' => $details['extension'] ?? 'error',
-			'size_kb' => $details['size'] ?? 0,
-			'filepath' => $details['full_path'],
+			'extension' => $details['extension'] ?? 'error',
+			'size' => $details['size'] ?? 0,
+			'mime' => $details['mime'] ?? '',
+			'file_path' => $details['full_path'],
 			'entity_type' => $target,
 			'entity' => $entity,
+			'access' => $fileType['download_access'] ?? 1,
 			'guid' => $this->getGuid('guid'),
 		];
 	}

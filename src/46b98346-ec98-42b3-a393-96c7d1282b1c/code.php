@@ -522,18 +522,34 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	 */
 	private function assignUserGroups(array &$details, ?User $user, array $item): void
 	{
-		$details['groups'] = $user !== null ? $user->groups : [];
+		$groups = $user !== null ? (array) $user->groups : [];
 
 		if (!empty($item['entity_type']))
 		{
-			$groups = Component::getParams()->get($item['entity_type'] . '_groups', []);
-			foreach ($groups as $group)
+			$global_entity_groups = Component::getParams()->get($item['entity_type'] . '_groups', []);
+			foreach ($global_entity_groups as $group)
 			{
-				if (!in_array($group, $details['groups']))
+				if (!in_array($group, $groups))
 				{
-					$details['groups'][] = $group;
+					$groups[] = $group;
 				}
 			}
+		}
+
+		// Ensure $details['groups'] is an array if it exists, else default to an empty array
+		$detailsGroups = isset($details['groups']) ? (array) $details['groups'] : [];
+
+		// Merge the arrays and remove duplicates
+		$mergedGroups = array_unique(array_merge($detailsGroups, $groups));
+
+		// Only set $details['groups'] if the merged array is not empty
+		if (!empty($mergedGroups))
+		{
+			$details['groups'] = $mergedGroups;
+		}
+		else
+		{
+			unset($details['groups']);
 		}
 	}
 

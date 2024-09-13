@@ -67,12 +67,19 @@
 		if (($fileType = $this->details($guid)) !== null &&
 			$this->validTarget($fileType, $target))
 		{
+			// some safety checks
+			$path = isset($fileType->path) && is_string($fileType->path) && trim($fileType->path) !== '' ? trim($fileType->path) : null;
+			$path = ($path !== null && is_dir($path) && is_writable($path)) ? $path : null;
+
 			return [
+				'name' => $fileType->name ?? 'files',
+				'access' => $fileType->access ?? 1,
+				'download_access' => $fileType->download_access ?? 1,
 				'field' => $this->getFieldName($fileType),
 				'type' => $this->getFieldName($fileType),
 				'formats' => $this->getAllowFormats($fileType) ?? [],
 				'filter' => $fileType->filter ?? null,
-				'path' => $fileType->path ?? null
+				'path' => $path
 			];
 		}
 

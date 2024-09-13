@@ -16,10 +16,12 @@ class Manager << (F,LightGreen) >> #RoyalBlue {
   # Items $items
   # Type $type
   # Handler $handler
+  # User $user
   # string $table
   + __construct(Item $item, Items $items, ...)
   + upload(string $guid, string $entity, ...) : void
-  + delete(string $guid, string $entity, ...) : void
+  + download(string $guid) : ?array
+  + delete(string $guid) : void
   + table(string $table) : self
   + getTable() : string
   # modelFileDetails(array $details, string $guid, ...) : object
@@ -49,16 +51,18 @@ note right of Manager::upload
     string $target
 end note
 
+note right of Manager::download
+  Get the file details for download
+
+  since: 5.0.2
+  return: ?array
+end note
+
 note right of Manager::delete
-  Delete a file of a given entity.
+  Delete a file.
 
   since: 5.0.2
   return: void
-  
-  arguments:
-    string $guid
-    string $entity
-    string $target
 end note
 
 note right of Manager::table
@@ -86,6 +90,7 @@ note right of Manager::modelFileDetails
     string $guid
     string $entity
     string $target
+    array $fileType
 end note
  
 @enduml

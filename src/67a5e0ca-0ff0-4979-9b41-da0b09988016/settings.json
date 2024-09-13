@@ -29,12 +29,16 @@
         "use_selection4": {
             "use": "4144ad3b-2ad5-401f-af0c-a3d856c1e688",
             "as": "default"
+        },
+        "use_selection5": {
+            "use": "f11dc790-713e-4706-9a85-a318ed3ad56e",
+            "as": "default"
         }
     },
     "extendsinterfaces": null,
     "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].File.Manager",
     "description": "File Manager Class\r\n\r\n@since  5.0.2",
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    3rd September, 2020\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "head": "use Joomla\\CMS\\Language\\Text;",
+    "head": "use Joomla\\CMS\\Factory;\r\nuse Joomla\\CMS\\User\\User;\r\nuse Joomla\\CMS\\Language\\Text;\r\nuse Joomla\\Filesystem\\File;",
     "composer": ""
 }

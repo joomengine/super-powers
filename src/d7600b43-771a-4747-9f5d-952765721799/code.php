@@ -193,7 +193,7 @@ abstract class UploadHelper
 		}
 
 		// set full path
-		$userfile['full_path'] = $userfile['path'] . '/' . $userfile['file_name'];
+		$userfile['full_path'] = Path::clean($userfile['path'] . '/' . $userfile['file_name']);
 
 		// Upload the file.
 		if (File::upload($userfile['tmp_name'], $userfile['full_path'], static::$useStreams, static::$allowUnsafe))
@@ -233,28 +233,34 @@ abstract class UploadHelper
 	 */
 	protected static function check(array $upload, string $type): ?array
 	{
-		// Default formats
-		$formats = MimeHelper::getFileExtensions($type);
+		// Default extensions/formats
+		$extensions = MimeHelper::getFileExtensions($type);
 
 		// Clean the path
 		$upload_path = Path::clean($upload['full_path']);
 
 		// Get file extension/format
-		$upload['extension'] = $format = MimeHelper::extension($upload_path);
+		$extension = MimeHelper::extension($upload_path);
+		$mime = $upload['type'];
+
+		unset($upload['type']);
+
+		// set to check
+		$checking_mime = MimeHelper::mimeType($upload_path);
 
 		// Legal file formats
 		$legal = [];
 
 		// check if the file format is even in the list
-		if (in_array($format, $formats))
+		if (in_array($extension, $extensions))
 		{
 			// get allowed formats
 			$legal_formats = (array) Helper::getParams()->get($type . '_formats', []);
-			$legal = array_values(array_unique(array_merge($legal_formats, static::$legalFormats)));
+			$legal_extensions = array_values(array_unique(array_merge($legal_formats, static::$legalFormats)));
 		}
 
 		// check the extension
-		if (!in_array($format, $legal))
+		if (!in_array($extension, $legal_extensions))
 		{
 			// Cleanup the import file
 			static::remove($upload['full_path']);
@@ -263,6 +269,13 @@ abstract class UploadHelper
 
 			return null;
 		}
+
+		if ($checking_mime === $mime)
+		{
+			$upload['mime'] = $mime; // TODO we should keep and eye on this.
+		}
+
+		$upload['extension'] = $extension;
 
 		return $upload;
 	}
