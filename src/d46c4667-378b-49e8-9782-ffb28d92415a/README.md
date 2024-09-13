@@ -13,8 +13,15 @@
 @startuml
 class Display << (F,LightGreen) >> #RoyalBlue {
   # Items $items
-  + __construct(Items $items)
+  # Item $item
+  # array $fileTypes
+  # array $fileTypeTasks
+  + __construct(Items $items, Item $item)
   + get(string $entity, string $target) : ?array
+  # setFileTypeTask(object $file) : void
+  # setFileDownloadLink(object $file) : void
+  # getFileTypeTask(object $data) : string
+  # getFileType(?string $guid) : ?object
 }
 
 note right of Display::__construct
@@ -28,6 +35,34 @@ note right of Display::get
 
   since: 5.0.2
   return: ?array
+end note
+
+note right of Display::setFileTypeTask
+  Add the file type details to this file
+
+  since: 5.0.2
+  return: void
+end note
+
+note right of Display::setFileDownloadLink
+  Add the file download link
+
+  since: 5.0.2
+  return: void
+end note
+
+note right of Display::getFileTypeTask
+  Retrieves the file type task name
+
+  since: 5.0.2
+  return: string
+end note
+
+note right of Display::getFileType
+  Retrieves the file type details
+
+  since: 5.0.2
+  return: ?object
 end note
  
 @enduml
