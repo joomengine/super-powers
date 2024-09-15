@@ -18,6 +18,7 @@ class Display << (F,LightGreen) >> #RoyalBlue {
   # array $fileTypeTasks
   + __construct(Item $item, Items $items)
   + get(string $entity, string $target) : ?array
+  # setFileTypeName(object $file) : void
   # setFileTypeTask(object $file) : void
   # setFileDownloadLink(object $file) : void
   # getFileTypeTask(object $data) : string
@@ -37,8 +38,15 @@ note right of Display::get
   return: ?array
 end note
 
+note right of Display::setFileTypeName
+  Add the file type name to this file
+
+  since: 5.0.2
+  return: void
+end note
+
 note right of Display::setFileTypeTask
-  Add the file type details to this file
+  Add the file type task to this file
 
   since: 5.0.2
   return: void

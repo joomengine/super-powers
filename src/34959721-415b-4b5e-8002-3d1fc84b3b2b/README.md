@@ -36,6 +36,7 @@ note right of SubformInterface::get
     string $linkKey
     string $field
     array $get
+    bool $multi = true
 end note
 
 note right of SubformInterface::set

@@ -398,7 +398,20 @@
 	 */
 	private static function handlePostRegistration(int $userId, int $autologin, array $credentials): int
 	{
-		if ($autologin && isset($credentials['password']))
+		// make sure user is it the correct groups
+		if ($userId > 0 && !empty($credentials['groups']))
+		{
+			try
+			{
+				JoomlaUserHelper::setUserGroups($userId, $credentials['groups']);
+			}
+			catch (\Exception $e)
+			{
+				// we might need say something
+			}
+		}
+
+		if ($autologin && !empty($credentials['password']))
 		{
 			try
 			{

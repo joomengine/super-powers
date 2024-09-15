@@ -22,6 +22,7 @@ class Subform << (F,LightGreen) >> #RoyalBlue {
   - purge(array $items, string $indexKey, ...) : void
   - converter(array $items, array $keySet, ...) : array
   - process(mixed $items, string $indexKey, ...) : array
+  - isMultipleSets(array $array) : bool
 }
 
 note right of Subform::__construct
@@ -48,6 +49,7 @@ note right of Subform::get
     string $linkKey
     string $field
     array $get
+    bool $multi = true
 end note
 
 note left of Subform::set
@@ -94,6 +96,7 @@ and sets them by association with a specified key and an incrementing integer.
     array $items
     array $keySet
     string $field
+    bool $multi
 end note
 
 note left of Subform::process
@@ -107,6 +110,13 @@ note left of Subform::process
     string $indexKey
     string $linkKey
     string $linkValue
+end note
+
+note right of Subform::isMultipleSets
+  Function to determine if the array consists of multiple data sets (arrays of arrays).
+
+  since: 5.0.2
+  return: bool
 end note
  
 @enduml

@@ -10,11 +10,11 @@
     "system_name": "Joomla.File.Display",
     "type": "final class",
     "use_selection": {
-        "use_selection1": {
+        "use_selection0": {
             "use": "05744dd3-4030-4cf8-8dda-a93ab809b473",
             "as": "Item"
         },
-        "use_selection0": {
+        "use_selection1": {
             "use": "7212e4db-371f-4cfd-8122-32e9bb100d83",
             "as": "Items"
         }

@@ -91,9 +91,8 @@ final class Display
 					unset($files[$n]);
 					continue;
 				}
-				// set the file type task
 				$this->setFileTypeTask($file);
-				// set the file download link
+				$this->setFileTypeName($file);
 				$this->setFileDownloadLink($file);
 			}
 
@@ -105,7 +104,27 @@ final class Display
 	}
 
 	/**
-	 * Add the file type details to this file
+	 * Add the file type name to this file
+	 *
+	 * @param object $file   The file being updated
+	 *
+	 * @return void
+	 * @since  5.0.2
+	 */
+	protected function setFileTypeName(object &$file): void
+	{
+		if (($fileType = $this->getFileType($file->file_type ?? null)) !== null)
+		{
+			$file->type_name = $fileType->name;
+		}
+		else
+		{
+			$file->type_name = 'error';
+		}
+	}
+
+	/**
+	 * Add the file type task to this file
 	 *
 	 * @param object $file   The file being updated
 	 *
