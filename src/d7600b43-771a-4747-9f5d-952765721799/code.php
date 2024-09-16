@@ -18,6 +18,8 @@ use Joomla\Filesystem\File;
 use Joomla\Filesystem\Folder;
 use Joomla\Filesystem\Path;
 use VDM\Joomla\Utilities\Component\Helper;
+use VDM\Joomla\Utilities\MimeHelper;
+use VDM\Joomla\Utilities\StringHelper;
 
 
 /**

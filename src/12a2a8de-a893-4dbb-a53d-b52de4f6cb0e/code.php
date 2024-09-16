@@ -12,6 +12,7 @@
 namespace VDM\Joomla\Componentbuilder\File;
 
 
+use Joomla\Filesystem\Path;
 use VDM\Joomla\Interfaces\Data\ItemInterface as Item;
 
 
@@ -91,10 +92,6 @@ final class Type
 		if (($fileType = $this->details($guid)) !== null &&
 			$this->validTarget($fileType, $target))
 		{
-			// some safety checks
-			$path = isset($fileType->path) && is_string($fileType->path) && trim($fileType->path) !== '' ? trim($fileType->path) : null;
-			$path = ($path !== null && is_dir($path) && is_writable($path)) ? $path : null;
-
 			return [
 				'name' => $fileType->name ?? 'files',
 				'access' => $fileType->access ?? 1,
@@ -103,7 +100,7 @@ final class Type
 				'type' => $this->getFieldName($fileType),
 				'formats' => $this->getAllowFormats($fileType) ?? [],
 				'filter' => $fileType->filter ?? null,
-				'path' => $path
+				'path' => $this->getFileTypePath($fileType)
 			];
 		}
 
@@ -231,6 +228,74 @@ final class Type
 		}
 
 		return null;
+	}
+
+	/**
+	 * Retrieves the file type path based on provided data.
+	 *
+	 * Performs safety checks and returns either a cleaned path if it exists
+	 * and is a writable directory, or constructs a relative path to the 'images' folder
+	 * based on the last folder name from the given path.
+	 *
+	 * @param object  $data  The type data object containing path information.
+	 *
+	 * @return string|null Returns the cleaned file path or null if no valid path is found.
+	 * @since  5.0.2
+	 */
+	protected function getFileTypePath(object $data): ?string
+	{
+		// Validate the provided path data
+		$path = isset($data->path) && is_string($data->path) && trim($data->path) !== '' ?
+			Path::clean(trim($data->path)) : null;
+
+		// Return the path if it's a valid directory and writable
+		if ($path !== null && is_dir($path) && is_writable($path))
+		{
+			return $path;
+		}
+
+		// If no valid path is found, try to derive a relative path from the 'images' folder
+		if ($path !== null && ($folder = $this->getLastFolderName($path)) !== null)
+		{
+			return JPATH_SITE . '/images/' . $folder;
+		}
+
+		return null;
+	}
+
+	/**
+	 * Recursively retrieves the last folder name from a given path, ignoring any file names.
+	 * If the last part of the path contains a dot (indicating a file), it moves up the directory tree
+	 * until it finds a valid folder name. Returns null if no valid folder is found.
+	 *
+	 * @param string $path The file system path from which to extract the last folder name.
+	 * 
+	 * @return string|null Returns the last folder name if found, or null if no valid folder exists.
+	 * @since  5.0.2
+	 */
+	protected function getLastFolderName(string $path): ?string
+	{
+		// Remove any trailing slashes to avoid an empty result
+		$path = rtrim($path, '/\\');
+
+		// If the path becomes empty, return null (base case)
+		if (empty($path))
+		{
+			return null;
+		}
+
+		// Get the last part of the path
+		$lastPart = basename($path);
+
+		// If the last part contains a dot (and it's not a hidden folder), move up the directory tree
+		if (strpos($lastPart, '.') > 0)
+		{
+			// If it contains a dot, treat it as a file and move up one level
+			return $this->getLastFolderName(dirname($path));
+		}
+
+		// Return the last folder name (if it's valid and not a file)
+		return $lastPart;
 	}
 }
 

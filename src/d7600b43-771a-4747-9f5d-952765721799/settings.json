@@ -4,14 +4,7 @@
     "extends": "",
     "guid": "d7600b43-771a-4747-9f5d-952765721799",
     "implements": null,
-    "load_selection": {
-        "load_selection0": {
-            "load": "f11dc790-713e-4706-9a85-a318ed3ad56e"
-        },
-        "load_selection1": {
-            "load": "1f28cb53-60d9-4db1-b517-3c7dc6b429ef"
-        }
-    },
+    "load_selection": null,
     "name": "UploadHelper",
     "power_version": "1.0.0",
     "system_name": "Utilities UploadHelper",
@@ -19,6 +12,14 @@
     "use_selection": {
         "use_selection0": {
             "use": "640b5352-fb09-425f-a26e-cd44eda03f15",
+            "as": "default"
+        },
+        "use_selection1": {
+            "use": "f11dc790-713e-4706-9a85-a318ed3ad56e",
+            "as": "default"
+        },
+        "use_selection2": {
+            "use": "1f28cb53-60d9-4db1-b517-3c7dc6b429ef",
             "as": "default"
         }
     },

@@ -23,6 +23,8 @@ class Type << (F,LightGreen) >> #RoyalBlue {
   # getAllow(object $data) : string
   # getAllowSpan(object $data) : string
   # getAllowFormats(object $data) : ?array
+  # getFileTypePath(object $data) : ?string
+  # getLastFolderName(string $path) : ?string
 }
 
 note right of Type::__construct
@@ -85,6 +87,25 @@ note right of Type::getAllowFormats
 
   since: 5.0.2
   return: ?array
+end note
+
+note left of Type::getFileTypePath
+  Retrieves the file type path based on provided data.
+Performs safety checks and returns either a cleaned path if it exists
+and is a writable directory, or constructs a relative path to the 'images' folder
+based on the last folder name from the given path.
+
+  since: 5.0.2
+  return: ?string
+end note
+
+note right of Type::getLastFolderName
+  Recursively retrieves the last folder name from a given path, ignoring any file names.
+If the last part of the path contains a dot (indicating a file), it moves up the directory tree
+until it finds a valid folder name. Returns null if no valid folder is found.
+
+  since: 5.0.2
+  return: ?string
 end note
  
 @enduml
