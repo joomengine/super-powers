@@ -121,18 +121,20 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	 * @param string   $linkKey    The link key on which the items where linked in the child table.
 	 * @param string   $field      The parent field name of the subform in the parent view.
 	 * @param array    $get        The array get:set of the keys of each row in the subform.
+	 * @param bool     $multi      The switch to return a multiple set.
 	 *
 	 * @return array|null   The subform
 	 * @since  3.2.2
 	 */
-	public function get(string $linkValue, string $linkKey, string $field, array $get): ?array
+	public function get(string $linkValue, string $linkKey, string $field, array $get, bool $multi = true): ?array
 	{
 		if (($items = $this->items->table($this->getTable())->get([$linkValue], $linkKey)) !== null)
 		{
 			return $this->converter(
 				$this->getUsersDetails($items),
 				$get,
-				$field
+				$field,
+				$multi
 			);
 		}
 
@@ -303,11 +305,12 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	 * @param array  $items  Array of objects or arrays to be filtered.
 	 * @param array  $keySet Array of keys to retain in each item.
 	 * @param string $field  The field prefix for the resulting associative array.
+	 * @param bool   $multi  The switch to return a multiple set.
 	 *
 	 * @return array Array of filtered arrays set by association.
 	 * @since  3.2.2
 	 */
-	private function converter(array $items, array $keySet, string $field): array
+	private function converter(array $items, array $keySet, string $field, bool $multi): array
 	{
 		/**
 		 * Filters keys for a single item and converts it to an array.
@@ -333,6 +336,10 @@ final class UsersSubform implements GuidInterface, SubformInterface
 		$result = [];
 		foreach ($items as $index => $item)
 		{
+			if (!$multi)
+			{
+				return $filterKeys($item, $keySet);
+			}
 			$filteredArray = $filterKeys($item, $keySet);
 			$result[$field . $index] = $filteredArray;
 		}
@@ -354,6 +361,11 @@ final class UsersSubform implements GuidInterface, SubformInterface
 	private function process($items, string $indexKey, string $linkKey, string $linkValue): array
 	{
 		$items = is_array($items) ? $items : [];
+		if ($items !== [] && !$this->isMultipleSets($items))
+		{
+			$items = [$items];
+		}
+
 		foreach ($items as $n => &$item)
 		{
 			$value = $item[$indexKey] ?? '';
@@ -574,6 +586,29 @@ final class UsersSubform implements GuidInterface, SubformInterface
 		}
 
 		return 0;
+	}
+
+	/**
+	 * Function to determine if the array consists of multiple data sets (arrays of arrays).
+	 * 
+	 * @param array $array The input array to be checked.
+	 * 
+	 * @return bool True if the array contains only arrays (multiple data sets), false otherwise.
+	 * @since  5.0.2
+	 */
+	private function isMultipleSets(array $array): bool
+	{
+		foreach ($array as $element)
+		{
+			// As soon as we find a non-array element, return false
+			if (!is_array($element))
+			{
+				return false;
+			}
+		}
+
+		// If all elements are arrays, return true
+		return true;
 	}
 }
 

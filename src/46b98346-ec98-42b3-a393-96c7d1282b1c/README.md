@@ -34,6 +34,7 @@ class UsersSubform << (F,LightGreen) >> #RoyalBlue {
   - extractUserDetails(array $item, ?User $user) : array
   - assignUserGroups($details, ?User $user, ...) : void
   - saveUserDetails(array $details, int $userId) : int
+  - isMultipleSets(array $array) : bool
 }
 
 note right of UsersSubform::__construct
@@ -60,6 +61,7 @@ note right of UsersSubform::get
     string $linkKey
     string $field
     array $get
+    bool $multi = true
 end note
 
 note left of UsersSubform::set
@@ -127,6 +129,7 @@ and sets them by association with a specified key and an incrementing integer.
     array $items
     array $keySet
     string $field
+    bool $multi
 end note
 
 note right of UsersSubform::process
@@ -189,6 +192,13 @@ note right of UsersSubform::saveUserDetails
 
   since: 5.0.2
   return: int
+end note
+
+note left of UsersSubform::isMultipleSets
+  Function to determine if the array consists of multiple data sets (arrays of arrays).
+
+  since: 5.0.2
+  return: bool
 end note
  
 @enduml
