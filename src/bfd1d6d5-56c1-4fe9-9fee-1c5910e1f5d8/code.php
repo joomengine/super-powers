@@ -217,7 +217,7 @@ final class Table extends BaseTable implements Tableinterface
 				'tab_name' => 'Details',
 				'db' => [
 					'type' => 'TINYINT(1)',
-					'default' => '0',
+					'default' => '1',
 					'null_switch' => 'NOT NULL',
 					'unique_key' => false,
 					'key' => true,

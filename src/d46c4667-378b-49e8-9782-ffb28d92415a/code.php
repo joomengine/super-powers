@@ -42,6 +42,14 @@ final class Display
 	protected Items $items;
 
 	/**
+	 * The file site url
+	 *
+	 * @var   string
+	 * @since 5.0.2
+	 */
+	protected string $url;
+
+	/**
 	 * The file types
 	 *
 	 * @var   array
@@ -69,6 +77,7 @@ final class Display
 	{
 		$this->item = $item;
 		$this->items = $items;
+		$this->url = rtrim(Uri::root(), '/');
 	}
 
 	/**
@@ -161,7 +170,7 @@ final class Display
 			];
 
 			// Build the full URL
-			$file->link = Uri::root() . Route::_('index.php?' . http_build_query($queryParams));
+			$file->link =  $this->url . Route::_('index.php?' . http_build_query($queryParams));
 		}
 	}
 
