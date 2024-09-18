@@ -12,11 +12,19 @@
 ```uml
 @startuml
 abstract MimeHelper  #Orange {
+  # static $fileExtensionToMimeType
+  + {static} getFileExtensions(string $target = null, boolean $sorted = false) : array
   + {static} extension(string $file) : string
   + {static} mimeType(string $file) : string
   # {static} mimeTypeFilename(string $file) : string
-  + {static} getFileExtensions(string $target = null, boolean $sorted = false) : array
 }
+
+note right of MimeHelper::getFileExtensions
+  Get the file extensions
+
+  since: 5.0.3
+  return: array
+end note
 
 note right of MimeHelper::extension
   Get the file extension from a full path OR file name.
@@ -37,12 +45,6 @@ note right of MimeHelper::mimeTypeFilename
 
   since: 5.0.3
   return: string
-end note
-
-note right of MimeHelper::getFileExtensions
-  Get the file extensions
-
-  return: array
 end note
  
 @enduml

@@ -25,8 +25,9 @@ abstract class MimeHelper
 	 * http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types
 	 *
 	 * @var     array
+	 * @since   5.0.3
 	 */
-	protected static $fileExtensionToMimeType = array(
+	protected static $fileExtensionToMimeType = [
 		'123'			=> 'application/vnd.lotus-1-2-3',
 		'3dml'			=> 'text/vnd.in3d.3dml',
 		'3ds'			=> 'image/x-3ds',
@@ -72,6 +73,7 @@ abstract class MimeHelper
 		'atx'			=> 'application/vnd.antix.game-component',
 		'au'			=> 'audio/basic',
 		'avi'			=> 'video/x-msvideo',
+		'avif'			=> 'image/avif',
 		'aw'			=> 'application/applixware',
 		'azf'			=> 'application/vnd.airzip.filesecure.azf',
 		'azs'			=> 'application/vnd.airzip.filesecure.azs',
@@ -298,6 +300,7 @@ abstract class MimeHelper
 		'geo'			=> 'application/vnd.dynageo',
 		'gex'			=> 'application/vnd.geometry-explorer',
 		'ggb'			=> 'application/vnd.geogebra.file',
+		'ggs'			=> 'application/vnd.geogebra.slides',
 		'ggt'			=> 'application/vnd.geogebra.tool',
 		'ghf'			=> 'application/vnd.groove-help',
 		'gif'			=> 'image/gif',
@@ -384,9 +387,10 @@ abstract class MimeHelper
 		'jpgm'			=> 'video/jpm',
 		'jpgv'			=> 'video/jpeg',
 		'jpm'			=> 'video/jpm',
-		'js'			=> 'application/javascript',
+		'js'			=> 'text/javascript',
 		'json'			=> 'application/json',
 		'jsonml'		=> 'application/jsonml+json',
+		'jxl'			=> 'image/jxl',
 		'kar'			=> 'audio/midi',
 		'karbon'		=> 'application/vnd.kde.karbon',
 		'kfo'			=> 'application/vnd.kde.kformula',
@@ -429,6 +433,8 @@ abstract class MimeHelper
 		'm1v'			=> 'video/mpeg',
 		'm21'			=> 'application/mp21',
 		'm2a'			=> 'audio/mpeg',
+		'm2t'			=> 'video/mp2t',
+		'm2ts'			=> 'video/mp2t',
 		'm2v'			=> 'video/mpeg',
 		'm3a'			=> 'audio/mpeg',
 		'm3u'			=> 'audio/x-mpegurl',
@@ -467,6 +473,7 @@ abstract class MimeHelper
 		'mime'			=> 'message/rfc822',
 		'mj2'			=> 'video/mj2',
 		'mjp2'			=> 'video/mj2',
+		'mjs'			=> 'text/javascript',
 		'mk3d'			=> 'video/x-matroska',
 		'mka'			=> 'audio/x-matroska',
 		'mks'			=> 'video/x-matroska',
@@ -513,7 +520,7 @@ abstract class MimeHelper
 		'msi'			=> 'application/x-msdownload',
 		'msl'			=> 'application/vnd.mobius.msl',
 		'msty'			=> 'application/vnd.muvee.style',
-		'mts'			=> 'model/vnd.mts',
+		'mts'			=> 'video/mp2t',
 		'mus'			=> 'application/vnd.musician',
 		'musicxml'		=> 'application/vnd.recordare.musicxml+xml',
 		'mvb'			=> 'application/x-msmediaview',
@@ -826,6 +833,7 @@ abstract class MimeHelper
 		'tr'			=> 'text/troff',
 		'tra'			=> 'application/vnd.trueapp',
 		'trm'			=> 'application/x-msterminal',
+		'ts'			=> 'video/mp2t',
 		'tsd'			=> 'application/timestamped-data',
 		'tsv'			=> 'text/tab-separated-values',
 		'ttc'			=> 'font/collection',
@@ -899,6 +907,7 @@ abstract class MimeHelper
 		'vxml'			=> 'application/voicexml+xml',
 		'w3d'			=> 'application/x-director',
 		'wad'			=> 'application/x-doom',
+		'wasm'			=> 'application/wasm',
 		'wav'			=> 'audio/x-wav',
 		'wax'			=> 'audio/x-ms-wax',
 		'wbmp'			=> 'image/vnd.wap.wbmp',
@@ -1011,8 +1020,62 @@ abstract class MimeHelper
 		'zir'			=> 'application/vnd.zul',
 		'zirz'			=> 'application/vnd.zul',
 		'zmm'			=> 'application/vnd.handheld-entertainment+xml'
-	);
+	];
 
+	/**
+	 * Get the file extensions
+	 * 
+	 * @param   string    $target   The targeted/filter option
+	 * @param   boolean   $sorted   The multidimensional grouping sort (only if targeted filter is used)
+	 *
+	 * @return  array     All the extensions (targeted & sorted)
+	 * @since   5.0.3
+	 */
+	public static function getFileExtensions($target = null, $sorted = false)
+	{
+		// we have some in-house grouping/filters :)
+		$filters = [
+			'image' => array('image', 'font', 'model'),
+			'document' => array('application', 'text', 'chemical', 'message'),
+			'media' => array('video', 'audio'),
+			'file' => array('image', 'application', 'text', 'video', 'audio'),
+			'all' => array('application', 'text', 'chemical', 'message', 'image', 'font', 'model', 'video', 'audio', 'x-conference')
+		];
+		// sould we filter
+		if ($target)
+		{
+			// the bucket to get extensions
+			$fileextensions = array();
+			// check if filter exist (if not return empty array)
+			if (isset($filters[$target]))
+			{
+				foreach (self::$fileExtensionToMimeType as $extension => $mimetype)
+				{
+					// get the key mime type
+					$mimearr = explode("/", $mimetype, 2);
+					// check if this file extension should be added
+					if (in_array($mimearr[0], $filters[$target]))
+					{
+						if ($sorted)
+						{
+							if (!isset($fileextensions[$mimearr[0]]))
+							{
+								$fileextensions[$mimearr[0]] = array();
+							}
+							$fileextensions[$mimearr[0]][$extension] = $extension;
+						}
+						else
+						{
+							$fileextensions[$extension] = $extension;
+						}
+					}
+				}
+			}
+			return $fileextensions;
+		}
+		// we just return all file extensions
+		return array_keys(self::$fileExtensionToMimeType);
+	}
 
 	/**
 	 * Get the file extension from a full path OR file name.
@@ -1107,62 +1170,5 @@ abstract class MimeHelper
 		// Fallback to application/octet-stream if extension is unknown
 		return 'application/octet-stream';
 	}
-
-
-	/**
-	 * Get the file extensions
-	 * 
-	 * @param   string    $target   The targeted/filter option
-	 * @param   boolean   $sorted   The multidimensional grouping sort (only if targeted filter is used)
-	 *
-	 * @return  array     All the extensions (targeted & sorted)
-	 * 
-	 */
-	public static function getFileExtensions($target = null, $sorted = false)
-	{
-		// we have some in-house grouping/filters :)
-		$filters = array(
-			'image' => array('image', 'font', 'model'),
-			'document' => array('application', 'text', 'chemical', 'message'),
-			'media' => array('video', 'audio'),
-			'file' => array('image', 'application', 'text', 'video', 'audio'),
-			'all' => array('application', 'text', 'chemical', 'message', 'image', 'font', 'model', 'video', 'audio', 'x-conference')
-		);
-		// sould we filter
-		if ($target)
-		{
-			// the bucket to get extensions
-			$fileextensions = array();
-			// check if filter exist (if not return empty array)
-			if (isset($filters[$target]))
-			{
-				foreach (self::$fileExtensionToMimeType as $extension => $mimetype)
-				{
-					// get the key mime type
-					$mimearr = explode("/", $mimetype, 2);
-					// check if this file extension should be added
-					if (in_array($mimearr[0], $filters[$target]))
-					{
-						if ($sorted)
-						{
-							if (!isset($fileextensions[$mimearr[0]]))
-							{
-								$fileextensions[$mimearr[0]] = array();
-							}
-							$fileextensions[$mimearr[0]][$extension] = $extension;
-						}
-						else
-						{
-							$fileextensions[$extension] = $extension;
-						}
-					}
-				}
-			}
-			return $fileextensions;
-		}
-		// we just return all file extensions
-		return array_keys(self::$fileExtensionToMimeType);
-	}
-
 }
 
