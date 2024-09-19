@@ -12,6 +12,7 @@
 namespace VDM\Joomla\Componentbuilder\File;
 
 
+use Joomla\CMS\Factory;
 use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\Router\Route;
 use VDM\Joomla\Interfaces\Data\ItemInterface as Item;
