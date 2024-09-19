@@ -31,6 +31,14 @@
 	protected array $fileTypes;
 
 	/**
+	 * The active user access
+	 *
+	 * @var    array
+	 * @since 5.0.2
+	 */
+	protected array $access;
+
+	/**
 	 * The File Type Task
 	 *
 	 * @var    array
@@ -51,6 +59,9 @@
 		$this->item = $item;
 		$this->items = $items;
 		$this->url = rtrim(Uri::root(), '/');
+
+		$user = Factory::getApplication()->getIdentity();
+		$this->access = $user->getAuthorisedViewLevels();
 	}
 
 	/**
@@ -68,7 +79,8 @@
 		{
 			foreach ($files as $n => $file)
 			{
-				if ($file->entity_type !== $target)
+				if ($file->entity_type !== $target ||
+					!in_array($file->access, $this->access))
 				{
 					unset($files[$n]);
 					continue;

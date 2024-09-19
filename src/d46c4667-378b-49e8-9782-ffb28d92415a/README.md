@@ -16,6 +16,7 @@ class Display << (F,LightGreen) >> #RoyalBlue {
   # Items $items
   # string $url
   # array $fileTypes
+  # array $access
   # array $fileTypeTasks
   + __construct(Item $item, Items $items)
   + get(string $entity, string $target) : ?array
