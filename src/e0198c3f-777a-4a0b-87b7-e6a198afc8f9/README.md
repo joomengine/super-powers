@@ -31,6 +31,7 @@ class MultiSubform << (F,LightGreen) >> #RoyalBlue {
   - handleRegularSetMap(array $subform, array $map, ...) : bool
   - validGetMap(array $map) : bool
   - validSetMap(array $map) : bool
+  - prepLinkValue(array $subform, array $setMap) : void
 }
 
 note right of MultiSubform::__construct
@@ -251,6 +252,13 @@ Ensures all required keys are present and have valid values.
 
   since: 3.2.2
   return: bool
+end note
+
+note right of MultiSubform::prepLinkValue
+  Prepare the linkValue needed by the sub-subform
+
+  since: 5.0.3
+  return: void
 end note
  
 @enduml
