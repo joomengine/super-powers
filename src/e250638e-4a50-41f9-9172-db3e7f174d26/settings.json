@@ -1,0 +1,45 @@
+{
+    "add_head": "0",
+    "add_licensing_template": "2",
+    "extends": "",
+    "guid": "e250638e-4a50-41f9-9172-db3e7f174d26",
+    "implements": null,
+    "load_selection": null,
+    "name": "Exporter",
+    "power_version": "1.0.0",
+    "system_name": "JCB.Spreadsheet.Exporter",
+    "type": "final class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a",
+            "as": "default"
+        }
+    },
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Spreadsheet.Exporter",
+    "description": "Spreadsheet Exporter Class\r\n\r\n@since 3.2.0",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": {
+        "composer0": {
+            "access_point": "phpspreadsheet\/vendor\/autoload.php",
+            "namespace": {
+                "namespace0": {
+                    "use": "PhpOffice\\PhpSpreadsheet\\IOFactory"
+                },
+                "namespace1": {
+                    "use": "PhpOffice\\PhpSpreadsheet\\Spreadsheet"
+                },
+                "namespace2": {
+                    "use": "PhpOffice\\PhpSpreadsheet\\Worksheet\\Worksheet"
+                },
+                "namespace3": {
+                    "use": "PhpOffice\\PhpSpreadsheet\\Style\\Alignment"
+                },
+                "namespace4": {
+                    "use": "PhpOffice\\PhpSpreadsheet\\Writer\\Exception"
+                }
+            }
+        }
+    }
+}

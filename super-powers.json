@@ -934,6 +934,28 @@
         "spk": "Super---c182506a_ab84_439c_b962_1e606b58d545---Power",
         "guid": "c182506a-ab84-439c-b962-1e606b58d545"
     },
+    "c4169332-3914-400e-b861-972b2d465963": {
+        "name": "Importer",
+        "type": "final class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Spreadsheet",
+        "code": "src\/c4169332-3914-400e-b861-972b2d465963\/code.php",
+        "power": "src\/c4169332-3914-400e-b861-972b2d465963\/code.power",
+        "settings": "src\/c4169332-3914-400e-b861-972b2d465963\/settings.json",
+        "path": "src\/c4169332-3914-400e-b861-972b2d465963",
+        "spk": "Super---c4169332_3914_400e_b861_972b2d465963---Power",
+        "guid": "c4169332-3914-400e-b861-972b2d465963"
+    },
+    "c4a188de-ad78-4a6d-9d5b-01866846d701": {
+        "name": "Spreadsheet",
+        "type": "class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Spreadsheet\\Service",
+        "code": "src\/c4a188de-ad78-4a6d-9d5b-01866846d701\/code.php",
+        "power": "src\/c4a188de-ad78-4a6d-9d5b-01866846d701\/code.power",
+        "settings": "src\/c4a188de-ad78-4a6d-9d5b-01866846d701\/settings.json",
+        "path": "src\/c4a188de-ad78-4a6d-9d5b-01866846d701",
+        "spk": "Super---c4a188de_ad78_4a6d_9d5b_01866846d701---Power",
+        "guid": "c4a188de-ad78-4a6d-9d5b-01866846d701"
+    },
     "c548640c-a461-4424-9ac5-8dfb5ed06d8d": {
         "name": "LoadInterface",
         "type": "interface",
@@ -1066,6 +1088,17 @@
         "spk": "Super---e0f6ddbe_2a35_4537_942c_faff2ebd04f6---Power",
         "guid": "e0f6ddbe-2a35-4537-942c-faff2ebd04f6"
     },
+    "e250638e-4a50-41f9-9172-db3e7f174d26": {
+        "name": "Exporter",
+        "type": "final class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Spreadsheet",
+        "code": "src\/e250638e-4a50-41f9-9172-db3e7f174d26\/code.php",
+        "power": "src\/e250638e-4a50-41f9-9172-db3e7f174d26\/code.power",
+        "settings": "src\/e250638e-4a50-41f9-9172-db3e7f174d26\/settings.json",
+        "path": "src\/e250638e-4a50-41f9-9172-db3e7f174d26",
+        "spk": "Super---e250638e_4a50_41f9_9172_db3e7f174d26---Power",
+        "guid": "e250638e-4a50-41f9-9172-db3e7f174d26"
+    },
     "e335dd61-c2f9-4536-8ed9-aec5edee0b26": {
         "name": "SetInterface",
         "type": "interface",
@@ -1110,6 +1143,17 @@
         "spk": "Super---f3c04c28_bce4_422e_be93_7d163e4e342b---Power",
         "guid": "f3c04c28-bce4-422e-be93-7d163e4e342b"
     },
+    "fd3f322a-082d-4579-93ad-3352c5adfc71": {
+        "name": "Header",
+        "type": "final class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Spreadsheet",
+        "code": "src\/fd3f322a-082d-4579-93ad-3352c5adfc71\/code.php",
+        "power": "src\/fd3f322a-082d-4579-93ad-3352c5adfc71\/code.power",
+        "settings": "src\/fd3f322a-082d-4579-93ad-3352c5adfc71\/settings.json",
+        "path": "src\/fd3f322a-082d-4579-93ad-3352c5adfc71",
+        "spk": "Super---fd3f322a_082d_4579_93ad_3352c5adfc71---Power",
+        "guid": "fd3f322a-082d-4579-93ad-3352c5adfc71"
+    },
     "ff7d0111-8f79-42aa-ac14-b53ba2c49369": {
         "name": "IsString",
         "type": "trait",
@@ -1120,6 +1164,17 @@
         "path": "src\/ff7d0111-8f79-42aa-ac14-b53ba2c49369",
         "spk": "Super---ff7d0111_8f79_42aa_ac14_b53ba2c49369---Power",
         "guid": "ff7d0111-8f79-42aa-ac14-b53ba2c49369"
+    },
+    "ff8d5fdb-2d1f-4178-bd18-a43b8efd1068": {
+        "name": "Factory",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Import",
+        "code": "src\/ff8d5fdb-2d1f-4178-bd18-a43b8efd1068\/code.php",
+        "power": "src\/ff8d5fdb-2d1f-4178-bd18-a43b8efd1068\/code.power",
+        "settings": "src\/ff8d5fdb-2d1f-4178-bd18-a43b8efd1068\/settings.json",
+        "path": "src\/ff8d5fdb-2d1f-4178-bd18-a43b8efd1068",
+        "spk": "Super---ff8d5fdb_2d1f_4178_bd18_a43b8efd1068---Power",
+        "guid": "ff8d5fdb-2d1f-4178-bd18-a43b8efd1068"
     },
     "ffbd4e1f-a342-4080-ab7d-1de3741bf319": {
         "name": "BaseConfig",
