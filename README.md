@@ -113,6 +113,9 @@ This repository contains an index (see below) of all the approved powers within 
 - **Namespace**: [VDM\Joomla\Componentbuilder\Import](#vdm-joomla-componentbuilder-import)
 
   - **abstract class Factory** | [Details](src/ff8d5fdb-2d1f-4178-bd18-a43b8efd1068) | [Code](src/ff8d5fdb-2d1f-4178-bd18-a43b8efd1068/code.php) | [Settings](src/ff8d5fdb-2d1f-4178-bd18-a43b8efd1068/settings.json) | SPK: `Super---ff8d5fdb_2d1f_4178_bd18_a43b8efd1068---Power`
+- **Namespace**: [VDM\Joomla\Componentbuilder\Service](#vdm-joomla-componentbuilder-service)
+
+  - **class Spreadsheet** | [Details](src/c4a188de-ad78-4a6d-9d5b-01866846d701) | [Code](src/c4a188de-ad78-4a6d-9d5b-01866846d701/code.php) | [Settings](src/c4a188de-ad78-4a6d-9d5b-01866846d701/settings.json) | SPK: `Super---c4a188de_ad78_4a6d_9d5b_01866846d701---Power`
 - **Namespace**: [VDM\Joomla\Componentbuilder\Spreadsheet](#vdm-joomla-componentbuilder-spreadsheet)
 
   - **final class Exporter** | [Details](src/e250638e-4a50-41f9-9172-db3e7f174d26) | [Code](src/e250638e-4a50-41f9-9172-db3e7f174d26/code.php) | [Settings](src/e250638e-4a50-41f9-9172-db3e7f174d26/settings.json) | SPK: `Super---e250638e_4a50_41f9_9172_db3e7f174d26---Power`
@@ -176,9 +179,6 @@ This repository contains an index (see below) of all the approved powers within 
 - **Namespace**: [VDM\Joomla\Componentbuilder\File\Service](#vdm-joomla-componentbuilder-file-service)
 
   - **class File** | [Details](src/202ccd9e-dfcf-4cde-a0ce-bde1fd27f088) | [Code](src/202ccd9e-dfcf-4cde-a0ce-bde1fd27f088/code.php) | [Settings](src/202ccd9e-dfcf-4cde-a0ce-bde1fd27f088/settings.json) | SPK: `Super---202ccd9e_dfcf_4cde_a0ce_bde1fd27f088---Power`
-- **Namespace**: [VDM\Joomla\Componentbuilder\Spreadsheet\Service](#vdm-joomla-componentbuilder-spreadsheet-service)
-
-  - **class Spreadsheet** | [Details](src/c4a188de-ad78-4a6d-9d5b-01866846d701) | [Code](src/c4a188de-ad78-4a6d-9d5b-01866846d701/code.php) | [Settings](src/c4a188de-ad78-4a6d-9d5b-01866846d701/settings.json) | SPK: `Super---c4a188de_ad78_4a6d_9d5b_01866846d701---Power`
 - **Namespace**: [VDM\Joomla\Componentbuilder\Utilities\Exception](#vdm-joomla-componentbuilder-utilities-exception)
 
   - **class NoUserIdFoundException** | [Details](src/1c10a5f1-204d-4f17-ad9f-0e0684f2030d) | [Code](src/1c10a5f1-204d-4f17-ad9f-0e0684f2030d/code.php) | [Settings](src/1c10a5f1-204d-4f17-ad9f-0e0684f2030d/settings.json) | SPK: `Super---1c10a5f1_204d_4f17_ad9f_0e0684f2030d---Power`

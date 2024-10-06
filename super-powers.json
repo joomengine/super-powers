@@ -948,7 +948,7 @@
     "c4a188de-ad78-4a6d-9d5b-01866846d701": {
         "name": "Spreadsheet",
         "type": "class",
-        "namespace": "VDM\\Joomla\\Componentbuilder\\Spreadsheet\\Service",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Service",
         "code": "src\/c4a188de-ad78-4a6d-9d5b-01866846d701\/code.php",
         "power": "src\/c4a188de-ad78-4a6d-9d5b-01866846d701\/code.power",
         "settings": "src\/c4a188de-ad78-4a6d-9d5b-01866846d701\/settings.json",

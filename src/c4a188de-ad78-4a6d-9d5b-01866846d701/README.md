@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # class Spreadsheet (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Spreadsheet\Service**
+> namespace: **VDM\Joomla\Componentbuilder\Service**
 
 ```uml
 @startuml
