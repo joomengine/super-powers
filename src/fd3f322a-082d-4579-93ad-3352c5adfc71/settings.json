@@ -9,7 +9,12 @@
     "power_version": "1.0.0",
     "system_name": "JCB.Spreadsheet.Header",
     "type": "final class",
-    "use_selection": null,
+    "use_selection": {
+        "use_selection0": {
+            "use": "9ae018a5-9064-40ed-ad69-9c1ed2a459f5",
+            "as": "default"
+        }
+    },
     "extendsinterfaces": null,
     "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Spreadsheet.Header",
     "description": "Spreadsheet Header Class\r\n\r\n@since 3.2.0",
@@ -21,9 +26,6 @@
             "namespace": {
                 "namespace0": {
                     "use": "PhpOffice\\PhpSpreadsheet\\IOFactory"
-                },
-                "namespace1": {
-                    "use": "PhpOffice\\PhpSpreadsheet\\Reader\\IReadFilter"
                 }
             }
         }

@@ -15,7 +15,7 @@
 		}
 
 		try {
-			$chunkFilter = new ChunkReadFilter(2, 1);
+			$chunkFilter = new ChunkReadFilter(20, 1);
 			$inputFileType = IOFactory::identify($filePath);
 			$reader = IOFactory::createReader($inputFileType);
 			$reader->setReadFilter($chunkFilter);

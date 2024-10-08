@@ -736,6 +736,17 @@
         "spk": "Super---95c02df3_fe0a_405b_b506_b7a5b8605b66---Power",
         "guid": "95c02df3-fe0a-405b-b506-b7a5b8605b66"
     },
+    "9ae018a5-9064-40ed-ad69-9c1ed2a459f5": {
+        "name": "ChunkReadFilter",
+        "type": "final class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Spreadsheet",
+        "code": "src\/9ae018a5-9064-40ed-ad69-9c1ed2a459f5\/code.php",
+        "power": "src\/9ae018a5-9064-40ed-ad69-9c1ed2a459f5\/code.power",
+        "settings": "src\/9ae018a5-9064-40ed-ad69-9c1ed2a459f5\/settings.json",
+        "path": "src\/9ae018a5-9064-40ed-ad69-9c1ed2a459f5",
+        "spk": "Super---9ae018a5_9064_40ed_ad69_9c1ed2a459f5---Power",
+        "guid": "9ae018a5-9064-40ed-ad69-9c1ed2a459f5"
+    },
     "9c3aa650-e536-4eea-a2d4-73cc3e184aa9": {
         "name": "DeleteInterface",
         "type": "interface",

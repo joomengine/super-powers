@@ -118,6 +118,7 @@ This repository contains an index (see below) of all the approved powers within 
   - **class Spreadsheet** | [Details](src/c4a188de-ad78-4a6d-9d5b-01866846d701) | [Code](src/c4a188de-ad78-4a6d-9d5b-01866846d701/code.php) | [Settings](src/c4a188de-ad78-4a6d-9d5b-01866846d701/settings.json) | SPK: `Super---c4a188de_ad78_4a6d_9d5b_01866846d701---Power`
 - **Namespace**: [VDM\Joomla\Componentbuilder\Spreadsheet](#vdm-joomla-componentbuilder-spreadsheet)
 
+  - **final class ChunkReadFilter** | [Details](src/9ae018a5-9064-40ed-ad69-9c1ed2a459f5) | [Code](src/9ae018a5-9064-40ed-ad69-9c1ed2a459f5/code.php) | [Settings](src/9ae018a5-9064-40ed-ad69-9c1ed2a459f5/settings.json) | SPK: `Super---9ae018a5_9064_40ed_ad69_9c1ed2a459f5---Power`
   - **final class Exporter** | [Details](src/e250638e-4a50-41f9-9172-db3e7f174d26) | [Code](src/e250638e-4a50-41f9-9172-db3e7f174d26/code.php) | [Settings](src/e250638e-4a50-41f9-9172-db3e7f174d26/settings.json) | SPK: `Super---e250638e_4a50_41f9_9172_db3e7f174d26---Power`
   - **final class Header** | [Details](src/fd3f322a-082d-4579-93ad-3352c5adfc71) | [Code](src/fd3f322a-082d-4579-93ad-3352c5adfc71/code.php) | [Settings](src/fd3f322a-082d-4579-93ad-3352c5adfc71/settings.json) | SPK: `Super---fd3f322a_082d_4579_93ad_3352c5adfc71---Power`
   - **final class Importer** | [Details](src/c4169332-3914-400e-b861-972b2d465963) | [Code](src/c4169332-3914-400e-b861-972b2d465963/code.php) | [Settings](src/c4169332-3914-400e-b861-972b2d465963/settings.json) | SPK: `Super---c4169332_3914_400e_b861_972b2d465963---Power`
