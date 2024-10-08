@@ -20,14 +20,14 @@ use PhpOffice\PhpSpreadsheet\Reader\IReadFilter;
  * 
  * @since 3.2.0
  */
-final class ChunkReadFilter extends IReadFilter
+final class ChunkReadFilter implements IReadFilter
 {
 	/**
 	 * The first row to read in the current chunk.
 	 *
 	 * @var int
 	 */
-	private $startRow;
+	private int $startRow;
 
 	/**
 	 * The last row to read in the current chunk.
@@ -35,7 +35,7 @@ final class ChunkReadFilter extends IReadFilter
 	 *
 	 * @var int
 	 */
-	private $endRow;
+	private int $endRow;
 
 	/**
 	 * Constructor to initialize the chunk filter.
@@ -58,7 +58,7 @@ final class ChunkReadFilter extends IReadFilter
 	 *
 	 * @return bool Whether the cell should be read.
 	 */
-	public function readCell($column, $row, $worksheetName = null)
+	public function readCell(string $columnAddress, int $row, string $worksheetName = ''): bool
 	{
 		// Only read rows that fall within the chunk range
 		if ($row >= $this->startRow && $row <= $this->endRow)

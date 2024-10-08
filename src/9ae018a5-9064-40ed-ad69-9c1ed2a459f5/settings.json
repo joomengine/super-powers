@@ -1,9 +1,11 @@
 {
     "add_head": "0",
     "add_licensing_template": "2",
-    "extends": "-1",
+    "extends": "",
     "guid": "9ae018a5-9064-40ed-ad69-9c1ed2a459f5",
-    "implements": null,
+    "implements": [
+        "-1"
+    ],
     "load_selection": null,
     "name": "ChunkReadFilter",
     "power_version": "1.0.0",
@@ -13,7 +15,7 @@
     "extendsinterfaces": null,
     "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Spreadsheet.ChunkReadFilter",
     "description": "Chunk Read Filter Class\r\n\r\n@since 3.2.0",
-    "extends_custom": "IReadFilter",
+    "implements_custom": "IReadFilter",
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
     "head": "",
     "composer": {

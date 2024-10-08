@@ -40,7 +40,7 @@ final class Header
 		}
 
 		try {
-			$chunkFilter = new ChunkReadFilter(20, 1);
+			$chunkFilter = new ChunkReadFilter(1, 20);
 			$inputFileType = IOFactory::identify($filePath);
 			$reader = IOFactory::createReader($inputFileType);
 			$reader->setReadFilter($chunkFilter);

@@ -27,10 +27,10 @@
                 "namespace0": {
                     "use": "PhpOffice\\PhpSpreadsheet\\IOFactory"
                 },
-                "namespace2": {
+                "namespace1": {
                     "use": "PhpOffice\\PhpSpreadsheet\\Reader\\Exception as ReaderException"
                 },
-                "namespace3": {
+                "namespace2": {
                     "use": "PhpOffice\\PhpSpreadsheet\\Exception as SpreadsheetException"
                 }
             }

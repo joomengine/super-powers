@@ -8,15 +8,14 @@
 ```
 # final class ChunkReadFilter (Details)
 > namespace: **VDM\Joomla\Componentbuilder\Spreadsheet**
-> extends: **IReadFilter**
 
 ```uml
 @startuml
 class ChunkReadFilter << (F,LightGreen) >> #RoyalBlue {
-  - $startRow
-  - $endRow
+  - int $startRow
+  - int $endRow
   + __construct(int $startRow, int $chunkSize)
-  + readCell(string $column, int $row, ...) : bool
+  + readCell(string $columnAddress, int $row, ...) : bool
 }
 
 note right of ChunkReadFilter::__construct
@@ -30,9 +29,9 @@ note right of ChunkReadFilter::readCell
   return: bool
   
   arguments:
-    string $column
+    string $columnAddress
     int $row
-    string|null $worksheetName = null
+    string $worksheetName = ''
 end note
  
 @enduml
