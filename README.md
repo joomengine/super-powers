@@ -128,6 +128,7 @@ This repository contains an index (see below) of all the approved powers within 
   - **final class SchemaChecker** | [Details](src/709d7294-9a43-46e2-b64e-d16a16f0eab1) | [Code](src/709d7294-9a43-46e2-b64e-d16a16f0eab1/code.php) | [Settings](src/709d7294-9a43-46e2-b64e-d16a16f0eab1/settings.json) | SPK: `Super---709d7294_9a43_46e2_b64e_d16a16f0eab1---Power`
 - **Namespace**: [VDM\Joomla\Componentbuilder\Utilities](#vdm-joomla-componentbuilder-utilities)
 
+  - **abstract class SessionHelper** | [Details](src/47a63728-cd5d-4d53-99cf-2409bd1c744c) | [Code](src/47a63728-cd5d-4d53-99cf-2409bd1c744c/code.php) | [Settings](src/47a63728-cd5d-4d53-99cf-2409bd1c744c/settings.json) | SPK: `Super---47a63728_cd5d_4d53_99cf_2409bd1c744c---Power`
   - **abstract class UserHelper** | [Details](src/7832a726-87b6-4e95-887e-7b725d3fab8f) | [Code](src/7832a726-87b6-4e95-887e-7b725d3fab8f/code.php) | [Settings](src/7832a726-87b6-4e95-887e-7b725d3fab8f/settings.json) | SPK: `Super---7832a726_87b6_4e95_887e_7b725d3fab8f---Power`
 - **Namespace**: [VDM\Joomla\Data\Action](#vdm-joomla-data-action)
 

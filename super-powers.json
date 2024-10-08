@@ -329,6 +329,17 @@
         "spk": "Super---46b98346_ec98_42b3_a393_96c7d1282b1c---Power",
         "guid": "46b98346-ec98-42b3-a393-96c7d1282b1c"
     },
+    "47a63728-cd5d-4d53-99cf-2409bd1c744c": {
+        "name": "SessionHelper",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Utilities",
+        "code": "src\/47a63728-cd5d-4d53-99cf-2409bd1c744c\/code.php",
+        "power": "src\/47a63728-cd5d-4d53-99cf-2409bd1c744c\/code.power",
+        "settings": "src\/47a63728-cd5d-4d53-99cf-2409bd1c744c\/settings.json",
+        "path": "src\/47a63728-cd5d-4d53-99cf-2409bd1c744c",
+        "spk": "Super---47a63728_cd5d_4d53_99cf_2409bd1c744c---Power",
+        "guid": "47a63728-cd5d-4d53-99cf-2409bd1c744c"
+    },
     "4815e1c7-a433-443d-a112-d1e03d7df84b": {
         "name": "Database",
         "type": "class",
