@@ -7,7 +7,7 @@
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
 # abstract class SessionHelper (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Utilities**
+> namespace: **VDM\Joomla\Utilities**
 
 ```uml
 @startuml

@@ -59,7 +59,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -76,7 +76,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -127,7 +127,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -144,7 +144,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -331,7 +331,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -365,7 +365,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -535,7 +535,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -569,7 +569,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'CHAR(64)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -756,7 +756,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -807,7 +807,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -1171,7 +1171,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -1406,7 +1406,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -1440,7 +1440,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -1491,7 +1491,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -1525,7 +1525,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -1593,7 +1593,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(36)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -1644,7 +1644,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'CHAR(64)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -2003,7 +2003,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'CHAR(64)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -2044,7 +2044,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -2425,7 +2425,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(36)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -2442,7 +2442,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -2843,7 +2843,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'CHAR(64)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -3132,7 +3132,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(36)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -3149,7 +3149,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -3216,7 +3216,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(36)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -3283,7 +3283,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -3317,7 +3317,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'CHAR(64)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -3494,7 +3494,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(1024)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -3685,7 +3685,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(36)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -3702,7 +3702,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -3752,7 +3752,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'CHAR(64)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -3769,7 +3769,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -3837,7 +3837,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'MEDIUMTEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -4092,7 +4092,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -4143,7 +4143,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -4211,7 +4211,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -4422,7 +4422,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'CHAR(64)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -4490,7 +4490,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -4558,7 +4558,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -4626,7 +4626,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -4694,7 +4694,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -4762,7 +4762,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -4830,7 +4830,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -4898,7 +4898,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -5085,7 +5085,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -5119,7 +5119,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -5170,7 +5170,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'MEDIUMTEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -5272,7 +5272,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(36)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -5339,7 +5339,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -5356,7 +5356,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -5414,7 +5414,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -5431,7 +5431,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -5448,7 +5448,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -5608,7 +5608,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -5775,7 +5775,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -5884,7 +5884,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -5935,7 +5935,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(36)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -6002,7 +6002,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -6019,7 +6019,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -6111,7 +6111,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -6237,7 +6237,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -6261,7 +6261,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -6295,7 +6295,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -6445,7 +6445,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -6547,7 +6547,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -6598,7 +6598,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(36)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -6648,7 +6648,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -6665,7 +6665,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -6740,7 +6740,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -6805,7 +6805,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -6838,7 +6838,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -6855,7 +6855,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -6954,7 +6954,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -6995,7 +6995,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -7028,7 +7028,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -7079,7 +7079,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'MEDIUMTEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -7096,7 +7096,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'MEDIUMTEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -7147,7 +7147,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -7239,7 +7239,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'MEDIUMTEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -7273,7 +7273,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -7331,7 +7331,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -7365,7 +7365,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'MEDIUMTEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -7382,7 +7382,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -7399,7 +7399,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'MEDIUMTEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -7433,7 +7433,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'MEDIUMTEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -7450,7 +7450,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'MEDIUMTEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -7467,7 +7467,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -7484,7 +7484,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'MEDIUMTEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -7501,7 +7501,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -7518,7 +7518,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -7569,7 +7569,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -7586,7 +7586,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(36)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -7603,7 +7603,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -7880,7 +7880,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -7931,7 +7931,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(36)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -8022,7 +8022,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -8073,7 +8073,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(36)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -8148,7 +8148,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -8181,7 +8181,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -8231,7 +8231,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -8347,7 +8347,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'MEDIUMTEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -8381,7 +8381,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(36)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -8414,7 +8414,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -8472,7 +8472,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -8513,7 +8513,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(36)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -8598,7 +8598,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -8615,7 +8615,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -8682,7 +8682,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -8756,7 +8756,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -8882,7 +8882,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -8899,7 +8899,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -8916,7 +8916,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -8933,7 +8933,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -8967,7 +8967,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -8984,7 +8984,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -9001,7 +9001,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -9018,7 +9018,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'CHAR(64)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -9052,7 +9052,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'CHAR(64)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -9069,7 +9069,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -9154,7 +9154,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -9171,7 +9171,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(36)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -9204,7 +9204,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -9272,7 +9272,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'CHAR(64)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -9306,7 +9306,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -9357,7 +9357,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -9408,7 +9408,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'CHAR(64)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -9425,7 +9425,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(36)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -9597,7 +9597,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -9647,7 +9647,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -9884,7 +9884,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -9901,7 +9901,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -9969,7 +9969,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(36)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -10138,7 +10138,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -10220,7 +10220,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'CHAR(64)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -10237,7 +10237,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -10566,7 +10566,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -10623,7 +10623,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -10680,7 +10680,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -10851,7 +10851,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -11067,7 +11067,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -11124,7 +11124,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -11232,7 +11232,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -11249,7 +11249,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -11453,7 +11453,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -11527,7 +11527,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -11618,7 +11618,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -11635,7 +11635,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -11685,7 +11685,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -11884,7 +11884,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -11901,7 +11901,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -11951,7 +11951,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'VARCHAR(255)',
 					'default' => '',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => true,
 				],
@@ -12123,7 +12123,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -12140,7 +12140,7 @@ final class Table extends BaseTable implements Tableinterface
 				'db' => [
 					'type' => 'TEXT',
 					'default' => 'EMPTY',
-					'null_switch' => 'NOT NULL',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],

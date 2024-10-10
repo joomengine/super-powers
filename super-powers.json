@@ -332,7 +332,7 @@
     "47a63728-cd5d-4d53-99cf-2409bd1c744c": {
         "name": "SessionHelper",
         "type": "abstract class",
-        "namespace": "VDM\\Joomla\\Componentbuilder\\Utilities",
+        "namespace": "VDM\\Joomla\\Utilities",
         "code": "src\/47a63728-cd5d-4d53-99cf-2409bd1c744c\/code.php",
         "power": "src\/47a63728-cd5d-4d53-99cf-2409bd1c744c\/code.power",
         "settings": "src\/47a63728-cd5d-4d53-99cf-2409bd1c744c\/settings.json",
@@ -746,6 +746,17 @@
         "path": "src\/95c02df3-fe0a-405b-b506-b7a5b8605b66",
         "spk": "Super---95c02df3_fe0a_405b_b506_b7a5b8605b66---Power",
         "guid": "95c02df3-fe0a-405b-b506-b7a5b8605b66"
+    },
+    "993fe913-8e36-4800-a5f7-544aa728ee48": {
+        "name": "DateHelper",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Utilities",
+        "code": "src\/993fe913-8e36-4800-a5f7-544aa728ee48\/code.php",
+        "power": "src\/993fe913-8e36-4800-a5f7-544aa728ee48\/code.power",
+        "settings": "src\/993fe913-8e36-4800-a5f7-544aa728ee48\/settings.json",
+        "path": "src\/993fe913-8e36-4800-a5f7-544aa728ee48",
+        "spk": "Super---993fe913_8e36_4800_a5f7_544aa728ee48---Power",
+        "guid": "993fe913-8e36-4800-a5f7-544aa728ee48"
     },
     "9ae018a5-9064-40ed-ad69-9c1ed2a459f5": {
         "name": "ChunkReadFilter",
