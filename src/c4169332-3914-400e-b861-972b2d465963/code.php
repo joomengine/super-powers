@@ -14,7 +14,6 @@ namespace VDM\Joomla\Componentbuilder\Spreadsheet;
 
 use VDM\Joomla\Componentbuilder\Interfaces\Spreadsheet\FileReaderInterface as FileReader;
 use VDM\Joomla\Componentbuilder\Interfaces\Spreadsheet\RowDataProcessorInterface as RowDataProcessor;
-use VDM\Joomla\Abstraction\Console\Import;
 
 
 /**
@@ -24,11 +23,6 @@ use VDM\Joomla\Abstraction\Console\Import;
  */
 final class Importer
 {
-	/**
-	 * To add the cli import abstract class into super powers
-	 * Import
-	 */
-
 	/**
 	 * The FileReader Class.
 	 *

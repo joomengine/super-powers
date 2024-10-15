@@ -54,6 +54,17 @@
         "spk": "Super---0a59c65c_9daf_4bc9_baf4_e063ff9e6a8a---Power",
         "guid": "0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a"
     },
+    "0f3f7188-3e0d-4d1a-8dee-7f8026cb65a9": {
+        "name": "ImportCliInterface",
+        "type": "interface",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Interfaces\\Spreadsheet",
+        "code": "src\/0f3f7188-3e0d-4d1a-8dee-7f8026cb65a9\/code.php",
+        "power": "src\/0f3f7188-3e0d-4d1a-8dee-7f8026cb65a9\/code.power",
+        "settings": "src\/0f3f7188-3e0d-4d1a-8dee-7f8026cb65a9\/settings.json",
+        "path": "src\/0f3f7188-3e0d-4d1a-8dee-7f8026cb65a9",
+        "spk": "Super---0f3f7188_3e0d_4d1a_8dee_7f8026cb65a9---Power",
+        "guid": "0f3f7188-3e0d-4d1a-8dee-7f8026cb65a9"
+    },
     "11572d9b-e3d5-4b29-904c-9618d8f2bfd8": {
         "name": "Count",
         "type": "trait",
@@ -658,6 +669,17 @@
         "path": "src\/7e822c03-1b20-41d1-9427-f5b8d5836af7",
         "spk": "Super---7e822c03_1b20_41d1_9427_f5b8d5836af7---Power",
         "guid": "7e822c03-1b20-41d1-9427-f5b8d5836af7"
+    },
+    "85321deb-5c3a-401b-9ce1-039a746add51": {
+        "name": "Import",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Abstraction\\Console",
+        "code": "src\/85321deb-5c3a-401b-9ce1-039a746add51\/code.php",
+        "power": "src\/85321deb-5c3a-401b-9ce1-039a746add51\/code.power",
+        "settings": "src\/85321deb-5c3a-401b-9ce1-039a746add51\/settings.json",
+        "path": "src\/85321deb-5c3a-401b-9ce1-039a746add51",
+        "spk": "Super---85321deb_5c3a_401b_9ce1_039a746add51---Power",
+        "guid": "85321deb-5c3a-401b-9ce1-039a746add51"
     },
     "85785701-07b2-4f81-bc1e-0f423700c254": {
         "name": "Subform",

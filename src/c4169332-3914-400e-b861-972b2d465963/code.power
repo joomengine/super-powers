@@ -1,9 +1,4 @@
 	/**
-	 * To add the cli import abstract class into super powers
-	 * Import
-	 */
-
-	/**
 	 * The FileReader Class.
 	 *
 	 * @var   FileReader
