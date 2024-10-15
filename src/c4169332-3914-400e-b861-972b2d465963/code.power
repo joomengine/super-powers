@@ -22,8 +22,8 @@
 	 * Stream rows from a CSV or Excel file one by one using yield.
 	 *
 	 * @param string             $filePath    The path to the file.
-	 * @param int                $startRow    The starting row index (default is 1).
-	 * @param int                $chunkSize   The number of rows to read per chunk (default is 100).
+	 * @param int                $startRow    The starting row index.
+	 * @param int                $chunkSize   The number of rows to read per chunk.
 	 * @param RowDataProcessor   $processor   The processor used to transform the row data into the desired format.
 	 *
 	 * @return \Generator    A generator that yields each row as an array.
@@ -33,7 +33,7 @@
 	 * @throws SpreadsheetException If there is an error working with the spreadsheet.
 	 * @since 3.2.0
 	 */
-	public function read(string $filePath, int $startRow = 1, int $chunkSize = 100, RowDataProcessor $processor): \Generator
+	public function read(string $filePath, int $startRow, int $chunkSize, RowDataProcessor $processor): \Generator
 	{
 		foreach ($this->filereader->read($filePath, $startRow, $chunkSize) as $row)
 		{

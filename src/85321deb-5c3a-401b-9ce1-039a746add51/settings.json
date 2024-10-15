@@ -14,13 +14,13 @@
             "use": "ff8d5fdb-2d1f-4178-bd18-a43b8efd1068",
             "as": "ImportFactory"
         },
+        "use_selection2": {
+            "use": "0f3f7188-3e0d-4d1a-8dee-7f8026cb65a9",
+            "as": "ImportEngine"
+        },
         "use_selection1": {
             "use": "21bca8a4-5b28-41c4-843e-8097f0ba7cca",
             "as": "default"
-        },
-        "use_selection2": {
-            "use": "0f3f7188-3e0d-4d1a-8dee-7f8026cb65a9",
-            "as": "Import"
         },
         "use_selection3": {
             "use": "640b5352-fb09-425f-a26e-cd44eda03f15",

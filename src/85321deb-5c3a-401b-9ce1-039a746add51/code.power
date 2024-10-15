@@ -9,10 +9,10 @@
 	/**
 	 * The Import Class.
 	 *
-	 * @var   Import
+	 * @var   ImportEngine
 	 * @since 5.0.2
 	 */
-	protected Import $import;
+	protected ImportEngine $import;
 
 	/**
 	 * The queue table name.

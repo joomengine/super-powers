@@ -14,7 +14,7 @@
 @startuml
 abstract Import  #Orange {
   # Items $items
-  # Import $import
+  # ImportEngine $import
   # string $queueTable
   # string $targetName
   # string $targetImportClass

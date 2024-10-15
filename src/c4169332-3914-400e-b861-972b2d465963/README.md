@@ -14,7 +14,7 @@
 class Importer << (F,LightGreen) >> #RoyalBlue {
   # FileReader $filereader
   + __construct(FileReader $filereader)
-  + read(string $filePath, int $startRow = 1, ...) : \Generator
+  + read(string $filePath, int $startRow, ...) : \Generator
 }
 
 note right of Importer::__construct
@@ -31,8 +31,8 @@ note right of Importer::read
   
   arguments:
     string $filePath
-    int $startRow = 1
-    int $chunkSize = 100
+    int $startRow
+    int $chunkSize
     RowDataProcessor $processor
 end note
  

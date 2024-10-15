@@ -18,8 +18,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use VDM\Joomla\Componentbuilder\Import\Factory as ImportFactory;
+use VDM\Joomla\Componentbuilder\Interfaces\Spreadsheet\ImportCliInterface as ImportEngine;
 use VDM\Joomla\Data\Items;
-use VDM\Joomla\Componentbuilder\Interfaces\Spreadsheet\ImportCliInterface as Import;
 use VDM\Joomla\Utilities\Component\Helper;
 
 
@@ -41,10 +41,10 @@ abstract class Import extends AbstractCommand
 	/**
 	 * The Import Class.
 	 *
-	 * @var   Import
+	 * @var   ImportEngine
 	 * @since 5.0.2
 	 */
-	protected Import $import;
+	protected ImportEngine $import;
 
 	/**
 	 * The queue table name.
