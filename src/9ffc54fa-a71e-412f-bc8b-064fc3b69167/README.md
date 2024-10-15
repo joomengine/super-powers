@@ -6,34 +6,19 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# final class Importer (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Spreadsheet**
+# interface RowDataProcessorInterface (Details)
+> namespace: **VDM\Joomla\Componentbuilder\Interfaces\Spreadsheet**
 
 ```uml
 @startuml
-class Importer << (F,LightGreen) >> #RoyalBlue {
-  # FileReader $filereader
-  + __construct(FileReader $filereader)
-  + read(string $filePath, int $startRow = 1, ...) : \Generator
+interface RowDataProcessorInterface  #Lavender {
+  + process(Row $row) : mixed
 }
 
-note right of Importer::__construct
-  Constructor.
+note right of RowDataProcessorInterface::process
+  Processes the given spreadsheet row and returns it in a specific format.
 
-  since: 3.0.8
-end note
-
-note right of Importer::read
-  Stream rows from a CSV or Excel file one by one using yield.
-
-  since: 3.2.0
-  return: \Generator
-  
-  arguments:
-    string $filePath
-    int $startRow = 1
-    int $chunkSize = 100
-    RowDataProcessor $processor
+  return: mixed
 end note
  
 @enduml
@@ -49,7 +34,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---c4169332_3914_400e_b861_972b2d465963---Power
+Super---9ffc54fa_a71e_412f_bc8b_064fc3b69167---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

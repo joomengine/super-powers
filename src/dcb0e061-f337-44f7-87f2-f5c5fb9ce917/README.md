@@ -6,24 +6,16 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# final class Importer (Details)
+# final class FileReader (Details)
 > namespace: **VDM\Joomla\Componentbuilder\Spreadsheet**
 
 ```uml
 @startuml
-class Importer << (F,LightGreen) >> #RoyalBlue {
-  # FileReader $filereader
-  + __construct(FileReader $filereader)
-  + read(string $filePath, int $startRow = 1, ...) : \Generator
+class FileReader << (F,LightGreen) >> #RoyalBlue {
+  + read(string $filePath, int $startRow, ...) : \Generator
 }
 
-note right of Importer::__construct
-  Constructor.
-
-  since: 3.0.8
-end note
-
-note right of Importer::read
+note right of FileReader::read
   Stream rows from a CSV or Excel file one by one using yield.
 
   since: 3.2.0
@@ -31,9 +23,8 @@ note right of Importer::read
   
   arguments:
     string $filePath
-    int $startRow = 1
-    int $chunkSize = 100
-    RowDataProcessor $processor
+    int $startRow
+    int $chunkSize
 end note
  
 @enduml
@@ -49,7 +40,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---c4169332_3914_400e_b861_972b2d465963---Power
+Super---dcb0e061_f337_44f7_87f2_f5c5fb9ce917---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

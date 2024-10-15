@@ -1,0 +1,8 @@
+	/**
+	 * Processes the given spreadsheet row and returns it in a specific format.
+	 *
+	 * @param Row $row The row object from the spreadsheet to be processed.
+	 * 
+	 * @return mixed Processed row data, could be an array, cell object, or other structures.
+	 */
+	public function process(Row $row): mixed;

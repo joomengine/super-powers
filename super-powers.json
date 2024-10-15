@@ -483,6 +483,17 @@
         "spk": "Super---5f0205fa_5c43_424a_af7d_abc943c17c8c---Power",
         "guid": "5f0205fa-5c43-424a-af7d-abc943c17c8c"
     },
+    "61d1146f-2c2e-4e42-8492-d076f945cf35": {
+        "name": "FileReaderInterface",
+        "type": "interface",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Interfaces\\Spreadsheet",
+        "code": "src\/61d1146f-2c2e-4e42-8492-d076f945cf35\/code.php",
+        "power": "src\/61d1146f-2c2e-4e42-8492-d076f945cf35\/code.power",
+        "settings": "src\/61d1146f-2c2e-4e42-8492-d076f945cf35\/settings.json",
+        "path": "src\/61d1146f-2c2e-4e42-8492-d076f945cf35",
+        "spk": "Super---61d1146f_2c2e_4e42_8492_d076f945cf35---Power",
+        "guid": "61d1146f-2c2e-4e42-8492-d076f945cf35"
+    },
     "640b5352-fb09-425f-a26e-cd44eda03f15": {
         "name": "Helper",
         "type": "abstract class",
@@ -813,6 +824,17 @@
         "spk": "Super---9ef0eb24_aae4_4f5a_99af_d724db44808f---Power",
         "guid": "9ef0eb24-aae4-4f5a-99af-d724db44808f"
     },
+    "9ffc54fa-a71e-412f-bc8b-064fc3b69167": {
+        "name": "RowDataProcessorInterface",
+        "type": "interface",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Interfaces\\Spreadsheet",
+        "code": "src\/9ffc54fa-a71e-412f-bc8b-064fc3b69167\/code.php",
+        "power": "src\/9ffc54fa-a71e-412f-bc8b-064fc3b69167\/code.power",
+        "settings": "src\/9ffc54fa-a71e-412f-bc8b-064fc3b69167\/settings.json",
+        "path": "src\/9ffc54fa-a71e-412f-bc8b-064fc3b69167",
+        "spk": "Super---9ffc54fa_a71e_412f_bc8b_064fc3b69167---Power",
+        "guid": "9ffc54fa-a71e-412f-bc8b-064fc3b69167"
+    },
     "a223b31e-ea1d-4cdf-92ae-5f9becffaff0": {
         "name": "FileHelper",
         "type": "abstract class",
@@ -1098,6 +1120,17 @@
         "path": "src\/db87c339-5bb6-4291-a7ef-2c48ea1b06bc",
         "spk": "Super---db87c339_5bb6_4291_a7ef_2c48ea1b06bc---Power",
         "guid": "db87c339-5bb6-4291-a7ef-2c48ea1b06bc"
+    },
+    "dcb0e061-f337-44f7-87f2-f5c5fb9ce917": {
+        "name": "FileReader",
+        "type": "final class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Spreadsheet",
+        "code": "src\/dcb0e061-f337-44f7-87f2-f5c5fb9ce917\/code.php",
+        "power": "src\/dcb0e061-f337-44f7-87f2-f5c5fb9ce917\/code.power",
+        "settings": "src\/dcb0e061-f337-44f7-87f2-f5c5fb9ce917\/settings.json",
+        "path": "src\/dcb0e061-f337-44f7-87f2-f5c5fb9ce917",
+        "spk": "Super---dcb0e061_f337_44f7_87f2_f5c5fb9ce917---Power",
+        "guid": "dcb0e061-f337-44f7-87f2-f5c5fb9ce917"
     },
     "e0198c3f-777a-4a0b-87b7-e6a198afc8f9": {
         "name": "MultiSubform",

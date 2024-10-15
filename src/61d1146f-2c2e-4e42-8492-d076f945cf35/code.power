@@ -1,0 +1,11 @@
+	/**
+	 * Stream rows from a CSV or Excel file one by one using yield.
+	 *
+	 * @param string  $filePath    The path to the file.
+	 * @param int     $startRow    The starting row index.
+	 * @param int     $chunkSize   The number of rows to read per chunk.
+	 *
+	 * @return \Generator    A generator that yields each row as an array.
+	 * @since 3.2.0
+	 */
+	public function read(string $filePath, int $startRow, int $chunkSize): \Generator;

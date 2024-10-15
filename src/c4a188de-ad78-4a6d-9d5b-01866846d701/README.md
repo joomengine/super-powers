@@ -16,6 +16,7 @@ class Spreadsheet  #Gold {
   + getHeader(Container $container) : Header
   + getExporter(Container $container) : Exporter
   + getImporter(Container $container) : Importer
+  + getFileReader(Container $container) : FileReader
 }
 
 note right of Spreadsheet::register
@@ -44,6 +45,13 @@ note right of Spreadsheet::getImporter
 
   since: 5.0.3
   return: Importer
+end note
+
+note right of Spreadsheet::getFileReader
+  Get The FileReader Class.
+
+  since: 5.0.3
+  return: FileReader
 end note
  
 @enduml

@@ -12,10 +12,9 @@
 namespace VDM\Joomla\Componentbuilder\Spreadsheet;
 
 
-use PhpOffice\PhpSpreadsheet\IOFactory;
-use PhpOffice\PhpSpreadsheet\Reader\Exception as ReaderException;
-use PhpOffice\PhpSpreadsheet\Exception as SpreadsheetException;
-use VDM\Joomla\Componentbuilder\Spreadsheet\ChunkReadFilter;
+use VDM\Joomla\Componentbuilder\Interfaces\Spreadsheet\FileReaderInterface as FileReader;
+use VDM\Joomla\Componentbuilder\Interfaces\Spreadsheet\RowDataProcessorInterface as RowDataProcessor;
+use VDM\Joomla\Abstraction\Console\Import;
 
 
 /**
@@ -26,73 +25,50 @@ use VDM\Joomla\Componentbuilder\Spreadsheet\ChunkReadFilter;
 final class Importer
 {
 	/**
+	 * To add the cli import abstract class into super powers
+	 * Import
+	 */
+
+	/**
+	 * The FileReader Class.
+	 *
+	 * @var   FileReader
+	 * @since 3.0.8
+	 */
+	protected FileReader $filereader;
+
+	/**
+	 * Constructor.
+	 *
+	 * @param FileReader   $filereader   The FileReader Class.
+	 *
+	 * @since 3.0.8
+	 */
+	public function __construct(FileReader $filereader)
+	{
+		$this->filereader = $filereader;
+	}
+
+	/**
 	 * Stream rows from a CSV or Excel file one by one using yield.
 	 *
-	 * @param string  $filePath    The path to the file.
-	 * @param int     $startRow    The starting row index (default is 1).
-	 * @param int     $chunkSize   The number of rows to read per chunk (default is 100).
+	 * @param string             $filePath    The path to the file.
+	 * @param int                $startRow    The starting row index (default is 1).
+	 * @param int                $chunkSize   The number of rows to read per chunk (default is 100).
+	 * @param RowDataProcessor   $processor   The processor used to transform the row data into the desired format.
 	 *
 	 * @return \Generator    A generator that yields each row as an array.
 	 * @throws \InvalidArgumentException If the file does not exist.
+	 * @throws \OutOfRangeException If the start row is beyond the highest row, no rows can be processed.
 	 * @throws ReaderException If there is an error identifying or reading the file.
 	 * @throws SpreadsheetException If there is an error working with the spreadsheet.
 	 * @since 3.2.0
 	 */
-	public function get(string $filePath, int $startRow = 1, int $chunkSize = 100): \Generator
+	public function read(string $filePath, int $startRow = 1, int $chunkSize = 100, RowDataProcessor $processor): \Generator
 	{
-		// Check if the file exists
-		if (!is_file($filePath))
+		foreach ($this->filereader->read($filePath, $startRow, $chunkSize) as $row)
 		{
-			throw new \InvalidArgumentException("File not found: $filePath");
-		}
-
-		try {
-			// Initialize variables for row processing
-			$totalRows = $startRow;
-
-			do {
-				// Set up a new chunk filter for the current chunk
-				$chunkFilter = new ChunkReadFilter($totalRows, $chunkSize);
-				$inputFileType = IOFactory::identify($filePath);
-				$reader = IOFactory::createReader($inputFileType);
-				$reader->setReadFilter($chunkFilter);
-				$reader->setReadDataOnly(true);
-
-				// Load the chunk into the spreadsheet
-				$spreadsheet = $reader->load($filePath);
-				$worksheet = $spreadsheet->getActiveSheet();
-
-				// Iterate through the rows in the current chunk
-				foreach ($worksheet->getRowIterator($totalRows) as $row)
-				{
-					$rowIndex = $row->getRowIndex();
-					$rowData = [];
-
-					$cellIterator = $row->getCellIterator();
-					$cellIterator->setIterateOnlyExistingCells(false); // Include empty cells
-
-					// Collect all cell data in the row
-					foreach ($cellIterator as $cell)
-					{
-						$rowData[$cell->getColumn()] = $cell->getValue();
-					}
-
-					yield $rowData;
-
-					// Update the row index for the next chunk
-					$totalRows = $rowIndex + 1;
-				}
-
-				// Disconnect the spreadsheet to free memory
-				$spreadsheet->disconnectWorksheets();
-				unset($spreadsheet);
-
-			} while (!empty($rowData)); // Continue reading until no more rows are available
-
-		} catch (ReaderException $e) {
-			throw new ReaderException("Error reading the file: " . $e->getMessage(), $e->getCode(), $e);
-		} catch (SpreadsheetException $e) {
-			throw new SpreadsheetException("Error with the spreadsheet: " . $e->getMessage(), $e->getCode(), $e);
+			yield $processor->process($row);
 		}
 	}
 }

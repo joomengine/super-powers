@@ -17,6 +17,7 @@ use Joomla\DI\ServiceProviderInterface;
 use VDM\Joomla\Componentbuilder\Spreadsheet\Header;
 use VDM\Joomla\Componentbuilder\Spreadsheet\Exporter;
 use VDM\Joomla\Componentbuilder\Spreadsheet\Importer;
+use VDM\Joomla\Componentbuilder\Spreadsheet\FileReader;
 
 
 /**
@@ -44,6 +45,9 @@ class Spreadsheet implements ServiceProviderInterface
 
 		$container->alias(Importer::class, 'Spreadsheet.Importer')
 			->share('Spreadsheet.Importer', [$this, 'getImporter'], true);
+
+		$container->alias(FileReader::class, 'Spreadsheet.FileReader')
+			->share('Spreadsheet.FileReader', [$this, 'getFileReader'], true);
 	}
 
 	/**
@@ -82,7 +86,22 @@ class Spreadsheet implements ServiceProviderInterface
 	 */
 	public function getImporter(Container $container): Importer
 	{
-		return new Importer();
+		return new Importer(
+			$container->get('Spreadsheet.FileReader')
+		);
+	}
+
+	/**
+	 * Get The FileReader Class.
+	 *
+	 * @param   Container  $container  The DI container.
+	 *
+	 * @return  FileReader
+	 * @since 5.0.3
+	 */
+	public function getFileReader(Container $container): FileReader
+	{
+		return new FileReader();
 	}
 }
 

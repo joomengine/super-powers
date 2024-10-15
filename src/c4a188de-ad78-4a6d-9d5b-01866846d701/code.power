@@ -16,6 +16,9 @@
 
 		$container->alias(Importer::class, 'Spreadsheet.Importer')
 			->share('Spreadsheet.Importer', [$this, 'getImporter'], true);
+
+		$container->alias(FileReader::class, 'Spreadsheet.FileReader')
+			->share('Spreadsheet.FileReader', [$this, 'getFileReader'], true);
 	}
 
 	/**
@@ -54,5 +57,20 @@
 	 */
 	public function getImporter(Container $container): Importer
 	{
-		return new Importer();
+		return new Importer(
+			$container->get('Spreadsheet.FileReader')
+		);
+	}
+
+	/**
+	 * Get The FileReader Class.
+	 *
+	 * @param   Container  $container  The DI container.
+	 *
+	 * @return  FileReader
+	 * @since 5.0.3
+	 */
+	public function getFileReader(Container $container): FileReader
+	{
+		return new FileReader();
 	}
