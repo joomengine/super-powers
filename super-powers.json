@@ -637,6 +637,17 @@
         "spk": "Super---7832a726_87b6_4e95_887e_7b725d3fab8f---Power",
         "guid": "7832a726-87b6-4e95-887e-7b725d3fab8f"
     },
+    "79fd4f39-824d-4ab6-936d-959705ff24ec": {
+        "name": "Validator",
+        "type": "final class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Table",
+        "code": "src\/79fd4f39-824d-4ab6-936d-959705ff24ec\/code.php",
+        "power": "src\/79fd4f39-824d-4ab6-936d-959705ff24ec\/code.power",
+        "settings": "src\/79fd4f39-824d-4ab6-936d-959705ff24ec\/settings.json",
+        "path": "src\/79fd4f39-824d-4ab6-936d-959705ff24ec",
+        "spk": "Super---79fd4f39_824d_4ab6_936d_959705ff24ec---Power",
+        "guid": "79fd4f39-824d-4ab6-936d-959705ff24ec"
+    },
     "7c1fb50f-8fb1-4627-8705-6fedf7182ca5": {
         "name": "Upsert",
         "type": "final class",

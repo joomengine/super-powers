@@ -132,6 +132,7 @@ This repository contains an index (see below) of all the approved powers within 
 
   - **final class Schema** | [Details](src/b3d2ec33-76d4-4c3b-bb2c-86ac14a221ce) | [Code](src/b3d2ec33-76d4-4c3b-bb2c-86ac14a221ce/code.php) | [Settings](src/b3d2ec33-76d4-4c3b-bb2c-86ac14a221ce/settings.json) | SPK: `Super---b3d2ec33_76d4_4c3b_bb2c_86ac14a221ce---Power`
   - **final class SchemaChecker** | [Details](src/709d7294-9a43-46e2-b64e-d16a16f0eab1) | [Code](src/709d7294-9a43-46e2-b64e-d16a16f0eab1/code.php) | [Settings](src/709d7294-9a43-46e2-b64e-d16a16f0eab1/settings.json) | SPK: `Super---709d7294_9a43_46e2_b64e_d16a16f0eab1---Power`
+  - **final class Validator** | [Details](src/79fd4f39-824d-4ab6-936d-959705ff24ec) | [Code](src/79fd4f39-824d-4ab6-936d-959705ff24ec/code.php) | [Settings](src/79fd4f39-824d-4ab6-936d-959705ff24ec/settings.json) | SPK: `Super---79fd4f39_824d_4ab6_936d_959705ff24ec---Power`
 - **Namespace**: [VDM\Joomla\Componentbuilder\Utilities](#vdm-joomla-componentbuilder-utilities)
 
   - **abstract class UserHelper** | [Details](src/7832a726-87b6-4e95-887e-7b725d3fab8f) | [Code](src/7832a726-87b6-4e95-887e-7b725d3fab8f/code.php) | [Settings](src/7832a726-87b6-4e95-887e-7b725d3fab8f/settings.json) | SPK: `Super---7832a726_87b6_4e95_887e_7b725d3fab8f---Power`

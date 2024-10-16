@@ -15,6 +15,7 @@ class Table  #Gold {
   + register(Container $container) : void
   + getTable(Container $container) : DataTable
   + getSchema(Container $container) : Schema
+  + getValidator(Container $container) : Validator
 }
 
 note right of Table::register
@@ -36,6 +37,13 @@ note right of Table::getSchema
 
   since: 3.2.2
   return: Schema
+end note
+
+note right of Table::getValidator
+  Get The Validator Class.
+
+  since: 3.2.2
+  return: Validator
 end note
  
 @enduml

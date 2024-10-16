@@ -1,35 +1,24 @@
 {
-    "add_head": "1",
+    "add_head": "0",
     "add_licensing_template": "2",
     "extends": "",
-    "guid": "19b2ba92-1655-4384-acfb-979c80de8b6d",
-    "implements": [
-        "-1"
-    ],
+    "guid": "79fd4f39-824d-4ab6-936d-959705ff24ec",
+    "implements": null,
     "load_selection": null,
-    "name": "Table",
+    "name": "Validator",
     "power_version": "1.0.0",
-    "system_name": "VDM.Service.Table",
-    "type": "class",
+    "system_name": "VDM.Table.Validator",
+    "type": "final class",
     "use_selection": {
         "use_selection0": {
             "use": "bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8",
-            "as": "DataTable"
-        },
-        "use_selection1": {
-            "use": "b3d2ec33-76d4-4c3b-bb2c-86ac14a221ce",
-            "as": "default"
-        },
-        "use_selection2": {
-            "use": "79fd4f39-824d-4ab6-936d-959705ff24ec",
             "as": "default"
         }
     },
     "extendsinterfaces": null,
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Service.Table",
-    "description": "Table Service Provider\r\n\r\n@since 3.2.2",
-    "implements_custom": "ServiceProviderInterface",
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Table.Validator",
+    "description": "Table Value Validator\r\n\r\n@since 5.3.0",
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "head": "use Joomla\\DI\\Container;\r\nuse Joomla\\DI\\ServiceProviderInterface;",
+    "head": "",
     "composer": ""
 }
