@@ -14,9 +14,11 @@
 abstract Database  #Orange {
   # $db
   # string $table
+  # string $dateFormat
   + __construct()
   # quote(mixed $value) : mixed
   # getTable(string $table) : string
+  # getDateFormat() : string
 }
 
 note right of Database::__construct
@@ -37,6 +39,13 @@ note right of Database::getTable
 core component as needed
 
   since: 3.2.0
+  return: string
+end note
+
+note right of Database::getDateFormat
+  Get the date format to return in the quote
+
+  since: 5.0.2
   return: string
 end note
  

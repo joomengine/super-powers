@@ -54,7 +54,7 @@ final class Header
 				if ($row->getRowIndex() === $targetRow)
 				{
 					$cellIterator = $row->getCellIterator();
-					$cellIterator->setIterateOnlyExistingCells(false);
+					$cellIterator->setIterateOnlyExistingCells(true);
 					foreach ($cellIterator as $cell)
 					{
 						$headers[$cell->getColumn()] = $cell->getValue();
