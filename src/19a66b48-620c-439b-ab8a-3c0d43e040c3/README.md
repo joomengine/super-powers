@@ -6,76 +6,40 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# class Import (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Import\Service**
+# final class Assessor (Details)
+> namespace: **VDM\Joomla\Componentbuilder\Import**
 
 ```uml
 @startuml
-class Import  #Gold {
-  + register(Container $container) : void
-  + getData(Container $container) : Data
-  + getMapper(Container $container) : Mapper
-  + getRow(Container $container) : Row
-  + getItem(Container $container) : Item
-  + getMessage(Container $container) : Message
-  + getStatus(Container $container) : Status
-  + getAssessor(Container $container) : Assessor
+class Assessor << (F,LightGreen) >> #RoyalBlue {
+  # Data $data
+  # Status $status
+  # Message $message
+  + __construct(Data $data, Status $status, ...)
+  + evaluate(int $rowCounter, int $successCounter, ...) : void
 }
 
-note right of Import::register
-  Registers the service provider with a DI container.
+note right of Assessor::__construct
+  Constructor.
 
-  since: 5.0.3
+  since: 4.0.3
+  
+  arguments:
+    Data $data
+    Status $status
+    Message $message
+end note
+
+note right of Assessor::evaluate
+  Evaluates the import process and sets the success/error message based on the success rate.
+
+  since: 4.0.3
   return: void
-end note
-
-note left of Import::getData
-  Get The Data Class.
-
-  since: 5.0.3
-  return: Data
-end note
-
-note right of Import::getMapper
-  Get The Mapper Class.
-
-  since: 5.0.3
-  return: Mapper
-end note
-
-note left of Import::getRow
-  Get The Row Class.
-
-  since: 5.0.3
-  return: Row
-end note
-
-note right of Import::getItem
-  Get The Item Class.
-
-  since: 5.0.3
-  return: Item
-end note
-
-note left of Import::getMessage
-  Get The Message Class.
-
-  since: 5.0.3
-  return: Message
-end note
-
-note right of Import::getStatus
-  Get The Status Class.
-
-  since: 5.0.3
-  return: Status
-end note
-
-note left of Import::getAssessor
-  Get The Assessor Class.
-
-  since: 5.0.3
-  return: Assessor
+  
+  arguments:
+    int $rowCounter
+    int $successCounter
+    int $errorCounter
 end note
  
 @enduml
@@ -91,7 +55,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---21754a8b_2323_4a77_8459_378a74c1ec97---Power
+Super---19a66b48_620c_439b_ab8a_3c0d43e040c3---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

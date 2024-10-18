@@ -6,76 +6,36 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# class Import (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Import\Service**
+# interface ImportMapperInterface (Details)
+> namespace: **VDM\Joomla\Componentbuilder\Interfaces**
 
 ```uml
 @startuml
-class Import  #Gold {
-  + register(Container $container) : void
-  + getData(Container $container) : Data
-  + getMapper(Container $container) : Mapper
-  + getRow(Container $container) : Row
-  + getItem(Container $container) : Item
-  + getMessage(Container $container) : Message
-  + getStatus(Container $container) : Status
-  + getAssessor(Container $container) : Assessor
+interface ImportMapperInterface  #Lavender {
+  + set(object $map, string $parentTable) : void
+  + getParent() : array
+  + getJoin() : array
 }
 
-note right of Import::register
-  Registers the service provider with a DI container.
+note right of ImportMapperInterface::set
+  Set the tables mapper
 
-  since: 5.0.3
+  since: 4.0.3
   return: void
 end note
 
-note left of Import::getData
-  Get The Data Class.
+note right of ImportMapperInterface::getParent
+  Get the parent table keys
 
-  since: 5.0.3
-  return: Data
+  since: 4.0.3
+  return: array
 end note
 
-note right of Import::getMapper
-  Get The Mapper Class.
+note right of ImportMapperInterface::getJoin
+  Get the join tables keys
 
-  since: 5.0.3
-  return: Mapper
-end note
-
-note left of Import::getRow
-  Get The Row Class.
-
-  since: 5.0.3
-  return: Row
-end note
-
-note right of Import::getItem
-  Get The Item Class.
-
-  since: 5.0.3
-  return: Item
-end note
-
-note left of Import::getMessage
-  Get The Message Class.
-
-  since: 5.0.3
-  return: Message
-end note
-
-note right of Import::getStatus
-  Get The Status Class.
-
-  since: 5.0.3
-  return: Status
-end note
-
-note left of Import::getAssessor
-  Get The Assessor Class.
-
-  since: 5.0.3
-  return: Assessor
+  since: 4.0.3
+  return: array
 end note
  
 @enduml
@@ -91,7 +51,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---21754a8b_2323_4a77_8459_378a74c1ec97---Power
+Super---250a7272_9ae1_4c63_a058_26bad9ad6f70---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

@@ -1,0 +1,26 @@
+	/**
+	 * Set the tables mapper
+	 *
+	 * @param   object  $map          The import file map.
+	 * @param   string  $parentTable  The parent table name.
+	 *
+	 * @return  void
+	 * @since  4.0.3
+	 */
+	public function set(object $map, string $parentTable): void;
+
+	/**
+	 * Get the parent table keys
+	 *
+	 * @return  array
+	 * @since  4.0.3
+	 */
+	public function getParent(): array;
+
+	/**
+	 * Get the join tables keys
+	 *
+	 * @return  array
+	 * @since  4.0.3
+	 */
+	public function getJoin(): array;

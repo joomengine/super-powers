@@ -32,6 +32,17 @@
         "spk": "Super---05744dd3_4030_4cf8_8dda_a93ab809b473---Power",
         "guid": "05744dd3-4030-4cf8-8dda-a93ab809b473"
     },
+    "05f23281-58e3-482e-be42-2dc1355ef4ea": {
+        "name": "Data",
+        "type": "class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Import",
+        "code": "src\/05f23281-58e3-482e-be42-2dc1355ef4ea\/code.php",
+        "power": "src\/05f23281-58e3-482e-be42-2dc1355ef4ea\/code.power",
+        "settings": "src\/05f23281-58e3-482e-be42-2dc1355ef4ea\/settings.json",
+        "path": "src\/05f23281-58e3-482e-be42-2dc1355ef4ea",
+        "spk": "Super---05f23281_58e3_482e_be42_2dc1355ef4ea---Power",
+        "guid": "05f23281-58e3-482e-be42-2dc1355ef4ea"
+    },
     "06f8eada-d59b-441c-b287-0aea1793da5a": {
         "name": "Load",
         "type": "final class",
@@ -153,6 +164,17 @@
         "spk": "Super---17ed2fec_49d6_4731_92c3_f9cd78fb6273---Power",
         "guid": "17ed2fec-49d6-4731-92c3-f9cd78fb6273"
     },
+    "19a66b48-620c-439b-ab8a-3c0d43e040c3": {
+        "name": "Assessor",
+        "type": "final class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Import",
+        "code": "src\/19a66b48-620c-439b-ab8a-3c0d43e040c3\/code.php",
+        "power": "src\/19a66b48-620c-439b-ab8a-3c0d43e040c3\/code.power",
+        "settings": "src\/19a66b48-620c-439b-ab8a-3c0d43e040c3\/settings.json",
+        "path": "src\/19a66b48-620c-439b-ab8a-3c0d43e040c3",
+        "spk": "Super---19a66b48_620c_439b_ab8a_3c0d43e040c3---Power",
+        "guid": "19a66b48-620c-439b-ab8a-3c0d43e040c3"
+    },
     "19b2ba92-1655-4384-acfb-979c80de8b6d": {
         "name": "Table",
         "type": "class",
@@ -251,6 +273,17 @@
         "path": "src\/23ad6e72-1b82-40fb-836c-50da690bb174",
         "spk": "Super---23ad6e72_1b82_40fb_836c_50da690bb174---Power",
         "guid": "23ad6e72-1b82-40fb-836c-50da690bb174"
+    },
+    "250a7272-9ae1-4c63-a058-26bad9ad6f70": {
+        "name": "ImportMapperInterface",
+        "type": "interface",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Interfaces",
+        "code": "src\/250a7272-9ae1-4c63-a058-26bad9ad6f70\/code.php",
+        "power": "src\/250a7272-9ae1-4c63-a058-26bad9ad6f70\/code.power",
+        "settings": "src\/250a7272-9ae1-4c63-a058-26bad9ad6f70\/settings.json",
+        "path": "src\/250a7272-9ae1-4c63-a058-26bad9ad6f70",
+        "spk": "Super---250a7272_9ae1_4c63_a058_26bad9ad6f70---Power",
+        "guid": "250a7272-9ae1-4c63-a058-26bad9ad6f70"
     },
     "2ad31f74-f579-499d-b98b-c4f54fd615dd": {
         "name": "LoadInterface",
@@ -504,6 +537,17 @@
         "path": "src\/576685fd-263c-46bb-9fdc-1f5eb234cbb6",
         "spk": "Super---576685fd_263c_46bb_9fdc_1f5eb234cbb6---Power",
         "guid": "576685fd-263c-46bb-9fdc-1f5eb234cbb6"
+    },
+    "57c00d53-5581-4fd1-b3ea-080422710243": {
+        "name": "ImportAssessorInterface",
+        "type": "interface",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Interfaces",
+        "code": "src\/57c00d53-5581-4fd1-b3ea-080422710243\/code.php",
+        "power": "src\/57c00d53-5581-4fd1-b3ea-080422710243\/code.power",
+        "settings": "src\/57c00d53-5581-4fd1-b3ea-080422710243\/settings.json",
+        "path": "src\/57c00d53-5581-4fd1-b3ea-080422710243",
+        "spk": "Super---57c00d53_5581_4fd1_b3ea_080422710243---Power",
+        "guid": "57c00d53-5581-4fd1-b3ea-080422710243"
     },
     "584747d1-3a86-453d-b7a3-a2219de8d777": {
         "name": "Model",
@@ -812,6 +856,17 @@
         "path": "src\/900456a2-feb5-48b9-9f05-c5a032a32c59",
         "spk": "Super---900456a2_feb5_48b9_9f05_c5a032a32c59---Power",
         "guid": "900456a2-feb5-48b9-9f05-c5a032a32c59"
+    },
+    "90b48ea8-0930-48d1-869a-bce9c901589c": {
+        "name": "Mapper",
+        "type": "final class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Import",
+        "code": "src\/90b48ea8-0930-48d1-869a-bce9c901589c\/code.php",
+        "power": "src\/90b48ea8-0930-48d1-869a-bce9c901589c\/code.power",
+        "settings": "src\/90b48ea8-0930-48d1-869a-bce9c901589c\/settings.json",
+        "path": "src\/90b48ea8-0930-48d1-869a-bce9c901589c",
+        "spk": "Super---90b48ea8_0930_48d1_869a_bce9c901589c---Power",
+        "guid": "90b48ea8-0930-48d1-869a-bce9c901589c"
     },
     "91004529-94a9-4590-b842-e7c6b624ecf5": {
         "name": "ObjectHelper",

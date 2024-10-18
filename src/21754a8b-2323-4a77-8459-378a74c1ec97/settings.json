@@ -13,19 +13,31 @@
     "type": "class",
     "use_selection": {
         "use_selection0": {
-            "use": "afb5b891-7130-422a-b389-1934b0e4fc48",
+            "use": "05f23281-58e3-482e-be42-2dc1355ef4ea",
             "as": "default"
         },
         "use_selection1": {
-            "use": "68a0f9af-265a-4db1-bae9-a4e4531f94d7",
+            "use": "90b48ea8-0930-48d1-869a-bce9c901589c",
             "as": "default"
         },
         "use_selection2": {
-            "use": "eef6ffc2-2af0-4336-958f-e0b9cf7c4ad0",
+            "use": "afb5b891-7130-422a-b389-1934b0e4fc48",
             "as": "default"
         },
         "use_selection3": {
+            "use": "68a0f9af-265a-4db1-bae9-a4e4531f94d7",
+            "as": "default"
+        },
+        "use_selection4": {
+            "use": "eef6ffc2-2af0-4336-958f-e0b9cf7c4ad0",
+            "as": "default"
+        },
+        "use_selection5": {
             "use": "d2a859ac-3f2a-4f69-a77f-f118b2e0a459",
+            "as": "default"
+        },
+        "use_selection6": {
+            "use": "19a66b48-620c-439b-ab8a-3c0d43e040c3",
             "as": "default"
         }
     },

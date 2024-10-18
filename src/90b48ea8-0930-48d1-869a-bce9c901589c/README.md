@@ -6,76 +6,54 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# class Import (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Import\Service**
+# final class Mapper (Details)
+> namespace: **VDM\Joomla\Componentbuilder\Import**
 
 ```uml
 @startuml
-class Import  #Gold {
-  + register(Container $container) : void
-  + getData(Container $container) : Data
-  + getMapper(Container $container) : Mapper
-  + getRow(Container $container) : Row
-  + getItem(Container $container) : Item
-  + getMessage(Container $container) : Message
-  + getStatus(Container $container) : Status
-  + getAssessor(Container $container) : Assessor
+class Mapper << (F,LightGreen) >> #RoyalBlue {
+  # Table $table
+  - array $parent
+  - array $join
+  + __construct(Table $table)
+  + set(object $map, string $parentTable) : void
+  + getParent() : array
+  + getJoin() : array
+  - getTableField(string $key) : ?object
 }
 
-note right of Import::register
-  Registers the service provider with a DI container.
+note right of Mapper::__construct
+  Constructor.
 
-  since: 5.0.3
+  since: 4.0.3
+end note
+
+note right of Mapper::set
+  Set the tables mapper
+
+  since: 4.0.3
   return: void
 end note
 
-note left of Import::getData
-  Get The Data Class.
+note right of Mapper::getParent
+  Get the parent table keys
 
-  since: 5.0.3
-  return: Data
+  since: 4.0.3
+  return: array
 end note
 
-note right of Import::getMapper
-  Get The Mapper Class.
+note right of Mapper::getJoin
+  Get the join tables keys
 
-  since: 5.0.3
-  return: Mapper
+  since: 4.0.3
+  return: array
 end note
 
-note left of Import::getRow
-  Get The Row Class.
+note right of Mapper::getTableField
+  Get the table and field name
 
-  since: 5.0.3
-  return: Row
-end note
-
-note right of Import::getItem
-  Get The Item Class.
-
-  since: 5.0.3
-  return: Item
-end note
-
-note left of Import::getMessage
-  Get The Message Class.
-
-  since: 5.0.3
-  return: Message
-end note
-
-note right of Import::getStatus
-  Get The Status Class.
-
-  since: 5.0.3
-  return: Status
-end note
-
-note left of Import::getAssessor
-  Get The Assessor Class.
-
-  since: 5.0.3
-  return: Assessor
+  since: 4.0.3
+  return: ?object
 end note
  
 @enduml
@@ -91,7 +69,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---21754a8b_2323_4a77_8459_378a74c1ec97---Power
+Super---90b48ea8_0930_48d1_869a_bce9c901589c---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

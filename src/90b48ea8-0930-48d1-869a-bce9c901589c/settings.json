@@ -1,0 +1,26 @@
+{
+    "add_head": "0",
+    "add_licensing_template": "2",
+    "extends": "",
+    "guid": "90b48ea8-0930-48d1-869a-bce9c901589c",
+    "implements": [
+        "250a7272-9ae1-4c63-a058-26bad9ad6f70"
+    ],
+    "load_selection": null,
+    "name": "Mapper",
+    "power_version": "1.0.0",
+    "system_name": "JCB.Import.Mapper",
+    "type": "final class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "2da6d6c4-eb29-4d69-8bc2-36d96e916adf",
+            "as": "Table"
+        }
+    },
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Import.Mapper",
+    "description": "Import Mapper Class\r\n\r\n@since  4.0.3",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}

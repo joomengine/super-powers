@@ -14,10 +14,13 @@ namespace VDM\Joomla\Componentbuilder\Import\Service;
 
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
+use VDM\Joomla\Componentbuilder\Import\Data;
+use VDM\Joomla\Componentbuilder\Import\Mapper;
 use VDM\Joomla\Componentbuilder\Import\Row;
 use VDM\Joomla\Componentbuilder\Import\Item;
 use VDM\Joomla\Componentbuilder\Import\Message;
 use VDM\Joomla\Componentbuilder\Import\Status;
+use VDM\Joomla\Componentbuilder\Import\Assessor;
 
 
 /**
@@ -37,6 +40,12 @@ class Import implements ServiceProviderInterface
 	 */
 	public function register(Container $container)
 	{
+		$container->alias(Data::class, 'Import.Data')
+			->share('Import.Data', [$this, 'getData'], true);
+
+		$container->alias(Mapper::class, 'Import.Mapper')
+			->share('Import.Mapper', [$this, 'getMapper'], true);
+
 		$container->alias(Row::class, 'Import.Row')
 			->share('Import.Row', [$this, 'getRow'], true);
 
@@ -48,6 +57,37 @@ class Import implements ServiceProviderInterface
 
 		$container->alias(Status::class, 'Import.Status')
 			->share('Import.Status', [$this, 'getStatus'], true);
+
+		$container->alias(Assessor::class, 'Import.Assessor')
+			->share('Import.Assessor', [$this, 'getAssessor'], true);
+	}
+
+	/**
+	 * Get The Data Class.
+	 *
+	 * @param   Container  $container  The DI container.
+	 *
+	 * @return  Data
+	 * @since 5.0.3
+	 */
+	public function getData(Container $container): Data
+	{
+		return new Data();
+	}
+
+	/**
+	 * Get The Mapper Class.
+	 *
+	 * @param   Container  $container  The DI container.
+	 *
+	 * @return  Mapper
+	 * @since 5.0.3
+	 */
+	public function getMapper(Container $container): Mapper
+	{
+		return new Mapper(
+			$container->get('Table')
+		);
 	}
 
 	/**
@@ -108,6 +148,23 @@ class Import implements ServiceProviderInterface
 	{
 		return new Status(
 			$container->get('Data.Item')
+		);
+	}
+
+	/**
+	 * Get The Assessor Class.
+	 *
+	 * @param   Container  $container  The DI container.
+	 *
+	 * @return  Assessor
+	 * @since 5.0.3
+	 */
+	public function getAssessor(Container $container): Assessor
+	{
+		return new Assessor(
+			$container->get('Import.Data'),
+			$container->get('Import.Status'),
+			$container->get('Import.Message')
 		);
 	}
 }
