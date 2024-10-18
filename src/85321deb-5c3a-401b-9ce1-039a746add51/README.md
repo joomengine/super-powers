@@ -16,6 +16,9 @@ abstract Import  #Orange {
   # Items $items
   # ImportEngine $import
   # string $queueTable
+  # string $queueStatusField
+  # int $queueWaitState
+  # int $queueProcessingState
   # string $targetName
   # string $targetImportClass
   # static $defaultName

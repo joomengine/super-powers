@@ -1,0 +1,34 @@
+{
+    "add_head": "0",
+    "add_licensing_template": "2",
+    "extends": "",
+    "guid": "eef6ffc2-2af0-4336-958f-e0b9cf7c4ad0",
+    "implements": [
+        "23ad6e72-1b82-40fb-836c-50da690bb174"
+    ],
+    "load_selection": null,
+    "name": "Message",
+    "power_version": "1.0.0",
+    "system_name": "JCB.Import.Message",
+    "type": "final class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "68a41264-64c0-441a-a3d8-8a5e557b1883",
+            "as": "Update"
+        },
+        "use_selection1": {
+            "use": "03bbc8d5-86e8-4d2f-ae5f-0d44a4f7af13",
+            "as": "Insert"
+        },
+        "use_selection2": {
+            "use": "9c513baf-b279-43fd-ae29-a585c8cbc4f0",
+            "as": "default"
+        }
+    },
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Import.Message",
+    "description": "Import Messages Class\r\n\r\n@since  5.0.2",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}

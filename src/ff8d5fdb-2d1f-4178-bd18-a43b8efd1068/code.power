@@ -19,6 +19,7 @@
 			->registerServiceProvider(new Database())
 			->registerServiceProvider(new Model())
 			->registerServiceProvider(new Data())
+			->registerServiceProvider(new Import())
 			->registerServiceProvider(new File())
 			->registerServiceProvider(new Spreadsheet());
 	}

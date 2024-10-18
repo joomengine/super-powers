@@ -14,7 +14,7 @@ namespace VDM\Joomla\Abstraction;
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Version;
-use VDM\Joomla\Interfaces\Tableinterface as Table;
+use VDM\Joomla\Interfaces\TableInterface as Table;
 use VDM\Joomla\Interfaces\SchemaInterface;
 
 

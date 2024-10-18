@@ -14,12 +14,15 @@
 class Validator << (F,LightGreen) >> #RoyalBlue {
   # Table $table
   # array $validators
+  # array $defaults
   + __construct(Table $table)
   + getValid(mixed $value, string $field, ...) : mixed
   - validate(mixed $value, array $dbField) : bool
-  - getDefault(array $dbField) : mixed
+  - getDefault(array $dbField, mixed $value) : mixed
   - parseDataType(string $datatype) : array
   - getDatabaseField(string $field, string $table) : array
+  - registerValidators() : void
+  - registerDefaults() : void
   - validateInteger(mixed $value, array $typeInfo) : bool
   - validateString(mixed $value, array $typeInfo) : bool
   - validateText(mixed $value, array $typeInfo) : bool
@@ -78,6 +81,20 @@ In your case, you use `$db = $this->table->get($table, $field, 'db')`.
 
   since: 5.3.0
   return: array
+end note
+
+note right of Validator::registerValidators
+  Register validators for MySQL data types.
+
+  since: 5.3.0
+  return: void
+end note
+
+note left of Validator::registerDefaults
+  Register default values for MySQL data types.
+
+  since: 5.3.0
+  return: void
 end note
 
 note right of Validator::validateInteger

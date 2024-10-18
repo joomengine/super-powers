@@ -6,12 +6,12 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# interface Tableinterface (Details)
+# interface TableInterface (Details)
 > namespace: **VDM\Joomla\Interfaces**
 
 ```uml
 @startuml
-interface Tableinterface  #Lavender {
+interface TableInterface  #Lavender {
   + get(?string $table = null, ?string $field = null, ...) : mixed
   + title(string $table) : ?array
   + titleName(string $table) : string
@@ -20,7 +20,7 @@ interface Tableinterface  #Lavender {
   + fields(string $table, bool $default = false, ...) : ?array
 }
 
-note right of Tableinterface::get
+note right of TableInterface::get
   Get any value from a item/field/column of an area/view/table
 Example: $this->get('table_name', 'field_name', 'value_key');
 Get an item/field/column of an area/view/table
@@ -40,35 +40,35 @@ Example: $this->get();
     ?string $key = null
 end note
 
-note right of Tableinterface::title
+note right of TableInterface::title
   Get title field from an area/view/table
 
   since: 3.2.0
   return: ?array
 end note
 
-note right of Tableinterface::titleName
+note right of TableInterface::titleName
   Get title field name
 
   since: 3.2.0
   return: string
 end note
 
-note right of Tableinterface::tables
+note right of TableInterface::tables
   Get all tables
 
   since: 3.2.0
   return: array
 end note
 
-note right of Tableinterface::exist
+note right of TableInterface::exist
   Check if a table (and field) exist
 
   since: 3.2.0
   return: bool
 end note
 
-note right of Tableinterface::fields
+note right of TableInterface::fields
   Get all fields of an area/view/table
 
   since: 3.2.0

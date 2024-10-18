@@ -13,6 +13,7 @@ namespace VDM\Joomla\Componentbuilder\Table;
 
 
 use VDM\Joomla\Componentbuilder\Table;
+use VDM\Joomla\Interfaces\TableValidatorInterface;
 
 
 /**
@@ -20,7 +21,7 @@ use VDM\Joomla\Componentbuilder\Table;
  * 
  * @since 5.3.0
  */
-final class Validator
+final class Validator implements TableValidatorInterface
 {
 	/**
 	 * The Table Class.
@@ -39,6 +40,14 @@ final class Validator
 	protected array $validators = [];
 
 	/**
+	 *  A map of defauts for the respective datatypes.
+	 *
+	 * @var   array
+	 * @since 5.3.0
+	 */
+	protected array $defaults = [];
+
+	/**
 	 * Constructor.
 	 *
 	 * @param Table   $table   The Table Class.
@@ -50,28 +59,10 @@ final class Validator
 		$this->table = $table;
 
 		// Register datatype validators (mapping MySQL types to handlers)
-		$this->validators = [
-			'int' => [$this, 'validateInteger'],
-			'tinyint' => [$this, 'validateInteger'],
-			'smallint' => [$this, 'validateInteger'],
-			'mediumint' => [$this, 'validateInteger'],
-			'bigint' => [$this, 'validateInteger'],
-			'varchar' => [$this, 'validateString'],
-			'char' => [$this, 'validateString'],
-			'text' => [$this, 'validateText'],
-			'tinytext' => [$this, 'validateText'],
-			'mediumtext' => [$this, 'validateText'],
-			'longtext' => [$this, 'validateText'],
-			'decimal' => [$this, 'validateDecimal'],
-			'float' => [$this, 'validateFloat'],
-			'double' => [$this, 'validateFloat'],
-			'date' => [$this, 'validateDate'],
-			'datetime' => [$this, 'validateDate'],
-			'timestamp' => [$this, 'validateDate'],
-			'time' => [$this, 'validateDate'],
-			'json' => [$this, 'validateJson'],
-			'blob' => [$this, 'validateBlob'],
-		];
+		$this->registerValidators();
+
+		// Register datatype defaults
+		$this->registerDefaults();
 	}
 
 	/**
@@ -79,9 +70,9 @@ final class Validator
 	 * If the value is valid, return it. If not, return the default value,
 	 * NULL (if allowed), or an empty string if 'EMPTY' is set.
 	 *
-	 * @param mixed $value The value to validate.
-	 * @param string $field The field name.
-	 * @param string $table The table name.
+	 * @param mixed  $value  The value to validate.
+	 * @param string $field  The field name.
+	 * @param string $table  The table name.
 	 *
 	 * @return mixed Returns the valid value, or the default, NULL, or empty string based on validation.
 	 * @since 5.3.0
@@ -101,15 +92,15 @@ final class Validator
 		}
 
 		// If invalid, return default, NULL (if allowed), or empty string
-		return $this->getDefault($dbField);
+		return $this->getDefault($dbField, $value);
 	}
 
 	/**
 	 * Validate if the given value is valid for the provided database field.
 	 * This is a private method as `getValid()` will handle the actual logic.
 	 *
-	 * @param mixed $value The value to validate.
-	 * @param array $dbField The database field details (type, default, null_switch, etc.).
+	 * @param mixed  $value	The value to validate.
+	 * @param array  $dbField  The database field details (type, default, null_switch, etc.).
 	 *
 	 * @return bool Returns true if the value is valid, false otherwise.
 	 * @since 5.3.0
@@ -133,17 +124,21 @@ final class Validator
 	/**
 	 * Handle returning the default value, null, or empty string if validation fails.
 	 *
-	 * @param array $dbField The database field details.
+	 * @param array  $dbField  The database field details.
+	 * @param mixed  $value	The value to validate.
 	 *
 	 * @return mixed The default value, null, or empty string based on field settings.
 	 * @since 5.3.0
 	 */
-	private function getDefault(array $dbField)
+	private function getDefault(array $dbField, $value)
 	{
+		// get default value from field db
+		$db_default = isset($dbField['default']) ? $dbField['default'] : null;
+
 		// If a default value is provided, return it
-		if (!empty($dbField['default']))
+		if ($db_default !== null)
 		{
-			return strtoupper($dbField['default']) === 'EMPTY' ? '' : $dbField['default'];
+			return strtoupper($db_default) === 'EMPTY' ? '' : $db_default;
 		}
 
 		// Check if NULL is allowed
@@ -152,8 +147,9 @@ final class Validator
 			return null;
 		}
 
-		// If no default value, return an empty string
-		return '';
+		// Fallback to datatype default
+		$typeInfo = $this->parseDataType($dbField['type']);
+		return $this->defaults[$typeInfo['type']] ?? '';
 	}
 
 	/**
@@ -180,8 +176,8 @@ final class Validator
 	 * Retrieve the database field structure for the specified field and table.
 	 * In your case, you use `$db = $this->table->get($table, $field, 'db')`.
 	 *
-	 * @param string $field The field name.
-	 * @param string $table The table name.
+	 * @param string $field  The field name.
+	 * @param string $table  The table name.
 	 *
 	 * @return array The database field details, including type, default, null_switch, etc.
 	 * @since 5.3.0
@@ -192,12 +188,82 @@ final class Validator
 		return $this->table->get($table, $field, 'db');
 	}
 
+	/**
+	 * Register validators for MySQL data types.
+	 *
+	 * @return void
+	 * @since 5.3.0
+	 */
+	private function registerValidators(): void
+	{
+		$this->validators = [
+			'int' => [$this, 'validateInteger'],
+			'tinyint' => [$this, 'validateInteger'],
+			'smallint' => [$this, 'validateInteger'],
+			'mediumint' => [$this, 'validateInteger'],
+			'bigint' => [$this, 'validateInteger'],
+			'varchar' => [$this, 'validateString'],
+			'char' => [$this, 'validateString'],
+			'text' => [$this, 'validateText'],
+			'tinytext' => [$this, 'validateText'],
+			'mediumtext' => [$this, 'validateText'],
+			'longtext' => [$this, 'validateText'],
+			'decimal' => [$this, 'validateDecimal'],
+			'float' => [$this, 'validateFloat'],
+			'double' => [$this, 'validateFloat'],
+			'date' => [$this, 'validateDate'],
+			'datetime' => [$this, 'validateDate'],
+			'timestamp' => [$this, 'validateDate'],
+			'time' => [$this, 'validateDate'],
+			'json' => [$this, 'validateJson'],
+			'blob' => [$this, 'validateBlob'],
+			'tinyblob' => [$this, 'validateBlob'],
+			'mediumblob' => [$this, 'validateBlob'],
+			'longblob' => [$this, 'validateBlob'],
+		];
+	}
+
+	/**
+	 * Register default values for MySQL data types.
+	 *
+	 * @return void
+	 * @since 5.3.0
+	 */
+	private function registerDefaults(): void
+	{
+		$this->defaults = [
+			'int' => 0,
+			'tinyint' => 0,
+			'smallint' => 0,
+			'mediumint' => 0,
+			'bigint' => 0,
+			'varchar' => '',
+			'char' => '',
+			'text' => '',
+			'tinytext' => '',
+			'mediumtext' => '',
+			'longtext' => '',
+			'decimal' => 0.0,
+			'float' => 0.0,
+			'double' => 0.0,
+			'date' => '0000-00-00',
+			'datetime' => '0000-00-00 00:00:00',
+			'timestamp' => '0000-00-00 00:00:00',
+			'time' => '00:00:00',
+			'json' => '{}',
+			'blob' => '',
+			'tinyblob' => '',
+			'mediumblob' => '',
+			'longblob' => '',
+		];
+	}
+
 	// ----------------- Validation Methods -----------------
 
 	/**
 	 * Validate integer types (including tinyint, smallint, mediumint, etc.).
 	 *
-	 * @param mixed $value    The value to validate.
+	 * @param mixed $value	The value to validate.
 	 * @param array $typeInfo The parsed data type information.
 	 *
 	 * @return bool True if valid, false otherwise.
@@ -222,7 +288,7 @@ final class Validator
 	/**
 	 * Validate string types like VARCHAR and CHAR.
 	 *
-	 * @param mixed $value    The value to validate.
+	 * @param mixed $value	The value to validate.
 	 * @param array $typeInfo The parsed data type information.
 	 *
 	 * @return bool True if valid, false otherwise.
@@ -247,7 +313,7 @@ final class Validator
 	/**
 	 * Validate text types like TEXT, TINYTEXT, MEDIUMTEXT, LONGTEXT.
 	 *
-	 * @param mixed $value    The value to validate.
+	 * @param mixed $value	The value to validate.
 	 * @param array $typeInfo The parsed data type information.
 	 *
 	 * @return bool True if valid, false otherwise.
@@ -261,7 +327,7 @@ final class Validator
 	/**
 	 * Validate float, double, and decimal types.
 	 *
-	 * @param mixed $value    The value to validate.
+	 * @param mixed $value	The value to validate.
 	 * @param array $typeInfo The parsed data type information.
 	 *
 	 * @return bool True if valid, false otherwise.
@@ -275,7 +341,7 @@ final class Validator
 	/**
 	 * Validate decimal types (numeric precision and scale).
 	 *
-	 * @param mixed $value    The value to validate.
+	 * @param mixed $value	The value to validate.
 	 * @param array $typeInfo The parsed data type information.
 	 *
 	 * @return bool True if valid, false otherwise.
@@ -289,7 +355,7 @@ final class Validator
 	/**
 	 * Validate date, datetime, timestamp, and time types.
 	 *
-	 * @param mixed $value    The value to validate.
+	 * @param mixed $value	The value to validate.
 	 * @param array $typeInfo The parsed data type information.
 	 *
 	 * @return bool True if valid, false otherwise.
@@ -316,7 +382,7 @@ final class Validator
 	/**
 	 * Validate JSON types.
 	 *
-	 * @param mixed $value    The value to validate.
+	 * @param mixed $value	The value to validate.
 	 * @param array $typeInfo The parsed data type information.
 	 *
 	 * @return bool True if valid, false otherwise.
@@ -331,7 +397,7 @@ final class Validator
 	/**
 	 * Validate BLOB types (including TINYBLOB, MEDIUMBLOB, LONGBLOB).
 	 *
-	 * @param mixed $value    The value to validate.
+	 * @param mixed $value	The value to validate.
 	 * @param array $typeInfo The parsed data type information.
 	 *
 	 * @return bool True if valid, false otherwise.

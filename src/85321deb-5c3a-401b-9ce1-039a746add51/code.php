@@ -55,6 +55,30 @@ abstract class Import extends AbstractCommand
 	protected string $queueTable;
 
 	/**
+	 * The queue status field
+	 *
+	 * @var string
+	 * @since  5.0.2
+	 */
+	protected string $queueStatusField;
+
+	/**
+	 * The queue awaiting status
+	 *
+	 * @var int
+	 * @since  5.0.2
+	 */
+	protected int $queueWaitState;
+
+	/**
+	 * The queue processing status
+	 *
+	 * @var int
+	 * @since  5.0.2
+	 */
+	protected int $queueProcessingState;
+
+	/**
 	 * The main import target name.
 	 *
 	 * @var string
@@ -139,7 +163,7 @@ EOF);
 		$io->title("Component Builder: {$this->targetName} import status");
 
 		// Get all imports in the queue that are in waiting state
-		if (($queue = $this->items->table($this->queueTable)->get([1], 'import_status')) === null)
+		if (($queue = $this->items->table($this->queueTable)->get([$this->queueWaitState], $this->queueStatusField)) === null)
 		{
 			// Get the current date and time
 			$timestamp = date('Y-m-d H:i:s');
@@ -150,6 +174,15 @@ EOF);
 			return 0;
 		}
 
+		// take spreadsheets out of queue
+		$this->items->table($this->queueTable)->set(array_map(function($item) {
+			return [
+				'guid' => $item->guid,
+				$this->queueStatusField => $this->queueProcessingState
+			];
+		}, $queue));
+
+		// size of the queue
 		$numberSteps = count((array) $queue);
 
 		// Output initial task information

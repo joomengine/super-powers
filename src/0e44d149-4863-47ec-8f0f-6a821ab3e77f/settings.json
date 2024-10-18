@@ -1,0 +1,19 @@
+{
+    "add_head": "0",
+    "add_licensing_template": "2",
+    "extends": "",
+    "guid": "0e44d149-4863-47ec-8f0f-6a821ab3e77f",
+    "implements": null,
+    "load_selection": null,
+    "name": "ImportStatusInterface",
+    "power_version": "1.0.0",
+    "system_name": "VDM.ImportStatusInterface",
+    "type": "interface",
+    "use_selection": null,
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Interfaces.ImportStatusInterface",
+    "description": "Import Status Interface\r\n\r\n@since  3.2.2",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}

@@ -1,0 +1,34 @@
+{
+    "add_head": "0",
+    "add_licensing_template": "2",
+    "extends": "",
+    "guid": "68a0f9af-265a-4db1-bae9-a4e4531f94d7",
+    "implements": [
+        "53f55e5b-63cb-49e7-b1e6-33e7a9f97856"
+    ],
+    "load_selection": null,
+    "name": "Item",
+    "power_version": "1.0.0",
+    "system_name": "JCB.Import.Item",
+    "type": "final class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "feb3affa-5102-4307-93db-04525f4c66f0",
+            "as": "Validator"
+        },
+        "use_selection1": {
+            "use": "05744dd3-4030-4cf8-8dda-a93ab809b473",
+            "as": "Item"
+        },
+        "use_selection2": {
+            "use": "3d3ec064-9867-41e6-a48a-964c15d753aa",
+            "as": "Row"
+        }
+    },
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Import.Item",
+    "description": "Import Item Class\r\n\r\n@since  4.0.3",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}

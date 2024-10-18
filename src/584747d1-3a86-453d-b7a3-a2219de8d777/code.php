@@ -14,7 +14,7 @@ namespace VDM\Joomla\Abstraction;
 
 use VDM\Joomla\Utilities\StringHelper;
 use VDM\Joomla\Utilities\ArrayHelper;
-use VDM\Joomla\Interfaces\Tableinterface as Table;
+use VDM\Joomla\Interfaces\TableInterface as Table;
 use VDM\Joomla\Interfaces\ModelInterface;
 
 

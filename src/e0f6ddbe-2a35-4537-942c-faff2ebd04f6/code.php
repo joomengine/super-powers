@@ -12,7 +12,7 @@
 namespace VDM\Joomla\Abstraction;
 
 
-use VDM\Joomla\Interfaces\Tableinterface;
+use VDM\Joomla\Interfaces\TableInterface;
 
 
 /**
@@ -20,7 +20,7 @@ use VDM\Joomla\Interfaces\Tableinterface;
  * 
  * @since 3.2.0
  */
-abstract class BaseTable implements Tableinterface
+abstract class BaseTable implements TableInterface
 {
 	/**
 	 * All areas/views/tables with their field details
