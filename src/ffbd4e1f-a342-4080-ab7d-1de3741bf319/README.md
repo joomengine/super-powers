@@ -6,50 +6,47 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# abstract class BaseConfig (Details)
+# abstract class FunctionRegistry (Details)
 > namespace: **VDM\Joomla\Abstraction**
-> extends: **JoomlaRegistry**
+> extends: **Registry**
 
 ```uml
 @startuml
-abstract BaseConfig  #Orange {
-  + __construct()
-  + __set(string $key, mixed $value)
+abstract FunctionRegistry  #Orange {
   + __get(string $key)
   + get(string $path, mixed $default = null) : mixed
   + appendArray(string $path, mixed $value) : mixed
+  # isCallableMethod(string $method) : bool
 }
 
-note right of BaseConfig::__construct
-  Constructor
-
-  since: 3.2.0
-end note
-
-note right of BaseConfig::__set
-  setting any config value
-
-  since: 3.2.0
-end note
-
-note right of BaseConfig::__get
+note right of FunctionRegistry::__get
   getting any valid value
 
   since: 3.2.0
 end note
 
-note right of BaseConfig::get
+note right of FunctionRegistry::get
   Get a config value.
 
   since: 3.2.0
   return: mixed
 end note
 
-note right of BaseConfig::appendArray
+note right of FunctionRegistry::appendArray
   Append value to a path in registry of an array
 
   since: 3.2.0
   return: mixed
+end note
+
+note right of FunctionRegistry::isCallableMethod
+  Determines if a method is callable on this object, excluding certain methods.
+This method checks if a method exists on this object and is callable, but excludes
+certain methods to prevent unintended access or recursion. It helps to safely determine
+if a dynamic getter method can be invoked without interfering with core methods.
+
+  since: 5.0.4
+  return: bool
 end note
  
 @enduml

@@ -40,12 +40,20 @@ final class Validator implements TableValidatorInterface
 	protected array $validators = [];
 
 	/**
-	 *  A map of defauts for the respective datatypes.
+	 *  A map of defaults for the respective datatypes.
 	 *
 	 * @var   array
 	 * @since 5.3.0
 	 */
 	protected array $defaults = [];
+
+	/**
+	 *  Cache of the parsed datatype details
+	 *
+	 * @var   array
+	 * @since 5.3.0
+	 */
+	protected array $datatypes = [];
 
 	/**
 	 * Constructor.
@@ -162,14 +170,21 @@ final class Validator implements TableValidatorInterface
 	 */
 	private function parseDataType(string $datatype): array
 	{
+		if (isset($this->datatypes[$datatype]))
+		{
+			return $this->datatypes[$datatype];
+		}
+
 		$pattern = '/(?<type>\w+)(\((?<size>\d+)(,\s*(?<precision>\d+))?\))?/i';
 		preg_match($pattern, $datatype, $matches);
 		
-		return [
+		$result = [
 			'type' => isset($matches['type']) ? strtolower($matches['type']) : strtolower($datatype),
 			'size' => $matches['size'] ?? null,
 			'precision' => $matches['precision'] ?? null,
 		];
+
+		return $this->datatypes[$datatype] = $result;
 	}
 
 	/**

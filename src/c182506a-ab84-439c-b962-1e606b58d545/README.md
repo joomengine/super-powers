@@ -18,6 +18,7 @@ interface GrepInterface  #Lavender {
   + setBranchDefaultName(?string $name) : void
   + setIndexPath(string $indexPath) : void
   + getRemoteIndex(string $guid) : ?object
+  + loadApi(Api $api, ?string $base, ...) : void
 }
 
 note right of GrepInterface::get
@@ -65,6 +66,21 @@ note right of GrepInterface::getRemoteIndex
 
   since: 3.2.2
   return: ?object
+end note
+
+note right of GrepInterface::loadApi
+  Loads API config using the provided base URL and token.
+This method checks if the base URL contains 'https://git.vdm.dev/'.
+If it does, it uses the token as is (which may be null).
+If not, it ensures the token is not null by defaulting to an empty string.
+
+  since: 5.0.4
+  return: void
+  
+  arguments:
+    Api $api
+    ?string $base
+    ?string $token
 end note
  
 @enduml

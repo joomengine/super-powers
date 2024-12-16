@@ -109,8 +109,8 @@ final class Table extends BaseTable implements TableInterface
 				'tab_name' => 'publishing',
 				'db' => [
 					'type' => 'DATETIME',
-					'default' => '0000-00-00 00:00:00',
-					'null_switch' => 'NOT NULL',
+					'default' => 'CURRENT_TIMESTAMP',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],
@@ -1626,8 +1626,8 @@ final class Table extends BaseTable implements TableInterface
 				'tab_name' => 'publishing',
 				'db' => [
 					'type' => 'DATETIME',
-					'default' => '0000-00-00 00:00:00',
-					'null_switch' => 'NOT NULL',
+					'default' => 'EMPTY',
+					'null_switch' => 'NULL',
 					'unique_key' => false,
 					'key' => false,
 				],

@@ -12,6 +12,7 @@
 namespace VDM\Joomla\Componentbuilder\Import;
 
 
+use Joomla\DI\Container;
 use VDM\Joomla\Service\Table;
 use VDM\Joomla\Service\Database;
 use VDM\Joomla\Service\Model;

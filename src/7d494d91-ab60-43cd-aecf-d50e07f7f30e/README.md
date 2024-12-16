@@ -6,16 +6,16 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# trait ToString (Details)
+# trait PathToString (Details)
 > namespace: **VDM\Joomla\Abstraction\Registry\Traits**
 
 ```uml
 @startuml
-class ToString << (T,Orange) >> #Turquoise {
-  + toString(string $path, string $separator = '') : string
+class PathToString << (T,Orange) >> #Turquoise {
+  + pathToString(string $path, string $separator = '') : string
 }
 
-note right of ToString::toString
+note right of PathToString::pathToString
   Convert an array of values to a string (or return string)
 
   since: 3.2.0

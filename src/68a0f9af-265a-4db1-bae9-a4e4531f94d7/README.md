@@ -13,9 +13,9 @@
 @startuml
 class Item << (F,LightGreen) >> #RoyalBlue {
   # Validator $validator
-  # Item $item
+  # DataItem $item
   # Row $row
-  + __construct(Validator $validator, Item $item, ...)
+  + __construct(Validator $validator, DataItem $item, ...)
   + get(string $table, array $columns) : ?array
   - getImportValue(mixed $value, string $field, ...) : mixed
   - validImportValue(mixed $value, string $field, ...) : mixed
@@ -33,7 +33,7 @@ note right of Item::__construct
   
   arguments:
     Validator $validator
-    Item $item
+    DataItem $item
     Row $row
 end note
 

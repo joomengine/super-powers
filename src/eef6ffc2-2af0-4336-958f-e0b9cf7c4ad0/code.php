@@ -50,6 +50,14 @@ final class Message implements ImportMessageInterface
 	private array $success = [];
 
 	/**
+	 * The info message bus.
+	 *
+	 * @var   array
+	 * @since 5.0.2
+	 */
+	private array $info = [];
+
+	/**
 	 * The error message bus.
 	 *
 	 * @var   array
@@ -117,6 +125,8 @@ final class Message implements ImportMessageInterface
 		$this->guid = $guid;
 		$this->entity = $entity;
 		$this->table = $table;
+
+		return $this;
 	}
 
 	/**

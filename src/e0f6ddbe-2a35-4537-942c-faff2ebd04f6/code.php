@@ -108,8 +108,7 @@ abstract class BaseTable implements TableInterface
 			'store' => NULL,
 			'tab_name' => NULL,
 			'db' => [
-				'type' => 'INT(10) unsigned',
-				'default' => '0',
+				'type' => 'INT unsigned',
 				'null_switch' => 'NULL',
 				'key' => true,
 				'key_name' => 'modifiedby'
@@ -125,7 +124,6 @@ abstract class BaseTable implements TableInterface
 			'tab_name' => NULL,
 			'db' => [
 				'type' => 'DATETIME',
-				'default' => '0000-00-00 00:00:00',
 				'null_switch' => 'NULL'
 			]
 		],
@@ -138,7 +136,7 @@ abstract class BaseTable implements TableInterface
 			'store' => NULL,
 			'tab_name' => NULL,
 			'db' => [
-				'type' => 'INT(10) unsigned',
+				'type' => 'INT unsigned',
 				'default' => '0',
 				'null_switch' => 'NULL',
 				'key' => true,
@@ -155,7 +153,7 @@ abstract class BaseTable implements TableInterface
 			'tab_name' => NULL,
 			'db' => [
 				'type' => 'DATETIME',
-				'default' => '0000-00-00 00:00:00',
+				'default' => 'CURRENT_TIMESTAMP',
 				'null_switch' => 'NULL'
 			]
 		],
@@ -168,8 +166,7 @@ abstract class BaseTable implements TableInterface
 			'store' => NULL,
 			'tab_name' => NULL,
 			'db' => [
-				'type' => 'INT(10) unsigned',
-				'default' => '0',
+				'type' => 'INT unsigned',
 				'null_switch' => 'NULL',
 				'key' => true,
 				'key_name' => 'checkout'
@@ -185,7 +182,6 @@ abstract class BaseTable implements TableInterface
 			'tab_name' => NULL,
 			'db' => [
 				'type' => 'DATETIME',
-				'default' => '0000-00-00 00:00:00',
 				'null_switch' => 'NULL'
 			]
 		],

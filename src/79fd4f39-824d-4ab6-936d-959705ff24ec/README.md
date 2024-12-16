@@ -15,6 +15,7 @@ class Validator << (F,LightGreen) >> #RoyalBlue {
   # Table $table
   # array $validators
   # array $defaults
+  # array $datatypes
   + __construct(Table $table)
   + getValid(mixed $value, string $field, ...) : mixed
   - validate(mixed $value, array $dbField) : bool

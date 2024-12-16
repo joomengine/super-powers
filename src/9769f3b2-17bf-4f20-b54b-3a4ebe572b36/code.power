@@ -1,0 +1,30 @@
+	/**
+	 * Hold a Input object for easier access to the input variables.
+	 *
+	 * @var    Input
+	 * @since 3.2.0
+	 */
+	protected Input $input;
+
+	/**
+	 * The Params
+	 *
+	 * @var     JoomlaRegistry
+	 * @since 3.2.0
+	 */
+	protected JoomlaRegistry $params;
+
+	/**
+	 * Constructor
+	 *
+	 * @param Input|null    $input  Input
+	 * @param Registry|null $params The component parameters
+	 *
+	 * @throws \Exception
+	 * @since 3.2.0
+	 */
+	public function __construct(?Input $input = null, ?JoomlaRegistry $params = null)
+	{
+		$this->input = $input ?: Factory::getApplication()->input;
+		$this->params = $params ?: Helper::getParams('com_###component###');
+	}

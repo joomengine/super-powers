@@ -7,7 +7,7 @@
 	 * @return int    The number of values
 	 * @since 3.2.0
 	 */
-	public function count(string $path): int
+	public function pathCount(string $path): int
 	{
 		if (($values = $this->get($path)) === null)
 		{

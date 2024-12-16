@@ -67,7 +67,7 @@ end note
 
 note left of Model::values
   Model a value of multiple items
-Example: $this->items(Array, 'value_key', 'table_name');
+Example: $this->values(Array, 'value_key', 'table_name');
 
   since: 3.2.2
   return: ?array

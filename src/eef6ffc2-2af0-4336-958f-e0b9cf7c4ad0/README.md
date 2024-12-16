@@ -15,6 +15,7 @@ class Message << (F,LightGreen) >> #RoyalBlue {
   # Update $update
   # Insert $insert
   - array $success
+  - array $info
   - array $error
   - ?string $guid
   - ?string $entity

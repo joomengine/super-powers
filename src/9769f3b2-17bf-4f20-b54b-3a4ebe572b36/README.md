@@ -6,20 +6,22 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# trait PathCount (Details)
-> namespace: **VDM\Joomla\Abstraction\Registry\Traits**
+# abstract class ComponentConfig (Details)
+> namespace: **VDM\Joomla\Componentbuilder\Abstraction**
+> extends: **FunctionRegistry**
 
 ```uml
 @startuml
-class PathCount << (T,Orange) >> #Turquoise {
-  + pathCount(string $path) : int
+abstract ComponentConfig  #Orange {
+  # Input $input
+  # JoomlaRegistry $params
+  + __construct(?Input $input = null, ?JoomlaRegistry $params = null)
 }
 
-note right of PathCount::pathCount
-  Retrieves number of values (or sub-array) from the storage using multiple keys.
+note right of ComponentConfig::__construct
+  Constructor
 
   since: 3.2.0
-  return: int
 end note
  
 @enduml
@@ -35,7 +37,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---11572d9b_e3d5_4b29_904c_9618d8f2bfd8---Power
+Super---9769f3b2_17bf_4f20_b54b_3a4ebe572b36---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

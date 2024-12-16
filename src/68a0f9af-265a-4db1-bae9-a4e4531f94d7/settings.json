@@ -18,11 +18,15 @@
         },
         "use_selection1": {
             "use": "05744dd3-4030-4cf8-8dda-a93ab809b473",
-            "as": "Item"
+            "as": "DataItem"
         },
         "use_selection2": {
             "use": "3d3ec064-9867-41e6-a48a-964c15d753aa",
             "as": "Row"
+        },
+        "use_selection3": {
+            "use": "9c513baf-b279-43fd-ae29-a585c8cbc4f0",
+            "as": "default"
         }
     },
     "extendsinterfaces": null,

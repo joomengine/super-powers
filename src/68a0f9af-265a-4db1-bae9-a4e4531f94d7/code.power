@@ -12,7 +12,7 @@
 	 * @var   Item
 	 * @since 4.0.3
 	 */
-	protected Item $item;
+	protected DataItem $item;
 
 	/**
 	 * The Import Row Class.
@@ -26,12 +26,12 @@
 	 * Constructor.
 	 *
 	 * @param Validator   $validator   The Table ValidatorI Class.
-	 * @param Item        $item        The Item Class.
+	 * @param DataItem    $item        The Item Class.
 	 * @param Row         $row         The Import Row Class.
 	 *
 	 * @since 4.0.3
 	 */
-	public function __construct(Validator $validator, Item $item, Row $row)
+	public function __construct(Validator $validator, DataItem $item, Row $row)
 	{
 		$this->validator = $validator;
 		$this->item = $item;

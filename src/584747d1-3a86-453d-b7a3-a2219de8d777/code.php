@@ -109,7 +109,7 @@ abstract class Model implements ModelInterface
 
 	/**
 	 * Model a value of multiple items
-	 *          Example: $this->items(Array, 'value_key', 'table_name');
+	 *          Example: $this->values(Array, 'value_key', 'table_name');
 	 *
 	 * @param   array|null    $items    The array of values
 	 * @param   string        $field    The field key

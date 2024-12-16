@@ -88,7 +88,7 @@
         "guid": "0f3f7188-3e0d-4d1a-8dee-7f8026cb65a9"
     },
     "11572d9b-e3d5-4b29-904c-9618d8f2bfd8": {
-        "name": "Count",
+        "name": "PathCount",
         "type": "trait",
         "namespace": "VDM\\Joomla\\Abstraction\\Registry\\Traits",
         "code": "src\/11572d9b-e3d5-4b29-904c-9618d8f2bfd8\/code.php",
@@ -770,7 +770,7 @@
         "guid": "7c1fb50f-8fb1-4627-8705-6fedf7182ca5"
     },
     "7d494d91-ab60-43cd-aecf-d50e07f7f30e": {
-        "name": "ToString",
+        "name": "PathToString",
         "type": "trait",
         "namespace": "VDM\\Joomla\\Abstraction\\Registry\\Traits",
         "code": "src\/7d494d91-ab60-43cd-aecf-d50e07f7f30e\/code.php",
@@ -911,6 +911,17 @@
         "path": "src\/95c02df3-fe0a-405b-b506-b7a5b8605b66",
         "spk": "Super---95c02df3_fe0a_405b_b506_b7a5b8605b66---Power",
         "guid": "95c02df3-fe0a-405b-b506-b7a5b8605b66"
+    },
+    "9769f3b2-17bf-4f20-b54b-3a4ebe572b36": {
+        "name": "ComponentConfig",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Abstraction",
+        "code": "src\/9769f3b2-17bf-4f20-b54b-3a4ebe572b36\/code.php",
+        "power": "src\/9769f3b2-17bf-4f20-b54b-3a4ebe572b36\/code.power",
+        "settings": "src\/9769f3b2-17bf-4f20-b54b-3a4ebe572b36\/settings.json",
+        "path": "src\/9769f3b2-17bf-4f20-b54b-3a4ebe572b36",
+        "spk": "Super---9769f3b2_17bf_4f20_b54b_3a4ebe572b36---Power",
+        "guid": "9769f3b2-17bf-4f20-b54b-3a4ebe572b36"
     },
     "993fe913-8e36-4800-a5f7-544aa728ee48": {
         "name": "DateHelper",
@@ -1441,7 +1452,7 @@
         "guid": "ff8d5fdb-2d1f-4178-bd18-a43b8efd1068"
     },
     "ffbd4e1f-a342-4080-ab7d-1de3741bf319": {
-        "name": "BaseConfig",
+        "name": "FunctionRegistry",
         "type": "abstract class",
         "namespace": "VDM\\Joomla\\Abstraction",
         "code": "src\/ffbd4e1f-a342-4080-ab7d-1de3741bf319\/code.php",
