@@ -97,6 +97,22 @@ abstract class Schema implements SchemaInterface
 	protected $currentVersion;
 
 	/**
+	 * Current DB Version We are IN
+	 *
+	 * @var     string
+	 * @since 5.0.4
+	 **/
+	protected string $dbVersion;
+
+	/**
+	 * Current DB Type We are IN
+	 *
+	 * @var     string
+	 * @since 5.0.4
+	 **/
+	protected string $dbType;
+
+	/**
 	 * Constructor.
 	 *
 	 * @param Table   $table   The Table Class.
@@ -112,10 +128,16 @@ abstract class Schema implements SchemaInterface
 			// set the database object
 			$this->db = Factory::getDbo();
 
-			// get current component tables
+			// current DB version
+			$this->dbVersion = $this->db->getVersion();
+
+			// current DB type
+			$this->dbType = $this->db->getServerType();
+
+			// get current website tables
 			$this->tables = $this->db->getTableList();
 
-			// set the component table
+			// set the component table prefix
 			$this->prefix = $this->db->getPrefix() . $this->getCode();
 
 			// set the current version
@@ -800,6 +822,7 @@ abstract class Schema implements SchemaInterface
 	 *
 	 * @return string      The SQL fragment to set the default value for a field.
 	 * @since 3.2.1
+	 * @throws \RuntimeException If the database unsupported
 	 */
 	protected function getDefaultValue(string $type, ?string $defaultValue, bool $pure = false): string
 	{
@@ -808,10 +831,31 @@ abstract class Schema implements SchemaInterface
 			return '';
 		}
 
-		// Set default for DATETIME fields in Joomla versions above 3
-		if (strtoupper($type) === 'DATETIME' && $this->currentVersion != 3)
+		// Logic to handle DATETIME default values based on database type
+		if (strtoupper($type) === 'DATETIME')
 		{
-			return $pure ? "CURRENT_TIMESTAMP" : " DEFAULT CURRENT_TIMESTAMP";
+			if ($this->dbType === 'mysql')
+			{
+				// MySQL-specific logic
+				if (version_compare($this->dbVersion, '5.6', '>='))
+				{
+					return $pure ? "CURRENT_TIMESTAMP" : " DEFAULT CURRENT_TIMESTAMP";
+				}
+				else
+				{
+					return $pure ? "'0000-00-00 00:00:00'" : " DEFAULT '0000-00-00 00:00:00'";
+				}
+			}
+			elseif ($this->dbType === 'pgsql')
+			{
+				// PostgreSQL supports CURRENT_TIMESTAMP universally
+				return $pure ? "CURRENT_TIMESTAMP" : " DEFAULT CURRENT_TIMESTAMP";
+			}
+			else
+			{
+				// Unsupported database type (at this point... we can grow this area)
+				throw new \RuntimeException("Unsupported database type: {$dbType}");
+			}
 		}
 
 		// Apply and quote the default value

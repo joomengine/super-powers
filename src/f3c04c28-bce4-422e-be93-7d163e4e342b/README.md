@@ -21,6 +21,8 @@ abstract Schema  #Orange {
   - array $columns
   - array $success
   # $currentVersion
+  # string $dbVersion
+  # string $dbType
   + __construct(Table $table)
   + update() : array
   # {abstract} getCode() : string

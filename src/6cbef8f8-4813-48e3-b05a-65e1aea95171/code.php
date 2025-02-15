@@ -12,7 +12,8 @@
 namespace VDM\Joomla\Abstraction;
 
 
-use Joomla\CMS\Factory as JoomlaFactory;
+use Joomla\CMS\Factory;
+use Joomla\Database\DatabaseInterface;
 use VDM\Joomla\Utilities\Component\Helper;
 
 
@@ -54,7 +55,7 @@ abstract class Database
 	 */
 	public function __construct()
 	{
-		$this->db = JoomlaFactory::getDbo();
+		$this->db = Factory::getContainer()->get(DatabaseInterface::class);
 
 		// set the component table
 		$this->table = '#__' . Helper::getCode();

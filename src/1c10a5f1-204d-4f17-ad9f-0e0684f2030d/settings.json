@@ -1,6 +1,6 @@
 {
-    "add_head": "0",
-    "add_licensing_template": "2",
+    "add_head": 0,
+    "add_licensing_template": 2,
     "extends": "-1",
     "guid": "1c10a5f1-204d-4f17-ad9f-0e0684f2030d",
     "implements": null,

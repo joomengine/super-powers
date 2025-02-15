@@ -1,6 +1,6 @@
 {
-    "add_head": "1",
-    "add_licensing_template": "2",
+    "add_head": 1,
+    "add_licensing_template": 2,
     "extends": "",
     "guid": "a5daf189-3345-4b13-8716-c51f686f545b",
     "implements": [
@@ -40,12 +40,16 @@
             "use": "85785701-07b2-4f81-bc1e-0f423700c254",
             "as": "default"
         },
-        "use_selection8": {
+        "use_selection7": {
             "use": "46b98346-ec98-42b3-a393-96c7d1282b1c",
             "as": "default"
         },
-        "use_selection7": {
+        "use_selection8": {
             "use": "e0198c3f-777a-4a0b-87b7-e6a198afc8f9",
+            "as": "default"
+        },
+        "use_selection9": {
+            "use": "0b746305-d34e-4c21-bc20-898c4aeac376",
             "as": "default"
         }
     },

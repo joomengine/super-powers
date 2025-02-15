@@ -13,6 +13,7 @@
 @startuml
 class Guid << (T,Orange) >> #Turquoise {
   + getGuid(string $key) : string
+  + {static} validateGuid(string $guid) : bool
   - fallbackGuid(string $key) : string
   - checkGuid(string $guid, string $key) : string
 }
@@ -24,6 +25,13 @@ available on the platform with a fallback to an older, less secure version.
 
   since: 5.0.2
   return: string
+end note
+
+note right of Guid::validateGuid
+  Validate the Globally Unique Identifier
+
+  since: 5.0.4
+  return: bool
 end note
 
 note right of Guid::fallbackGuid

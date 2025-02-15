@@ -29,7 +29,7 @@
 	 */
 	public function __construct()
 	{
-		$this->db = JoomlaFactory::getDbo();
+		$this->db = Factory::getContainer()->get(DatabaseInterface::class);
 
 		// set the component table
 		$this->table = '#__' . Helper::getCode();

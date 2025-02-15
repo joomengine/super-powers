@@ -22,6 +22,7 @@ class Data  #Gold {
   + getSubform(Container $container) : Subform
   + getUsersSubform(Container $container) : UsersSubform
   + getMultiSubform(Container $container) : MultiSubform
+  + getMigratorGuid(Container $container) : Guid
 }
 
 note right of Data::register
@@ -92,6 +93,13 @@ note left of Data::getMultiSubform
 
   since: 3.2.0
   return: MultiSubform
+end note
+
+note right of Data::getMigratorGuid
+  Get The Migrator To Guid Class.
+
+  since: 5.0.4
+  return: Guid
 end note
  
 @enduml

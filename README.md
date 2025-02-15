@@ -159,6 +159,9 @@ This repository contains an index (see below) of all the approved powers within 
   - **class Insert** | [Details](src/a455d916-cfe4-41df-9245-bafb709aacdb) | [Code](src/a455d916-cfe4-41df-9245-bafb709aacdb/code.php) | [Settings](src/a455d916-cfe4-41df-9245-bafb709aacdb/settings.json) | SPK: `Super---a455d916_cfe4_41df_9245_bafb709aacdb---Power`
   - **class Load** | [Details](src/008d111c-9d43-427c-8dd4-2653e8b74be8) | [Code](src/008d111c-9d43-427c-8dd4-2653e8b74be8/code.php) | [Settings](src/008d111c-9d43-427c-8dd4-2653e8b74be8/settings.json) | SPK: `Super---008d111c_9d43_427c_8dd4_2653e8b74be8---Power`
   - **class Update** | [Details](src/8f83fb79-f92b-4f1f-952b-325f6c22d11e) | [Code](src/8f83fb79-f92b-4f1f-952b-325f6c22d11e/code.php) | [Settings](src/8f83fb79-f92b-4f1f-952b-325f6c22d11e/settings.json) | SPK: `Super---8f83fb79_f92b_4f1f_952b_325f6c22d11e---Power`
+- **Namespace**: [VDM\Joomla\Data\Migrator](#vdm-joomla-data-migrator)
+
+  - **final class Guid** | [Details](src/0b746305-d34e-4c21-bc20-898c4aeac376) | [Code](src/0b746305-d34e-4c21-bc20-898c4aeac376/code.php) | [Settings](src/0b746305-d34e-4c21-bc20-898c4aeac376/settings.json) | SPK: `Super---0b746305_d34e_4c21_bc20_898c4aeac376---Power`
 - **Namespace**: [VDM\Joomla\Interfaces\Data](#vdm-joomla-interfaces-data)
 
   - **interface DeleteInterface** | [Details](src/d8f9ba53-c490-4e8b-8e9f-6757224e069c) | [Code](src/d8f9ba53-c490-4e8b-8e9f-6757224e069c/code.php) | [Settings](src/d8f9ba53-c490-4e8b-8e9f-6757224e069c/settings.json) | SPK: `Super---d8f9ba53_c490_4e8b_8e9f_6757224e069c---Power`
@@ -201,6 +204,9 @@ This repository contains an index (see below) of all the approved powers within 
   - **trait PathCount** | [Details](src/11572d9b-e3d5-4b29-904c-9618d8f2bfd8) | [Code](src/11572d9b-e3d5-4b29-904c-9618d8f2bfd8/code.php) | [Settings](src/11572d9b-e3d5-4b29-904c-9618d8f2bfd8/settings.json) | SPK: `Super---11572d9b_e3d5_4b29_904c_9618d8f2bfd8---Power`
   - **trait PathToString** | [Details](src/7d494d91-ab60-43cd-aecf-d50e07f7f30e) | [Code](src/7d494d91-ab60-43cd-aecf-d50e07f7f30e/code.php) | [Settings](src/7d494d91-ab60-43cd-aecf-d50e07f7f30e/settings.json) | SPK: `Super---7d494d91_ab60_43cd_aecf_d50e07f7f30e---Power`
   - **trait VarExport** | [Details](src/52a1d14f-304a-431c-8fa4-411179942db5) | [Code](src/52a1d14f-304a-431c-8fa4-411179942db5/code.php) | [Settings](src/52a1d14f-304a-431c-8fa4-411179942db5/settings.json) | SPK: `Super---52a1d14f_304a_431c_8fa4_411179942db5---Power`
+- **Namespace**: [VDM\Joomla\Componentbuilder\Data\Migrator](#vdm-joomla-componentbuilder-data-migrator)
+
+  - **abstract class Factory** | [Details](src/f04c13b3-e24e-4cb5-b858-c4fe83c6f991) | [Code](src/f04c13b3-e24e-4cb5-b858-c4fe83c6f991/code.php) | [Settings](src/f04c13b3-e24e-4cb5-b858-c4fe83c6f991/settings.json) | SPK: `Super---f04c13b3_e24e_4cb5_b858_c4fe83c6f991---Power`
 - **Namespace**: [VDM\Joomla\Componentbuilder\File\Service](#vdm-joomla-componentbuilder-file-service)
 
   - **class File** | [Details](src/202ccd9e-dfcf-4cde-a0ce-bde1fd27f088) | [Code](src/202ccd9e-dfcf-4cde-a0ce-bde1fd27f088/code.php) | [Settings](src/202ccd9e-dfcf-4cde-a0ce-bde1fd27f088/settings.json) | SPK: `Super---202ccd9e_dfcf_4cde_a0ce_bde1fd27f088---Power`
