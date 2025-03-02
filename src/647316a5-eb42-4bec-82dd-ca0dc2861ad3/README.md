@@ -6,33 +6,21 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# final class ChunkReadFilter (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Spreadsheet**
+# class ItemImport (Details)
+> namespace: **VDM\Joomla\Componentbuilder\Console**
+> extends: **Import**
 
 ```uml
 @startuml
-class ChunkReadFilter << (F,LightGreen) >> #RoyalBlue {
-  - int $startRow
-  - int $endRow
-  + __construct(int $startRow, int $chunkSize)
-  + readCell($columnAddress, int $row, ...) : bool
+class ItemImport  #Gold {
+  # string $queueStatusField
+  # int $queueWaitState
+  # int $queueProcessingState
+  # string $queueTable
+  # string $targetName
+  # string $targetImportClass
+  # static $defaultName
 }
-
-note right of ChunkReadFilter::__construct
-  Constructor to initialize the chunk filter.
-
-end note
-
-note right of ChunkReadFilter::readCell
-  Determines whether a cell should be read based on its row and column.
-
-  return: bool
-  
-  arguments:
-    $columnAddress
-    int $row
-    string|null $worksheetName = ''
-end note
  
 @enduml
 ```
@@ -47,7 +35,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---9ae018a5_9064_40ed_ad69_9c1ed2a459f5---Power
+Super---647316a5_eb42_4bec_82dd_ca0dc2861ad3---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

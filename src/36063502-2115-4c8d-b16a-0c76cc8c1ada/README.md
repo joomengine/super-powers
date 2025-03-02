@@ -6,32 +6,26 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# final class ChunkReadFilter (Details)
+# final class RowDataArray (Details)
 > namespace: **VDM\Joomla\Componentbuilder\Spreadsheet**
 
 ```uml
 @startuml
-class ChunkReadFilter << (F,LightGreen) >> #RoyalBlue {
-  - int $startRow
-  - int $endRow
-  + __construct(int $startRow, int $chunkSize)
-  + readCell($columnAddress, int $row, ...) : bool
+class RowDataArray << (F,LightGreen) >> #RoyalBlue {
+  + process(Row $row) : ?array
 }
 
-note right of ChunkReadFilter::__construct
-  Constructor to initialize the chunk filter.
+note right of RowDataArray::process
+  Processes a given spreadsheet row and returns an associative array containing the row index and cell values indexed by column letters.
+This method iterates over each cell in the provided row, retrieves the cell values, and creates
+an associative array where 'index' holds the row index and 'value' contains an associative array
+of column letters as keys and cell values as the corresponding values.
+- 'index' (int): The row index.
+- 'values' (array<string, string>): An associative array where keys are the column letters
+(string), and values are the corresponding cell values (string).
 
-end note
-
-note right of ChunkReadFilter::readCell
-  Determines whether a cell should be read based on its row and column.
-
-  return: bool
-  
-  arguments:
-    $columnAddress
-    int $row
-    string|null $worksheetName = ''
+  since: 5.0.2
+  return: ?array
 end note
  
 @enduml
@@ -47,7 +41,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---9ae018a5_9064_40ed_ad69_9c1ed2a459f5---Power
+Super---36063502_2115_4c8d_b16a_0c76cc8c1ada---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

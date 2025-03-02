@@ -6,32 +6,52 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# final class ChunkReadFilter (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Spreadsheet**
+# class Import (Details)
+> namespace: **VDM\Joomla\Componentbuilder\Service\Item**
 
 ```uml
 @startuml
-class ChunkReadFilter << (F,LightGreen) >> #RoyalBlue {
-  - int $startRow
-  - int $endRow
-  + __construct(int $startRow, int $chunkSize)
-  + readCell($columnAddress, int $row, ...) : bool
+class Import  #Gold {
+  + register(Container $container) : void
+  + getItemImport(Container $container) : ItemImport
+  + getParentTable(Container $container) : ParentTable
+  + getJoinTables(Container $container) : JoinTables
+  + getRowDataArray(Container $container) : RowDataArray
 }
 
-note right of ChunkReadFilter::__construct
-  Constructor to initialize the chunk filter.
+note right of Import::register
+  Registers the service provider with a DI container.
 
+  since: 5.0.2
+  return: void
 end note
 
-note right of ChunkReadFilter::readCell
-  Determines whether a cell should be read based on its row and column.
+note right of Import::getItemImport
+  Get The Import Class.
 
-  return: bool
-  
-  arguments:
-    $columnAddress
-    int $row
-    string|null $worksheetName = ''
+  since: 5.0.2
+  return: ItemImport
+end note
+
+note right of Import::getParentTable
+  Get The ParentTable Class.
+
+  since: 5.0.2
+  return: ParentTable
+end note
+
+note right of Import::getJoinTables
+  Get The JoinTables Class.
+
+  since: 5.0.2
+  return: JoinTables
+end note
+
+note right of Import::getRowDataArray
+  Get The RowDataArray Class.
+
+  since: 5.0.2
+  return: RowDataArray
 end note
  
 @enduml
@@ -47,7 +67,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---9ae018a5_9064_40ed_ad69_9c1ed2a459f5---Power
+Super---b5184f80_613e_46c8_b40a_b60de779bb78---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

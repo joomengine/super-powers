@@ -6,32 +6,65 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# final class ChunkReadFilter (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Spreadsheet**
+# final class JoinTables (Details)
+> namespace: **VDM\Joomla\Componentbuilder\Item\Import**
 
 ```uml
 @startuml
-class ChunkReadFilter << (F,LightGreen) >> #RoyalBlue {
-  - int $startRow
-  - int $endRow
-  + __construct(int $startRow, int $chunkSize)
-  + readCell($columnAddress, int $row, ...) : bool
+class JoinTables << (F,LightGreen) >> #RoyalBlue {
+  # Mapper $mapper
+  # ImportItem $importitem
+  # Data $data
+  # Item $item
+  # Load $load
+  + __construct(Mapper $mapper, ImportItem $importitem, ...)
+  + set(string $parentJoinKey, string $parentGuid) : void
+  - isJoinedItemReady(array $item, array $keyFields, ...) : bool
+  - saveJoinedItem(array $item, array $keyFields, ...) : void
 }
 
-note right of ChunkReadFilter::__construct
-  Constructor to initialize the chunk filter.
+note right of JoinTables::__construct
+  Constructor.
 
+  since: 5.0.2
+  
+  arguments:
+    Mapper $mapper
+    ImportItem $importitem
+    Data $data
+    Item $item
+    Load $load
 end note
 
-note right of ChunkReadFilter::readCell
-  Determines whether a cell should be read based on its row and column.
+note right of JoinTables::set
+  Process the join tables and save the corresponding data.
 
+  since: 5.0.2
+  return: void
+end note
+
+note right of JoinTables::isJoinedItemReady
+  Check if the item is ready to be processed.
+
+  since: 5.0.2
   return: bool
   
   arguments:
-    $columnAddress
-    int $row
-    string|null $worksheetName = ''
+    array $item
+    array $keyFields
+    string $table
+end note
+
+note right of JoinTables::saveJoinedItem
+  Save the item (either insert or update).
+
+  since: 5.0.2
+  return: void
+  
+  arguments:
+    array $item
+    array $keyFields
+    string $table
 end note
  
 @enduml
@@ -47,7 +80,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---9ae018a5_9064_40ed_ad69_9c1ed2a459f5---Power
+Super---db00768d_c7a6_421d_8f39_577550ddf792---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

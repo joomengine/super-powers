@@ -6,32 +6,89 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# final class ChunkReadFilter (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Spreadsheet**
+# final class Import (Details)
+> namespace: **VDM\Joomla\Componentbuilder\Item**
 
 ```uml
 @startuml
-class ChunkReadFilter << (F,LightGreen) >> #RoyalBlue {
-  - int $startRow
-  - int $endRow
-  + __construct(int $startRow, int $chunkSize)
-  + readCell($columnAddress, int $row, ...) : bool
+class Import << (F,LightGreen) >> #RoyalBlue {
+  # int $startingRow
+  # string $parentTable
+  # string $parentKey
+  # string $parentJoinKey
+  # string $linkField
+  # string $importTable
+  # Status $status
+  # Message $message
+  # Mapper $mapper
+  # Data $data
+  # Importer $importer
+  # RowData $rowdata
+  # Row $row
+  # ParentTable $parentTableClass
+  # JoinTables $joinTables
+  # Assessor $assessor
+  # Item $item
+  + __construct(Status $status, Message $message, ...)
+  + data(object $import) : void
+  + message() : object
+  - prematureError(string $guid, string $message) : void
+  - import() : ?string
+  - getFile(string $file) : ?object
 }
 
-note right of ChunkReadFilter::__construct
-  Constructor to initialize the chunk filter.
+note right of Import::__construct
+  Constructor.
 
-end note
-
-note right of ChunkReadFilter::readCell
-  Determines whether a cell should be read based on its row and column.
-
-  return: bool
+  since: 5.0.2
   
   arguments:
-    $columnAddress
-    int $row
-    string|null $worksheetName = ''
+    Status $status
+    Message $message
+    Mapper $mapper
+    Data $data
+    Importer $importer
+    RowData $rowdata
+    Row $row
+    ParentTable $parentTableClass
+    JoinTables $joinTables
+    Assessor $assessor
+    Item $item
+end note
+
+note right of Import::data
+  The trigger function called from the CLI to start the item import on a spreadsheet
+
+  since: 5.0.2
+  return: void
+end note
+
+note right of Import::message
+  The message of the last import event
+
+  since: 5.0.2
+  return: object
+end note
+
+note right of Import::prematureError
+  This is trigger on premature error
+
+  since: 5.0.2
+  return: void
+end note
+
+note right of Import::import
+  Save the item calculated values
+
+  since: 5.0.2
+  return: ?string
+end note
+
+note right of Import::getFile
+  Get the file details
+
+  since: 5.0.2
+  return: ?object
 end note
  
 @enduml
@@ -47,7 +104,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---9ae018a5_9064_40ed_ad69_9c1ed2a459f5---Power
+Super---2f14ec19_1b67_44be_8306_2a9e74588464---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

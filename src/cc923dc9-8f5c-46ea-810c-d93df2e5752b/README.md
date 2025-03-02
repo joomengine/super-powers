@@ -6,32 +6,83 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# final class ChunkReadFilter (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Spreadsheet**
+# final class ParentTable (Details)
+> namespace: **VDM\Joomla\Componentbuilder\Item\Import**
 
 ```uml
 @startuml
-class ChunkReadFilter << (F,LightGreen) >> #RoyalBlue {
-  - int $startRow
-  - int $endRow
-  + __construct(int $startRow, int $chunkSize)
-  + readCell($columnAddress, int $row, ...) : bool
+class ParentTable << (F,LightGreen) >> #RoyalBlue {
+  # Row $row
+  # ImportItem $importitem
+  # Mapper $mapper
+  # Message $message
+  # Data $data
+  # Item $item
+  # Load $load
+  # string $table
+  # string $key
+  # string $link
+  + __construct(Row $row, ImportItem $importitem, ...)
+  + set(string $linkKey, string $parentKey, ...) : ?string
+  - getParent() : ?array
+  - validateParent(?array $parent) : bool
+  - processParent(array $parent) : ?string
+  - validateParentGuid(?string $guid) : bool
 }
 
-note right of ChunkReadFilter::__construct
-  Constructor to initialize the chunk filter.
+note right of ParentTable::__construct
+  Constructor.
 
-end note
-
-note right of ChunkReadFilter::readCell
-  Determines whether a cell should be read based on its row and column.
-
-  return: bool
+  since: 5.0.2
   
   arguments:
-    $columnAddress
-    int $row
-    string|null $worksheetName = ''
+    Row $row
+    ImportItem $importitem
+    Mapper $mapper
+    Message $message
+    Data $data
+    Item $item
+    Load $load
+end note
+
+note right of ParentTable::set
+  Set the parent data
+
+  since: 5.0.2
+  return: ?string
+  
+  arguments:
+    string $linkKey
+    string $parentKey
+    string $parentTable
+end note
+
+note right of ParentTable::getParent
+  Retrieve parent item.
+
+  since: 5.0.2
+  return: ?array
+end note
+
+note right of ParentTable::validateParent
+  Validate the parent item.
+
+  since: 5.0.2
+  return: bool
+end note
+
+note right of ParentTable::processParent
+  Process parent data, performing insert or update as needed.
+
+  since: 5.0.2
+  return: ?string
+end note
+
+note right of ParentTable::validateParentGuid
+  Validate the retrieved parent guid.
+
+  since: 5.0.2
+  return: bool
 end note
  
 @enduml
@@ -47,7 +98,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---9ae018a5_9064_40ed_ad69_9c1ed2a459f5---Power
+Super---cc923dc9_8f5c_46ea_810c_d93df2e5752b---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

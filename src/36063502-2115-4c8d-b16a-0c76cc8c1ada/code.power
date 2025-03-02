@@ -1,0 +1,33 @@
+	/**
+	 * Processes a given spreadsheet row and returns an associative array containing the row index and cell values indexed by column letters.
+	 *
+	 * This method iterates over each cell in the provided row, retrieves the cell values, and creates
+	 * an associative array where 'index' holds the row index and 'value' contains an associative array
+	 * of column letters as keys and cell values as the corresponding values.
+	 *
+	 * @param Row $row The row object from the spreadsheet to be processed.
+	 *
+	 * @return null|array<string, string> An associative array with the following structure:
+	 *                             - 'index' (int): The row index.
+	 *                             - 'values' (array<string, string>): An associative array where keys are the column letters
+	 *                               (string), and values are the corresponding cell values (string).
+	 * @since 5.0.2
+	 */
+	public function process(Row $row): ?array
+	{
+		if ($row->isEmpty())
+		{
+			return null;
+		}
+
+		$rowData = ['index' => $row->getRowIndex(), 'values' => []];
+		$cellIterator = $row->getCellIterator();
+		$cellIterator->setIterateOnlyExistingCells(true);
+
+		foreach ($cellIterator as $cell)
+		{
+			$rowData['values'][$cell->getColumn()] = $cell->getValueString();
+		}
+
+		return $rowData;
+	}
