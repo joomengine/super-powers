@@ -69,7 +69,7 @@ Example:
 $items,
 $setMap = [
 '_core' => [
-'table' =>'data',
+'table' => 'data',
 'indexKey' => 'guid',
 'linkKey' => 'look',
 'linkValue' => $data['guid'] ?? ''

@@ -13,70 +13,100 @@
 @startuml
 abstract StringHelper  #Orange {
   + static $langTag
-  + {static} check($string) : bool
-  + {static} shorten($string, $length = 40, ...)
-  + {static} safe($string, $type = 'L', ...)
-  + {static} transliterate($string)
-  + {static} html($var, $charset = 'UTF-8', ...)
-  + {static} numbers($string)
+  + {static} check(mixed $input) : bool
+  + {static} shorten(mixed $string, int $length = 40, ...) : string|mixed
+  + {static} safe(string $string, string $type = 'L', ...) : string
+  + {static} transliterate($string) : string
+  + {static} html(string $var, string $charset = 'UTF-8', ...) : string
+  + {static} numbers($string) : ?string
   + {static} number($x)
   + {static} random(int $size) : string
 }
 
 note right of StringHelper::check
-  Check if we have a string with a length
+  Validate that input is a non-empty, non-whitespace-only string.
 
   since: 3.0.9
   return: bool
 end note
 
 note left of StringHelper::shorten
-  Shorten a string
+  Shortens a string to a specified length, optionally adding a tooltip with the full text.
+This method safely shortens the input string without cutting words abruptly. If the string
+exceeds the specified length, ellipses (...) are added. Optionally, a tooltip containing the
+longer original string can be included.
 
-  since: 3.2.0
+  since: 3.2.1
+  return: string|mixed
   
   arguments:
-    $string
-    $length = 40
-    $addTip = true
+    mixed $string
+    int $length = 40
+    bool $addTip = true
 end note
 
 note right of StringHelper::safe
-  Making strings safe (various ways)
+  Makes a string safe by sanitizing and formatting it according to the specified type.
+This method can remove unwanted characters, transliterate text, replace numbers with
+their English equivalents, and apply different case formatting styles.
+- 'filename'  : Removes special characters and extra spaces.
+- 'L'         : Converts to lowercase with underscores replacing spaces.
+- 'strtolower': Alias for 'L'.
+- 'W'         : Capitalizes the first letter of each word.
+- 'w'         : Converts to lowercase (spaces remain).
+- 'word'      : Alias for 'w'.
+- 'Ww'        : Capitalizes only the first word.
+- 'Word'      : Alias for 'Ww'.
+- 'WW'        : Converts the entire string to uppercase.
+- 'WORD'      : Alias for 'WW'.
+- 'U'         : Converts to uppercase with underscores replacing spaces.
+- 'strtoupper': Alias for 'U'.
+- 'F'         : Capitalizes only the first letter of the entire string.
+- 'ucfirst'   : Alias for 'F'.
+- 'cA'        : Converts to camelCase.
+- 'cAmel'     : Alias for 'cA'.
+- 'camelcase' : Alias for 'cA'.
 
   since: 3.0.9
+  return: string
   
   arguments:
-    $string
-    $type = 'L'
-    $spacer = '_'
-    $replaceNumbers = true
-    $keepOnlyCharacters = true
+    string $string
+    string $type = 'L'
+    string $spacer = '_'
+    bool $replaceNumbers = true
+    bool $keepOnlyCharacters = true
 end note
 
 note left of StringHelper::transliterate
   Convert none English strings to code usable string
 
   since: 3.0.9
+  return: string
 end note
 
 note right of StringHelper::html
-  make sure a string is HTML save
+  Ensures a string is safe for HTML output by encoding entities and applying an input filter.
+This method sanitizes the input string, converting special characters to HTML entities
+and applying Joomla's `InputFilter` to remove potentially unsafe HTML.
+Optionally, it can also shorten the string while preserving word integrity.
 
   since: 3.0.9
+  return: string
   
   arguments:
-    $var
-    $charset = 'UTF-8'
-    $shorten = false
-    $length = 40
-    $addTip = true
+    string $var
+    string $charset = 'UTF-8'
+    bool $shorten = false
+    int $length = 40
+    bool $addTip = true
 end note
 
 note left of StringHelper::numbers
   Convert all int in a string to an English word string
 
   since: 3.0.9
+  return: ?string
 end note
 
 note right of StringHelper::number

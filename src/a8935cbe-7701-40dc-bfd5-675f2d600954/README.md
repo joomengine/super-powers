@@ -12,14 +12,32 @@
 ```uml
 @startuml
 abstract TypeHelper  #Orange {
-  # static $builder
-  + {static} safe(String $string, String $option = null)
+  + {static} safe(String $string, String $option = null) : string
+  # {static} restoreCamelCase(string $original, string $modified) : string
+  # {static} clean(string $string) : string
 }
 
 note right of TypeHelper::safe
   Making field type name safe
 
   since: 3.0.9
+  return: string
+end note
+
+note right of TypeHelper::restoreCamelCase
+  Restores the camel case pattern from the original string after transliteration.
+
+  since: 5.1.1
+  return: string
+end note
+
+note right of TypeHelper::clean
+  Cleans type name string by:
+- Removing all characters except letters, numbers, underscores, and periods.
+- Allowing only one period (the first period in the string).
+
+  since: 5.1.1
+  return: string
 end note
  
 @enduml

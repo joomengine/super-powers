@@ -36,7 +36,8 @@ note right of FileHelper::getContent
 end note
 
 note right of FileHelper::write
-  Write a file to the server
+  Write a file to the server safely and efficiently.
+This function will always overwrite the existing file with new data.
 
   since: 3.0.9
   return: bool
