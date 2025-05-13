@@ -25,6 +25,10 @@
         "use_selection3": {
             "use": "5acded67-0e3d-4c6b-a6ea-b533b076de0c",
             "as": "TraitGuid"
+        },
+        "use_selection4": {
+            "use": "db87c339-5bb6-4291-a7ef-2c48ea1b06bc",
+            "as": "default"
         }
     },
     "extendsinterfaces": null,

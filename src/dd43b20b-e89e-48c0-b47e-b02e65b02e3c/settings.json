@@ -2,19 +2,24 @@
     "add_head": 0,
     "add_licensing_template": 2,
     "extends": "",
-    "guid": "e335dd61-c2f9-4536-8ed9-aec5edee0b26",
-    "implements": null,
-    "load_selection": null,
-    "name": "SetInterface",
-    "power_version": "1.0.0",
-    "system_name": "VDM.Interfaces.Remote.SetInterface",
-    "type": "interface",
-    "use_selection": null,
-    "extendsinterfaces": [
-        "1d0a2283-2d00-4c98-bf93-19e96c846d62"
+    "guid": "dd43b20b-e89e-48c0-b47e-b02e65b02e3c",
+    "implements": [
+        "61dfeb6a-2e26-44a7-87f8-68b7b09f94a0"
     ],
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Interfaces.Remote.SetInterface",
-    "description": "Set data based on global unique ids to remote system\r\n\r\n@since 3.2.2",
+    "load_selection": null,
+    "name": "Config",
+    "power_version": "1.0.0",
+    "system_name": "VDM.Abstraction.Remote.Config",
+    "type": "abstract class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "1a977217-0bb6-44e9-a201-6b4f8478e5b1",
+            "as": "Table"
+        }
+    },
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Abstraction.Remote.Config",
+    "description": "Remote Base Config Shared by get and set methods\r\n\r\n@since 5.2.1",
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
     "head": "",
     "composer": ""

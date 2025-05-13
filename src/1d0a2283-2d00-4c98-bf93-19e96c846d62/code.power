@@ -1,0 +1,27 @@
+	/**
+	 * Map a single item to its properties
+	 *
+	 * @param object $item The item to be mapped
+	 *
+	 * @return object
+	 * @since 3.2.2
+	 */
+	public function mapItem(object $item): object;
+
+	/**
+	 * Get index values
+	 *
+	 * @param object  $item  The item
+	 *
+	 * @return array|null
+	 * @since  3.2.2
+	 */
+	public function getIndexItem(object $item): ?array;
+
+	/**
+	 * Get index header
+	 *
+	 * @return array
+	 * @since  5.2.1
+	 */
+	public function getIndexHeader(): array;

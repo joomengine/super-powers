@@ -24,7 +24,12 @@ class Guid << (F,LightGreen) >> #RoyalBlue {
   - processBasicValue(array $mapping) : void
   - processSubformValue(array $mapping) : void
   - processSubSubformValue(array $mapping) : void
+  - processDashboardValue(array $mapping) : void
+  - processFieldValue(array $mapping) : void
   - getItemGuid(string $table, string $column, ...) : ?string
+  - updateSubformValue(string $table, array $row, ...) : bool
+  - getSubfromFields(string $xml) : ?array
+  - stringToIntArray(string $input) : array
   - processJson(string $values, string $linkedTable, ...) : string
   - processArray(array $values, string $linkedTable, ...) : array
   - updateValue(string $table, string $column, ...) : bool
@@ -78,6 +83,20 @@ note left of Guid::processSubSubformValue
   return: void
 end note
 
+note right of Guid::processDashboardValue
+  Processes dashboard values in a table and replaces IDs with GUIDs.
+
+  since: 5.1.1
+  return: void
+end note
+
+note left of Guid::processFieldValue
+  Processes field values in a table and replaces IDs with GUIDs.
+
+  since: 5.1.1
+  return: void
+end note
+
 note right of Guid::getItemGuid
   Retrieves or creates a GUID for a given linked table and ID (ITEM).
 
@@ -90,7 +109,33 @@ note right of Guid::getItemGuid
     mixed $value
 end note
 
-note left of Guid::processJson
+note left of Guid::updateSubformValue
+  Update the subform field.
+
+  since: 5.1.1
+  return: bool
+  
+  arguments:
+    string $table
+    array $row
+    array $fields
+end note
+
+note right of Guid::getSubfromFields
+  get the subfrom fields.
+
+  since: 5.1.1
+  return: ?array
+end note
+
+note left of Guid::stringToIntArray
+  Convert a comma-separated string to an array of integers.
+
+  since: 5.1.1
+  return: array
+end note
+
+note right of Guid::processJson
   Processes an json-array of basic values and replaces them with GUIDs.
 
   since: 5.0.4
@@ -103,7 +148,7 @@ note left of Guid::processJson
     string $hasUpdate
 end note
 
-note right of Guid::processArray
+note left of Guid::processArray
   Processes an array values and replaces them with GUIDs.
 
   since: 5.0.4
@@ -116,7 +161,7 @@ note right of Guid::processArray
     string $hasUpdate
 end note
 
-note left of Guid::updateValue
+note right of Guid::updateValue
   Updates a value in the database.
 
   since: 5.0.4
@@ -129,14 +174,14 @@ note left of Guid::updateValue
     int $id
 end note
 
-note right of Guid::setTable
+note left of Guid::setTable
   Set the current active table
 
   since: 5.0.4
   return: void
 end note
 
-note left of Guid::getTable
+note right of Guid::getTable
   Get the current active table
 
   since: 5.0.4

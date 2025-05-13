@@ -6,118 +6,156 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# interface GrepInterface (Details)
-> namespace: **VDM\Joomla\Interfaces**
+# interface ConfigInterface (Details)
+> namespace: **VDM\Joomla\Interfaces\Remote**
 
 ```uml
 @startuml
-interface GrepInterface  #Lavender {
-  + get(string $guid, ?array $order = null, ...) : ?object
-  + getPath(string $guid) : ?object
-  + getPaths() : ?array
-  + getPathsIndexes() : ?array
-  + getPathIndexes(string $guid) : ?object
-  + getRemoteIndex(string $guid) : ?object
-  + exists(string $guid, ?object $repo = null, ...) : bool
-  + setBranchField(string $field) : void
-  + setBranchDefaultName(?string $name) : void
+interface ConfigInterface  #Lavender {
+  + table(string $table) : self
+  + getTable() : string
+  + area(string $area) : self
+  + getArea() : ?string
+  + setSettingsPath(string $settingsPath) : self
+  + getSettingsPath() : string
   + setIndexPath(string $indexPath) : void
-  + loadApi(Api $api, ?string $base, ...) : void
+  + getIndexPath() : string
+  + getPlaceholders() : array
+  + getIndexMap() : array
+  + getIndexHeader() : array
+  + getSrcPath() : string
+  + getMainReadmePath() : string
+  + getMap() : array
+  + getTitleName() : string
+  + getGuidField() : string
+  + getPrefixKey() : string
+  + getSuffixKey() : string
 }
 
-note right of GrepInterface::get
-  Get an item
+note right of ConfigInterface::table
+  Set the current active table
 
   since: 3.2.2
-  return: ?object
-  
-  arguments:
-    string $guid
-    ?array $order = null
-    ?object $repo = null
+  return: self
 end note
 
-note left of GrepInterface::getPath
-  Get the path/repo object
-
-  since: 5.1.1
-  return: ?object
-end note
-
-note right of GrepInterface::getPaths
-  Get all the available repos
-
-  since: 5.1.1
-  return: ?array
-end note
-
-note left of GrepInterface::getPathsIndexes
-  Get all paths + indexes (the active set)
-
-  since: 5.1.1
-  return: ?array
-end note
-
-note right of GrepInterface::getPathIndexes
-  Get the a path + indexes
-
-  since: 5.1.1
-  return: ?object
-end note
-
-note left of GrepInterface::getRemoteIndex
-  Get the index of a repo
+note left of ConfigInterface::getTable
+  Get the current active table
 
   since: 3.2.2
-  return: ?object
+  return: string
 end note
 
-note right of GrepInterface::exists
-  Check if an item exists in any repo or in a specific repo.
+note right of ConfigInterface::area
+  Set the current active area
 
   since: 3.2.2
-  return: bool
-  
-  arguments:
-    string $guid
-    ?object $repo = null
-    ?array $order = null
+  return: self
 end note
 
-note left of GrepInterface::setBranchField
-  Set the branch field
+note left of ConfigInterface::getArea
+  Get the current active area
 
   since: 3.2.2
-  return: void
+  return: ?string
 end note
 
-note right of GrepInterface::setBranchDefaultName
-  Set the DEFAULT branch name (only used if branch field is not found)
+note right of ConfigInterface::setSettingsPath
+  Set the settings path
 
   since: 3.2.2
-  return: void
+  return: self
 end note
 
-note left of GrepInterface::setIndexPath
+note left of ConfigInterface::getSettingsPath
+  Get the settings path
+
+  since: 3.2.2
+  return: string
+end note
+
+note right of ConfigInterface::setIndexPath
   Set the index path
 
   since: 3.2.2
   return: void
 end note
 
-note right of GrepInterface::loadApi
-  Loads API config using the provided base URL and token.
-This method checks if the base URL contains 'https://git.vdm.dev/'.
-If it does, it uses the token as is (which may be null).
-If not, it ensures the token is not null by defaulting to an empty string.
+note left of ConfigInterface::getIndexPath
+  Get the index path
 
-  since: 5.0.4
-  return: void
-  
-  arguments:
-    Api $api
-    ?string $base
-    ?string $token
+  since: 3.2.2
+  return: string
+end note
+
+note right of ConfigInterface::getPlaceholders
+  Get core placeholders
+
+  since: 5.1.1
+  return: array
+end note
+
+note left of ConfigInterface::getIndexMap
+  Get index map
+
+  since: 5.1.1
+  return: array
+end note
+
+note right of ConfigInterface::getIndexHeader
+  Get index header
+
+  since: 5.1.1
+  return: array
+end note
+
+note left of ConfigInterface::getSrcPath
+  Get src path
+
+  since: 5.1.1
+  return: string
+end note
+
+note right of ConfigInterface::getMainReadmePath
+  Get main readme path
+
+  since: 5.1.1
+  return: string
+end note
+
+note left of ConfigInterface::getMap
+  Get map
+
+  since: 5.1.1
+  return: array
+end note
+
+note right of ConfigInterface::getTitleName
+  Get the table title name field
+
+  since: 5.1.1
+  return: string
+end note
+
+note left of ConfigInterface::getGuidField
+  Get GUID field
+
+  since: 5.1.1
+  return: string
+end note
+
+note right of ConfigInterface::getPrefixKey
+  Get Prefix Key
+
+  since: 5.1.1
+  return: string
+end note
+
+note left of ConfigInterface::getSuffixKey
+  Get Suffix Key
+
+  since: 5.1.1
+  return: string
 end note
  
 @enduml
@@ -133,7 +171,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---c182506a_ab84_439c_b962_1e606b58d545---Power
+Super---61dfeb6a_2e26_44a7_87f8_68b7b09f94a0---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

@@ -6,13 +6,13 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# final class Table (Details)
+# class Table (Details)
 > namespace: **VDM\Joomla\Componentbuilder**
 > extends: **BaseTable**
 
 ```uml
 @startuml
-class Table << (F,LightGreen) >> #RoyalBlue {
+class Table  #Gold {
 }
  
 @enduml

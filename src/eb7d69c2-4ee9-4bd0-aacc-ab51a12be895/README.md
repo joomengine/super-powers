@@ -8,6 +8,7 @@
 ```
 # abstract class Set (Details)
 > namespace: **VDM\Joomla\Abstraction\Remote**
+> extends: **Base**
 
 ```uml
 @startuml
@@ -17,44 +18,28 @@ abstract Set  #Orange {
   # ItemReadme $itemReadme
   # MainReadme $mainReadme
   # Git $git
+  # MessageBus $messages
   + array $repos
-  # string $table
-  # string $area
-  # array $map
   # array $settings
   # array $repoPlaceholders
-  + __construct(array $repos, Grep $grep, ...)
-  + table(string $table) : self
-  + area(string $area) : self
-  + setSettingsPath(string $settingsPath) : self
-  + setIndexSettingsPath(string $settingsIndexPath) : self
+  + __construct(Config $config, Grep $grep, ...)
   + items(array $guids) : bool
   # {abstract} updateItem(object $item, object $existing, ...) : bool
-  # {abstract} createItem(object $item, object $repo) : void
+  # {abstract} createItem(object $item, object $repo) : bool
   # {abstract} updateItemReadme(object $item, object $existing, ...) : void
   # {abstract} createItemReadme(object $item, object $repo) : void
-  # getTable() : string
-  # getArea() : string
   # saveRepoMainSettings(array $repoBucket) : void
   # isInvalidIndexRepo(mixed $repo, mixed $settings) : bool
   # mergeIndexSettings(string $repoGuid, array $settings) : array
-  # updateIndexMainFile(object $repo, string $path, ...) : void
+  # setMainRepoFile(object $repo, string $path, ...) : void
   # getLocalItems(array $guids) : ?array
-  # mapItem(object $item) : object
-  # save(object $item) : void
+  # save(object $rawItem) : bool
   # setRepoPlaceholders(object $repo) : void
   # updatePlaceholders(string $string) : string
-  # getIndexItem(object $item) : ?array
   # canWrite() : bool
   # targetRepo(object $item, object $repo) : bool
+  # getRepoName(object $repo) : string
   # areObjectsEqual(?object $obj1, ?object $obj2) : bool
-  # getSettingsPath() : string
-  # getIndexSettingsPath() : string
-  # index_map_IndexName(object $item) : ?string
-  # index_map_IndexSettingsPath(object $item) : string
-  # index_map_IndexPath(object $item) : string
-  # index_map_IndexKey(object $item) : string
-  # index_map_IndexGUID(object $item) : string
 }
 
 note right of Set::__construct
@@ -63,43 +48,17 @@ note right of Set::__construct
   since: 3.2.2
   
   arguments:
-    array $repos
+    Config $config
     Grep $grep
     Items $items
     ItemReadme $itemReadme
     MainReadme $mainReadme
     Git $git
+    MessageBus $messages
+    array $repos
     ?string $table = null
     ?string $settingsPath = null
-    ?string $settingsIndexPath = null
-end note
-
-note left of Set::table
-  Set the current active table
-
-  since: 3.2.2
-  return: self
-end note
-
-note right of Set::area
-  Set the current active area
-
-  since: 3.2.2
-  return: self
-end note
-
-note left of Set::setSettingsPath
-  Set the settings path
-
-  since: 3.2.2
-  return: self
-end note
-
-note right of Set::setIndexSettingsPath
-  Set the index settings path
-
-  since: 3.2.2
-  return: self
+    ?string $indexPath = null
 end note
 
 note left of Set::items
@@ -125,7 +84,7 @@ note left of Set::createItem
   create a new item
 
   since: 3.2.2
-  return: void
+  return: bool
 end note
 
 note right of Set::updateItemReadme
@@ -145,20 +104,6 @@ note left of Set::createItemReadme
 
   since: 3.2.2
   return: void
-end note
-
-note right of Set::getTable
-  Get the current active table
-
-  since: 3.2.2
-  return: string
-end note
-
-note left of Set::getArea
-  Get the current active area
-
-  since: 3.2.2
-  return: string
 end note
 
 note right of Set::saveRepoMainSettings
@@ -182,7 +127,7 @@ note right of Set::mergeIndexSettings
   return: array
 end note
 
-note left of Set::updateIndexMainFile
+note left of Set::setMainRepoFile
   Update a file in the repository
 
   since: 3.2.2
@@ -192,7 +137,8 @@ note left of Set::updateIndexMainFile
     object $repo
     string $path
     string $content
-    string $message
+    string $updateMessage
+    string $createMessage
 end note
 
 note right of Set::getLocalItems
@@ -202,39 +148,25 @@ note right of Set::getLocalItems
   return: ?array
 end note
 
-note left of Set::mapItem
-  Map a single item to its properties
-
-  since: 3.2.2
-  return: object
-end note
-
-note right of Set::save
+note left of Set::save
   Save an item remotely
 
   since: 3.2.2
-  return: void
+  return: bool
 end note
 
-note left of Set::setRepoPlaceholders
+note right of Set::setRepoPlaceholders
   Set the Repo Placeholders
 
   since: 5.0.3
   return: void
 end note
 
-note right of Set::updatePlaceholders
+note left of Set::updatePlaceholders
   Update Placeholders in String
 
   since: 5.0.3
   return: string
-end note
-
-note left of Set::getIndexItem
-  Get index values
-
-  since: 3.2.2
-  return: ?array
 end note
 
 note right of Set::canWrite
@@ -251,7 +183,14 @@ note left of Set::targetRepo
   return: bool
 end note
 
-note right of Set::areObjectsEqual
+note right of Set::getRepoName
+  get the name of the repo
+
+  since: 5.2.1
+  return: string
+end note
+
+note left of Set::areObjectsEqual
   Checks if two objects are equal by comparing their properties and values.
 This method converts both input objects to associative arrays, sorts the arrays by keys,
 and compares these sorted arrays.
@@ -259,55 +198,6 @@ If the arrays are identical, the objects are considered equal.
 
   since: 5.0.2
   return: bool
-end note
-
-note left of Set::getSettingsPath
-  Get the settings path
-
-  since: 3.2.2
-  return: string
-end note
-
-note right of Set::getIndexSettingsPath
-  Get the index settings path
-
-  since: 3.2.2
-  return: string
-end note
-
-note left of Set::index_map_IndexName
-  Get the item name for the index values
-
-  since: 3.2.2
-  return: ?string
-end note
-
-note right of Set::index_map_IndexSettingsPath
-  Get the item settings path for the index values
-
-  since: 3.2.2
-  return: string
-end note
-
-note left of Set::index_map_IndexPath
-  Get the item path for the index values
-
-  since: 3.2.2
-  return: string
-end note
-
-note right of Set::index_map_IndexKey
-  Get the item JPK for the index values
-
-  since: 3.2.2
-  return: string
-end note
-
-note left of Set::index_map_IndexGUID
-  Get the item GUID for the index values
-
-  since: 3.2.2
-  return: string
 end note
  
 @enduml

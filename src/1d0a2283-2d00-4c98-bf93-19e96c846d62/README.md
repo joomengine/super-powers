@@ -6,21 +6,37 @@
 ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
 ```
-# interface SetInterface (Details)
+# interface BaseInterface (Details)
 > namespace: **VDM\Joomla\Interfaces\Remote**
-> extends: **BaseInterface**
+> extends: **ConfigInterface**
 
 ```uml
 @startuml
-interface SetInterface  #Lavender {
-  + items(array $guids) : bool
+interface BaseInterface  #Lavender {
+  + mapItem(object $item) : object
+  + getIndexItem(object $item) : ?array
+  + getIndexHeader() : array
 }
 
-note right of SetInterface::items
-  Save items remotely
+note right of BaseInterface::mapItem
+  Map a single item to its properties
 
   since: 3.2.2
-  return: bool
+  return: object
+end note
+
+note right of BaseInterface::getIndexItem
+  Get index values
+
+  since: 3.2.2
+  return: ?array
+end note
+
+note right of BaseInterface::getIndexHeader
+  Get index header
+
+  since: 5.2.1
+  return: array
 end note
  
 @enduml
@@ -36,7 +52,7 @@ To add this specific Power to your project in JCB:
 
 > simply use this SPK
 ```
-Super---e335dd61_c2f9_4536_8ed9_aec5edee0b26---Power
+Super---1d0a2283_2d00_4c98_bf93_19e96c846d62---Power
 ```
 > remember to replace the `---` with `___` to activate this Power in your code
 

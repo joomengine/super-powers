@@ -8,29 +8,57 @@
 ```
 # interface GetInterface (Details)
 > namespace: **VDM\Joomla\Interfaces\Remote**
+> extends: **BaseInterface**
 
 ```uml
 @startuml
 interface GetInterface  #Lavender {
-  + table(string $table) : self
-  + init() : bool
+  + init(array $items, ?object $repo = null) : array
+  + path(string $guid) : ?object
+  + paths() : ?array
+  + list(?string $repo = null) : ?array
   + reset(array $items) : bool
-  + item(string $guid, array $order = ['remote', 'local']) : bool
-  + getTable() : string
+  + item(string $guid, array $order = ['remote', 'local'], ...) : bool
 }
 
-note right of GetInterface::table
-  Set the current active table
+note right of GetInterface::init
+  Initializes and categorizes items by checking their existence in the local database
+and optionally retrieving them from a remote repository if not found locally.
+This method processes an array of unique identifiers (`$items`) and checks each item:
+- If found in the local database: categorized under 'local'.
+- If not found locally and not available remotely: categorized under 'not_found'.
+- If retrieved from the remote repository: categorized under 'added' and stored locally.
+local: array<string, string>,
+not_found: array<string, string>,
+added: array<string, string>
+} Associative arrays indexed by GUIDs indicating the status of each item:
+- 'local': Items already present in the local database.
+- 'not_found': Items not found locally or remotely.
+- 'added': Items successfully retrieved from the remote repository and stored.
 
-  since: 3.2.2
-  return: self
+  since: 5.1.1
+  return: array
 end note
 
-note right of GetInterface::init
-  Init all items not found in database
+note right of GetInterface::path
+  Get the path/repo object
 
-  since: 3.2.0
-  return: bool
+  since: 5.1.1
+  return: ?object
+end note
+
+note right of GetInterface::paths
+  get all the available paths for this area
+
+  since: 5.1.1
+  return: ?array
+end note
+
+note right of GetInterface::list
+  Get all available items for the given repository, or all repositories if none specified.
+
+  since: 5.1.1
+  return: ?array
 end note
 
 note right of GetInterface::reset
@@ -43,15 +71,13 @@ end note
 note right of GetInterface::item
   Load an item
 
-  since: 3.2.2
+  since: 3.2.0
   return: bool
-end note
-
-note right of GetInterface::getTable
-  Get the current active table
-
-  since: 3.2.2
-  return: string
+  
+  arguments:
+    string $guid
+    array $order = ['remote', 'local']
+    ?object $repo = null
 end note
  
 @enduml

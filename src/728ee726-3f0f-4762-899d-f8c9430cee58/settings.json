@@ -1,7 +1,7 @@
 {
     "add_head": 0,
     "add_licensing_template": 2,
-    "extends": "",
+    "extends": "ee04ea3e-a853-4016-ba10-36e4864ca2b6",
     "guid": "728ee726-3f0f-4762-899d-f8c9430cee58",
     "implements": [
         "51de80f2-2868-4c2c-8198-ef79349e9bd7"
@@ -9,14 +9,18 @@
     "load_selection": null,
     "name": "Get",
     "power_version": "1.0.0",
-    "system_name": "VDM.Remote.Get",
+    "system_name": "VDM.Abstraction.Remote.Get",
     "type": "abstract class",
     "use_selection": {
         "use_selection0": {
+            "use": "61dfeb6a-2e26-44a7-87f8-68b7b09f94a0",
+            "as": "Config"
+        },
+        "use_selection1": {
             "use": "c182506a-ab84-439c-b962-1e606b58d545",
             "as": "Grep"
         },
-        "use_selection1": {
+        "use_selection2": {
             "use": "05744dd3-4030-4cf8-8dda-a93ab809b473",
             "as": "Item"
         }

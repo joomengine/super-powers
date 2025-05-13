@@ -13,29 +13,33 @@
     "type": "abstract class",
     "use_selection": {
         "use_selection0": {
-            "use": "8d1baef6-fcad-49a9-848f-428009cdb989",
-            "as": "default"
+            "use": "61dfeb6a-2e26-44a7-87f8-68b7b09f94a0",
+            "as": "Config"
         },
         "use_selection1": {
-            "use": "17ed2fec-49d6-4731-92c3-f9cd78fb6273",
-            "as": "Api"
+            "use": "d1de5d5b-bf29-4031-8094-76c4f6c75900",
+            "as": "Contents"
         },
         "use_selection2": {
             "use": "a0c143af-3d7d-4c19-91c4-f72060b4c361",
             "as": "default"
         },
         "use_selection3": {
+            "use": "17ed2fec-49d6-4731-92c3-f9cd78fb6273",
+            "as": "Api"
+        },
+        "use_selection4": {
             "use": "a223b31e-ea1d-4cdf-92ae-5f9becffaff0",
             "as": "default"
         },
-        "use_selection4": {
+        "use_selection5": {
             "use": "4b225c51-d293-48e4-b3f6-5136cf5c3f18",
             "as": "default"
         }
     },
     "extendsinterfaces": null,
     "namespace": "[[[NamespacePrefix]]]\\Joomla\\Abstraction.Grep",
-    "description": "Global Resource Empowerment Platform\r\n\r\n   The Grep feature will try to find your power in the repositories listed in the global\r\n   Options of JCB in the super powers tab, and if it can't be found there will try the global core\r\n   Super powers of JCB. All searches are performed according the [algorithm:cascading]\r\n   See documentation for more details: https:\/\/git.vdm.dev\/joomla\/super-powers\/wiki\r\n\r\n@since 3.2.1",
+    "description": "Global Resource Empowerment Platform\r\n\r\n   The Grep feature will try to find your power in the repositories\r\n   linked to this [area], and if it can't be found there will try the global core\r\n   Super Powers of JCB. All searches are performed according the [algorithm:cascading]\r\n   See documentation for more details: https:\/\/git.vdm.dev\/joomla\/super-powers\/wiki\r\n\r\n@since 3.2.1",
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
     "head": "use Joomla\\CMS\\Factory;\r\nuse Joomla\\CMS\\Language\\Text;\r\nuse Joomla\\CMS\\Filesystem\\Folder;\r\nuse Joomla\\CMS\\Application\\CMSApplication;",
     "composer": ""
