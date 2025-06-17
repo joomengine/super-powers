@@ -8,7 +8,7 @@
     "name": "Manager",
     "power_version": "1.0.0",
     "system_name": "Joomla.File.Manager",
-    "type": "final class",
+    "type": "class",
     "use_selection": {
         "use_selection0": {
             "use": "05744dd3-4030-4cf8-8dda-a93ab809b473",
@@ -31,6 +31,10 @@
             "as": "default"
         },
         "use_selection5": {
+            "use": "fbc235cd-e4cb-45e6-824e-51b3911243cc",
+            "as": "default"
+        },
+        "use_selection6": {
             "use": "f11dc790-713e-4706-9a85-a318ed3ad56e",
             "as": "default"
         }

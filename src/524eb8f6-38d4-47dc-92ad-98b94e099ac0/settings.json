@@ -1,7 +1,7 @@
 {
     "add_head": 1,
     "add_licensing_template": 2,
-    "extends": "6cbef8f8-4813-48e3-b05a-65e1aea95171",
+    "extends": "d9839333-a8f1-4a36-9256-5df4d349b3f6",
     "guid": "524eb8f6-38d4-47dc-92ad-98b94e099ac0",
     "implements": [
         "ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48"
@@ -13,6 +13,10 @@
     "type": "final class",
     "use_selection": {
         "use_selection0": {
+            "use": "b8176bdf-5615-4d91-8dfa-990d42f44127",
+            "as": "default"
+        },
+        "use_selection1": {
             "use": "0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a",
             "as": "default"
         }

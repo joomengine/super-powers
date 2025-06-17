@@ -1,20 +1,13 @@
-```
-██████╗  ██████╗ ██╗    ██╗███████╗██████╗
-██╔══██╗██╔═══██╗██║    ██║██╔════╝██╔══██╗
-██████╔╝██║   ██║██║ █╗ ██║█████╗  ██████╔╝
-██╔═══╝ ██║   ██║██║███╗██║██╔══╝  ██╔══██╗
-██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║
-╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝
-```
+### JCB! Power
 # final class Insert (Details)
 > namespace: **VDM\Joomla\Database**
-> extends: **Database**
+> extends: **Versioning**
 
 ```uml
 @startuml
+
 class Insert << (F,LightGreen) >> #RoyalBlue {
-  # bool $defaults
-  + defaults(bool $trigger = true) : void
+  # array $historyGuid
   + rows(array $data, string $table, ...) : bool
   + items(array $data, string $table, ...) : bool
   + row(array $data, string $table) : bool
@@ -22,16 +15,10 @@ class Insert << (F,LightGreen) >> #RoyalBlue {
   # getArrayColumns(array $data) : array
   # getObjectsColumns(array $data) : array
   # insert(array $data, string $table, ...) : bool
+  # trackHistory(array $history, string $table) : void
 }
 
-note right of Insert::defaults
-  Switch to prevent/allow defaults from being added.
-
-  since: 3.2.0
-  return: void
-end note
-
-note left of Insert::rows
+note right of Insert::rows
   Insert rows to the database (with remapping and filtering columns option)
 
   since: 3.2.0
@@ -43,7 +30,7 @@ note left of Insert::rows
     array $columns = []
 end note
 
-note right of Insert::items
+note left of Insert::items
   Insert items to the database (with remapping and filtering columns option)
 
   since: 3.2.0
@@ -55,35 +42,35 @@ note right of Insert::items
     array $columns = []
 end note
 
-note left of Insert::row
+note right of Insert::row
   Insert row to the database
 
   since: 3.2.0
   return: bool
 end note
 
-note right of Insert::item
+note left of Insert::item
   Insert item to the database
 
   since: 3.2.0
   return: bool
 end note
 
-note left of Insert::getArrayColumns
+note right of Insert::getArrayColumns
   Get columns from data array
 
   since: 3.2.0
   return: array
 end note
 
-note right of Insert::getObjectsColumns
+note left of Insert::getObjectsColumns
   Get columns from data objects
 
   since: 3.2.0
   return: array
 end note
 
-note left of Insert::insert
+note right of Insert::insert
   Insert data into the database
 
   since: 3.2.0
@@ -95,32 +82,45 @@ note left of Insert::insert
     array $columns
     bool $isArray
 end note
- 
+
+note left of Insert::trackHistory
+  Attempt to set history records for the specified entity.
+This method checks if history tracking is enabled and the provided `$entity` has
+corresponding GUIDs in the `$history` array. It then fetches the IDs for the
+matching GUIDs from the database and triggers history setting on them.
+Any exceptions during this process are silently caught and ignored.
+
+  since: 5.1.1
+  return: void
+end note
+
 @enduml
 ```
 
-The Power feature in JCB allows you to write PHP classes and their implementations, making it easy to include them in your Joomla project. JCB handles linking, autoloading, namespacing, and folder structure creation for you.
+The **Power** feature in JCB allows you to write PHP classes and their implementations,
+making it easy to include them in your Joomla project. JCB handles linking, autoloading,
+namespacing, and folder structure creation for you.
 
-By using the SPK (Super Power Key) in your custom code (replacing the class name in your code with the SPK), JCB will automatically pull the power from the repository into your project. This makes it available in your JCB instance, allowing you to edit it and include the class in your generated Joomla component.
+By using the **SPK** (Super Power Key) in your custom code (replacing the class name
+in your code with the SPK), JCB will automatically pull the Power from the repository
+into your project. This makes it available in your JCB instance, allowing you to edit
+and include the class in your generated Joomla component.
 
-JCB uses placeholders like [[[`NamespacePrefix`]]] and [[[`ComponentNamespace`]]] in namespacing to prevent collisions and improve reusability across different JCB systems. You can also set the **JCB powers path** globally or per component under the **Dynamic Integration** tab, providing flexibility and easy maintainability.
+JCB uses placeholders like [[[`NamespacePrefix`]]] and [[[`ComponentNamespace`]]] in
+namespacing to prevent collisions and improve reusability across different JCB systems.
+
+You can also set the **JCB powers path** globally or per component under the
+**Dynamic Integration** tab, providing flexibility and maintainability.
 
 To add this specific Power to your project in JCB:
 
-> simply use this SPK
+> Simply use this SPK:
 ```
 Super---524eb8f6_38d4_47dc_92ad_98b94e099ac0---Power
 ```
-> remember to replace the `---` with `___` to activate this Power in your code
+> Remember to replace the `---` with `___` to activate this Power in your code.
+
+### Used in [Joomla Component Builder](https://www.joomlacomponentbuilder.com) - [Source](https://git.vdm.dev/joomla/Component-Builder) - [Mirror](https://github.com/vdm-io/Joomla-Component-Builder) - [Download](https://git.vdm.dev/joomla/pkg-component-builder/releases)
 
 ---
-```
-     ██╗ ██████╗██████╗
-     ██║██╔════╝██╔══██╗
-     ██║██║     ██████╔╝
-██   ██║██║     ██╔══██╗
-╚█████╔╝╚██████╗██████╔╝
- ╚════╝  ╚═════╝╚═════╝
-```
-> Build with [Joomla Component Builder](https://git.vdm.dev/joomla/Component-Builder)
-
+[![Joomla Volunteer Portal](https://img.shields.io/badge/-Joomla-gold?logo=joomla)](https://volunteers.joomla.org/joomlers/1396-llewellyn-van-der-merwe "Join Llewellyn on the Joomla Volunteer Portal: Shaping the Future Together!") [![Octoleo](https://img.shields.io/badge/-Octoleo-black?logo=linux)](https://git.vdm.dev/octoleo "--quiet") [![Llewellyn](https://img.shields.io/badge/-Llewellyn-ffffff?logo=gitea)](https://git.vdm.dev/Llewellyn "Collaborate and Innovate with Llewellyn on Git: Building a Better Code Future!") [![Telegram](https://img.shields.io/badge/-Telegram-blue?logo=telegram)](https://t.me/Joomla_component_builder "Join Llewellyn and the Community on Telegram: Building Joomla Components Together!") [![Mastodon](https://img.shields.io/badge/-Mastodon-9e9eec?logo=mastodon)](https://joomla.social/@llewellyn "Connect and Engage with Llewellyn on Joomla Social: Empowering Communities, One Post at a Time!") [![X (Twitter)](https://img.shields.io/badge/-X-black?logo=x)](https://x.com/llewellynvdm "Join the Conversation with Llewellyn on X: Where Ideas Take Flight!") [![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github)](https://github.com/Llewellynvdm "Build, Innovate, and Thrive with Llewellyn on GitHub: Turning Ideas into Impact!") [![YouTube](https://img.shields.io/badge/-YouTube-ff0000?logo=youtube)](https://www.youtube.com/@OctoYou "Explore, Learn, and Create with Llewellyn on YouTube: Your Gateway to Inspiration!") [![n8n](https://img.shields.io/badge/-n8n-black?logo=n8n)](https://n8n.io/creators/octoleo "Effortless Automation and Impactful Workflows with Llewellyn on n8n!") [![Docker Hub](https://img.shields.io/badge/-Docker-grey?logo=docker)](https://hub.docker.com/u/llewellyn "Llewellyn on Docker: Containerize Your Creativity!") [![Open Collective](https://img.shields.io/badge/-Donate-green?logo=opencollective)](https://opencollective.com/joomla-component-builder "Donate towards JCB: Help Llewellyn financially so he can continue developing this great tool!") [![GPG Key](https://img.shields.io/badge/-GPG-blue?logo=gnupg)](https://git.vdm.dev/Llewellyn/gpg "Unlock Trust and Security with Llewellyn's GPG Key: Your Gateway to Verified Connections!")

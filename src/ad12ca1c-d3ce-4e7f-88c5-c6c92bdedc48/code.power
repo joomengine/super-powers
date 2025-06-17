@@ -1,14 +1,4 @@
 	/**
-	 * Switch to prevent/allow defaults from being added.
-	 *
-	 * @param   bool    $trigger      toggle the defaults
-	 *
-	 * @return  void
-	 * @since   3.2.0
-	 **/
-	public function defaults(bool $trigger = true);
-
-	/**
 	 * Insert rows to the database (with remapping and filtering columns option)
 	 *
 	 * @param   array    $data      Dataset to store in database [array of arrays (key => value)]

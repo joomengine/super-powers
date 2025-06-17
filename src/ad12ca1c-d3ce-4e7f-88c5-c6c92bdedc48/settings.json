@@ -7,11 +7,14 @@
     "load_selection": null,
     "name": "InsertInterface",
     "power_version": "1.0.0",
-    "system_name": "VDM.Interfaces.InsertInterface",
+    "system_name": "VDM.Interfaces.Database.InsertInterface",
     "type": "interface",
     "use_selection": null,
-    "extendsinterfaces": null,
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Interfaces.InsertInterface",
+    "extendsinterfaces": [
+        "78931d43-9fb9-4cc1-a2ca-b3e189ef842e",
+        "ac77cee7-7018-4496-a453-9757623e3849"
+    ],
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Interfaces.Database.InsertInterface",
     "description": "Database Insert Interface\r\n\r\n@since 3.2.0",
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
     "head": "",

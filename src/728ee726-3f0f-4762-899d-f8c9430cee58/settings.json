@@ -1,5 +1,5 @@
 {
-    "add_head": 0,
+    "add_head": 1,
     "add_licensing_template": 2,
     "extends": "ee04ea3e-a853-4016-ba10-36e4864ca2b6",
     "guid": "728ee726-3f0f-4762-899d-f8c9430cee58",
@@ -23,12 +23,20 @@
         "use_selection2": {
             "use": "05744dd3-4030-4cf8-8dda-a93ab809b473",
             "as": "Item"
+        },
+        "use_selection3": {
+            "use": "9787d63d-4d2e-44d3-9ffb-e4bfffd1a5a8",
+            "as": "default"
+        },
+        "use_selection4": {
+            "use": "dcb893ed-9a9f-426d-b1fd-3707a0be98c0",
+            "as": "default"
         }
     },
     "extendsinterfaces": null,
     "namespace": "[[[NamespacePrefix]]]\\Joomla\\Abstraction.Remote.Get",
     "description": "Get data based on global unique ids from remote system\r\n\r\n@since 3.2.0",
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "head": "",
+    "head": "use Joomla\\CMS\\Language\\Text;",
     "composer": ""
 }

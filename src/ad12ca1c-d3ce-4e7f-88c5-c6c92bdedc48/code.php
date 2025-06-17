@@ -9,7 +9,11 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Interfaces;
+namespace VDM\Joomla\Interfaces\Database;
+
+
+use VDM\Joomla\Interfaces\Database\DefaultInterface;
+use VDM\Joomla\Interfaces\Database\VersioningInterface;
 
 
 /**
@@ -17,18 +21,8 @@ namespace VDM\Joomla\Interfaces;
  * 
  * @since 3.2.0
  */
-interface InsertInterface
+interface InsertInterface extends DefaultInterface, VersioningInterface
 {
-	/**
-	 * Switch to prevent/allow defaults from being added.
-	 *
-	 * @param   bool    $trigger      toggle the defaults
-	 *
-	 * @return  void
-	 * @since   3.2.0
-	 **/
-	public function defaults(bool $trigger = true);
-
 	/**
 	 * Insert rows to the database (with remapping and filtering columns option)
 	 *

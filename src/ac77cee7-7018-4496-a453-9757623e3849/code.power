@@ -1,0 +1,9 @@
+	/**
+	 * Switch to prevent/allow history from being set.
+	 *
+	 * @param   int|null    $trigger   toggle the history (0 = no, 1 = yes, null = default)
+	 *
+	 * @return  self
+	 * @since   5.1.1
+	 **/
+	public function history(?int $trigger = null): self;

@@ -13,8 +13,8 @@
     "type": "final class",
     "use_selection": {
         "use_selection0": {
-            "use": "bfd1d6d5-56c1-4fe9-9fee-1c5910e1f5d8",
-            "as": "default"
+            "use": "2da6d6c4-eb29-4d69-8bc2-36d96e916adf",
+            "as": "Table"
         }
     },
     "extendsinterfaces": null,

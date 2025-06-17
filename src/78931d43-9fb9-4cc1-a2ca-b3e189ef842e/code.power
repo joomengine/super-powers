@@ -1,0 +1,9 @@
+	/**
+	 * Switch to prevent/allow defaults from being added.
+	 *
+	 * @param   bool    $trigger      toggle the defaults
+	 *
+	 * @return  self
+	 * @since   5.1.1
+	 **/
+	public function defaults(bool $trigger = true): self;

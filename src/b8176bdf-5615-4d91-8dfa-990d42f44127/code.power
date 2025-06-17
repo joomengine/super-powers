@@ -1,0 +1,22 @@
+	/**
+	 * Switch to set the defaults
+	 *
+	 * @var    bool
+	 * @since  3.2.0
+	 **/
+	protected bool $defaults = true;
+
+	/**
+	 * Switch to prevent/allow defaults from being added.
+	 *
+	 * @param   bool    $trigger      toggle the defaults
+	 *
+	 * @return  self
+	 * @since   3.2.0
+	 **/
+	public function defaults(bool $trigger = true): self
+	{
+		$this->defaults = $trigger;
+
+		return $this;
+	}

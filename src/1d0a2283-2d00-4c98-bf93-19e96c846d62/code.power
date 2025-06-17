@@ -17,11 +17,3 @@
 	 * @since  3.2.2
 	 */
 	public function getIndexItem(object $item): ?array;
-
-	/**
-	 * Get index header
-	 *
-	 * @return array
-	 * @since  5.2.1
-	 */
-	public function getIndexHeader(): array;

@@ -37,10 +37,18 @@
             "as": "Git"
         },
         "use_selection6": {
-            "use": "dcb893ed-9a9f-426d-b1fd-3707a0be98c0",
+            "use": "9787d63d-4d2e-44d3-9ffb-e4bfffd1a5a8",
             "as": "default"
         },
         "use_selection7": {
+            "use": "dcb893ed-9a9f-426d-b1fd-3707a0be98c0",
+            "as": "default"
+        },
+        "use_selection8": {
+            "use": "40cacef9-c4be-40ac-95e4-0925b980731d",
+            "as": "Resolver"
+        },
+        "use_selection9": {
             "use": "91004529-94a9-4590-b842-e7c6b624ecf5",
             "as": "default"
         }
