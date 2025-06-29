@@ -1,9 +1,8 @@
 {
-    "add_head": 0,
-    "add_licensing_template": 2,
-    "extends": "",
-    "guid": "4b225c51-d293-48e4-b3f6-5136cf5c3f18",
-    "implements": null,
+    "system_name": "Utilities Json Helper",
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Utilities.JsonHelper",
+    "type": "abstract class",
+    "power_version": "1.0.0",
     "load_selection": {
         "load_selection0": {
             "load": "1f28cb53-60d9-4db1-b517-3c7dc6b429ef"
@@ -15,15 +14,20 @@
             "load": "db87c339-5bb6-4291-a7ef-2c48ea1b06bc"
         }
     },
-    "name": "JsonHelper",
-    "power_version": "1.0.0",
-    "system_name": "Utilities Json Helper",
-    "type": "abstract class",
-    "use_selection": null,
-    "extendsinterfaces": null,
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Utilities.JsonHelper",
     "description": "The json checker\r\n\r\n@since  3.0.9",
+    "composer": [],
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    3rd September, 2020\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "extendsinterfaces_custom": "",
+    "add_head": 0,
+    "extends": "",
+    "extendsinterfaces": null,
+    "extends_custom": "",
+    "implements_custom": "",
+    "property_selection": null,
+    "method_selection": null,
     "head": "",
-    "composer": ""
+    "use_selection": null,
+    "add_licensing_template": 2,
+    "guid": "4b225c51-d293-48e4-b3f6-5136cf5c3f18",
+    "name": "JsonHelper"
 }
