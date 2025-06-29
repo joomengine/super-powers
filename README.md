@@ -86,6 +86,7 @@ This makes your logic both **reusable** and **component-aware**, without hardcod
   - **final class Load** | [Details](src/06f8eada-d59b-441c-b287-0aea1793da5a) | [Raw](src/06f8eada-d59b-441c-b287-0aea1793da5a/code.power) | [Settings](src/06f8eada-d59b-441c-b287-0aea1793da5a/settings.json) | SPK: `Super---06f8eada_d59b_441c_b287_0aea1793da5a---Power`
   - **final class Update** | [Details](src/cce56585-58b0-4f72-a92c-e2635ea52d83) | [Raw](src/cce56585-58b0-4f72-a92c-e2635ea52d83/code.power) | [Settings](src/cce56585-58b0-4f72-a92c-e2635ea52d83/settings.json) | SPK: `Super---cce56585_58b0_4f72_a92c_e2635ea52d83---Power`
   - **trait DefaultTrait** | [Details](src/b8176bdf-5615-4d91-8dfa-990d42f44127) | [Raw](src/b8176bdf-5615-4d91-8dfa-990d42f44127/code.power) | [Settings](src/b8176bdf-5615-4d91-8dfa-990d42f44127/settings.json) | SPK: `Super---b8176bdf_5615_4d91_8dfa_990d42f44127---Power`
+  - **trait QuoteTrait** | [Details](src/58ab1a65-9a80-40a3-bb33-c50fbf003b63) | [Raw](src/58ab1a65-9a80-40a3-bb33-c50fbf003b63/code.power) | [Settings](src/58ab1a65-9a80-40a3-bb33-c50fbf003b63/settings.json) | SPK: `Super---58ab1a65_9a80_40a3_bb33_c50fbf003b63---Power`
 - **Namespace**: [VDM\Joomla\Interfaces](#vdm-joomla-interfaces)
 
   - **interface Activeregistryinterface** | [Details](src/af0eedbe-603b-4671-8e5a-28165d88254b) | [Raw](src/af0eedbe-603b-4671-8e5a-28165d88254b/code.power) | [Settings](src/af0eedbe-603b-4671-8e5a-28165d88254b/settings.json) | SPK: `Super---af0eedbe_603b_4671_8e5a_28165d88254b---Power`
@@ -159,6 +160,7 @@ This makes your logic both **reusable** and **component-aware**, without hardcod
   - **final class Message** | [Details](src/eef6ffc2-2af0-4336-958f-e0b9cf7c4ad0) | [Raw](src/eef6ffc2-2af0-4336-958f-e0b9cf7c4ad0/code.power) | [Settings](src/eef6ffc2-2af0-4336-958f-e0b9cf7c4ad0/settings.json) | SPK: `Super---eef6ffc2_2af0_4336_958f_e0b9cf7c4ad0---Power`
   - **final class Row** | [Details](src/afb5b891-7130-422a-b389-1934b0e4fc48) | [Raw](src/afb5b891-7130-422a-b389-1934b0e4fc48/code.power) | [Settings](src/afb5b891-7130-422a-b389-1934b0e4fc48/settings.json) | SPK: `Super---afb5b891_7130_422a_b389_1934b0e4fc48---Power`
   - **final class Status** | [Details](src/d2a859ac-3f2a-4f69-a77f-f118b2e0a459) | [Raw](src/d2a859ac-3f2a-4f69-a77f-f118b2e0a459/code.power) | [Settings](src/d2a859ac-3f2a-4f69-a77f-f118b2e0a459/settings.json) | SPK: `Super---d2a859ac_3f2a_4f69_a77f_f118b2e0a459---Power`
+  - **final class Value** | [Details](src/08b6be94-8ae3-4801-995e-bf6313be8c5c) | [Raw](src/08b6be94-8ae3-4801-995e-bf6313be8c5c/code.power) | [Settings](src/08b6be94-8ae3-4801-995e-bf6313be8c5c/settings.json) | SPK: `Super---08b6be94_8ae3_4801_995e_bf6313be8c5c---Power`
   - **class Data** | [Details](src/05f23281-58e3-482e-be42-2dc1355ef4ea) | [Raw](src/05f23281-58e3-482e-be42-2dc1355ef4ea/code.power) | [Settings](src/05f23281-58e3-482e-be42-2dc1355ef4ea/settings.json) | SPK: `Super---05f23281_58e3_482e_be42_2dc1355ef4ea---Power`
 - **Namespace**: [VDM\Joomla\Componentbuilder\Interfaces](#vdm-joomla-componentbuilder-interfaces)
 
@@ -278,6 +280,8 @@ This makes your logic both **reusable** and **component-aware**, without hardcod
 - **Namespace**: [VDM\Joomla\Interfaces\Git\Repository](#vdm-joomla-interfaces-git-repository)
 
   - **interface ContentsInterface** | [Details](src/d1de5d5b-bf29-4031-8094-76c4f6c75900) | [Raw](src/d1de5d5b-bf29-4031-8094-76c4f6c75900/code.power) | [Settings](src/d1de5d5b-bf29-4031-8094-76c4f6c75900/settings.json) | SPK: `Super---d1de5d5b_bf29_4031_8094_76c4f6c75900---Power`
+  - **interface TagsInterface** | [Details](src/39cfd409-7329-4393-af05-4b457cb72fac) | [Raw](src/39cfd409-7329-4393-af05-4b457cb72fac/code.power) | [Settings](src/39cfd409-7329-4393-af05-4b457cb72fac/settings.json) | SPK: `Super---39cfd409_7329_4393_af05_4b457cb72fac---Power`
+  - **interface WikiInterface** | [Details](src/bd7c1787-f5c1-464e-a009-f39fb5090ee0) | [Raw](src/bd7c1787-f5c1-464e-a009-f39fb5090ee0/code.power) | [Settings](src/bd7c1787-f5c1-464e-a009-f39fb5090ee0/settings.json) | SPK: `Super---bd7c1787_f5c1_464e_a009_f39fb5090ee0---Power`
 > remember to replace the `---` with `___` in the SPK to activate that Power in your code
 
 ### All used in [Joomla Component Builder](https://www.joomlacomponentbuilder.com) - [Source](https://git.vdm.dev/joomla/Component-Builder) - [Mirror](https://github.com/vdm-io/Joomla-Component-Builder) - [Download](https://git.vdm.dev/joomla/pkg-component-builder/releases)
