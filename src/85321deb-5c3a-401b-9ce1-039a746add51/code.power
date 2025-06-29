@@ -128,7 +128,7 @@ EOF);
 		$io = new SymfonyStyle($input, $output);
 
 		// Output the title for the task
-		$io->title("Component Builder: {$this->targetName} import status");
+		$io->title("###Component_name###: {$this->targetName} import status");
 
 		// Get all imports in the queue that are in waiting state
 		if (($queue = $this->items->table($this->queueTable)->get([$this->queueWaitState], $this->queueStatusField)) === null)
