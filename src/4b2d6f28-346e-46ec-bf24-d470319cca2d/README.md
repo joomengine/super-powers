@@ -1,7 +1,7 @@
 ### JCB! Power
 # final class PHPConfigurationChecker (Details)
 > namespace: **VDM\Joomla\Componentbuilder**
-> extends: **ExtendingPHPConfigurationChecker**
+> extends: **PHPConfigurationChecker**
 
 ```uml
 @startuml
