@@ -52,6 +52,9 @@ This makes your logic both **reusable** and **component-aware**, without hardcod
 ---
 # Index of powers
 
+- **Namespace**: [VDM\Joomla](#vdm-joomla)
+
+  - **trait Utilities** | [Details](src/79d765b3-7319-4988-9730-446c7f347020) | [Raw](src/79d765b3-7319-4988-9730-446c7f347020/code.power) | [Settings](src/79d765b3-7319-4988-9730-446c7f347020/settings.json) | SPK: `Super---79d765b3_7319_4988_9730_446c7f347020---Power`
 - **Namespace**: [VDM\Joomla\Abstraction](#vdm-joomla-abstraction)
 
   - **abstract class ActiveRegistry** | [Details](src/43134867-5cb8-4280-9be8-309fd2fd135f) | [Raw](src/43134867-5cb8-4280-9be8-309fd2fd135f/code.power) | [Settings](src/43134867-5cb8-4280-9be8-309fd2fd135f/settings.json) | SPK: `Super---43134867_5cb8_4280_9be8_309fd2fd135f---Power`
