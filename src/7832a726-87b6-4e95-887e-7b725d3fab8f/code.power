@@ -81,10 +81,10 @@
 		$lang->load('com_users', JPATH_SITE, 'en-GB', true);
 
 		// Handle custom registration mode
-		if ($mode === 2 && method_exists(ComponentbuilderHelper::class, 'registerUser'))
+		if ($mode === 2 && method_exists(Joomla___aebfeb9f_f8a3_42be_a21d_5db56ae30c1c___Power::class, 'registerUser'))
 		{
 			$params['autologin'] = $autologin;
-			$userId = ComponentbuilderHelper::registerUser($credentials, $params);
+			$userId = Joomla___aebfeb9f_f8a3_42be_a21d_5db56ae30c1c___Power::registerUser($credentials, $params);
 
 			if (is_numeric($userId))
 			{
