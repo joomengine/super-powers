@@ -1758,5 +1758,16 @@
         "path": "src\/c6bbc3ee-58e7-4463-adba-5c5ae839ee36",
         "spk": "Super---c6bbc3ee_58e7_4463_adba_5c5ae839ee36---Power",
         "guid": "c6bbc3ee-58e7-4463-adba-5c5ae839ee36"
+    },
+    "79d765b3-7319-4988-9730-446c7f347020": {
+        "name": "Utilities",
+        "type": "trait",
+        "namespace": "VDM\\Joomla",
+        "code": "src\/79d765b3-7319-4988-9730-446c7f347020\/code.php",
+        "power": "src\/79d765b3-7319-4988-9730-446c7f347020\/code.power",
+        "settings": "src\/79d765b3-7319-4988-9730-446c7f347020\/settings.json",
+        "path": "src\/79d765b3-7319-4988-9730-446c7f347020",
+        "spk": "Super---79d765b3_7319_4988_9730_446c7f347020---Power",
+        "guid": "79d765b3-7319-4988-9730-446c7f347020"
     }
 }
