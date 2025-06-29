@@ -1,0 +1,26 @@
+{
+    "system_name": "JCB.Abstraction.MapperDouble",
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Abstraction.MapperDouble",
+    "type": "abstract class",
+    "power_version": "1.0.0",
+    "load_selection": null,
+    "description": "Compiler Mapper Double\r\n\r\n@since 3.2.0",
+    "composer": [],
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "extendsinterfaces_custom": "",
+    "add_head": 0,
+    "extends": "",
+    "extendsinterfaces": null,
+    "extends_custom": "",
+    "implements_custom": "",
+    "implements": [
+        "fbc58009-fa16-4d49-a0dd-419c3b62d42f"
+    ],
+    "property_selection": null,
+    "method_selection": null,
+    "head": "",
+    "use_selection": null,
+    "add_licensing_template": 2,
+    "guid": "4d4e76e9-12d9-4d19-b58c-b88974b2586a",
+    "name": "MapperDouble"
+}
