@@ -1648,5 +1648,49 @@
         "path": "src\/ffbd4e1f-a342-4080-ab7d-1de3741bf319",
         "spk": "Super---ffbd4e1f_a342_4080_ab7d_1de3741bf319---Power",
         "guid": "ffbd4e1f-a342-4080-ab7d-1de3741bf319"
+    },
+    "08b6be94-8ae3-4801-995e-bf6313be8c5c": {
+        "name": "Value",
+        "type": "final class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Import",
+        "code": "src\/08b6be94-8ae3-4801-995e-bf6313be8c5c\/code.php",
+        "power": "src\/08b6be94-8ae3-4801-995e-bf6313be8c5c\/code.power",
+        "settings": "src\/08b6be94-8ae3-4801-995e-bf6313be8c5c\/settings.json",
+        "path": "src\/08b6be94-8ae3-4801-995e-bf6313be8c5c",
+        "spk": "Super---08b6be94_8ae3_4801_995e_bf6313be8c5c---Power",
+        "guid": "08b6be94-8ae3-4801-995e-bf6313be8c5c"
+    },
+    "39cfd409-7329-4393-af05-4b457cb72fac": {
+        "name": "TagsInterface",
+        "type": "interface",
+        "namespace": "VDM\\Joomla\\Interfaces\\Git\\Repository",
+        "code": "src\/39cfd409-7329-4393-af05-4b457cb72fac\/code.php",
+        "power": "src\/39cfd409-7329-4393-af05-4b457cb72fac\/code.power",
+        "settings": "src\/39cfd409-7329-4393-af05-4b457cb72fac\/settings.json",
+        "path": "src\/39cfd409-7329-4393-af05-4b457cb72fac",
+        "spk": "Super---39cfd409_7329_4393_af05_4b457cb72fac---Power",
+        "guid": "39cfd409-7329-4393-af05-4b457cb72fac"
+    },
+    "58ab1a65-9a80-40a3-bb33-c50fbf003b63": {
+        "name": "QuoteTrait",
+        "type": "trait",
+        "namespace": "VDM\\Joomla\\Database",
+        "code": "src\/58ab1a65-9a80-40a3-bb33-c50fbf003b63\/code.php",
+        "power": "src\/58ab1a65-9a80-40a3-bb33-c50fbf003b63\/code.power",
+        "settings": "src\/58ab1a65-9a80-40a3-bb33-c50fbf003b63\/settings.json",
+        "path": "src\/58ab1a65-9a80-40a3-bb33-c50fbf003b63",
+        "spk": "Super---58ab1a65_9a80_40a3_bb33_c50fbf003b63---Power",
+        "guid": "58ab1a65-9a80-40a3-bb33-c50fbf003b63"
+    },
+    "bd7c1787-f5c1-464e-a009-f39fb5090ee0": {
+        "name": "WikiInterface",
+        "type": "interface",
+        "namespace": "VDM\\Joomla\\Interfaces\\Git\\Repository",
+        "code": "src\/bd7c1787-f5c1-464e-a009-f39fb5090ee0\/code.php",
+        "power": "src\/bd7c1787-f5c1-464e-a009-f39fb5090ee0\/code.power",
+        "settings": "src\/bd7c1787-f5c1-464e-a009-f39fb5090ee0\/settings.json",
+        "path": "src\/bd7c1787-f5c1-464e-a009-f39fb5090ee0",
+        "spk": "Super---bd7c1787_f5c1_464e_a009_f39fb5090ee0---Power",
+        "guid": "bd7c1787-f5c1-464e-a009-f39fb5090ee0"
     }
 }
