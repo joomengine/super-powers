@@ -1,7 +1,7 @@
 ### JCB! Power
 # abstract class Factory (Details)
 > namespace: **VDM\Joomla\Componentbuilder\File**
-> extends: **ExtendingFactory**
+> extends: **Factory**
 
 ```uml
 @startuml
