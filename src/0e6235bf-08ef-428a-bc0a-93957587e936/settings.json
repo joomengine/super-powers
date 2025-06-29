@@ -1,0 +1,23 @@
+{
+    "system_name": "Utilities Regex Helper",
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Utilities.Regex",
+    "type": "abstract class",
+    "power_version": "1.0.0",
+    "load_selection": null,
+    "description": "Part of the Joomla Framework Utilities Package\r\n\r\n@since  3.0.9",
+    "composer": [],
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    30th March, 2022\r\n * @author     Niels Braczek <https:\/\/github.com\/nibra>\r\n * @git        <https:\/\/github.com\/joomla-framework\/utilities\/pull\/31>\r\n * @copyright  Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE\r\n *\/\r\n",
+    "extendsinterfaces_custom": "",
+    "add_head": 0,
+    "extends": "",
+    "extendsinterfaces": null,
+    "extends_custom": "",
+    "implements_custom": "",
+    "property_selection": null,
+    "method_selection": null,
+    "head": "",
+    "use_selection": null,
+    "add_licensing_template": 2,
+    "guid": "0e6235bf-08ef-428a-bc0a-93957587e936",
+    "name": "Regex"
+}
