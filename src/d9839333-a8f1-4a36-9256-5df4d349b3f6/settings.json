@@ -1,26 +1,31 @@
 {
+    "system_name": "VDM.Abstraction.Database.Versioning",
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Abstraction.Versioning",
+    "type": "abstract class",
+    "power_version": "1.0.0",
+    "load_selection": null,
+    "description": "Versioning\r\n\r\n@since 5.1.1",
+    "composer": [],
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "extendsinterfaces_custom": "",
     "add_head": 1,
-    "add_licensing_template": 2,
     "extends": "6cbef8f8-4813-48e3-b05a-65e1aea95171",
-    "guid": "d9839333-a8f1-4a36-9256-5df4d349b3f6",
+    "extendsinterfaces": null,
+    "extends_custom": "",
+    "implements_custom": "",
     "implements": [
         "ac77cee7-7018-4496-a453-9757623e3849"
     ],
-    "load_selection": null,
-    "name": "Versioning",
-    "power_version": "1.0.0",
-    "system_name": "VDM.Abstraction.Database.Versioning",
-    "type": "abstract class",
+    "property_selection": null,
+    "method_selection": null,
+    "head": "use Joomla\\CMS\\Application\\CMSApplicationInterface as CMSApplication;\r\nuse Joomla\\CMS\\Component\\ComponentHelper;\r\nuse Joomla\\CMS\\Date\\Date;\r\nuse Joomla\\CMS\\Factory;\r\nuse Joomla\\CMS\\Table\\ContentHistory;\r\nuse Joomla\\CMS\\Table\\ContentType;\r\nuse Joomla\\CMS\\Table\\TableInterface;\r\nuse Joomla\\CMS\\User\\User;\r\nuse Joomla\\Database\\DatabaseInterface as JoomlaDatabase;\r\nuse Joomla\\Registry\\Registry;",
     "use_selection": {
         "use_selection0": {
             "use": "640b5352-fb09-425f-a26e-cd44eda03f15",
             "as": "default"
         }
     },
-    "extendsinterfaces": null,
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Abstraction.Versioning",
-    "description": "Versioning\r\n\r\n@since 5.1.1",
-    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "head": "use Joomla\\CMS\\Application\\CMSApplicationInterface as CMSApplication;\r\nuse Joomla\\CMS\\Component\\ComponentHelper;\r\nuse Joomla\\CMS\\Date\\Date;\r\nuse Joomla\\CMS\\Factory;\r\nuse Joomla\\CMS\\Table\\ContentHistory;\r\nuse Joomla\\CMS\\Table\\ContentType;\r\nuse Joomla\\CMS\\Table\\TableInterface;\r\nuse Joomla\\CMS\\User\\User;\r\nuse Joomla\\Database\\DatabaseInterface as JoomlaDatabase;\r\nuse Joomla\\Registry\\Registry;",
-    "composer": ""
+    "add_licensing_template": 2,
+    "guid": "d9839333-a8f1-4a36-9256-5df4d349b3f6",
+    "name": "Versioning"
 }
