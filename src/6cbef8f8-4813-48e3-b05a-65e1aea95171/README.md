@@ -7,11 +7,9 @@
 
 abstract Database  #Orange {
   # JoomlaDatabase $db
-  # string $dateFormat
   # string $componentCode
   # string $table
   + __construct(?JoomlaDatabase $db = null)
-  # quote(mixed $value) : mixed
   # getTable(string $table) : string
 }
 
@@ -19,22 +17,6 @@ note right of Database::__construct
   Constructor
 
   since: 3.2.0
-end note
-
-note right of Database::quote
-  Safely quote a value for database use, preserving data integrity.
-- Native ints/floats passed as-is
-- Clean integer strings are cast to int
-- Clean float strings are cast to float
-- Scientific notation is quoted to preserve original form
-- Leading-zero integers are quoted
-- Dates are formatted and quoted
-- Booleans are converted to TRUE/FALSE
-- Null is converted to NULL
-- All else is quoted with Joomla's db quote
-
-  since: 3.2.0
-  return: mixed
 end note
 
 note right of Database::getTable
