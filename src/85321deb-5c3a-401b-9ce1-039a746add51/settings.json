@@ -1,14 +1,21 @@
 {
-    "add_head": 1,
-    "add_licensing_template": 2,
-    "extends": "-1",
-    "guid": "85321deb-5c3a-401b-9ce1-039a746add51",
-    "implements": null,
-    "load_selection": null,
-    "name": "Import",
-    "power_version": "1.0.0",
     "system_name": "VDM.Abstraction.Console.Import",
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Abstraction.Console.Import",
     "type": "abstract class",
+    "power_version": "1.0.0",
+    "load_selection": null,
+    "description": "Console Import\r\n\r\n@since  5.0.2",
+    "composer": [],
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "extendsinterfaces_custom": "",
+    "add_head": 1,
+    "extends_custom": "AbstractCommand",
+    "extends": -1,
+    "extendsinterfaces": null,
+    "implements_custom": "",
+    "property_selection": null,
+    "method_selection": null,
+    "head": "use Joomla\\CMS\\Factory;\r\nuse Joomla\\Console\\Command\\AbstractCommand;\r\nuse Symfony\\Component\\Console\\Input\\InputInterface;\r\nuse Symfony\\Component\\Console\\Output\\OutputInterface;\r\nuse Symfony\\Component\\Console\\Style\\SymfonyStyle;",
     "use_selection": {
         "use_selection0": {
             "use": "ff8d5fdb-2d1f-4178-bd18-a43b8efd1068",
@@ -27,11 +34,7 @@
             "as": "default"
         }
     },
-    "extendsinterfaces": null,
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Abstraction.Console.Import",
-    "description": "Console Import\r\n\r\n@since  5.0.2",
-    "extends_custom": "AbstractCommand",
-    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "head": "use Joomla\\CMS\\Factory;\r\nuse Joomla\\Console\\Command\\AbstractCommand;\r\nuse Symfony\\Component\\Console\\Input\\InputInterface;\r\nuse Symfony\\Component\\Console\\Output\\OutputInterface;\r\nuse Symfony\\Component\\Console\\Style\\SymfonyStyle;",
-    "composer": ""
+    "add_licensing_template": 2,
+    "guid": "85321deb-5c3a-401b-9ce1-039a746add51",
+    "name": "Import"
 }
