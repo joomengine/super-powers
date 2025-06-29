@@ -1,16 +1,24 @@
 {
+    "system_name": "JCB.Item.Import",
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Item.Import",
+    "type": "final class",
+    "power_version": "1.0.0",
+    "load_selection": null,
+    "description": "Item Import Class\r\n\r\n@since  5.0.2",
+    "composer": [],
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2020\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/",
+    "extendsinterfaces_custom": "",
     "add_head": 1,
-    "add_licensing_template": 2,
     "extends": "",
-    "guid": "2f14ec19-1b67-44be-8306-2a9e74588464",
+    "extendsinterfaces": null,
+    "extends_custom": "",
+    "implements_custom": "",
     "implements": [
         "0f3f7188-3e0d-4d1a-8dee-7f8026cb65a9"
     ],
-    "load_selection": null,
-    "name": "Import",
-    "power_version": "1.0.0",
-    "system_name": "JCB.Item.Import",
-    "type": "final class",
+    "property_selection": null,
+    "method_selection": null,
+    "head": "use Joomla\\CMS\\Language\\Text;",
     "use_selection": {
         "use_selection0": {
             "use": "0e44d149-4863-47ec-8f0f-6a821ab3e77f",
@@ -57,10 +65,7 @@
             "as": "Item"
         }
     },
-    "extendsinterfaces": null,
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Item.Import",
-    "description": "Item Import Class\r\n\r\n@since  5.0.2",
-    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2020\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/",
-    "head": "use Joomla\\CMS\\Language\\Text;",
-    "composer": ""
+    "add_licensing_template": 2,
+    "guid": "2f14ec19-1b67-44be-8306-2a9e74588464",
+    "name": "Import"
 }
