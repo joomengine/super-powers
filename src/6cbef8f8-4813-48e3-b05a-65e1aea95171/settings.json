@@ -1,21 +1,14 @@
 {
-    "system_name": "VDM.Abstraction.Database",
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Abstraction.Database",
-    "type": "abstract class",
-    "power_version": "1.0.0",
-    "load_selection": null,
-    "description": "Database\r\n\r\n@since 3.2.0",
-    "composer": [],
-    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "extendsinterfaces_custom": "",
     "add_head": 1,
+    "add_licensing_template": 2,
     "extends": "",
-    "extendsinterfaces": null,
-    "extends_custom": "",
-    "implements_custom": "",
-    "property_selection": null,
-    "method_selection": null,
-    "head": "use Joomla\\CMS\\Factory;\r\nuse Joomla\\Database\\DatabaseInterface as JoomlaDatabase;",
+    "guid": "6cbef8f8-4813-48e3-b05a-65e1aea95171",
+    "implements": null,
+    "load_selection": null,
+    "name": "Database",
+    "power_version": "1.0.0",
+    "system_name": "VDM.Abstraction.Database",
+    "type": "abstract class",
     "use_selection": {
         "use_selection0": {
             "use": "640b5352-fb09-425f-a26e-cd44eda03f15",
@@ -26,7 +19,10 @@
             "as": "default"
         }
     },
-    "add_licensing_template": 2,
-    "guid": "6cbef8f8-4813-48e3-b05a-65e1aea95171",
-    "name": "Database"
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Abstraction.Database",
+    "description": "Database\r\n\r\n@since 3.2.0",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "use Joomla\\CMS\\Factory;\r\nuse Joomla\\Database\\DatabaseInterface as JoomlaDatabase;",
+    "composer": ""
 }

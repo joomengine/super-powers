@@ -24,6 +24,8 @@ class Items << (F,LightGreen) >> #RoyalBlue {
   - sort(array $items, string $key) : ?array
   - extractValues(array $items, string $key) : ?array
   - extractSet(array $items, array $set, ...) : ?array
+  - normalizeGuid(array $item) : array
+  # checkGuid(string $guid, string $key) : string
 }
 
 note right of Items::__construct
@@ -128,6 +130,20 @@ Items can be either arrays or objects.
     array $set
     string $key
     bool $inverse = false
+end note
+
+note right of Items::normalizeGuid
+  Normalize the row item
+
+  since: 5.1.2
+  return: array
+end note
+
+note left of Items::checkGuid
+  Checks if the GUID value is unique and does not already exist.
+
+  since: 5.0.2
+  return: string
 end note
 
 @enduml

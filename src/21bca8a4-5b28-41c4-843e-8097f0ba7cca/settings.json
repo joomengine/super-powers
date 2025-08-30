@@ -1,24 +1,16 @@
 {
-    "system_name": "VDM.Data.Items",
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Data.Items",
-    "type": "final class",
-    "power_version": "1.0.0",
-    "load_selection": null,
-    "description": "Data Items\r\n\r\n@since 3.2.2",
-    "composer": [],
-    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "extendsinterfaces_custom": "",
     "add_head": 0,
+    "add_licensing_template": 2,
     "extends": "",
-    "extendsinterfaces": null,
-    "extends_custom": "AbstractionModel",
-    "implements_custom": "",
+    "guid": "21bca8a4-5b28-41c4-843e-8097f0ba7cca",
     "implements": [
         "7212e4db-371f-4cfd-8122-32e9bb100d83"
     ],
-    "property_selection": null,
-    "method_selection": null,
-    "head": "",
+    "load_selection": null,
+    "name": "Items",
+    "power_version": "1.0.0",
+    "system_name": "VDM.Data.Items",
+    "type": "final class",
     "use_selection": {
         "use_selection0": {
             "use": "c548640c-a461-4424-9ac5-8dfb5ed06d8d",
@@ -39,9 +31,16 @@
         "use_selection4": {
             "use": "2ad31f74-f579-499d-b98b-c4f54fd615dd",
             "as": "Database"
+        },
+        "use_selection5": {
+            "use": "5acded67-0e3d-4c6b-a6ea-b533b076de0c",
+            "as": "default"
         }
     },
-    "add_licensing_template": 2,
-    "guid": "21bca8a4-5b28-41c4-843e-8097f0ba7cca",
-    "name": "Items"
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Data.Items",
+    "description": "Data Items\r\n\r\n@since 3.2.2",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
 }

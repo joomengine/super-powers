@@ -1,21 +1,14 @@
 {
-    "system_name": "VDM.Data.Migrator.Guid",
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Data.Migrator.Guid",
-    "type": "final class",
-    "power_version": "1.0.0",
-    "load_selection": null,
-    "description": "Migrator To Globally Unique Identifier\r\n\r\n@since  5.0.4",
-    "composer": [],
-    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2020\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "extendsinterfaces_custom": "",
     "add_head": 1,
+    "add_licensing_template": 2,
     "extends": "",
-    "extendsinterfaces": null,
-    "extends_custom": "",
-    "implements_custom": "",
-    "property_selection": null,
-    "method_selection": null,
-    "head": "use Joomla\\Registry\\Registry;",
+    "guid": "0b746305-d34e-4c21-bc20-898c4aeac376",
+    "implements": null,
+    "load_selection": null,
+    "name": "Guid",
+    "power_version": "1.0.0",
+    "system_name": "VDM.Data.Migrator.Guid",
+    "type": "final class",
     "use_selection": {
         "use_selection0": {
             "use": "21bca8a4-5b28-41c4-843e-8097f0ba7cca",
@@ -38,7 +31,10 @@
             "as": "default"
         }
     },
-    "add_licensing_template": 2,
-    "guid": "0b746305-d34e-4c21-bc20-898c4aeac376",
-    "name": "Guid"
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Data.Migrator.Guid",
+    "description": "Migrator To Globally Unique Identifier\r\n\r\n@since  5.0.4",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2020\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "use Joomla\\Registry\\Registry;",
+    "composer": ""
 }

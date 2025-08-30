@@ -8,8 +8,8 @@
 class Guid << (T,Orange) >> #Turquoise {
   + getGuid(string $key) : string
   + {static} validateGuid(string $guid) : bool
+  # checkGuid(string $guid, string $key) : string
   - fallbackGuid(string $key) : string
-  - checkGuid(string $guid, string $key) : string
 }
 
 note right of Guid::getGuid
@@ -28,15 +28,15 @@ note right of Guid::validateGuid
   return: bool
 end note
 
-note right of Guid::fallbackGuid
-  Generates a fallback GUIDv4 using less secure methods.
+note right of Guid::checkGuid
+  Checks if the GUID value is unique and does not already exist.
 
   since: 5.0.2
   return: string
 end note
 
-note right of Guid::checkGuid
-  Checks if the GUID value is unique and does not already exist.
+note right of Guid::fallbackGuid
+  Generates a fallback GUIDv4 using less secure methods.
 
   since: 5.0.2
   return: string

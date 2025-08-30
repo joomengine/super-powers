@@ -1,7 +1,7 @@
 ### JCB! Power
 # final class Schema (Details)
 > namespace: **VDM\Joomla\Componentbuilder\Table**
-> extends: **Schema**
+> extends: **ExtendingSchema**
 
 ```uml
 @startuml

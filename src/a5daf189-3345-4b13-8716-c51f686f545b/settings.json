@@ -1,24 +1,16 @@
 {
-    "system_name": "VDM.Service.Data",
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Service.Data",
-    "type": "class",
-    "power_version": "1.0.0",
-    "load_selection": null,
-    "description": "Data Service Provider\r\n\r\n@since 3.2.0",
-    "composer": [],
-    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "extendsinterfaces_custom": "",
     "add_head": 1,
+    "add_licensing_template": 2,
     "extends": "",
-    "extendsinterfaces": null,
-    "extends_custom": "Registry",
-    "implements_custom": "ServiceProviderInterface",
+    "guid": "a5daf189-3345-4b13-8716-c51f686f545b",
     "implements": [
         "-1"
     ],
-    "property_selection": null,
-    "method_selection": null,
-    "head": "use Joomla\\DI\\Container;\r\nuse Joomla\\DI\\ServiceProviderInterface;",
+    "load_selection": null,
+    "name": "Data",
+    "power_version": "1.0.0",
+    "system_name": "VDM.Service.Data",
+    "type": "class",
     "use_selection": {
         "use_selection0": {
             "use": "008d111c-9d43-427c-8dd4-2653e8b74be8",
@@ -61,7 +53,11 @@
             "as": "default"
         }
     },
-    "add_licensing_template": 2,
-    "guid": "a5daf189-3345-4b13-8716-c51f686f545b",
-    "name": "Data"
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Service.Data",
+    "description": "Data Service Provider\r\n\r\n@since 3.2.0",
+    "implements_custom": "ServiceProviderInterface",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "use Joomla\\DI\\Container;\r\nuse Joomla\\DI\\ServiceProviderInterface;",
+    "composer": ""
 }

@@ -9,6 +9,7 @@ interface ConfigInterface  #Lavender {
   + getPlaceholders() : array
   + table(string $table) : self
   + getTable() : string
+  + getListViewCodeName() : ?string
   + area(string $area) : self
   + getArea() : ?string
   + setSettingsName(string $settingsName) : self
@@ -53,112 +54,119 @@ note right of ConfigInterface::getTable
   return: string
 end note
 
-note left of ConfigInterface::area
+note left of ConfigInterface::getListViewCodeName
+  Get the current active table list view code name
+
+  since: 5.1.2
+  return: ?string
+end note
+
+note right of ConfigInterface::area
   Set the current active area
 
   since: 3.2.2
   return: self
 end note
 
-note right of ConfigInterface::getArea
+note left of ConfigInterface::getArea
   Get the current active area
 
   since: 3.2.2
   return: ?string
 end note
 
-note left of ConfigInterface::setSettingsName
+note right of ConfigInterface::setSettingsName
   Set the settings file name
 
   since: 3.2.2
   return: self
 end note
 
-note right of ConfigInterface::getSettingsName
+note left of ConfigInterface::getSettingsName
   Get the settings file name
 
   since: 3.2.2
   return: string
 end note
 
-note left of ConfigInterface::setIndexPath
+note right of ConfigInterface::setIndexPath
   Set the index path
 
   since: 3.2.2
   return: void
 end note
 
-note right of ConfigInterface::getIndexPath
+note left of ConfigInterface::getIndexPath
   Get the index path
 
   since: 3.2.2
   return: string
 end note
 
-note left of ConfigInterface::getIndexMap
+note right of ConfigInterface::getIndexMap
   Get index map
 
   since: 5.1.1
   return: array
 end note
 
-note right of ConfigInterface::getIndexHeader
+note left of ConfigInterface::getIndexHeader
   Get index header
 
   since: 5.1.1
   return: array
 end note
 
-note left of ConfigInterface::getSrcPath
+note right of ConfigInterface::getSrcPath
   Get src path
 
   since: 5.1.1
   return: string
 end note
 
-note right of ConfigInterface::getMainReadmePath
+note left of ConfigInterface::getMainReadmePath
   Get main readme path
 
   since: 5.1.1
   return: string
 end note
 
-note left of ConfigInterface::hasMainReadme
+note right of ConfigInterface::hasMainReadme
   Has main readme
 
   since: 5.1.1
   return: bool
 end note
 
-note right of ConfigInterface::getItemReadmeName
+note left of ConfigInterface::getItemReadmeName
   Get item readme path
 
   since: 5.1.1
   return: string
 end note
 
-note left of ConfigInterface::hasItemReadme
+note right of ConfigInterface::hasItemReadme
   Has item readme
 
   since: 5.1.1
   return: bool
 end note
 
-note right of ConfigInterface::getFiles
+note left of ConfigInterface::getFiles
   Get the field names of the files in the entity
 
   since: 5.1.1
   return: array
 end note
 
-note left of ConfigInterface::getFolders
+note right of ConfigInterface::getFolders
   Get the field names of the folders in the entity
 
   since: 5.1.1
   return: array
 end note
 
-note right of ConfigInterface::getMap
+note left of ConfigInterface::getMap
   Get map
 Builds (and caches) an associative map of the table’s field names,
 automatically removing any fields defined in $this->ignore.
@@ -167,35 +175,35 @@ automatically removing any fields defined in $this->ignore.
   return: array
 end note
 
-note left of ConfigInterface::getChildren
+note right of ConfigInterface::getChildren
   Get the direct entities/children of this entity
 
   since: 5.1.1
   return: array
 end note
 
-note right of ConfigInterface::getTitleName
+note left of ConfigInterface::getTitleName
   Get the table title name field
 
   since: 5.1.1
   return: string
 end note
 
-note left of ConfigInterface::getGuidField
+note right of ConfigInterface::getGuidField
   Get GUID field
 
   since: 5.1.1
   return: string
 end note
 
-note right of ConfigInterface::getPrefixKey
+note left of ConfigInterface::getPrefixKey
   Get Prefix Key
 
   since: 5.1.1
   return: string
 end note
 
-note left of ConfigInterface::getSuffixKey
+note right of ConfigInterface::getSuffixKey
   Get Suffix Key
 
   since: 5.1.1

@@ -1,24 +1,16 @@
 {
-    "system_name": "JCB.Import.Assessor",
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Import.Assessor",
-    "type": "final class",
-    "power_version": "1.0.0",
-    "load_selection": null,
-    "description": "Import Assessor Class\r\n\r\n@since  4.0.3",
-    "composer": [],
-    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "extendsinterfaces_custom": "",
     "add_head": 1,
+    "add_licensing_template": 2,
     "extends": "",
-    "extendsinterfaces": null,
-    "extends_custom": "",
-    "implements_custom": "",
+    "guid": "19a66b48-620c-439b-ab8a-3c0d43e040c3",
     "implements": [
         "57c00d53-5581-4fd1-b3ea-080422710243"
     ],
-    "property_selection": null,
-    "method_selection": null,
-    "head": "use Joomla\\CMS\\Language\\Text;",
+    "load_selection": null,
+    "name": "Assessor",
+    "power_version": "1.0.0",
+    "system_name": "JCB.Import.Assessor",
+    "type": "final class",
     "use_selection": {
         "use_selection0": {
             "use": "05f23281-58e3-482e-be42-2dc1355ef4ea",
@@ -33,7 +25,10 @@
             "as": "Message"
         }
     },
-    "add_licensing_template": 2,
-    "guid": "19a66b48-620c-439b-ab8a-3c0d43e040c3",
-    "name": "Assessor"
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Import.Assessor",
+    "description": "Import Assessor Class\r\n\r\n@since  4.0.3",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "use Joomla\\CMS\\Language\\Text;",
+    "composer": ""
 }

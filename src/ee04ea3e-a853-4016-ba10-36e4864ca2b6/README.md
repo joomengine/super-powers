@@ -10,6 +10,7 @@ abstract Base  #Orange {
   + __construct(Config $config)
   + table(string $table) : self
   + getTable() : string
+  + getListViewCodeName() : ?string
   + area(string $area) : self
   + getArea() : ?string
   + setSettingsName(string $settingsName) : self
@@ -63,217 +64,224 @@ note right of Base::getTable
   return: string
 end note
 
-note left of Base::area
+note left of Base::getListViewCodeName
+  Get the current active table list view code name
+
+  since: 5.1.2
+  return: ?string
+end note
+
+note right of Base::area
   Set the current active area
 
   since: 3.2.2
   return: self
 end note
 
-note right of Base::getArea
+note left of Base::getArea
   Get the current active area
 
   since: 3.2.2
   return: ?string
 end note
 
-note left of Base::setSettingsName
+note right of Base::setSettingsName
   Set the settings file name
 
   since: 3.2.2
   return: self
 end note
 
-note right of Base::getSettingsName
+note left of Base::getSettingsName
   Get the settings file name
 
   since: 3.2.2
   return: string
 end note
 
-note left of Base::setIndexPath
+note right of Base::setIndexPath
   Set the index path
 
   since: 3.2.2
   return: void
 end note
 
-note right of Base::getIndexPath
+note left of Base::getIndexPath
   Get the index path
 
   since: 3.2.2
   return: string
 end note
 
-note left of Base::getPlaceholders
+note right of Base::getPlaceholders
   Get core placeholders
 
   since: 5.1.1
   return: array
 end note
 
-note right of Base::getIndexMap
+note left of Base::getIndexMap
   Get index map
 
   since: 5.1.1
   return: array
 end note
 
-note left of Base::getIndexHeader
+note right of Base::getIndexHeader
   Get index header
 
   since: 5.1.1
   return: array
 end note
 
-note right of Base::getSrcPath
+note left of Base::getSrcPath
   Get src path
 
   since: 5.1.1
   return: string
 end note
 
-note left of Base::getFiles
+note right of Base::getFiles
   Get the field names of the files in the entity
 
   since: 5.1.1
   return: array
 end note
 
-note right of Base::getFolders
+note left of Base::getFolders
   Get the field names of the folders in the entity
 
   since: 5.1.1
   return: array
 end note
 
-note left of Base::getMap
+note right of Base::getMap
   Get map
 
   since: 5.1.1
   return: array
 end note
 
-note right of Base::getChildren
+note left of Base::getChildren
   Get the [direct] entities/children of this entity
 
   since: 5.1.1
   return: array
 end note
 
-note left of Base::getTitleName
+note right of Base::getTitleName
   Get the table title name field
 
   since: 5.1.1
   return: string
 end note
 
-note right of Base::getGuidField
+note left of Base::getGuidField
   Get GUID field
 
   since: 5.1.1
   return: string
 end note
 
-note left of Base::getMainReadmePath
+note right of Base::getMainReadmePath
   Get main readme path
 
   since: 5.1.1
   return: string
 end note
 
-note right of Base::hasMainReadme
+note left of Base::hasMainReadme
   Has main readme
 
   since: 5.1.1
   return: bool
 end note
 
-note left of Base::getItemReadmeName
+note right of Base::getItemReadmeName
   Get item readme path
 
   since: 5.1.1
   return: string
 end note
 
-note right of Base::hasItemReadme
+note left of Base::hasItemReadme
   Has item readme
 
   since: 5.1.1
   return: bool
 end note
 
-note left of Base::getPrefixKey
+note right of Base::getPrefixKey
   Get Prefix Key
 
   since: 5.1.1
   return: string
 end note
 
-note right of Base::getSuffixKey
+note left of Base::getSuffixKey
   Get Suffix Key
 
   since: 5.1.1
   return: string
 end note
 
-note left of Base::mapItem
+note right of Base::mapItem
   Map a single item to its properties
 
   since: 3.2.2
   return: object
 end note
 
-note right of Base::getIndexItem
+note left of Base::getIndexItem
   Get index values
 
   since: 3.2.2
   return: ?array
 end note
 
-note left of Base::index_map_IndexName
+note right of Base::index_map_IndexName
   Get the item name for the index values
 
   since: 3.2.2
   return: ?string
 end note
 
-note right of Base::index_map_ShortDescription
+note left of Base::index_map_ShortDescription
   Get the item Short Description for the index values
 
   since: 5.0.3
   return: ?string
 end note
 
-note left of Base::index_map_IndexSettingsPath
+note right of Base::index_map_IndexSettingsPath
   Get the item settings path for the index values
 
   since: 3.2.2
   return: string
 end note
 
-note right of Base::index_map_IndexPath
+note left of Base::index_map_IndexPath
   Get the item path for the index values
 
   since: 3.2.2
   return: string
 end note
 
-note left of Base::index_map_IndexReadmePath
+note right of Base::index_map_IndexReadmePath
   Get the item readme path for the index values
 
   since: 5.1.1
   return: string
 end note
 
-note right of Base::index_map_IndexKey
+note left of Base::index_map_IndexKey
   Get the item [POWER KEY] for the index values
 
   since: 3.2.2
   return: string
 end note
 
-note left of Base::index_map_IndexGUID
+note right of Base::index_map_IndexGUID
   Get the item GUID for the index values
 
   since: 3.2.2

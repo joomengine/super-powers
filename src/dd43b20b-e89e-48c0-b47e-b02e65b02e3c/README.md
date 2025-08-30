@@ -19,6 +19,7 @@ abstract Config  #Orange {
   + getPlaceholders() : array
   + table(string $table) : self
   + getTable() : string
+  + getListViewCodeName() : ?string
   + area(string $area) : self
   + getArea() : ?string
   + setSettingsName(string $settingsName) : self
@@ -69,112 +70,119 @@ note left of Config::getTable
   return: string
 end note
 
-note right of Config::area
+note right of Config::getListViewCodeName
+  Get the current active table list view code name
+
+  since: 5.1.2
+  return: ?string
+end note
+
+note left of Config::area
   Set the current active area
 
   since: 3.2.2
   return: self
 end note
 
-note left of Config::getArea
+note right of Config::getArea
   Get the current active area
 
   since: 3.2.2
   return: ?string
 end note
 
-note right of Config::setSettingsName
+note left of Config::setSettingsName
   Set the settings file name
 
   since: 3.2.2
   return: self
 end note
 
-note left of Config::getSettingsName
+note right of Config::getSettingsName
   Get the settings file name
 
   since: 3.2.2
   return: string
 end note
 
-note right of Config::setIndexPath
+note left of Config::setIndexPath
   Set the index path
 
   since: 3.2.2
   return: void
 end note
 
-note left of Config::getIndexPath
+note right of Config::getIndexPath
   Get the index path
 
   since: 3.2.2
   return: string
 end note
 
-note right of Config::getIndexMap
+note left of Config::getIndexMap
   Get index map
 
   since: 5.1.1
   return: array
 end note
 
-note left of Config::getIndexHeader
+note right of Config::getIndexHeader
   Get index header
 
   since: 5.1.1
   return: array
 end note
 
-note right of Config::getSrcPath
+note left of Config::getSrcPath
   Get src path
 
   since: 5.1.1
   return: string
 end note
 
-note left of Config::getMainReadmePath
+note right of Config::getMainReadmePath
   Get main readme path
 
   since: 5.1.1
   return: string
 end note
 
-note right of Config::hasMainReadme
+note left of Config::hasMainReadme
   Has main readme
 
   since: 5.1.1
   return: bool
 end note
 
-note left of Config::getItemReadmeName
+note right of Config::getItemReadmeName
   Get item readme path
 
   since: 5.1.1
   return: string
 end note
 
-note right of Config::hasItemReadme
+note left of Config::hasItemReadme
   Has item readme
 
   since: 5.1.1
   return: bool
 end note
 
-note left of Config::getFiles
+note right of Config::getFiles
   Get the field names of the files in the entity
 
   since: 5.1.1
   return: array
 end note
 
-note right of Config::getFolders
+note left of Config::getFolders
   Get the field names of the folders in the entity
 
   since: 5.1.1
   return: array
 end note
 
-note left of Config::getMap
+note right of Config::getMap
   Get map
 Builds (and caches) an associative map of the table’s field names,
 automatically removing any fields defined in $this->ignore.
@@ -183,35 +191,35 @@ automatically removing any fields defined in $this->ignore.
   return: array
 end note
 
-note right of Config::getChildren
+note left of Config::getChildren
   Get the direct entities/children of this entity
 
   since: 5.1.1
   return: array
 end note
 
-note left of Config::getTitleName
+note right of Config::getTitleName
   Get the table title name field
 
   since: 5.1.1
   return: string
 end note
 
-note right of Config::getGuidField
+note left of Config::getGuidField
   Get GUID field
 
   since: 5.1.1
   return: string
 end note
 
-note left of Config::getPrefixKey
+note right of Config::getPrefixKey
   Get Prefix Key
 
   since: 5.1.1
   return: string
 end note
 
-note right of Config::getSuffixKey
+note left of Config::getSuffixKey
   Get Suffix Key
 
   since: 5.1.1

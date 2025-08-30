@@ -1,31 +1,26 @@
 {
-    "system_name": "VDM.Table.Validator",
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Table.Validator",
-    "type": "final class",
-    "power_version": "1.0.0",
-    "load_selection": null,
-    "description": "Table Value Validator\r\n\r\n@since 5.3.0",
-    "composer": [],
-    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "extendsinterfaces_custom": "",
     "add_head": 0,
+    "add_licensing_template": 2,
     "extends": "",
-    "extendsinterfaces": null,
-    "extends_custom": "",
-    "implements_custom": "",
+    "guid": "79fd4f39-824d-4ab6-936d-959705ff24ec",
     "implements": [
         "feb3affa-5102-4307-93db-04525f4c66f0"
     ],
-    "property_selection": null,
-    "method_selection": null,
-    "head": "",
+    "load_selection": null,
+    "name": "Validator",
+    "power_version": "1.0.0",
+    "system_name": "VDM.Table.Validator",
+    "type": "final class",
     "use_selection": {
         "use_selection0": {
             "use": "2da6d6c4-eb29-4d69-8bc2-36d96e916adf",
             "as": "Table"
         }
     },
-    "add_licensing_template": 2,
-    "guid": "79fd4f39-824d-4ab6-936d-959705ff24ec",
-    "name": "Validator"
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Table.Validator",
+    "description": "Table Value Validator\r\n\r\n@since 5.3.0",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
 }

@@ -1,24 +1,16 @@
 {
-    "system_name": "VDM.Database.Insert",
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Database.Insert",
-    "type": "final class",
-    "power_version": "1.0.0",
-    "load_selection": null,
-    "description": "Database Insert Class\r\n\r\n@since 3.2.0",
-    "composer": [],
-    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "extendsinterfaces_custom": "",
     "add_head": 1,
+    "add_licensing_template": 2,
     "extends": "d9839333-a8f1-4a36-9256-5df4d349b3f6",
-    "extendsinterfaces": null,
-    "extends_custom": "",
-    "implements_custom": "",
+    "guid": "524eb8f6-38d4-47dc-92ad-98b94e099ac0",
     "implements": [
         "ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48"
     ],
-    "property_selection": null,
-    "method_selection": null,
-    "head": "use Joomla\\CMS\\Date\\Date;",
+    "load_selection": null,
+    "name": "Insert",
+    "power_version": "1.0.0",
+    "system_name": "VDM.Database.Insert",
+    "type": "final class",
     "use_selection": {
         "use_selection0": {
             "use": "b8176bdf-5615-4d91-8dfa-990d42f44127",
@@ -29,7 +21,10 @@
             "as": "default"
         }
     },
-    "add_licensing_template": 2,
-    "guid": "524eb8f6-38d4-47dc-92ad-98b94e099ac0",
-    "name": "Insert"
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Database.Insert",
+    "description": "Database Insert Class\r\n\r\n@since 3.2.0",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "use Joomla\\CMS\\Date\\Date;",
+    "composer": ""
 }

@@ -1,24 +1,16 @@
 {
-    "system_name": "VDM.Abstraction.Remote.Set",
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Abstraction.Remote.Set",
-    "type": "abstract class",
-    "power_version": "1.0.0",
-    "load_selection": null,
-    "description": "Set data based on global unique ids to remote repository\r\n\r\n@since 3.2.2",
-    "composer": [],
-    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "extendsinterfaces_custom": "",
     "add_head": 1,
+    "add_licensing_template": 2,
     "extends": "ee04ea3e-a853-4016-ba10-36e4864ca2b6",
-    "extendsinterfaces": null,
-    "extends_custom": "",
-    "implements_custom": "",
+    "guid": "eb7d69c2-4ee9-4bd0-aacc-ab51a12be895",
     "implements": [
         "e335dd61-c2f9-4536-8ed9-aec5edee0b26"
     ],
-    "property_selection": null,
-    "method_selection": null,
-    "head": "use Joomla\\CMS\\Language\\Text;",
+    "load_selection": null,
+    "name": "Set",
+    "power_version": "1.0.0",
+    "system_name": "VDM.Abstraction.Remote.Set",
+    "type": "abstract class",
     "use_selection": {
         "use_selection0": {
             "use": "61dfeb6a-2e26-44a7-87f8-68b7b09f94a0",
@@ -61,7 +53,10 @@
             "as": "default"
         }
     },
-    "add_licensing_template": 2,
-    "guid": "eb7d69c2-4ee9-4bd0-aacc-ab51a12be895",
-    "name": "Set"
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Abstraction.Remote.Set",
+    "description": "Set data based on global unique ids to remote repository\r\n\r\n@since 3.2.2",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "use Joomla\\CMS\\Language\\Text;",
+    "composer": ""
 }

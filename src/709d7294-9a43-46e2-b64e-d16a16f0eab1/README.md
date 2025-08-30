@@ -1,7 +1,7 @@
 ### JCB! Power
 # final class SchemaChecker (Details)
 > namespace: **VDM\Joomla\Componentbuilder\Table**
-> extends: **SchemaChecker**
+> extends: **ExtendingSchemaChecker**
 
 ```uml
 @startuml

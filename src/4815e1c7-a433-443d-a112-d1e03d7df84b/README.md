@@ -7,6 +7,7 @@
 
 class Database  #Gold {
   + register(Container $container) : void
+  + getJoomlaDatabase(Container $container) : DatabaseInterface
   + getLoad(Container $container) : Load
   + getInsert(Container $container) : Insert
   + getUpdate(Container $container) : Update
@@ -18,6 +19,13 @@ note right of Database::register
 
   since: 3.2.0
   return: void
+end note
+
+note right of Database::getJoomlaDatabase
+  Get the Joomla Database
+
+  since: 5.1.2
+  return: DatabaseInterface
 end note
 
 note right of Database::getLoad

@@ -1,28 +1,24 @@
 {
-    "system_name": "Utilities Base64 Helper",
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Utilities.Base64Helper",
-    "type": "abstract class",
-    "power_version": "1.0.0",
-    "load_selection": null,
-    "description": "The Base64 Helper\r\n\r\n@since 3.2.0",
-    "composer": [],
-    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "extendsinterfaces_custom": "",
     "add_head": 0,
+    "add_licensing_template": 2,
     "extends": "",
-    "extendsinterfaces": null,
-    "extends_custom": "",
-    "implements_custom": "",
-    "property_selection": null,
-    "method_selection": null,
-    "head": "",
+    "guid": "64a6ff6c-069c-4a11-a76b-db5e36c27690",
+    "implements": null,
+    "load_selection": null,
+    "name": "Base64Helper",
+    "power_version": "1.0.0",
+    "system_name": "Utilities Base64 Helper",
+    "type": "abstract class",
     "use_selection": {
         "use_selection0": {
             "use": "1f28cb53-60d9-4db1-b517-3c7dc6b429ef",
             "as": "default"
         }
     },
-    "add_licensing_template": 2,
-    "guid": "64a6ff6c-069c-4a11-a76b-db5e36c27690",
-    "name": "Base64Helper"
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Utilities.Base64Helper",
+    "description": "The Base64 Helper\r\n\r\n@since 3.2.0",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
 }

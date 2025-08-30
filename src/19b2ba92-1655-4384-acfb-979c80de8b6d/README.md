@@ -20,7 +20,7 @@ note right of Table::register
 end note
 
 note right of Table::getTable
-  Get The [[[Component]]] Data Table Class.
+  Get The Componentbuilder Data Table Class.
 
   since: 3.2.2
   return: DataTable

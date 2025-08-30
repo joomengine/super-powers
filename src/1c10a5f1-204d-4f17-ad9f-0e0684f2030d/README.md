@@ -1,7 +1,7 @@
 ### JCB! Power
 # class NoUserIdFoundException (Details)
 > namespace: **VDM\Joomla\Componentbuilder\Utilities\Exception**
-> extends: **InvalidArgumentException**
+> extends: **\InvalidArgumentException**
 
 ```uml
 @startuml

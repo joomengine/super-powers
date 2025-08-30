@@ -321,7 +321,7 @@ abstract class Set extends Base implements SetInterface
 		// load the base and token if set
 		$this->grep->loadApi(
 			$this->git,
-			$target === 'gitea' ? ($repo->base ?? null) : null,
+			$repo->base ?? null,
 			$repo->token ?? null
 		);
 
@@ -443,7 +443,9 @@ abstract class Set extends Base implements SetInterface
 					$content, // The file content.
 					$updateMessage, // The commit message.
 					$meta->sha, // The previous sha value.
-					$repo->write_branch // The branch name.
+					$repo->write_branch, // The branch name.
+					$repo->author_name, // The author name.
+					$repo->author_email // The author name.
 				);
 			} catch (\Throwable $e) {
 				$this->messages->add('error',  $e->getMessage());
@@ -458,7 +460,9 @@ abstract class Set extends Base implements SetInterface
 					$path, // The file path.
 					$content, // The file content.
 					$createMessage, // The commit message.
-					$repo->write_branch // The branch name.
+					$repo->write_branch, // The branch name.
+					$repo->author_name, // The author name.
+					$repo->author_email // The author name.
 				);
 			} catch (\Throwable $e) {
 				$this->messages->add('error',  $e->getMessage());
@@ -540,7 +544,7 @@ abstract class Set extends Base implements SetInterface
 			// load the base and token if set
 			$this->grep->loadApi(
 				$this->git,
-				$target_system === 'gitea' ? ($repo->base ?? null) : null,
+				$repo->base ?? null,
 				$repo->token ?? null
 			);
 

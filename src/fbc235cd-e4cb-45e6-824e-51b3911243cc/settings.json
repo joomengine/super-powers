@@ -1,28 +1,24 @@
 {
-    "system_name": "Joomla.File.Image",
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].File.Image",
-    "type": "final class",
-    "power_version": "1.0.0",
-    "load_selection": null,
-    "description": "Image Class\r\n\r\n@since  5.1.1",
-    "composer": [],
-    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2020\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "extendsinterfaces_custom": "",
     "add_head": 1,
+    "add_licensing_template": 2,
     "extends": "",
-    "extendsinterfaces": null,
-    "extends_custom": "",
-    "implements_custom": "",
-    "property_selection": null,
-    "method_selection": null,
-    "head": "use Joomla\\CMS\\Image\\Image as JoomlaImage;\r\nuse Joomla\\CMS\\Log\\Log;\r\nuse Joomla\\Filesystem\\File;\r\nuse Joomla\\Filesystem\\Folder;",
+    "guid": "fbc235cd-e4cb-45e6-824e-51b3911243cc",
+    "implements": null,
+    "load_selection": null,
+    "name": "Image",
+    "power_version": "1.0.0",
+    "system_name": "Joomla.File.Image",
+    "type": "final class",
     "use_selection": {
         "use_selection0": {
             "use": "f11dc790-713e-4706-9a85-a318ed3ad56e",
             "as": "default"
         }
     },
-    "add_licensing_template": 2,
-    "guid": "fbc235cd-e4cb-45e6-824e-51b3911243cc",
-    "name": "Image"
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].File.Image",
+    "description": "Image Class\r\n\r\n@since  5.1.1",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2020\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "use Joomla\\CMS\\Image\\Image as JoomlaImage;\r\nuse Joomla\\CMS\\Log\\Log;\r\nuse Joomla\\Filesystem\\File;\r\nuse Joomla\\Filesystem\\Folder;",
+    "composer": ""
 }

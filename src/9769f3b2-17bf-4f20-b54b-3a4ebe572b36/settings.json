@@ -1,21 +1,14 @@
 {
-    "system_name": "JCB.Abstraction.ComponentConfig",
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Abstraction.ComponentConfig",
-    "type": "abstract class",
-    "power_version": "1.0.0",
-    "load_selection": null,
-    "description": "Component Configurations\r\n\r\n@since 3.2.0",
-    "composer": [],
-    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "extendsinterfaces_custom": "",
     "add_head": 1,
+    "add_licensing_template": 2,
     "extends": "ffbd4e1f-a342-4080-ab7d-1de3741bf319",
-    "extendsinterfaces": null,
-    "extends_custom": "",
-    "implements_custom": "",
-    "property_selection": null,
-    "method_selection": null,
-    "head": "use Joomla\\Registry\\Registry as JoomlaRegistry;\r\nuse Joomla\\CMS\\Factory;\r\nuse Joomla\\Input\\Input;",
+    "guid": "9769f3b2-17bf-4f20-b54b-3a4ebe572b36",
+    "implements": null,
+    "load_selection": null,
+    "name": "ComponentConfig",
+    "power_version": "1.0.0",
+    "system_name": "JCB.Abstraction.ComponentConfig",
+    "type": "abstract class",
     "use_selection": {
         "use_selection0": {
             "use": "640b5352-fb09-425f-a26e-cd44eda03f15",
@@ -26,7 +19,10 @@
             "as": "default"
         }
     },
-    "add_licensing_template": 2,
-    "guid": "9769f3b2-17bf-4f20-b54b-3a4ebe572b36",
-    "name": "ComponentConfig"
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Abstraction.ComponentConfig",
+    "description": "Component Configurations\r\n\r\n@since 3.2.0",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "use Joomla\\Registry\\Registry as JoomlaRegistry;\r\nuse Joomla\\CMS\\Factory;\r\nuse Joomla\\Input\\Input;",
+    "composer": ""
 }

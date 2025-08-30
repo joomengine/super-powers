@@ -1,24 +1,16 @@
 {
-    "system_name": "JCB.Import.Factory",
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Import.Factory",
-    "type": "abstract class",
-    "power_version": "1.0.0",
-    "load_selection": null,
-    "description": "Import Factory\r\n\r\n@since 3.2.2",
-    "composer": [],
-    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "extendsinterfaces_custom": "",
     "add_head": 1,
+    "add_licensing_template": 2,
     "extends": "2e5bf608-de5c-4b00-a20d-47c26aa350d9",
-    "extendsinterfaces": null,
-    "extends_custom": "",
-    "implements_custom": "",
+    "guid": "ff8d5fdb-2d1f-4178-bd18-a43b8efd1068",
     "implements": [
         "caf33c5d-858c-4f9a-894f-ab302ec5445a"
     ],
-    "property_selection": null,
-    "method_selection": null,
-    "head": "use Joomla\\DI\\Container;",
+    "load_selection": null,
+    "name": "Factory",
+    "power_version": "1.0.0",
+    "system_name": "JCB.Import.Factory",
+    "type": "abstract class",
     "use_selection": {
         "use_selection0": {
             "use": "19b2ba92-1655-4384-acfb-979c80de8b6d",
@@ -53,7 +45,10 @@
             "as": "ItemImport"
         }
     },
-    "add_licensing_template": 2,
-    "guid": "ff8d5fdb-2d1f-4178-bd18-a43b8efd1068",
-    "name": "Factory"
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Import.Factory",
+    "description": "Import Factory\r\n\r\n@since 3.2.2",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "use Joomla\\DI\\Container;",
+    "composer": ""
 }
