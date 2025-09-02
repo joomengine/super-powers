@@ -112,7 +112,9 @@ note right of Set::saveRepoMainSettings
 end note
 
 note left of Set::isInvalidIndexRepo
-  Validate repository and settings
+  Validate repository and settings.
+Repo must be an object and not empty.
+Settings must be an object or an array and not empty.
 
   since: 3.2.2
   return: bool

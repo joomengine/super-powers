@@ -10,8 +10,9 @@ interface GrepInterface  #Lavender {
   + getPath(string $guid) : ?object
   + getPaths() : ?array
   + getPathsIndexes() : ?array
-  + getPathIndexes(string $guid) : ?object
-  + getRemoteIndex(string $guid) : ?object
+  + getPathIndexes(string $guid, bool $reload = false) : ?object
+  + getRemoteIndex(string $guid, bool $reload = false) : ?object
+  + resetEntityIndex() : void
   + getNetworkTarget() : ?string
   + exists(string $guid, ?object $repo = null, ...) : bool
   + setBranchField(string $field) : void
@@ -67,14 +68,21 @@ note left of GrepInterface::getRemoteIndex
   return: ?object
 end note
 
-note right of GrepInterface::getNetworkTarget
+note right of GrepInterface::resetEntityIndex
+  Reset the index of a entity
+
+  since: 5.1.2
+  return: void
+end note
+
+note left of GrepInterface::getNetworkTarget
   Get the network target name
 
   since: 5.1.1
   return: ?string
 end note
 
-note left of GrepInterface::exists
+note right of GrepInterface::exists
   Check if an item exists in any repo or in a specific repo.
 
   since: 3.2.2
@@ -86,28 +94,28 @@ note left of GrepInterface::exists
     ?array $order = null
 end note
 
-note right of GrepInterface::setBranchField
+note left of GrepInterface::setBranchField
   Set the branch field
 
   since: 3.2.2
   return: void
 end note
 
-note left of GrepInterface::setBranchDefaultName
+note right of GrepInterface::setBranchDefaultName
   Set the DEFAULT branch name (only used if branch field is not found)
 
   since: 3.2.2
   return: void
 end note
 
-note right of GrepInterface::setIndexPath
+note left of GrepInterface::setIndexPath
   Set the index path
 
   since: 3.2.2
   return: void
 end note
 
-note left of GrepInterface::loadApi
+note right of GrepInterface::loadApi
   Loads API config using the provided base URL and token.
 This method checks if the base URL contains 'https://git.vdm.dev/'.
 If it does, it uses the token as is (which may be null).
