@@ -72,7 +72,6 @@ end note
 
 note left of Validator::getDatabaseField
   Retrieve the database field structure for the specified field and table.
-In your case, you use `$db = $this->table->get($table, $field, 'db')`.
 
   since: 5.3.0
   return: array

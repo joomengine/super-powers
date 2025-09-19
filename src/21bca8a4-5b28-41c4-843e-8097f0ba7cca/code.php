@@ -254,7 +254,16 @@ final class Items implements ItemsInterface
 		$values = $this->extractValues($items, $key);
 		if ($values === null)
 		{
-			return null;
+			$sets = [];
+			$insert = [];
+			foreach ($items as $item)
+			{
+				$row = is_array($item) ? $item : (array) $item;
+				$insert[] = $this->normalizeGuid($row);
+			}
+			$sets['insert'] = $insert;
+
+			return $sets;
 		}
 
 		$sets = [

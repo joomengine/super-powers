@@ -14,7 +14,7 @@
     "use_selection": null,
     "extendsinterfaces": null,
     "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Table",
-    "description": "[[[Component]]] Tables\r\n\r\n@since 3.2.0",
+    "description": "[[[Component]]] Table Definition Class.\r\n\r\nThis class provides a centralized definition of all database-backed\r\nareas, views, and their fields for [[[Component]]].\r\n\r\nIt maps component entities to their schema definitions, field metadata,\r\nstorage behaviour, and relationships, enabling consistent code generation\r\nand runtime operations across models, forms, and SQL migrations.\r\n\r\n@since 3.2.0",
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
     "head": "",
     "composer": ""
