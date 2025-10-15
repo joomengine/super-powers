@@ -66,6 +66,7 @@ class Table extends BaseTable implements TableInterface
 		'joomla_component' => [
 			'system_name' => [
 				'name' => 'system_name',
+				'guid' => 'acfe906b-6e61-4f94-ae66-359e4bc3e4cc',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_SYSTEM_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -84,6 +85,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'name_code' => [
 				'name' => 'name_code',
+				'guid' => 'af7b6b08-e8c5-4551-b6e6-cde297e78e40',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_NAME_CODE_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -102,6 +104,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'short_description' => [
 				'name' => 'short_description',
+				'guid' => '46503007-43d9-485f-8cd0-8427a6a8bef2',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_SHORT_DESCRIPTION_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -120,6 +123,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'companyname' => [
 				'name' => 'companyname',
+				'guid' => 'f8c2c432-b756-4c67-bfa5-0871e58e55e3',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_COMPANYNAME_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -138,6 +142,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'buildcompsql' => [
 				'name' => 'buildcompsql',
+				'guid' => '98ad53ca-0da2-4aab-9a3c-1c7e1ee0a24e',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_BUILDCOMPSQL_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -156,6 +161,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'translation_tool' => [
 				'name' => 'translation_tool',
+				'guid' => '43d7329c-c5f7-4bde-ab6e-a9a743879b51',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_TRANSLATION_TOOL_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -174,6 +180,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'jcb_powers_path' => [
 				'name' => 'jcb_powers_path',
+				'guid' => '763e5bdf-d4d3-449b-bb36-de2623d81540',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_JCB_POWERS_PATH_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -192,6 +199,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'sales_server' => [
 				'name' => 'sales_server',
+				'guid' => '4553e8c2-3446-4e11-a967-0504509087a4',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_SALES_SERVER_LABEL',
 				'type' => 'servers',
 				'title' => false,
@@ -217,6 +225,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_update_server' => [
 				'name' => 'add_update_server',
+				'guid' => 'db2835aa-b0c3-4c9a-abe6-5b09568fffda',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_UPDATE_SERVER_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -235,6 +244,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_sql' => [
 				'name' => 'add_sql',
+				'guid' => '7c652c71-e00e-45ff-8acb-e1bc0344e4c0',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_SQL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -253,6 +263,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_postflight_install' => [
 				'name' => 'add_php_postflight_install',
+				'guid' => '3c1db8b4-65f2-4f6f-8391-5883f564eabe',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_PHP_POSTFLIGHT_INSTALL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -271,6 +282,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'mvc_versiondate' => [
 				'name' => 'mvc_versiondate',
+				'guid' => '508b5e78-c91a-4aaa-b587-000759130d4e',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_MVC_VERSIONDATE_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -289,6 +301,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'remove_line_breaks' => [
 				'name' => 'remove_line_breaks',
+				'guid' => '2089f202-667a-4fbd-881c-cc0fe1343ce4',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_REMOVE_LINE_BREAKS_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -307,6 +320,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_placeholders' => [
 				'name' => 'add_placeholders',
+				'guid' => '991ec7f9-257a-486c-9453-c6b1c3fd5bf0',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_PLACEHOLDERS_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -325,6 +339,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'debug_linenr' => [
 				'name' => 'debug_linenr',
+				'guid' => 'f5e0c377-6689-4f79-9a35-41a1bfc58ba5',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_DEBUG_LINENR_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -343,6 +358,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_preflight_install' => [
 				'name' => 'add_php_preflight_install',
+				'guid' => 'd5d03647-f29e-44a4-9e63-5feb9f4adbae',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_PHP_PREFLIGHT_INSTALL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -361,6 +377,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'description' => [
 				'name' => 'description',
+				'guid' => '749a9917-90c3-49c4-9e72-aa33b0683a87',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_DESCRIPTION_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -379,6 +396,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_method_uninstall' => [
 				'name' => 'add_php_method_uninstall',
+				'guid' => '70a2d820-64af-4f51-8b1a-522aed9572bf',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_PHP_METHOD_UNINSTALL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -397,6 +415,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'author' => [
 				'name' => 'author',
+				'guid' => 'd4a595fb-2264-4e18-8b80-7affee1a6abf',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_AUTHOR_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -415,6 +434,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'assets_table_fix' => [
 				'name' => 'assets_table_fix',
+				'guid' => '1831e024-aa0c-4fc7-b1e6-77ce4dd4c562',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ASSETS_TABLE_FIX_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -433,6 +453,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'email' => [
 				'name' => 'email',
+				'guid' => '2a9d2cda-1be7-4ae7-b672-9139a8a62d14',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_EMAIL_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -451,6 +472,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'website' => [
 				'name' => 'website',
+				'guid' => '9f474240-eb27-40d7-9512-fbb3acf370d5',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_WEBSITE_LABEL',
 				'type' => 'url',
 				'title' => false,
@@ -469,6 +491,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_git_folder_path' => [
 				'name' => 'add_git_folder_path',
+				'guid' => 'eac7c528-4764-45e8-8304-4b8701e10915',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_GIT_FOLDER_PATH_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -487,6 +510,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'license' => [
 				'name' => 'license',
+				'guid' => 'e5346711-63a0-45b8-a093-06486959a1d0',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_LICENSE_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -505,6 +529,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_css_admin' => [
 				'name' => 'add_css_admin',
+				'guid' => 'c2afae90-c059-4efb-9705-b7cf161b0c2a',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_CSS_ADMIN_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -523,6 +548,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'crowdin_username' => [
 				'name' => 'crowdin_username',
+				'guid' => '441646d1-27c5-4ea9-80d9-a1931de48b26',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_CROWDIN_USERNAME_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -541,6 +567,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'dashboard_type' => [
 				'name' => 'dashboard_type',
+				'guid' => '36fc971f-a446-49ae-94d0-2f270e60bd0b',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_DASHBOARD_TYPE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -559,6 +586,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'bom' => [
 				'name' => 'bom',
+				'guid' => 'b659c01d-accd-4049-bd4c-083000740d5a',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_BOM_LABEL',
 				'type' => 'filelist',
 				'title' => false,
@@ -577,6 +605,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'component_version' => [
 				'name' => 'component_version',
+				'guid' => 'dde96c4d-1528-402a-bdea-96ec481a11ef',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_COMPONENT_VERSION_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -595,6 +624,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_css_site' => [
 				'name' => 'add_css_site',
+				'guid' => 'c5cbf873-d13a-4930-9c99-c8b1f03e1a06',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_CSS_SITE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -613,6 +643,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'image' => [
 				'name' => 'image',
+				'guid' => '4003ab3f-70d8-4092-a11b-b23215844ffa',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_IMAGE_LABEL',
 				'type' => 'media',
 				'title' => false,
@@ -631,6 +662,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'dashboard' => [
 				'name' => 'dashboard',
+				'guid' => 'b12fadb6-2825-465e-a1e7-1dde507ffde5',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_DASHBOARD_LABEL',
 				'type' => 'dynamicdashboard',
 				'title' => false,
@@ -656,6 +688,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'copyright' => [
 				'name' => 'copyright',
+				'guid' => 'd4241cde-3446-4318-9269-905b7ea929f4',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_COPYRIGHT_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -674,6 +707,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_preflight_update' => [
 				'name' => 'add_php_preflight_update',
+				'guid' => '365d08ee-fe6e-47c4-b567-a001212f2cb6',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_PHP_PREFLIGHT_UPDATE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -692,6 +726,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'preferred_joomla_version' => [
 				'name' => 'preferred_joomla_version',
+				'guid' => 'e30ca545-0ccd-4925-b34d-96bc27d6a27c',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_PREFERRED_JOOMLA_VERSION_LABEL',
 				'type' => 'number',
 				'title' => false,
@@ -710,6 +745,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_postflight_update' => [
 				'name' => 'add_php_postflight_update',
+				'guid' => '22a668bc-d169-4346-9929-3819673c67ac',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_PHP_POSTFLIGHT_UPDATE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -728,6 +764,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_powers' => [
 				'name' => 'add_powers',
+				'guid' => '9ae98a1d-cc61-49d4-8f80-b4e1257fce24',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_POWERS_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -746,6 +783,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_method_install' => [
 				'name' => 'add_php_method_install',
+				'guid' => '9a825342-c423-42d2-85ad-f74ce9625f99',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_PHP_METHOD_INSTALL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -764,6 +802,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_sql_uninstall' => [
 				'name' => 'add_sql_uninstall',
+				'guid' => 'f22fd59e-4d06-4578-b0bb-a624b8efd145',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_SQL_UNINSTALL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -782,6 +821,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'readme' => [
 				'name' => 'readme',
+				'guid' => '87a4b892-c4cb-4032-8511-e18ba8c8c202',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_README_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -800,6 +840,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'update_server_target' => [
 				'name' => 'update_server_target',
+				'guid' => 'b9f98c3d-a93a-4b19-b89e-4c62781f9b99',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_UPDATE_SERVER_TARGET_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -818,6 +859,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'update_server' => [
 				'name' => 'update_server',
+				'guid' => '33fb33c3-1ff2-4d4c-8fe8-6aaa93c1646a',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_UPDATE_SERVER_LABEL',
 				'type' => 'servers',
 				'title' => false,
@@ -843,6 +885,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'git_folder_path' => [
 				'name' => 'git_folder_path',
+				'guid' => '7b181242-b4bc-4261-87cb-6210ec8b5af5',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_GIT_FOLDER_PATH_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -861,6 +904,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'changelog_server_url' => [
 				'name' => 'changelog_server_url',
+				'guid' => '637695d3-7754-492c-bbd0-cfdd7d00adad',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_CHANGELOG_SERVER_URL_LABEL',
 				'type' => 'url',
 				'title' => false,
@@ -879,6 +923,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'crowdin_project_identifier' => [
 				'name' => 'crowdin_project_identifier',
+				'guid' => '9e7c209f-68df-411a-a6a3-591393bc9d62',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_CROWDIN_PROJECT_IDENTIFIER_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -897,6 +942,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_namespace_prefix' => [
 				'name' => 'add_namespace_prefix',
+				'guid' => '50d55392-74b6-43e2-9b16-37c7f95a7402',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_NAMESPACE_PREFIX_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -915,6 +961,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'created' => [
 				'name' => 'created',
+				'guid' => 'e091bf65-58cb-4bf4-aba3-22015889acc6',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_CREATED_LABEL',
 				'type' => 'calendar',
 				'title' => false,
@@ -933,6 +980,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'namespace_prefix' => [
 				'name' => 'namespace_prefix',
+				'guid' => 'b742dcb4-0d29-4a4a-88f9-eca218d79a19',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_NAMESPACE_PREFIX_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -951,6 +999,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'javascript' => [
 				'name' => 'javascript',
+				'guid' => '3be0d9ca-afd6-47bc-87e5-8cb73e9f5e61',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_JAVASCRIPT_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -969,6 +1018,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'css_admin' => [
 				'name' => 'css_admin',
+				'guid' => '33c588ca-83b2-419d-b87f-b9f4e5e4ea54',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_CSS_ADMIN_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -987,6 +1037,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_menu_prefix' => [
 				'name' => 'add_menu_prefix',
+				'guid' => '0e5f211c-d6d7-417a-af92-f3e956687f56',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_MENU_PREFIX_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1005,6 +1056,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'css_site' => [
 				'name' => 'css_site',
+				'guid' => '667a2147-05d1-4138-b666-e8a0ce54ffba',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_CSS_SITE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -1023,6 +1075,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'menu_prefix' => [
 				'name' => 'menu_prefix',
+				'guid' => '7971c559-0867-44a8-bfea-291881bad311',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_MENU_PREFIX_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -1041,6 +1094,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_preflight_install' => [
 				'name' => 'php_preflight_install',
+				'guid' => '3ca01651-a5c3-46c3-b7a8-bfb0d9f6e105',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_PHP_PREFLIGHT_INSTALL_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -1059,6 +1113,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'toignore' => [
 				'name' => 'toignore',
+				'guid' => 'cce91031-8bf4-435f-8b20-9224f230061a',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_TOIGNORE_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -1077,6 +1132,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_preflight_update' => [
 				'name' => 'php_preflight_update',
+				'guid' => '9f9b030b-31ba-4ae9-88da-76efd8a140dc',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_PHP_PREFLIGHT_UPDATE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -1095,6 +1151,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_postflight_install' => [
 				'name' => 'php_postflight_install',
+				'guid' => '8d837989-4a21-4943-bb4c-4d4abb9a7a55',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_PHP_POSTFLIGHT_INSTALL_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -1113,6 +1170,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_postflight_update' => [
 				'name' => 'php_postflight_update',
+				'guid' => 'ade283c3-937e-4502-a040-c69d6ddb3c50',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_PHP_POSTFLIGHT_UPDATE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -1131,6 +1189,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addcontributors' => [
 				'name' => 'addcontributors',
+				'guid' => '8e416ff9-3bd1-4115-a08b-06594978ace6',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADDCONTRIBUTORS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -1181,6 +1240,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_method_uninstall' => [
 				'name' => 'php_method_uninstall',
+				'guid' => 'e76cf555-112a-4021-9a1e-b4ee52d7be8a',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_PHP_METHOD_UNINSTALL_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -1199,6 +1259,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'emptycontributors' => [
 				'name' => 'emptycontributors',
+				'guid' => '05e16c3f-1f5e-4355-a948-5331546f218c',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_EMPTYCONTRIBUTORS_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1217,6 +1278,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_method_install' => [
 				'name' => 'php_method_install',
+				'guid' => '8cb26845-73d8-438a-b28a-7a128a63a0d7',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_PHP_METHOD_INSTALL_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -1235,6 +1297,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'number' => [
 				'name' => 'number',
+				'guid' => 'c2ce0b7e-e917-40c0-9c63-016425dd11fd',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_NUMBER_LABEL',
 				'type' => 'number',
 				'title' => false,
@@ -1253,6 +1316,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'sql' => [
 				'name' => 'sql',
+				'guid' => '5eb879c0-f6e3-45b6-b220-cb5131422a83',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_SQL_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -1271,6 +1335,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'sql_uninstall' => [
 				'name' => 'sql_uninstall',
+				'guid' => 'b877b188-693c-43a3-9121-a37a3943d7c1',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_SQL_UNINSTALL_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -1289,6 +1354,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addreadme' => [
 				'name' => 'addreadme',
+				'guid' => '03de1a61-d639-4d48-8ce6-fcf16c8f6270',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADDREADME_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1307,6 +1373,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'update_server_url' => [
 				'name' => 'update_server_url',
+				'guid' => 'e6c263b1-da39-4a73-8585-637dc3a5b8eb',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_UPDATE_SERVER_URL_LABEL',
 				'type' => 'url',
 				'title' => false,
@@ -1325,6 +1392,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'creatuserhelper' => [
 				'name' => 'creatuserhelper',
+				'guid' => 'ec128453-f0a7-4b20-a109-56d85c6ce213',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_CREATUSERHELPER_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1343,6 +1411,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_sales_server' => [
 				'name' => 'add_sales_server',
+				'guid' => '378a9839-97ce-4bdb-8961-a9164738a3bf',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_SALES_SERVER_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1361,6 +1430,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'adduikit' => [
 				'name' => 'adduikit',
+				'guid' => '627ec119-f50c-4afc-bfe7-8455a7ace163',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADDUIKIT_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -1379,6 +1449,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_backup_folder_path' => [
 				'name' => 'add_backup_folder_path',
+				'guid' => '46bd236f-7d43-4038-ac40-936dfd18e910',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_BACKUP_FOLDER_PATH_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1397,6 +1468,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addfootable' => [
 				'name' => 'addfootable',
+				'guid' => 'ecdc0281-fc1b-4643-b9d0-41bf95674959',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADDFOOTABLE_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -1415,6 +1487,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'backup_folder_path' => [
 				'name' => 'backup_folder_path',
+				'guid' => '58525d14-8cbf-49fc-8d8e-50a9ba0e846a',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_BACKUP_FOLDER_PATH_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -1433,6 +1506,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_email_helper' => [
 				'name' => 'add_email_helper',
+				'guid' => 'b4013eb9-0716-42a5-a479-6c4b53746cd6',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_EMAIL_HELPER_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1451,6 +1525,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_helper_both' => [
 				'name' => 'add_php_helper_both',
+				'guid' => '5dabe624-329e-48d6-82cf-1f417df55467',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_PHP_HELPER_BOTH_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1469,6 +1544,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_jcb_powers_path' => [
 				'name' => 'add_jcb_powers_path',
+				'guid' => 'a6c65a43-e305-42c1-bd9d-5db5e4920185',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_JCB_POWERS_PATH_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1487,6 +1563,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_helper_both' => [
 				'name' => 'php_helper_both',
+				'guid' => '16ec7ebd-d07a-4134-8537-d7b65bcd8bac',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_PHP_HELPER_BOTH_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -1505,6 +1582,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_changelog_server' => [
 				'name' => 'add_changelog_server',
+				'guid' => 'ee10bcf8-50c6-489b-97f8-c0727e73d28b',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_CHANGELOG_SERVER_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1523,6 +1601,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_helper_admin' => [
 				'name' => 'add_php_helper_admin',
+				'guid' => 'abc5e604-4a2b-4f4c-9add-9e371249adf8',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_PHP_HELPER_ADMIN_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1541,6 +1620,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'changelog_server_target' => [
 				'name' => 'changelog_server_target',
+				'guid' => '8402731c-4432-4ac9-ab1d-d21611cb67a7',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_CHANGELOG_SERVER_TARGET_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1559,6 +1639,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_helper_admin' => [
 				'name' => 'php_helper_admin',
+				'guid' => '16a76125-d200-4bbf-aa00-91da3513a8f8',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_PHP_HELPER_ADMIN_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -1577,6 +1658,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_admin_event' => [
 				'name' => 'add_admin_event',
+				'guid' => 'f114341a-d271-4917-a5eb-8d5acdf0232d',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_ADMIN_EVENT_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1595,6 +1677,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'changelog_server' => [
 				'name' => 'changelog_server',
+				'guid' => 'e4a3a788-1c5d-4084-a452-d26ed38b2e15',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_CHANGELOG_SERVER_LABEL',
 				'type' => 'servers',
 				'title' => false,
@@ -1620,6 +1703,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_admin_event' => [
 				'name' => 'php_admin_event',
+				'guid' => 'a8b0ea74-9315-4f24-be43-836f249645f3',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_PHP_ADMIN_EVENT_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -1638,6 +1722,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_helper_site' => [
 				'name' => 'add_php_helper_site',
+				'guid' => 'ff624860-89db-4465-97f1-962bf09dcc9f',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_PHP_HELPER_SITE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1656,6 +1741,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'crowdin_project_api_key' => [
 				'name' => 'crowdin_project_api_key',
+				'guid' => '81cd22bd-ee49-470e-afa1-1f61b302734b',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_CROWDIN_PROJECT_API_KEY_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -1674,6 +1760,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_helper_site' => [
 				'name' => 'php_helper_site',
+				'guid' => 'f4134f92-7dc5-4729-9a16-bfaa51de27f9',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_PHP_HELPER_SITE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -1692,6 +1779,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'crowdin_account_api_key' => [
 				'name' => 'crowdin_account_api_key',
+				'guid' => '0708c9c5-d918-43f9-8383-f3d4c7459cf9',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_CROWDIN_ACCOUNT_API_KEY_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -1710,6 +1798,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_site_event' => [
 				'name' => 'add_site_event',
+				'guid' => '8b68326a-0e09-4df9-807e-4c32c3c9600a',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_SITE_EVENT_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1728,6 +1817,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'buildcomp' => [
 				'name' => 'buildcomp',
+				'guid' => '288e00d8-7ea3-4bfc-829c-3ab247ca9718',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_BUILDCOMP_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1746,6 +1836,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_site_event' => [
 				'name' => 'php_site_event',
+				'guid' => 'a052df3d-54b4-4da7-a0f6-f18703d1047b',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_PHP_SITE_EVENT_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -1764,6 +1855,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -1782,6 +1874,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_javascript' => [
 				'name' => 'add_javascript',
+				'guid' => '7d31d363-03b6-4ca7-bbf4-df9a879e3006',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_ADD_JAVASCRIPT_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1800,6 +1893,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'modified' => [
 				'name' => 'modified',
+				'guid' => '104b94e8-260f-4517-a4f8-80c6b3d4a10a',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_MODIFIED_LABEL',
 				'type' => 'calendar',
 				'title' => false,
@@ -1818,6 +1912,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'name' => [
 				'name' => 'name',
+				'guid' => 'b607dfed-bb4a-463d-9e14-f1264c67279b',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_COMPONENT_NAME_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -1885,6 +1980,7 @@ class Table extends BaseTable implements TableInterface
 		'joomla_module' => [
 			'system_name' => [
 				'name' => 'system_name',
+				'guid' => 'acfe906b-6e61-4f94-ae66-359e4bc3e4cc',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_SYSTEM_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -1903,6 +1999,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'target' => [
 				'name' => 'target',
+				'guid' => '88d58023-7ee7-46dc-a13e-064fbb3d8dc1',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_TARGET_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1921,6 +2018,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'description' => [
 				'name' => 'description',
+				'guid' => '749a9917-90c3-49c4-9e72-aa33b0683a87',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_DESCRIPTION_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -1939,6 +2037,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_postflight_install' => [
 				'name' => 'add_php_postflight_install',
+				'guid' => '3c1db8b4-65f2-4f6f-8391-5883f564eabe',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_ADD_PHP_POSTFLIGHT_INSTALL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1957,6 +2056,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_preflight_uninstall' => [
 				'name' => 'add_php_preflight_uninstall',
+				'guid' => '3bb6d77d-05bf-4447-a6bb-4af197ec9290',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_ADD_PHP_PREFLIGHT_UNINSTALL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1975,6 +2075,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_preflight_update' => [
 				'name' => 'add_php_preflight_update',
+				'guid' => '365d08ee-fe6e-47c4-b567-a001212f2cb6',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_ADD_PHP_PREFLIGHT_UPDATE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -1993,6 +2094,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'update_server_target' => [
 				'name' => 'update_server_target',
+				'guid' => 'b9f98c3d-a93a-4b19-b89e-4c62781f9b99',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_UPDATE_SERVER_TARGET_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -2011,6 +2113,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addreadme' => [
 				'name' => 'addreadme',
+				'guid' => '03de1a61-d639-4d48-8ce6-fcf16c8f6270',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_ADDREADME_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -2029,6 +2132,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_sql' => [
 				'name' => 'add_sql',
+				'guid' => '7c652c71-e00e-45ff-8acb-e1bc0344e4c0',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_ADD_SQL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -2047,6 +2151,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'default' => [
 				'name' => 'default',
+				'guid' => '6e214a72-6c96-40c0-abf3-5f09116d3018',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_DEFAULT_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -2065,6 +2170,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'default_header' => [
 				'name' => 'default_header',
+				'guid' => '620c977e-e713-4ce2-ae97-a4a1fbb4c397',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_DEFAULT_HEADER_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -2083,6 +2189,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'snippet' => [
 				'name' => 'snippet',
+				'guid' => 'fc4bc2f3-1a12-4484-88dc-273199fe3b63',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_SNIPPET_LABEL',
 				'type' => 'snippets',
 				'title' => false,
@@ -2108,6 +2215,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_default_header' => [
 				'name' => 'add_default_header',
+				'guid' => 'd0c24d9d-1ff9-425b-bffb-ba0108b6bfc9',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_ADD_DEFAULT_HEADER_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -2126,6 +2234,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_postflight_update' => [
 				'name' => 'add_php_postflight_update',
+				'guid' => '22a668bc-d169-4346-9929-3819673c67ac',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_ADD_PHP_POSTFLIGHT_UPDATE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -2144,6 +2253,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_method_uninstall' => [
 				'name' => 'add_php_method_uninstall',
+				'guid' => '70a2d820-64af-4f51-8b1a-522aed9572bf',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_ADD_PHP_METHOD_UNINSTALL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -2162,6 +2272,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_sql_uninstall' => [
 				'name' => 'add_sql_uninstall',
+				'guid' => 'f22fd59e-4d06-4578-b0bb-a624b8efd145',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_ADD_SQL_UNINSTALL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -2180,6 +2291,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_update_server' => [
 				'name' => 'add_update_server',
+				'guid' => 'db2835aa-b0c3-4c9a-abe6-5b09568fffda',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_ADD_UPDATE_SERVER_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -2198,6 +2310,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'update_server' => [
 				'name' => 'update_server',
+				'guid' => '33fb33c3-1ff2-4d4c-8fe8-6aaa93c1646a',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_UPDATE_SERVER_LABEL',
 				'type' => 'servers',
 				'title' => false,
@@ -2223,6 +2336,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'libraries' => [
 				'name' => 'libraries',
+				'guid' => 'f17742b9-0096-4b03-b981-f0dcd3f7e8c1',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_LIBRARIES_LABEL',
 				'type' => 'libraries',
 				'title' => false,
@@ -2248,6 +2362,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'sales_server' => [
 				'name' => 'sales_server',
+				'guid' => '4553e8c2-3446-4e11-a967-0504509087a4',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_SALES_SERVER_LABEL',
 				'type' => 'servers',
 				'title' => false,
@@ -2273,6 +2388,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'module_version' => [
 				'name' => 'module_version',
+				'guid' => 'dfb4e6cd-5fb6-4476-9772-f2c8e2143bb6',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_MODULE_VERSION_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -2291,6 +2407,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_preflight_install' => [
 				'name' => 'php_preflight_install',
+				'guid' => '3ca01651-a5c3-46c3-b7a8-bfb0d9f6e105',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_PHP_PREFLIGHT_INSTALL_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -2309,6 +2426,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_preflight_update' => [
 				'name' => 'php_preflight_update',
+				'guid' => '9f9b030b-31ba-4ae9-88da-76efd8a140dc',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_PHP_PREFLIGHT_UPDATE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -2327,6 +2445,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'layout_data' => [
 				'name' => 'layout_data',
+				'guid' => 'c30e704c-2613-44b9-91fa-95595b32180a',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_LAYOUT_DATA_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -2345,6 +2464,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_preflight_uninstall' => [
 				'name' => 'php_preflight_uninstall',
+				'guid' => '628147c3-5f93-4a49-a1bc-ac6685e06b64',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_PHP_PREFLIGHT_UNINSTALL_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -2363,6 +2483,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'custom_get' => [
 				'name' => 'custom_get',
+				'guid' => 'bed7693b-ccd1-4803-b065-5e20fac13881',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_CUSTOM_GET_LABEL',
 				'type' => 'customgets',
 				'title' => false,
@@ -2388,6 +2509,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_postflight_install' => [
 				'name' => 'php_postflight_install',
+				'guid' => '8d837989-4a21-4943-bb4c-4d4abb9a7a55',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_PHP_POSTFLIGHT_INSTALL_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -2406,6 +2528,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_postflight_update' => [
 				'name' => 'php_postflight_update',
+				'guid' => 'ade283c3-937e-4502-a040-c69d6ddb3c50',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_PHP_POSTFLIGHT_UPDATE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -2424,6 +2547,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'mod_code' => [
 				'name' => 'mod_code',
+				'guid' => 'a6138fdf-ad70-4ec6-aee7-b3e5fda2e2bb',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_MOD_CODE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -2442,6 +2566,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_method_uninstall' => [
 				'name' => 'php_method_uninstall',
+				'guid' => 'e76cf555-112a-4021-9a1e-b4ee52d7be8a',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_PHP_METHOD_UNINSTALL_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -2460,6 +2585,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_class_helper' => [
 				'name' => 'add_class_helper',
+				'guid' => 'f9b94931-2255-449d-aeab-60bfaa69c449',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_ADD_CLASS_HELPER_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -2478,6 +2604,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'sql' => [
 				'name' => 'sql',
+				'guid' => '5eb879c0-f6e3-45b6-b220-cb5131422a83',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_SQL_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -2496,6 +2623,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_class_helper_header' => [
 				'name' => 'add_class_helper_header',
+				'guid' => 'd2d81879-9190-45fd-b2a1-9ea6c0b0c12e',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_ADD_CLASS_HELPER_HEADER_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -2514,6 +2642,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'sql_uninstall' => [
 				'name' => 'sql_uninstall',
+				'guid' => 'b877b188-693c-43a3-9121-a37a3943d7c1',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_SQL_UNINSTALL_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -2532,6 +2661,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'class_helper_header' => [
 				'name' => 'class_helper_header',
+				'guid' => '1be0f2e4-0270-4ef4-8449-369b9dabcf48',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_CLASS_HELPER_HEADER_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -2550,6 +2680,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'readme' => [
 				'name' => 'readme',
+				'guid' => '87a4b892-c4cb-4032-8511-e18ba8c8c202',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_README_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -2568,6 +2699,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'class_helper_code' => [
 				'name' => 'class_helper_code',
+				'guid' => '74126149-0257-4844-956d-8f155181ba98',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_CLASS_HELPER_CODE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -2586,6 +2718,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'update_server_url' => [
 				'name' => 'update_server_url',
+				'guid' => 'e6c263b1-da39-4a73-8585-637dc3a5b8eb',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_UPDATE_SERVER_URL_LABEL',
 				'type' => 'url',
 				'title' => false,
@@ -2604,6 +2737,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'fields' => [
 				'name' => 'fields',
+				'guid' => '4982807f-9ad8-47a3-992c-8e18c626394f',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_FIELDS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -2702,6 +2836,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_script_construct' => [
 				'name' => 'add_php_script_construct',
+				'guid' => 'f1deeb63-5df2-45ff-b281-a41d9b2cd122',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_ADD_PHP_SCRIPT_CONSTRUCT_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -2720,6 +2855,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_script_construct' => [
 				'name' => 'php_script_construct',
+				'guid' => '8835dfef-4d87-4104-b93c-47c5e02e4acc',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_PHP_SCRIPT_CONSTRUCT_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -2738,6 +2874,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_sales_server' => [
 				'name' => 'add_sales_server',
+				'guid' => '378a9839-97ce-4bdb-8961-a9164738a3bf',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_ADD_SALES_SERVER_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -2756,6 +2893,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_preflight_install' => [
 				'name' => 'add_php_preflight_install',
+				'guid' => 'd5d03647-f29e-44a4-9e63-5feb9f4adbae',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_ADD_PHP_PREFLIGHT_INSTALL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -2774,6 +2912,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -2792,6 +2931,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_NAME_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -2826,6 +2966,7 @@ class Table extends BaseTable implements TableInterface
 		'joomla_plugin' => [
 			'system_name' => [
 				'name' => 'system_name',
+				'guid' => 'acfe906b-6e61-4f94-ae66-359e4bc3e4cc',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_SYSTEM_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -2844,6 +2985,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'class_extends' => [
 				'name' => 'class_extends',
+				'guid' => '956a8d9c-7f14-402f-85c9-7cdc4f3c0969',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_CLASS_EXTENDS_LABEL',
 				'type' => 'ModalSelect',
 				'title' => false,
@@ -2869,6 +3011,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'joomla_plugin_group' => [
 				'name' => 'joomla_plugin_group',
+				'guid' => 'd447ec0f-a7d1-4b3d-b9f8-d1e650583e61',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_JOOMLA_PLUGIN_GROUP_LABEL',
 				'type' => 'ModalSelect',
 				'title' => false,
@@ -2894,6 +3037,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_sql' => [
 				'name' => 'add_sql',
+				'guid' => '7c652c71-e00e-45ff-8acb-e1bc0344e4c0',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_ADD_SQL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -2912,6 +3056,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_method_uninstall' => [
 				'name' => 'add_php_method_uninstall',
+				'guid' => '70a2d820-64af-4f51-8b1a-522aed9572bf',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_ADD_PHP_METHOD_UNINSTALL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -2930,6 +3075,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_postflight_update' => [
 				'name' => 'add_php_postflight_update',
+				'guid' => '22a668bc-d169-4346-9929-3819673c67ac',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_ADD_PHP_POSTFLIGHT_UPDATE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -2948,6 +3094,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_postflight_install' => [
 				'name' => 'add_php_postflight_install',
+				'guid' => '3c1db8b4-65f2-4f6f-8391-5883f564eabe',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_ADD_PHP_POSTFLIGHT_INSTALL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -2966,6 +3113,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'sales_server' => [
 				'name' => 'sales_server',
+				'guid' => '4553e8c2-3446-4e11-a967-0504509087a4',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_SALES_SERVER_LABEL',
 				'type' => 'servers',
 				'title' => false,
@@ -2991,6 +3139,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_update_server' => [
 				'name' => 'add_update_server',
+				'guid' => 'db2835aa-b0c3-4c9a-abe6-5b09568fffda',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_ADD_UPDATE_SERVER_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -3009,6 +3158,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'method_selection' => [
 				'name' => 'method_selection',
+				'guid' => 'e260d101-177f-4722-9b95-417f650f578e',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_METHOD_SELECTION_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -3041,6 +3191,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'property_selection' => [
 				'name' => 'property_selection',
+				'guid' => 'cc01a6b1-7f18-4452-bfa6-4d64fc595a49',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_PROPERTY_SELECTION_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -3073,6 +3224,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_head' => [
 				'name' => 'add_head',
+				'guid' => '65341477-33f1-4d58-9b3c-c371168809da',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_ADD_HEAD_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -3091,6 +3243,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_sql_uninstall' => [
 				'name' => 'add_sql_uninstall',
+				'guid' => 'f22fd59e-4d06-4578-b0bb-a624b8efd145',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_ADD_SQL_UNINSTALL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -3109,6 +3262,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addreadme' => [
 				'name' => 'addreadme',
+				'guid' => '03de1a61-d639-4d48-8ce6-fcf16c8f6270',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_ADDREADME_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -3127,6 +3281,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'head' => [
 				'name' => 'head',
+				'guid' => 'e4a3ccf7-e259-4b72-ad4c-216b15d6d4f7',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_HEAD_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -3145,6 +3300,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'update_server_target' => [
 				'name' => 'update_server_target',
+				'guid' => 'b9f98c3d-a93a-4b19-b89e-4c62781f9b99',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_UPDATE_SERVER_TARGET_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -3163,6 +3319,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'main_class_code' => [
 				'name' => 'main_class_code',
+				'guid' => '145966d2-32bf-42a7-8a7b-cc44aa93490d',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_MAIN_CLASS_CODE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -3181,6 +3338,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'update_server' => [
 				'name' => 'update_server',
+				'guid' => '33fb33c3-1ff2-4d4c-8fe8-6aaa93c1646a',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_UPDATE_SERVER_LABEL',
 				'type' => 'servers',
 				'title' => false,
@@ -3206,6 +3364,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'description' => [
 				'name' => 'description',
+				'guid' => '749a9917-90c3-49c4-9e72-aa33b0683a87',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_DESCRIPTION_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -3224,6 +3383,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_postflight_install' => [
 				'name' => 'php_postflight_install',
+				'guid' => '8d837989-4a21-4943-bb4c-4d4abb9a7a55',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_PHP_POSTFLIGHT_INSTALL_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -3242,6 +3402,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'plugin_version' => [
 				'name' => 'plugin_version',
+				'guid' => '1133b764-a578-4159-abfb-bf3452801974',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_PLUGIN_VERSION_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -3260,6 +3421,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_postflight_update' => [
 				'name' => 'php_postflight_update',
+				'guid' => 'ade283c3-937e-4502-a040-c69d6ddb3c50',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_PHP_POSTFLIGHT_UPDATE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -3278,6 +3440,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'fields' => [
 				'name' => 'fields',
+				'guid' => '6013de6f-f99d-4fa5-b75c-b1973a901e04',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_FIELDS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -3376,6 +3539,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_method_uninstall' => [
 				'name' => 'php_method_uninstall',
+				'guid' => 'e76cf555-112a-4021-9a1e-b4ee52d7be8a',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_PHP_METHOD_UNINSTALL_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -3394,6 +3558,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_script_construct' => [
 				'name' => 'add_php_script_construct',
+				'guid' => 'f1deeb63-5df2-45ff-b281-a41d9b2cd122',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_ADD_PHP_SCRIPT_CONSTRUCT_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -3412,6 +3577,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'sql' => [
 				'name' => 'sql',
+				'guid' => '5eb879c0-f6e3-45b6-b220-cb5131422a83',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_SQL_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -3430,6 +3596,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_script_construct' => [
 				'name' => 'php_script_construct',
+				'guid' => '8835dfef-4d87-4104-b93c-47c5e02e4acc',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_PHP_SCRIPT_CONSTRUCT_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -3448,6 +3615,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'sql_uninstall' => [
 				'name' => 'sql_uninstall',
+				'guid' => 'b877b188-693c-43a3-9121-a37a3943d7c1',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_SQL_UNINSTALL_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -3466,6 +3634,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_preflight_install' => [
 				'name' => 'add_php_preflight_install',
+				'guid' => 'd5d03647-f29e-44a4-9e63-5feb9f4adbae',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_ADD_PHP_PREFLIGHT_INSTALL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -3484,6 +3653,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'readme' => [
 				'name' => 'readme',
+				'guid' => '87a4b892-c4cb-4032-8511-e18ba8c8c202',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_README_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -3502,6 +3672,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_preflight_install' => [
 				'name' => 'php_preflight_install',
+				'guid' => '3ca01651-a5c3-46c3-b7a8-bfb0d9f6e105',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_PHP_PREFLIGHT_INSTALL_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -3520,6 +3691,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'update_server_url' => [
 				'name' => 'update_server_url',
+				'guid' => 'e6c263b1-da39-4a73-8585-637dc3a5b8eb',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_UPDATE_SERVER_URL_LABEL',
 				'type' => 'url',
 				'title' => false,
@@ -3538,6 +3710,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_preflight_update' => [
 				'name' => 'add_php_preflight_update',
+				'guid' => '365d08ee-fe6e-47c4-b567-a001212f2cb6',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_ADD_PHP_PREFLIGHT_UPDATE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -3556,6 +3729,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_preflight_update' => [
 				'name' => 'php_preflight_update',
+				'guid' => '9f9b030b-31ba-4ae9-88da-76efd8a140dc',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_PHP_PREFLIGHT_UPDATE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -3574,6 +3748,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_preflight_uninstall' => [
 				'name' => 'add_php_preflight_uninstall',
+				'guid' => '3bb6d77d-05bf-4447-a6bb-4af197ec9290',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_ADD_PHP_PREFLIGHT_UNINSTALL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -3592,6 +3767,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_sales_server' => [
 				'name' => 'add_sales_server',
+				'guid' => '378a9839-97ce-4bdb-8961-a9164738a3bf',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_ADD_SALES_SERVER_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -3610,6 +3786,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_preflight_uninstall' => [
 				'name' => 'php_preflight_uninstall',
+				'guid' => '628147c3-5f93-4a49-a1bc-ac6685e06b64',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_PHP_PREFLIGHT_UNINSTALL_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -3628,6 +3805,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -3646,6 +3824,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_NAME_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -3680,6 +3859,7 @@ class Table extends BaseTable implements TableInterface
 		'joomla_power' => [
 			'system_name' => [
 				'name' => 'system_name',
+				'guid' => 'acfe906b-6e61-4f94-ae66-359e4bc3e4cc',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_POWER_SYSTEM_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -3698,6 +3878,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_POWER_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -3716,6 +3897,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'description' => [
 				'name' => 'description',
+				'guid' => '749a9917-90c3-49c4-9e72-aa33b0683a87',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_POWER_DESCRIPTION_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -3734,6 +3916,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'settings' => [
 				'name' => 'settings',
+				'guid' => 'a1033166-8112-45f9-8af8-c15a53d30c04',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_POWER_SETTINGS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -3780,6 +3963,7 @@ class Table extends BaseTable implements TableInterface
 		'power' => [
 			'system_name' => [
 				'name' => 'system_name',
+				'guid' => 'acfe906b-6e61-4f94-ae66-359e4bc3e4cc',
 				'label' => 'COM_COMPONENTBUILDER_POWER_SYSTEM_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -3798,6 +3982,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'namespace' => [
 				'name' => 'namespace',
+				'guid' => 'dde8525b-6cce-4922-a7e0-9dcad5622b4e',
 				'label' => 'COM_COMPONENTBUILDER_POWER_NAMESPACE_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -3816,6 +4001,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'type' => [
 				'name' => 'type',
+				'guid' => '416df962-4468-4665-af1d-da81c9256464',
 				'label' => 'COM_COMPONENTBUILDER_POWER_TYPE_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -3834,6 +4020,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'power_version' => [
 				'name' => 'power_version',
+				'guid' => '26e695f7-e7fe-47f4-a692-002dcd2df434',
 				'label' => 'COM_COMPONENTBUILDER_POWER_POWER_VERSION_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -3852,6 +4039,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'load_selection' => [
 				'name' => 'load_selection',
+				'guid' => 'aeec50c6-9a39-45ff-8210-f5f3aa6a815b',
 				'label' => 'COM_COMPONENTBUILDER_POWER_LOAD_SELECTION_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -3884,6 +4072,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'description' => [
 				'name' => 'description',
+				'guid' => '749a9917-90c3-49c4-9e72-aa33b0683a87',
 				'label' => 'COM_COMPONENTBUILDER_POWER_DESCRIPTION_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -3902,6 +4091,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'composer' => [
 				'name' => 'composer',
+				'guid' => 'a015aceb-5024-480c-88ea-fd9e4ad2d9f1',
 				'label' => 'COM_COMPONENTBUILDER_POWER_COMPOSER_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -3939,6 +4129,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'licensing_template' => [
 				'name' => 'licensing_template',
+				'guid' => 'aa4804ce-9099-4006-b089-d05990461668',
 				'label' => 'COM_COMPONENTBUILDER_POWER_LICENSING_TEMPLATE_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -3957,6 +4148,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'approved' => [
 				'name' => 'approved',
+				'guid' => 'a0e9a1e1-d32b-4bb7-b3e8-e146b5427405',
 				'label' => 'COM_COMPONENTBUILDER_POWER_APPROVED_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -3975,6 +4167,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'extendsinterfaces_custom' => [
 				'name' => 'extendsinterfaces_custom',
+				'guid' => '45a7e8c9-6e44-4e0c-b0c5-3055cdb81a12',
 				'label' => 'COM_COMPONENTBUILDER_POWER_EXTENDSINTERFACES_CUSTOM_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -3993,6 +4186,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_head' => [
 				'name' => 'add_head',
+				'guid' => '65341477-33f1-4d58-9b3c-c371168809da',
 				'label' => 'COM_COMPONENTBUILDER_POWER_ADD_HEAD_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -4011,6 +4205,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'extends' => [
 				'name' => 'extends',
+				'guid' => 'd42f8ec2-710c-41a9-98b6-b74b19213cdb',
 				'label' => 'COM_COMPONENTBUILDER_POWER_EXTENDS_LABEL',
 				'type' => 'classpowers',
 				'title' => false,
@@ -4036,6 +4231,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'extends_custom' => [
 				'name' => 'extends_custom',
+				'guid' => '1a0ff40c-90bc-472f-a465-8afefb595a6b',
 				'label' => 'COM_COMPONENTBUILDER_POWER_EXTENDS_CUSTOM_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -4054,6 +4250,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'implements_custom' => [
 				'name' => 'implements_custom',
+				'guid' => '68dcb3dc-15b2-4357-8c87-f2fb316e9ae0',
 				'label' => 'COM_COMPONENTBUILDER_POWER_IMPLEMENTS_CUSTOM_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -4072,6 +4269,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'implements' => [
 				'name' => 'implements',
+				'guid' => '82b08f94-4ed2-40cf-a311-e323e69d47b1',
 				'label' => 'COM_COMPONENTBUILDER_POWER_IMPLEMENTS_LABEL',
 				'type' => 'interfacepowers',
 				'title' => false,
@@ -4097,6 +4295,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'property_selection' => [
 				'name' => 'property_selection',
+				'guid' => 'bdd69212-bb69-40b1-8a16-6b665ae94a36',
 				'label' => 'COM_COMPONENTBUILDER_POWER_PROPERTY_SELECTION_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -4129,6 +4328,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'extendsinterfaces' => [
 				'name' => 'extendsinterfaces',
+				'guid' => '4e23487e-5052-4f04-9352-15c4b75031d8',
 				'label' => 'COM_COMPONENTBUILDER_POWER_EXTENDSINTERFACES_LABEL',
 				'type' => 'interfacepowers',
 				'title' => false,
@@ -4154,6 +4354,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'method_selection' => [
 				'name' => 'method_selection',
+				'guid' => '645ed24e-5159-40a2-bd50-4aa26e625848',
 				'label' => 'COM_COMPONENTBUILDER_POWER_METHOD_SELECTION_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -4186,6 +4387,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'approved_paths' => [
 				'name' => 'approved_paths',
+				'guid' => '7ee9f69e-1b64-45c6-90db-d0558f6e40e7',
 				'label' => 'COM_COMPONENTBUILDER_POWER_APPROVED_PATHS_LABEL',
 				'type' => 'superpowerpaths',
 				'title' => false,
@@ -4211,6 +4413,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'head' => [
 				'name' => 'head',
+				'guid' => 'e4a3ccf7-e259-4b72-ad4c-216b15d6d4f7',
 				'label' => 'COM_COMPONENTBUILDER_POWER_HEAD_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4229,6 +4432,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'use_selection' => [
 				'name' => 'use_selection',
+				'guid' => '00157fc5-d94e-4ac0-80fe-7e5ac5c356b5',
 				'label' => 'COM_COMPONENTBUILDER_POWER_USE_SELECTION_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -4266,6 +4470,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_licensing_template' => [
 				'name' => 'add_licensing_template',
+				'guid' => 'd937bf3c-2b58-4df4-a6a5-b497bb7b8245',
 				'label' => 'COM_COMPONENTBUILDER_POWER_ADD_LICENSING_TEMPLATE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -4284,6 +4489,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'main_class_code' => [
 				'name' => 'main_class_code',
+				'guid' => '145966d2-32bf-42a7-8a7b-cc44aa93490d',
 				'label' => 'COM_COMPONENTBUILDER_POWER_MAIN_CLASS_CODE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4302,6 +4508,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_POWER_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -4320,6 +4527,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_POWER_NAME_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -4354,6 +4562,7 @@ class Table extends BaseTable implements TableInterface
 		'admin_view' => [
 			'system_name' => [
 				'name' => 'system_name',
+				'guid' => 'acfe906b-6e61-4f94-ae66-359e4bc3e4cc',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_SYSTEM_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -4372,6 +4581,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'name_single' => [
 				'name' => 'name_single',
+				'guid' => '7568fcc2-bd06-438c-9666-fe3bde32306f',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_NAME_SINGLE_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -4390,6 +4600,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'short_description' => [
 				'name' => 'short_description',
+				'guid' => '46503007-43d9-485f-8cd0-8427a6a8bef2',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_SHORT_DESCRIPTION_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -4408,6 +4619,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_allowedit' => [
 				'name' => 'php_allowedit',
+				'guid' => '88173ddb-35c5-49a7-845d-0d4e12119a37',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_ALLOWEDIT_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4426,6 +4638,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_postsavehook' => [
 				'name' => 'php_postsavehook',
+				'guid' => 'b97daa06-7589-43e1-aaf9-c9506756f7b4',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_POSTSAVEHOOK_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4444,6 +4657,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_before_save' => [
 				'name' => 'php_before_save',
+				'guid' => '7dd15ec3-1830-4f4c-9497-d33618702263',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_BEFORE_SAVE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4462,6 +4676,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_getlistquery' => [
 				'name' => 'php_getlistquery',
+				'guid' => 'b9c064cb-4266-4217-95b7-d2956e6bfefb',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_GETLISTQUERY_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4480,6 +4695,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_getitems' => [
 				'name' => 'php_getitems',
+				'guid' => '0ec2dbcd-8acc-438f-ad28-906fc7b6474e',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_GETITEMS_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4498,6 +4714,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'name_list' => [
 				'name' => 'name_list',
+				'guid' => 'c73c3033-f4d9-475a-977b-9e447b88272f',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_NAME_LIST_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -4516,6 +4733,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'icon' => [
 				'name' => 'icon',
+				'guid' => '3b731d0a-3205-4409-a9fd-e74d1db25055',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ICON_LABEL',
 				'type' => 'media',
 				'title' => false,
@@ -4534,6 +4752,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_after_publish' => [
 				'name' => 'php_after_publish',
+				'guid' => '8dfde218-c13c-4e7e-be62-d651cafc9d43',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_AFTER_PUBLISH_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4552,6 +4771,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_fadein' => [
 				'name' => 'add_fadein',
+				'guid' => 'e1bcb366-b7e0-47d7-9a5f-58f8d8d0307d',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_FADEIN_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -4570,6 +4790,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'description' => [
 				'name' => 'description',
+				'guid' => '749a9917-90c3-49c4-9e72-aa33b0683a87',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_DESCRIPTION_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -4588,6 +4809,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'icon_category' => [
 				'name' => 'icon_category',
+				'guid' => '0d2bdd49-7559-4cc1-a25b-56aacb830760',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ICON_CATEGORY_LABEL',
 				'type' => 'media',
 				'title' => false,
@@ -4606,6 +4828,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'icon_add' => [
 				'name' => 'icon_add',
+				'guid' => '92ff3e2c-081b-4b84-a10c-e1a9f3245063',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ICON_ADD_LABEL',
 				'type' => 'media',
 				'title' => false,
@@ -4624,6 +4847,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_after_cancel' => [
 				'name' => 'php_after_cancel',
+				'guid' => '5637623b-c82f-4ce2-be82-e262e9596fa2',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_AFTER_CANCEL_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4642,6 +4866,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'mysql_table_charset' => [
 				'name' => 'mysql_table_charset',
+				'guid' => '916b0b6e-b5dc-469e-bc9c-c809471903b4',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_MYSQL_TABLE_CHARSET_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -4660,6 +4885,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_batchmove' => [
 				'name' => 'php_batchmove',
+				'guid' => 'c56cf55d-fbc6-4246-b3c3-7810d42710b2',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_BATCHMOVE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4678,6 +4904,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'type' => [
 				'name' => 'type',
+				'guid' => '5f2ddc22-11f5-49a5-bebf-8313d8006e46',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_TYPE_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -4696,6 +4923,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_after_delete' => [
 				'name' => 'php_after_delete',
+				'guid' => 'f23fc722-e0e2-422f-b0f5-ac17da162a63',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_AFTER_DELETE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4714,6 +4942,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'source' => [
 				'name' => 'source',
+				'guid' => '21eff77d-da38-4ce1-96c5-e6af26463942',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_SOURCE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -4732,6 +4961,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_getitem' => [
 				'name' => 'php_getitem',
+				'guid' => 'a921c373-45bb-4919-a840-5b13511102cb',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_GETITEM_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4750,6 +4980,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addpermissions' => [
 				'name' => 'addpermissions',
+				'guid' => '6e7d306a-9210-41bd-b951-6e897fcff773',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADDPERMISSIONS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -4780,6 +5011,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_getitems_after_all' => [
 				'name' => 'php_getitems_after_all',
+				'guid' => '887264da-8ea1-4333-8a12-de26f6041251',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_GETITEMS_AFTER_ALL_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4798,6 +5030,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_getform' => [
 				'name' => 'php_getform',
+				'guid' => '120e7c82-ff53-44ec-bfa0-a1413d100d18',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_GETFORM_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4816,6 +5049,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addtabs' => [
 				'name' => 'addtabs',
+				'guid' => '0c06ec4b-448e-4c8a-8869-d424b6ab1f4a',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADDTABS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -4841,6 +5075,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_save' => [
 				'name' => 'php_save',
+				'guid' => '8ac3beb5-c100-41d6-8d2e-dd3e57f3701a',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_SAVE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4859,6 +5094,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_allowadd' => [
 				'name' => 'php_allowadd',
+				'guid' => '2f0432b4-e601-474e-9edb-4b438517039b',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_ALLOWADD_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4877,6 +5113,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_before_cancel' => [
 				'name' => 'php_before_cancel',
+				'guid' => '0523633b-2f83-4205-ad7a-f4a77dff3dd0',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_BEFORE_CANCEL_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4895,6 +5132,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addlinked_views' => [
 				'name' => 'addlinked_views',
+				'guid' => '70c62a1a-a141-4e0e-a271-c606744cb92c',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADDLINKED_VIEWS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -4947,6 +5185,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_batchcopy' => [
 				'name' => 'php_batchcopy',
+				'guid' => '77067bb3-3cfa-4042-b3ac-8bdda9d8b492',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_BATCHCOPY_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4965,6 +5204,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_before_publish' => [
 				'name' => 'php_before_publish',
+				'guid' => 'e4b56d60-7171-43c9-89ad-03f04a2cdba1',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_BEFORE_PUBLISH_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -4983,6 +5223,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'alias_builder_type' => [
 				'name' => 'alias_builder_type',
+				'guid' => 'a5043582-b29c-4ede-a712-16de9346abed',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ALIAS_BUILDER_TYPE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5001,6 +5242,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_before_delete' => [
 				'name' => 'php_before_delete',
+				'guid' => '8e8e12f8-8d8c-43f1-bbbd-8ef19b4d326e',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_BEFORE_DELETE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -5019,6 +5261,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_document' => [
 				'name' => 'php_document',
+				'guid' => 'e4d3c22b-1297-450b-8108-c389f834e354',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_DOCUMENT_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -5037,6 +5280,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'mysql_table_row_format' => [
 				'name' => 'mysql_table_row_format',
+				'guid' => '6336be5a-77e0-46e2-8d1f-9278a4b10080',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_MYSQL_TABLE_ROW_FORMAT_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -5055,6 +5299,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'alias_builder' => [
 				'name' => 'alias_builder',
+				'guid' => '96e3d0e6-e8b5-488f-8758-7cec18bd5858',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ALIAS_BUILDER_LABEL',
 				'type' => 'aliasbuilder',
 				'title' => false,
@@ -5080,6 +5325,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'sql' => [
 				'name' => 'sql',
+				'guid' => '5eb879c0-f6e3-45b6-b220-cb5131422a83',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_SQL_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -5098,6 +5344,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_getitem' => [
 				'name' => 'add_php_getitem',
+				'guid' => '95eb062e-f221-43b4-b4d4-c32e9d70e8a7',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_GETITEM_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5116,6 +5363,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_category_submenu' => [
 				'name' => 'add_category_submenu',
+				'guid' => '7e6e7fa8-d17b-47ae-9a28-b02ea4936b81',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_CATEGORY_SUBMENU_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5134,6 +5382,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_getitems' => [
 				'name' => 'add_php_getitems',
+				'guid' => '1eecc354-f454-48dd-ab12-4cf85b88f97b',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_GETITEMS_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5152,6 +5401,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_getitems_after_all' => [
 				'name' => 'add_php_getitems_after_all',
+				'guid' => '4b956c45-bbcd-4d01-82ce-a85270f44c10',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_GETITEMS_AFTER_ALL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5170,6 +5420,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_getlistquery' => [
 				'name' => 'add_php_getlistquery',
+				'guid' => 'f2581140-5d9c-4c29-b511-e12a826d15da',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_GETLISTQUERY_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5188,6 +5439,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_css_view' => [
 				'name' => 'add_css_view',
+				'guid' => '6746d3ba-b120-4918-8bba-2a14260e99c8',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_CSS_VIEW_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5206,6 +5458,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_getform' => [
 				'name' => 'add_php_getform',
+				'guid' => '562bc505-cc89-4a55-956a-b53e1a87ef46',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_GETFORM_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5224,6 +5477,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'css_view' => [
 				'name' => 'css_view',
+				'guid' => '1ad12721-9ee9-4623-98d2-071ba013a373',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_CSS_VIEW_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -5242,6 +5496,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_before_save' => [
 				'name' => 'add_php_before_save',
+				'guid' => 'cc7954c1-d9f7-4a97-8b71-23f6f694bd6d',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_BEFORE_SAVE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5260,6 +5515,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_css_views' => [
 				'name' => 'add_css_views',
+				'guid' => 'a2098911-926a-42b6-8498-d8a453c34d93',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_CSS_VIEWS_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5278,6 +5534,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_save' => [
 				'name' => 'add_php_save',
+				'guid' => '5799fcb7-8de8-41bf-9a2a-dcf84cae3949',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_SAVE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5296,6 +5553,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'css_views' => [
 				'name' => 'css_views',
+				'guid' => '63d5585f-c9bd-485d-9c1d-4a29a4fbf4b2',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_CSS_VIEWS_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -5314,6 +5572,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_postsavehook' => [
 				'name' => 'add_php_postsavehook',
+				'guid' => '45559d2a-7537-4719-8caa-aa99df171000',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_POSTSAVEHOOK_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5332,6 +5591,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_javascript_view_file' => [
 				'name' => 'add_javascript_view_file',
+				'guid' => '42991cef-d988-4ad9-b3d2-f29d9809f0b3',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_JAVASCRIPT_VIEW_FILE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5350,6 +5610,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_allowadd' => [
 				'name' => 'add_php_allowadd',
+				'guid' => '4550b372-974e-432c-8221-69b6fb65fdfd',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_ALLOWADD_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5368,6 +5629,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'javascript_view_file' => [
 				'name' => 'javascript_view_file',
+				'guid' => '5f7479f2-b499-4094-8294-d580e51244a1',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_JAVASCRIPT_VIEW_FILE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -5386,6 +5648,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_allowedit' => [
 				'name' => 'add_php_allowedit',
+				'guid' => '30744253-e2cd-44c3-ac86-0de3741b9ce0',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_ALLOWEDIT_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5404,6 +5667,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_javascript_view_footer' => [
 				'name' => 'add_javascript_view_footer',
+				'guid' => '9405da44-900c-4f7c-823d-734a68f5d6f6',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_JAVASCRIPT_VIEW_FOOTER_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5422,6 +5686,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_before_cancel' => [
 				'name' => 'add_php_before_cancel',
+				'guid' => '5b8bfcb4-a2b0-4ee9-931e-474ae9742e76',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_BEFORE_CANCEL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5440,6 +5705,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'javascript_view_footer' => [
 				'name' => 'javascript_view_footer',
+				'guid' => 'a99c1f40-4b41-4167-ad29-85133375aa7a',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_JAVASCRIPT_VIEW_FOOTER_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -5458,6 +5724,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_after_cancel' => [
 				'name' => 'add_php_after_cancel',
+				'guid' => '1e5269aa-e342-4b63-830e-f0a7acb2dab4',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_AFTER_CANCEL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5476,6 +5743,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_javascript_views_file' => [
 				'name' => 'add_javascript_views_file',
+				'guid' => 'e19c4fa4-804f-488b-90d7-1ea827bba52e',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_JAVASCRIPT_VIEWS_FILE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5494,6 +5762,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_batchcopy' => [
 				'name' => 'add_php_batchcopy',
+				'guid' => '0c7535bd-dbfa-4155-bc06-9ef34bf0f29a',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_BATCHCOPY_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5512,6 +5781,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'javascript_views_file' => [
 				'name' => 'javascript_views_file',
+				'guid' => 'ec2db8b1-d779-4bf2-b4cd-374a894fdc83',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_JAVASCRIPT_VIEWS_FILE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -5530,6 +5800,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_batchmove' => [
 				'name' => 'add_php_batchmove',
+				'guid' => '90c08eb4-3097-4f59-a291-5959bbb174ad',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_BATCHMOVE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5548,6 +5819,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_javascript_views_footer' => [
 				'name' => 'add_javascript_views_footer',
+				'guid' => '70995b9c-d0a9-4a57-b59b-54d39c379e66',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_JAVASCRIPT_VIEWS_FOOTER_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5566,6 +5838,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_before_publish' => [
 				'name' => 'add_php_before_publish',
+				'guid' => '3b02a65c-1a0a-4e04-8306-34cb484c45fe',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_BEFORE_PUBLISH_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5584,6 +5857,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'javascript_views_footer' => [
 				'name' => 'javascript_views_footer',
+				'guid' => '34bf9926-34a4-49a3-a29e-b602b1e5f9b2',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_JAVASCRIPT_VIEWS_FOOTER_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -5602,6 +5876,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_after_publish' => [
 				'name' => 'add_php_after_publish',
+				'guid' => '3eb7643a-7205-4683-9b8b-80c2d65334eb',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_AFTER_PUBLISH_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5620,6 +5895,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_custom_button' => [
 				'name' => 'add_custom_button',
+				'guid' => 'ab222d85-e408-44de-a513-d6aeda48b286',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_CUSTOM_BUTTON_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5638,6 +5914,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_before_delete' => [
 				'name' => 'add_php_before_delete',
+				'guid' => '79a25c26-9ea4-481c-b833-6699dd6e34d0',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_BEFORE_DELETE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5656,6 +5933,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'custom_button' => [
 				'name' => 'custom_button',
+				'guid' => 'f962e778-623e-40a8-b7db-88df71fdac51',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_CUSTOM_BUTTON_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -5701,6 +5979,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_after_delete' => [
 				'name' => 'add_php_after_delete',
+				'guid' => '8272a897-9044-4e62-964f-89cd90e99bbb',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_AFTER_DELETE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5719,6 +5998,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_controller' => [
 				'name' => 'php_controller',
+				'guid' => 'e268c7be-dc34-40d9-bf2c-5f1897a09f7c',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_CONTROLLER_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -5737,6 +6017,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_document' => [
 				'name' => 'add_php_document',
+				'guid' => '46fa9c1e-5aa3-41ff-8f02-e9a80252ad9f',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_DOCUMENT_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5755,6 +6036,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_model' => [
 				'name' => 'php_model',
+				'guid' => '5e831983-665b-43f2-9786-5e7c9cbb9e96',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_MODEL_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -5773,6 +6055,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'mysql_table_engine' => [
 				'name' => 'mysql_table_engine',
+				'guid' => '025cfab0-7736-4036-9eec-8f70e53f681b',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_MYSQL_TABLE_ENGINE_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -5791,6 +6074,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_controller_list' => [
 				'name' => 'php_controller_list',
+				'guid' => 'fe8a8811-1bcd-448a-a111-25e17ac47687',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_CONTROLLER_LIST_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -5809,6 +6093,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'mysql_table_collate' => [
 				'name' => 'mysql_table_collate',
+				'guid' => '29e8af00-5d33-4ddc-8643-9f331da7684e',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_MYSQL_TABLE_COLLATE_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -5827,6 +6112,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_model_list' => [
 				'name' => 'php_model_list',
+				'guid' => '46e5c9d6-6304-4e9f-a582-242308667e2f',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_MODEL_LIST_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -5845,6 +6131,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_sql' => [
 				'name' => 'add_sql',
+				'guid' => '7c652c71-e00e-45ff-8acb-e1bc0344e4c0',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_SQL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5863,6 +6150,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_ajax' => [
 				'name' => 'add_php_ajax',
+				'guid' => '625b65cb-7569-437a-a6dd-b3290c662e18',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADD_PHP_AJAX_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -5881,6 +6169,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addtables' => [
 				'name' => 'addtables',
+				'guid' => '33a9df05-3e39-4cc8-af2b-234653aadb7a',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_ADDTABLES_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -5918,6 +6207,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_ajaxmethod' => [
 				'name' => 'php_ajaxmethod',
+				'guid' => 'c731b5f5-5bd3-4ad3-ac3e-9e0281104121',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_PHP_AJAXMETHOD_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -5936,6 +6226,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -5954,6 +6245,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'ajax_input' => [
 				'name' => 'ajax_input',
+				'guid' => 'e407f6f1-e4e9-4f23-a8c7-8ad75e14a820',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_VIEW_AJAX_INPUT_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -6025,6 +6317,7 @@ class Table extends BaseTable implements TableInterface
 		'custom_admin_view' => [
 			'system_name' => [
 				'name' => 'system_name',
+				'guid' => 'acfe906b-6e61-4f94-ae66-359e4bc3e4cc',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_SYSTEM_NAME_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -6043,6 +6336,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -6061,6 +6355,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'description' => [
 				'name' => 'description',
+				'guid' => 'a5ef0756-5ecd-49ae-a36c-058b90758988',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_DESCRIPTION_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -6079,6 +6374,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'main_get' => [
 				'name' => 'main_get',
+				'guid' => '18b26be8-1651-4ac3-b8a0-6598e302b192',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_MAIN_GET_LABEL',
 				'type' => 'ModalSelect',
 				'title' => false,
@@ -6104,6 +6400,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_jview_display' => [
 				'name' => 'add_php_jview_display',
+				'guid' => '32564da8-5599-4577-bd93-fd425179612f',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_ADD_PHP_JVIEW_DISPLAY_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -6122,6 +6419,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'css_document' => [
 				'name' => 'css_document',
+				'guid' => 'fd03122f-8c74-468a-8f8c-704e927c3b65',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_CSS_DOCUMENT_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -6140,6 +6438,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'css' => [
 				'name' => 'css',
+				'guid' => '7d733ad8-a5bf-4e2f-859d-be1251b7d0f1',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_CSS_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -6158,6 +6457,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'js_document' => [
 				'name' => 'js_document',
+				'guid' => 'ccb3cb86-8403-4494-a284-ce1fb782f0af',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_JS_DOCUMENT_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -6176,6 +6476,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'javascript_file' => [
 				'name' => 'javascript_file',
+				'guid' => '25c87995-f58f-4f6a-8f6b-2e462545bdd6',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_JAVASCRIPT_FILE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -6194,6 +6495,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'codename' => [
 				'name' => 'codename',
+				'guid' => '83871f4f-e406-416a-845e-a8257a4a34d3',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_CODENAME_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -6212,6 +6514,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'default' => [
 				'name' => 'default',
+				'guid' => '6e214a72-6c96-40c0-abf3-5f09116d3018',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_DEFAULT_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -6230,6 +6533,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'snippet' => [
 				'name' => 'snippet',
+				'guid' => 'fc4bc2f3-1a12-4484-88dc-273199fe3b63',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_SNIPPET_LABEL',
 				'type' => 'snippets',
 				'title' => false,
@@ -6255,6 +6559,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'icon' => [
 				'name' => 'icon',
+				'guid' => '3b731d0a-3205-4409-a9fd-e74d1db25055',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_ICON_LABEL',
 				'type' => 'media',
 				'title' => false,
@@ -6273,6 +6578,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_jview' => [
 				'name' => 'add_php_jview',
+				'guid' => '6ce6e81e-5cdf-4ea2-83b5-acde779f4297',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_ADD_PHP_JVIEW_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -6291,6 +6597,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'context' => [
 				'name' => 'context',
+				'guid' => 'c7b20fcd-0849-49cc-84c2-0dbb73a19fda',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_CONTEXT_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -6309,6 +6616,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_js_document' => [
 				'name' => 'add_js_document',
+				'guid' => 'f76ffc06-f4c9-417e-8584-bc2f65184d18',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_ADD_JS_DOCUMENT_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -6327,6 +6635,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'custom_get' => [
 				'name' => 'custom_get',
+				'guid' => 'bed7693b-ccd1-4803-b065-5e20fac13881',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_CUSTOM_GET_LABEL',
 				'type' => 'customgets',
 				'title' => false,
@@ -6352,6 +6661,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_javascript_file' => [
 				'name' => 'add_javascript_file',
+				'guid' => '075b5082-3fb1-46f1-a838-da558b3afb54',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_ADD_JAVASCRIPT_FILE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -6370,6 +6680,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_ajaxmethod' => [
 				'name' => 'php_ajaxmethod',
+				'guid' => 'c731b5f5-5bd3-4ad3-ac3e-9e0281104121',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_PHP_AJAXMETHOD_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -6388,6 +6699,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_css_document' => [
 				'name' => 'add_css_document',
+				'guid' => '4a8003fa-7458-405e-90d3-7728b1af9e86',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_ADD_CSS_DOCUMENT_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -6406,6 +6718,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_document' => [
 				'name' => 'add_php_document',
+				'guid' => '46fa9c1e-5aa3-41ff-8f02-e9a80252ad9f',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_ADD_PHP_DOCUMENT_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -6424,6 +6737,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_css' => [
 				'name' => 'add_css',
+				'guid' => '14c857e3-e684-49a3-8b34-1cf7448ed0c4',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_ADD_CSS_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -6442,6 +6756,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_view' => [
 				'name' => 'add_php_view',
+				'guid' => '8b09aaf9-546c-4f03-8b1f-3170ba4b5491',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_ADD_PHP_VIEW_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -6460,6 +6775,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_ajax' => [
 				'name' => 'add_php_ajax',
+				'guid' => '625b65cb-7569-437a-a6dd-b3290c662e18',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_ADD_PHP_AJAX_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -6478,6 +6794,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'libraries' => [
 				'name' => 'libraries',
+				'guid' => 'f17742b9-0096-4b03-b981-f0dcd3f7e8c1',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_LIBRARIES_LABEL',
 				'type' => 'libraries',
 				'title' => false,
@@ -6503,6 +6820,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'ajax_input' => [
 				'name' => 'ajax_input',
+				'guid' => 'e407f6f1-e4e9-4f23-a8c7-8ad75e14a820',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_AJAX_INPUT_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -6558,6 +6876,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'dynamic_get' => [
 				'name' => 'dynamic_get',
+				'guid' => 'c37aa662-719c-4ed5-bbf2-e36672a3ce33',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_DYNAMIC_GET_LABEL',
 				'type' => 'dynamicgets',
 				'title' => false,
@@ -6583,6 +6902,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_document' => [
 				'name' => 'php_document',
+				'guid' => 'e4d3c22b-1297-450b-8108-c389f834e354',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_PHP_DOCUMENT_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -6601,6 +6921,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_view' => [
 				'name' => 'php_view',
+				'guid' => 'e27df414-cf8a-45c3-bc38-cc48e6146fef',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_PHP_VIEW_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -6619,6 +6940,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_custom_button' => [
 				'name' => 'add_custom_button',
+				'guid' => 'ab222d85-e408-44de-a513-d6aeda48b286',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_ADD_CUSTOM_BUTTON_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -6637,6 +6959,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_jview_display' => [
 				'name' => 'php_jview_display',
+				'guid' => '96963615-e3bb-4d37-83df-4ad3fca74536',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_PHP_JVIEW_DISPLAY_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -6655,6 +6978,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'custom_button' => [
 				'name' => 'custom_button',
+				'guid' => 'f962e778-623e-40a8-b7db-88df71fdac51',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_CUSTOM_BUTTON_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -6700,6 +7024,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_jview' => [
 				'name' => 'php_jview',
+				'guid' => 'ffecfa82-c326-4703-9cc3-69d6f313bd32',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_PHP_JVIEW_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -6718,6 +7043,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_controller' => [
 				'name' => 'php_controller',
+				'guid' => 'e268c7be-dc34-40d9-bf2c-5f1897a09f7c',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_PHP_CONTROLLER_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -6736,6 +7062,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -6754,6 +7081,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_model' => [
 				'name' => 'php_model',
+				'guid' => '5e831983-665b-43f2-9786-5e7c9cbb9e96',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_ADMIN_VIEW_PHP_MODEL_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -6788,6 +7116,7 @@ class Table extends BaseTable implements TableInterface
 		'site_view' => [
 			'system_name' => [
 				'name' => 'system_name',
+				'guid' => 'acfe906b-6e61-4f94-ae66-359e4bc3e4cc',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_SYSTEM_NAME_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -6806,6 +7135,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -6824,6 +7154,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'description' => [
 				'name' => 'description',
+				'guid' => 'a5ef0756-5ecd-49ae-a36c-058b90758988',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_DESCRIPTION_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -6842,6 +7173,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'main_get' => [
 				'name' => 'main_get',
+				'guid' => '18b26be8-1651-4ac3-b8a0-6598e302b192',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_MAIN_GET_LABEL',
 				'type' => 'ModalSelect',
 				'title' => false,
@@ -6867,6 +7199,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_jview_display' => [
 				'name' => 'add_php_jview_display',
+				'guid' => '32564da8-5599-4577-bd93-fd425179612f',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_ADD_PHP_JVIEW_DISPLAY_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -6885,6 +7218,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_document' => [
 				'name' => 'add_php_document',
+				'guid' => '46fa9c1e-5aa3-41ff-8f02-e9a80252ad9f',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_ADD_PHP_DOCUMENT_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -6903,6 +7237,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_view' => [
 				'name' => 'add_php_view',
+				'guid' => '8b09aaf9-546c-4f03-8b1f-3170ba4b5491',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_ADD_PHP_VIEW_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -6921,6 +7256,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'js_document' => [
 				'name' => 'js_document',
+				'guid' => 'ccb3cb86-8403-4494-a284-ce1fb782f0af',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_JS_DOCUMENT_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -6939,6 +7275,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'codename' => [
 				'name' => 'codename',
+				'guid' => '83871f4f-e406-416a-845e-a8257a4a34d3',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_CODENAME_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -6957,6 +7294,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'javascript_file' => [
 				'name' => 'javascript_file',
+				'guid' => '25c87995-f58f-4f6a-8f6b-2e462545bdd6',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_JAVASCRIPT_FILE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -6975,6 +7313,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'context' => [
 				'name' => 'context',
+				'guid' => 'c7b20fcd-0849-49cc-84c2-0dbb73a19fda',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_CONTEXT_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -6993,6 +7332,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'default' => [
 				'name' => 'default',
+				'guid' => '6e214a72-6c96-40c0-abf3-5f09116d3018',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_DEFAULT_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -7011,6 +7351,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'snippet' => [
 				'name' => 'snippet',
+				'guid' => 'fc4bc2f3-1a12-4484-88dc-273199fe3b63',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_SNIPPET_LABEL',
 				'type' => 'snippets',
 				'title' => false,
@@ -7036,6 +7377,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_jview' => [
 				'name' => 'add_php_jview',
+				'guid' => '6ce6e81e-5cdf-4ea2-83b5-acde779f4297',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_ADD_PHP_JVIEW_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -7054,6 +7396,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'custom_get' => [
 				'name' => 'custom_get',
+				'guid' => 'bed7693b-ccd1-4803-b065-5e20fac13881',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_CUSTOM_GET_LABEL',
 				'type' => 'customgets',
 				'title' => false,
@@ -7079,6 +7422,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'css_document' => [
 				'name' => 'css_document',
+				'guid' => 'fd03122f-8c74-468a-8f8c-704e927c3b65',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_CSS_DOCUMENT_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -7097,6 +7441,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_javascript_file' => [
 				'name' => 'add_javascript_file',
+				'guid' => '075b5082-3fb1-46f1-a838-da558b3afb54',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_ADD_JAVASCRIPT_FILE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -7115,6 +7460,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'css' => [
 				'name' => 'css',
+				'guid' => '7d733ad8-a5bf-4e2f-859d-be1251b7d0f1',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_CSS_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -7133,6 +7479,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_js_document' => [
 				'name' => 'add_js_document',
+				'guid' => 'f76ffc06-f4c9-417e-8584-bc2f65184d18',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_ADD_JS_DOCUMENT_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -7151,6 +7498,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_ajaxmethod' => [
 				'name' => 'php_ajaxmethod',
+				'guid' => 'c731b5f5-5bd3-4ad3-ac3e-9e0281104121',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_PHP_AJAXMETHOD_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -7169,6 +7517,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_css_document' => [
 				'name' => 'add_css_document',
+				'guid' => '4a8003fa-7458-405e-90d3-7728b1af9e86',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_ADD_CSS_DOCUMENT_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -7187,6 +7536,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'libraries' => [
 				'name' => 'libraries',
+				'guid' => 'f17742b9-0096-4b03-b981-f0dcd3f7e8c1',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_LIBRARIES_LABEL',
 				'type' => 'libraries',
 				'title' => false,
@@ -7212,6 +7562,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_css' => [
 				'name' => 'add_css',
+				'guid' => '14c857e3-e684-49a3-8b34-1cf7448ed0c4',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_ADD_CSS_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -7230,6 +7581,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'dynamic_get' => [
 				'name' => 'dynamic_get',
+				'guid' => 'c37aa662-719c-4ed5-bbf2-e36672a3ce33',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_DYNAMIC_GET_LABEL',
 				'type' => 'dynamicgets',
 				'title' => false,
@@ -7255,6 +7607,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_ajax' => [
 				'name' => 'add_php_ajax',
+				'guid' => '625b65cb-7569-437a-a6dd-b3290c662e18',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_ADD_PHP_AJAX_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -7273,6 +7626,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'ajax_input' => [
 				'name' => 'ajax_input',
+				'guid' => 'e407f6f1-e4e9-4f23-a8c7-8ad75e14a820',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_AJAX_INPUT_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -7328,6 +7682,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_custom_button' => [
 				'name' => 'add_custom_button',
+				'guid' => 'ab222d85-e408-44de-a513-d6aeda48b286',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_ADD_CUSTOM_BUTTON_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -7346,6 +7701,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_document' => [
 				'name' => 'php_document',
+				'guid' => 'e4d3c22b-1297-450b-8108-c389f834e354',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_PHP_DOCUMENT_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -7364,6 +7720,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'button_position' => [
 				'name' => 'button_position',
+				'guid' => '29a26946-d7c3-4ea0-be64-8e376d2a7f25',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_BUTTON_POSITION_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -7382,6 +7739,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_view' => [
 				'name' => 'php_view',
+				'guid' => 'e27df414-cf8a-45c3-bc38-cc48e6146fef',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_PHP_VIEW_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -7400,6 +7758,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_jview_display' => [
 				'name' => 'php_jview_display',
+				'guid' => '96963615-e3bb-4d37-83df-4ad3fca74536',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_PHP_JVIEW_DISPLAY_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -7418,6 +7777,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'custom_button' => [
 				'name' => 'custom_button',
+				'guid' => 'f962e778-623e-40a8-b7db-88df71fdac51',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_CUSTOM_BUTTON_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -7463,6 +7823,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_jview' => [
 				'name' => 'php_jview',
+				'guid' => 'ffecfa82-c326-4703-9cc3-69d6f313bd32',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_PHP_JVIEW_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -7481,6 +7842,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_controller' => [
 				'name' => 'php_controller',
+				'guid' => 'e268c7be-dc34-40d9-bf2c-5f1897a09f7c',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_PHP_CONTROLLER_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -7499,6 +7861,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -7517,6 +7880,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_model' => [
 				'name' => 'php_model',
+				'guid' => '5e831983-665b-43f2-9786-5e7c9cbb9e96',
 				'label' => 'COM_COMPONENTBUILDER_SITE_VIEW_PHP_MODEL_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -7551,6 +7915,7 @@ class Table extends BaseTable implements TableInterface
 		'template' => [
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_TEMPLATE_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -7569,6 +7934,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'description' => [
 				'name' => 'description',
+				'guid' => 'a5ef0756-5ecd-49ae-a36c-058b90758988',
 				'label' => 'COM_COMPONENTBUILDER_TEMPLATE_DESCRIPTION_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -7587,6 +7953,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'dynamic_get' => [
 				'name' => 'dynamic_get',
+				'guid' => '5087f379-710b-4e76-9b9d-86b842933991',
 				'label' => 'COM_COMPONENTBUILDER_TEMPLATE_DYNAMIC_GET_LABEL',
 				'type' => 'dynamicget',
 				'title' => false,
@@ -7612,6 +7979,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_TEMPLATE_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -7630,6 +7998,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_view' => [
 				'name' => 'php_view',
+				'guid' => 'e27df414-cf8a-45c3-bc38-cc48e6146fef',
 				'label' => 'COM_COMPONENTBUILDER_TEMPLATE_PHP_VIEW_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -7648,6 +8017,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_view' => [
 				'name' => 'add_php_view',
+				'guid' => '8b09aaf9-546c-4f03-8b1f-3170ba4b5491',
 				'label' => 'COM_COMPONENTBUILDER_TEMPLATE_ADD_PHP_VIEW_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -7666,6 +8036,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'template' => [
 				'name' => 'template',
+				'guid' => '7b57c7ca-f4e8-4358-948a-987b1f36b3fb',
 				'label' => 'COM_COMPONENTBUILDER_TEMPLATE_TEMPLATE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -7684,6 +8055,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'snippet' => [
 				'name' => 'snippet',
+				'guid' => 'fc4bc2f3-1a12-4484-88dc-273199fe3b63',
 				'label' => 'COM_COMPONENTBUILDER_TEMPLATE_SNIPPET_LABEL',
 				'type' => 'snippets',
 				'title' => false,
@@ -7709,6 +8081,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'libraries' => [
 				'name' => 'libraries',
+				'guid' => 'f17742b9-0096-4b03-b981-f0dcd3f7e8c1',
 				'label' => 'COM_COMPONENTBUILDER_TEMPLATE_LIBRARIES_LABEL',
 				'type' => 'libraries',
 				'title' => false,
@@ -7734,6 +8107,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'alias' => [
 				'name' => 'alias',
+				'guid' => '477832a1-7a25-4774-ad1a-4ff69ed4b374',
 				'label' => 'COM_COMPONENTBUILDER_TEMPLATE_ALIAS_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -7768,6 +8142,7 @@ class Table extends BaseTable implements TableInterface
 		'layout' => [
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_LAYOUT_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -7786,6 +8161,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'description' => [
 				'name' => 'description',
+				'guid' => 'a5ef0756-5ecd-49ae-a36c-058b90758988',
 				'label' => 'COM_COMPONENTBUILDER_LAYOUT_DESCRIPTION_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -7804,6 +8180,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'dynamic_get' => [
 				'name' => 'dynamic_get',
+				'guid' => '5087f379-710b-4e76-9b9d-86b842933991',
 				'label' => 'COM_COMPONENTBUILDER_LAYOUT_DYNAMIC_GET_LABEL',
 				'type' => 'dynamicget',
 				'title' => false,
@@ -7829,6 +8206,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'snippet' => [
 				'name' => 'snippet',
+				'guid' => 'fc4bc2f3-1a12-4484-88dc-273199fe3b63',
 				'label' => 'COM_COMPONENTBUILDER_LAYOUT_SNIPPET_LABEL',
 				'type' => 'snippets',
 				'title' => false,
@@ -7854,6 +8232,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_LAYOUT_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -7872,6 +8251,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_view' => [
 				'name' => 'php_view',
+				'guid' => 'e27df414-cf8a-45c3-bc38-cc48e6146fef',
 				'label' => 'COM_COMPONENTBUILDER_LAYOUT_PHP_VIEW_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -7890,6 +8270,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_view' => [
 				'name' => 'add_php_view',
+				'guid' => '8b09aaf9-546c-4f03-8b1f-3170ba4b5491',
 				'label' => 'COM_COMPONENTBUILDER_LAYOUT_ADD_PHP_VIEW_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -7908,6 +8289,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'layout' => [
 				'name' => 'layout',
+				'guid' => '7c9289e1-b326-4596-9dd8-f6ebe861a0ef',
 				'label' => 'COM_COMPONENTBUILDER_LAYOUT_LAYOUT_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -7926,6 +8308,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'libraries' => [
 				'name' => 'libraries',
+				'guid' => 'f17742b9-0096-4b03-b981-f0dcd3f7e8c1',
 				'label' => 'COM_COMPONENTBUILDER_LAYOUT_LIBRARIES_LABEL',
 				'type' => 'libraries',
 				'title' => false,
@@ -7951,6 +8334,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'alias' => [
 				'name' => 'alias',
+				'guid' => '477832a1-7a25-4774-ad1a-4ff69ed4b374',
 				'label' => 'COM_COMPONENTBUILDER_LAYOUT_ALIAS_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -7985,6 +8369,7 @@ class Table extends BaseTable implements TableInterface
 		'dynamic_get' => [
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -8003,6 +8388,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'main_source' => [
 				'name' => 'main_source',
+				'guid' => '1709c1a3-b26a-4e78-82f9-ff05a08738c9',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_MAIN_SOURCE_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -8021,6 +8407,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'gettype' => [
 				'name' => 'gettype',
+				'guid' => '5377a931-8a17-4eed-92dd-8a8808408a5a',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_GETTYPE_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -8039,6 +8426,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_calculation' => [
 				'name' => 'php_calculation',
+				'guid' => '9b6768ae-8d6a-461e-9b41-61d49431a401',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_PHP_CALCULATION_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -8057,6 +8445,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_router_parse' => [
 				'name' => 'php_router_parse',
+				'guid' => '88ffbef3-064c-4f87-997a-30af1c88f2ec',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_PHP_ROUTER_PARSE_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -8075,6 +8464,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_after_getitems' => [
 				'name' => 'add_php_after_getitems',
+				'guid' => '01ae4944-ceba-4c21-a02d-38222e1a3733',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_ADD_PHP_AFTER_GETITEMS_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -8093,6 +8483,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_router_parse' => [
 				'name' => 'add_php_router_parse',
+				'guid' => 'd4b30bcc-414d-403b-9627-037bcbbd1c6b',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_ADD_PHP_ROUTER_PARSE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -8111,6 +8502,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'view_selection' => [
 				'name' => 'view_selection',
+				'guid' => '14f4d49c-7e54-494e-b103-eaccb6428ee8',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_VIEW_SELECTION_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -8129,6 +8521,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_before_getitems' => [
 				'name' => 'add_php_before_getitems',
+				'guid' => 'b7aaa1d0-4577-46eb-9d09-b4c1104a02a8',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_ADD_PHP_BEFORE_GETITEMS_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -8147,6 +8540,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_before_getitem' => [
 				'name' => 'add_php_before_getitem',
+				'guid' => 'bd40a792-2b63-446a-af75-0510f8c7cc2c',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_ADD_PHP_BEFORE_GETITEM_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -8165,6 +8559,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_after_getitem' => [
 				'name' => 'add_php_after_getitem',
+				'guid' => 'c1754272-da91-4a17-9567-c2566552cdc9',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_ADD_PHP_AFTER_GETITEM_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -8183,6 +8578,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'db_table_main' => [
 				'name' => 'db_table_main',
+				'guid' => '4c744096-3d1c-406d-87f4-71169002e85f',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_DB_TABLE_MAIN_LABEL',
 				'type' => 'dbtables',
 				'title' => false,
@@ -8208,6 +8604,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_custom_get' => [
 				'name' => 'php_custom_get',
+				'guid' => '8aba2f06-8fd1-4256-add5-1e233e581315',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_PHP_CUSTOM_GET_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -8226,6 +8623,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'plugin_events' => [
 				'name' => 'plugin_events',
+				'guid' => '13637273-b286-42f5-b092-90e507484751',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_PLUGIN_EVENTS_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -8244,6 +8642,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'db_selection' => [
 				'name' => 'db_selection',
+				'guid' => '661c16f9-71be-41e2-8428-efd5509e6291',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_DB_SELECTION_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -8262,6 +8661,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'view_table_main' => [
 				'name' => 'view_table_main',
+				'guid' => '1744d5fa-f0fd-4857-ab41-4e855fe7dc60',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_VIEW_TABLE_MAIN_LABEL',
 				'type' => 'ModalSelect',
 				'title' => false,
@@ -8287,6 +8687,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_php_getlistquery' => [
 				'name' => 'add_php_getlistquery',
+				'guid' => 'f2581140-5d9c-4c29-b511-e12a826d15da',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_ADD_PHP_GETLISTQUERY_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -8305,6 +8706,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'join_db_table' => [
 				'name' => 'join_db_table',
+				'guid' => '6c75d3ff-93aa-493b-b25c-733e78408fa2',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_JOIN_DB_TABLE_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -8372,6 +8774,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'select_all' => [
 				'name' => 'select_all',
+				'guid' => 'fbb918ff-70bf-41ee-b1fd-110e38cbdba0',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_SELECT_ALL_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -8390,6 +8793,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_before_getitem' => [
 				'name' => 'php_before_getitem',
+				'guid' => 'c3bb9074-505a-4085-878b-f7ad3d5522a6',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_PHP_BEFORE_GETITEM_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -8408,6 +8812,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'getcustom' => [
 				'name' => 'getcustom',
+				'guid' => '6c486f71-abfd-49c7-91e2-165f594fa658',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_GETCUSTOM_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -8426,6 +8831,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_after_getitem' => [
 				'name' => 'php_after_getitem',
+				'guid' => 'fc0dcf64-f6a8-48d7-8ed7-6ecea942cf21',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_PHP_AFTER_GETITEM_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -8444,6 +8850,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'pagination' => [
 				'name' => 'pagination',
+				'guid' => 'b99a8df9-27ce-4502-9f44-863799cd2cc9',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_PAGINATION_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -8462,6 +8869,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_getlistquery' => [
 				'name' => 'php_getlistquery',
+				'guid' => 'b9c064cb-4266-4217-95b7-d2956e6bfefb',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_PHP_GETLISTQUERY_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -8480,6 +8888,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_before_getitems' => [
 				'name' => 'php_before_getitems',
+				'guid' => '71680787-5da5-4ab8-afdf-1e109556743b',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_PHP_BEFORE_GETITEMS_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -8498,6 +8907,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'filter' => [
 				'name' => 'filter',
+				'guid' => 'bf2293c7-5c8b-4b77-a880-c63ca4777e3e',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_FILTER_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -8543,6 +8953,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_after_getitems' => [
 				'name' => 'php_after_getitems',
+				'guid' => '1ae39469-cd74-4d82-84af-fec8af28be61',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_PHP_AFTER_GETITEMS_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -8561,6 +8972,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'where' => [
 				'name' => 'where',
+				'guid' => '81466df0-3571-45cf-b520-cee2a9f5e03b',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_WHERE_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -8596,6 +9008,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'order' => [
 				'name' => 'order',
+				'guid' => '007dc9f8-9b06-4211-83c9-4134b23d6561',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_ORDER_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -8626,6 +9039,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addcalculation' => [
 				'name' => 'addcalculation',
+				'guid' => '6e7bb46d-fda5-46b8-b08e-31a2e6884e24',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_ADDCALCULATION_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -8644,6 +9058,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'group' => [
 				'name' => 'group',
+				'guid' => 'f37d69ac-ba75-4b2f-8793-91b77b86751f',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_GROUP_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -8669,6 +9084,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'global' => [
 				'name' => 'global',
+				'guid' => 'fa2f73d6-8427-47de-abd8-4290da426b49',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_GLOBAL_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -8709,6 +9125,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -8727,6 +9144,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'join_view_table' => [
 				'name' => 'join_view_table',
+				'guid' => 'f73e8499-6914-4b4b-9289-68deddea38b1',
 				'label' => 'COM_COMPONENTBUILDER_DYNAMIC_GET_JOIN_VIEW_TABLE_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -8810,6 +9228,7 @@ class Table extends BaseTable implements TableInterface
 		'custom_code' => [
 			'system_name' => [
 				'name' => 'system_name',
+				'guid' => 'acfe906b-6e61-4f94-ae66-359e4bc3e4cc',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_CODE_SYSTEM_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -8828,6 +9247,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'path' => [
 				'name' => 'path',
+				'guid' => 'b7942a37-45cc-4005-b4b5-e716cbf176f9',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_CODE_PATH_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -8846,6 +9266,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'target' => [
 				'name' => 'target',
+				'guid' => 'b4fce451-7c6d-4cf9-8b1c-f8be6dbcec5b',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_CODE_TARGET_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -8864,6 +9285,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'type' => [
 				'name' => 'type',
+				'guid' => 'd1c48683-2655-4e49-9f13-6b25f2b0a0d0',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_CODE_TYPE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -8882,6 +9304,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'comment_type' => [
 				'name' => 'comment_type',
+				'guid' => '176c63c6-65b1-4a91-97f2-db4d1e36911a',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_CODE_COMMENT_TYPE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -8900,6 +9323,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'joomla_version' => [
 				'name' => 'joomla_version',
+				'guid' => 'a6c87660-f1fe-490d-b1c5-9755e6db1e19',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_CODE_JOOMLA_VERSION_LABEL',
 				'type' => 'number',
 				'title' => false,
@@ -8918,6 +9342,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'function_name' => [
 				'name' => 'function_name',
+				'guid' => '3a3c43e6-18c2-4fc6-aebe-0ed8d5c6416f',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_CODE_FUNCTION_NAME_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -8936,6 +9361,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'code' => [
 				'name' => 'code',
+				'guid' => '777b846c-f3f4-4eb3-a73a-a460d28976dc',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_CODE_CODE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -8954,6 +9380,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'hashendtarget' => [
 				'name' => 'hashendtarget',
+				'guid' => '3347f841-b8e8-4f52-acbd-0bada696e540',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_CODE_HASHENDTARGET_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -8972,6 +9399,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'to_line' => [
 				'name' => 'to_line',
+				'guid' => 'ebbfce08-7d5a-416a-aad2-b23b78bd926b',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_CODE_TO_LINE_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -8990,6 +9418,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'from_line' => [
 				'name' => 'from_line',
+				'guid' => '82e196f5-cc38-4045-8be3-c1067b23df72',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_CODE_FROM_LINE_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -9008,6 +9437,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'hashtarget' => [
 				'name' => 'hashtarget',
+				'guid' => 'e0272089-9156-409b-8444-61e2e3e755bf',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_CODE_HASHTARGET_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -9026,6 +9456,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'component' => [
 				'name' => 'component',
+				'guid' => '04886e45-7821-40a6-ae2b-2f46c6b45906',
 				'label' => 'COM_COMPONENTBUILDER_CUSTOM_CODE_COMPONENT_LABEL',
 				'type' => 'joomlacomponent',
 				'title' => false,
@@ -9067,6 +9498,7 @@ class Table extends BaseTable implements TableInterface
 		'class_extends' => [
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_EXTENDS_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -9085,6 +9517,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'extension_type' => [
 				'name' => 'extension_type',
+				'guid' => '7e059ab7-d79b-4218-9488-6f38d85d17a0',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_EXTENDS_EXTENSION_TYPE_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -9103,6 +9536,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_EXTENDS_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -9121,6 +9555,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'head' => [
 				'name' => 'head',
+				'guid' => 'e4a3ccf7-e259-4b72-ad4c-216b15d6d4f7',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_EXTENDS_HEAD_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -9139,6 +9574,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'comment' => [
 				'name' => 'comment',
+				'guid' => '3d80f045-6262-43c8-9b43-658093f6a057',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_EXTENDS_COMMENT_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -9173,6 +9609,7 @@ class Table extends BaseTable implements TableInterface
 		'class_property' => [
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_PROPERTY_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -9191,6 +9628,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'visibility' => [
 				'name' => 'visibility',
+				'guid' => '7222c742-0092-439c-84de-1973e4e2b180',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_PROPERTY_VISIBILITY_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -9209,6 +9647,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'extension_type' => [
 				'name' => 'extension_type',
+				'guid' => '7e059ab7-d79b-4218-9488-6f38d85d17a0',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_PROPERTY_EXTENSION_TYPE_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -9227,6 +9666,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_PROPERTY_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -9245,6 +9685,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'comment' => [
 				'name' => 'comment',
+				'guid' => 'dd400eb4-8762-4ab5-bc4e-fa1feacc4dfd',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_PROPERTY_COMMENT_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -9263,6 +9704,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'joomla_plugin_group' => [
 				'name' => 'joomla_plugin_group',
+				'guid' => '4ece5fde-e910-467b-abba-5596c9bd994a',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_PROPERTY_JOOMLA_PLUGIN_GROUP_LABEL',
 				'type' => 'ModalSelect',
 				'title' => false,
@@ -9288,6 +9730,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'default' => [
 				'name' => 'default',
+				'guid' => '73ef5c00-c8c5-4cb7-9f69-6aed98346818',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_PROPERTY_DEFAULT_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -9322,6 +9765,7 @@ class Table extends BaseTable implements TableInterface
 		'class_method' => [
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_METHOD_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -9340,6 +9784,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'visibility' => [
 				'name' => 'visibility',
+				'guid' => '7222c742-0092-439c-84de-1973e4e2b180',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_METHOD_VISIBILITY_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -9358,6 +9803,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'extension_type' => [
 				'name' => 'extension_type',
+				'guid' => '7e059ab7-d79b-4218-9488-6f38d85d17a0',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_METHOD_EXTENSION_TYPE_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -9376,6 +9822,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_METHOD_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -9394,6 +9841,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'code' => [
 				'name' => 'code',
+				'guid' => 'abaff633-2a9f-4be1-b057-241f657953a1',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_METHOD_CODE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -9412,6 +9860,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'comment' => [
 				'name' => 'comment',
+				'guid' => 'dd400eb4-8762-4ab5-bc4e-fa1feacc4dfd',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_METHOD_COMMENT_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -9430,6 +9879,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'joomla_plugin_group' => [
 				'name' => 'joomla_plugin_group',
+				'guid' => '4ece5fde-e910-467b-abba-5596c9bd994a',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_METHOD_JOOMLA_PLUGIN_GROUP_LABEL',
 				'type' => 'ModalSelect',
 				'title' => false,
@@ -9455,6 +9905,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'arguments' => [
 				'name' => 'arguments',
+				'guid' => 'd2a2f6cf-1689-438b-b2c2-b244b8cbf078',
 				'label' => 'COM_COMPONENTBUILDER_CLASS_METHOD_ARGUMENTS_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -9489,6 +9940,7 @@ class Table extends BaseTable implements TableInterface
 		'placeholder' => [
 			'target' => [
 				'name' => 'target',
+				'guid' => '65b533a8-0d70-44af-a9d1-785983eb4ef3',
 				'label' => 'COM_COMPONENTBUILDER_PLACEHOLDER_TARGET_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -9507,6 +9959,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'value' => [
 				'name' => 'value',
+				'guid' => 'b14c6496-2aaf-4198-8fc1-cf034525fb91',
 				'label' => 'COM_COMPONENTBUILDER_PLACEHOLDER_VALUE_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -9541,6 +9994,7 @@ class Table extends BaseTable implements TableInterface
 		'library' => [
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_LIBRARY_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -9559,6 +10013,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'target' => [
 				'name' => 'target',
+				'guid' => '07c71471-04cd-4217-a63e-4ca97d880950',
 				'label' => 'COM_COMPONENTBUILDER_LIBRARY_TARGET_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -9577,6 +10032,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'how' => [
 				'name' => 'how',
+				'guid' => '0051004f-b0ec-47c4-bfdb-0d8e76adbbb8',
 				'label' => 'COM_COMPONENTBUILDER_LIBRARY_HOW_LABEL',
 				'type' => 'filebehaviour',
 				'title' => false,
@@ -9602,6 +10058,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'type' => [
 				'name' => 'type',
+				'guid' => 'f2940a48-f104-4c11-86ef-ed6456a1211c',
 				'label' => 'COM_COMPONENTBUILDER_LIBRARY_TYPE_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -9620,6 +10077,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'description' => [
 				'name' => 'description',
+				'guid' => '09b25ca3-6c9f-4b6d-ad80-e0989c221289',
 				'label' => 'COM_COMPONENTBUILDER_LIBRARY_DESCRIPTION_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -9638,6 +10096,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'libraries' => [
 				'name' => 'libraries',
+				'guid' => '7e1418d5-5515-49f6-99ed-166365b9b963',
 				'label' => 'COM_COMPONENTBUILDER_LIBRARY_LIBRARIES_LABEL',
 				'type' => 'librariesx',
 				'title' => false,
@@ -9663,6 +10122,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_setdocument' => [
 				'name' => 'php_setdocument',
+				'guid' => 'b70529a1-30bb-42c0-822f-802c23bd616b',
 				'label' => 'COM_COMPONENTBUILDER_LIBRARY_PHP_SETDOCUMENT_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -9681,6 +10141,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addconditions' => [
 				'name' => 'addconditions',
+				'guid' => '48d69b71-6eba-480a-b17b-c67243f02d06',
 				'label' => 'COM_COMPONENTBUILDER_LIBRARY_ADDCONDITIONS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -9745,6 +10206,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_LIBRARY_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -9779,6 +10241,7 @@ class Table extends BaseTable implements TableInterface
 		'snippet' => [
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_SNIPPET_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -9797,6 +10260,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'url' => [
 				'name' => 'url',
+				'guid' => 'd29d6854-bb4a-4fa2-83a1-5a1b9c9a0eaf',
 				'label' => 'COM_COMPONENTBUILDER_SNIPPET_URL_LABEL',
 				'type' => 'url',
 				'title' => false,
@@ -9815,6 +10279,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'type' => [
 				'name' => 'type',
+				'guid' => '9f3472b3-c2b5-4441-a2b1-49065202e22a',
 				'label' => 'COM_COMPONENTBUILDER_SNIPPET_TYPE_LABEL',
 				'type' => 'ModalSelect',
 				'title' => false,
@@ -9840,6 +10305,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'heading' => [
 				'name' => 'heading',
+				'guid' => 'fc671dc8-a9be-43d9-b42a-671750ad869d',
 				'label' => 'COM_COMPONENTBUILDER_SNIPPET_HEADING_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -9858,6 +10324,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'library' => [
 				'name' => 'library',
+				'guid' => '897235b0-5c12-4a93-a424-7d8661dc1c9b',
 				'label' => 'COM_COMPONENTBUILDER_SNIPPET_LIBRARY_LABEL',
 				'type' => 'ModalSelect',
 				'title' => false,
@@ -9883,6 +10350,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_SNIPPET_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -9901,6 +10369,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'contributor_email' => [
 				'name' => 'contributor_email',
+				'guid' => '1e0608ea-045b-494b-aac6-060dc76da782',
 				'label' => 'COM_COMPONENTBUILDER_SNIPPET_CONTRIBUTOR_EMAIL_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -9919,6 +10388,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'contributor_name' => [
 				'name' => 'contributor_name',
+				'guid' => '6803fdeb-c251-4588-85c9-d0e8636d18ab',
 				'label' => 'COM_COMPONENTBUILDER_SNIPPET_CONTRIBUTOR_NAME_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -9937,6 +10407,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'contributor_website' => [
 				'name' => 'contributor_website',
+				'guid' => '3a1db9fd-204e-4693-bcf7-2084d26c1013',
 				'label' => 'COM_COMPONENTBUILDER_SNIPPET_CONTRIBUTOR_WEBSITE_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -9955,6 +10426,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'contributor_company' => [
 				'name' => 'contributor_company',
+				'guid' => 'cef2d060-95cf-409a-92c9-02de0c164640',
 				'label' => 'COM_COMPONENTBUILDER_SNIPPET_CONTRIBUTOR_COMPANY_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -9973,6 +10445,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'snippet' => [
 				'name' => 'snippet',
+				'guid' => '144a1f95-97d5-42b4-be3e-39f21215780e',
 				'label' => 'COM_COMPONENTBUILDER_SNIPPET_SNIPPET_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -9991,6 +10464,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'usage' => [
 				'name' => 'usage',
+				'guid' => '155d8238-a2cf-446c-91a5-c8322ee1d890',
 				'label' => 'COM_COMPONENTBUILDER_SNIPPET_USAGE_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -10009,6 +10483,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'description' => [
 				'name' => 'description',
+				'guid' => '749a9917-90c3-49c4-9e72-aa33b0683a87',
 				'label' => 'COM_COMPONENTBUILDER_SNIPPET_DESCRIPTION_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -10043,6 +10518,7 @@ class Table extends BaseTable implements TableInterface
 		'validation_rule' => [
 			'name' => [
 				'name' => 'name',
+				'guid' => '9a98c57f-bf01-49b0-91e3-e72e1b9551f1',
 				'label' => 'COM_COMPONENTBUILDER_VALIDATION_RULE_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -10061,6 +10537,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'short_description' => [
 				'name' => 'short_description',
+				'guid' => '46503007-43d9-485f-8cd0-8427a6a8bef2',
 				'label' => 'COM_COMPONENTBUILDER_VALIDATION_RULE_SHORT_DESCRIPTION_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -10079,6 +10556,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'inherit' => [
 				'name' => 'inherit',
+				'guid' => '419fa655-e64a-4e39-b124-29eeb3198bc7',
 				'label' => 'COM_COMPONENTBUILDER_VALIDATION_RULE_INHERIT_LABEL',
 				'type' => 'existingvalidationrules',
 				'title' => false,
@@ -10104,6 +10582,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php' => [
 				'name' => 'php',
+				'guid' => '24ed6b0e-c86c-4131-91a7-5205ac931ad5',
 				'label' => 'COM_COMPONENTBUILDER_VALIDATION_RULE_PHP_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -10138,6 +10617,7 @@ class Table extends BaseTable implements TableInterface
 		'field' => [
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -10156,6 +10636,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'fieldtype' => [
 				'name' => 'fieldtype',
+				'guid' => '91a4f538-1383-4ae4-85d8-55ddada7d6cd',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_FIELDTYPE_LABEL',
 				'type' => 'fieldtypes',
 				'title' => false,
@@ -10181,6 +10662,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'datatype' => [
 				'name' => 'datatype',
+				'guid' => 'e41e74b2-a265-4269-8ec6-1d890c893798',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_DATATYPE_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -10199,6 +10681,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'indexes' => [
 				'name' => 'indexes',
+				'guid' => '63ff758d-a866-4d37-bc2a-a7432bd9bb44',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_INDEXES_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -10217,6 +10700,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'null_switch' => [
 				'name' => 'null_switch',
+				'guid' => '6a3d21ad-7cb1-4456-a623-20aa71ba0b12',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_NULL_SWITCH_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -10235,6 +10719,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'store' => [
 				'name' => 'store',
+				'guid' => '48b78ab1-bfb0-44eb-9ec8-4f5cdbf4a32c',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_STORE_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -10253,6 +10738,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'catid' => [
 				'name' => 'catid',
+				'guid' => 'ef722d2d-0fa0-4aa7-92d2-7783ec1c9f7f',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_CATID_LABEL',
 				'type' => 'category',
 				'title' => false,
@@ -10271,6 +10757,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'on_get_model_field' => [
 				'name' => 'on_get_model_field',
+				'guid' => 'dc69b6d4-2e6f-4f2d-86d9-0fb6534164ca',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_ON_GET_MODEL_FIELD_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -10289,6 +10776,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'on_save_model_field' => [
 				'name' => 'on_save_model_field',
+				'guid' => '0f0ef89c-e305-408d-ac95-6a86efe28c5a',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_ON_SAVE_MODEL_FIELD_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -10307,6 +10795,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'initiator_on_get_model' => [
 				'name' => 'initiator_on_get_model',
+				'guid' => '9d32c0a5-e010-44f2-8b53-3372c87da08d',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_INITIATOR_ON_GET_MODEL_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -10325,6 +10814,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'xml' => [
 				'name' => 'xml',
+				'guid' => '83a3c115-1a4f-44a7-9572-e91043acdbaa',
 				'label' => '',
 				'type' => 'hidden',
 				'title' => false,
@@ -10343,6 +10833,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'datalenght' => [
 				'name' => 'datalenght',
+				'guid' => 'b3ea0d94-1029-41d8-9f6b-bcbec6b715f4',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_DATALENGHT_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -10361,6 +10852,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'javascript_view_footer' => [
 				'name' => 'javascript_view_footer',
+				'guid' => 'a99c1f40-4b41-4167-ad29-85133375aa7a',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_JAVASCRIPT_VIEW_FOOTER_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -10379,6 +10871,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'css_views' => [
 				'name' => 'css_views',
+				'guid' => '63d5585f-c9bd-485d-9c1d-4a29a4fbf4b2',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_CSS_VIEWS_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -10397,6 +10890,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'css_view' => [
 				'name' => 'css_view',
+				'guid' => '1ad12721-9ee9-4623-98d2-071ba013a373',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_CSS_VIEW_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -10415,6 +10909,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'datadefault_other' => [
 				'name' => 'datadefault_other',
+				'guid' => '6b2277f3-44e1-4bbb-8e55-3315bdba736e',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_DATADEFAULT_OTHER_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -10433,6 +10928,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'datadefault' => [
 				'name' => 'datadefault',
+				'guid' => '6ba76a0f-55a4-49ce-911a-0a3f05674bef',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_DATADEFAULT_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -10451,6 +10947,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'datalenght_other' => [
 				'name' => 'datalenght_other',
+				'guid' => 'fd7ff7b0-a8e9-476c-8e9d-ac4ca338c589',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_DATALENGHT_OTHER_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -10469,6 +10966,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'javascript_views_footer' => [
 				'name' => 'javascript_views_footer',
+				'guid' => '34bf9926-34a4-49a3-a29e-b602b1e5f9b2',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_JAVASCRIPT_VIEWS_FOOTER_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -10487,6 +10985,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_css_view' => [
 				'name' => 'add_css_view',
+				'guid' => '6746d3ba-b120-4918-8bba-2a14260e99c8',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_ADD_CSS_VIEW_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -10505,6 +11004,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_css_views' => [
 				'name' => 'add_css_views',
+				'guid' => 'a2098911-926a-42b6-8498-d8a453c34d93',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_ADD_CSS_VIEWS_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -10523,6 +11023,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_javascript_view_footer' => [
 				'name' => 'add_javascript_view_footer',
+				'guid' => '9405da44-900c-4f7c-823d-734a68f5d6f6',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_ADD_JAVASCRIPT_VIEW_FOOTER_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -10541,6 +11042,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'add_javascript_views_footer' => [
 				'name' => 'add_javascript_views_footer',
+				'guid' => '70995b9c-d0a9-4a57-b59b-54d39c379e66',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_ADD_JAVASCRIPT_VIEWS_FOOTER_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -10559,6 +11061,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'initiator_on_save_model' => [
 				'name' => 'initiator_on_save_model',
+				'guid' => '49a285a3-2c16-4846-9dbf-94c9cc6496c1',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_INITIATOR_ON_SAVE_MODEL_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -10577,6 +11080,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_FIELD_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -10611,6 +11115,7 @@ class Table extends BaseTable implements TableInterface
 		'fieldtype' => [
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_FIELDTYPE_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -10629,6 +11134,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'store' => [
 				'name' => 'store',
+				'guid' => '48b78ab1-bfb0-44eb-9ec8-4f5cdbf4a32c',
 				'label' => 'COM_COMPONENTBUILDER_FIELDTYPE_STORE_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -10647,6 +11153,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'null_switch' => [
 				'name' => 'null_switch',
+				'guid' => '6a3d21ad-7cb1-4456-a623-20aa71ba0b12',
 				'label' => 'COM_COMPONENTBUILDER_FIELDTYPE_NULL_SWITCH_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -10665,6 +11172,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'indexes' => [
 				'name' => 'indexes',
+				'guid' => '63ff758d-a866-4d37-bc2a-a7432bd9bb44',
 				'label' => 'COM_COMPONENTBUILDER_FIELDTYPE_INDEXES_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -10683,6 +11191,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'datadefault_other' => [
 				'name' => 'datadefault_other',
+				'guid' => '6b2277f3-44e1-4bbb-8e55-3315bdba736e',
 				'label' => 'COM_COMPONENTBUILDER_FIELDTYPE_DATADEFAULT_OTHER_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -10701,6 +11210,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'datadefault' => [
 				'name' => 'datadefault',
+				'guid' => '6ba76a0f-55a4-49ce-911a-0a3f05674bef',
 				'label' => 'COM_COMPONENTBUILDER_FIELDTYPE_DATADEFAULT_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -10719,6 +11229,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'short_description' => [
 				'name' => 'short_description',
+				'guid' => '46503007-43d9-485f-8cd0-8427a6a8bef2',
 				'label' => 'COM_COMPONENTBUILDER_FIELDTYPE_SHORT_DESCRIPTION_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -10737,6 +11248,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'datatype' => [
 				'name' => 'datatype',
+				'guid' => 'e41e74b2-a265-4269-8ec6-1d890c893798',
 				'label' => 'COM_COMPONENTBUILDER_FIELDTYPE_DATATYPE_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -10755,6 +11267,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'has_defaults' => [
 				'name' => 'has_defaults',
+				'guid' => 'ec2ec4a2-a32f-4407-b318-46b5780774e2',
 				'label' => 'COM_COMPONENTBUILDER_FIELDTYPE_HAS_DEFAULTS_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -10773,6 +11286,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'properties' => [
 				'name' => 'properties',
+				'guid' => 'ddb8f57f-77c8-4cad-a8cb-0cdc799ce4a1',
 				'label' => 'COM_COMPONENTBUILDER_FIELDTYPE_PROPERTIES_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -10823,6 +11337,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'description' => [
 				'name' => 'description',
+				'guid' => '749a9917-90c3-49c4-9e72-aa33b0683a87',
 				'label' => 'COM_COMPONENTBUILDER_FIELDTYPE_DESCRIPTION_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -10841,6 +11356,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'datalenght' => [
 				'name' => 'datalenght',
+				'guid' => 'b3ea0d94-1029-41d8-9f6b-bcbec6b715f4',
 				'label' => 'COM_COMPONENTBUILDER_FIELDTYPE_DATALENGHT_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -10859,6 +11375,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'datalenght_other' => [
 				'name' => 'datalenght_other',
+				'guid' => 'fd7ff7b0-a8e9-476c-8e9d-ac4ca338c589',
 				'label' => 'COM_COMPONENTBUILDER_FIELDTYPE_DATALENGHT_OTHER_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -10877,6 +11394,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_FIELDTYPE_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -10895,6 +11413,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'catid' => [
 				'name' => 'catid',
+				'guid' => '7cc4ab46-0d77-4ef8-a2a7-d5b656546a30',
 				'label' => 'COM_COMPONENTBUILDER_FIELDTYPE_CATID_LABEL',
 				'type' => 'category',
 				'title' => false,
@@ -10929,6 +11448,7 @@ class Table extends BaseTable implements TableInterface
 		'language_translation' => [
 			'source' => [
 				'name' => 'source',
+				'guid' => 'c2f5d193-ef76-422b-aae5-421cd0a4b22b',
 				'label' => 'COM_COMPONENTBUILDER_LANGUAGE_TRANSLATION_SOURCE_LABEL',
 				'type' => 'textarea',
 				'title' => true,
@@ -10947,6 +11467,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'plugins' => [
 				'name' => 'plugins',
+				'guid' => '6e1717a7-99b8-4101-a0b0-fcf2a5e1cfa0',
 				'label' => 'COM_COMPONENTBUILDER_LANGUAGE_TRANSLATION_PLUGINS_LABEL',
 				'type' => 'joomlaplugins',
 				'title' => false,
@@ -10972,6 +11493,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'modules' => [
 				'name' => 'modules',
+				'guid' => 'd3468164-df0a-4f0d-a679-1aa95ae408fe',
 				'label' => 'COM_COMPONENTBUILDER_LANGUAGE_TRANSLATION_MODULES_LABEL',
 				'type' => 'joomlamodules',
 				'title' => false,
@@ -10997,6 +11519,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'components' => [
 				'name' => 'components',
+				'guid' => '61990265-efe5-49d3-ae08-4bd0e8f3e4ce',
 				'label' => 'COM_COMPONENTBUILDER_LANGUAGE_TRANSLATION_COMPONENTS_LABEL',
 				'type' => 'joomlacomponents',
 				'title' => false,
@@ -11022,6 +11545,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'translation' => [
 				'name' => 'translation',
+				'guid' => '36edbdce-b9b7-4b89-b2d9-03f91bb56019',
 				'label' => 'COM_COMPONENTBUILDER_LANGUAGE_TRANSLATION_TRANSLATION_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -11075,6 +11599,7 @@ class Table extends BaseTable implements TableInterface
 		'language' => [
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_LANGUAGE_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -11093,6 +11618,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'langtag' => [
 				'name' => 'langtag',
+				'guid' => '8fdf3640-8668-4818-be46-36c74f9e103e',
 				'label' => 'COM_COMPONENTBUILDER_LANGUAGE_LANGTAG_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -11127,6 +11653,7 @@ class Table extends BaseTable implements TableInterface
 		'server' => [
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_SERVER_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -11145,6 +11672,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'protocol' => [
 				'name' => 'protocol',
+				'guid' => 'a5bb2b19-d773-465c-a7e3-ce6400735734',
 				'label' => 'COM_COMPONENTBUILDER_SERVER_PROTOCOL_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -11163,6 +11691,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'signature' => [
 				'name' => 'signature',
+				'guid' => '59688b83-dca9-4491-aefb-39c18057394e',
 				'label' => 'COM_COMPONENTBUILDER_SERVER_SIGNATURE_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -11181,6 +11710,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'private_key' => [
 				'name' => 'private_key',
+				'guid' => '29b8c31d-6e2a-4f8d-90c7-febfbb9cc16c',
 				'label' => 'COM_COMPONENTBUILDER_SERVER_PRIVATE_KEY_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -11199,6 +11729,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'secret' => [
 				'name' => 'secret',
+				'guid' => 'c6ccb2ba-4d74-487a-99a8-f2bfe40a23f1',
 				'label' => 'COM_COMPONENTBUILDER_SERVER_SECRET_LABEL',
 				'type' => 'password',
 				'title' => false,
@@ -11217,6 +11748,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'password' => [
 				'name' => 'password',
+				'guid' => '0a6939be-aabc-46df-b922-f083cf0c5bd4',
 				'label' => 'COM_COMPONENTBUILDER_SERVER_PASSWORD_LABEL',
 				'type' => 'password',
 				'title' => false,
@@ -11235,6 +11767,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'private' => [
 				'name' => 'private',
+				'guid' => '2c689678-6cef-40ef-97da-d59ab7d039d1',
 				'label' => 'COM_COMPONENTBUILDER_SERVER_PRIVATE_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -11253,6 +11786,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'authentication' => [
 				'name' => 'authentication',
+				'guid' => '452b22ac-adfc-4fca-9d82-5461806bf847',
 				'label' => 'COM_COMPONENTBUILDER_SERVER_AUTHENTICATION_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -11271,6 +11805,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'path' => [
 				'name' => 'path',
+				'guid' => '593fe848-22f3-45d1-8d8d-7824542a7381',
 				'label' => 'COM_COMPONENTBUILDER_SERVER_PATH_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -11289,6 +11824,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'port' => [
 				'name' => 'port',
+				'guid' => '5a64961d-8aa6-4de4-92e2-997199e5a707',
 				'label' => 'COM_COMPONENTBUILDER_SERVER_PORT_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -11307,6 +11843,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'host' => [
 				'name' => 'host',
+				'guid' => '3eed4f04-46cc-43e8-9712-b6e339e71241',
 				'label' => 'COM_COMPONENTBUILDER_SERVER_HOST_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -11325,6 +11862,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'username' => [
 				'name' => 'username',
+				'guid' => '41152cdd-e774-4edf-be9b-280d272d5712',
 				'label' => 'COM_COMPONENTBUILDER_SERVER_USERNAME_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -11359,6 +11897,7 @@ class Table extends BaseTable implements TableInterface
 		'repository' => [
 			'system_name' => [
 				'name' => 'system_name',
+				'guid' => 'acfe906b-6e61-4f94-ae66-359e4bc3e4cc',
 				'label' => 'COM_COMPONENTBUILDER_REPOSITORY_SYSTEM_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -11377,6 +11916,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'organisation' => [
 				'name' => 'organisation',
+				'guid' => 'eaaca317-58c7-4b72-9c20-166c12c04b67',
 				'label' => 'COM_COMPONENTBUILDER_REPOSITORY_ORGANISATION_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -11395,6 +11935,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'repository' => [
 				'name' => 'repository',
+				'guid' => '4c224b6d-7b6b-4e5d-8df7-b96c26559476',
 				'label' => 'COM_COMPONENTBUILDER_REPOSITORY_REPOSITORY_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -11413,6 +11954,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'target' => [
 				'name' => 'target',
+				'guid' => 'd22126a7-7e85-4a7a-94d0-6ba9ab194772',
 				'label' => 'COM_COMPONENTBUILDER_REPOSITORY_TARGET_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -11431,6 +11973,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'type' => [
 				'name' => 'type',
+				'guid' => '3557698d-cfae-4a57-93fc-6030bac2768a',
 				'label' => 'COM_COMPONENTBUILDER_REPOSITORY_TYPE_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -11449,6 +11992,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'base' => [
 				'name' => 'base',
+				'guid' => '0ca15427-abfa-4fac-8ce2-e70e5b8b2c0f',
 				'label' => 'COM_COMPONENTBUILDER_REPOSITORY_BASE_LABEL',
 				'type' => 'url',
 				'title' => false,
@@ -11467,6 +12011,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_REPOSITORY_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -11485,6 +12030,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addplaceholders' => [
 				'name' => 'addplaceholders',
+				'guid' => 'fb4e322b-46c0-47e5-b9eb-70c39456d80d',
 				'label' => 'COM_COMPONENTBUILDER_REPOSITORY_ADDPLACEHOLDERS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -11515,6 +12061,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'access_repo' => [
 				'name' => 'access_repo',
+				'guid' => '5e9038cf-bf09-4ec7-aa1d-60df007b96e2',
 				'label' => 'COM_COMPONENTBUILDER_REPOSITORY_ACCESS_REPO_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -11533,6 +12080,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'write_branch' => [
 				'name' => 'write_branch',
+				'guid' => '8a5addab-5545-4c33-bc1a-7aad217e04c6',
 				'label' => 'COM_COMPONENTBUILDER_REPOSITORY_WRITE_BRANCH_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -11551,6 +12099,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'read_branch' => [
 				'name' => 'read_branch',
+				'guid' => 'ce236d83-959b-4d1c-a736-b1717bee29bc',
 				'label' => 'COM_COMPONENTBUILDER_REPOSITORY_READ_BRANCH_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -11569,6 +12118,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'author_email' => [
 				'name' => 'author_email',
+				'guid' => '3dc12b2f-d1c9-4ae4-8573-19a6b7d78083',
 				'label' => 'COM_COMPONENTBUILDER_REPOSITORY_AUTHOR_EMAIL_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -11587,6 +12137,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'author_name' => [
 				'name' => 'author_name',
+				'guid' => 'c2bd3a42-bfc9-459f-b134-5302798ed0e4',
 				'label' => 'COM_COMPONENTBUILDER_REPOSITORY_AUTHOR_NAME_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -11605,6 +12156,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'token' => [
 				'name' => 'token',
+				'guid' => 'f8aa483a-71b9-46c1-a08e-0f546076fd78',
 				'label' => 'COM_COMPONENTBUILDER_REPOSITORY_TOKEN_LABEL',
 				'type' => 'password',
 				'title' => false,
@@ -11623,6 +12175,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'username' => [
 				'name' => 'username',
+				'guid' => 'fcbab2f2-51bb-4f44-a5ac-a6266e187522',
 				'label' => 'COM_COMPONENTBUILDER_REPOSITORY_USERNAME_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -11657,6 +12210,7 @@ class Table extends BaseTable implements TableInterface
 		'help_document' => [
 			'title' => [
 				'name' => 'title',
+				'guid' => 'edda1847-ef2e-4a76-9763-c41c82b08c00',
 				'label' => 'COM_COMPONENTBUILDER_HELP_DOCUMENT_TITLE_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -11675,6 +12229,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'type' => [
 				'name' => 'type',
+				'guid' => '8487b70c-4a32-46ba-aacb-ea07a1e3d278',
 				'label' => 'COM_COMPONENTBUILDER_HELP_DOCUMENT_TYPE_LABEL',
 				'type' => 'list',
 				'title' => false,
@@ -11693,6 +12248,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'groups' => [
 				'name' => 'groups',
+				'guid' => '59a0cad6-26cc-43b6-8af8-2242eb595d76',
 				'label' => 'COM_COMPONENTBUILDER_HELP_DOCUMENT_GROUPS_LABEL',
 				'type' => 'usergrouplist',
 				'title' => false,
@@ -11711,6 +12267,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'location' => [
 				'name' => 'location',
+				'guid' => '0d06a4f6-acd5-4acc-8a3f-28813de178ac',
 				'label' => 'COM_COMPONENTBUILDER_HELP_DOCUMENT_LOCATION_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -11729,6 +12286,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'admin_view' => [
 				'name' => 'admin_view',
+				'guid' => 'd7f97213-2aa1-457c-9e60-d691cfcd905f',
 				'label' => 'COM_COMPONENTBUILDER_HELP_DOCUMENT_ADMIN_VIEW_LABEL',
 				'type' => 'adminviewfolderlist',
 				'title' => false,
@@ -11754,6 +12312,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'site_view' => [
 				'name' => 'site_view',
+				'guid' => 'd52f96cd-df76-494b-8c25-146bb434b6af',
 				'label' => 'COM_COMPONENTBUILDER_HELP_DOCUMENT_SITE_VIEW_LABEL',
 				'type' => 'siteviewfolderlist',
 				'title' => false,
@@ -11779,6 +12338,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'alias' => [
 				'name' => 'alias',
+				'guid' => '335866ce-b81b-4329-901d-c20254135c9c',
 				'label' => 'COM_COMPONENTBUILDER_HELP_DOCUMENT_ALIAS_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -11797,6 +12357,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'content' => [
 				'name' => 'content',
+				'guid' => '8b9665d1-f1d9-4d7e-bc2c-72479bf4686f',
 				'label' => 'COM_COMPONENTBUILDER_HELP_DOCUMENT_CONTENT_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -11815,6 +12376,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'article' => [
 				'name' => 'article',
+				'guid' => 'f312a8f7-34b9-4731-af00-3ff2092c65b9',
 				'label' => 'COM_COMPONENTBUILDER_HELP_DOCUMENT_ARTICLE_LABEL',
 				'type' => 'articles',
 				'title' => false,
@@ -11840,6 +12402,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'url' => [
 				'name' => 'url',
+				'guid' => 'd29d6854-bb4a-4fa2-83a1-5a1b9c9a0eaf',
 				'label' => 'COM_COMPONENTBUILDER_HELP_DOCUMENT_URL_LABEL',
 				'type' => 'url',
 				'title' => false,
@@ -11858,6 +12421,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'target' => [
 				'name' => 'target',
+				'guid' => '5810dc57-35ac-436e-88ff-117e1f501e67',
 				'label' => 'COM_COMPONENTBUILDER_HELP_DOCUMENT_TARGET_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -11878,6 +12442,7 @@ class Table extends BaseTable implements TableInterface
 		'admin_fields' => [
 			'admin_view' => [
 				'name' => 'admin_view',
+				'guid' => '3ac1327d-75d6-4a16-913d-ef4fdf54c11c',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_FIELDS_ADMIN_VIEW_LABEL',
 				'type' => 'adminviewsreadonly',
 				'title' => true,
@@ -11903,6 +12468,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addfields' => [
 				'name' => 'addfields',
+				'guid' => '15e1f13d-25db-46a4-ae7c-fb616140338e',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_FIELDS_ADDFIELDS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -12018,6 +12584,7 @@ class Table extends BaseTable implements TableInterface
 		'admin_fields_conditions' => [
 			'admin_view' => [
 				'name' => 'admin_view',
+				'guid' => '3ac1327d-75d6-4a16-913d-ef4fdf54c11c',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_FIELDS_CONDITIONS_ADMIN_VIEW_LABEL',
 				'type' => 'adminviewsreadonly',
 				'title' => true,
@@ -12043,6 +12610,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addconditions' => [
 				'name' => 'addconditions',
+				'guid' => '434a8099-51f0-49d1-bbbb-ed7aa5145a3c',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_FIELDS_CONDITIONS_ADDCONDITIONS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -12123,6 +12691,7 @@ class Table extends BaseTable implements TableInterface
 		'admin_fields_relations' => [
 			'admin_view' => [
 				'name' => 'admin_view',
+				'guid' => '3ac1327d-75d6-4a16-913d-ef4fdf54c11c',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_FIELDS_RELATIONS_ADMIN_VIEW_LABEL',
 				'type' => 'adminviewsreadonly',
 				'title' => true,
@@ -12148,6 +12717,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addrelations' => [
 				'name' => 'addrelations',
+				'guid' => '4e87b302-e17f-468e-8934-e5aaf78d6765',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_FIELDS_RELATIONS_ADDRELATIONS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -12228,6 +12798,7 @@ class Table extends BaseTable implements TableInterface
 		'admin_custom_tabs' => [
 			'admin_view' => [
 				'name' => 'admin_view',
+				'guid' => '3ac1327d-75d6-4a16-913d-ef4fdf54c11c',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_CUSTOM_TABS_ADMIN_VIEW_LABEL',
 				'type' => 'adminviewsreadonly',
 				'title' => true,
@@ -12253,6 +12824,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'tabs' => [
 				'name' => 'tabs',
+				'guid' => '4b794f1a-1be4-4804-92e6-bda624f444b4',
 				'label' => 'COM_COMPONENTBUILDER_ADMIN_CUSTOM_TABS_TABS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -12321,6 +12893,7 @@ class Table extends BaseTable implements TableInterface
 		'component_admin_views' => [
 			'joomla_component' => [
 				'name' => 'joomla_component',
+				'guid' => '591df1a2-b685-4378-845a-f8a1d1985548',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_ADMIN_VIEWS_JOOMLA_COMPONENT_LABEL',
 				'type' => 'joomlacomponents',
 				'title' => true,
@@ -12346,6 +12919,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addadmin_views' => [
 				'name' => 'addadmin_views',
+				'guid' => '3bac32ec-8dcf-4257-b518-ecaa952140c2',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_ADMIN_VIEWS_ADDADMIN_VIEWS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -12469,6 +13043,7 @@ class Table extends BaseTable implements TableInterface
 		'component_site_views' => [
 			'joomla_component' => [
 				'name' => 'joomla_component',
+				'guid' => '591df1a2-b685-4378-845a-f8a1d1985548',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_SITE_VIEWS_JOOMLA_COMPONENT_LABEL',
 				'type' => 'joomlacomponents',
 				'title' => true,
@@ -12494,6 +13069,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addsite_views' => [
 				'name' => 'addsite_views',
+				'guid' => '8e225dcd-4e2b-464b-a9f3-b7d39d67de84',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_SITE_VIEWS_ADDSITE_VIEWS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -12567,6 +13143,7 @@ class Table extends BaseTable implements TableInterface
 		'component_custom_admin_views' => [
 			'joomla_component' => [
 				'name' => 'joomla_component',
+				'guid' => '591df1a2-b685-4378-845a-f8a1d1985548',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_CUSTOM_ADMIN_VIEWS_JOOMLA_COMPONENT_LABEL',
 				'type' => 'joomlacomponents',
 				'title' => true,
@@ -12592,6 +13169,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addcustom_admin_views' => [
 				'name' => 'addcustom_admin_views',
+				'guid' => 'b2423282-c8a8-400e-9ded-fe61cea433f4',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_CUSTOM_ADMIN_VIEWS_ADDCUSTOM_ADMIN_VIEWS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -12694,6 +13272,7 @@ class Table extends BaseTable implements TableInterface
 		'component_updates' => [
 			'joomla_component' => [
 				'name' => 'joomla_component',
+				'guid' => '591df1a2-b685-4378-845a-f8a1d1985548',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_UPDATES_JOOMLA_COMPONENT_LABEL',
 				'type' => 'joomlacomponents',
 				'title' => true,
@@ -12719,6 +13298,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'version_update' => [
 				'name' => 'version_update',
+				'guid' => '1b98fc0a-d58f-4c81-a53f-30106e0c30eb',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_UPDATES_VERSION_UPDATE_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -12805,6 +13385,7 @@ class Table extends BaseTable implements TableInterface
 		'component_mysql_tweaks' => [
 			'joomla_component' => [
 				'name' => 'joomla_component',
+				'guid' => '591df1a2-b685-4378-845a-f8a1d1985548',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_MYSQL_TWEAKS_JOOMLA_COMPONENT_LABEL',
 				'type' => 'joomlacomponents',
 				'title' => true,
@@ -12830,6 +13411,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'sql_tweak' => [
 				'name' => 'sql_tweak',
+				'guid' => 'ce203691-6577-4c0d-90fb-539d07ea76c3',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_MYSQL_TWEAKS_SQL_TWEAK_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -12893,6 +13475,7 @@ class Table extends BaseTable implements TableInterface
 		'component_custom_admin_menus' => [
 			'joomla_component' => [
 				'name' => 'joomla_component',
+				'guid' => '591df1a2-b685-4378-845a-f8a1d1985548',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_CUSTOM_ADMIN_MENUS_JOOMLA_COMPONENT_LABEL',
 				'type' => 'joomlacomponents',
 				'title' => true,
@@ -12918,6 +13501,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addcustommenus' => [
 				'name' => 'addcustommenus',
+				'guid' => '60d68340-14c1-45a9-8240-30f6bdf96345',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_CUSTOM_ADMIN_MENUS_ADDCUSTOMMENUS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -13001,6 +13585,7 @@ class Table extends BaseTable implements TableInterface
 		'component_router' => [
 			'joomla_component' => [
 				'name' => 'joomla_component',
+				'guid' => '591df1a2-b685-4378-845a-f8a1d1985548',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_ROUTER_JOOMLA_COMPONENT_LABEL',
 				'type' => 'joomlacomponents',
 				'title' => true,
@@ -13026,6 +13611,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'mode_constructor_before_parent' => [
 				'name' => 'mode_constructor_before_parent',
+				'guid' => '4582a192-d46e-4dd9-9bbd-ee2e2ddd20e5',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_ROUTER_MODE_CONSTRUCTOR_BEFORE_PARENT_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -13044,6 +13630,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'mode_constructor_after_parent' => [
 				'name' => 'mode_constructor_after_parent',
+				'guid' => '2b31ca2e-11ff-4f57-8c90-2b9bed743202',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_ROUTER_MODE_CONSTRUCTOR_AFTER_PARENT_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -13062,6 +13649,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'mode_methods' => [
 				'name' => 'mode_methods',
+				'guid' => '25fead1f-bb12-40e6-9e03-4e31b236f2e1',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_ROUTER_MODE_METHODS_LABEL',
 				'type' => 'radio',
 				'title' => false,
@@ -13080,6 +13668,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'methods_code' => [
 				'name' => 'methods_code',
+				'guid' => '3ab69198-0827-452b-93a4-6c7bb02ae7ae',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_ROUTER_METHODS_CODE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -13098,6 +13687,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'constructor_after_parent_code' => [
 				'name' => 'constructor_after_parent_code',
+				'guid' => 'a411a365-69c8-4f70-a734-25956a9f3393',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_ROUTER_CONSTRUCTOR_AFTER_PARENT_CODE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -13116,6 +13706,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'constructor_before_parent_manual' => [
 				'name' => 'constructor_before_parent_manual',
+				'guid' => '2321b486-80c4-4e24-81c5-6ddd205592ac',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_ROUTER_CONSTRUCTOR_BEFORE_PARENT_MANUAL_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -13148,6 +13739,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'constructor_before_parent_code' => [
 				'name' => 'constructor_before_parent_code',
+				'guid' => '65544263-3215-4574-a977-dbf8ac2ce72a',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_ROUTER_CONSTRUCTOR_BEFORE_PARENT_CODE_LABEL',
 				'type' => 'editor',
 				'title' => false,
@@ -13182,6 +13774,7 @@ class Table extends BaseTable implements TableInterface
 		'component_config' => [
 			'joomla_component' => [
 				'name' => 'joomla_component',
+				'guid' => '591df1a2-b685-4378-845a-f8a1d1985548',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_CONFIG_JOOMLA_COMPONENT_LABEL',
 				'type' => 'joomlacomponents',
 				'title' => true,
@@ -13207,6 +13800,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addconfig' => [
 				'name' => 'addconfig',
+				'guid' => '851d8f15-3ce4-42a3-9041-08c943f61cab',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_CONFIG_ADDCONFIG_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -13265,6 +13859,7 @@ class Table extends BaseTable implements TableInterface
 		'component_dashboard' => [
 			'joomla_component' => [
 				'name' => 'joomla_component',
+				'guid' => '591df1a2-b685-4378-845a-f8a1d1985548',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_DASHBOARD_JOOMLA_COMPONENT_LABEL',
 				'type' => 'joomlacomponents',
 				'title' => true,
@@ -13290,6 +13885,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'dashboard_tab' => [
 				'name' => 'dashboard_tab',
+				'guid' => 'fd0cceef-975e-4daa-a529-2c98446b9df3',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_DASHBOARD_DASHBOARD_TAB_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -13325,6 +13921,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'php_dashboard_methods' => [
 				'name' => 'php_dashboard_methods',
+				'guid' => 'e6c421c3-2f37-429a-a8d9-b552bed392a5',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_DASHBOARD_PHP_DASHBOARD_METHODS_LABEL',
 				'type' => 'textarea',
 				'title' => false,
@@ -13359,6 +13956,7 @@ class Table extends BaseTable implements TableInterface
 		'component_files_folders' => [
 			'joomla_component' => [
 				'name' => 'joomla_component',
+				'guid' => '591df1a2-b685-4378-845a-f8a1d1985548',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_FILES_FOLDERS_JOOMLA_COMPONENT_LABEL',
 				'type' => 'joomlacomponents',
 				'title' => true,
@@ -13384,6 +13982,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addfoldersfullpath' => [
 				'name' => 'addfoldersfullpath',
+				'guid' => 'fe780ac8-ed30-481c-8700-84472caa0072',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_FILES_FOLDERS_ADDFOLDERSFULLPATH_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -13419,6 +14018,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addfilesfullpath' => [
 				'name' => 'addfilesfullpath',
+				'guid' => 'e5f50226-6749-4bd3-9aa1-cf3db6ce448d',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_FILES_FOLDERS_ADDFILESFULLPATH_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -13454,6 +14054,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addfolders' => [
 				'name' => 'addfolders',
+				'guid' => '483f2c40-2348-4168-817b-471f5ba96984',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_FILES_FOLDERS_ADDFOLDERS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -13496,6 +14097,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addfiles' => [
 				'name' => 'addfiles',
+				'guid' => '143f8b3d-5b58-4b26-aaad-a5f14a57865b',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_FILES_FOLDERS_ADDFILES_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -13554,6 +14156,7 @@ class Table extends BaseTable implements TableInterface
 		'component_placeholders' => [
 			'joomla_component' => [
 				'name' => 'joomla_component',
+				'guid' => '591df1a2-b685-4378-845a-f8a1d1985548',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_PLACEHOLDERS_JOOMLA_COMPONENT_LABEL',
 				'type' => 'joomlacomponents',
 				'title' => true,
@@ -13579,6 +14182,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addplaceholders' => [
 				'name' => 'addplaceholders',
+				'guid' => 'fb4e322b-46c0-47e5-b9eb-70c39456d80d',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_PLACEHOLDERS_ADDPLACEHOLDERS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -13625,6 +14229,7 @@ class Table extends BaseTable implements TableInterface
 		'component_plugins' => [
 			'joomla_component' => [
 				'name' => 'joomla_component',
+				'guid' => '591df1a2-b685-4378-845a-f8a1d1985548',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_PLUGINS_JOOMLA_COMPONENT_LABEL',
 				'type' => 'joomlacomponents',
 				'title' => true,
@@ -13650,6 +14255,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addjoomla_plugins' => [
 				'name' => 'addjoomla_plugins',
+				'guid' => '9c787541-ed54-4516-bc21-9b6fe2e2e516',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_PLUGINS_ADDJOOMLA_PLUGINS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -13703,6 +14309,7 @@ class Table extends BaseTable implements TableInterface
 		'component_modules' => [
 			'joomla_component' => [
 				'name' => 'joomla_component',
+				'guid' => '591df1a2-b685-4378-845a-f8a1d1985548',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_MODULES_JOOMLA_COMPONENT_LABEL',
 				'type' => 'joomlacomponents',
 				'title' => true,
@@ -13728,6 +14335,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addjoomla_modules' => [
 				'name' => 'addjoomla_modules',
+				'guid' => '5985271b-0795-4204-8739-ffa3d898bae8',
 				'label' => 'COM_COMPONENTBUILDER_COMPONENT_MODULES_ADDJOOMLA_MODULES_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -13781,6 +14389,7 @@ class Table extends BaseTable implements TableInterface
 		'snippet_type' => [
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_SNIPPET_TYPE_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -13799,6 +14408,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'description' => [
 				'name' => 'description',
+				'guid' => '09b25ca3-6c9f-4b6d-ad80-e0989c221289',
 				'label' => 'COM_COMPONENTBUILDER_SNIPPET_TYPE_DESCRIPTION_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -13817,6 +14427,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_SNIPPET_TYPE_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -13851,6 +14462,7 @@ class Table extends BaseTable implements TableInterface
 		'library_config' => [
 			'library' => [
 				'name' => 'library',
+				'guid' => 'c6dddec0-c373-4069-bdcc-66acd474b648',
 				'label' => 'COM_COMPONENTBUILDER_LIBRARY_CONFIG_LIBRARY_LABEL',
 				'type' => 'libraryreadonly',
 				'title' => true,
@@ -13876,6 +14488,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addconfig' => [
 				'name' => 'addconfig',
+				'guid' => '851d8f15-3ce4-42a3-9041-08c943f61cab',
 				'label' => 'COM_COMPONENTBUILDER_LIBRARY_CONFIG_ADDCONFIG_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -13934,6 +14547,7 @@ class Table extends BaseTable implements TableInterface
 		'library_files_folders_urls' => [
 			'library' => [
 				'name' => 'library',
+				'guid' => 'c6dddec0-c373-4069-bdcc-66acd474b648',
 				'label' => 'COM_COMPONENTBUILDER_LIBRARY_FILES_FOLDERS_URLS_LIBRARY_LABEL',
 				'type' => 'libraryreadonly',
 				'title' => true,
@@ -13959,6 +14573,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addfoldersfullpath' => [
 				'name' => 'addfoldersfullpath',
+				'guid' => 'fe780ac8-ed30-481c-8700-84472caa0072',
 				'label' => 'COM_COMPONENTBUILDER_LIBRARY_FILES_FOLDERS_URLS_ADDFOLDERSFULLPATH_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -13994,6 +14609,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addfilesfullpath' => [
 				'name' => 'addfilesfullpath',
+				'guid' => 'e5f50226-6749-4bd3-9aa1-cf3db6ce448d',
 				'label' => 'COM_COMPONENTBUILDER_LIBRARY_FILES_FOLDERS_URLS_ADDFILESFULLPATH_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -14029,6 +14645,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addfolders' => [
 				'name' => 'addfolders',
+				'guid' => '483f2c40-2348-4168-817b-471f5ba96984',
 				'label' => 'COM_COMPONENTBUILDER_LIBRARY_FILES_FOLDERS_URLS_ADDFOLDERS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -14071,6 +14688,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addfiles' => [
 				'name' => 'addfiles',
+				'guid' => '143f8b3d-5b58-4b26-aaad-a5f14a57865b',
 				'label' => 'COM_COMPONENTBUILDER_LIBRARY_FILES_FOLDERS_URLS_ADDFILES_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -14113,6 +14731,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addurls' => [
 				'name' => 'addurls',
+				'guid' => 'c3474b9a-4677-4574-bda3-a4865569ac18',
 				'label' => 'COM_COMPONENTBUILDER_LIBRARY_FILES_FOLDERS_URLS_ADDURLS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -14159,6 +14778,7 @@ class Table extends BaseTable implements TableInterface
 		'joomla_module_updates' => [
 			'joomla_module' => [
 				'name' => 'joomla_module',
+				'guid' => '79251a06-b217-4b3a-8485-b7286cb15bf6',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_UPDATES_JOOMLA_MODULE_LABEL',
 				'type' => 'joomlamodules',
 				'title' => true,
@@ -14184,6 +14804,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'version_update' => [
 				'name' => 'version_update',
+				'guid' => '7d49445c-4e95-4fd5-a2a4-a20bbcd4d812',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_UPDATES_VERSION_UPDATE_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -14235,6 +14856,7 @@ class Table extends BaseTable implements TableInterface
 		'joomla_module_files_folders_urls' => [
 			'joomla_module' => [
 				'name' => 'joomla_module',
+				'guid' => '79251a06-b217-4b3a-8485-b7286cb15bf6',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_FILES_FOLDERS_URLS_JOOMLA_MODULE_LABEL',
 				'type' => 'joomlamodules',
 				'title' => true,
@@ -14260,6 +14882,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addfoldersfullpath' => [
 				'name' => 'addfoldersfullpath',
+				'guid' => 'fe780ac8-ed30-481c-8700-84472caa0072',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_FILES_FOLDERS_URLS_ADDFOLDERSFULLPATH_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -14295,6 +14918,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addfilesfullpath' => [
 				'name' => 'addfilesfullpath',
+				'guid' => 'e5f50226-6749-4bd3-9aa1-cf3db6ce448d',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_FILES_FOLDERS_URLS_ADDFILESFULLPATH_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -14330,6 +14954,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addfolders' => [
 				'name' => 'addfolders',
+				'guid' => '483f2c40-2348-4168-817b-471f5ba96984',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_FILES_FOLDERS_URLS_ADDFOLDERS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -14372,6 +14997,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addfiles' => [
 				'name' => 'addfiles',
+				'guid' => '143f8b3d-5b58-4b26-aaad-a5f14a57865b',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_FILES_FOLDERS_URLS_ADDFILES_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -14414,6 +15040,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addurls' => [
 				'name' => 'addurls',
+				'guid' => 'c3474b9a-4677-4574-bda3-a4865569ac18',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_MODULE_FILES_FOLDERS_URLS_ADDURLS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -14460,6 +15087,7 @@ class Table extends BaseTable implements TableInterface
 		'joomla_plugin_group' => [
 			'name' => [
 				'name' => 'name',
+				'guid' => '5d3d34dd-4876-4c6a-86ab-b4e162f22c08',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_GROUP_NAME_LABEL',
 				'type' => 'text',
 				'title' => true,
@@ -14478,6 +15106,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'class_extends' => [
 				'name' => 'class_extends',
+				'guid' => '956a8d9c-7f14-402f-85c9-7cdc4f3c0969',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_GROUP_CLASS_EXTENDS_LABEL',
 				'type' => 'ModalSelect',
 				'title' => false,
@@ -14503,6 +15132,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'guid' => [
 				'name' => 'guid',
+				'guid' => '5aa57bbe-7b19-4db9-915c-561863458d2b',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_GROUP_GUID_LABEL',
 				'type' => 'text',
 				'title' => false,
@@ -14537,6 +15167,7 @@ class Table extends BaseTable implements TableInterface
 		'joomla_plugin_updates' => [
 			'joomla_plugin' => [
 				'name' => 'joomla_plugin',
+				'guid' => 'd5aeaa99-9fba-4b67-b850-68e19256520a',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_UPDATES_JOOMLA_PLUGIN_LABEL',
 				'type' => 'joomlaplugins',
 				'title' => true,
@@ -14562,6 +15193,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'version_update' => [
 				'name' => 'version_update',
+				'guid' => '7d49445c-4e95-4fd5-a2a4-a20bbcd4d812',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_UPDATES_VERSION_UPDATE_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -14613,6 +15245,7 @@ class Table extends BaseTable implements TableInterface
 		'joomla_plugin_files_folders_urls' => [
 			'joomla_plugin' => [
 				'name' => 'joomla_plugin',
+				'guid' => 'd5aeaa99-9fba-4b67-b850-68e19256520a',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_FILES_FOLDERS_URLS_JOOMLA_PLUGIN_LABEL',
 				'type' => 'joomlaplugins',
 				'title' => true,
@@ -14638,6 +15271,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addfoldersfullpath' => [
 				'name' => 'addfoldersfullpath',
+				'guid' => 'fe780ac8-ed30-481c-8700-84472caa0072',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_FILES_FOLDERS_URLS_ADDFOLDERSFULLPATH_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -14673,6 +15307,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addfilesfullpath' => [
 				'name' => 'addfilesfullpath',
+				'guid' => 'e5f50226-6749-4bd3-9aa1-cf3db6ce448d',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_FILES_FOLDERS_URLS_ADDFILESFULLPATH_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -14708,6 +15343,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addfolders' => [
 				'name' => 'addfolders',
+				'guid' => '483f2c40-2348-4168-817b-471f5ba96984',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_FILES_FOLDERS_URLS_ADDFOLDERS_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -14750,6 +15386,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addfiles' => [
 				'name' => 'addfiles',
+				'guid' => '143f8b3d-5b58-4b26-aaad-a5f14a57865b',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_FILES_FOLDERS_URLS_ADDFILES_LABEL',
 				'type' => 'subform',
 				'title' => false,
@@ -14792,6 +15429,7 @@ class Table extends BaseTable implements TableInterface
 			],
 			'addurls' => [
 				'name' => 'addurls',
+				'guid' => 'c3474b9a-4677-4574-bda3-a4865569ac18',
 				'label' => 'COM_COMPONENTBUILDER_JOOMLA_PLUGIN_FILES_FOLDERS_URLS_ADDURLS_LABEL',
 				'type' => 'subform',
 				'title' => false,

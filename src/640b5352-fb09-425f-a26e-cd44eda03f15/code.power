@@ -57,7 +57,7 @@
 			$params->set($target, $value);
 
 			// Obtain a database connection instance.
-			$db = Factory::getDBO();
+			$db = Factory::getContainer()->get(DatabaseInterface::class);
 			$query = $db->getQuery(true);
 
 			// Build and execute the query to update the parameters in the database.
@@ -251,7 +251,7 @@
 		// get global manifest_cache values
 		if (!isset(static::$manifest[$option]))
 		{
-			$db = Factory::getDbo();
+			$db = Factory::getContainer()->get(DatabaseInterface::class);
 			$query = $db->getQuery(true);
 
 			$query->select($db->quoteName('manifest_cache'))

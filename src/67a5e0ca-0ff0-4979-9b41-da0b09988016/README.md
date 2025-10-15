@@ -23,7 +23,11 @@ class Manager  #Gold {
   # modelFileDetails(array $details, string $guid, ...) : object
   # getFileName(array $details, string $entity) : string
   # getFileNumber(array $fileType, string $entity) : int
+  # getRandomFileName(string $guid) : string
   # getFileExtension(string $source) : string
+  # limitFileType(array $fileType, string $type, ...) : void
+  - applyFileLimit(string $fileTypeGuid, string $entity, ...) : void
+  # extractOldestFiles(array $files, int $quantity) : array
 }
 
 note right of Manager::__construct
@@ -124,11 +128,59 @@ note left of Manager::getFileNumber
   return: int
 end note
 
-note right of Manager::getFileExtension
+note right of Manager::getRandomFileName
+  Generate a unique random-like 12-character string for a given GUID.
+Guarantees:
+- The same GUID will *never* produce the same value twice, even across executions.
+- Different GUIDs will never collide (practically impossible).
+- Safe alphanumeric output (A–Z, a–z, 0–9).
+- Lightweight, stateless, and reproducible randomness within one call.
+
+  since: 5.1.1
+  return: string
+end note
+
+note left of Manager::getFileExtension
   Get the file extension
 
   since: 5.1.1
   return: string
+end note
+
+note right of Manager::limitFileType
+  Enforces a file-count limit per entity and removes oldest excess files.
+Also validates crop consistency for images.
+
+  since: 5.1.4
+  return: void
+  
+  arguments:
+    array $fileType
+    string $type
+    string $entity
+    string $target
+end note
+
+note left of Manager::applyFileLimit
+  Applies the file limit logic and verifies crop consistency.
+
+  since: 5.1.4
+  return: void
+  
+  arguments:
+    string $fileTypeGuid
+    string $entity
+    string $target
+    int $limit
+    bool $isImage = false
+    int $cropCount = 1
+end note
+
+note right of Manager::extractOldestFiles
+  Returns the oldest files exceeding the desired quantity.
+
+  since: 5.1.4
+  return: array
 end note
 
 @enduml
