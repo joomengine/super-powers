@@ -172,6 +172,9 @@ This makes your logic both **reusable** and **component-aware**, without hardcod
 - **Namespace**: [VDM\Joomla\Componentbuilder\Item](#vdm-joomla-componentbuilder-item)
 
   - **final class Import** | [Details](src/2f14ec19-1b67-44be-8306-2a9e74588464) | [Raw](src/2f14ec19-1b67-44be-8306-2a9e74588464/code.power) | [Settings](src/2f14ec19-1b67-44be-8306-2a9e74588464/settings.json) | SPK: `Super---2f14ec19_1b67_44be_8306_2a9e74588464---Power`
+- **Namespace**: [VDM\Joomla\Componentbuilder\Markdown](#vdm-joomla-componentbuilder-markdown)
+
+  - **final class Html** | [Details](src/0fb58adc-60dd-42f4-9060-b782a5fd0537) | [Raw](src/0fb58adc-60dd-42f4-9060-b782a5fd0537/code.power) | [Settings](src/0fb58adc-60dd-42f4-9060-b782a5fd0537/settings.json) | SPK: `Super---0fb58adc_60dd_42f4_9060_b782a5fd0537---Power`
 - **Namespace**: [VDM\Joomla\Componentbuilder\Service](#vdm-joomla-componentbuilder-service)
 
   - **class Spreadsheet** | [Details](src/c4a188de-ad78-4a6d-9d5b-01866846d701) | [Raw](src/c4a188de-ad78-4a6d-9d5b-01866846d701/code.power) | [Settings](src/c4a188de-ad78-4a6d-9d5b-01866846d701/settings.json) | SPK: `Super---c4a188de_ad78_4a6d_9d5b_01866846d701---Power`

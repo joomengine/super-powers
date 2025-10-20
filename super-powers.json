@@ -98,6 +98,17 @@
         "spk": "Super---0f3f7188_3e0d_4d1a_8dee_7f8026cb65a9---Power",
         "guid": "0f3f7188-3e0d-4d1a-8dee-7f8026cb65a9"
     },
+    "0fb58adc-60dd-42f4-9060-b782a5fd0537": {
+        "name": "Html",
+        "type": "final class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Markdown",
+        "code": "src\/0fb58adc-60dd-42f4-9060-b782a5fd0537\/code.php",
+        "power": "src\/0fb58adc-60dd-42f4-9060-b782a5fd0537\/code.power",
+        "settings": "src\/0fb58adc-60dd-42f4-9060-b782a5fd0537\/settings.json",
+        "path": "src\/0fb58adc-60dd-42f4-9060-b782a5fd0537",
+        "spk": "Super---0fb58adc_60dd_42f4_9060_b782a5fd0537---Power",
+        "guid": "0fb58adc-60dd-42f4-9060-b782a5fd0537"
+    },
     "11572d9b-e3d5-4b29-904c-9618d8f2bfd8": {
         "name": "PathCount",
         "type": "trait",
