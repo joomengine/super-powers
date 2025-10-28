@@ -279,6 +279,9 @@ This makes your logic both **reusable** and **component-aware**, without hardcod
 - **Namespace**: [VDM\Joomla\Componentbuilder\Utilities\Exception](#vdm-joomla-componentbuilder-utilities-exception)
 
   - **class NoUserIdFoundException** | [Details](src/1c10a5f1-204d-4f17-ad9f-0e0684f2030d) | [Raw](src/1c10a5f1-204d-4f17-ad9f-0e0684f2030d/code.power) | [Settings](src/1c10a5f1-204d-4f17-ad9f-0e0684f2030d/settings.json) | SPK: `Super---1c10a5f1_204d_4f17_ad9f_0e0684f2030d---Power`
+- **Namespace**: [VDM\Joomla\Componentbuilder\Utilities\Permitted](#vdm-joomla-componentbuilder-utilities-permitted)
+
+  - **abstract class Actions** | [Details](src/7d95ce74-53dc-4672-bd8a-3b71cdacabea) | [Raw](src/7d95ce74-53dc-4672-bd8a-3b71cdacabea/code.power) | [Settings](src/7d95ce74-53dc-4672-bd8a-3b71cdacabea/settings.json) | SPK: `Super---7d95ce74_53dc_4672_bd8a_3b71cdacabea---Power`
 - **Namespace**: [VDM\Joomla\Interfaces\Git\Repository](#vdm-joomla-interfaces-git-repository)
 
   - **interface ContentsInterface** | [Details](src/d1de5d5b-bf29-4031-8094-76c4f6c75900) | [Raw](src/d1de5d5b-bf29-4031-8094-76c4f6c75900/code.power) | [Settings](src/d1de5d5b-bf29-4031-8094-76c4f6c75900/settings.json) | SPK: `Super---d1de5d5b_bf29_4031_8094_76c4f6c75900---Power`

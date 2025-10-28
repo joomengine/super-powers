@@ -890,6 +890,17 @@
         "spk": "Super---7d494d91_ab60_43cd_aecf_d50e07f7f30e---Power",
         "guid": "7d494d91-ab60-43cd-aecf-d50e07f7f30e"
     },
+    "7d95ce74-53dc-4672-bd8a-3b71cdacabea": {
+        "name": "Actions",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Utilities\\Permitted",
+        "code": "src\/7d95ce74-53dc-4672-bd8a-3b71cdacabea\/code.php",
+        "power": "src\/7d95ce74-53dc-4672-bd8a-3b71cdacabea\/code.power",
+        "settings": "src\/7d95ce74-53dc-4672-bd8a-3b71cdacabea\/settings.json",
+        "path": "src\/7d95ce74-53dc-4672-bd8a-3b71cdacabea",
+        "spk": "Super---7d95ce74_53dc_4672_bd8a_3b71cdacabea---Power",
+        "guid": "7d95ce74-53dc-4672-bd8a-3b71cdacabea"
+    },
     "7e822c03-1b20-41d1-9427-f5b8d5836af7": {
         "name": "Registry",
         "type": "abstract class",
