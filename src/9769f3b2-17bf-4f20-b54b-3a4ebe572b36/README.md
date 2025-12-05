@@ -10,12 +10,20 @@ abstract ComponentConfig  #Orange {
   # Input $input
   # JoomlaRegistry $params
   + __construct(?Input $input = null, ?JoomlaRegistry $params = null)
+  + get(string $path, mixed $default = null) : mixed
 }
 
 note right of ComponentConfig::__construct
   Constructor
 
   since: 3.2.0
+end note
+
+note right of ComponentConfig::get
+  Get a config value.
+
+  since: 5.1.4
+  return: mixed
 end note
 
 @enduml
