@@ -336,36 +336,47 @@
 	}
 
 	/**
-	 * Get the file number TODO: not ideal, if images are deleted we need a better solution
+	 * Get the file number.
 	 *
-	 * @param TypeDefinition  $typeDefinition  The uploaded file type details.
-	 * @param string          $entity    The entity guid
+	 * NOTE:
+	 * This logic assumes files are append-only.
+	 * Deletions will cause numbering inconsistencies.
+	 *
+	 * @param  TypeDefinition  $typeDefinition  The uploaded file type definition.
+	 * @param  string          $entity          The entity GUID.
 	 *
 	 * @return int
 	 * @since  5.1.1
 	 */
 	protected function getFileNumber(TypeDefinition $typeDefinition, string $entity): int
 	{
-		if (empty($typeDefinition->crop()))
+		$cropConfig = $typeDefinition->crop();
+
+		if (empty($cropConfig))
 		{
 			return 1;
 		}
 
-		$number = count($typeDefinition->crop());
-		$number_files = 1;
+		$cropCount = count($cropConfig);
+		$fileNumber = 1;
 
-		if (($files = $this->items->table($this->getTable())->values([$entity], 'entity')) !== null)
+		$files = $this->items
+			->table($this->getTable())
+			->values([$entity], 'entity');
+
+		if ($files !== null)
 		{
 			$total = count($files);
-			if ($total >= $number)
+
+			if ($total >= $cropCount)
 			{
-				$number_files = round($total / $number);
+				$fileNumber = intdiv($total, $cropCount);
 			}
 
-			return ++$number_files;
+			return ++$fileNumber;
 		}
 
-		return $number_files;
+		return $fileNumber;
 	}
 
 	/**
@@ -428,7 +439,7 @@
 		$fileType = $typeDefinition->type() ?? '';
 
 		// Handle image type with crops
-		if ($fileType === 'image' && !empty($crop)))
+		if ($fileType === 'image' && !empty($crop))
 		{
 			$isImage = true;
 			$cropCount = (int) \count($crop);

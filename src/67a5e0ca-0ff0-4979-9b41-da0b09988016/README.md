@@ -130,7 +130,10 @@ Otherwise, return the name without the final extension.
 end note
 
 note right of Manager::getFileNumber
-  Get the file number TODO: not ideal, if images are deleted we need a better solution
+  Get the file number.
+NOTE:
+This logic assumes files are append-only.
+Deletions will cause numbering inconsistencies.
 
   since: 5.1.1
   return: int
