@@ -13,6 +13,10 @@
         "use_selection0": {
             "use": "05744dd3-4030-4cf8-8dda-a93ab809b473",
             "as": "Item"
+        },
+        "use_selection1": {
+            "use": "8e2b3996-11a1-470d-b2be-2405c62ec192",
+            "as": "default"
         }
     },
     "extendsinterfaces": null,

@@ -1,0 +1,50 @@
+	/**
+	 * Get the upload field name.
+	 *
+	 * @return string
+	 * @since  5.1.4
+	 */
+	public function field(): string;
+
+	/**
+	 * Get the defined file type.
+	 *
+	 * @return string
+	 * @since  5.1.4
+	 */
+	public function type(): string;
+
+	/**
+	 * Get the upload filter mode.
+	 *
+	 * @return string
+	 * @since  5.1.4
+	 */
+	public function filter(): string;
+
+	/**
+	 * Get the target filesystem path.
+	 *
+	 * @return string
+	 * @since  5.1.4
+	 */
+	public function path(): string;
+
+	/**
+	 * Get the allowed file extensions.
+	 *
+	 * @return array<int,string>
+	 * @since  5.1.4
+	 */
+	public function formats(): array;
+
+	/**
+	 * Export the full type definition as an associative array.
+	 *
+	 * This returns the exact structure used by the constructor,
+	 * ensuring it can be safely stored, serialized, or rebuilt.
+	 *
+	 * @return array  The full configuration map.
+	 * @since  5.1.4
+	 */
+	public function toArray(): array;

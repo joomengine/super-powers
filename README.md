@@ -87,6 +87,10 @@ This makes your logic both **reusable** and **component-aware**, without hardcod
   - **final class Update** | [Details](src/cce56585-58b0-4f72-a92c-e2635ea52d83) | [Raw](src/cce56585-58b0-4f72-a92c-e2635ea52d83/code.power) | [Settings](src/cce56585-58b0-4f72-a92c-e2635ea52d83/settings.json) | SPK: `Super---cce56585_58b0_4f72_a92c_e2635ea52d83---Power`
   - **trait DefaultTrait** | [Details](src/b8176bdf-5615-4d91-8dfa-990d42f44127) | [Raw](src/b8176bdf-5615-4d91-8dfa-990d42f44127/code.power) | [Settings](src/b8176bdf-5615-4d91-8dfa-990d42f44127/settings.json) | SPK: `Super---b8176bdf_5615_4d91_8dfa_990d42f44127---Power`
   - **trait QuoteTrait** | [Details](src/58ab1a65-9a80-40a3-bb33-c50fbf003b63) | [Raw](src/58ab1a65-9a80-40a3-bb33-c50fbf003b63/code.power) | [Settings](src/58ab1a65-9a80-40a3-bb33-c50fbf003b63/settings.json) | SPK: `Super---58ab1a65_9a80_40a3_bb33_c50fbf003b63---Power`
+- **Namespace**: [VDM\Joomla\File](#vdm-joomla-file)
+
+  - **final class Definition** | [Details](src/4d9c5f48-4ed4-485a-9d9a-f31212ddb135) | [Raw](src/4d9c5f48-4ed4-485a-9d9a-f31212ddb135/code.power) | [Settings](src/4d9c5f48-4ed4-485a-9d9a-f31212ddb135/settings.json) | SPK: `Super---4d9c5f48_4ed4_485a_9d9a_f31212ddb135---Power`
+  - **class Agent** | [Details](src/d4b415ad-20d7-4b33-a957-88024b56e3f0) | [Raw](src/d4b415ad-20d7-4b33-a957-88024b56e3f0/code.power) | [Settings](src/d4b415ad-20d7-4b33-a957-88024b56e3f0/settings.json) | SPK: `Super---d4b415ad_20d7_4b33_a957_88024b56e3f0---Power`
 - **Namespace**: [VDM\Joomla\Interfaces](#vdm-joomla-interfaces)
 
   - **interface Activeregistryinterface** | [Details](src/af0eedbe-603b-4671-8e5a-28165d88254b) | [Raw](src/af0eedbe-603b-4671-8e5a-28165d88254b/code.power) | [Settings](src/af0eedbe-603b-4671-8e5a-28165d88254b/settings.json) | SPK: `Super---af0eedbe_603b_4671_8e5a_28165d88254b---Power`
@@ -146,10 +150,13 @@ This makes your logic both **reusable** and **component-aware**, without hardcod
 - **Namespace**: [VDM\Joomla\Componentbuilder\File](#vdm-joomla-componentbuilder-file)
 
   - **abstract class Factory** | [Details](src/884eca78-281f-4eab-b962-d97e355af16d) | [Raw](src/884eca78-281f-4eab-b962-d97e355af16d/code.power) | [Settings](src/884eca78-281f-4eab-b962-d97e355af16d/settings.json) | SPK: `Super---884eca78_281f_4eab_b962_d97e355af16d---Power`
+  - **final class Definition** | [Details](src/0d159144-b553-4604-8f55-503985e22ec6) | [Raw](src/0d159144-b553-4604-8f55-503985e22ec6/code.power) | [Settings](src/0d159144-b553-4604-8f55-503985e22ec6/settings.json) | SPK: `Super---0d159144_b553_4604_8f55_503985e22ec6---Power`
   - **final class Display** | [Details](src/d46c4667-378b-49e8-9782-ffb28d92415a) | [Raw](src/d46c4667-378b-49e8-9782-ffb28d92415a/code.power) | [Settings](src/d46c4667-378b-49e8-9782-ffb28d92415a/settings.json) | SPK: `Super---d46c4667_378b_49e8_9782_ffb28d92415a---Power`
   - **final class Handler** | [Details](src/4144ad3b-2ad5-401f-af0c-a3d856c1e688) | [Raw](src/4144ad3b-2ad5-401f-af0c-a3d856c1e688/code.power) | [Settings](src/4144ad3b-2ad5-401f-af0c-a3d856c1e688/settings.json) | SPK: `Super---4144ad3b_2ad5_401f_af0c_a3d856c1e688---Power`
   - **final class Image** | [Details](src/fbc235cd-e4cb-45e6-824e-51b3911243cc) | [Raw](src/fbc235cd-e4cb-45e6-824e-51b3911243cc/code.power) | [Settings](src/fbc235cd-e4cb-45e6-824e-51b3911243cc/settings.json) | SPK: `Super---fbc235cd_e4cb_45e6_824e_51b3911243cc---Power`
   - **final class Type** | [Details](src/12a2a8de-a893-4dbb-a53d-b52de4f6cb0e) | [Raw](src/12a2a8de-a893-4dbb-a53d-b52de4f6cb0e/code.power) | [Settings](src/12a2a8de-a893-4dbb-a53d-b52de4f6cb0e/settings.json) | SPK: `Super---12a2a8de_a893_4dbb_a53d_b52de4f6cb0e---Power`
+  - **final class TypeDefinition** | [Details](src/8e2b3996-11a1-470d-b2be-2405c62ec192) | [Raw](src/8e2b3996-11a1-470d-b2be-2405c62ec192/code.power) | [Settings](src/8e2b3996-11a1-470d-b2be-2405c62ec192/settings.json) | SPK: `Super---8e2b3996_11a1_470d_b2be_2405c62ec192---Power`
+  - **final class TypeDefinition** | [Details](src/ca7e1532-c285-4b4e-9b67-f485cc039bc7) | [Raw](src/ca7e1532-c285-4b4e-9b67-f485cc039bc7/code.power) | [Settings](src/ca7e1532-c285-4b4e-9b67-f485cc039bc7/settings.json) | SPK: `Super---ca7e1532_c285_4b4e_9b67_f485cc039bc7---Power`
   - **class Manager** | [Details](src/67a5e0ca-0ff0-4979-9b41-da0b09988016) | [Raw](src/67a5e0ca-0ff0-4979-9b41-da0b09988016/code.power) | [Settings](src/67a5e0ca-0ff0-4979-9b41-da0b09988016/settings.json) | SPK: `Super---67a5e0ca_0ff0_4979_9b41_da0b09988016---Power`
 - **Namespace**: [VDM\Joomla\Componentbuilder\Import](#vdm-joomla-componentbuilder-import)
 
@@ -222,6 +229,12 @@ This makes your logic both **reusable** and **component-aware**, without hardcod
   - **interface LoadInterface** | [Details](src/2ad31f74-f579-499d-b98b-c4f54fd615dd) | [Raw](src/2ad31f74-f579-499d-b98b-c4f54fd615dd/code.power) | [Settings](src/2ad31f74-f579-499d-b98b-c4f54fd615dd/settings.json) | SPK: `Super---2ad31f74_f579_499d_b98b_c4f54fd615dd---Power`
   - **interface UpdateInterface** | [Details](src/7179fde6-1e51-4b51-8545-7ca18f74a0f4) | [Raw](src/7179fde6-1e51-4b51-8545-7ca18f74a0f4/code.power) | [Settings](src/7179fde6-1e51-4b51-8545-7ca18f74a0f4/settings.json) | SPK: `Super---7179fde6_1e51_4b51_8545_7ca18f74a0f4---Power`
   - **interface VersioningInterface** | [Details](src/ac77cee7-7018-4496-a453-9757623e3849) | [Raw](src/ac77cee7-7018-4496-a453-9757623e3849/code.power) | [Settings](src/ac77cee7-7018-4496-a453-9757623e3849/settings.json) | SPK: `Super---ac77cee7_7018_4496_a453_9757623e3849---Power`
+- **Namespace**: [VDM\Joomla\Interfaces\File](#vdm-joomla-interfaces-file)
+
+  - **interface DefinitionInterface** | [Details](src/3b7cd7fc-3e7c-4eaf-b156-7eb3ea744952) | [Raw](src/3b7cd7fc-3e7c-4eaf-b156-7eb3ea744952/code.power) | [Settings](src/3b7cd7fc-3e7c-4eaf-b156-7eb3ea744952/settings.json) | SPK: `Super---3b7cd7fc_3e7c_4eaf_b156_7eb3ea744952---Power`
+  - **interface HandlerInterface** | [Details](src/0e23f0ac-8a0a-450e-b40c-912bf331bfae) | [Raw](src/0e23f0ac-8a0a-450e-b40c-912bf331bfae/code.power) | [Settings](src/0e23f0ac-8a0a-450e-b40c-912bf331bfae/settings.json) | SPK: `Super---0e23f0ac_8a0a_450e_b40c_912bf331bfae---Power`
+  - **interface PersistentManagerInterface** | [Details](src/082b049c-d8f3-462d-a520-3d312f2eaa31) | [Raw](src/082b049c-d8f3-462d-a520-3d312f2eaa31/code.power) | [Settings](src/082b049c-d8f3-462d-a520-3d312f2eaa31/settings.json) | SPK: `Super---082b049c_d8f3_462d_a520_3d312f2eaa31---Power`
+  - **interface TypeDefinitionInterface** | [Details](src/2cd4b4d4-fca3-49a0-8605-a42eee3a5f99) | [Raw](src/2cd4b4d4-fca3-49a0-8605-a42eee3a5f99/code.power) | [Settings](src/2cd4b4d4-fca3-49a0-8605-a42eee3a5f99/settings.json) | SPK: `Super---2cd4b4d4_fca3_49a0_8605_a42eee3a5f99---Power`
 - **Namespace**: [VDM\Joomla\Interfaces\Git](#vdm-joomla-interfaces-git)
 
   - **interface ApiInterface** | [Details](src/17ed2fec-49d6-4731-92c3-f9cd78fb6273) | [Raw](src/17ed2fec-49d6-4731-92c3-f9cd78fb6273/code.power) | [Settings](src/17ed2fec-49d6-4731-92c3-f9cd78fb6273/settings.json) | SPK: `Super---17ed2fec_49d6_4731_92c3_f9cd78fb6273---Power`
@@ -264,6 +277,10 @@ This makes your logic both **reusable** and **component-aware**, without hardcod
 - **Namespace**: [VDM\Joomla\Componentbuilder\Import\Service](#vdm-joomla-componentbuilder-import-service)
 
   - **class Import** | [Details](src/21754a8b-2323-4a77-8459-378a74c1ec97) | [Raw](src/21754a8b-2323-4a77-8459-378a74c1ec97/code.power) | [Settings](src/21754a8b-2323-4a77-8459-378a74c1ec97/settings.json) | SPK: `Super---21754a8b_2323_4a77_8459_378a74c1ec97---Power`
+- **Namespace**: [VDM\Joomla\Componentbuilder\Interfaces\File](#vdm-joomla-componentbuilder-interfaces-file)
+
+  - **interface DefinitionInterface** | [Details](src/b62ec888-ce11-45c8-97ff-b4d9bea3d0bc) | [Raw](src/b62ec888-ce11-45c8-97ff-b4d9bea3d0bc/code.power) | [Settings](src/b62ec888-ce11-45c8-97ff-b4d9bea3d0bc/settings.json) | SPK: `Super---b62ec888_ce11_45c8_97ff_b4d9bea3d0bc---Power`
+  - **interface TypeDefinitionInterface** | [Details](src/94376132-17b0-4fbd-8fc3-020a63fb15e1) | [Raw](src/94376132-17b0-4fbd-8fc3-020a63fb15e1/code.power) | [Settings](src/94376132-17b0-4fbd-8fc3-020a63fb15e1/settings.json) | SPK: `Super---94376132_17b0_4fbd_8fc3_020a63fb15e1---Power`
 - **Namespace**: [VDM\Joomla\Componentbuilder\Interfaces\Spreadsheet](#vdm-joomla-componentbuilder-interfaces-spreadsheet)
 
   - **interface FileReaderInterface** | [Details](src/61d1146f-2c2e-4e42-8492-d076f945cf35) | [Raw](src/61d1146f-2c2e-4e42-8492-d076f945cf35/code.power) | [Settings](src/61d1146f-2c2e-4e42-8492-d076f945cf35/settings.json) | SPK: `Super---61d1146f_2c2e_4e42_8492_d076f945cf35---Power`

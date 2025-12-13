@@ -1,0 +1,19 @@
+{
+    "add_head": 0,
+    "add_licensing_template": 2,
+    "extends": "",
+    "guid": "2cd4b4d4-fca3-49a0-8605-a42eee3a5f99",
+    "implements": null,
+    "load_selection": null,
+    "name": "TypeDefinitionInterface",
+    "power_version": "1.0.0",
+    "system_name": "VDM.Interfaces.File.TypeDefinitionInterface",
+    "type": "interface",
+    "use_selection": null,
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Interfaces.File.TypeDefinitionInterface",
+    "description": "File Type Definition Interface\r\n\r\nThis class represents an **immutable file handling blueprint** used by the file\r\nintake pipeline. It defines:\r\n\r\n- The HTML input field responsible for uploads\r\n- Allowed file formats\r\n- Target filesystem location\r\n- Filter engine rule\r\n- Image crop definitions (if applicable)\r\n\r\nInstances of this class are designed to be:\r\n\r\n- Safe to reuse\r\n- Immutable after construction\r\n- Free of any database concerns\r\n- Serializable-friendly\r\n\r\nIt replaces the older Type database architecture with a deterministic,\r\nconfiguration-based model.\r\n\r\n@since  5.1.4",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}

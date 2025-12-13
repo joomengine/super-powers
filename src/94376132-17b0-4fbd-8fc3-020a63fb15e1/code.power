@@ -1,0 +1,47 @@
+	/**
+	 * Get GUID.
+	 *
+	 * @return string
+	 * @since  5.1.4
+	 */
+	public function guid(): string;
+
+	/**
+	 * Get human-readable name.
+	 *
+	 * @return string
+	 * @since  5.1.4
+	 */
+	public function name(): string;
+
+	/**
+	 * Get upload access level.
+	 *
+	 * @return int
+	 * @since  5.1.4
+	 */
+	public function access(): int;
+
+	/**
+	 * Get quantity limit.
+	 *
+	 * @return int
+	 * @since  5.1.4
+	 */
+	public function quantity(): int;
+
+	/**
+	 * Get download access level.
+	 *
+	 * @return int
+	 * @since  5.1.4
+	 */
+	public function downloadAccess(): int;
+
+	/**
+	 * Get crop configuration.
+	 *
+	 * @return array
+	 * @since  5.1.4
+	 */
+	public function crop(): array;

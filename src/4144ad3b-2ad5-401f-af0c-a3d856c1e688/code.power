@@ -90,6 +90,27 @@
 	}
 
 	/**
+	 * Remove a previously uploaded file.
+	 *
+	 * This method uses the same internal removal mechanism as the uploader,
+	 * ensuring consistent cleanup logic across the system.
+	 *
+	 * It accepts either:
+	 * - a full filesystem path
+	 * - or a filename resolvable by Path::clean
+	 *
+	 * @param  string  $path  Absolute or relative file path.
+	 *
+	 * @return bool  TRUE on success, FALSE on failure or missing file.
+	 *
+	 * @since  5.1.4
+	 */
+	public function removeFile(string $path): bool
+	{
+		return static::remove($path);
+	}
+
+	/**
 	 * Get the error messages as a string.
 	 *
 	 * @param  bool   $toString  The option to return errors as a string

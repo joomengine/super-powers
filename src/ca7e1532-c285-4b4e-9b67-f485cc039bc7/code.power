@@ -1,0 +1,158 @@
+	/**
+	 * HTML form input field name.
+	 *
+	 * This value determines which $_FILES entry the upload handler reads.
+	 *
+	 * @var   string
+	 * @since 5.1.4
+	 */
+	protected string $field;
+
+	/**
+	 * File type identifier.
+	 *
+	 * Common values:
+	 * - "file"
+	 * - "image"
+	 * - "media"
+	 * - "document"
+	 *
+	 * This value is passed directly to the upload handler in order to select
+	 * the appropriate validation pipeline.
+	 *
+	 * @var   string
+	 * @since 5.1.4
+	 */
+	protected string $type;
+
+	/**
+	 * Upload filter rule.
+	 *
+	 * Determines the sanitization and validation strategy applied by the
+	 * upload handler.
+	 *
+	 * Example values:
+	 * - "safe"
+	 * - "clean"
+	 * - "none"
+	 *
+	 * @var   string
+	 * @since 5.1.4
+	 */
+	protected string $filter;
+
+	/**
+	 * Target filesystem path for uploads.
+	 *
+	 * All uploaded files will be stored in this directory.
+	 * The directory must exist and be writable.
+	 *
+	 * @var   string
+	 * @since 5.1.4
+	 */
+	protected string $path;
+
+	/**
+	 * Allowed file extensions.
+	 *
+	 * Values must be defined without leading dots.
+	 *
+	 * Example:
+	 * - ['jpg', 'png']
+	 * - ['csv']
+	 * - ['pdf', 'docx']
+	 *
+	 * @var   array<int,string>
+	 * @since 5.1.4
+	 */
+	protected array $formats;
+
+	/**
+	 * Constructor.
+	 *
+	 * Required configuration keys:
+	 * - `field`
+	 * - `type`
+	 * - `filter`
+	 * - `path`
+	 *
+	 * Optional configuration keys:
+	 * - `formats`
+	 * - `crop`
+	 *
+	 * @param  array  $config  File type configuration map.
+	 *
+	 * @throws \InvalidArgumentException If required keys are missing.
+	 * @since  5.1.4
+	 */
+	public function __construct(array $config)
+	{
+		foreach (['field','type','filter','path'] as $key)
+		{
+			if (empty($config[$key]))
+			{
+				throw new \InvalidArgumentException("Missing file type config: {$key}");
+			}
+		}
+
+		$this->field   = (string) $config['field'];
+		$this->type    = (string) $config['type'];
+		$this->filter  = (string) $config['filter'];
+		$this->path    = rtrim((string) $config['path'], '/');
+		$this->formats = (array) ($config['formats'] ?? []);
+	}
+
+	/**
+	 * Get the upload field name.
+	 *
+	 * @return string
+	 * @since  5.1.4
+	 */
+	public function field(): string
+	{
+		return $this->field;
+	}
+
+	/**
+	 * Get the defined file type.
+	 *
+	 * @return string
+	 * @since  5.1.4
+	 */
+	public function type(): string
+	{
+		return $this->type;
+	}
+
+	/**
+	 * Get the upload filter mode.
+	 *
+	 * @return string
+	 * @since  5.1.4
+	 */
+	public function filter(): string
+	{
+		return $this->filter;
+	}
+
+	/**
+	 * Get the target filesystem path.
+	 *
+	 * @return string
+	 * @since  5.1.4
+	 */
+	public function path(): string
+	{
+		return $this->path;
+	}
+
+	/**
+	 * Get the allowed file extensions.
+	 *
+	 * @return array<int,string>
+	 * @since  5.1.4
+	 */
+	public function formats(): array
+	{
+		return $this->formats;
+	}

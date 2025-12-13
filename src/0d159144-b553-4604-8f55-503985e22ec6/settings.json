@@ -1,0 +1,26 @@
+{
+    "add_head": 0,
+    "add_licensing_template": 2,
+    "extends": "",
+    "guid": "0d159144-b553-4604-8f55-503985e22ec6",
+    "implements": [
+        "b62ec888-ce11-45c8-97ff-b4d9bea3d0bc"
+    ],
+    "load_selection": null,
+    "name": "Definition",
+    "power_version": "1.0.0",
+    "system_name": "Joomla.File.Definition",
+    "type": "final class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "f11dc790-713e-4706-9a85-a318ed3ad56e",
+            "as": "default"
+        }
+    },
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].File.Definition",
+    "description": "File Definition Class\r\n\r\nFile Definition (Database + Filesystem Hybrid).\r\n\r\nThis class extends the behaviour of the original temporary-file Definition\r\n   by supporting database-driven fields while preserving the interface and\r\n   behaviour of the base Definition class.\r\n\r\n@since  5.1.4",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2020\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}

@@ -9,23 +9,23 @@ class Manager  #Gold {
   # Item $item
   # Items $items
   # Type $type
-  # Handler $handler
+  # Agent $agent
   # Image $image
   # User $user
   # string $table
   + __construct(Item $item, Items $items, ...)
   + upload(string $guid, string $entity, ...) : void
+  + definition(string $guid) : ?Definition
   + download(string $guid) : ?array
   + delete(string $guid) : void
   + table(string $table) : self
   + getTable() : string
-  # processImages(array $details, string $guid, ...) : void
-  # modelFileDetails(array $details, string $guid, ...) : object
-  # getFileName(array $details, string $entity) : string
-  # getFileNumber(array $fileType, string $entity) : int
+  # processImages(FileInterface $fileDefinition, string $guid, ...) : void
+  # modelFileDefinition(FileInterface $fileDefinition, string $guid, ...) : object
+  # getFileName(FileInterface $fileDefinition, string $entity) : string
+  # getFileNumber(TypeDefinition $typeDefinition, string $entity) : int
   # getRandomFileName(string $guid) : string
-  # getFileExtension(string $source) : string
-  # limitFileType(array $fileType, string $type, ...) : void
+  # limitFileType(TypeDefinition $typeDefinition, string $type, ...) : void
   - applyFileLimit(string $fileTypeGuid, string $entity, ...) : void
   # extractOldestFiles(array $files, int $quantity) : array
 }
@@ -39,7 +39,7 @@ note right of Manager::__construct
     Item $item
     Items $items
     Type $type
-    Handler $handler
+    Agent $agent
     Image $image
 end note
 
@@ -55,64 +55,72 @@ note left of Manager::upload
     string $target
 end note
 
-note right of Manager::download
-  Get the file details for download
+note right of Manager::definition
+  Get the file definition
+
+  since: 5.1.4
+  return: ?Definition
+end note
+
+note left of Manager::download
+  Get the file definition as array
 
   since: 5.0.2
   return: ?array
+  deprecated: 5.1.4
 end note
 
-note left of Manager::delete
+note right of Manager::delete
   Delete a file.
 
   since: 5.0.2
   return: void
 end note
 
-note right of Manager::table
+note left of Manager::table
   Set the current active table
 
   since: 5.0.2
   return: self
 end note
 
-note left of Manager::getTable
+note right of Manager::getTable
   Get the current active table
 
   since: 5.0.2
   return: string
 end note
 
-note right of Manager::processImages
+note left of Manager::processImages
   Process the image(s) as needed based on crop settings
 
   since: 5.1.1
   return: void
   
   arguments:
-    array $details
+    FileInterface $fileDefinition
     string $guid
     string $entity
     string $target
-    array $fileType
+    TypeDefinition $typeDefinition
 end note
 
-note left of Manager::modelFileDetails
-  model the file details to store in the file table
+note right of Manager::modelFileDefinition
+  model the file definition to store in the file table
 
-  since: 5.0.2
+  since: 5.1.4
   return: object
   
   arguments:
-    array $details
+    FileInterface $fileDefinition
     string $guid
     string $entity
     string $target
-    array $fileType
+    TypeDefinition $typeDefinition
 end note
 
-note right of Manager::getFileName
-  Get the file name without extension for download.
+note left of Manager::getFileName
+  Get the file name without extension.
 If the original name is empty, return the entity GUID.
 If the name does not contain a '.', return the name as is.
 Otherwise, return the name without the final extension.
@@ -121,27 +129,20 @@ Otherwise, return the name without the final extension.
   return: string
 end note
 
-note left of Manager::getFileNumber
+note right of Manager::getFileNumber
   Get the file number TODO: not ideal, if images are deleted we need a better solution
 
   since: 5.1.1
   return: int
 end note
 
-note right of Manager::getRandomFileName
+note left of Manager::getRandomFileName
   Generate a unique random-like 12-character string for a given GUID.
 Guarantees:
 - The same GUID will *never* produce the same value twice, even across executions.
 - Different GUIDs will never collide (practically impossible).
 - Safe alphanumeric output (A–Z, a–z, 0–9).
 - Lightweight, stateless, and reproducible randomness within one call.
-
-  since: 5.1.1
-  return: string
-end note
-
-note left of Manager::getFileExtension
-  Get the file extension
 
   since: 5.1.1
   return: string
@@ -155,7 +156,7 @@ Also validates crop consistency for images.
   return: void
   
   arguments:
-    array $fileType
+    TypeDefinition $typeDefinition
     string $type
     string $entity
     string $target

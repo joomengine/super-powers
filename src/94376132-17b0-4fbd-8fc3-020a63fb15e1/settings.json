@@ -1,0 +1,21 @@
+{
+    "add_head": 0,
+    "add_licensing_template": 2,
+    "extends": "",
+    "guid": "94376132-17b0-4fbd-8fc3-020a63fb15e1",
+    "implements": null,
+    "load_selection": null,
+    "name": "TypeDefinitionInterface",
+    "power_version": "1.0.0",
+    "system_name": "Joomla.Interfaces.File.TypeDefinitionInterface",
+    "type": "interface",
+    "use_selection": null,
+    "extendsinterfaces": [
+        "2cd4b4d4-fca3-49a0-8605-a42eee3a5f99"
+    ],
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Interfaces.File.TypeDefinitionInterface",
+    "description": "File Type Definition Interface\r\n\r\nRepresents a complete file type definition including upload rules, access rules, and metadata.\r\n\r\nThis class extends the original concept with additional\r\n   JCB-driven configuration options such as GUID, access,\r\n   quantity limits, and crop settings.\r\n\r\n@since  5.1.4",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}

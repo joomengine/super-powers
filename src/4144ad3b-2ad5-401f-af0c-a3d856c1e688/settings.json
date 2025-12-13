@@ -3,7 +3,9 @@
     "add_licensing_template": 2,
     "extends": "d7600b43-771a-4747-9f5d-952765721799",
     "guid": "4144ad3b-2ad5-401f-af0c-a3d856c1e688",
-    "implements": null,
+    "implements": [
+        "0e23f0ac-8a0a-450e-b40c-912bf331bfae"
+    ],
     "load_selection": null,
     "name": "Handler",
     "power_version": "1.0.0",

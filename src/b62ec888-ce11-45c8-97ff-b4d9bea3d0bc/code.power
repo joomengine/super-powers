@@ -1,0 +1,47 @@
+	/**
+	 * Get file type identifier.
+	 *
+	 * @return string
+	 * @since  5.1.4
+	 */
+	public function fileType(): string;
+
+	/**
+	 * Get entity type.
+	 *
+	 * @return string
+	 * @since  5.1.4
+	 */
+	public function entityType(): string;
+
+	/**
+	 * Get entity reference.
+	 *
+	 * @return string
+	 * @since  5.1.4
+	 */
+	public function entity(): string;
+
+	/**
+	 * Get access level.
+	 *
+	 * @return int
+	 * @since  5.1.4
+	 */
+	public function access(): int;
+
+	/**
+	 * Get Globionic GUID.
+	 *
+	 * @return string
+	 * @since  5.1.4
+	 */
+	public function guid(): string;
+
+	/**
+	 * Get creator ID.
+	 *
+	 * @return int
+	 * @since  5.1.4
+	 */
+	public function createdBy(): int;

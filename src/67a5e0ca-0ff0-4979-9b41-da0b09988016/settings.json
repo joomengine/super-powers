@@ -3,7 +3,9 @@
     "add_licensing_template": 2,
     "extends": "",
     "guid": "67a5e0ca-0ff0-4979-9b41-da0b09988016",
-    "implements": null,
+    "implements": [
+        "082b049c-d8f3-462d-a520-3d312f2eaa31"
+    ],
     "load_selection": null,
     "name": "Manager",
     "power_version": "1.0.0",
@@ -19,22 +21,38 @@
             "as": "Items"
         },
         "use_selection2": {
-            "use": "5acded67-0e3d-4c6b-a6ea-b533b076de0c",
-            "as": "default"
-        },
-        "use_selection3": {
             "use": "12a2a8de-a893-4dbb-a53d-b52de4f6cb0e",
             "as": "default"
         },
-        "use_selection4": {
-            "use": "4144ad3b-2ad5-401f-af0c-a3d856c1e688",
+        "use_selection3": {
+            "use": "d4b415ad-20d7-4b33-a957-88024b56e3f0",
             "as": "default"
         },
-        "use_selection5": {
+        "use_selection4": {
             "use": "fbc235cd-e4cb-45e6-824e-51b3911243cc",
             "as": "default"
         },
+        "use_selection5": {
+            "use": "0d159144-b553-4604-8f55-503985e22ec6",
+            "as": "Definition"
+        },
         "use_selection6": {
+            "use": "4d9c5f48-4ed4-485a-9d9a-f31212ddb135",
+            "as": "FileDefinition"
+        },
+        "use_selection7": {
+            "use": "3b7cd7fc-3e7c-4eaf-b156-7eb3ea744952",
+            "as": "FileInterface"
+        },
+        "use_selection10": {
+            "use": "94376132-17b0-4fbd-8fc3-020a63fb15e1",
+            "as": "TypeDefinition"
+        },
+        "use_selection8": {
+            "use": "5acded67-0e3d-4c6b-a6ea-b533b076de0c",
+            "as": "default"
+        },
+        "use_selection9": {
             "use": "f11dc790-713e-4706-9a85-a318ed3ad56e",
             "as": "default"
         }

@@ -10,6 +10,7 @@ class File  #Gold {
   + getType(Container $container) : Type
   + getHandler(Container $container) : Handler
   + getManager(Container $container) : Manager
+  + getAgent(Container $container) : Agent
   + getDisplay(Container $container) : Display
   + getImage(Container $container) : Image
 }
@@ -40,6 +41,13 @@ note right of File::getManager
 
   since: 5.0.3
   return: Manager
+end note
+
+note right of File::getAgent
+  Get The Agent Class.
+
+  since: 5.1.4
+  return: Agent
 end note
 
 note right of File::getDisplay

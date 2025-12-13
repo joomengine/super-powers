@@ -10,7 +10,7 @@ class Type << (F,LightGreen) >> #RoyalBlue {
   # array $fileTypes
   + __construct(Item $item)
   + get(string $guid, string $target) : ?array
-  + load(string $guid, string $target) : ?array
+  + definition(string $guid, string $target) : ?TypeDefinition
   + details(string $guid) : ?object
   # validTarget(object $data, string $target) : bool
   # getFieldName(object $data) : string
@@ -35,11 +35,11 @@ note left of Type::get
   return: ?array
 end note
 
-note right of Type::load
+note right of Type::definition
   Retrieves the file type details (upload)
 
   since: 5.0.2
-  return: ?array
+  return: ?TypeDefinition
 end note
 
 note left of Type::details

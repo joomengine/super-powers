@@ -13,6 +13,7 @@ class Handler << (F,LightGreen) >> #RoyalBlue {
   + setEnqueueError(bool $enqueueError) : self
   + setLegalFormats(array $legalFormats) : self
   + getFile(string $field, string $type, ...) : ?array
+  + removeFile(string $path) : bool
   + getErrors(bool $toString = true) : string|array
 }
 
@@ -23,7 +24,7 @@ note right of Handler::setUseStreams
   return: self
 end note
 
-note right of Handler::setAllowUnsafe
+note left of Handler::setAllowUnsafe
   Set the $allowUnsafe property to allow or disallow unsafe file uploads.
 
   since: 5.0.3
@@ -37,7 +38,7 @@ note right of Handler::setSafeFileOptions
   return: self
 end note
 
-note right of Handler::setEnqueueError
+note left of Handler::setEnqueueError
   Set the $enqueueError property to control error reporting behavior.
 
   since: 5.0.3
@@ -51,7 +52,7 @@ note right of Handler::setLegalFormats
   return: self
 end note
 
-note right of Handler::getFile
+note left of Handler::getFile
   Get a file from the input based on field name and file type, then process it.
 
   since: 3.0.11
@@ -64,7 +65,19 @@ note right of Handler::getFile
     string $path = null
 end note
 
-note right of Handler::getErrors
+note right of Handler::removeFile
+  Remove a previously uploaded file.
+This method uses the same internal removal mechanism as the uploader,
+ensuring consistent cleanup logic across the system.
+It accepts either:
+- a full filesystem path
+- or a filename resolvable by Path::clean
+
+  since: 5.1.4
+  return: bool
+end note
+
+note left of Handler::getErrors
   Get the error messages as a string.
 
   since: 5.0.3

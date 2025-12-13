@@ -1,0 +1,26 @@
+{
+    "add_head": 0,
+    "add_licensing_template": 2,
+    "extends": "",
+    "guid": "4d9c5f48-4ed4-485a-9d9a-f31212ddb135",
+    "implements": [
+        "3b7cd7fc-3e7c-4eaf-b156-7eb3ea744952"
+    ],
+    "load_selection": null,
+    "name": "Definition",
+    "power_version": "1.0.0",
+    "system_name": "VDM.File.Definition",
+    "type": "final class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "f11dc790-713e-4706-9a85-a318ed3ad56e",
+            "as": "default"
+        }
+    },
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\File.Definition",
+    "description": "File Definition Class\r\n\r\nThis class represents a **single physical file** on disk and exposes\r\na consistent and immutable API for downstream usage.\r\n\r\nIt is not:\r\n- a database record\r\n- a file manager\r\n- a transport layer\r\n\r\nIt **is**:\r\n- a file identity\r\n- a metadata container\r\n- a filesystem reference\r\n\r\nInstances of this class are constructed exclusively from upload\r\nresults produced by the File Agent class.\r\n\r\n@since  5.1.4",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2020\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}

@@ -45,7 +45,7 @@ abstract class GetHelper
 	{
 		if(empty($where))
 		{
-			$where = Factory::getUser()->id;
+			$where = Factory::getApplication()->getIdentity()->id;
 		}
 
 		if(empty($main))
@@ -115,7 +115,7 @@ abstract class GetHelper
 	{
 		if(empty($where))
 		{
-			$where = Factory::getUser()->id;
+			$where = Factory::getApplication()->getIdentity()->id;
 		}
 
 		if($main === null)
