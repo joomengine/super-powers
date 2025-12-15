@@ -12,7 +12,7 @@
 namespace VDM\Joomla\Interfaces\File;
 
 
-use VDM\Joomla\Componentbuilder\File\Definition as File;
+use VDM\Joomla\Componentbuilder\Interfaces\File\DefinitionInterface as File;
 
 
 /**

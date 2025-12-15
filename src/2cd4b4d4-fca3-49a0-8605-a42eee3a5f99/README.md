@@ -8,7 +8,7 @@
 interface TypeDefinitionInterface  #Lavender {
   + field() : string
   + type() : string
-  + filter() : string
+  + filter() : ?string
   + path() : string
   + formats() : array
   + toArray() : array
@@ -32,7 +32,7 @@ note right of TypeDefinitionInterface::filter
   Get the upload filter mode.
 
   since: 5.1.4
-  return: string
+  return: ?string
 end note
 
 note right of TypeDefinitionInterface::path

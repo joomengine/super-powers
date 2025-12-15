@@ -22,8 +22,8 @@ note right of UploadHelper::get
   arguments:
     string $field
     string $type
-    string $filter = null
-    string $path = null
+    ?string $filter = null
+    ?string $path = null
 end note
 
 note right of UploadHelper::getError

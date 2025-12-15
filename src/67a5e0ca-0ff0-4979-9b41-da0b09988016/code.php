@@ -23,6 +23,7 @@ use VDM\Joomla\File\Agent;
 use VDM\Joomla\Componentbuilder\File\Image;
 use VDM\Joomla\Componentbuilder\File\Definition as Definition;
 use VDM\Joomla\File\Definition as FileDefinition;
+use VDM\Joomla\Componentbuilder\Interfaces\File\DefinitionInterface as FileDefinitionInterface;
 use VDM\Joomla\Interfaces\File\DefinitionInterface as FileInterface;
 use VDM\Joomla\Componentbuilder\Interfaces\File\TypeDefinitionInterface as TypeDefinition;
 use VDM\Joomla\Data\Guid;
@@ -169,10 +170,10 @@ class Manager implements PersistentManagerInterface
 	 *
 	 * @param string $guid The file guid
 	 *
-	 * @return Definition|null
+	 * @return FileDefinitionInterface|null
 	 * @since 5.1.4
 	 */
-	public function definition(string $guid): ?Definition
+	public function definition(string $guid): ?FileDefinitionInterface
 	{
 		if (($file = $this->item->table($this->getTable())->get($guid)) !== null &&
 			in_array($file->access, $this->user->getAuthorisedViewLevels()))
@@ -300,7 +301,7 @@ class Manager implements PersistentManagerInterface
 
 			// store file in the file table
 			$this->item->table($this->getTable())->set(
-				$this->modelFileDetails($newFileDefinition, $guid, $entity, $target, $typeDefinition)
+				$this->modelFileDefinition($newFileDefinition, $guid, $entity, $target, $typeDefinition)
 			);
 		}
 
@@ -424,7 +425,7 @@ class Manager implements PersistentManagerInterface
 	 * Guarantees:
 	 * - The same GUID will *never* produce the same value twice, even across executions.
 	 * - Different GUIDs will never collide (practically impossible).
-	 * - Safe alphanumeric output (A–Z, a–z, 0–9).
+	 * - Safe alphanumeric output (A-Z, a-z, 0-9).
 	 * - Lightweight, stateless, and reproducible randomness within one call.
 	 *
 	 * @param   string  $guid  The entity GUID.

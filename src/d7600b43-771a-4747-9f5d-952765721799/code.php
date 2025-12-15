@@ -94,7 +94,7 @@ abstract class UploadHelper
 	 * @return  array|null   File details or false on failure.
 	 * @since  3.0.11
 	 */
-	public static function get(string $field, string $type, string $filter = null, string $path = null): ?array
+	public static function get(string $field, string $type, ?string $filter = null, ?string $path = null): ?array
 	{
 		// Get the uploaded file information.
 		$app = Factory::getApplication();

@@ -57,10 +57,10 @@
 	/**
 	 * Upload filter strategy.
 	 *
-	 * @var   string
+	 * @var   string|null
 	 * @since 5.1.4
 	 */
-	protected string $filter;
+	protected ?string $filter;
 
 	/**
 	 * Target filesystem path where files are stored.
@@ -97,10 +97,10 @@
 	 * - download_access (int)
 	 * - field (string)
 	 * - type (string)
-	 * - filter (string)
 	 * - path (string)
 	 *
 	 * Optional:
+	 * - filter (string|null)
 	 * - formats (array)
 	 * - crop (array)
 	 *
@@ -119,7 +119,6 @@
 			'download_access',
 			'field',
 			'type',
-			'filter',
 			'path',
 		];
 
@@ -128,7 +127,6 @@
 			'name',
 			'field',
 			'type',
-			'filter',
 			'path'
 		];
 
@@ -152,8 +150,8 @@
 		$this->downloadAccess = (int) $config['download_access'];
 		$this->field          = (string) $config['field'];
 		$this->type           = (string) $config['type'];
-		$this->filter         = (string) $config['filter'];
 		$this->path           = (string) $config['path'];
+		$this->filter         = $config['filter'] ?? null;
 		$this->formats        = isset($config['formats']) ? (array) $config['formats'] : [];
 		$this->crop           = isset($config['crop']) ? (array) $config['crop'] : [];
 	}
@@ -238,10 +236,10 @@
 	/**
 	 * Get filter mode.
 	 *
-	 * @return string
+	 * @return string|null
 	 * @since  5.1.4
 	 */
-	public function filter(): string
+	public function filter(): ?string
 	{
 		return $this->filter;
 	}

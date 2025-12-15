@@ -130,10 +130,10 @@
 	 *
 	 * @param string $guid The file guid
 	 *
-	 * @return Definition|null
+	 * @return FileDefinitionInterface|null
 	 * @since 5.1.4
 	 */
-	public function definition(string $guid): ?Definition
+	public function definition(string $guid): ?FileDefinitionInterface
 	{
 		if (($file = $this->item->table($this->getTable())->get($guid)) !== null &&
 			in_array($file->access, $this->user->getAuthorisedViewLevels()))
@@ -261,7 +261,7 @@
 
 			// store file in the file table
 			$this->item->table($this->getTable())->set(
-				$this->modelFileDetails($newFileDefinition, $guid, $entity, $target, $typeDefinition)
+				$this->modelFileDefinition($newFileDefinition, $guid, $entity, $target, $typeDefinition)
 			);
 		}
 
@@ -385,7 +385,7 @@
 	 * Guarantees:
 	 * - The same GUID will *never* produce the same value twice, even across executions.
 	 * - Different GUIDs will never collide (practically impossible).
-	 * - Safe alphanumeric output (A–Z, a–z, 0–9).
+	 * - Safe alphanumeric output (A-Z, a-z, 0-9).
 	 * - Lightweight, stateless, and reproducible randomness within one call.
 	 *
 	 * @param   string  $guid  The entity GUID.

@@ -61,8 +61,8 @@ note left of Handler::getFile
   arguments:
     string $field
     string $type
-    string $filter = null
-    string $path = null
+    ?string $filter = null
+    ?string $path = null
 end note
 
 note right of Handler::removeFile

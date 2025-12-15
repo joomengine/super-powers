@@ -13,7 +13,7 @@ class TypeDefinition << (F,LightGreen) >> #RoyalBlue {
   # int $downloadAccess
   # string $field
   # string $type
-  # string $filter
+  # ?string $filter
   # string $path
   # array $formats
   # array $crop
@@ -25,7 +25,7 @@ class TypeDefinition << (F,LightGreen) >> #RoyalBlue {
   + downloadAccess() : int
   + field() : string
   + type() : string
-  + filter() : string
+  + filter() : ?string
   + path() : string
   + formats() : array
   + crop() : array
@@ -42,9 +42,9 @@ Required keys:
 - download_access (int)
 - field (string)
 - type (string)
-- filter (string)
 - path (string)
 Optional:
+- filter (string|null)
 - formats (array)
 - crop (array)
 
@@ -104,7 +104,7 @@ note right of TypeDefinition::filter
   Get filter mode.
 
   since: 5.1.4
-  return: string
+  return: ?string
 end note
 
 note left of TypeDefinition::path

@@ -99,7 +99,7 @@ class Agent
 	{
 		if ($this->type === null)
 		{
-			throw new \RuntimeException('Agent::get() called without FileTypeDefinition loaded.');
+			throw new \RuntimeException('Agent::get() called without File Type Definition loaded.');
 		}
 
 		$details = $this->handler
@@ -116,6 +116,9 @@ class Agent
 		{
 			throw new \RuntimeException($this->handler->getErrors());
 		}
+
+		// reset the file type
+		$this->type = null;
 
 		return new Definition($details);
 	}

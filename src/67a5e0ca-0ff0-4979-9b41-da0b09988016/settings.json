@@ -41,18 +41,22 @@
             "as": "FileDefinition"
         },
         "use_selection7": {
+            "use": "b62ec888-ce11-45c8-97ff-b4d9bea3d0bc",
+            "as": "FileDefinitionInterface"
+        },
+        "use_selection8": {
             "use": "3b7cd7fc-3e7c-4eaf-b156-7eb3ea744952",
             "as": "FileInterface"
         },
-        "use_selection8": {
+        "use_selection9": {
             "use": "94376132-17b0-4fbd-8fc3-020a63fb15e1",
             "as": "TypeDefinition"
         },
-        "use_selection9": {
+        "use_selection10": {
             "use": "5acded67-0e3d-4c6b-a6ea-b533b076de0c",
             "as": "default"
         },
-        "use_selection10": {
+        "use_selection11": {
             "use": "f11dc790-713e-4706-9a85-a318ed3ad56e",
             "as": "default"
         }

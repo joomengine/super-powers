@@ -57,10 +57,10 @@ interface TypeDefinitionInterface
 	/**
 	 * Get the upload filter mode.
 	 *
-	 * @return string
+	 * @return string|null
 	 * @since  5.1.4
 	 */
-	public function filter(): string;
+	public function filter(): ?string;
 
 	/**
 	 * Get the target filesystem path.

@@ -87,10 +87,10 @@ final class TypeDefinition implements TypeDefinitionInterface
 	/**
 	 * Upload filter strategy.
 	 *
-	 * @var   string
+	 * @var   string|null
 	 * @since 5.1.4
 	 */
-	protected string $filter;
+	protected ?string $filter;
 
 	/**
 	 * Target filesystem path where files are stored.
@@ -127,10 +127,10 @@ final class TypeDefinition implements TypeDefinitionInterface
 	 * - download_access (int)
 	 * - field (string)
 	 * - type (string)
-	 * - filter (string)
 	 * - path (string)
 	 *
 	 * Optional:
+	 * - filter (string|null)
 	 * - formats (array)
 	 * - crop (array)
 	 *
@@ -149,7 +149,6 @@ final class TypeDefinition implements TypeDefinitionInterface
 			'download_access',
 			'field',
 			'type',
-			'filter',
 			'path',
 		];
 
@@ -158,7 +157,6 @@ final class TypeDefinition implements TypeDefinitionInterface
 			'name',
 			'field',
 			'type',
-			'filter',
 			'path'
 		];
 
@@ -182,8 +180,8 @@ final class TypeDefinition implements TypeDefinitionInterface
 		$this->downloadAccess = (int) $config['download_access'];
 		$this->field          = (string) $config['field'];
 		$this->type           = (string) $config['type'];
-		$this->filter         = (string) $config['filter'];
 		$this->path           = (string) $config['path'];
+		$this->filter         = $config['filter'] ?? null;
 		$this->formats        = isset($config['formats']) ? (array) $config['formats'] : [];
 		$this->crop           = isset($config['crop']) ? (array) $config['crop'] : [];
 	}
@@ -268,10 +266,10 @@ final class TypeDefinition implements TypeDefinitionInterface
 	/**
 	 * Get filter mode.
 	 *
-	 * @return string
+	 * @return string|null
 	 * @since  5.1.4
 	 */
-	public function filter(): string
+	public function filter(): ?string
 	{
 		return $this->filter;
 	}

@@ -15,7 +15,7 @@ class Manager  #Gold {
   # string $table
   + __construct(Item $item, Items $items, ...)
   + upload(string $guid, string $entity, ...) : void
-  + definition(string $guid) : ?Definition
+  + definition(string $guid) : ?FileDefinitionInterface
   + download(string $guid) : ?array
   + delete(string $guid) : void
   + table(string $table) : self
@@ -59,7 +59,7 @@ note right of Manager::definition
   Get the file definition
 
   since: 5.1.4
-  return: ?Definition
+  return: ?FileDefinitionInterface
 end note
 
 note left of Manager::download
@@ -144,7 +144,7 @@ note left of Manager::getRandomFileName
 Guarantees:
 - The same GUID will *never* produce the same value twice, even across executions.
 - Different GUIDs will never collide (practically impossible).
-- Safe alphanumeric output (A–Z, a–z, 0–9).
+- Safe alphanumeric output (A-Z, a-z, 0-9).
 - Lightweight, stateless, and reproducible randomness within one call.
 
   since: 5.1.1
