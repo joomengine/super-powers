@@ -7,9 +7,9 @@
 
 class Spreadsheet  #Gold {
   + register(Container $container) : void
-  + getHeader(Container $container) : Header
   + getExporter(Container $container) : Exporter
-  + getImporter(Container $container) : Importer
+  + getHeader(Container $container) : Header
+  + getReader(Container $container) : Reader
   + getFileReader(Container $container) : FileReader
 }
 
@@ -20,13 +20,6 @@ note right of Spreadsheet::register
   return: void
 end note
 
-note right of Spreadsheet::getHeader
-  Get The Header Class.
-
-  since: 5.0.3
-  return: Header
-end note
-
 note right of Spreadsheet::getExporter
   Get The Exporter Class.
 
@@ -34,11 +27,18 @@ note right of Spreadsheet::getExporter
   return: Exporter
 end note
 
-note right of Spreadsheet::getImporter
-  Get The Importer Class.
+note right of Spreadsheet::getHeader
+  Get The Header Class.
 
   since: 5.0.3
-  return: Importer
+  return: Header
+end note
+
+note right of Spreadsheet::getReader
+  Get The Reader Class.
+
+  since: 5.0.3
+  return: Reader
 end note
 
 note right of Spreadsheet::getFileReader

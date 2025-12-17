@@ -49,6 +49,54 @@
 	 * @since 5.0.2
 	 */
 	protected string $importTable = 'item_import';
+	
+	/**
+	 * The the status field
+	 *
+	 * @var   string
+	 * @since 5.1.4
+	 */
+	protected string $statusField = 'import_status';
+	
+	/**
+	 * The the status (processing)
+	 *
+	 * @var   int
+	 * @since 5.1.4
+	 */
+	protected string $statusProcessing = 2;
+
+	/**
+	 * The the status (error)
+	 *
+	 * @var   int
+	 * @since 5.1.4
+	 */
+	protected string $statusError = 4;
+
+	/**
+	 * The the message log table
+	 *
+	 * @var   string
+	 * @since 5.1.4
+	 */
+	protected string $messageLogTable = 'message_log';
+
+	/**
+	 * The the file table
+	 *
+	 * @var   string
+	 * @since 5.1.4
+	 */
+	protected string $fileTable = 'file';
+	
+	/**
+	 * The the data key
+	 *
+	 * @var   string
+	 * @since 5.1.4
+	 */
+	protected string $dataKey = 'import';
 
 	/**
 	 * THESE VALUES ABOVE SHOULD BE UPDATE FOR YOUR USE-CASE
@@ -177,7 +225,7 @@
 		$this->item = $item;
 
 		// load the status target table and field
-		$this->status->table($this->importTable)->field('import_status');
+		$this->status->table($this->importTable)->field($this->statusField);
 	}
 
 	/**
@@ -191,10 +239,10 @@
 	public function data(object $import): void
 	{
 		// move spreadsheet into 2=processing
-		$this->status->set(2, $import->guid);
+		$this->status->set($this->statusProcessing, $import->guid);
 
 		// load message
-		$this->message->load($import->guid, $this->importTable, 'message_log');
+		$this->message->load($import->guid, $this->importTable, $this->messageLogTable);
 
 		if (empty($import->file) || ($file = $this->getFile($import->file)) === null)
 		{
@@ -212,7 +260,7 @@
 		$this->mapper->set($import->maps, $this->parentTable);
 		unset($import->maps);
 
-		$this->data->set('import', (array) $import);
+		$this->data->set($this->dataKey, (array) $import);
 
 		$rowCounter = 0;
 		$successCounter = 0;
@@ -288,7 +336,7 @@
 	 */
 	private function prematureError(string $guid, string $message): void
 	{
-		$this->status->set(4, $guid);
+		$this->status->set($this->statusError, $guid);
 		$this->message->addError($message);
 	}
 
@@ -311,7 +359,6 @@
 			$this->joinTables->set($this->parentJoinKey, $parent_guid);
 
 			return $parent_guid;
-
 		}
 		catch (\Exception $e)
 		{
@@ -330,5 +377,5 @@
 	 */
 	private function getFile(string $file): ?object
 	{
-		return $this->item->table('file')->get($file);
+		return $this->item->table($this->fileTable)->get($file);
 	}

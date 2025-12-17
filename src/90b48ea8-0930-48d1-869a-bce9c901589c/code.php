@@ -9,11 +9,11 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Import;
+namespace VDM\Joomla\Import;
 
 
 use VDM\Joomla\Interfaces\TableInterface as Table;
-use VDM\Joomla\Componentbuilder\Interfaces\ImportMapperInterface;
+use VDM\Joomla\Interfaces\Import\MapperInterface;
 
 
 /**
@@ -21,7 +21,7 @@ use VDM\Joomla\Componentbuilder\Interfaces\ImportMapperInterface;
  * 
  * @since  4.0.3
  */
-final class Mapper implements ImportMapperInterface
+final class Mapper implements MapperInterface
 {
 	/**
 	 * The Table Class.
@@ -60,41 +60,46 @@ final class Mapper implements ImportMapperInterface
 	}
 
 	/**
-	 * Set the tables mapper
+	 * Build the table-to-field mapping for import processing.
+	 *
+	 * Parent table fields are stored directly, while foreign table fields
+	 * are grouped under their respective join table names.
 	 *
 	 * @param   object  $map          The import file map.
 	 * @param   string  $parentTable  The parent table name.
 	 *
 	 * @return  void
-	 * @since  4.0.3
+	 * @since   4.0.3
 	 */
 	public function set(object $map, string $parentTable): void
 	{
-		// always reset these
+		// Always reset state
 		$this->parent = [];
-		$this->join = [];
+		$this->join   = [];
 
 		foreach ($map as $row)
 		{
-			$target = $row->target ?? null;
-
-			if (empty($target))
+			if (empty($row->target) || empty($row->column))
 			{
 				continue;
 			}
 
-			if (($tm = $this->getTableField($target)) !== null)
+			$mapping = $this->getTableField($row->target);
+
+			if ($mapping === null)
 			{
-				$field = $this->table->get($tm->table, $tm->field);
-				if ($tm->table === $parentTable)
-				{
-					$this->parent[$row->column] = $field;
-				}
-				else
-				{
-					$this->join[$tm->table][$row->column] = $field;
-				}
+				continue;
 			}
+
+			$field = $this->table->get($mapping->table, $mapping->field);
+
+			if ($mapping->table === $parentTable)
+			{
+				$this->parent[$row->column] = $field;
+				continue;
+			}
+
+			$this->join[$mapping->table][$row->column] = $field;
 		}
 	}
 
@@ -121,34 +126,42 @@ final class Mapper implements ImportMapperInterface
 	}
 
 	/**
-	 * Get the table and field name
+	 * Get the table and field name from an import key.
+	 *
+	 * Expected format:
+	 *   table.field
+	 *   table.field.subfield.another
+	 *
+	 * Only the first dot separates table and field.
 	 *
 	 * @param   string  $key  The import file key.
 	 *
-	 * @return  object|null
-	 * @since  4.0.3
+	 * @return  object|null  Object with table and field properties, or null if invalid.
+	 * @since   4.0.3
 	 */
 	private function getTableField(string $key): ?object
 	{
-		// Find the position of the first dot
-		$dotPosition = strpos($key, '.');
+		// Split only on the first dot
+		$parts = explode('.', $key, 2);
 
-		// If no dot is found, return the whole string
-		if ($dotPosition === false)
+		// Must contain a table and a field
+		if (count($parts) !== 2 || $parts[0] === '' || $parts[1] === '')
 		{
 			return null;
 		}
 
-		// Extract the table (before the dot) and the field (after the dot)
-		$table = substr($key, 0, $dotPosition);
-		$field = substr($key, $dotPosition + 1);
+		[$table, $field] = $parts;
 
-		if ($this->table->exist($table ?? '_error', $field))
+		// Validate table/field existence
+		if (!$this->table->exist($table, $field))
 		{
-			return (object) ['table' => $table, 'field' => $field];
+			return null;
 		}
 
-		return null;
+		return (object) [
+			'table' => $table,
+			'field' => $field,
+		];
 	}
 }
 

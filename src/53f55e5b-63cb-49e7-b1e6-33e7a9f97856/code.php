@@ -9,15 +9,15 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Interfaces;
+namespace VDM\Joomla\Interfaces\Import;
 
 
 /**
- * Import Item Interface
+ * Import Row => Item Interface
  * 
  * @since  3.0.3
  */
-interface ImportItemInterface
+interface ItemInterface
 {
 	/**
 	 * Get the item from the import row values and ensure it is valid

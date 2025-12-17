@@ -1,0 +1,11 @@
+	/**
+	 * Set the parent data
+	 *
+	 * @param   string  $linkKey      The parent linker key field.
+	 * @param   string  $parentKey    The parent key field.
+	 * @param   string  $parentTable  The parent table.
+	 *
+	 * @return  string  The parent guid
+	 * @since  5.0.2
+	 */
+	public function set(string $linkKey, string $parentKey, string $parentTable): ?string;

@@ -1,0 +1,19 @@
+{
+    "add_head": 0,
+    "add_licensing_template": 2,
+    "extends": "",
+    "guid": "8aad54f1-d86e-48e5-97c4-8a3d6142e4de",
+    "implements": null,
+    "load_selection": null,
+    "name": "JoinTablesInterface",
+    "power_version": "1.0.0",
+    "system_name": "VDM.Interfaces.Import.JoinTablesInterface",
+    "type": "interface",
+    "use_selection": null,
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Interfaces.Import.JoinTablesInterface",
+    "description": "Join Tables Interface\r\n\r\n@since  5.1.4",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}

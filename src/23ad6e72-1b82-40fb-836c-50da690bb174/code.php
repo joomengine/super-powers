@@ -9,15 +9,15 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Interfaces;
+namespace VDM\Joomla\Interfaces\Import;
 
 
 /**
- * Import Message Interface
+ * Import Database Message Interface
  * 
  * @since  3.0.2
  */
-interface ImportMessageInterface
+interface DatabaseMessageInterface
 {
 	/**
 	 * Load an entity that these message belong to

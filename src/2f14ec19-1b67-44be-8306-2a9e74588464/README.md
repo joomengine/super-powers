@@ -1,17 +1,23 @@
 ### JCB! Power
-# final class Import (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Item**
+# class Import (Details)
+> namespace: **VDM\Joomla\Componentbuilder\Item\Cli**
 
 ```uml
 @startuml
 
-class Import << (F,LightGreen) >> #RoyalBlue {
+class Import  #Gold {
   # int $startingRow
   # string $parentTable
   # string $parentKey
   # string $parentJoinKey
   # string $linkField
   # string $importTable
+  # string $statusField
+  # string $statusProcessing
+  # string $statusError
+  # string $messageLogTable
+  # string $fileTable
+  # string $dataKey
   # Status $status
   # Message $message
   # Mapper $mapper

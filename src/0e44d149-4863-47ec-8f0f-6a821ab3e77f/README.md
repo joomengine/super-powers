@@ -1,11 +1,11 @@
 ### JCB! Power
-# interface ImportStatusInterface (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Interfaces**
+# interface StatusInterface (Details)
+> namespace: **VDM\Joomla\Interfaces\Import**
 
 ```uml
 @startuml
 
-interface ImportStatusInterface  #Lavender {
+interface StatusInterface  #Lavender {
   + set(int $status, string $guid) : void
   + table(string $table) : self
   + field(string $fieldName) : self
@@ -13,7 +13,7 @@ interface ImportStatusInterface  #Lavender {
   + getField() : string
 }
 
-note right of ImportStatusInterface::set
+note right of StatusInterface::set
   Updates the status in the database.
 This method updates the import status in the database based on the result of the import process.
 Status codes:
@@ -25,28 +25,28 @@ Status codes:
   return: void
 end note
 
-note right of ImportStatusInterface::table
+note right of StatusInterface::table
   Set the current active table
 
   since: 3.2.2
   return: self
 end note
 
-note right of ImportStatusInterface::field
+note right of StatusInterface::field
   Set the current target status field name
 
   since: 3.2.2
   return: self
 end note
 
-note right of ImportStatusInterface::getTable
+note right of StatusInterface::getTable
   Get the current active table
 
   since: 3.2.2
   return: string
 end note
 
-note right of ImportStatusInterface::getField
+note right of StatusInterface::getField
   Get the current target status field name
 
   since: 3.2.2

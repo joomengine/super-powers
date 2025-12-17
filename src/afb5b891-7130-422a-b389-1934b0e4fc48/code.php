@@ -12,7 +12,7 @@
 namespace VDM\Joomla\Componentbuilder\Import;
 
 
-use VDM\Joomla\Componentbuilder\Interfaces\ImportRowInterface;
+use VDM\Joomla\Interfaces\Import\RowInterface;
 
 
 /**
@@ -20,7 +20,7 @@ use VDM\Joomla\Componentbuilder\Interfaces\ImportRowInterface;
  * 
  * @since  4.0.3
  */
-final class Row implements ImportRowInterface
+final class Row implements RowInterface
 {
 	/**
 	 * The row array of values.

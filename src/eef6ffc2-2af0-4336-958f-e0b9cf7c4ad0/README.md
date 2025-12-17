@@ -1,6 +1,6 @@
 ### JCB! Power
 # final class Message (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Import**
+> namespace: **VDM\Joomla\Componentbuilder\Import\Database**
 
 ```uml
 @startuml

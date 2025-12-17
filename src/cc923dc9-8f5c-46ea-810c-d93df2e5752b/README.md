@@ -1,6 +1,6 @@
 ### JCB! Power
 # final class ParentTable (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Item\Import**
+> namespace: **VDM\Joomla\Import\Guid**
 
 ```uml
 @startuml

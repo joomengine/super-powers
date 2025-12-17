@@ -1,6 +1,6 @@
 ### JCB! Power
 # final class ChunkReadFilter (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Spreadsheet**
+> namespace: **VDM\Joomla\Import\Spreadsheet**
 
 ```uml
 @startuml

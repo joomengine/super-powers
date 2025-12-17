@@ -8,30 +8,30 @@
  * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
-namespace VDM\Joomla\Componentbuilder\Item;
+namespace VDM\Joomla\Componentbuilder\Item\Cli;
 
 
 use Joomla\CMS\Language\Text;
-use VDM\Joomla\Componentbuilder\Interfaces\ImportStatusInterface as Status;
-use VDM\Joomla\Componentbuilder\Interfaces\ImportMessageInterface as Message;
-use VDM\Joomla\Componentbuilder\Interfaces\ImportMapperInterface as Mapper;
-use VDM\Joomla\Componentbuilder\Import\Data;
-use VDM\Joomla\Componentbuilder\Spreadsheet\Importer;
-use VDM\Joomla\Componentbuilder\Spreadsheet\RowDataArray as RowData;
-use VDM\Joomla\Componentbuilder\Interfaces\ImportRowInterface as Row;
-use VDM\Joomla\Componentbuilder\Item\Import\ParentTable;
-use VDM\Joomla\Componentbuilder\Item\Import\JoinTables;
-use VDM\Joomla\Componentbuilder\Interfaces\ImportAssessorInterface as Assessor;
+use VDM\Joomla\Interfaces\Import\StatusInterface as Status;
+use VDM\Joomla\Interfaces\Import\DatabaseMessageInterface as Message;
+use VDM\Joomla\Interfaces\Import\MapperInterface as Mapper;
+use VDM\Joomla\Interfaces\Registryinterface as Data;
+use VDM\Joomla\Interfaces\Import\SpreadsheetReaderInterface as Importer;
+use VDM\Joomla\Interfaces\Spreadsheet\RowDataInterface as RowData;
+use VDM\Joomla\Interfaces\Import\RowInterface as Row;
+use VDM\Joomla\Interfaces\Import\ParentTableInterface as ParentTable;
+use VDM\Joomla\Interfaces\Import\JoinTablesInterface as JoinTables;
+use VDM\Joomla\Interfaces\Import\AssessorInterface as Assessor;
 use VDM\Joomla\Interfaces\Data\ItemInterface as Item;
-use VDM\Joomla\Componentbuilder\Interfaces\Spreadsheet\ImportCliInterface;
+use VDM\Joomla\Interfaces\Import\CliInterface;
 
 
 /**
- * Item Import Class
+ * Item CLI Import Class
  * 
  * @since  5.0.2
  */
-final class Import implements ImportCliInterface
+class Import implements CliInterface
 {
 	/**************************************************************************
 	 * THESE VALUES BELOW SHOULD BE UPDATE FOR YOUR USE-CASE
@@ -84,6 +84,54 @@ final class Import implements ImportCliInterface
 	 * @since 5.0.2
 	 */
 	protected string $importTable = 'item_import';
+	
+	/**
+	 * The the status field
+	 *
+	 * @var   string
+	 * @since 5.1.4
+	 */
+	protected string $statusField = 'import_status';
+	
+	/**
+	 * The the status (processing)
+	 *
+	 * @var   int
+	 * @since 5.1.4
+	 */
+	protected string $statusProcessing = 2;
+
+	/**
+	 * The the status (error)
+	 *
+	 * @var   int
+	 * @since 5.1.4
+	 */
+	protected string $statusError = 4;
+
+	/**
+	 * The the message log table
+	 *
+	 * @var   string
+	 * @since 5.1.4
+	 */
+	protected string $messageLogTable = 'message_log';
+
+	/**
+	 * The the file table
+	 *
+	 * @var   string
+	 * @since 5.1.4
+	 */
+	protected string $fileTable = 'file';
+	
+	/**
+	 * The the data key
+	 *
+	 * @var   string
+	 * @since 5.1.4
+	 */
+	protected string $dataKey = 'import';
 
 	/**
 	 * THESE VALUES ABOVE SHOULD BE UPDATE FOR YOUR USE-CASE
@@ -212,7 +260,7 @@ final class Import implements ImportCliInterface
 		$this->item = $item;
 
 		// load the status target table and field
-		$this->status->table($this->importTable)->field('import_status');
+		$this->status->table($this->importTable)->field($this->statusField);
 	}
 
 	/**
@@ -226,10 +274,10 @@ final class Import implements ImportCliInterface
 	public function data(object $import): void
 	{
 		// move spreadsheet into 2=processing
-		$this->status->set(2, $import->guid);
+		$this->status->set($this->statusProcessing, $import->guid);
 
 		// load message
-		$this->message->load($import->guid, $this->importTable, 'message_log');
+		$this->message->load($import->guid, $this->importTable, $this->messageLogTable);
 
 		if (empty($import->file) || ($file = $this->getFile($import->file)) === null)
 		{
@@ -247,7 +295,7 @@ final class Import implements ImportCliInterface
 		$this->mapper->set($import->maps, $this->parentTable);
 		unset($import->maps);
 
-		$this->data->set('import', (array) $import);
+		$this->data->set($this->dataKey, (array) $import);
 
 		$rowCounter = 0;
 		$successCounter = 0;
@@ -323,7 +371,7 @@ final class Import implements ImportCliInterface
 	 */
 	private function prematureError(string $guid, string $message): void
 	{
-		$this->status->set(4, $guid);
+		$this->status->set($this->statusError, $guid);
 		$this->message->addError($message);
 	}
 
@@ -346,7 +394,6 @@ final class Import implements ImportCliInterface
 			$this->joinTables->set($this->parentJoinKey, $parent_guid);
 
 			return $parent_guid;
-
 		}
 		catch (\Exception $e)
 		{
@@ -365,7 +412,7 @@ final class Import implements ImportCliInterface
 	 */
 	private function getFile(string $file): ?object
 	{
-		return $this->item->table('file')->get($file);
+		return $this->item->table($this->fileTable)->get($file);
 	}
 }
 

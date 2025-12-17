@@ -1,23 +1,23 @@
 ### JCB! Power
-# interface ImportCliInterface (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Interfaces\Spreadsheet**
+# interface CliInterface (Details)
+> namespace: **VDM\Joomla\Interfaces\Import**
 
 ```uml
 @startuml
 
-interface ImportCliInterface  #Lavender {
+interface CliInterface  #Lavender {
   + data(object $import) : void
   + message() : object
 }
 
-note right of ImportCliInterface::data
+note right of CliInterface::data
   The trigger function called from the CLI to start the import on a spreadsheet
 
   since: 5.0.2
   return: void
 end note
 
-note right of ImportCliInterface::message
+note right of CliInterface::message
   The message of the last import event
 
   since: 5.0.2

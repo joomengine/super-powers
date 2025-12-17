@@ -1,6 +1,6 @@
 ### JCB! Power
 # final class Mapper (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Import**
+> namespace: **VDM\Joomla\Import**
 
 ```uml
 @startuml
@@ -23,7 +23,9 @@ note right of Mapper::__construct
 end note
 
 note right of Mapper::set
-  Set the tables mapper
+  Build the table-to-field mapping for import processing.
+Parent table fields are stored directly, while foreign table fields
+are grouped under their respective join table names.
 
   since: 4.0.3
   return: void
@@ -44,7 +46,11 @@ note right of Mapper::getJoin
 end note
 
 note right of Mapper::getTableField
-  Get the table and field name
+  Get the table and field name from an import key.
+Expected format:
+table.field
+table.field.subfield.another
+Only the first dot separates table and field.
 
   since: 4.0.3
   return: ?object

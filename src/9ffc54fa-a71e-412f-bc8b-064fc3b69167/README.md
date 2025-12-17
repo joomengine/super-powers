@@ -1,15 +1,15 @@
 ### JCB! Power
-# interface RowDataProcessorInterface (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Interfaces\Spreadsheet**
+# interface RowDataInterface (Details)
+> namespace: **VDM\Joomla\Interfaces\Spreadsheet**
 
 ```uml
 @startuml
 
-interface RowDataProcessorInterface  #Lavender {
+interface RowDataInterface  #Lavender {
   + process(Row $row) : mixed
 }
 
-note right of RowDataProcessorInterface::process
+note right of RowDataInterface::process
   Processes the given spreadsheet row and returns it in a specific format.
 
   return: mixed

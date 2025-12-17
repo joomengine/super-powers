@@ -18,7 +18,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use VDM\Joomla\Componentbuilder\Import\Factory as ImportFactory;
-use VDM\Joomla\Componentbuilder\Interfaces\Spreadsheet\ImportCliInterface as ImportEngine;
+use VDM\Joomla\Interfaces\Import\CliInterface as ImportEngine;
 use VDM\Joomla\Data\Items;
 use VDM\Joomla\Utilities\Component\Helper;
 

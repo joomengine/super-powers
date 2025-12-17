@@ -14,9 +14,9 @@ namespace VDM\Joomla\Componentbuilder\Import;
 
 use VDM\Joomla\Interfaces\TableValidatorInterface as Validator;
 use VDM\Joomla\Interfaces\Data\ItemInterface as DataItem;
-use VDM\Joomla\Componentbuilder\Interfaces\ImportRowInterface as Row;
+use VDM\Joomla\Interfaces\Import\RowInterface as Row;
 use VDM\Joomla\Utilities\GuidHelper;
-use VDM\Joomla\Componentbuilder\Interfaces\ImportItemInterface;
+use VDM\Joomla\Interfaces\Import\ItemInterface;
 
 
 /**
@@ -24,7 +24,7 @@ use VDM\Joomla\Componentbuilder\Interfaces\ImportItemInterface;
  * 
  * @since  4.0.3
  */
-final class Item implements ImportItemInterface
+final class Item implements ItemInterface
 {
 	/**
 	 * The Table Validator Class.

@@ -1,6 +1,6 @@
 ### JCB! Power
 # final class Header (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Spreadsheet**
+> namespace: **VDM\Joomla\Spreadsheet**
 
 ```uml
 @startuml

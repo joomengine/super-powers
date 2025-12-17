@@ -13,7 +13,7 @@ namespace VDM\Joomla\Componentbuilder\Import;
 
 
 use VDM\Joomla\Interfaces\Data\ItemInterface as Item;
-use VDM\Joomla\Componentbuilder\Interfaces\ImportStatusInterface;
+use VDM\Joomla\Interfaces\Import\StatusInterface;
 
 
 /**
@@ -21,7 +21,7 @@ use VDM\Joomla\Componentbuilder\Interfaces\ImportStatusInterface;
  * 
  * @since  5.0.2
  */
-final class Status implements ImportStatusInterface
+final class Status implements StatusInterface
 {
 	/**
 	 * The Item Class.

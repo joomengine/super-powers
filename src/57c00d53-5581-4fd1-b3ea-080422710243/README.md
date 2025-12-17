@@ -1,15 +1,15 @@
 ### JCB! Power
-# interface ImportAssessorInterface (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Interfaces**
+# interface AssessorInterface (Details)
+> namespace: **VDM\Joomla\Interfaces\Import**
 
 ```uml
 @startuml
 
-interface ImportAssessorInterface  #Lavender {
+interface AssessorInterface  #Lavender {
   + evaluate(int $rowCounter, int $successCounter, ...) : void
 }
 
-note right of ImportAssessorInterface::evaluate
+note right of AssessorInterface::evaluate
   Evaluates the import process and sets the success/error message based on the success rate.
 
   since: 4.0.3

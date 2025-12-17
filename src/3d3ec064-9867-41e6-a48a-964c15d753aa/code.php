@@ -9,7 +9,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Interfaces;
+namespace VDM\Joomla\Interfaces\Import;
 
 
 /**
@@ -17,7 +17,7 @@ namespace VDM\Joomla\Componentbuilder\Interfaces;
  * 
  * @since  3.0.3
  */
-interface ImportRowInterface
+interface RowInterface
 {
 	/**
 	 * Set the row details

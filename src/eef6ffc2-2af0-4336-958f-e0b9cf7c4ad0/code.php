@@ -9,21 +9,21 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Import;
+namespace VDM\Joomla\Componentbuilder\Import\Database;
 
 
 use VDM\Joomla\Interfaces\Data\UpdateInterface as Update;
 use VDM\Joomla\Interfaces\Data\InsertInterface as Insert;
 use VDM\Joomla\Utilities\GuidHelper;
-use VDM\Joomla\Componentbuilder\Interfaces\ImportMessageInterface;
+use VDM\Joomla\Interfaces\Import\DatabaseMessageInterface;
 
 
 /**
- * Import Messages Class
+ * Import Database Messages Class
  * 
  * @since  5.0.2
  */
-final class Message implements ImportMessageInterface
+final class Message implements DatabaseMessageInterface
 {
 	/**
 	 * The Update Class.

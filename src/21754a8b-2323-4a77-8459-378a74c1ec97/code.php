@@ -14,11 +14,11 @@ namespace VDM\Joomla\Componentbuilder\Import\Service;
 
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
-use VDM\Joomla\Componentbuilder\Import\Data;
-use VDM\Joomla\Componentbuilder\Import\Mapper;
+use VDM\Joomla\Import\Data;
+use VDM\Joomla\Import\Mapper;
 use VDM\Joomla\Componentbuilder\Import\Row;
 use VDM\Joomla\Componentbuilder\Import\Item;
-use VDM\Joomla\Componentbuilder\Import\Message;
+use VDM\Joomla\Componentbuilder\Import\Database\Message;
 use VDM\Joomla\Componentbuilder\Import\Status;
 use VDM\Joomla\Componentbuilder\Import\Assessor;
 

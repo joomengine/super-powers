@@ -13,9 +13,9 @@ namespace VDM\Joomla\Componentbuilder\Service\Item;
 
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
-use VDM\Joomla\Componentbuilder\Item\Import as ItemImport;
-use VDM\Joomla\Componentbuilder\Item\Import\ParentTable;
-use VDM\Joomla\Componentbuilder\Item\Import\JoinTables;
+use VDM\Joomla\Componentbuilder\Item\Cli\Import as ItemImport;
+use VDM\Joomla\Import\Guid\ParentTable;
+use VDM\Joomla\Import\Guid\JoinTables;
 use VDM\Joomla\Componentbuilder\Spreadsheet\RowDataArray;
 
 

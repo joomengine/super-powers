@@ -8,23 +8,24 @@
  * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
-namespace VDM\Joomla\Componentbuilder\Item\Import;
+namespace VDM\Joomla\Import\Guid;
 
 
-use VDM\Joomla\Componentbuilder\Interfaces\ImportMapperInterface as Mapper;
-use VDM\Joomla\Componentbuilder\Interfaces\ImportItemInterface as ImportItem;
-use VDM\Joomla\Componentbuilder\Import\Data;
-use VDM\Joomla\Data\Item;
-use VDM\Joomla\Database\Load;
+use VDM\Joomla\Interfaces\Import\MapperInterface as Mapper;
+use VDM\Joomla\Interfaces\Import\ItemInterface as ImportItem;
+use VDM\Joomla\Interfaces\Registryinterface as Data;
+use VDM\Joomla\Interfaces\Data\ItemInterface as Item;
+use VDM\Joomla\Interfaces\Database\LoadInterface as Load;
 use VDM\Joomla\Utilities\GuidHelper;
+use VDM\Joomla\Interfaces\Import\JoinTablesInterface;
 
 
 /**
- * Item Import Join Tables Class
+ * Import Item(Guid) Join Tables Class
  * 
  * @since  5.0.2
  */
-final class JoinTables
+final class JoinTables implements JoinTablesInterface
 {
 	/**************************************************************************
 	 * THESE VALUES BELOW SHOULD BE UPDATE FOR YOUR USE-CASE

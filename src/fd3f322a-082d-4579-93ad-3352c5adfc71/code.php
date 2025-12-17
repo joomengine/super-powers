@@ -9,11 +9,11 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Spreadsheet;
+namespace VDM\Joomla\Spreadsheet;
 
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
-use VDM\Joomla\Componentbuilder\Spreadsheet\ChunkReadFilter;
+use VDM\Joomla\Import\Spreadsheet\ChunkReadFilter;
 
 
 /**

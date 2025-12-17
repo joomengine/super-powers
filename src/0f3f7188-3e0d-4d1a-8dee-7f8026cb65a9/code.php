@@ -9,15 +9,15 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Interfaces\Spreadsheet;
+namespace VDM\Joomla\Interfaces\Import;
 
 
 /**
- * Spreadsheet Import Cli Interface
+ * Import Cli Interface
  * 
  * @since 3.2.2
  */
-interface ImportCliInterface
+interface CliInterface
 {
 	/**
 	 * The trigger function called from the CLI to start the import on a spreadsheet

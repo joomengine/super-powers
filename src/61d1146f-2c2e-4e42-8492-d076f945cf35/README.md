@@ -1,6 +1,6 @@
 ### JCB! Power
 # interface FileReaderInterface (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Interfaces\Spreadsheet**
+> namespace: **VDM\Joomla\Interfaces\Import**
 
 ```uml
 @startuml
@@ -19,6 +19,7 @@ note right of FileReaderInterface::read
     string $filePath
     int $startRow
     int $chunkSize
+    int $activeSheet
 end note
 
 @enduml

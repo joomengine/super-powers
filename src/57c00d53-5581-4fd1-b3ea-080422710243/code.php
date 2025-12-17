@@ -9,7 +9,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Interfaces;
+namespace VDM\Joomla\Interfaces\Import;
 
 
 /**
@@ -17,7 +17,7 @@ namespace VDM\Joomla\Componentbuilder\Interfaces;
  * 
  * @since  3.0.3
  */
-interface ImportAssessorInterface
+interface AssessorInterface
 {
 	/**
 	 * Evaluates the import process and sets the success/error message based on the success rate.

@@ -1,6 +1,6 @@
 ### JCB! Power
 # class Data (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Import**
+> namespace: **VDM\Joomla\Import**
 > extends: **Registry**
 
 ```uml

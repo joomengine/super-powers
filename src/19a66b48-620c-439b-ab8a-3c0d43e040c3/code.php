@@ -13,10 +13,10 @@ namespace VDM\Joomla\Componentbuilder\Import;
 
 
 use Joomla\CMS\Language\Text;
-use VDM\Joomla\Componentbuilder\Import\Data;
-use VDM\Joomla\Componentbuilder\Interfaces\ImportStatusInterface as Status;
-use VDM\Joomla\Componentbuilder\Interfaces\ImportMessageInterface as Message;
-use VDM\Joomla\Componentbuilder\Interfaces\ImportAssessorInterface;
+use VDM\Joomla\Import\Data;
+use VDM\Joomla\Interfaces\Import\StatusInterface as Status;
+use VDM\Joomla\Interfaces\Import\DatabaseMessageInterface as Message;
+use VDM\Joomla\Interfaces\Import\AssessorInterface;
 
 
 /**
@@ -24,7 +24,7 @@ use VDM\Joomla\Componentbuilder\Interfaces\ImportAssessorInterface;
  * 
  * @since  4.0.3
  */
-final class Assessor implements ImportAssessorInterface
+final class Assessor implements AssessorInterface
 {
 	/**
 	 * The Data Class.

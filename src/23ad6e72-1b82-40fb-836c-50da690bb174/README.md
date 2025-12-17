@@ -1,11 +1,11 @@
 ### JCB! Power
-# interface ImportMessageInterface (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Interfaces**
+# interface DatabaseMessageInterface (Details)
+> namespace: **VDM\Joomla\Interfaces\Import**
 
 ```uml
 @startuml
 
-interface ImportMessageInterface  #Lavender {
+interface DatabaseMessageInterface  #Lavender {
   + load(string $guid, string $entity, ...) : self
   + get() : object
   + reset() : void
@@ -16,7 +16,7 @@ interface ImportMessageInterface  #Lavender {
   + addError(string $message) : self
 }
 
-note right of ImportMessageInterface::load
+note right of DatabaseMessageInterface::load
   Load an entity that these message belong to
 
   since: 3.0.2
@@ -28,35 +28,35 @@ note right of ImportMessageInterface::load
     string $table
 end note
 
-note left of ImportMessageInterface::get
+note left of DatabaseMessageInterface::get
   Get the messages of the last import event
 
   since: 3.0.2
   return: object
 end note
 
-note right of ImportMessageInterface::reset
+note right of DatabaseMessageInterface::reset
   Reset the messages of the last import event
 
   since: 3.0.2
   return: void
 end note
 
-note left of ImportMessageInterface::archive
+note left of DatabaseMessageInterface::archive
   Archive the messages in the DB of the last import event
 
   since: 3.0.2
   return: self
 end note
 
-note right of ImportMessageInterface::set
+note right of DatabaseMessageInterface::set
   Set the messages in the DB of the last import event
 
   since: 3.0.2
   return: self
 end note
 
-note left of ImportMessageInterface::addSuccess
+note left of DatabaseMessageInterface::addSuccess
   Adds a success message to the log.
 This method records a success message for the import process. The message provides
 relevant information, such as the number of rows processed and the success rate.
@@ -65,7 +65,7 @@ relevant information, such as the number of rows processed and the success rate.
   return: self
 end note
 
-note right of ImportMessageInterface::addInfo
+note right of DatabaseMessageInterface::addInfo
   Adds a info message to the log.
 This method records a info message for the import process. The message provides
 relevant information, such as the number of rows processed and the info rate.
@@ -74,7 +74,7 @@ relevant information, such as the number of rows processed and the info rate.
   return: self
 end note
 
-note left of ImportMessageInterface::addError
+note left of DatabaseMessageInterface::addError
   Adds an error message to the log.
 This method records an error message when the import process encounters issues.
 The message includes details about the failures, such as the number of failed rows

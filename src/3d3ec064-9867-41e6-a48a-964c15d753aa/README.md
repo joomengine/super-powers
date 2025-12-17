@@ -1,11 +1,11 @@
 ### JCB! Power
-# interface ImportRowInterface (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Interfaces**
+# interface RowInterface (Details)
+> namespace: **VDM\Joomla\Interfaces\Import**
 
 ```uml
 @startuml
 
-interface ImportRowInterface  #Lavender {
+interface RowInterface  #Lavender {
   + set(int $index, array $values) : void
   + clear() : self
   + getIndex() : int
@@ -13,35 +13,35 @@ interface ImportRowInterface  #Lavender {
   + unsetValue(string $key) : void
 }
 
-note right of ImportRowInterface::set
+note right of RowInterface::set
   Set the row details
 
   since: 3.0.3
   return: void
 end note
 
-note right of ImportRowInterface::clear
+note right of RowInterface::clear
   Clear the row details
 
   since: 3.0.3
   return: self
 end note
 
-note right of ImportRowInterface::getIndex
+note right of RowInterface::getIndex
   Get Index
 
   since: 3.0.3
   return: int
 end note
 
-note right of ImportRowInterface::getValue
+note right of RowInterface::getValue
   Get Value
 
   since: 3.0.3
   return: mixed
 end note
 
-note right of ImportRowInterface::unsetValue
+note right of RowInterface::unsetValue
   Unset Value
 
   since: 3.0.3

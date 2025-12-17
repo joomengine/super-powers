@@ -1,31 +1,31 @@
 ### JCB! Power
-# interface ImportMapperInterface (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Interfaces**
+# interface MapperInterface (Details)
+> namespace: **VDM\Joomla\Interfaces\Import**
 
 ```uml
 @startuml
 
-interface ImportMapperInterface  #Lavender {
+interface MapperInterface  #Lavender {
   + set(object $map, string $parentTable) : void
   + getParent() : array
   + getJoin() : array
 }
 
-note right of ImportMapperInterface::set
+note right of MapperInterface::set
   Set the tables mapper
 
   since: 4.0.3
   return: void
 end note
 
-note right of ImportMapperInterface::getParent
+note right of MapperInterface::getParent
   Get the parent table keys
 
   since: 4.0.3
   return: array
 end note
 
-note right of ImportMapperInterface::getJoin
+note right of MapperInterface::getJoin
   Get the join tables keys
 
   since: 4.0.3

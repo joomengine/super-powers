@@ -1,33 +1,34 @@
 ### JCB! Power
-# final class Importer (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Spreadsheet**
+# final class Reader (Details)
+> namespace: **VDM\Joomla\Import\Spreadsheet**
 
 ```uml
 @startuml
 
-class Importer << (F,LightGreen) >> #RoyalBlue {
+class Reader << (F,LightGreen) >> #RoyalBlue {
   # FileReader $filereader
   + __construct(FileReader $filereader)
-  + read(string $filePath, int $startRow, ...) : \Generator
+  + read(string $filePath, int $startRow, ...) : \Generatorr
 }
 
-note right of Importer::__construct
+note right of Reader::__construct
   Constructor.
 
   since: 3.0.8
 end note
 
-note right of Importer::read
+note right of Reader::read
   Stream rows from a CSV or Excel file one by one using yield.
 
   since: 3.2.0
-  return: \Generator
+  return: \Generatorr
   
   arguments:
     string $filePath
     int $startRow
     int $chunkSize
-    RowDataProcessor $processor
+    RowData $processor
+    int $activeSheet
 end note
 
 @enduml

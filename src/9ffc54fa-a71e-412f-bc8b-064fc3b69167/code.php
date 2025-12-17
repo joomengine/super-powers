@@ -9,7 +9,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Interfaces\Spreadsheet;
+namespace VDM\Joomla\Interfaces\Spreadsheet;
 
 
 use PhpOffice\PhpSpreadsheet\Worksheet\Row;
@@ -20,7 +20,7 @@ use PhpOffice\PhpSpreadsheet\Worksheet\Row;
  * 
  * @since 3.2.2
  */
-interface RowDataProcessorInterface
+interface RowDataInterface
 {
 	/**
 	 * Processes the given spreadsheet row and returns it in a specific format.
