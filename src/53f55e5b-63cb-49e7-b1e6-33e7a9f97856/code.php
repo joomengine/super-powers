@@ -17,7 +17,7 @@ namespace VDM\Joomla\Interfaces\Import;
  * 
  * @since  3.0.3
  */
-interface ItemInterface
+interface RowItemInterface
 {
 	/**
 	 * Get the item from the import row values and ensure it is valid

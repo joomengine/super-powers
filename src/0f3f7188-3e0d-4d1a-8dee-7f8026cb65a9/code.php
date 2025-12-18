@@ -13,28 +13,35 @@ namespace VDM\Joomla\Interfaces\Import;
 
 
 /**
- * Import Cli Interface
+ * Item import process contract.
  * 
- * @since 3.2.2
+ * Represents an executable import unit for a single item.
+ * Implementations control how the import is executed and how
+ * its outcome is managed (e.g. transient or persistent).
+ * 
+ * @since 5.1.4
  */
-interface CliInterface
+interface ItemProcessInterface
 {
 	/**
-	 * The trigger function called from the CLI to start the import on a spreadsheet
+	 * Execute the import process.
 	 *
-	 * @param  object  $import  The spreadsheet data to import.
+	 * Executes the import using the given payload and returns
+	 * the current process instance for fluent interaction.
 	 *
-	 * @return  void
-	 * @since  5.0.2
+	 * @param  object  $payload  The import payload.
+	 *
+	 * @return  self
+	 * @since   5.1.4
 	 */
-	public function data(object $import): void;
+	public function execute(object $payload): self;
 
 	/**
-	 * The message of the last import event
+	 * Get the result of the last import execution.
 	 *
 	 * @return  object
-	 * @since  5.0.2
+	 * @since   5.1.4
 	 */
-	public function message(): object;
+	public function result(): object;
 }
 

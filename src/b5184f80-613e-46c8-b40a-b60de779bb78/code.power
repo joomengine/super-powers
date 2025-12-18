@@ -36,7 +36,7 @@
 			$container->get('Import.Message'),
 			$container->get('Import.Mapper'),
 			$container->get('Import.Data'),
-			$container->get('Spreadsheet.Importer'),
+			$container->get('Spreadsheet.Reader'),
 			$container->get('Item.RowDataArray'),
 			$container->get('Import.Row'),
 			$container->get('Import.ParentTable'),

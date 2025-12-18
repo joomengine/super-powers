@@ -8,7 +8,7 @@
 class Reader << (F,LightGreen) >> #RoyalBlue {
   # FileReader $filereader
   + __construct(FileReader $filereader)
-  + read(string $filePath, int $startRow, ...) : \Generatorr
+  + read(string $filePath, int $startRow, ...) : \Generator
 }
 
 note right of Reader::__construct
@@ -21,7 +21,7 @@ note right of Reader::read
   Stream rows from a CSV or Excel file one by one using yield.
 
   since: 3.2.0
-  return: \Generatorr
+  return: \Generator
   
   arguments:
     string $filePath

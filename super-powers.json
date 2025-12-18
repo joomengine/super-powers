@@ -121,7 +121,7 @@
         "guid": "0e44d149-4863-47ec-8f0f-6a821ab3e77f"
     },
     "0f3f7188-3e0d-4d1a-8dee-7f8026cb65a9": {
-        "name": "CliInterface",
+        "name": "ItemProcessInterface",
         "type": "interface",
         "namespace": "VDM\\Joomla\\Interfaces\\Import",
         "code": "src\/0f3f7188-3e0d-4d1a-8dee-7f8026cb65a9\/code.php",
@@ -351,6 +351,17 @@
         "spk": "Super---250a7272_9ae1_4c63_a058_26bad9ad6f70---Power",
         "guid": "250a7272-9ae1-4c63-a058-26bad9ad6f70"
     },
+    "25a4968a-94a1-415f-9353-3fc131773a82": {
+        "name": "Message",
+        "type": "class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Import",
+        "code": "src\/25a4968a-94a1-415f-9353-3fc131773a82\/code.php",
+        "power": "src\/25a4968a-94a1-415f-9353-3fc131773a82\/code.power",
+        "settings": "src\/25a4968a-94a1-415f-9353-3fc131773a82\/settings.json",
+        "path": "src\/25a4968a-94a1-415f-9353-3fc131773a82",
+        "spk": "Super---25a4968a_94a1_415f_9353_3fc131773a82---Power",
+        "guid": "25a4968a-94a1-415f-9353-3fc131773a82"
+    },
     "2ad31f74-f579-499d-b98b-c4f54fd615dd": {
         "name": "LoadInterface",
         "type": "interface",
@@ -407,9 +418,9 @@
         "guid": "2e5bf608-de5c-4b00-a20d-47c26aa350d9"
     },
     "2f14ec19-1b67-44be-8306-2a9e74588464": {
-        "name": "Import",
+        "name": "Managed",
         "type": "class",
-        "namespace": "VDM\\Joomla\\Componentbuilder\\Item\\Cli",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Import\\Item",
         "code": "src\/2f14ec19-1b67-44be-8306-2a9e74588464\/code.php",
         "power": "src\/2f14ec19-1b67-44be-8306-2a9e74588464\/code.power",
         "settings": "src\/2f14ec19-1b67-44be-8306-2a9e74588464\/settings.json",
@@ -660,7 +671,7 @@
         "guid": "52a1d14f-304a-431c-8fa4-411179942db5"
     },
     "53f55e5b-63cb-49e7-b1e6-33e7a9f97856": {
-        "name": "ItemInterface",
+        "name": "RowItemInterface",
         "type": "interface",
         "namespace": "VDM\\Joomla\\Interfaces\\Import",
         "code": "src\/53f55e5b-63cb-49e7-b1e6-33e7a9f97856\/code.php",
@@ -680,6 +691,17 @@
         "path": "src\/576685fd-263c-46bb-9fdc-1f5eb234cbb6",
         "spk": "Super---576685fd_263c_46bb_9fdc_1f5eb234cbb6---Power",
         "guid": "576685fd-263c-46bb-9fdc-1f5eb234cbb6"
+    },
+    "578f428a-71f1-4187-bb8d-82e275c82a67": {
+        "name": "MessageInterface",
+        "type": "interface",
+        "namespace": "VDM\\Joomla\\Interfaces\\Import",
+        "code": "src\/578f428a-71f1-4187-bb8d-82e275c82a67\/code.php",
+        "power": "src\/578f428a-71f1-4187-bb8d-82e275c82a67\/code.power",
+        "settings": "src\/578f428a-71f1-4187-bb8d-82e275c82a67\/settings.json",
+        "path": "src\/578f428a-71f1-4187-bb8d-82e275c82a67",
+        "spk": "Super---578f428a_71f1_4187_bb8d_82e275c82a67---Power",
+        "guid": "578f428a-71f1-4187-bb8d-82e275c82a67"
     },
     "57c00d53-5581-4fd1-b3ea-080422710243": {
         "name": "AssessorInterface",
@@ -1311,7 +1333,7 @@
     "afb5b891-7130-422a-b389-1934b0e4fc48": {
         "name": "Row",
         "type": "final class",
-        "namespace": "VDM\\Joomla\\Componentbuilder\\Import",
+        "namespace": "VDM\\Joomla\\Import",
         "code": "src\/afb5b891-7130-422a-b389-1934b0e4fc48\/code.php",
         "power": "src\/afb5b891-7130-422a-b389-1934b0e4fc48\/code.power",
         "settings": "src\/afb5b891-7130-422a-b389-1934b0e4fc48\/settings.json",

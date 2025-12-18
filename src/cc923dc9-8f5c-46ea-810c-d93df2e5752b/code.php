@@ -13,9 +13,9 @@ namespace VDM\Joomla\Import\Guid;
 
 use Joomla\CMS\Language\Text;
 use VDM\Joomla\Interfaces\Import\RowInterface as Row;
-use VDM\Joomla\Interfaces\Import\ItemInterface as ImportItem;
+use VDM\Joomla\Interfaces\Import\RowItemInterface as ImportItem;
 use VDM\Joomla\Interfaces\Import\MapperInterface as Mapper;
-use VDM\Joomla\Interfaces\Import\DatabaseMessageInterface as Message;
+use VDM\Joomla\Interfaces\Import\MessageInterface as Message;
 use VDM\Joomla\Interfaces\Registryinterface as Data;
 use VDM\Joomla\Interfaces\Data\ItemInterface as Item;
 use VDM\Joomla\Interfaces\Database\LoadInterface as Load;

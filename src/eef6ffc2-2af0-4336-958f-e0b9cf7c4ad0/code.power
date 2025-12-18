@@ -15,30 +15,6 @@
 	protected Insert $insert;
 
 	/**
-	 * The success message bus.
-	 *
-	 * @var   array
-	 * @since 5.0.2
-	 */
-	private array $success = [];
-
-	/**
-	 * The info message bus.
-	 *
-	 * @var   array
-	 * @since 5.0.2
-	 */
-	private array $info = [];
-
-	/**
-	 * The error message bus.
-	 *
-	 * @var   array
-	 * @since 5.0.2
-	 */
-	private array $error = [];
-
-	/**
 	 * The entity GUID value.
 	 *
 	 * @var   string
@@ -103,21 +79,6 @@
 	}
 
 	/**
-	 * Get the messages of the last import event
-	 *
-	 * @return  object
-	 * @since  5.0.2
-	 */
-	public function get(): object
-	{
-		return  (object) [
-			'message_success' => $this->success ?? null,
-			'message_info' => $this->info ?? null,
-			'message_error' => $this->error ?? null
-		];
-	}
-
-	/**
 	 * Reset the messages of the last import event
 	 *
 	 * @return  void
@@ -126,9 +87,7 @@
 	public function reset(): void
 	{
 		// clear the message bus
-		$this->success = [];
-		$this->info = [];
-		$this->error = [];
+		parent::reset();
 
 		$this->guid = null;
 		$this->entity = null;
@@ -218,61 +177,6 @@
 		}
 
 		$this->insert->table($this->table)->rows($messages);
-
-		return $this;
-	}
-
-	/**
-	 * Adds a success message to the log.
-	 *
-	 * This method records a success message for the import process. The message provides 
-	 * relevant information, such as the number of rows processed and the success rate.
-	 *
-	 * @param string $message The success message to log.
-	 *
-	 * @return self
-	 * @since  5.0.2
-	 */
-	public function addSuccess(string $message): self
-	{
-		$this->success[] = $message;
-
-		return $this;
-	}
-
-	/**
-	 * Adds a info message to the log.
-	 *
-	 * This method records a info message for the import process. The message provides 
-	 * relevant information, such as the number of rows processed and the info rate.
-	 *
-	 * @param string $message The info message to log.
-	 *
-	 * @return self
-	 * @since  5.0.2
-	 */
-	public function addInfo(string $message): self
-	{
-		$this->info[] = $message;
-
-		return $this;
-	}
-
-	/**
-	 * Adds an error message to the log.
-	 *
-	 * This method records an error message when the import process encounters issues. 
-	 * The message includes details about the failures, such as the number of failed rows 
-	 * and the corresponding error rate.
-	 *
-	 * @param string $message The error message to log.
-	 *
-	 * @return self
-	 * @since  5.0.2
-	 */
-	public function addError(string $message): self
-	{
-		$this->error[] = $message;
 
 		return $this;
 	}

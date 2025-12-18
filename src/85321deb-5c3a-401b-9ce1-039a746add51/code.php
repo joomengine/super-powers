@@ -18,7 +18,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use VDM\Joomla\Componentbuilder\Import\Factory as ImportFactory;
-use VDM\Joomla\Interfaces\Import\CliInterface as ImportEngine;
+use VDM\Joomla\Interfaces\Import\ItemProcessInterface as ImportEngine;
 use VDM\Joomla\Data\Items;
 use VDM\Joomla\Utilities\Component\Helper;
 
@@ -205,11 +205,8 @@ EOF);
 			// Output the current spreadsheet being processed
 			$io->section("Processing spreadsheet #{$spreadsheet->guid}...");
 
-			// Import the data found in the spreadsheet
-			$this->import->data($spreadsheet);
-
-			// Get the completion message
-			$completion = $this->import->message();
+			// Import the data found in the spreadsheet & Get the completion message
+			$completion = $this->import->execute($spreadsheet)->result();
 
 			// Track success based on completion message
 			if ($completion->message_success)

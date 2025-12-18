@@ -16,7 +16,7 @@ use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
 use VDM\Joomla\Import\Data;
 use VDM\Joomla\Import\Mapper;
-use VDM\Joomla\Componentbuilder\Import\Row;
+use VDM\Joomla\Import\Row;
 use VDM\Joomla\Componentbuilder\Import\Item;
 use VDM\Joomla\Componentbuilder\Import\Database\Message;
 use VDM\Joomla\Componentbuilder\Import\Status;

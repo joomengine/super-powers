@@ -1,19 +1,15 @@
 ### JCB! Power
 # interface DatabaseMessageInterface (Details)
 > namespace: **VDM\Joomla\Interfaces\Import**
+> extends: **MessageInterface**
 
 ```uml
 @startuml
 
 interface DatabaseMessageInterface  #Lavender {
   + load(string $guid, string $entity, ...) : self
-  + get() : object
-  + reset() : void
   + archive() : self
   + set() : self
-  + addSuccess(string $message) : self
-  + addInfo(string $message) : self
-  + addError(string $message) : self
 }
 
 note right of DatabaseMessageInterface::load
@@ -28,21 +24,7 @@ note right of DatabaseMessageInterface::load
     string $table
 end note
 
-note left of DatabaseMessageInterface::get
-  Get the messages of the last import event
-
-  since: 3.0.2
-  return: object
-end note
-
-note right of DatabaseMessageInterface::reset
-  Reset the messages of the last import event
-
-  since: 3.0.2
-  return: void
-end note
-
-note left of DatabaseMessageInterface::archive
+note right of DatabaseMessageInterface::archive
   Archive the messages in the DB of the last import event
 
   since: 3.0.2
@@ -51,34 +33,6 @@ end note
 
 note right of DatabaseMessageInterface::set
   Set the messages in the DB of the last import event
-
-  since: 3.0.2
-  return: self
-end note
-
-note left of DatabaseMessageInterface::addSuccess
-  Adds a success message to the log.
-This method records a success message for the import process. The message provides
-relevant information, such as the number of rows processed and the success rate.
-
-  since: 3.0.2
-  return: self
-end note
-
-note right of DatabaseMessageInterface::addInfo
-  Adds a info message to the log.
-This method records a info message for the import process. The message provides
-relevant information, such as the number of rows processed and the info rate.
-
-  since: 3.0.2
-  return: self
-end note
-
-note left of DatabaseMessageInterface::addError
-  Adds an error message to the log.
-This method records an error message when the import process encounters issues.
-The message includes details about the failures, such as the number of failed rows
-and the corresponding error rate.
 
   since: 3.0.2
   return: self

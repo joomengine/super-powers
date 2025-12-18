@@ -16,7 +16,7 @@ use VDM\Joomla\Interfaces\TableValidatorInterface as Validator;
 use VDM\Joomla\Interfaces\Data\ItemInterface as DataItem;
 use VDM\Joomla\Interfaces\Import\RowInterface as Row;
 use VDM\Joomla\Utilities\GuidHelper;
-use VDM\Joomla\Interfaces\Import\ItemInterface;
+use VDM\Joomla\Interfaces\Import\RowItemInterface;
 
 
 /**
@@ -24,7 +24,7 @@ use VDM\Joomla\Interfaces\Import\ItemInterface;
  * 
  * @since  4.0.3
  */
-final class Item implements ItemInterface
+final class Item implements RowItemInterface
 {
 	/**
 	 * The Table Validator Class.

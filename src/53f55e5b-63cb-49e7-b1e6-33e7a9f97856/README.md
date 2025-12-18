@@ -1,15 +1,15 @@
 ### JCB! Power
-# interface ItemInterface (Details)
+# interface RowItemInterface (Details)
 > namespace: **VDM\Joomla\Interfaces\Import**
 
 ```uml
 @startuml
 
-interface ItemInterface  #Lavender {
+interface RowItemInterface  #Lavender {
   + get(string $table, array $columns) : ?array
 }
 
-note right of ItemInterface::get
+note right of RowItemInterface::get
   Get the item from the import row values and ensure it is valid
 
   since: 4.0.3

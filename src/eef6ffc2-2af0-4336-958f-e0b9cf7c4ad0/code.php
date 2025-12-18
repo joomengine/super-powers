@@ -16,6 +16,7 @@ use VDM\Joomla\Interfaces\Data\UpdateInterface as Update;
 use VDM\Joomla\Interfaces\Data\InsertInterface as Insert;
 use VDM\Joomla\Utilities\GuidHelper;
 use VDM\Joomla\Interfaces\Import\DatabaseMessageInterface;
+use VDM\Joomla\Componentbuilder\Import\Message as ExtendingMessage;
 
 
 /**
@@ -23,7 +24,7 @@ use VDM\Joomla\Interfaces\Import\DatabaseMessageInterface;
  * 
  * @since  5.0.2
  */
-final class Message implements DatabaseMessageInterface
+final class Message extends ExtendingMessage implements DatabaseMessageInterface
 {
 	/**
 	 * The Update Class.
@@ -40,30 +41,6 @@ final class Message implements DatabaseMessageInterface
 	 * @since 5.0.2
 	 */
 	protected Insert $insert;
-
-	/**
-	 * The success message bus.
-	 *
-	 * @var   array
-	 * @since 5.0.2
-	 */
-	private array $success = [];
-
-	/**
-	 * The info message bus.
-	 *
-	 * @var   array
-	 * @since 5.0.2
-	 */
-	private array $info = [];
-
-	/**
-	 * The error message bus.
-	 *
-	 * @var   array
-	 * @since 5.0.2
-	 */
-	private array $error = [];
 
 	/**
 	 * The entity GUID value.
@@ -130,21 +107,6 @@ final class Message implements DatabaseMessageInterface
 	}
 
 	/**
-	 * Get the messages of the last import event
-	 *
-	 * @return  object
-	 * @since  5.0.2
-	 */
-	public function get(): object
-	{
-		return  (object) [
-			'message_success' => $this->success ?? null,
-			'message_info' => $this->info ?? null,
-			'message_error' => $this->error ?? null
-		];
-	}
-
-	/**
 	 * Reset the messages of the last import event
 	 *
 	 * @return  void
@@ -153,9 +115,7 @@ final class Message implements DatabaseMessageInterface
 	public function reset(): void
 	{
 		// clear the message bus
-		$this->success = [];
-		$this->info = [];
-		$this->error = [];
+		parent::reset();
 
 		$this->guid = null;
 		$this->entity = null;
@@ -245,61 +205,6 @@ final class Message implements DatabaseMessageInterface
 		}
 
 		$this->insert->table($this->table)->rows($messages);
-
-		return $this;
-	}
-
-	/**
-	 * Adds a success message to the log.
-	 *
-	 * This method records a success message for the import process. The message provides 
-	 * relevant information, such as the number of rows processed and the success rate.
-	 *
-	 * @param string $message The success message to log.
-	 *
-	 * @return self
-	 * @since  5.0.2
-	 */
-	public function addSuccess(string $message): self
-	{
-		$this->success[] = $message;
-
-		return $this;
-	}
-
-	/**
-	 * Adds a info message to the log.
-	 *
-	 * This method records a info message for the import process. The message provides 
-	 * relevant information, such as the number of rows processed and the info rate.
-	 *
-	 * @param string $message The info message to log.
-	 *
-	 * @return self
-	 * @since  5.0.2
-	 */
-	public function addInfo(string $message): self
-	{
-		$this->info[] = $message;
-
-		return $this;
-	}
-
-	/**
-	 * Adds an error message to the log.
-	 *
-	 * This method records an error message when the import process encounters issues. 
-	 * The message includes details about the failures, such as the number of failed rows 
-	 * and the corresponding error rate.
-	 *
-	 * @param string $message The error message to log.
-	 *
-	 * @return self
-	 * @since  5.0.2
-	 */
-	public function addError(string $message): self
-	{
-		$this->error[] = $message;
 
 		return $this;
 	}

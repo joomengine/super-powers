@@ -1,6 +1,7 @@
 ### JCB! Power
 # final class Message (Details)
 > namespace: **VDM\Joomla\Componentbuilder\Import\Database**
+> extends: **ExtendingMessage**
 
 ```uml
 @startuml
@@ -8,21 +9,14 @@
 class Message << (F,LightGreen) >> #RoyalBlue {
   # Update $update
   # Insert $insert
-  - array $success
-  - array $info
-  - array $error
   - ?string $guid
   - ?string $entity
   - ?string $table
   + __construct(Update $update, Insert $insert)
   + load(string $guid, string $entity, ...) : self
-  + get() : object
   + reset() : void
   + archive() : self
   + set() : self
-  + addSuccess(string $message) : self
-  + addInfo(string $message) : self
-  + addError(string $message) : self
 }
 
 note right of Message::__construct
@@ -31,7 +25,7 @@ note right of Message::__construct
   since: 5.0.2
 end note
 
-note left of Message::load
+note right of Message::load
   Load an entity that these message belong to
 
   since: 5.0.2
@@ -43,14 +37,7 @@ note left of Message::load
     string $table
 end note
 
-note right of Message::get
-  Get the messages of the last import event
-
-  since: 5.0.2
-  return: object
-end note
-
-note left of Message::reset
+note right of Message::reset
   Reset the messages of the last import event
 
   since: 5.0.2
@@ -64,36 +51,8 @@ note right of Message::archive
   return: self
 end note
 
-note left of Message::set
+note right of Message::set
   Set the messages in the DB of the last import event
-
-  since: 5.0.2
-  return: self
-end note
-
-note right of Message::addSuccess
-  Adds a success message to the log.
-This method records a success message for the import process. The message provides
-relevant information, such as the number of rows processed and the success rate.
-
-  since: 5.0.2
-  return: self
-end note
-
-note left of Message::addInfo
-  Adds a info message to the log.
-This method records a info message for the import process. The message provides
-relevant information, such as the number of rows processed and the info rate.
-
-  since: 5.0.2
-  return: self
-end note
-
-note right of Message::addError
-  Adds an error message to the log.
-This method records an error message when the import process encounters issues.
-The message includes details about the failures, such as the number of failed rows
-and the corresponding error rate.
 
   since: 5.0.2
   return: self

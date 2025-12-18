@@ -8,7 +8,7 @@
  * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
-namespace VDM\Joomla\Componentbuilder\Item\Cli;
+namespace VDM\Joomla\Componentbuilder\Import\Item;
 
 
 use Joomla\CMS\Language\Text;
@@ -22,16 +22,18 @@ use VDM\Joomla\Interfaces\Import\RowInterface as Row;
 use VDM\Joomla\Interfaces\Import\ParentTableInterface as ParentTable;
 use VDM\Joomla\Interfaces\Import\JoinTablesInterface as JoinTables;
 use VDM\Joomla\Interfaces\Import\AssessorInterface as Assessor;
-use VDM\Joomla\Interfaces\Data\ItemInterface as Item;
-use VDM\Joomla\Interfaces\Import\CliInterface;
+use VDM\Joomla\Interfaces\Data\ItemInterface as DataItem;
+use VDM\Joomla\Interfaces\Import\ItemProcessInterface;
 
 
 /**
- * Item CLI Import Class
+ * Managed import item.
+ * 
+ * Handles full import lifecycle with persistent state and message tracking.
  * 
  * @since  5.0.2
  */
-class Import implements CliInterface
+class Managed implements ItemProcessInterface
 {
 	/**************************************************************************
 	 * THESE VALUES BELOW SHOULD BE UPDATE FOR YOUR USE-CASE
@@ -84,7 +86,7 @@ class Import implements CliInterface
 	 * @since 5.0.2
 	 */
 	protected string $importTable = 'item_import';
-	
+
 	/**
 	 * The the status field
 	 *
@@ -92,14 +94,14 @@ class Import implements CliInterface
 	 * @since 5.1.4
 	 */
 	protected string $statusField = 'import_status';
-	
+
 	/**
 	 * The the status (processing)
 	 *
 	 * @var   int
 	 * @since 5.1.4
 	 */
-	protected string $statusProcessing = 2;
+	protected int $statusProcessing = 2;
 
 	/**
 	 * The the status (error)
@@ -107,7 +109,7 @@ class Import implements CliInterface
 	 * @var   int
 	 * @since 5.1.4
 	 */
-	protected string $statusError = 4;
+	protected int $statusError = 4;
 
 	/**
 	 * The the message log table
@@ -124,7 +126,7 @@ class Import implements CliInterface
 	 * @since 5.1.4
 	 */
 	protected string $fileTable = 'file';
-	
+
 	/**
 	 * The the data key
 	 *
@@ -220,10 +222,10 @@ class Import implements CliInterface
 	/**
 	 * The Item Class.
 	 *
-	 * @var   Item
+	 * @var   DataItem
 	 * @since 5.0.2
 	 */
-	protected Item $item;
+	protected DataItem $item;
 
 	/**
 	 * Constructor.
@@ -238,14 +240,14 @@ class Import implements CliInterface
 	 * @param ParentTable  $parentTableClass  The Parent Class.
 	 * @param JoinTables   $join              The Join Class.
 	 * @param Assessor     $assessor          The Import Assessor Class.
-	 * @param Item         $item              The Item Class.
+	 * @param DataItem     $item              The Item Class.
 	 *
 	 * @since 5.0.2
 	 */
 	public function __construct(Status $status, Message $message, Mapper $mapper,
 		Data $data, Importer $importer, RowData $rowdata,
 		Row $row, ParentTable $parentTableClass, JoinTables $joinTables,
-		Assessor $assessor, Item $item)
+		Assessor $assessor, DataItem $item)
 	{
 		$this->status = $status;
 		$this->message = $message;
@@ -264,36 +266,39 @@ class Import implements CliInterface
 	}
 
 	/**
-	 * The trigger function called from the CLI to start the item import on a spreadsheet
+	 * Execute the import process.
 	 *
-	 * @param  object  $import  The spreadsheet data to import.
+	 * Executes the import using the given payload and returns
+	 * the current process instance for fluent interaction.
 	 *
-	 * @return  void
-	 * @since  5.0.2
+	 * @param  object  $payload  The import payload.
+	 *
+	 * @return  self
+	 * @since   5.1.4
 	 */
-	public function data(object $import): void
+	public function execute(object $payload): self
 	{
 		// move spreadsheet into 2=processing
-		$this->status->set($this->statusProcessing, $import->guid);
+		$this->status->set($this->statusProcessing, $payload->guid);
 
 		// load message
-		$this->message->load($import->guid, $this->importTable, $this->messageLogTable);
+		$this->message->load($payload->guid, $this->importTable, $this->messageLogTable);
 
-		if (empty($import->file) || ($file = $this->getFile($import->file)) === null)
+		if (empty($payload->file) || ($file = $this->getFile($payload->file)) === null)
 		{
 			$this->prematureError($import->guid, Text::_('COM_COMPONENTBUILDER_FILE_DATA_COULD_NOT_BE_FOUND'));
-			return;
+			return $this;
 		}
 
 		// check file path
 		if (!is_file($file->file_path))
 		{
-			$this->prematureError($import->guid, Text::sprintf('COM_COMPONENTBUILDER_FILE_NOT_FOUND_S', $file->file_path));
-			return;
+			$this->prematureError($payload->guid, Text::sprintf('COM_COMPONENTBUILDER_FILE_NOT_FOUND_S', $file->file_path));
+			return $this;
 		}
 
-		$this->mapper->set($import->maps, $this->parentTable);
-		unset($import->maps);
+		$this->mapper->set($payload->maps, $this->parentTable);
+		unset($payload->maps);
 
 		$this->data->set($this->dataKey, (array) $import);
 
@@ -345,15 +350,17 @@ class Import implements CliInterface
 			// Catch any other general exceptions
 			$this->message->addError($e->getMessage());
 		}
+
+		return $this;
 	}
 
 	/**
-	 * The message of the last import event
+	 * Get the result of the last import execution.
 	 *
 	 * @return  object
-	 * @since  5.0.2
+	 * @since   5.1.4
 	 */
-	public function message(): object
+	public function result(): object
 	{
 		$messages = $this->message->archive()->set()->get();
 		$this->message->reset();

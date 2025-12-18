@@ -1,26 +1,28 @@
 ### JCB! Power
-# interface CliInterface (Details)
+# interface ItemProcessInterface (Details)
 > namespace: **VDM\Joomla\Interfaces\Import**
 
 ```uml
 @startuml
 
-interface CliInterface  #Lavender {
-  + data(object $import) : void
-  + message() : object
+interface ItemProcessInterface  #Lavender {
+  + execute(object $payload) : self
+  + result() : object
 }
 
-note right of CliInterface::data
-  The trigger function called from the CLI to start the import on a spreadsheet
+note right of ItemProcessInterface::execute
+  Execute the import process.
+Executes the import using the given payload and returns
+the current process instance for fluent interaction.
 
-  since: 5.0.2
-  return: void
+  since: 5.1.4
+  return: self
 end note
 
-note right of CliInterface::message
-  The message of the last import event
+note right of ItemProcessInterface::result
+  Get the result of the last import execution.
 
-  since: 5.0.2
+  since: 5.1.4
   return: object
 end note
 

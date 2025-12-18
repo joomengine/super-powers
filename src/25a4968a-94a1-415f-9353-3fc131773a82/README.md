@@ -1,96 +1,61 @@
 ### JCB! Power
-# class Managed (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Import\Item**
+# class Message (Details)
+> namespace: **VDM\Joomla\Componentbuilder\Import**
 
 ```uml
 @startuml
 
-class Managed  #Gold {
-  # int $startingRow
-  # string $parentTable
-  # string $parentKey
-  # string $parentJoinKey
-  # string $linkField
-  # string $importTable
-  # string $statusField
-  # int $statusProcessing
-  # int $statusError
-  # string $messageLogTable
-  # string $fileTable
-  # string $dataKey
-  # Status $status
-  # Message $message
-  # Mapper $mapper
-  # Data $data
-  # Importer $importer
-  # RowData $rowdata
-  # Row $row
-  # ParentTable $parentTableClass
-  # JoinTables $joinTables
-  # Assessor $assessor
-  # DataItem $item
-  + __construct(Status $status, Message $message, ...)
-  + execute(object $payload) : self
-  + result() : object
-  - prematureError(string $guid, string $message) : void
-  - import() : ?string
-  - getFile(string $file) : ?object
+class Message  #Gold {
+  # array $success
+  # array $info
+  # array $error
+  + get() : object
+  + reset() : void
+  + addSuccess(string $message) : self
+  + addInfo(string $message) : self
+  + addError(string $message) : self
 }
 
-note right of Managed::__construct
-  Constructor.
+note right of Message::get
+  Get the messages of the last import event
 
   since: 5.0.2
-  
-  arguments:
-    Status $status
-    Message $message
-    Mapper $mapper
-    Data $data
-    Importer $importer
-    RowData $rowdata
-    Row $row
-    ParentTable $parentTableClass
-    JoinTables $joinTables
-    Assessor $assessor
-    DataItem $item
-end note
-
-note right of Managed::execute
-  Execute the import process.
-Executes the import using the given payload and returns
-the current process instance for fluent interaction.
-
-  since: 5.1.4
-  return: self
-end note
-
-note right of Managed::result
-  Get the result of the last import execution.
-
-  since: 5.1.4
   return: object
 end note
 
-note right of Managed::prematureError
-  This is trigger on premature error
+note right of Message::reset
+  Reset the messages of the last import event
 
   since: 5.0.2
   return: void
 end note
 
-note right of Managed::import
-  Save the item calculated values
+note right of Message::addSuccess
+  Adds a success message to the log.
+This method records a success message for the import process. The message provides
+relevant information, such as the number of rows processed and the success rate.
 
   since: 5.0.2
-  return: ?string
+  return: self
 end note
 
-note right of Managed::getFile
-  Get the file details
+note right of Message::addInfo
+  Adds a info message to the log.
+This method records a info message for the import process. The message provides
+relevant information, such as the number of rows processed and the info rate.
 
   since: 5.0.2
-  return: ?object
+  return: self
+end note
+
+note right of Message::addError
+  Adds an error message to the log.
+This method records an error message when the import process encounters issues.
+The message includes details about the failures, such as the number of failed rows
+and the corresponding error rate.
+
+  since: 5.0.2
+  return: self
 end note
 
 @enduml
@@ -115,7 +80,7 @@ To add this specific Power to your project in JCB:
 
 > Simply use this SPK:
 ```
-Super---2f14ec19_1b67_44be_8306_2a9e74588464---Power
+Super---25a4968a_94a1_415f_9353_3fc131773a82---Power
 ```
 > Remember to replace the `---` with `___` to activate this Power in your code.
 

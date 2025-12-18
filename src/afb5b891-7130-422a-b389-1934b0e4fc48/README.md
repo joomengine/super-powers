@@ -1,6 +1,6 @@
 ### JCB! Power
 # final class Row (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Import**
+> namespace: **VDM\Joomla\Import**
 
 ```uml
 @startuml

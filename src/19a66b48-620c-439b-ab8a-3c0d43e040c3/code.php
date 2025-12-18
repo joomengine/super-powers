@@ -15,7 +15,7 @@ namespace VDM\Joomla\Componentbuilder\Import;
 use Joomla\CMS\Language\Text;
 use VDM\Joomla\Import\Data;
 use VDM\Joomla\Interfaces\Import\StatusInterface as Status;
-use VDM\Joomla\Interfaces\Import\DatabaseMessageInterface as Message;
+use VDM\Joomla\Interfaces\Import\MessageInterface as Message;
 use VDM\Joomla\Interfaces\Import\AssessorInterface;
 
 

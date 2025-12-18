@@ -13,7 +13,7 @@ namespace VDM\Joomla\Componentbuilder\Service\Item;
 
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
-use VDM\Joomla\Componentbuilder\Item\Cli\Import as ItemImport;
+use VDM\Joomla\Componentbuilder\Import\Item\Managed as ItemImport;
 use VDM\Joomla\Import\Guid\ParentTable;
 use VDM\Joomla\Import\Guid\JoinTables;
 use VDM\Joomla\Componentbuilder\Spreadsheet\RowDataArray;
@@ -64,7 +64,7 @@ class Import implements ServiceProviderInterface
 			$container->get('Import.Message'),
 			$container->get('Import.Mapper'),
 			$container->get('Import.Data'),
-			$container->get('Spreadsheet.Importer'),
+			$container->get('Spreadsheet.Reader'),
 			$container->get('Item.RowDataArray'),
 			$container->get('Import.Row'),
 			$container->get('Import.ParentTable'),

@@ -62,7 +62,7 @@ final class Reader implements SpreadsheetReaderInterface
 	 * @throws SpreadsheetException If there is an error working with the spreadsheet.
 	 * @since 3.2.0
 	 */
-	public function read(string $filePath, int $startRow, int $chunkSize, RowData $processor, int $activeSheet = 0): \Generatorr
+	public function read(string $filePath, int $startRow, int $chunkSize, RowData $processor, int $activeSheet = 0): \Generator
 	{
 		foreach ($this->filereader->read($filePath, $startRow, $chunkSize, $activeSheet) as $row)
 		{
