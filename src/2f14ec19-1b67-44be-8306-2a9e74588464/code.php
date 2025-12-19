@@ -286,7 +286,7 @@ class Managed implements ItemProcessInterface
 
 		if (empty($payload->file) || ($file = $this->getFile($payload->file)) === null)
 		{
-			$this->prematureError($import->guid, Text::_('COM_COMPONENTBUILDER_FILE_DATA_COULD_NOT_BE_FOUND'));
+			$this->prematureError($payload->guid, Text::_('COM_COMPONENTBUILDER_FILE_DATA_COULD_NOT_BE_FOUND'));
 			return $this;
 		}
 
@@ -300,7 +300,7 @@ class Managed implements ItemProcessInterface
 		$this->mapper->set($payload->maps, $this->parentTable);
 		unset($payload->maps);
 
-		$this->data->set($this->dataKey, (array) $import);
+		$this->data->set($this->dataKey, (array) $payload);
 
 		$rowCounter = 0;
 		$successCounter = 0;

@@ -249,7 +249,7 @@
 
 		if (empty($payload->file) || ($file = $this->getFile($payload->file)) === null)
 		{
-			$this->prematureError($import->guid, Text::_('File data could not be found.'));
+			$this->prematureError($payload->guid, Text::_('File data could not be found.'));
 			return $this;
 		}
 
@@ -263,7 +263,7 @@
 		$this->mapper->set($payload->maps, $this->parentTable);
 		unset($payload->maps);
 
-		$this->data->set($this->dataKey, (array) $import);
+		$this->data->set($this->dataKey, (array) $payload);
 
 		$rowCounter = 0;
 		$successCounter = 0;
