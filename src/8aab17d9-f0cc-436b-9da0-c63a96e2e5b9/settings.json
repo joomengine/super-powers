@@ -1,0 +1,26 @@
+{
+    "add_head": 1,
+    "add_licensing_template": 2,
+    "extends": "",
+    "guid": "8aab17d9-f0cc-436b-9da0-c63a96e2e5b9",
+    "implements": [
+        "57c00d53-5581-4fd1-b3ea-080422710243"
+    ],
+    "load_selection": null,
+    "name": "Assessor",
+    "power_version": "1.0.0",
+    "system_name": "JCB.Import.Assessor",
+    "type": "final class",
+    "use_selection": {
+        "use_selection0": {
+            "use": "578f428a-71f1-4187-bb8d-82e275c82a67",
+            "as": "Message"
+        }
+    },
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Import.Assessor",
+    "description": "Import Assessor Class\r\n\r\n@since  5.1.4",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "use Joomla\\CMS\\Language\\Text;",
+    "composer": ""
+}

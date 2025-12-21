@@ -1,6 +1,6 @@
 ### JCB! Power
 # final class Message (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Import\Database**
+> namespace: **VDM\Joomla\Componentbuilder\Import\Persistent**
 > extends: **ExtendingMessage**
 
 ```uml

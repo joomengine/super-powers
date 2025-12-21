@@ -2,7 +2,7 @@
 	 * The success message bus.
 	 *
 	 * @var   array
-	 * @since 5.0.2
+	 * @since 5.1.4
 	 */
 	protected array $success = [];
 
@@ -10,7 +10,7 @@
 	 * The info message bus.
 	 *
 	 * @var   array
-	 * @since 5.0.2
+	 * @since 5.1.4
 	 */
 	protected array $info = [];
 
@@ -18,7 +18,7 @@
 	 * The error message bus.
 	 *
 	 * @var   array
-	 * @since 5.0.2
+	 * @since 5.1.4
 	 */
 	protected array $error = [];
 
@@ -26,7 +26,7 @@
 	 * Get the messages of the last import event
 	 *
 	 * @return  object
-	 * @since  5.0.2
+	 * @since  5.1.4
 	 */
 	public function get(): object
 	{
@@ -41,7 +41,7 @@
 	 * Reset the messages of the last import event
 	 *
 	 * @return  void
-	 * @since  5.0.2
+	 * @since  5.1.4
 	 */
 	public function reset(): void
 	{
@@ -60,7 +60,7 @@
 	 * @param string $message The success message to log.
 	 *
 	 * @return self
-	 * @since  5.0.2
+	 * @since  5.1.4
 	 */
 	public function addSuccess(string $message): self
 	{
@@ -78,7 +78,7 @@
 	 * @param string $message The info message to log.
 	 *
 	 * @return self
-	 * @since  5.0.2
+	 * @since  5.1.4
 	 */
 	public function addInfo(string $message): self
 	{
@@ -97,7 +97,7 @@
 	 * @param string $message The error message to log.
 	 *
 	 * @return self
-	 * @since  5.0.2
+	 * @since  5.1.4
 	 */
 	public function addError(string $message): self
 	{

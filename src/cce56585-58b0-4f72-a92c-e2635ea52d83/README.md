@@ -7,15 +7,39 @@
 @startuml
 
 class Update << (F,LightGreen) >> #RoyalBlue {
+  # bool $multiple
+  # array $updateids
+  + updateids(bool $reset = false) : array
   + rows(array $data, string $key, ...) : bool
   + items(array $data, string $key, ...) : bool
   + row(array $data, string $key, ...) : bool
   + item(object $data, string $key, ...) : bool
   + column(mixed $value, string $key, ...) : bool
-  # trackHistory(?int $id, ?string $guid, ...) : void
+  # extractUpdateIdentifiers(array $data, string $key) : array
+  # applyUpdateDefaults(object $query, array $data) : void
+  # resolveUpdateIds(?int $id, ?string $guid, ...) : array
+  # lookupIdsByGuid(string $guid, string $table) : array
+  # lookupIdsByWhere(string $where, string $table) : array
+  # trackHistory(array $ids) : void
 }
 
-note right of Update::rows
+note right of Update::updateids
+  Get the IDs affected by the most recent UPDATE batch.
+This method returns the ordered list of entity IDs that were affected
+by the last UPDATE operation or batch of UPDATE operations.
+Behavioral notes:
+- IDs are resolved deterministically (ID, GUID, or WHERE-clause fallback).
+- The order of IDs reflects the order in which they were resolved.
+- IDs may represent one or many rows, depending on the UPDATE scope.
+- When `$reset` is enabled, the internal update ID bucket is cleared
+after the values are retrieved.
+after retrieval.
+
+  since: 5.1.4
+  return: array
+end note
+
+note left of Update::rows
   Update rows in the database (with remapping and filtering columns option)
 
   since: 3.2.0
@@ -41,8 +65,16 @@ note right of Update::items
     array $columns = []
 end note
 
-note right of Update::row
-  Update row in the database
+note left of Update::row
+  Update row in the database.
+Notes on ID tracking (critical for dependency + history workflows):
+- This method ALWAYS tracks the affected ID(s) in `$this->updateids`, even when history tracking is disabled.
+- ID resolution order (only fall back when the previous fails):
+1) Use `id` from the provided dataset (if present).
+2) Use `guid` from the provided dataset and resolve to ID(s).
+3) Resolve ID(s) via the UPDATE WHERE clause (based on `$key` and its value).
+Multi-row safety:
+- If the WHERE clause matches more than one row, all matching IDs are tracked.
 
   since: 3.2.0
   return: bool
@@ -65,7 +97,7 @@ note right of Update::item
     string $table
 end note
 
-note right of Update::column
+note left of Update::column
   Update a single column value for all rows in the table
 
   since: 5.1.1
@@ -77,17 +109,67 @@ note right of Update::column
     string $table
 end note
 
-note right of Update::trackHistory
-  Attempt to set history records for the specified entity.
-Any exceptions during this process are silently caught and ignored.
+note right of Update::extractUpdateIdentifiers
+  Extract update identifiers from the dataset.
+Identifier resolution inputs:
+- `$keyValue` is always required to build the WHERE clause.
+- `$id` and `$guid` are optional and are used to avoid the fallback WHERE lookup.
 
-  since: 5.1.1
+  since: 5.1.4
+  return: array
+end note
+
+note left of Update::applyUpdateDefaults
+  Apply Joomla update defaults (modified / modified_by) if enabled and missing.
+This preserves the original behaviour:
+- Only applied when `$this->defaults` is enabled.
+- Only applied when the caller did not provide the columns already.
+
+  since: 5.1.4
   return: void
+end note
+
+note right of Update::resolveUpdateIds
+  Resolve the affected ID(s) for an UPDATE operation.
+Resolution order (only fall back when the previous fails):
+1) Use the provided `$id` if present and valid (>0).
+2) Resolve by `$guid` if provided (returns one or multiple IDs).
+3) Resolve by the WHERE clause (returns one or multiple IDs).
+
+  since: 5.1.4
+  return: array
   
   arguments:
     ?int $id
     ?string $guid
     string $table
+    string $where
+end note
+
+note left of Update::lookupIdsByGuid
+  Lookup ID(s) by GUID.
+
+  since: 5.1.4
+  return: array
+end note
+
+note right of Update::lookupIdsByWhere
+  Lookup ID(s) by an UPDATE WHERE clause.
+This is the final fallback and must only be used when:
+- no valid `$id` was provided, and
+- no `$guid` was provided or it could not be resolved.
+
+  since: 5.1.4
+  return: array
+end note
+
+note left of Update::trackHistory
+  Apply history tracking for updated IDs.
+History is optional.
+- If history tracking is enabled and entity context exists, history is recorded.
+
+  since: 5.1.4
+  return: void
 end note
 
 @enduml

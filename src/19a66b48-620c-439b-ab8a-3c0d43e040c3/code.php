@@ -9,7 +9,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Import;
+namespace VDM\Joomla\Componentbuilder\Import\Persistent;
 
 
 use Joomla\CMS\Language\Text;
@@ -20,7 +20,7 @@ use VDM\Joomla\Interfaces\Import\AssessorInterface;
 
 
 /**
- * Import Assessor Class
+ * Import Persistent Assessor Class
  * 
  * @since  4.0.3
  */

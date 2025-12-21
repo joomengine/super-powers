@@ -6,6 +6,7 @@
 @startuml
 
 interface ItemInterface  #Lavender {
+  + id() : int
   + table(string $table) : self
   + get(string $value, string $key = 'guid') : ?object
   + value(string $value, string $key = 'guid', ...) : mixed
@@ -13,6 +14,20 @@ interface ItemInterface  #Lavender {
   + delete(string $value, string $key = 'guid') : bool
   + getTable() : string
 }
+
+note right of ItemInterface::id
+  Get the first ID of the most recent action.
+This method returns the first resolved entity ID from the most recent
+INSERT or UPDATE action. If no IDs are available or the active action
+is not supported, 0 is returned.
+Behavioral notes:
+- Only INSERT and UPDATE actions are supported.
+- The internal ID bucket of the active action is reset after retrieval.
+- The returned ID represents the first affected entity in the batch.
+
+  since: 5.1.4
+  return: int
+end note
 
 note right of ItemInterface::table
   Set the current active table

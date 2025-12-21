@@ -8,6 +8,7 @@
 class Spreadsheet  #Gold {
   + register(Container $container) : void
   + getExporter(Container $container) : Exporter
+  + getRowDataArray(Container $container) : RowDataArray
   + getHeader(Container $container) : Header
   + getReader(Container $container) : Reader
   + getFileReader(Container $container) : FileReader
@@ -25,6 +26,13 @@ note right of Spreadsheet::getExporter
 
   since: 5.0.3
   return: Exporter
+end note
+
+note right of Spreadsheet::getRowDataArray
+  Get The RowDataArray Class.
+
+  since: 5.0.2
+  return: RowDataArray
 end note
 
 note right of Spreadsheet::getHeader

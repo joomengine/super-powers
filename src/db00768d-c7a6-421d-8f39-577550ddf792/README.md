@@ -1,6 +1,6 @@
 ### JCB! Power
 # final class JoinTables (Details)
-> namespace: **VDM\Joomla\Import\Guid**
+> namespace: **VDM\Joomla\Import**
 
 ```uml
 @startuml

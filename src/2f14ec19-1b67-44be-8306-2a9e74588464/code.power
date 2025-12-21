@@ -1,107 +1,3 @@
-	/**************************************************************************
-	 * THESE VALUES BELOW SHOULD BE UPDATE FOR YOUR USE-CASE
-	 */
-
-	/**
-	 * The starting row.
-	 *
-	 * @var   int
-	 * @since 5.0.2
-	 */
-	protected int $startingRow = 2;
-
-	/**
-	 * The the parent table of each row
-	 *
-	 * @var   string
-	 * @since 5.0.2
-	 */
-	protected string $parentTable = 'look';
-
-	/**
-	 * The the parent table key field
-	 *
-	 * @var   string
-	 * @since 5.0.2
-	 */
-	protected string $parentKey = 'guid';
-
-	/**
-	 * The the parent join key field to other tables
-	 *
-	 * @var   string
-	 * @since 5.0.2
-	 */
-	protected string $parentJoinKey = 'entity';
-
-	/**
-	 * The the parent table key field to link a row to existing data
-	 *
-	 * @var   string
-	 * @since 5.0.2
-	 */
-	protected string $linkField = 'guid';
-
-	/**
-	 * The the import queue table
-	 *
-	 * @var   string
-	 * @since 5.0.2
-	 */
-	protected string $importTable = 'item_import';
-
-	/**
-	 * The the status field
-	 *
-	 * @var   string
-	 * @since 5.1.4
-	 */
-	protected string $statusField = 'import_status';
-
-	/**
-	 * The the status (processing)
-	 *
-	 * @var   int
-	 * @since 5.1.4
-	 */
-	protected int $statusProcessing = 2;
-
-	/**
-	 * The the status (error)
-	 *
-	 * @var   int
-	 * @since 5.1.4
-	 */
-	protected int $statusError = 4;
-
-	/**
-	 * The the message log table
-	 *
-	 * @var   string
-	 * @since 5.1.4
-	 */
-	protected string $messageLogTable = 'message_log';
-
-	/**
-	 * The the file table
-	 *
-	 * @var   string
-	 * @since 5.1.4
-	 */
-	protected string $fileTable = 'file';
-
-	/**
-	 * The the data key
-	 *
-	 * @var   string
-	 * @since 5.1.4
-	 */
-	protected string $dataKey = 'import';
-
-	/**
-	 * THESE VALUES ABOVE SHOULD BE UPDATE FOR YOUR USE-CASE
-	 **************************************************************************/
-
 	/**
 	 * The Import Status Class.
 	 *
@@ -164,7 +60,7 @@
 	 * @var   ParentTable
 	 * @since 5.0.2
 	 */
-	protected ParentTable $parentTableClass;
+	protected ParentTable $parenttable;
 
 	/**
 	 * The Join Tables Class.
@@ -172,7 +68,7 @@
 	 * @var   JoinTables
 	 * @since 5.0.2
 	 */
-	protected JoinTables $joinTables;
+	protected JoinTables $jointables;
 
 	/**
 	 * The Import Assessor Class.
@@ -191,26 +87,36 @@
 	protected DataItem $item;
 
 	/**
+	 * The Persistent Entity Class.
+	 *
+	 * @var   Entity
+	 * @since 5.1.4
+	 */
+	protected Entity $entity;
+
+	/**
 	 * Constructor.
 	 *
-	 * @param Status       $status            The Import Status Class.
-	 * @param Message      $message           The Import Message Class.
-	 * @param Mapper       $mapper            The Import Mapper Class.
-	 * @param Data         $data              The Data Class.
-	 * @param Importer     $importer          The Importer Class.
-	 * @param RowData      $rowdata           The Row Data Array Class.
-	 * @param Row          $row               The Import Row Class.
-	 * @param ParentTable  $parentTableClass  The Parent Class.
-	 * @param JoinTables   $join              The Join Class.
-	 * @param Assessor     $assessor          The Import Assessor Class.
-	 * @param DataItem     $item              The Item Class.
+	 * @param Status        $status        The Status Class.
+	 * @param Message       $message       The DatabaseMessage Class.
+	 * @param Mapper        $mapper        The Mapper Class.
+	 * @param Data          $data          The Registry Class.
+	 * @param Importer      $importer      The SpreadsheetReader Class.
+	 * @param RowData       $rowdata       The RowData Class.
+	 * @param Row           $row           The Row Class.
+	 * @param ParentTable   $parenttable   The ParentTable Class.
+	 * @param JoinTables    $jointables    The JoinTables Class.
+	 * @param Assessor      $assessor      The Assessor Class.
+	 * @param DataItem      $dataitem      The Item Class.
+	 * @param Entity        $entity        The Persistent Entity Class.
 	 *
 	 * @since 5.0.2
 	 */
 	public function __construct(Status $status, Message $message, Mapper $mapper,
 		Data $data, Importer $importer, RowData $rowdata,
-		Row $row, ParentTable $parentTableClass, JoinTables $joinTables,
-		Assessor $assessor, DataItem $item)
+		Row $row, ParentTable $parenttable,
+		JoinTables $jointables, Assessor $assessor,
+		DataItem $dataitem, Entity $entity)
 	{
 		$this->status = $status;
 		$this->message = $message;
@@ -219,13 +125,10 @@
 		$this->importer = $importer;
 		$this->rowdata = $rowdata;
 		$this->row = $row;
-		$this->parentTableClass = $parentTableClass;
-		$this->joinTables = $joinTables;
+		$this->parenttable = $parenttable;
+		$this->jointables = $jointables;
 		$this->assessor = $assessor;
 		$this->item = $item;
-
-		// load the status target table and field
-		$this->status->table($this->importTable)->field($this->statusField);
 	}
 
 	/**
@@ -241,11 +144,14 @@
 	 */
 	public function execute(object $payload): self
 	{
-		// move spreadsheet into 2=processing
-		$this->status->set($this->statusProcessing, $payload->guid);
+		// load the status target table and field
+		$this->status->table($this->entity->getQueueTable())->field($this->entity->getQueueStatusField());
+
+		// move spreadsheet into processing state
+		$this->status->set($this->entity->getQueueProcessingState(), $payload->guid);
 
 		// load message
-		$this->message->load($payload->guid, $this->importTable, $this->messageLogTable);
+		$this->message->load($payload->guid, $this->entity->getQueueTable(), $this->entity->getMessageLogTable());
 
 		if (empty($payload->file) || ($file = $this->getFile($payload->file)) === null)
 		{
@@ -260,10 +166,10 @@
 			return $this;
 		}
 
-		$this->mapper->set($payload->maps, $this->parentTable);
+		$this->mapper->set($payload->maps, $this->entity->getParentTable());
 		unset($payload->maps);
 
-		$this->data->set($this->dataKey, (array) $payload);
+		$this->data->set($this->entity->getDataKey(), (array) $payload);
 
 		$rowCounter = 0;
 		$successCounter = 0;
@@ -271,7 +177,7 @@
 
 		try
 		{
-			foreach ($this->importer->read($file->file_path, $this->startingRow, 100, $this->rowdata) as $row)
+			foreach ($this->importer->read($file->file_path, $this->entity->getStartingRow(), 100, $this->rowdata) as $row)
 			{
 				// ignore empty rows
 				if ($row === null || empty($row['values']) || count((array) $row['values']) <= 3 || empty($row['index']))
@@ -282,9 +188,8 @@
 				$this->row->set($row['index'], $row['values']);
 
 				$rowCounter++;
-				if (($guid = $this->import()) !== null)
+				if (($parent_key_value = $this->import()) !== null)
 				{
-					// TODO: we can add extra code here for more adaptation/calculation of import data
 					$successCounter++;
 				}
 				else
@@ -341,33 +246,34 @@
 	 */
 	private function prematureError(string $guid, string $message): void
 	{
-		$this->status->set($this->statusError, $guid);
+		$this->status->set($this->entity->getQueueErrorState(), $guid);
 		$this->message->addError($message);
 	}
 
 	/**
 	 * Save the item calculated values
 	 *
-	 * @return  string|null
+	 * @return mixed
 	 * @since  5.0.2
 	 */
-	private function import(): ?string
+	private function import()
 	{
 		try {
-			$parent_guid = $this->parentTableClass->set($this->linkField, $this->parentKey, $this->parentTable);
+			$parent_link_value = $this->parenttable->set($this->entity->getLinkField(), $this->entity->getParentKey(), $this->entity->getParentTable());
 
-			if ($parent_guid === null)
+			if ($parent_link_value === null)
 			{
 				return null;
 			}
 
-			$this->joinTables->set($this->parentJoinKey, $parent_guid);
+			$this->jointables->set($this->entity->getParentJoinKey(), $parent_link_value, $this->entity->getJoinFields());
 
-			return $parent_guid;
+			return $parent_link_value;
 		}
-		catch (\Exception $e)
+		catch (\Throwable $e)
 		{
 			$this->message->addError($e->getMessage());
+
 			return null;
 		}
 	}
@@ -382,5 +288,5 @@
 	 */
 	private function getFile(string $file): ?object
 	{
-		return $this->item->table($this->fileTable)->get($file);
+		return $this->item->table($this->entity->getFileTable())->get($file);
 	}

@@ -9,13 +9,12 @@
 abstract Import  #Orange {
   # Items $items
   # ImportEngine $import
-  # string $queueTable
-  # string $queueStatusField
-  # int $queueWaitState
-  # int $queueProcessingState
+  # Entity $entity
   # string $targetName
-  # string $targetImportClass
   # static $defaultName
+  # string $targetImportClass
+  # string $targetItemsClass
+  # string $targetEntityClass
   + __construct(?string $name = null)
   # configure() : void
   # doExecute(InputInterface $input, OutputInterface $output) : int

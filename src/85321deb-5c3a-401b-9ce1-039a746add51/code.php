@@ -19,7 +19,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use VDM\Joomla\Componentbuilder\Import\Factory as ImportFactory;
 use VDM\Joomla\Interfaces\Import\ItemProcessInterface as ImportEngine;
-use VDM\Joomla\Data\Items;
+use VDM\Joomla\Interfaces\Import\PersistentEntityInterface as Entity;
+use VDM\Joomla\Interfaces\Data\ItemsInterface as Items;
 use VDM\Joomla\Utilities\Component\Helper;
 
 
@@ -47,36 +48,12 @@ abstract class Import extends AbstractCommand
 	protected ImportEngine $import;
 
 	/**
-	 * The queue table name.
+	 * The Entity Class.
 	 *
-	 * @var string
-	 * @since  5.0.2
+	 * @var   Entity
+	 * @since 5.1.4
 	 */
-	protected string $queueTable;
-
-	/**
-	 * The queue status field
-	 *
-	 * @var string
-	 * @since  5.0.2
-	 */
-	protected string $queueStatusField;
-
-	/**
-	 * The queue awaiting status
-	 *
-	 * @var int
-	 * @since  5.0.2
-	 */
-	protected int $queueWaitState;
-
-	/**
-	 * The queue processing status
-	 *
-	 * @var int
-	 * @since  5.0.2
-	 */
-	protected int $queueProcessingState;
+	protected Entity $entity;
 
 	/**
 	 * The main import target name.
@@ -87,6 +64,14 @@ abstract class Import extends AbstractCommand
 	protected string $targetName;
 
 	/**
+	 * The default command name.
+	 *
+	 * @var string
+	 * @since  5.0.2
+	 */
+	protected static $defaultName;
+
+	/**
 	 * The target import class.
 	 *
 	 * @var string
@@ -95,12 +80,20 @@ abstract class Import extends AbstractCommand
 	protected string $targetImportClass;
 
 	/**
-	 * The default command name.
+	 * The target items class.
 	 *
 	 * @var string
-	 * @since  5.0.2
+	 * @since  5.1.4
 	 */
-	protected static $defaultName;
+	protected string $targetItemsClass;
+
+	/**
+	 * The target entity class.
+	 *
+	 * @var string
+	 * @since  5.1.4
+	 */
+	protected string $targetEntityClass;
 
 	/**
 	 * Constructor.
@@ -118,8 +111,9 @@ abstract class Import extends AbstractCommand
 		$lang = Factory::getLanguage();
 		$lang->load('com_componentbuilder', JPATH_ADMINISTRATOR);
 
-		$this->items = ImportFactory::_('Data.Items');
+		$this->items = ImportFactory::_($this->targetItemsClass);
 		$this->import = ImportFactory::_($this->targetImportClass);
+		$this->entity = ImportFactory::_($this->targetEntityClass);
 
 		parent::__construct($name);
 	}
@@ -163,7 +157,7 @@ EOF);
 		$io->title("Component Builder: {$this->targetName} import status");
 
 		// Get all imports in the queue that are in waiting state
-		if (($queue = $this->items->table($this->queueTable)->get([$this->queueWaitState], $this->queueStatusField)) === null)
+		if (($queue = $this->items->table($this->entity->getQueueTable())->get([$this->entity->getQueueWaitState()], $this->entity->getQueueStatusField())) === null)
 		{
 			// Get the current date and time
 			$timestamp = date('Y-m-d H:i:s');
@@ -175,10 +169,10 @@ EOF);
 		}
 
 		// take spreadsheets out of queue
-		$this->items->table($this->queueTable)->set(array_map(function($item) {
+		$this->items->table($this->entity->getQueueTable())->set(array_map(function($item) {
 			return [
 				'guid' => $item->guid,
-				$this->queueStatusField => $this->queueProcessingState
+				$this->entity->getQueueStatusField() => $this->entity->getQueueProcessingState()
 			];
 		}, $queue));
 

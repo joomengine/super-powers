@@ -1,0 +1,21 @@
+{
+    "add_head": 0,
+    "add_licensing_template": 2,
+    "extends": "ae8978fd-bfd3-45a3-97ef-1b8bf2140c10",
+    "guid": "7cc3c19c-155c-4b34-8f9d-5e11705195fe",
+    "implements": [
+        "594df747-5bfb-44de-9e47-d3fa83a80134"
+    ],
+    "load_selection": null,
+    "name": "Entity",
+    "power_version": "1.0.0",
+    "system_name": "VDM.Import.Persistent.Entity",
+    "type": "class",
+    "use_selection": null,
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Import.Persistent.Entity",
+    "description": "Base persistent import configuration.\r\n\r\nAdds persistence-specific entity configuration required for queued imports,\r\n   status tracking, logging, and file linking.\r\n\r\n@since  5.1.4",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}

@@ -6,6 +6,7 @@
 @startuml
 
 interface UpdateInterface  #Lavender {
+  + updateids(bool $reset = true) : array
   + table(?string $table) : self
   + value(mixed $value, string $field, ...) : bool
   + row(array $item, string $key = 'guid') : bool
@@ -15,7 +16,23 @@ interface UpdateInterface  #Lavender {
   + getTable() : string
 }
 
-note right of UpdateInterface::table
+note right of UpdateInterface::updateids
+  Get the IDs affected by the most recent UPDATE batch.
+This method returns the ordered list of entity IDs that were affected
+by the last UPDATE operation or batch of UPDATE operations.
+Behavioral notes:
+- IDs are resolved deterministically (ID, GUID, or WHERE-clause fallback).
+- The order of IDs reflects the order in which they were resolved.
+- IDs may represent one or many rows, depending on the UPDATE scope.
+- When `$reset` is enabled, the internal update ID bucket is cleared
+after the values are retrieved.
+after retrieval.
+
+  since: 5.1.4
+  return: array
+end note
+
+note left of UpdateInterface::table
   Set the current active table
 
   since: 3.2.2
@@ -36,7 +53,7 @@ Example: $this->value(Value, 'value_key', 'GUID');
     string $key = 'guid'
 end note
 
-note right of UpdateInterface::row
+note left of UpdateInterface::row
   Update single row with multiple values to a given table
 Example: $this->item(Array);
 
@@ -52,7 +69,7 @@ Example: $this->items(Array);
   return: bool
 end note
 
-note right of UpdateInterface::item
+note left of UpdateInterface::item
   Update single item with multiple values to a given table
 Example: $this->item(Object);
 
@@ -68,7 +85,7 @@ Example: $this->items(Array);
   return: bool
 end note
 
-note right of UpdateInterface::getTable
+note left of UpdateInterface::getTable
   Get the current active table
 
   since: 3.2.2

@@ -23,38 +23,6 @@ use VDM\Joomla\Abstraction\Console\Import;
 class ItemImport extends Import
 {
 	/**
-	 * The queue status field
-	 *
-	 * @var string
-	 * @since  5.0.2
-	 */
-	protected string $queueStatusField = 'import_status';
-
-	/**
-	 * The queue awaiting status
-	 *
-	 * @var int
-	 * @since  5.0.2
-	 */
-	protected int $queueWaitState = 1;
-
-	/**
-	 * The queue processing status
-	 *
-	 * @var int
-	 * @since  5.0.2
-	 */
-	protected int $queueProcessingState = 2;
-
-	/**
-	 * The queue table name.
-	 *
-	 * @var string
-	 * @since  5.0.2
-	 */
-	protected string $queueTable = 'item_import';
-
-	/**
 	 * The main import target name.
 	 *
 	 * @var string
@@ -63,19 +31,55 @@ class ItemImport extends Import
 	protected string $targetName = 'item';
 
 	/**
-	 * The target import class to be pulled from the Import Factory class.
-	 *
-	 * @var string
-	 * @since  5.0.2
-	 */
-	protected string $targetImportClass = 'Item.Import';
-
-	/**
 	 * The default command name.
 	 *
 	 * @var string
 	 * @since  5.0.2
 	 */
 	protected static $defaultName = 'componentbuilder:Item:import';
+
+	/**
+	 * The target import class.
+	 *
+	 * @var string
+	 * @since  5.0.2
+	 */
+	protected string $targetImportClass = 'Import.Persistent';
+
+	/**
+	 * The target items class.
+	 *
+	 * @var string
+	 * @since  5.1.4
+	 */
+	protected string $targetItemsClass = 'Data.Items';
+
+	/**
+	 * The target entity class.
+	 *
+	 * @var string
+	 * @since  5.1.4
+	 */
+	protected string $targetEntityClass = 'Import.Persistent.Entity';
+
+	/**
+	 * Constructor.
+	 *
+	 * @param string|null  $name   The name of the command; if the name is empty and no default is set, a name must be set in the configure() method
+	 *
+	 * @since 5.1.4
+	 */
+	public function __construct(?string $name = null)
+	{
+		parent::__construct($name);
+
+		// CHANGE THIS TO TARGET YOUR VIEW BEING IMPORTED!
+		// CHECK THE ENTITY CLASS FOR MORE OPTIONS
+		$this->entity->setParentTable('look')
+			->setParentKey('guid')->setParentJoinKey('entity')
+			->setLinkField('guid')->setJoinFields([
+				'detail' => ['link_fields' => ['entity']]
+			]);
+	}
 }
 

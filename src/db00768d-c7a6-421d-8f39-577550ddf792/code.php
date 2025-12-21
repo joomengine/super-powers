@@ -8,7 +8,7 @@
  * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
-namespace VDM\Joomla\Import\Guid;
+namespace VDM\Joomla\Import;
 
 
 use VDM\Joomla\Interfaces\Import\MapperInterface as Mapper;
@@ -21,7 +21,7 @@ use VDM\Joomla\Interfaces\Import\JoinTablesInterface;
 
 
 /**
- * Import Item(Guid) Join Tables Class
+ * Import Item Join Tables Class
  * 
  * @since  5.0.2
  */

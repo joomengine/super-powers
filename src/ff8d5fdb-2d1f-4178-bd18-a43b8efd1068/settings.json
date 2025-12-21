@@ -42,7 +42,7 @@
         },
         "use_selection7": {
             "use": "b5184f80-613e-46c8-b40a-b60de779bb78",
-            "as": "ItemImport"
+            "as": "EntityImport"
         }
     },
     "extendsinterfaces": null,

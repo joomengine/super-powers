@@ -1,19 +1,20 @@
 ### JCB! Power
 # class Import (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Import\Service**
+> namespace: **VDM\Joomla\Service**
 
 ```uml
 @startuml
 
 class Import  #Gold {
   + register(Container $container) : void
+  + getEntity(Container $container) : Entity
+  + getPersistentEntity(Container $container) : PersistentEntity
+  + getParentTable(Container $container) : ParentTable
+  + getJoinTables(Container $container) : JoinTables
+  + getMessage(Container $container) : Message
   + getData(Container $container) : Data
   + getMapper(Container $container) : Mapper
   + getRow(Container $container) : Row
-  + getItem(Container $container) : Item
-  + getMessage(Container $container) : Message
-  + getStatus(Container $container) : Status
-  + getAssessor(Container $container) : Assessor
 }
 
 note right of Import::register
@@ -23,53 +24,60 @@ note right of Import::register
   return: void
 end note
 
-note left of Import::getData
+note left of Import::getEntity
+  Get The Entity Class.
+
+  since: 5.1.4
+  return: Entity
+end note
+
+note right of Import::getPersistentEntity
+  Get The Persistent Entity Class.
+
+  since: 5.1.4
+  return: PersistentEntity
+end note
+
+note left of Import::getParentTable
+  Get The Parent Table Class.
+
+  since: 5.0.3
+  return: ParentTable
+end note
+
+note right of Import::getJoinTables
+  Get The Join Tables Class.
+
+  since: 5.0.3
+  return: JoinTables
+end note
+
+note left of Import::getMessage
+  Get The Message Class.
+
+  since: 5.1.4
+  return: Message
+end note
+
+note right of Import::getData
   Get The Data Class.
 
   since: 5.0.3
   return: Data
 end note
 
-note right of Import::getMapper
+note left of Import::getMapper
   Get The Mapper Class.
 
   since: 5.0.3
   return: Mapper
 end note
 
-note left of Import::getRow
+note right of Import::getRow
   Get The Row Class.
 
   since: 5.0.3
   return: Row
-end note
-
-note right of Import::getItem
-  Get The Item Class.
-
-  since: 5.0.3
-  return: Item
-end note
-
-note left of Import::getMessage
-  Get The Message Class.
-
-  since: 5.0.3
-  return: Message
-end note
-
-note right of Import::getStatus
-  Get The Status Class.
-
-  since: 5.0.3
-  return: Status
-end note
-
-note left of Import::getAssessor
-  Get The Assessor Class.
-
-  since: 5.0.3
-  return: Assessor
 end note
 
 @enduml

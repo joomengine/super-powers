@@ -9,7 +9,7 @@
     "load_selection": null,
     "name": "Database",
     "power_version": "1.0.0",
-    "system_name": "JCB.Service.Database",
+    "system_name": "VDM.Service.Database",
     "type": "class",
     "use_selection": {
         "use_selection0": {

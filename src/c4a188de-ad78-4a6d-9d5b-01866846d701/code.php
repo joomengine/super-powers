@@ -15,6 +15,7 @@ namespace VDM\Joomla\Componentbuilder\Service;
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
 use VDM\Joomla\Componentbuilder\Spreadsheet\Exporter;
+use VDM\Joomla\Componentbuilder\Spreadsheet\RowDataArray;
 use VDM\Joomla\Spreadsheet\Header;
 use VDM\Joomla\Import\Spreadsheet\Reader;
 use VDM\Joomla\Import\Spreadsheet\FileReader;
@@ -40,6 +41,9 @@ class Spreadsheet implements ServiceProviderInterface
 		$container->alias(Exporter::class, 'Spreadsheet.Exporter')
 			->share('Spreadsheet.Exporter', [$this, 'getExporter'], true);
 
+		$container->alias(RowDataArray::class, 'Spreadsheet.RowDataArray')
+			->share('Spreadsheet.RowDataArray', [$this, 'getRowDataArray'], true);
+
 		$container->alias(Header::class, 'Spreadsheet.Header')
 			->share('Spreadsheet.Header', [$this, 'getHeader'], true);
 
@@ -61,6 +65,19 @@ class Spreadsheet implements ServiceProviderInterface
 	public function getExporter(Container $container): Exporter
 	{
 		return new Exporter();
+	}
+
+	/**
+	 * Get The RowDataArray Class.
+	 *
+	 * @param   Container  $container  The DI container.
+	 *
+	 * @return  RowDataArray
+	 * @since 5.0.2
+	 */
+	public function getRowDataArray(Container $container): RowDataArray
+	{
+		return new RowDataArray();
 	}
 
 	/**

@@ -1,23 +1,11 @@
 ### JCB! Power
-# class Managed (Details)
+# class Persistent (Details)
 > namespace: **VDM\Joomla\Componentbuilder\Import\Item**
 
 ```uml
 @startuml
 
-class Managed  #Gold {
-  # int $startingRow
-  # string $parentTable
-  # string $parentKey
-  # string $parentJoinKey
-  # string $linkField
-  # string $importTable
-  # string $statusField
-  # int $statusProcessing
-  # int $statusError
-  # string $messageLogTable
-  # string $fileTable
-  # string $dataKey
+class Persistent  #Gold {
   # Status $status
   # Message $message
   # Mapper $mapper
@@ -25,19 +13,20 @@ class Managed  #Gold {
   # Importer $importer
   # RowData $rowdata
   # Row $row
-  # ParentTable $parentTableClass
-  # JoinTables $joinTables
+  # ParentTable $parenttable
+  # JoinTables $jointables
   # Assessor $assessor
   # DataItem $item
+  # Entity $entity
   + __construct(Status $status, Message $message, ...)
   + execute(object $payload) : self
   + result() : object
   - prematureError(string $guid, string $message) : void
-  - import() : ?string
+  - import() : mixed
   - getFile(string $file) : ?object
 }
 
-note right of Managed::__construct
+note right of Persistent::__construct
   Constructor.
 
   since: 5.0.2
@@ -50,13 +39,14 @@ note right of Managed::__construct
     Importer $importer
     RowData $rowdata
     Row $row
-    ParentTable $parentTableClass
-    JoinTables $joinTables
+    ParentTable $parenttable
+    JoinTables $jointables
     Assessor $assessor
-    DataItem $item
+    DataItem $dataitem
+    Entity $entity
 end note
 
-note right of Managed::execute
+note right of Persistent::execute
   Execute the import process.
 Executes the import using the given payload and returns
 the current process instance for fluent interaction.
@@ -65,28 +55,28 @@ the current process instance for fluent interaction.
   return: self
 end note
 
-note right of Managed::result
+note right of Persistent::result
   Get the result of the last import execution.
 
   since: 5.1.4
   return: object
 end note
 
-note right of Managed::prematureError
+note right of Persistent::prematureError
   This is trigger on premature error
 
   since: 5.0.2
   return: void
 end note
 
-note right of Managed::import
+note right of Persistent::import
   Save the item calculated values
 
   since: 5.0.2
-  return: ?string
+  return: mixed
 end note
 
-note right of Managed::getFile
+note right of Persistent::getFile
   Get the file details
 
   since: 5.0.2

@@ -1,5 +1,5 @@
 {
-    "add_head": 1,
+    "add_head": 0,
     "add_licensing_template": 2,
     "extends": "",
     "guid": "cc923dc9-8f5c-46ea-810c-d93df2e5752b",
@@ -9,7 +9,7 @@
     "load_selection": null,
     "name": "ParentTable",
     "power_version": "1.0.0",
-    "system_name": "VDM.Import.Guid.ParentTable",
+    "system_name": "VDM.Import.ParentTable",
     "type": "final class",
     "use_selection": {
         "use_selection0": {
@@ -25,30 +25,26 @@
             "as": "Mapper"
         },
         "use_selection3": {
-            "use": "578f428a-71f1-4187-bb8d-82e275c82a67",
-            "as": "Message"
-        },
-        "use_selection4": {
             "use": "64e291c2-11f1-423d-a44d-837cc12cc017",
             "as": "Data"
         },
-        "use_selection5": {
+        "use_selection4": {
             "use": "05744dd3-4030-4cf8-8dda-a93ab809b473",
             "as": "Item"
         },
-        "use_selection6": {
+        "use_selection5": {
             "use": "2ad31f74-f579-499d-b98b-c4f54fd615dd",
             "as": "Load"
         },
-        "use_selection7": {
+        "use_selection6": {
             "use": "9c513baf-b279-43fd-ae29-a585c8cbc4f0",
             "as": "default"
         }
     },
     "extendsinterfaces": null,
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Import.Guid.ParentTable",
-    "description": "Import Item(Guid) Parent Table Class\r\n\r\n@since  5.0.2",
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Import.ParentTable",
+    "description": "Import Item Parent Table Class\r\n\r\n@since  5.0.2",
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2020\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/",
-    "head": "use Joomla\\CMS\\Language\\Text;",
+    "head": "",
     "composer": ""
 }

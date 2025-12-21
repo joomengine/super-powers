@@ -10,6 +10,7 @@ class Update  #Gold {
   # Database $database
   # string $table
   + __construct(Model $model, Database $database, ...)
+  + updateids(bool $reset = true) : array
   + table(?string $table) : self
   + value(mixed $value, string $field, ...) : bool
   + row(array $item, string $key = 'guid') : bool
@@ -30,14 +31,30 @@ note right of Update::__construct
     ?string $table = null
 end note
 
-note left of Update::table
+note left of Update::updateids
+  Get the IDs affected by the most recent UPDATE batch.
+This method returns the ordered list of entity IDs that were affected
+by the last UPDATE operation or batch of UPDATE operations.
+Behavioral notes:
+- IDs are resolved deterministically (ID, GUID, or WHERE-clause fallback).
+- The order of IDs reflects the order in which they were resolved.
+- IDs may represent one or many rows, depending on the UPDATE scope.
+- When `$reset` is enabled, the internal update ID bucket is cleared
+after the values are retrieved.
+after retrieval.
+
+  since: 5.1.4
+  return: array
+end note
+
+note right of Update::table
   Set the current active table
 
   since: 3.2.2
   return: self
 end note
 
-note right of Update::value
+note left of Update::value
   Update a value to a given table
 Example: $this->value(Value, 'value_key', 'GUID');
 
@@ -51,7 +68,7 @@ Example: $this->value(Value, 'value_key', 'GUID');
     string $key = 'guid'
 end note
 
-note left of Update::row
+note right of Update::row
   Update single row with multiple values to a given table
 Example: $this->item(Array);
 
@@ -59,7 +76,7 @@ Example: $this->item(Array);
   return: bool
 end note
 
-note right of Update::rows
+note left of Update::rows
   Update multiple rows to a given table
 Example: $this->items(Array);
 
@@ -67,7 +84,7 @@ Example: $this->items(Array);
   return: bool
 end note
 
-note left of Update::item
+note right of Update::item
   Update single item with multiple values to a given table
 Example: $this->item(Object);
 
@@ -75,7 +92,7 @@ Example: $this->item(Object);
   return: bool
 end note
 
-note right of Update::items
+note left of Update::items
   Update multiple items to a given table
 Example: $this->items(Array);
 
@@ -83,7 +100,7 @@ Example: $this->items(Array);
   return: bool
 end note
 
-note left of Update::getTable
+note right of Update::getTable
   Get the current active table
 
   since: 3.2.2

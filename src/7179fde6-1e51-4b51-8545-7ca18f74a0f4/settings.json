@@ -11,8 +11,8 @@
     "type": "interface",
     "use_selection": null,
     "extendsinterfaces": [
-        "ac77cee7-7018-4496-a453-9757623e3849",
-        "78931d43-9fb9-4cc1-a2ca-b3e189ef842e"
+        "78931d43-9fb9-4cc1-a2ca-b3e189ef842e",
+        "ac77cee7-7018-4496-a453-9757623e3849"
     ],
     "namespace": "[[[NamespacePrefix]]]\\Joomla\\Interfaces.Database.UpdateInterface",
     "description": "Database Update Interface\r\n\r\n@since 3.2.0",

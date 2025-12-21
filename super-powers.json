@@ -222,7 +222,7 @@
     "19a66b48-620c-439b-ab8a-3c0d43e040c3": {
         "name": "Assessor",
         "type": "final class",
-        "namespace": "VDM\\Joomla\\Componentbuilder\\Import",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Import\\Persistent",
         "code": "src\/19a66b48-620c-439b-ab8a-3c0d43e040c3\/code.php",
         "power": "src\/19a66b48-620c-439b-ab8a-3c0d43e040c3\/code.power",
         "settings": "src\/19a66b48-620c-439b-ab8a-3c0d43e040c3\/settings.json",
@@ -310,7 +310,7 @@
     "21754a8b-2323-4a77-8459-378a74c1ec97": {
         "name": "Import",
         "type": "class",
-        "namespace": "VDM\\Joomla\\Componentbuilder\\Import\\Service",
+        "namespace": "VDM\\Joomla\\Service",
         "code": "src\/21754a8b-2323-4a77-8459-378a74c1ec97\/code.php",
         "power": "src\/21754a8b-2323-4a77-8459-378a74c1ec97\/code.power",
         "settings": "src\/21754a8b-2323-4a77-8459-378a74c1ec97\/settings.json",
@@ -354,7 +354,7 @@
     "25a4968a-94a1-415f-9353-3fc131773a82": {
         "name": "Message",
         "type": "class",
-        "namespace": "VDM\\Joomla\\Componentbuilder\\Import",
+        "namespace": "VDM\\Joomla\\Import",
         "code": "src\/25a4968a-94a1-415f-9353-3fc131773a82\/code.php",
         "power": "src\/25a4968a-94a1-415f-9353-3fc131773a82\/code.power",
         "settings": "src\/25a4968a-94a1-415f-9353-3fc131773a82\/settings.json",
@@ -418,7 +418,7 @@
         "guid": "2e5bf608-de5c-4b00-a20d-47c26aa350d9"
     },
     "2f14ec19-1b67-44be-8306-2a9e74588464": {
-        "name": "Managed",
+        "name": "Persistent",
         "type": "class",
         "namespace": "VDM\\Joomla\\Componentbuilder\\Import\\Item",
         "code": "src\/2f14ec19-1b67-44be-8306-2a9e74588464\/code.php",
@@ -736,6 +736,17 @@
         "spk": "Super---58ab1a65_9a80_40a3_bb33_c50fbf003b63---Power",
         "guid": "58ab1a65-9a80-40a3-bb33-c50fbf003b63"
     },
+    "594df747-5bfb-44de-9e47-d3fa83a80134": {
+        "name": "PersistentEntityInterface",
+        "type": "interface",
+        "namespace": "VDM\\Joomla\\Interfaces\\Import",
+        "code": "src\/594df747-5bfb-44de-9e47-d3fa83a80134\/code.php",
+        "power": "src\/594df747-5bfb-44de-9e47-d3fa83a80134\/code.power",
+        "settings": "src\/594df747-5bfb-44de-9e47-d3fa83a80134\/settings.json",
+        "path": "src\/594df747-5bfb-44de-9e47-d3fa83a80134",
+        "spk": "Super---594df747_5bfb_44de_9e47_d3fa83a80134---Power",
+        "guid": "594df747-5bfb-44de-9e47-d3fa83a80134"
+    },
     "59b1a2ea-d77e-4040-ac8c-e65cd8743e9b": {
         "name": "GetString",
         "type": "trait",
@@ -978,6 +989,17 @@
         "spk": "Super---7c1fb50f_8fb1_4627_8705_6fedf7182ca5---Power",
         "guid": "7c1fb50f-8fb1-4627-8705-6fedf7182ca5"
     },
+    "7cc3c19c-155c-4b34-8f9d-5e11705195fe": {
+        "name": "Entity",
+        "type": "class",
+        "namespace": "VDM\\Joomla\\Import\\Persistent",
+        "code": "src\/7cc3c19c-155c-4b34-8f9d-5e11705195fe\/code.php",
+        "power": "src\/7cc3c19c-155c-4b34-8f9d-5e11705195fe\/code.power",
+        "settings": "src\/7cc3c19c-155c-4b34-8f9d-5e11705195fe\/settings.json",
+        "path": "src\/7cc3c19c-155c-4b34-8f9d-5e11705195fe",
+        "spk": "Super---7cc3c19c_155c_4b34_8f9d_5e11705195fe---Power",
+        "guid": "7cc3c19c-155c-4b34-8f9d-5e11705195fe"
+    },
     "7d494d91-ab60-43cd-aecf-d50e07f7f30e": {
         "name": "PathToString",
         "type": "trait",
@@ -1043,6 +1065,17 @@
         "path": "src\/884eca78-281f-4eab-b962-d97e355af16d",
         "spk": "Super---884eca78_281f_4eab_b962_d97e355af16d---Power",
         "guid": "884eca78-281f-4eab-b962-d97e355af16d"
+    },
+    "8aab17d9-f0cc-436b-9da0-c63a96e2e5b9": {
+        "name": "Assessor",
+        "type": "final class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Import",
+        "code": "src\/8aab17d9-f0cc-436b-9da0-c63a96e2e5b9\/code.php",
+        "power": "src\/8aab17d9-f0cc-436b-9da0-c63a96e2e5b9\/code.power",
+        "settings": "src\/8aab17d9-f0cc-436b-9da0-c63a96e2e5b9\/settings.json",
+        "path": "src\/8aab17d9-f0cc-436b-9da0-c63a96e2e5b9",
+        "spk": "Super---8aab17d9_f0cc_436b_9da0_c63a96e2e5b9---Power",
+        "guid": "8aab17d9-f0cc-436b-9da0-c63a96e2e5b9"
     },
     "8aad54f1-d86e-48e5-97c4-8a3d6142e4de": {
         "name": "JoinTablesInterface",
@@ -1275,6 +1308,17 @@
         "spk": "Super---a455d916_cfe4_41df_9245_bafb709aacdb---Power",
         "guid": "a455d916-cfe4-41df-9245-bafb709aacdb"
     },
+    "a522aab8-5edc-497d-bfbd-06fa6ab19f34": {
+        "name": "EntityInterface",
+        "type": "interface",
+        "namespace": "VDM\\Joomla\\Interfaces\\Import",
+        "code": "src\/a522aab8-5edc-497d-bfbd-06fa6ab19f34\/code.php",
+        "power": "src\/a522aab8-5edc-497d-bfbd-06fa6ab19f34\/code.power",
+        "settings": "src\/a522aab8-5edc-497d-bfbd-06fa6ab19f34\/settings.json",
+        "path": "src\/a522aab8-5edc-497d-bfbd-06fa6ab19f34",
+        "spk": "Super---a522aab8_5edc_497d_bfbd_06fa6ab19f34---Power",
+        "guid": "a522aab8-5edc-497d-bfbd-06fa6ab19f34"
+    },
     "a5daf189-3345-4b13-8716-c51f686f545b": {
         "name": "Data",
         "type": "class",
@@ -1297,6 +1341,17 @@
         "spk": "Super---a8935cbe_7701_40dc_bfd5_675f2d600954---Power",
         "guid": "a8935cbe-7701-40dc-bfd5-675f2d600954"
     },
+    "abd147d0-2f8c-4905-80f5-164f20278d1c": {
+        "name": "Transient",
+        "type": "class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Import\\Item",
+        "code": "src\/abd147d0-2f8c-4905-80f5-164f20278d1c\/code.php",
+        "power": "src\/abd147d0-2f8c-4905-80f5-164f20278d1c\/code.power",
+        "settings": "src\/abd147d0-2f8c-4905-80f5-164f20278d1c\/settings.json",
+        "path": "src\/abd147d0-2f8c-4905-80f5-164f20278d1c",
+        "spk": "Super---abd147d0_2f8c_4905_80f5_164f20278d1c---Power",
+        "guid": "abd147d0-2f8c-4905-80f5-164f20278d1c"
+    },
     "ac77cee7-7018-4496-a453-9757623e3849": {
         "name": "VersioningInterface",
         "type": "interface",
@@ -1318,6 +1373,17 @@
         "path": "src\/ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48",
         "spk": "Super---ad12ca1c_d3ce_4e7f_88c5_c6c92bdedc48---Power",
         "guid": "ad12ca1c-d3ce-4e7f-88c5-c6c92bdedc48"
+    },
+    "ae8978fd-bfd3-45a3-97ef-1b8bf2140c10": {
+        "name": "Entity",
+        "type": "class",
+        "namespace": "VDM\\Joomla\\Import",
+        "code": "src\/ae8978fd-bfd3-45a3-97ef-1b8bf2140c10\/code.php",
+        "power": "src\/ae8978fd-bfd3-45a3-97ef-1b8bf2140c10\/code.power",
+        "settings": "src\/ae8978fd-bfd3-45a3-97ef-1b8bf2140c10\/settings.json",
+        "path": "src\/ae8978fd-bfd3-45a3-97ef-1b8bf2140c10",
+        "spk": "Super---ae8978fd_bfd3_45a3_97ef_1b8bf2140c10---Power",
+        "guid": "ae8978fd-bfd3-45a3-97ef-1b8bf2140c10"
     },
     "af0eedbe-603b-4671-8e5a-28165d88254b": {
         "name": "Activeregistryinterface",
@@ -1355,7 +1421,7 @@
     "b5184f80-613e-46c8-b40a-b60de779bb78": {
         "name": "Import",
         "type": "class",
-        "namespace": "VDM\\Joomla\\Componentbuilder\\Service\\Item",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Service",
         "code": "src\/b5184f80-613e-46c8-b40a-b60de779bb78\/code.php",
         "power": "src\/b5184f80-613e-46c8-b40a-b60de779bb78\/code.power",
         "settings": "src\/b5184f80-613e-46c8-b40a-b60de779bb78\/settings.json",
@@ -1531,7 +1597,7 @@
     "cc923dc9-8f5c-46ea-810c-d93df2e5752b": {
         "name": "ParentTable",
         "type": "final class",
-        "namespace": "VDM\\Joomla\\Import\\Guid",
+        "namespace": "VDM\\Joomla\\Import",
         "code": "src\/cc923dc9-8f5c-46ea-810c-d93df2e5752b\/code.php",
         "power": "src\/cc923dc9-8f5c-46ea-810c-d93df2e5752b\/code.power",
         "settings": "src\/cc923dc9-8f5c-46ea-810c-d93df2e5752b\/settings.json",
@@ -1663,7 +1729,7 @@
     "db00768d-c7a6-421d-8f39-577550ddf792": {
         "name": "JoinTables",
         "type": "final class",
-        "namespace": "VDM\\Joomla\\Import\\Guid",
+        "namespace": "VDM\\Joomla\\Import",
         "code": "src\/db00768d-c7a6-421d-8f39-577550ddf792\/code.php",
         "power": "src\/db00768d-c7a6-421d-8f39-577550ddf792\/code.power",
         "settings": "src\/db00768d-c7a6-421d-8f39-577550ddf792\/settings.json",
@@ -1773,7 +1839,7 @@
     "eef6ffc2-2af0-4336-958f-e0b9cf7c4ad0": {
         "name": "Message",
         "type": "final class",
-        "namespace": "VDM\\Joomla\\Componentbuilder\\Import\\Database",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Import\\Persistent",
         "code": "src\/eef6ffc2-2af0-4336-958f-e0b9cf7c4ad0\/code.php",
         "power": "src\/eef6ffc2-2af0-4336-958f-e0b9cf7c4ad0\/code.power",
         "settings": "src\/eef6ffc2-2af0-4336-958f-e0b9cf7c4ad0\/settings.json",

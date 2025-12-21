@@ -17,6 +17,10 @@
             "as": "default"
         },
         "use_selection1": {
+            "use": "152c8793-8b75-4715-996a-257b9f65451c",
+            "as": "default"
+        },
+        "use_selection2": {
             "use": "0a59c65c-9daf-4bc9-baf4-e063ff9e6a8a",
             "as": "default"
         }

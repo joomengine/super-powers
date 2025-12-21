@@ -9,16 +9,16 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Import;
+namespace VDM\Joomla\Import;
 
 
 use VDM\Joomla\Interfaces\Import\MessageInterface;
 
 
 /**
- * Import Messages Class
+ * Core Import Messages Class
  * 
- * @since  5.0.2
+ * @since  5.1.4
  */
 class Message implements MessageInterface
 {
@@ -26,7 +26,7 @@ class Message implements MessageInterface
 	 * The success message bus.
 	 *
 	 * @var   array
-	 * @since 5.0.2
+	 * @since 5.1.4
 	 */
 	protected array $success = [];
 
@@ -34,7 +34,7 @@ class Message implements MessageInterface
 	 * The info message bus.
 	 *
 	 * @var   array
-	 * @since 5.0.2
+	 * @since 5.1.4
 	 */
 	protected array $info = [];
 
@@ -42,7 +42,7 @@ class Message implements MessageInterface
 	 * The error message bus.
 	 *
 	 * @var   array
-	 * @since 5.0.2
+	 * @since 5.1.4
 	 */
 	protected array $error = [];
 
@@ -50,7 +50,7 @@ class Message implements MessageInterface
 	 * Get the messages of the last import event
 	 *
 	 * @return  object
-	 * @since  5.0.2
+	 * @since  5.1.4
 	 */
 	public function get(): object
 	{
@@ -65,7 +65,7 @@ class Message implements MessageInterface
 	 * Reset the messages of the last import event
 	 *
 	 * @return  void
-	 * @since  5.0.2
+	 * @since  5.1.4
 	 */
 	public function reset(): void
 	{
@@ -84,7 +84,7 @@ class Message implements MessageInterface
 	 * @param string $message The success message to log.
 	 *
 	 * @return self
-	 * @since  5.0.2
+	 * @since  5.1.4
 	 */
 	public function addSuccess(string $message): self
 	{
@@ -102,7 +102,7 @@ class Message implements MessageInterface
 	 * @param string $message The info message to log.
 	 *
 	 * @return self
-	 * @since  5.0.2
+	 * @since  5.1.4
 	 */
 	public function addInfo(string $message): self
 	{
@@ -121,7 +121,7 @@ class Message implements MessageInterface
 	 * @param string $message The error message to log.
 	 *
 	 * @return self
-	 * @since  5.0.2
+	 * @since  5.1.4
 	 */
 	public function addError(string $message): self
 	{

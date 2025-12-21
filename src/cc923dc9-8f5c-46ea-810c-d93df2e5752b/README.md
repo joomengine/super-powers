@@ -1,6 +1,6 @@
 ### JCB! Power
 # final class ParentTable (Details)
-> namespace: **VDM\Joomla\Import\Guid**
+> namespace: **VDM\Joomla\Import**
 
 ```uml
 @startuml
@@ -9,7 +9,6 @@ class ParentTable << (F,LightGreen) >> #RoyalBlue {
   # Row $row
   # ImportItem $importitem
   # Mapper $mapper
-  # Message $message
   # Data $data
   # Item $item
   # Load $load
@@ -17,11 +16,11 @@ class ParentTable << (F,LightGreen) >> #RoyalBlue {
   # string $key
   # string $link
   + __construct(Row $row, ImportItem $importitem, ...)
-  + set(string $linkKey, string $parentKey, ...) : ?string
+  + set(string $linkKey, string $parentKey, ...) : mixed
   - getParent() : ?array
-  - validateParent(?array $parent) : bool
-  - processParent(array $parent) : ?string
-  - validateParentGuid(?string $guid) : bool
+  - validateParent(?array $parent) : void
+  - processParent(array $parent) : mixed
+  - validateParentValue(mixed $value) : bool
 }
 
 note right of ParentTable::__construct
@@ -33,7 +32,6 @@ note right of ParentTable::__construct
     Row $row
     ImportItem $importitem
     Mapper $mapper
-    Message $message
     Data $data
     Item $item
     Load $load
@@ -43,7 +41,7 @@ note right of ParentTable::set
   Set the parent data
 
   since: 5.0.2
-  return: ?string
+  return: mixed
   
   arguments:
     string $linkKey
@@ -62,20 +60,20 @@ note right of ParentTable::validateParent
   Validate the parent item.
 
   since: 5.0.2
-  return: bool
+  return: void
 end note
 
 note right of ParentTable::processParent
   Process parent data, performing insert or update as needed.
 
   since: 5.0.2
-  return: ?string
+  return: mixed
 end note
 
-note right of ParentTable::validateParentGuid
-  Validate the retrieved parent guid.
+note right of ParentTable::validateParentValue
+  Validate the retrieved parent value.
 
-  since: 5.0.2
+  since: 5.1.4
   return: bool
 end note
 

@@ -1,0 +1,68 @@
+	/**
+	 * The Import Message Class.
+	 *
+	 * @var   Message
+	 * @since 5.1.4
+	 */
+	protected Message $message;
+
+	/**
+	 * Constants for defining the success threshold
+	 * Minimum success rate to consider the import successful
+	 *
+	 * @since 5.1.4
+	 */
+	private const SUCCESS_THRESHOLD = 0.80;
+
+	/**
+	 * Constructor.
+	 *
+	 * @param Data      $data      The Data Class.
+	 * @param Message   $message   The Import Message Class.
+	 *
+	 * @since 5.1.4
+	 */
+	public function __construct(Message $message)
+	{
+		$this->message = $message;
+	}
+
+	/**
+	 * Evaluates the import process and sets the success/error message based on the success rate.
+	 *
+	 * @param int $rowCounter     Total number of rows processed.
+	 * @param int $successCounter Number of successfully processed rows.
+	 * @param int $errorCounter   Number of rows that failed to process.
+	 *
+	 * @return void
+	 * @since 5.1.4
+	 */
+	public function evaluate(int $rowCounter, int $successCounter, int $errorCounter): void
+	{
+		// No rows processed case
+		if ($rowCounter === 0)
+		{
+			$this->message->addError(Text::_('No rows were processed.'));
+			return;
+		}
+
+		$successRate = $successCounter / $rowCounter;
+		$errorRate = (1 - $successRate) * 100;
+		$successPercentage = $successRate * 100;
+
+		// Determine appropriate message based on success rate
+		if ($successRate >= self::SUCCESS_THRESHOLD)
+		{
+			$this->message->addSuccess(Text::sprintf('%d rows processed. Success rate: %.2f%%. Import successful!', 
+				$rowCounter, 
+				$successPercentage
+			));
+			return;
+		}
+
+		$this->message->addError(Text::sprintf('Import failed. %d rows processed with only %d successes. Error rate: %.2f%%.', 
+			$rowCounter, 
+			$successCounter, 
+			$errorRate
+		));
+	}

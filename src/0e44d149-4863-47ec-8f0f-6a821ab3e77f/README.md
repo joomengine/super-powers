@@ -6,7 +6,7 @@
 @startuml
 
 interface StatusInterface  #Lavender {
-  + set(int $status, string $guid) : void
+  + set(int $status, string $value, ...) : void
   + table(string $table) : self
   + field(string $fieldName) : self
   + getTable() : string
@@ -16,13 +16,14 @@ interface StatusInterface  #Lavender {
 note right of StatusInterface::set
   Updates the status in the database.
 This method updates the import status in the database based on the result of the import process.
-Status codes:
-- 2: Being Processed.
-- 3: Import completed successfully.
-- 4: Import completed with errors.
 
-  since: 3.2.2
+  since: 5.0.2
   return: void
+  
+  arguments:
+    int $status
+    string $value
+    string $key = 'guid'
 end note
 
 note right of StatusInterface::table

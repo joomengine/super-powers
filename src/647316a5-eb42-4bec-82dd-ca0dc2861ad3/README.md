@@ -7,14 +7,19 @@
 @startuml
 
 class ItemImport  #Gold {
-  # string $queueStatusField
-  # int $queueWaitState
-  # int $queueProcessingState
-  # string $queueTable
   # string $targetName
-  # string $targetImportClass
   # static $defaultName
+  # string $targetImportClass
+  # string $targetItemsClass
+  # string $targetEntityClass
+  + __construct(?string $name = null)
 }
+
+note right of ItemImport::__construct
+  Constructor.
+
+  since: 5.1.4
+end note
 
 @enduml
 ```

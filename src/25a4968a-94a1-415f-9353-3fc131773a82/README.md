@@ -1,6 +1,6 @@
 ### JCB! Power
 # class Message (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Import**
+> namespace: **VDM\Joomla\Import**
 
 ```uml
 @startuml
@@ -19,14 +19,14 @@ class Message  #Gold {
 note right of Message::get
   Get the messages of the last import event
 
-  since: 5.0.2
+  since: 5.1.4
   return: object
 end note
 
 note right of Message::reset
   Reset the messages of the last import event
 
-  since: 5.0.2
+  since: 5.1.4
   return: void
 end note
 
@@ -35,7 +35,7 @@ note right of Message::addSuccess
 This method records a success message for the import process. The message provides
 relevant information, such as the number of rows processed and the success rate.
 
-  since: 5.0.2
+  since: 5.1.4
   return: self
 end note
 
@@ -44,7 +44,7 @@ note right of Message::addInfo
 This method records a info message for the import process. The message provides
 relevant information, such as the number of rows processed and the info rate.
 
-  since: 5.0.2
+  since: 5.1.4
   return: self
 end note
 
@@ -54,7 +54,7 @@ This method records an error message when the import process encounters issues.
 The message includes details about the failures, such as the number of failed rows
 and the corresponding error rate.
 
-  since: 5.0.2
+  since: 5.1.4
   return: self
 end note
 

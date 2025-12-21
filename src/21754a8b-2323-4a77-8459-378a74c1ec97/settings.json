@@ -9,41 +9,45 @@
     "load_selection": null,
     "name": "Import",
     "power_version": "1.0.0",
-    "system_name": "JCB.Import.Service.Import",
+    "system_name": "VDM.Service.Import",
     "type": "class",
     "use_selection": {
         "use_selection0": {
-            "use": "05f23281-58e3-482e-be42-2dc1355ef4ea",
+            "use": "ae8978fd-bfd3-45a3-97ef-1b8bf2140c10",
             "as": "default"
         },
         "use_selection1": {
-            "use": "90b48ea8-0930-48d1-869a-bce9c901589c",
-            "as": "default"
+            "use": "7cc3c19c-155c-4b34-8f9d-5e11705195fe",
+            "as": "PersistentEntity"
         },
         "use_selection2": {
-            "use": "afb5b891-7130-422a-b389-1934b0e4fc48",
+            "use": "cc923dc9-8f5c-46ea-810c-d93df2e5752b",
             "as": "default"
         },
         "use_selection3": {
-            "use": "68a0f9af-265a-4db1-bae9-a4e4531f94d7",
+            "use": "db00768d-c7a6-421d-8f39-577550ddf792",
             "as": "default"
         },
         "use_selection4": {
-            "use": "eef6ffc2-2af0-4336-958f-e0b9cf7c4ad0",
+            "use": "25a4968a-94a1-415f-9353-3fc131773a82",
             "as": "default"
         },
         "use_selection5": {
-            "use": "d2a859ac-3f2a-4f69-a77f-f118b2e0a459",
+            "use": "05f23281-58e3-482e-be42-2dc1355ef4ea",
             "as": "default"
         },
         "use_selection6": {
-            "use": "19a66b48-620c-439b-ab8a-3c0d43e040c3",
+            "use": "90b48ea8-0930-48d1-869a-bce9c901589c",
+            "as": "default"
+        },
+        "use_selection7": {
+            "use": "afb5b891-7130-422a-b389-1934b0e4fc48",
             "as": "default"
         }
     },
     "extendsinterfaces": null,
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].Import.Service.Import",
-    "description": "Import Service Provider\r\n\r\n@since  5.0.3",
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Service.Import",
+    "description": "Core Import Service Provider\r\n\r\n@since  5.0.3",
     "implements_custom": "ServiceProviderInterface",
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
     "head": "use Joomla\\DI\\Container;\r\nuse Joomla\\DI\\ServiceProviderInterface;",

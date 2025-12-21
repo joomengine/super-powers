@@ -8,14 +8,12 @@
  * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
-namespace VDM\Joomla\Import\Guid;
+namespace VDM\Joomla\Import;
 
 
-use Joomla\CMS\Language\Text;
 use VDM\Joomla\Interfaces\Import\RowInterface as Row;
 use VDM\Joomla\Interfaces\Import\RowItemInterface as ImportItem;
 use VDM\Joomla\Interfaces\Import\MapperInterface as Mapper;
-use VDM\Joomla\Interfaces\Import\MessageInterface as Message;
 use VDM\Joomla\Interfaces\Registryinterface as Data;
 use VDM\Joomla\Interfaces\Data\ItemInterface as Item;
 use VDM\Joomla\Interfaces\Database\LoadInterface as Load;
@@ -24,7 +22,7 @@ use VDM\Joomla\Interfaces\Import\ParentTableInterface;
 
 
 /**
- * Import Item(Guid) Parent Table Class
+ * Import Item Parent Table Class
  * 
  * @since  5.0.2
  */
@@ -53,14 +51,6 @@ final class ParentTable implements ParentTableInterface
 	 * @since 5.0.2
 	 */
 	protected Mapper $mapper;
-
-	/**
-	 * The Import Message Class.
-	 *
-	 * @var   Message
-	 * @since 5.0.2
-	 */
-	protected Message $message;
 
 	/**
 	 * The Data Class.
@@ -116,7 +106,6 @@ final class ParentTable implements ParentTableInterface
 	 * @param Row          $row          The Import Row Class.
 	 * @param ImportItem   $importitem   The Import Item Class.
 	 * @param Mapper       $mapper       The Import Mapper Class.
-	 * @param Message      $message      The Import Message Class.
 	 * @param Data         $data         The Data Class.
 	 * @param Item         $item         The Item Class.
 	 * @param Load         $load         The Load Class.
@@ -124,12 +113,11 @@ final class ParentTable implements ParentTableInterface
 	 * @since 5.0.2
 	 */
 	public function __construct(Row $row, ImportItem $importitem, Mapper $mapper,
-		Message $message, Data $data, Item $item, Load $load)
+		Data $data, Item $item, Load $load)
 	{
 		$this->row = $row;
 		$this->importitem = $importitem;
 		$this->mapper = $mapper;
-		$this->message = $message;
 		$this->data = $data;
 		$this->item = $item;
 		$this->load = $load;
@@ -142,10 +130,13 @@ final class ParentTable implements ParentTableInterface
 	 * @param   string  $parentKey    The parent key field.
 	 * @param   string  $parentTable  The parent table.
 	 *
-	 * @return  string  The parent guid
+	 * @return  mixed  The parent value
 	 * @since  5.0.2
+	 *
+	 * @throws  \UnexpectedValueException
+	 * @throws  \DomainException
 	 */
-	public function set(string $linkKey, string $parentKey, string $parentTable): ?string
+	public function set(string $linkKey, string $parentKey, string $parentTable)
 	{
 		$this->link = $linkKey;
 		$this->key = $parentKey;
@@ -153,19 +144,16 @@ final class ParentTable implements ParentTableInterface
 
 		$parent = $this->getParent();
 
-		if (!$this->validateParent($parent))
+		$this->validateParent($parent);
+
+		$parent_value = $this->processParent($parent);
+
+		if (!$this->validateParentValue($parent_value))
 		{
 			return null;
 		}
 
-		$parent_guid = $this->processParent($parent);
-
-		if (!$this->validateParentGuid($parent_guid))
-		{
-			return null;
-		}
-
-		return $parent_guid;
+		return $parent_value;
 	}
 
 	/**
@@ -184,17 +172,23 @@ final class ParentTable implements ParentTableInterface
 	 *
 	 * @param   array|null  $parent  The parent item.
 	 *
-	 * @return  bool
+	 * @return  void
 	 * @since  5.0.2
+	 *
+	 * @throws  \UnexpectedValueException
 	 */
-	private function validateParent(?array $parent): bool
+	private function validateParent(?array $parent): void
 	{
 		if (empty($parent) || empty($parent[$this->link]))
 		{
-			$this->message->addError(Text::sprintf('COM_COMPONENTBUILDER_ROW_S_MISSING_THE_KEY_FIELD_S', $this->row->getIndex(), $this->table . ':' . $this->link));
-			return false;
+			throw new \UnexpectedValueException(
+				sprintf(
+					'Row %s is missing required parent key "%s".',
+					$this->row->getIndex(),
+					$this->table . ':' . $this->link
+				)
+			);
 		}
-		return true;
 	}
 
 	/**
@@ -202,57 +196,94 @@ final class ParentTable implements ParentTableInterface
 	 *
 	 * @param   array  $parent  The parent item.
 	 *
-	 * @return  string|null
+	 * @return  mixed
 	 * @since  5.0.2
 	 */
-	private function processParent(array &$parent): ?string
+	private function processParent(array &$parent)
 	{
+		$key = $this->key;
+
 		$parent_where = [
 			'a.' . $this->link => $parent[$this->link]
 		];
 		$parent_tables = [
 			'a' => $this->table
 		];
-		$parent_select = ['a.guid' => 'guid'];
 
-		if (($parent_guid = $this->load->value($parent_select, $parent_tables, $parent_where)) !== null)
+		$parent_select = ['a.' . $key => $key];
+
+		if (($parent_value = $this->load->value($parent_select, $parent_tables, $parent_where)) !== null)
 		{
 			// Update existing
-			$parent['guid'] = $parent_guid;
+			$parent[$key] = $parent_value;
 			$parent['modified_by'] ??= $this->data->get('import.created_by', 0); // must be created by :)
-			$this->item->table($this->table)->set((object) $parent, 'guid', 'update');
+			$this->item->table($this->table)->set((object) $parent, $key, 'update');
 		}
-		else
+		else($key === 'guid')
 		{
 			// Insert new
-			$parent['guid'] ??= GuidHelper::get();
+			$parent[$key] ??= GuidHelper::get();
 			$parent['access'] ??= 1;
 			$parent['created_by'] ??= $this->data->get('import.created_by', 0);
-			$this->item->table($this->table)->set((object)$parent, 'guid');
+			$this->item->table($this->table)->set((object) $parent, $key);
 
-			$parent_guid = $parent['guid'];
+			$parent_value = $parent[$key];
+		}
+		else($key === 'id')
+		{
+			// Insert new
+			$parent[$key] ??= 0;
+			$parent['access'] ??= 1;
+			$parent['created_by'] ??= $this->data->get('import.created_by', 0);
+			$this->item->table($this->table)->set((object) $parent, $key);
+
+			$parent[$key] = $this->item->id();
+			$parent_value = $parent[$key];
 		}
 
-		return $parent_guid;
+		return $parent_value;
 	}
 
 	/**
-	 * Validate the retrieved parent guid.
+	 * Validate the retrieved parent value.
 	 *
-	 * @param   string|null  $guid  The parent guid.
+	 * @param   mixed  $value  The parent key value.
 	 *
 	 * @return  bool
-	 * @since  5.0.2
+	 * @since   5.1.4
+	 *
+	 * @throws  \DomainException
 	 */
-	private function validateParentGuid(?string $guid): bool
+	private function validateParentValue($value): bool
 	{
-		if (!GuidHelper::valid($guid))
+		$key = $this->key;
+
+		$isValid = match ($key)
 		{
-			$this->message->addError(
-				Text::sprintf('COM_COMPONENTBUILDER_ROW_S_WAS_UNABLE_TO_RETRIEVE_A_VALID_PARENT_S_VALUE', $this->row->getIndex(), $this->table . ':' . $this->key)
+			'guid' => GuidHelper::valid($value),
+
+			'id' => is_numeric($value) && (int) $value >= 1,
+
+			default => (
+				// numeric but not zero
+				(is_numeric($value) && (float) $value != 0.0)
+				||
+				// non-empty string
+				(is_string($value) && trim($value) !== '')
+			),
+		};
+
+		if (!$isValid)
+		{
+			throw new \DomainException(
+				sprintf(
+					'Row %s resolved an invalid parent value for "%s".',
+					$this->row->getIndex(),
+					$this->table . ':' . $key
+				)
 			);
-			return false;
 		}
+
 		return true;
 	}
 }

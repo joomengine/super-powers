@@ -1,16 +1,19 @@
 ### JCB! Power
 # class Import (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Service\Item**
+> namespace: **VDM\Joomla\Componentbuilder\Service**
 
 ```uml
 @startuml
 
 class Import  #Gold {
   + register(Container $container) : void
-  + getItemImport(Container $container) : ItemImport
-  + getParentTable(Container $container) : ParentTable
-  + getJoinTables(Container $container) : JoinTables
-  + getRowDataArray(Container $container) : RowDataArray
+  + getPersistent(Container $container) : Persistent
+  + getStatus(Container $container) : Status
+  + getMessage(Container $container) : Message
+  + getAssessor(Container $container) : Assessor
+  + getPersistentAssessor(Container $container) : PersistentAssessor
+  + getTransient(Container $container) : Transient
+  + getItem(Container $container) : Item
 }
 
 note right of Import::register
@@ -20,32 +23,53 @@ note right of Import::register
   return: void
 end note
 
-note right of Import::getItemImport
-  Get The Import Class.
+note left of Import::getPersistent
+  Get The Persistent Class.
 
   since: 5.0.2
-  return: ItemImport
+  return: Persistent
 end note
 
-note right of Import::getParentTable
-  Get The ParentTable Class.
+note right of Import::getStatus
+  Get The Status Class.
 
   since: 5.0.2
-  return: ParentTable
+  return: Status
 end note
 
-note right of Import::getJoinTables
-  Get The JoinTables Class.
+note left of Import::getMessage
+  Get The Message Class.
 
   since: 5.0.2
-  return: JoinTables
+  return: Message
 end note
 
-note right of Import::getRowDataArray
-  Get The RowDataArray Class.
+note right of Import::getAssessor
+  Get The Assessor Class.
+
+  since: 5.1.4
+  return: Assessor
+end note
+
+note left of Import::getPersistentAssessor
+  Get The PersistentAssessor Class.
 
   since: 5.0.2
-  return: RowDataArray
+  return: PersistentAssessor
+end note
+
+note right of Import::getTransient
+  Get The Transient Class.
+
+  since: 5.0.2
+  return: Transient
+end note
+
+note left of Import::getItem
+  Get The Item Class.
+
+  since: 5.0.2
+  return: Item
 end note
 
 @enduml

@@ -22,5 +22,5 @@
 			->registerServiceProvider(new Import())
 			->registerServiceProvider(new File())
 			->registerServiceProvider(new Spreadsheet())
-			->registerServiceProvider(new ItemImport());
+			->registerServiceProvider(new EntityImport());
 	}

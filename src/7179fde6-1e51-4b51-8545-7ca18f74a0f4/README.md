@@ -1,18 +1,35 @@
 ### JCB! Power
 # interface UpdateInterface (Details)
 > namespace: **VDM\Joomla\Interfaces\Database**
-> extends: **VersioningInterface, DefaultInterface**
+> extends: **DefaultInterface, VersioningInterface**
 
 ```uml
 @startuml
 
 interface UpdateInterface  #Lavender {
+  + updateids(bool $reset = false) : array
   + rows(array $data, string $key, ...) : bool
   + items(array $data, string $key, ...) : bool
   + row(array $data, string $key, ...) : bool
   + item(object $data, string $key, ...) : bool
   + column(mixed $value, string $key, ...) : bool
 }
+
+note right of UpdateInterface::updateids
+  Get the IDs affected by the most recent UPDATE batch.
+This method returns the ordered list of entity IDs that were affected
+by the last UPDATE operation or batch of UPDATE operations.
+Behavioral notes:
+- IDs are resolved deterministically (ID, GUID, or WHERE-clause fallback).
+- The order of IDs reflects the order in which they were resolved.
+- IDs may represent one or many rows, depending on the UPDATE scope.
+- When `$reset` is enabled, the internal update ID bucket is cleared
+after the values are retrieved.
+after retrieval.
+
+  since: 5.1.4
+  return: array
+end note
 
 note right of UpdateInterface::rows
   Update rows in the database (with remapping and filtering columns option)

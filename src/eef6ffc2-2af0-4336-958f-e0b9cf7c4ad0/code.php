@@ -9,18 +9,18 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\Import\Database;
+namespace VDM\Joomla\Componentbuilder\Import\Persistent;
 
 
 use VDM\Joomla\Interfaces\Data\UpdateInterface as Update;
 use VDM\Joomla\Interfaces\Data\InsertInterface as Insert;
 use VDM\Joomla\Utilities\GuidHelper;
 use VDM\Joomla\Interfaces\Import\DatabaseMessageInterface;
-use VDM\Joomla\Componentbuilder\Import\Message as ExtendingMessage;
+use VDM\Joomla\Import\Message as ExtendingMessage;
 
 
 /**
- * Import Database Messages Class
+ * Import Persistent Messages Class
  * 
  * @since  5.0.2
  */

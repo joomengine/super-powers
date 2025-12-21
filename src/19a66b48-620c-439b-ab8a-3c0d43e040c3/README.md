@@ -1,6 +1,6 @@
 ### JCB! Power
 # final class Assessor (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Import**
+> namespace: **VDM\Joomla\Componentbuilder\Import\Persistent**
 
 ```uml
 @startuml

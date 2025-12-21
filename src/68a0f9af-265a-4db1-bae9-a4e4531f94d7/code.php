@@ -20,7 +20,7 @@ use VDM\Joomla\Interfaces\Import\RowItemInterface;
 
 
 /**
- * Import Item Class
+ * Import Row => Item Class
  * 
  * @since  4.0.3
  */

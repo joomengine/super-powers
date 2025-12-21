@@ -12,7 +12,9 @@ class Item << (F,LightGreen) >> #RoyalBlue {
   # Delete $delete
   # Database $database
   # string $table
+  # ?string $activeAction
   + __construct(Load $load, Insert $insert, ...)
+  + id() : int
   + table(string $table) : self
   + get(string $value, string $key = 'guid') : ?object
   + value(string $value, string $key = 'guid', ...) : mixed
@@ -21,7 +23,7 @@ class Item << (F,LightGreen) >> #RoyalBlue {
   + getTable() : string
   - insert(object $item) : bool
   - update(object $item, string $key) : bool
-  - action(string $value, string $key) : string
+  - action(mixed $value, string $key) : string
 }
 
 note right of Item::__construct
@@ -38,21 +40,35 @@ note right of Item::__construct
     ?string $table = null
 end note
 
-note left of Item::table
+note left of Item::id
+  Get the first ID of the most recent action.
+This method returns the first resolved entity ID from the most recent
+INSERT or UPDATE action. If no IDs are available or the active action
+is not supported, 0 is returned.
+Behavioral notes:
+- Only INSERT and UPDATE actions are supported.
+- The internal ID bucket of the active action is reset after retrieval.
+- The returned ID represents the first affected entity in the batch.
+
+  since: 5.1.4
+  return: int
+end note
+
+note right of Item::table
   Set the current active table
 
   since: 3.2.2
   return: self
 end note
 
-note right of Item::get
+note left of Item::get
   Get an item
 
   since: 3.2.2
   return: ?object
 end note
 
-note left of Item::value
+note right of Item::value
   Get the value
 
   since: 3.2.2
@@ -64,7 +80,7 @@ note left of Item::value
     string $get = 'id'
 end note
 
-note right of Item::set
+note left of Item::set
   Set an item
 
   since: 3.2.2
@@ -76,35 +92,35 @@ note right of Item::set
     ?string $action = null
 end note
 
-note left of Item::delete
+note right of Item::delete
   Delete an item
 
   since: 3.2.2
   return: bool
 end note
 
-note right of Item::getTable
+note left of Item::getTable
   Get the current active table
 
   since: 3.2.2
   return: string
 end note
 
-note left of Item::insert
+note right of Item::insert
   Insert a item
 
   since: 3.2.2
   return: bool
 end note
 
-note right of Item::update
+note left of Item::update
   Update a item
 
   since: 3.2.2
   return: bool
 end note
 
-note left of Item::action
+note right of Item::action
   Get loading action
 
   since: 3.2.2

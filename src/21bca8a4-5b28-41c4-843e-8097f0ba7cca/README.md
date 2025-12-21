@@ -13,6 +13,7 @@ class Items << (F,LightGreen) >> #RoyalBlue {
   # Database $database
   # string $table
   + __construct(Load $load, Insert $insert, ...)
+  + ids() : array
   + table(string $table) : self
   + get(array $values, string $key = 'guid') : ?array
   + values(array $values, string $key = 'guid', ...) : ?array
@@ -42,21 +43,38 @@ note right of Items::__construct
     ?string $table = null
 end note
 
-note left of Items::table
+note left of Items::ids
+  Get the IDs affected by the most recent actions batch.
+This method returns the complete set of entity IDs affected by the most
+recent persistence operations, regardless of whether the underlying
+action was an INSERT, UPDATE, or a mixture of both.
+Behavioral notes:
+- IDs from INSERT and UPDATE operations are merged into a single set.
+- The internal ID buckets for both operations are reset immediately
+after retrieval to prevent cross-contamination between batches.
+- Duplicate IDs are removed while preserving their original order.
+- The returned IDs represent *all* entities affected during the
+most recent execution cycle.
+
+  since: 5.1.4
+  return: array
+end note
+
+note right of Items::table
   Set the current active table
 
   since: 3.2.2
   return: self
 end note
 
-note right of Items::get
+note left of Items::get
   Get list of items
 
   since: 3.2.2
   return: ?array
 end note
 
-note left of Items::values
+note right of Items::values
   Get the values
 
   since: 3.2.2
@@ -68,49 +86,49 @@ note left of Items::values
     string $get = 'id'
 end note
 
-note right of Items::set
+note left of Items::set
   Set items
 
   since: 3.2.2
   return: bool
 end note
 
-note left of Items::delete
+note right of Items::delete
   Delete items
 
   since: 3.2.2
   return: bool
 end note
 
-note right of Items::getTable
+note left of Items::getTable
   Get the current active table
 
   since: 3.2.2
   return: string
 end note
 
-note left of Items::insert
+note right of Items::insert
   Insert a item
 
   since: 3.2.2
   return: bool
 end note
 
-note right of Items::update
+note left of Items::update
   Update a item
 
   since: 3.2.2
   return: bool
 end note
 
-note left of Items::sort
+note right of Items::sort
   Sort items between insert and update.
 
   since: 3.2.2
   return: ?array
 end note
 
-note right of Items::extractValues
+note left of Items::extractValues
   Extracts values for a given key from an array of items.
 Items can be either arrays or objects.
 
@@ -118,7 +136,7 @@ Items can be either arrays or objects.
   return: ?array
 end note
 
-note left of Items::extractSet
+note right of Items::extractSet
   Extracts items from an array of items based on a set.
 Items can be either arrays or objects.
 
@@ -132,14 +150,14 @@ Items can be either arrays or objects.
     bool $inverse = false
 end note
 
-note right of Items::normalizeGuid
+note left of Items::normalizeGuid
   Normalize the row item
 
   since: 5.1.2
   return: array
 end note
 
-note left of Items::checkGuid
+note right of Items::checkGuid
   Checks if the GUID value is unique and does not already exist.
 
   since: 5.0.2
