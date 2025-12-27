@@ -30,6 +30,7 @@ abstract Grep  #Orange {
   + setBranchDefaultName(?string $name) : void
   + setIndexPath(string $indexPath) : void
   + loadApi(Api $api, ?string $base, ...) : void
+  + getValidGuids(array $values, ?object $repo = null) : array
   # {abstract} setRemoteIndexMessage(string $message, string $path, ...) : void
   # setRepoItemSha(object $power, object $path, ...) : void
   # getFunctionName(string $name, string $type = 'search') : ?string
@@ -43,6 +44,7 @@ abstract Grep  #Orange {
   # getIndexPath() : string
   # getSettingsName() : string
   # getGuidField() : string
+  + getGuidHelperField() : ?string
   # getItemReadmeName() : string
   # hasItemReadme() : bool
   # itemExists(string $guid, object $repo, ...) : bool
@@ -54,6 +56,8 @@ abstract Grep  #Orange {
   # indexLocal(object $path) : void
   # initializeInstances() : void
   # loadRemoteFile(string $organisation, string $repository, ...) : mixed
+  # getEntityGuid(string $value, string $key, ...) : ?string
+  # getGuidFromPath(string $value, string $key, ...) : ?string
 }
 
 note right of Grep::__construct
@@ -180,7 +184,19 @@ If not, it ensures the token is not null by defaulting to an empty string.
     ?string $token
 end note
 
-note right of Grep::setRemoteIndexMessage
+note right of Grep::getValidGuids
+  Resolve and validate entity GUID values.
+- Empty values are ignored.
+- If the entity uses a GUID field, each value is validated:
+- Valid GUIDs are accepted as-is.
+- Invalid GUIDs are resolved via a helper field when available.
+- If the entity does not use GUIDs, values are returned unchanged.
+
+  since: 5.1.4
+  return: array
+end note
+
+note left of Grep::setRemoteIndexMessage
   Set repository messages and errors based on given conditions.
 
   since: 3.2.0
@@ -194,7 +210,7 @@ note right of Grep::setRemoteIndexMessage
     ?string $base
 end note
 
-note left of Grep::setRepoItemSha
+note right of Grep::setRepoItemSha
   Injects metadata SHA into the power params object.
 
   since: 5.1.1
@@ -208,14 +224,14 @@ note left of Grep::setRepoItemSha
     string $sourceKey
 end note
 
-note right of Grep::getFunctionName
+note left of Grep::getFunctionName
   Get function name
 
   since: 3.2.0
   return: ?string
 end note
 
-note left of Grep::searchSingleRepo
+note right of Grep::searchSingleRepo
   Search a single repository for an item
 
   since: 3.2.2
@@ -227,14 +243,14 @@ note left of Grep::searchSingleRepo
     object $repo
 end note
 
-note right of Grep::searchAllRepos
+note left of Grep::searchAllRepos
   Search all repositories for an item
 
   since: 3.2.2
   return: ?object
 end note
 
-note left of Grep::itemExistsInRepo
+note right of Grep::itemExistsInRepo
   Check if an item exists in a specific repository.
 
   since: 3.2.2
@@ -246,53 +262,60 @@ note left of Grep::itemExistsInRepo
     array $order
 end note
 
-note right of Grep::itemExistsInAllRepos
+note left of Grep::itemExistsInAllRepos
   Check if an item exists in any of the repositories.
 
   since: 3.2.2
   return: bool
 end note
 
-note left of Grep::getBranchField
+note right of Grep::getBranchField
   Get the branch field
 
   since: 3.2.2
   return: string
 end note
 
-note right of Grep::getBranchDefaultName
+note left of Grep::getBranchDefaultName
   Get the branch default name
 
   since: 3.2.2
   return: ?string
 end note
 
-note left of Grep::getBranchName
+note right of Grep::getBranchName
   Get the branch name
 
   since: 3.2.2
   return: ?string
 end note
 
-note right of Grep::getIndexPath
+note left of Grep::getIndexPath
   Get the index path
 
   since: 3.2.2
   return: string
 end note
 
-note left of Grep::getSettingsName
+note right of Grep::getSettingsName
   Get the settings name
 
   since: 3.2.2
   return: string
 end note
 
-note right of Grep::getGuidField
+note left of Grep::getGuidField
   Get GUID field
 
   since: 5.1.1
   return: string
+end note
+
+note right of Grep::getGuidHelperField
+  Get GUID Helper field
+
+  since: 5.1.4
+  return: ?string
 end note
 
 note left of Grep::getItemReadmeName
@@ -336,14 +359,14 @@ note left of Grep::existsRemotely
 end note
 
 note right of Grep::existsLocal
-  Check if item exists locally
+  Determine whether an item exists in the local index.
 
   since: 3.2.2
   return: bool
 end note
 
 note left of Grep::existsRemote
-  Check if item exists remotely
+  Determine whether an item exists in the remote index.
 
   since: 3.2.2
   return: bool
@@ -381,6 +404,30 @@ note left of Grep::loadRemoteFile
     string $repository
     string $path
     ?string $branch
+end note
+
+note right of Grep::getEntityGuid
+  Resolve an entity GUID by searching one or more repositories.
+
+  since: 5.1.4
+  return: ?string
+  
+  arguments:
+    string $value
+    string $key
+    ?object $repo
+end note
+
+note left of Grep::getGuidFromPath
+  Resolve a GUID from a single repository path by matching a property value.
+
+  since: 5.1.4
+  return: ?string
+  
+  arguments:
+    string $value
+    string $key
+    object $repo
 end note
 
 @enduml

@@ -6,7 +6,7 @@
 @startuml
 
 interface JoinTablesInterface  #Lavender {
-  + set(string $parentJoinKey, string $parentGuid) : void
+  + set(string $parentJoinKey, mixed $parentLinkValue, ...) : void
 }
 
 note right of JoinTablesInterface::set
@@ -14,6 +14,11 @@ note right of JoinTablesInterface::set
 
   since: 5.0.2
   return: void
+  
+  arguments:
+    string $parentJoinKey
+    mixed $parentLinkValue
+    array $joinFields = []
 end note
 
 @enduml

@@ -155,5 +155,22 @@ interface GrepInterface
 	 * @since 5.0.4
 	 */
 	public function loadApi(Api $api, ?string $base, ?string $token): void;
+
+	/**
+	 * Resolve and validate entity GUID values.
+	 *
+	 * - Empty values are ignored.
+	 * - If the entity uses a GUID field, each value is validated:
+	 *   - Valid GUIDs are accepted as-is.
+	 *   - Invalid GUIDs are resolved via a helper field when available.
+	 * - If the entity does not use GUIDs, values are returned unchanged.
+	 *
+	 * @param  array        $values  The values to resolve.
+	 * @param  object|null  $repo    The repository object to search. If null, all repositories are searched.
+	 *
+	 * @return array  An array of valid GUID values.
+	 * @since  5.1.4
+	 */
+	public function getValidGuids(array $values, ?object $repo): array;
 }
 

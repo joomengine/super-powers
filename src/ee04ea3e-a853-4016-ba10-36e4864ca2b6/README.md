@@ -27,6 +27,7 @@ abstract Base  #Orange {
   + getChildren() : array
   + getTitleName() : string
   + getGuidField() : string
+  + getGuidHelperField() : ?string
   + getMainReadmePath() : string
   + hasMainReadme() : bool
   + getItemReadmeName() : string
@@ -183,105 +184,112 @@ note left of Base::getGuidField
   return: string
 end note
 
-note right of Base::getMainReadmePath
+note right of Base::getGuidHelperField
+  Get GUID Helper field
+
+  since: 5.1.4
+  return: ?string
+end note
+
+note left of Base::getMainReadmePath
   Get main readme path
 
   since: 5.1.1
   return: string
 end note
 
-note left of Base::hasMainReadme
+note right of Base::hasMainReadme
   Has main readme
 
   since: 5.1.1
   return: bool
 end note
 
-note right of Base::getItemReadmeName
+note left of Base::getItemReadmeName
   Get item readme path
 
   since: 5.1.1
   return: string
 end note
 
-note left of Base::hasItemReadme
+note right of Base::hasItemReadme
   Has item readme
 
   since: 5.1.1
   return: bool
 end note
 
-note right of Base::getPrefixKey
+note left of Base::getPrefixKey
   Get Prefix Key
 
   since: 5.1.1
   return: string
 end note
 
-note left of Base::getSuffixKey
+note right of Base::getSuffixKey
   Get Suffix Key
 
   since: 5.1.1
   return: string
 end note
 
-note right of Base::mapItem
+note left of Base::mapItem
   Map a single item to its properties
 
   since: 3.2.2
   return: object
 end note
 
-note left of Base::getIndexItem
+note right of Base::getIndexItem
   Get index values
 
   since: 3.2.2
   return: ?array
 end note
 
-note right of Base::index_map_IndexName
+note left of Base::index_map_IndexName
   Get the item name for the index values
 
   since: 3.2.2
   return: ?string
 end note
 
-note left of Base::index_map_ShortDescription
+note right of Base::index_map_ShortDescription
   Get the item Short Description for the index values
 
   since: 5.0.3
   return: ?string
 end note
 
-note right of Base::index_map_IndexSettingsPath
+note left of Base::index_map_IndexSettingsPath
   Get the item settings path for the index values
 
   since: 3.2.2
   return: string
 end note
 
-note left of Base::index_map_IndexPath
+note right of Base::index_map_IndexPath
   Get the item path for the index values
 
   since: 3.2.2
   return: string
 end note
 
-note right of Base::index_map_IndexReadmePath
+note left of Base::index_map_IndexReadmePath
   Get the item readme path for the index values
 
   since: 5.1.1
   return: string
 end note
 
-note left of Base::index_map_IndexKey
+note right of Base::index_map_IndexKey
   Get the item [POWER KEY] for the index values
 
   since: 3.2.2
   return: string
 end note
 
-note right of Base::index_map_IndexGUID
+note left of Base::index_map_IndexGUID
   Get the item GUID for the index values
 
   since: 3.2.2

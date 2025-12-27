@@ -1572,17 +1572,6 @@
         "spk": "Super---c548640c_a461_4424_9ac5_8dfb5ed06d8d---Power",
         "guid": "c548640c-a461-4424-9ac5-8dfb5ed06d8d"
     },
-    "ca7e1532-c285-4b4e-9b67-f485cc039bc7": {
-        "name": "TypeDefinition",
-        "type": "final class",
-        "namespace": "VDM\\Joomla\\Componentbuilder\\File",
-        "code": "src\/ca7e1532-c285-4b4e-9b67-f485cc039bc7\/code.php",
-        "power": "src\/ca7e1532-c285-4b4e-9b67-f485cc039bc7\/code.power",
-        "settings": "src\/ca7e1532-c285-4b4e-9b67-f485cc039bc7\/settings.json",
-        "path": "src\/ca7e1532-c285-4b4e-9b67-f485cc039bc7",
-        "spk": "Super---ca7e1532_c285_4b4e_9b67_f485cc039bc7---Power",
-        "guid": "ca7e1532-c285-4b4e-9b67-f485cc039bc7"
-    },
     "caf33c5d-858c-4f9a-894f-ab302ec5445a": {
         "name": "FactoryInterface",
         "type": "interface",

@@ -42,7 +42,7 @@ note right of Persistent::__construct
     ParentTable $parenttable
     JoinTables $jointables
     Assessor $assessor
-    DataItem $dataitem
+    DataItem $item
     Entity $entity
 end note
 

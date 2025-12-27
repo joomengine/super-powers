@@ -39,6 +39,7 @@ abstract Config  #Orange {
   + getChildren() : array
   + getTitleName() : string
   + getGuidField() : string
+  + getGuidHelperField() : ?string
   + getPrefixKey() : string
   + getSuffixKey() : string
 }
@@ -212,14 +213,21 @@ note left of Config::getGuidField
   return: string
 end note
 
-note right of Config::getPrefixKey
+note right of Config::getGuidHelperField
+  Get GUID Helper field
+
+  since: 5.1.4
+  return: ?string
+end note
+
+note left of Config::getPrefixKey
   Get Prefix Key
 
   since: 5.1.1
   return: string
 end note
 
-note left of Config::getSuffixKey
+note right of Config::getSuffixKey
   Get Suffix Key
 
   since: 5.1.1

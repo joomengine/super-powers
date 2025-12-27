@@ -6,14 +6,14 @@
 @startuml
 
 interface ParentTableInterface  #Lavender {
-  + set(string $linkKey, string $parentKey, ...) : ?string
+  + set(string $linkKey, string $parentKey, ...) : mixed
 }
 
 note right of ParentTableInterface::set
   Set the parent data
 
   since: 5.0.2
-  return: ?string
+  return: mixed
   
   arguments:
     string $linkKey

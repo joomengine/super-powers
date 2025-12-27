@@ -239,7 +239,7 @@ class Entity extends ExtendingEntity implements PersistentEntityInterface
 	 * @return self
 	 * @since  5.1.4
 	 */
-	public function setQueueWaitState(int $status): self;
+	public function setQueueWaitState(int $status): self
 	{
 		$this->queueWaitState = $status;
 

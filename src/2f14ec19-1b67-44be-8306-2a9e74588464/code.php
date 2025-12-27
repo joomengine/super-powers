@@ -145,7 +145,7 @@ class Persistent implements ItemProcessInterface
 	 * @param ParentTable   $parenttable   The ParentTable Class.
 	 * @param JoinTables    $jointables    The JoinTables Class.
 	 * @param Assessor      $assessor      The Assessor Class.
-	 * @param DataItem      $dataitem      The Item Class.
+	 * @param DataItem      $item          The Item Class.
 	 * @param Entity        $entity        The Persistent Entity Class.
 	 *
 	 * @since 5.0.2
@@ -154,7 +154,7 @@ class Persistent implements ItemProcessInterface
 		Data $data, Importer $importer, RowData $rowdata,
 		Row $row, ParentTable $parenttable,
 		JoinTables $jointables, Assessor $assessor,
-		DataItem $dataitem, Entity $entity)
+		DataItem $item, Entity $entity)
 	{
 		$this->status = $status;
 		$this->message = $message;
@@ -167,6 +167,7 @@ class Persistent implements ItemProcessInterface
 		$this->jointables = $jointables;
 		$this->assessor = $assessor;
 		$this->item = $item;
+		$this->entity = $entity;
 	}
 
 	/**

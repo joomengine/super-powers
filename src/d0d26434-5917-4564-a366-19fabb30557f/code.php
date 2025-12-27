@@ -26,9 +26,12 @@ interface ParentTableInterface
 	 * @param   string  $parentKey    The parent key field.
 	 * @param   string  $parentTable  The parent table.
 	 *
-	 * @return  string  The parent guid
+	 * @return  mixed  The parent value
 	 * @since  5.0.2
+	 *
+	 * @throws  \UnexpectedValueException
+	 * @throws  \DomainException
 	 */
-	public function set(string $linkKey, string $parentKey, string $parentTable): ?string;
+	public function set(string $linkKey, string $parentKey, string $parentTable);
 }
 

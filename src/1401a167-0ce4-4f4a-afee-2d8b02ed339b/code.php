@@ -23,6 +23,7 @@ use VDM\Joomla\Componentbuilder\Package\Dependency\Tracker;
 use VDM\Joomla\Interfaces\Git\ApiInterface as Api;
 use VDM\Joomla\Utilities\FileHelper;
 use VDM\Joomla\Utilities\JsonHelper;
+use VDM\Joomla\Utilities\GuidHelper;
 use VDM\Joomla\Interfaces\GrepInterface;
 
 
@@ -470,6 +471,65 @@ abstract class Grep implements GrepInterface
 	}
 
 	/**
+	 * Resolve and validate entity GUID values.
+	 *
+	 * - Empty values are ignored.
+	 * - If the entity uses a GUID field, each value is validated:
+	 *   - Valid GUIDs are accepted as-is.
+	 *   - Invalid GUIDs are resolved via a helper field when available.
+	 * - If the entity does not use GUIDs, values are returned unchanged.
+	 *
+	 * @param  array        $values  The values to resolve.
+	 * @param  object|null  $repo    The repository object to search. If null, all repositories are searched.
+	 *
+	 * @return array  An array of valid GUID values.
+	 * @since  5.1.4
+	 */
+	public function getValidGuids(array $values, ?object $repo = null): array
+	{
+		// If this entity does not use GUIDs, return values untouched
+		if ($this->getGuidField() !== 'guid')
+		{
+			return $values;
+		}
+
+		$helperField = $this->getGuidHelperField();
+		$validGuids  = [];
+
+		foreach ($values as $value)
+		{
+			$value = trim((string) $value);
+
+			if ($value === '')
+			{
+				continue;
+			}
+
+			// Accept already-valid GUIDs
+			if (GuidHelper::valid($value))
+			{
+				$validGuids[] = $value;
+				continue;
+			}
+
+			// No helper available to resolve invalid GUIDs
+			if ($helperField === null)
+			{
+				continue;
+			}
+
+			$resolved = $this->getEntityGuid($value, $helperField, $repo);
+
+			if ($resolved !== null && GuidHelper::valid($resolved))
+			{
+				$validGuids[] = $resolved;
+			}
+		}
+
+		return $validGuids;
+	}
+
+	/**
 	 * Set repository messages and errors based on given conditions.
 	 *
 	 * @param string       $message       The message to set (if error)
@@ -719,6 +779,17 @@ abstract class Grep implements GrepInterface
 	}
 
 	/**
+	 * Get GUID Helper field
+	 *
+	 * @return string|null
+	 * @since  5.1.4
+	 */
+	public function getGuidHelperField(): ?string
+	{
+		return $this->config->getGuidHelperField();
+	}
+
+	/**
 	 * Get GUID field
 	 *
 	 * @return string
@@ -823,43 +894,59 @@ abstract class Grep implements GrepInterface
 	}
 
 	/**
-	 * Check if item exists locally
+	 * Determine whether an item exists in the local index.
 	 *
-	 * @param string   $guid  The global unique id of the item
-	 * @param object   $path  The path object
+	 * @param  string  $guid  The global unique identifier of the item.
+	 * @param  object  $path  The path object containing the local entities.
 	 *
-	 * @return bool   true if it exists
+	 * @return bool  True if the item exists locally, false otherwise.
 	 * @since  3.2.2
 	 */
 	protected function existsLocal(string $guid, object $path): bool
 	{
-		if (is_array($path->local ?? null) && is_object($path->local[$this->entity] ?? null) &&
-			isset($path->local[$this->entity]->{$guid}))
+		$local = $path->local ?? null;
+
+		if (!is_array($local))
 		{
-			return true;
+			return false;
 		}
 
-		return false;
+		$indexedEntities = $local[$this->entity] ?? null;
+
+		if (!is_object($indexedEntities))
+		{
+			return false;
+		}
+
+		return isset($indexedEntities->{$guid});
 	}
 
 	/**
-	 * Check if item exists remotely
+	 * Determine whether an item exists in the remote index.
 	 *
-	 * @param string   $guid  The global unique id of the item
-	 * @param object   $path  The path object
+	 * @param  string  $guid  The global unique identifier of the item.
+	 * @param  object  $path  The path object containing the indexed entities.
 	 *
-	 * @return bool   true if it exists
+	 * @return bool  True if the item exists remotely, false otherwise.
 	 * @since  3.2.2
 	 */
 	protected function existsRemote(string $guid, object $path): bool
 	{
-		if (is_array($path->index ?? null) && is_object($path->index[$this->entity] ?? null) &&
-			isset($path->index[$this->entity]->{$guid}))
+		$index = $path->index ?? null;
+
+		if (!is_array($index))
 		{
-			return true;
+			return false;
 		}
 
-		return false;
+		$indexedEntities = $index[$this->entity] ?? null;
+
+		if (!is_object($indexedEntities))
+		{
+			return false;
+		}
+
+		return isset($indexedEntities->{$guid});
 	}
 
 	/**
@@ -1025,6 +1112,80 @@ abstract class Grep implements GrepInterface
 		}
 
 		return $data;
+	}
+
+	/**
+	 * Resolve an entity GUID by searching one or more repositories.
+	 *
+	 * @param  string       $value  The value to resolve.
+	 * @param  string       $key    The entity property used for matching.
+	 * @param  object|null  $repo   The repository object to search. If null, all repositories are searched.
+	 *
+	 * @return string|null  The resolved GUID, or null if not found.
+	 * @since  5.1.4
+	 */
+	protected function getEntityGuid(string $value, string $key, ?object $repo): ?string
+	{
+		if ($repo !== null)
+		{
+			return $this->getGuidFromPath($value, $key, $repo);
+		}
+
+		if (empty($this->paths))
+		{
+			return null;
+		}
+
+		foreach ($this->paths as $path)
+		{
+			$guid = $this->getGuidFromPath($value, $key, $path);
+
+			if ($guid !== null)
+			{
+				return $guid;
+			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * Resolve a GUID from a single repository path by matching a property value.
+	 *
+	 * @param  string  $value  The value to resolve.
+	 * @param  string  $key    The entity property used for matching.
+	 * @param  object  $repo   The repository object to search.
+	 *
+	 * @return string|null  The resolved GUID, or null if not found.
+	 * @since  5.1.4
+	 */
+	protected function getGuidFromPath(string $value, string $key, object $repo): ?string
+	{
+		$index = $repo->index ?? null;
+
+		if (!is_array($index))
+		{
+			return null;
+		}
+
+		$indexedEntities = $index[$this->entity] ?? null;
+
+		if (!is_object($indexedEntities))
+		{
+			return null;
+		}
+
+		foreach ($indexedEntities as $guid => $entity)
+		{
+			$remoteValue = $entity->{$key} ?? null;
+
+			if ($remoteValue !== null && $remoteValue === $value)
+			{
+				return (string) $guid;
+			}
+		}
+
+		return null;
 	}
 }
 

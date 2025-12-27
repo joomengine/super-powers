@@ -12,7 +12,7 @@ class JoinTables << (F,LightGreen) >> #RoyalBlue {
   # Item $item
   # Load $load
   + __construct(Mapper $mapper, ImportItem $importitem, ...)
-  + set(string $parentJoinKey, string $parentGuid) : void
+  + set(string $parentJoinKey, mixed $parentLinkValue, ...) : void
   - isJoinedItemReady(array $item, array $keyFields, ...) : bool
   - saveJoinedItem(array $item, array $keyFields, ...) : void
 }
@@ -35,6 +35,11 @@ note right of JoinTables::set
 
   since: 5.0.2
   return: void
+  
+  arguments:
+    string $parentJoinKey
+    mixed $parentLinkValue
+    array $joinFields = []
 end note
 
 note right of JoinTables::isJoinedItemReady

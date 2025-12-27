@@ -29,6 +29,7 @@ interface ConfigInterface  #Lavender {
   + getChildren() : array
   + getTitleName() : string
   + getGuidField() : string
+  + getGuidHelperField() : ?string
   + getPrefixKey() : string
   + getSuffixKey() : string
 }
@@ -196,14 +197,21 @@ note right of ConfigInterface::getGuidField
   return: string
 end note
 
-note left of ConfigInterface::getPrefixKey
+note left of ConfigInterface::getGuidHelperField
+  Get GUID Helper field
+
+  since: 5.1.4
+  return: ?string
+end note
+
+note right of ConfigInterface::getPrefixKey
   Get Prefix Key
 
   since: 5.1.1
   return: string
 end note
 
-note right of ConfigInterface::getSuffixKey
+note left of ConfigInterface::getSuffixKey
   Get Suffix Key
 
   since: 5.1.1

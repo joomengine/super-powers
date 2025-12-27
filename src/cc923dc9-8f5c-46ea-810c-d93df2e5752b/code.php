@@ -219,7 +219,7 @@ final class ParentTable implements ParentTableInterface
 			$parent['modified_by'] ??= $this->data->get('import.created_by', 0); // must be created by :)
 			$this->item->table($this->table)->set((object) $parent, $key, 'update');
 		}
-		else($key === 'guid')
+		elseif ($key === 'guid')
 		{
 			// Insert new
 			$parent[$key] ??= GuidHelper::get();
@@ -229,7 +229,7 @@ final class ParentTable implements ParentTableInterface
 
 			$parent_value = $parent[$key];
 		}
-		else($key === 'id')
+		elseif ($key === 'id')
 		{
 			// Insert new
 			$parent[$key] ??= 0;

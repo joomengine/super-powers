@@ -169,7 +169,6 @@ This makes your logic both **reusable** and **component-aware**, without hardcod
   - **final class Image** | [Details](src/fbc235cd-e4cb-45e6-824e-51b3911243cc) | [Raw](src/fbc235cd-e4cb-45e6-824e-51b3911243cc/code.power) | [Settings](src/fbc235cd-e4cb-45e6-824e-51b3911243cc/settings.json) | SPK: `Super---fbc235cd_e4cb_45e6_824e_51b3911243cc---Power`
   - **final class Type** | [Details](src/12a2a8de-a893-4dbb-a53d-b52de4f6cb0e) | [Raw](src/12a2a8de-a893-4dbb-a53d-b52de4f6cb0e/code.power) | [Settings](src/12a2a8de-a893-4dbb-a53d-b52de4f6cb0e/settings.json) | SPK: `Super---12a2a8de_a893_4dbb_a53d_b52de4f6cb0e---Power`
   - **final class TypeDefinition** | [Details](src/8e2b3996-11a1-470d-b2be-2405c62ec192) | [Raw](src/8e2b3996-11a1-470d-b2be-2405c62ec192/code.power) | [Settings](src/8e2b3996-11a1-470d-b2be-2405c62ec192/settings.json) | SPK: `Super---8e2b3996_11a1_470d_b2be_2405c62ec192---Power`
-  - **final class TypeDefinition** | [Details](src/ca7e1532-c285-4b4e-9b67-f485cc039bc7) | [Raw](src/ca7e1532-c285-4b4e-9b67-f485cc039bc7/code.power) | [Settings](src/ca7e1532-c285-4b4e-9b67-f485cc039bc7/settings.json) | SPK: `Super---ca7e1532_c285_4b4e_9b67_f485cc039bc7---Power`
   - **class Manager** | [Details](src/67a5e0ca-0ff0-4979-9b41-da0b09988016) | [Raw](src/67a5e0ca-0ff0-4979-9b41-da0b09988016/code.power) | [Settings](src/67a5e0ca-0ff0-4979-9b41-da0b09988016/settings.json) | SPK: `Super---67a5e0ca_0ff0_4979_9b41_da0b09988016---Power`
 - **Namespace**: [VDM\Joomla\Componentbuilder\Import](#vdm-joomla-componentbuilder-import)
 

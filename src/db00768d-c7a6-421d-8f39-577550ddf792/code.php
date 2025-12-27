@@ -27,24 +27,6 @@ use VDM\Joomla\Interfaces\Import\JoinTablesInterface;
  */
 final class JoinTables implements JoinTablesInterface
 {
-	/**************************************************************************
-	 * THESE VALUES BELOW SHOULD BE UPDATE FOR YOUR USE-CASE
-	 */
-
-	/**
-	 * The current join tables key fields map.
-	 *
-	 * @var   array
-	 * @since 5.0.2
-	 */
-	protected array $keyFields = [
-		'detail' => ['link_fields' => ['entity']]
-	];
-
-	/**
-	 * THESE VALUES ABOVE SHOULD BE UPDATE FOR YOUR USE-CASE
-	 **************************************************************************/
-
 	/**
 	 * The Import Mapper Class.
 	 *
@@ -110,17 +92,19 @@ final class JoinTables implements JoinTablesInterface
 	 * Process the join tables and save the corresponding data.
 	 *
 	 * @param   string  $parentKeyValue  The parent key.
+	 * @param   mixed   $parentLinkValue The parent link value.
+	 * @param   array   $joinFields      The current join tables key fields map.
 	 *
 	 * @return  void
 	 * @since  5.0.2
 	 */
-	public function set(string $parentJoinKey, string $parentGuid): void
+	public function set(string $parentJoinKey, $parentLinkValue, array $joinFields = []): void
 	{
 		foreach ($this->mapper->getJoin() as $table => $columns)
 		{
-			$key_fields = $this->keyFields[$table]['link_fields'] ?? null;
+			$link_fields = $joinFields[$table]['link_fields'] ?? null;
 
-			if ($key_fields === null)
+			if ($link_fields === null)
 			{
 				continue;
 			}
@@ -132,11 +116,11 @@ final class JoinTables implements JoinTablesInterface
 					break;
 				}
 
-				$item[$parentJoinKey] = $parentGuid;
+				$item[$parentJoinKey] = $parentLinkValue;
 
-				if ($this->isJoinedItemReady($item, $key_fields, $table))
+				if ($this->isJoinedItemReady($item, $link_fields, $table))
 				{
-					$this->saveJoinedItem($item, $key_fields, $table);
+					$this->saveJoinedItem($item, $link_fields, $table);
 				}
 			}
 		}
@@ -150,7 +134,7 @@ final class JoinTables implements JoinTablesInterface
 	 * @param   string  $table        Table name.
 	 *
 	 * @return  bool
-	 * @since  5.0.2
+	 * @since   5.0.2
 	 */
 	private function isJoinedItemReady(array $item, array $keyFields, string $table): bool
 	{
@@ -175,7 +159,7 @@ final class JoinTables implements JoinTablesInterface
 	 * @param   string  $table        The table name.
 	 *
 	 * @return  void
-	 * @since  5.0.2
+	 * @since   5.0.2
 	 */
 	private function saveJoinedItem(array $item, array $keyFields, string $table): void
 	{
