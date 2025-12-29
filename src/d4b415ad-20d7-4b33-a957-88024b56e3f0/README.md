@@ -10,7 +10,7 @@ class Agent  #Gold {
   # ?Type $type
   + __construct(Handler $handler)
   + type(Type $type) : self
-  + get() : FileDefinition
+  + get() : Definition
   + delete(string $path) : bool
 }
 
@@ -38,7 +38,7 @@ Workflow:
 6) Model result and return object
 
   since: 5.1.4
-  return: FileDefinition
+  return: Definition
 end note
 
 note right of Agent::delete

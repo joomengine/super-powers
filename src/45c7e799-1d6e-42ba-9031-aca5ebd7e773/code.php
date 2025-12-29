@@ -12,8 +12,8 @@
 namespace VDM\Joomla\Interfaces\File;
 
 
-use VDM\Joomla\Componentbuilder\Interfaces\File\DefinitionInterface as Definition;
-use VDM\Joomla\Componentbuilder\Interfaces\File\TypeDefinitionInterface as Type;
+use VDM\Joomla\Interfaces\File\DefinitionInterface as Definition;
+use VDM\Joomla\Interfaces\File\TypeDefinitionInterface as Type;
 
 
 /**

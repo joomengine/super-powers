@@ -17,18 +17,14 @@
             "as": "Handler"
         },
         "use_selection1": {
-            "use": "0d159144-b553-4604-8f55-503985e22ec6",
+            "use": "4d9c5f48-4ed4-485a-9d9a-f31212ddb135",
             "as": "default"
         },
         "use_selection2": {
-            "use": "b62ec888-ce11-45c8-97ff-b4d9bea3d0bc",
-            "as": "FileDefinition"
-        },
-        "use_selection3": {
             "use": "2cd4b4d4-fca3-49a0-8605-a42eee3a5f99",
             "as": "Type"
         },
-        "use_selection4": {
+        "use_selection3": {
             "use": "f11dc790-713e-4706-9a85-a318ed3ad56e",
             "as": "default"
         }

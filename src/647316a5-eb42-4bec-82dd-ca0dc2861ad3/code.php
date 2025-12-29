@@ -36,7 +36,7 @@ final class ItemImport extends Import
 	 * @var string
 	 * @since  5.0.2
 	 */
-	protected static $defaultName = 'componentbuilder:Item:import';
+	protected static $defaultName = 'componentbuilder:item:import';
 
 	/**
 	 * The target import class.

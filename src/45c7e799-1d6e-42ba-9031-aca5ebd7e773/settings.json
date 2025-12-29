@@ -11,11 +11,11 @@
     "type": "interface",
     "use_selection": {
         "use_selection0": {
-            "use": "b62ec888-ce11-45c8-97ff-b4d9bea3d0bc",
+            "use": "3b7cd7fc-3e7c-4eaf-b156-7eb3ea744952",
             "as": "Definition"
         },
         "use_selection1": {
-            "use": "94376132-17b0-4fbd-8fc3-020a63fb15e1",
+            "use": "2cd4b4d4-fca3-49a0-8605-a42eee3a5f99",
             "as": "Type"
         }
     },

@@ -12,7 +12,7 @@
 	 * @var string
 	 * @since  5.0.2
 	 */
-	protected static $defaultName = '[[[component]]]:Item:import';
+	protected static $defaultName = '[[[component]]]:item:import';
 
 	/**
 	 * The target import class.
