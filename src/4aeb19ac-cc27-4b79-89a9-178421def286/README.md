@@ -1,25 +1,38 @@
 ### JCB! Power
-# final class ItemImport (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Console**
-> extends: **Import**
+# abstract class Import (Details)
+> namespace: **VDM\Joomla\Componentbuilder\Abstraction\Console**
+> extends: **Console**
 
 ```uml
 @startuml
 
-class ItemImport << (F,LightGreen) >> #RoyalBlue {
+abstract Import  #Orange {
+  # Items $items
+  # ImportEngine $import
+  # Entity $entity
   # string $targetName
   # static $defaultName
   # string $targetImportClass
   # string $targetItemsClass
   # string $targetEntityClass
   # configure() : void
+  # doExecute(InputInterface $input, OutputInterface $output) : int
 }
 
-note right of ItemImport::configure
-  Configure the command.
+note right of Import::configure
+  Configures the CLI command, setting up the description and help text.
+This command parses the import queue and imports items that are still in the queue.
+It is useful for automatically processing pending item imports in the virtual warehouse.
 
-  since: 2.0.0
+  since: 5.0.2
   return: void
+end note
+
+note right of Import::doExecute
+  Executes the CLI command, processing each spreadsheet in the import queue.
+
+  since: 5.0.2
+  return: int
 end note
 
 @enduml
@@ -44,7 +57,7 @@ To add this specific Power to your project in JCB:
 
 > Simply use this SPK:
 ```
-Super---647316a5_eb42_4bec_82dd_ca0dc2861ad3---Power
+Super---4aeb19ac_cc27_4b79_89a9_178421def286---Power
 ```
 > Remember to replace the `---` with `___` to activate this Power in your code.
 

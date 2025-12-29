@@ -1,0 +1,28 @@
+{
+    "add_head": 0,
+    "add_licensing_template": 2,
+    "extends": "",
+    "guid": "45c7e799-1d6e-42ba-9031-aca5ebd7e773",
+    "implements": null,
+    "load_selection": null,
+    "name": "AgentInterface",
+    "power_version": "1.0.0",
+    "system_name": "VDM.Interfaces.File.AgentInterface",
+    "type": "interface",
+    "use_selection": {
+        "use_selection0": {
+            "use": "b62ec888-ce11-45c8-97ff-b4d9bea3d0bc",
+            "as": "Definition"
+        },
+        "use_selection1": {
+            "use": "94376132-17b0-4fbd-8fc3-020a63fb15e1",
+            "as": "Type"
+        }
+    },
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Interfaces.File.AgentInterface",
+    "description": "A Stateless file Agent responsible for:\r\n\r\n  - Receiving uploaded files\r\n  - Renaming them using deterministic GUID identity\r\n  - Moving them into final filesystem locations\r\n  - Returning file objects\r\n  - Deleting files on demand\r\n\r\n@since  5.1.4",
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "head": "",
+    "composer": ""
+}

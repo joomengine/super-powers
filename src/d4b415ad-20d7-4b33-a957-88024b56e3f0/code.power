@@ -54,14 +54,14 @@
 	 * 4) Move into target directory
 	 * 6) Model result and return object
 	 *
-	 * @return Definition  Generated file details.
+	 * @return FileDefinition  Generated file details.
 	 *
 	 * @throws \RuntimeException  If no type was defined.
 	 * @throws \RuntimeException  If upload fails.
 	 *
 	 * @since  5.1.4
 	 */
-	public function get(): Definition
+	public function get(): FileDefinition
 	{
 		if ($this->type === null)
 		{

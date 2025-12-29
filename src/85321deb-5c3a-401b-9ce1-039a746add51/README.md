@@ -1,45 +1,36 @@
 ### JCB! Power
-# abstract class Import (Details)
-> namespace: **VDM\Joomla\Abstraction\Console**
+# abstract class Console (Details)
+> namespace: **VDM\Joomla\Abstraction**
 > extends: **AbstractCommand**
 
 ```uml
 @startuml
 
-abstract Import  #Orange {
-  # Items $items
-  # ImportEngine $import
-  # Entity $entity
-  # string $targetName
-  # static $defaultName
-  # string $targetImportClass
-  # string $targetItemsClass
-  # string $targetEntityClass
-  + __construct(?string $name = null)
+abstract Console  #Orange {
   # configure() : void
-  # doExecute(InputInterface $input, OutputInterface $output) : int
+  # {abstract} doExecute(InputInterface $input, OutputInterface $output) : int
+  # initialise(InputInterface $input, OutputInterface $output) : void
 }
 
-note right of Import::__construct
-  Constructor.
+note right of Console::configure
+  Configure the command.
 
-  since: 5.0.2
-end note
-
-note right of Import::configure
-  Configures the CLI command, setting up the description and help text.
-This command parses the import queue and imports items that are still in the queue.
-It is useful for automatically processing pending item imports in the virtual warehouse.
-
-  since: 5.0.2
+  since: 2.0.0
   return: void
 end note
 
-note right of Import::doExecute
-  Executes the CLI command, processing each spreadsheet in the import queue.
+note right of Console::doExecute
+  Internal function to execute the command.
 
-  since: 5.0.2
+  since: 2.0.0
   return: int
+end note
+
+note right of Console::initialise
+  Internal hook to initialise the command after the input has been bound and before the input is validated.
+
+  since: 2.0.0
+  return: void
 end note
 
 @enduml

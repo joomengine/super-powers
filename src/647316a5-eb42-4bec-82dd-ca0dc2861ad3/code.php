@@ -12,7 +12,7 @@
 namespace VDM\Joomla\Componentbuilder\Console;
 
 
-use VDM\Joomla\Abstraction\Console\Import;
+use VDM\Joomla\Componentbuilder\Abstraction\Console\Import;
 
 
 /**
@@ -20,7 +20,7 @@ use VDM\Joomla\Abstraction\Console\Import;
  * 
  * @since  5.0.2
  */
-class ItemImport extends Import
+final class ItemImport extends Import
 {
 	/**
 	 * The main import target name.
@@ -63,15 +63,15 @@ class ItemImport extends Import
 	protected string $targetEntityClass = 'Import.Persistent.Entity';
 
 	/**
-	 * Constructor.
+	 * Configure the command.
 	 *
-	 * @param string|null  $name   The name of the command; if the name is empty and no default is set, a name must be set in the configure() method
+	 * @return  void
 	 *
-	 * @since 5.1.4
+	 * @since   2.0.0
 	 */
-	public function __construct(?string $name = null)
+	protected function configure(): void
 	{
-		parent::__construct($name);
+		parent::configure();
 
 		// CHANGE THIS TO TARGET YOUR VIEW BEING IMPORTED!
 		// CHECK THE ENTITY CLASS FOR MORE OPTIONS

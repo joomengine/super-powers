@@ -13,10 +13,12 @@ namespace VDM\Joomla\File;
 
 
 use Joomla\Filesystem\File;
-use VDM\Joomla\Componentbuilder\File\Handler;
-use VDM\Joomla\File\Definition;
+use VDM\Joomla\Interfaces\File\HandlerInterface as Handler;
+use VDM\Joomla\Componentbuilder\File\Definition;
+use VDM\Joomla\Componentbuilder\Interfaces\File\DefinitionInterface as FileDefinition;
 use VDM\Joomla\Interfaces\File\TypeDefinitionInterface as Type;
 use VDM\Joomla\Utilities\MimeHelper;
+use VDM\Joomla\Interfaces\File\AgentInterface;
 
 
 /**
@@ -30,7 +32,7 @@ use VDM\Joomla\Utilities\MimeHelper;
  * 
  * @since  5.1.4
  */
-class Agent
+class Agent implements AgentInterface
 {
 	/**
 	 * Upload and validation engine.
@@ -88,14 +90,14 @@ class Agent
 	 * 4) Move into target directory
 	 * 6) Model result and return object
 	 *
-	 * @return Definition  Generated file details.
+	 * @return FileDefinition  Generated file details.
 	 *
 	 * @throws \RuntimeException  If no type was defined.
 	 * @throws \RuntimeException  If upload fails.
 	 *
 	 * @since  5.1.4
 	 */
-	public function get(): Definition
+	public function get(): FileDefinition
 	{
 		if ($this->type === null)
 		{

@@ -1,25 +1,47 @@
 ### JCB! Power
-# final class ItemImport (Details)
-> namespace: **VDM\Joomla\Componentbuilder\Console**
-> extends: **Import**
+# interface AgentInterface (Details)
+> namespace: **VDM\Joomla\Interfaces\File**
 
 ```uml
 @startuml
 
-class ItemImport << (F,LightGreen) >> #RoyalBlue {
-  # string $targetName
-  # static $defaultName
-  # string $targetImportClass
-  # string $targetItemsClass
-  # string $targetEntityClass
-  # configure() : void
+interface AgentInterface  #Lavender {
+  + type(Type $type) : self
+  + get() : Definition
+  + delete(string $path) : bool
 }
 
-note right of ItemImport::configure
-  Configure the command.
+note right of AgentInterface::type
+  Bind a file-type definition to the drop operation.
+A file type **must** be assigned before calling `upload()`.
 
-  since: 2.0.0
-  return: void
+  since: 5.1.4
+  return: self
+end note
+
+note right of AgentInterface::get
+  Get (upload), rename, and finalize file(s).
+Workflow:
+1) Validate configuration
+2) Retrieve uploaded stream
+3) Generate deterministic GUID name
+4) Move into target directory
+6) Model result and return object
+
+  since: 5.1.4
+  return: Definition
+end note
+
+note right of AgentInterface::delete
+  Delete a file from disk.
+This is intentionally shallow:
+- No permissions
+- No ownership checks
+- No logging
+The caller owns safety.
+
+  since: 5.1.4
+  return: bool
 end note
 
 @enduml
@@ -44,7 +66,7 @@ To add this specific Power to your project in JCB:
 
 > Simply use this SPK:
 ```
-Super---647316a5_eb42_4bec_82dd_ca0dc2861ad3---Power
+Super---45c7e799_1d6e_42ba_9031_aca5ebd7e773---Power
 ```
 > Remember to replace the `---` with `___` to activate this Power in your code.
 

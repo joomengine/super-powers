@@ -3,7 +3,9 @@
     "add_licensing_template": 2,
     "extends": "",
     "guid": "d4b415ad-20d7-4b33-a957-88024b56e3f0",
-    "implements": null,
+    "implements": [
+        "45c7e799-1d6e-42ba-9031-aca5ebd7e773"
+    ],
     "load_selection": null,
     "name": "Agent",
     "power_version": "1.0.0",
@@ -11,18 +13,22 @@
     "type": "class",
     "use_selection": {
         "use_selection0": {
-            "use": "4144ad3b-2ad5-401f-af0c-a3d856c1e688",
-            "as": "default"
+            "use": "0e23f0ac-8a0a-450e-b40c-912bf331bfae",
+            "as": "Handler"
         },
         "use_selection1": {
-            "use": "4d9c5f48-4ed4-485a-9d9a-f31212ddb135",
+            "use": "0d159144-b553-4604-8f55-503985e22ec6",
             "as": "default"
         },
         "use_selection2": {
+            "use": "b62ec888-ce11-45c8-97ff-b4d9bea3d0bc",
+            "as": "FileDefinition"
+        },
+        "use_selection3": {
             "use": "2cd4b4d4-fca3-49a0-8605-a42eee3a5f99",
             "as": "Type"
         },
-        "use_selection3": {
+        "use_selection4": {
             "use": "f11dc790-713e-4706-9a85-a318ed3ad56e",
             "as": "default"
         }

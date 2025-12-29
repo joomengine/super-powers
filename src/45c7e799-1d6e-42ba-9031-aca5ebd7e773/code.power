@@ -1,0 +1,48 @@
+	/**
+	 * Bind a file-type definition to the drop operation.
+	 *
+	 * A file type **must** be assigned before calling `upload()`.
+	 *
+	 * @param  Type  $type  Upload blueprint.
+	 *
+	 * @return self
+	 * @since  5.1.4
+	 */
+	public function type(Type $type): self;
+
+	/**
+	 * Get (upload), rename, and finalize file(s).
+	 *
+	 * Workflow:
+	 *
+	 * 1) Validate configuration
+	 * 2) Retrieve uploaded stream
+	 * 3) Generate deterministic GUID name
+	 * 4) Move into target directory
+	 * 6) Model result and return object
+	 *
+	 * @return Definition  Generated file details.
+	 *
+	 * @throws \RuntimeException  If no type was defined.
+	 * @throws \RuntimeException  If upload fails.
+	 *
+	 * @since  5.1.4
+	 */
+	public function get(): Definition;
+
+	/**
+	 * Delete a file from disk.
+	 *
+	 * This is intentionally shallow:
+	 * - No permissions
+	 * - No ownership checks
+	 * - No logging
+	 *
+	 * The caller owns safety.
+	 *
+	 * @param  string  $path  Absolute file path.
+	 *
+	 * @return bool  TRUE if removed, FALSE if missing or failed.
+	 * @since  5.1.4
+	 */
+	public function delete(string $path): bool;

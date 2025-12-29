@@ -19,7 +19,7 @@ use Joomla\Filesystem\File;
 use VDM\Joomla\Interfaces\Data\ItemInterface as Item;
 use VDM\Joomla\Interfaces\Data\ItemsInterface as Items;
 use VDM\Joomla\Componentbuilder\File\Type;
-use VDM\Joomla\File\Agent;
+use VDM\Joomla\Interfaces\File\AgentInterface as Agent;
 use VDM\Joomla\Componentbuilder\File\Image;
 use VDM\Joomla\Componentbuilder\File\Definition as Definition;
 use VDM\Joomla\File\Definition as FileDefinition;

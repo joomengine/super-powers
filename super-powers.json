@@ -538,6 +538,17 @@
         "spk": "Super---43134867_5cb8_4280_9be8_309fd2fd135f---Power",
         "guid": "43134867-5cb8-4280-9be8-309fd2fd135f"
     },
+    "45c7e799-1d6e-42ba-9031-aca5ebd7e773": {
+        "name": "AgentInterface",
+        "type": "interface",
+        "namespace": "VDM\\Joomla\\Interfaces\\File",
+        "code": "src\/45c7e799-1d6e-42ba-9031-aca5ebd7e773\/code.php",
+        "power": "src\/45c7e799-1d6e-42ba-9031-aca5ebd7e773\/code.power",
+        "settings": "src\/45c7e799-1d6e-42ba-9031-aca5ebd7e773\/settings.json",
+        "path": "src\/45c7e799-1d6e-42ba-9031-aca5ebd7e773",
+        "spk": "Super---45c7e799_1d6e_42ba_9031_aca5ebd7e773---Power",
+        "guid": "45c7e799-1d6e-42ba-9031-aca5ebd7e773"
+    },
     "46b98346-ec98-42b3-a393-96c7d1282b1c": {
         "name": "UsersSubform",
         "type": "final class",
@@ -592,6 +603,17 @@
         "path": "src\/4a21d680-1a1c-4fc6-85bc-fa2c6dc41287",
         "spk": "Super---4a21d680_1a1c_4fc6_85bc_fa2c6dc41287---Power",
         "guid": "4a21d680-1a1c-4fc6-85bc-fa2c6dc41287"
+    },
+    "4aeb19ac-cc27-4b79-89a9-178421def286": {
+        "name": "Import",
+        "type": "abstract class",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\Abstraction\\Console",
+        "code": "src\/4aeb19ac-cc27-4b79-89a9-178421def286\/code.php",
+        "power": "src\/4aeb19ac-cc27-4b79-89a9-178421def286\/code.power",
+        "settings": "src\/4aeb19ac-cc27-4b79-89a9-178421def286\/settings.json",
+        "path": "src\/4aeb19ac-cc27-4b79-89a9-178421def286",
+        "spk": "Super---4aeb19ac_cc27_4b79_89a9_178421def286---Power",
+        "guid": "4aeb19ac-cc27-4b79-89a9-178421def286"
     },
     "4b225c51-d293-48e4-b3f6-5136cf5c3f18": {
         "name": "JsonHelper",
@@ -815,7 +837,7 @@
     },
     "647316a5-eb42-4bec-82dd-ca0dc2861ad3": {
         "name": "ItemImport",
-        "type": "class",
+        "type": "final class",
         "namespace": "VDM\\Joomla\\Componentbuilder\\Console",
         "code": "src\/647316a5-eb42-4bec-82dd-ca0dc2861ad3\/code.php",
         "power": "src\/647316a5-eb42-4bec-82dd-ca0dc2861ad3\/code.power",
@@ -1034,9 +1056,9 @@
         "guid": "7e822c03-1b20-41d1-9427-f5b8d5836af7"
     },
     "85321deb-5c3a-401b-9ce1-039a746add51": {
-        "name": "Import",
+        "name": "Console",
         "type": "abstract class",
-        "namespace": "VDM\\Joomla\\Abstraction\\Console",
+        "namespace": "VDM\\Joomla\\Abstraction",
         "code": "src\/85321deb-5c3a-401b-9ce1-039a746add51\/code.php",
         "power": "src\/85321deb-5c3a-401b-9ce1-039a746add51\/code.power",
         "settings": "src\/85321deb-5c3a-401b-9ce1-039a746add51\/settings.json",
