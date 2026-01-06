@@ -1,5 +1,5 @@
 {
-    "add_head": 1,
+    "add_head": 0,
     "add_licensing_template": 2,
     "extends": "ee04ea3e-a853-4016-ba10-36e4864ca2b6",
     "guid": "eb7d69c2-4ee9-4bd0-aacc-ab51a12be895",
@@ -57,6 +57,6 @@
     "namespace": "[[[NamespacePrefix]]]\\Joomla\\Abstraction.Remote.Set",
     "description": "Set data based on global unique ids to remote repository\r\n\r\n@since 3.2.2",
     "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "head": "use Joomla\\CMS\\Language\\Text;",
+    "head": "",
     "composer": ""
 }

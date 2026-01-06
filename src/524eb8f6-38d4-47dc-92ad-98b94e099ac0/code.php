@@ -474,9 +474,9 @@ final class Insert extends Versioning implements InsertInterface
 			}
 
 			// Fallback to ID-based history tracking
-			if ($this->historyIDs !== [])
+			if ($this->insertids !== [])
 			{
-				$this->setMultipleHistory($this->historyIDs);
+				$this->setMultipleHistory($this->insertids);
 			}
 		}
 		catch (\Throwable $e)

@@ -8,6 +8,7 @@
 abstract FileHelper  #Orange {
   # static $curlError
   + {static} zip(string $workingDirectory, string $filepath) : bool
+  + {static} unzip(string $archivename, string $extractdir) : bool
   + {static} getContent(string $path, mixed $none = '') : string
   + {static} write(string $path, string $data) : bool
   + {static} getPaths(string $folder, array $fileTypes = array('\.php') : array|null
@@ -19,6 +20,14 @@ note right of FileHelper::zip
   Zips all contents of a directory without including full system paths.
 
   since: 3.0.9
+  return: bool
+end note
+
+note right of FileHelper::unzip
+  Extracts a ZIP archive to a target directory.
+ZIP archives only are supported intentionally.
+
+  since: 5.1.4
   return: bool
 end note
 

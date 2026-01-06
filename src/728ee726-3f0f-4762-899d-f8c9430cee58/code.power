@@ -236,13 +236,13 @@
 			if (!$this->item($guid, ['remote']))
 			{
 				$success = false;
-				$this->messages->add('warning', Text::sprintf('The %s item:%s did not reset.', strtolower($area), $guid));
+				$this->messages->add('warning', sprintf('The %s item:%s did not reset.', strtolower($area), $guid));
 			}
 		}
 
 		if ($success)
 		{
-			$this->messages->add('success', Text::sprintf('The %s item(s) was reset.', strtolower($area)));
+			$this->messages->add('success', sprintf('The %s item(s) was reset.', strtolower($area)));
 		}
 
 		return $success;

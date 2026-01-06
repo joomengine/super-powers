@@ -13,9 +13,8 @@ namespace VDM\Joomla\Abstraction;
 
 
 use Joomla\CMS\Factory;
-use Joomla\CMS\Language\Text;
 use Joomla\Filesystem\Folder;
-use Joomla\CMS\Application\CMSApplication;
+use Joomla\CMS\Application\CMSApplicationInterface as CMSApplication;
 use VDM\Joomla\Interfaces\Remote\ConfigInterface as Config;
 use VDM\Joomla\Interfaces\Git\Repository\ContentsInterface as Contents;
 use VDM\Joomla\Componentbuilder\Network\Resolve;
@@ -1104,7 +1103,7 @@ abstract class Grep implements GrepInterface
 		catch (\Exception $e)
 		{
 			$this->app->enqueueMessage(
-				Text::sprintf('COM_COMPONENTBUILDER_PFILE_AT_BSSSSB_GAVE_THE_FOLLOWING_ERRORBR_SP', $this->contents->api(), $organisation, $repository, $path, $e->getMessage()),
+				sprintf('<p>File at <b>%s/%s/%s/%s</b> gave the following error!<br />%s</p>', $this->contents->api(), $organisation, $repository, $path, $e->getMessage()),
 				'Error'
 			);
 

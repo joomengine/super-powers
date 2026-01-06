@@ -167,13 +167,13 @@
 		if (!$this->canWrite())
 		{
 			$target_network = $this->grep->getNetworkTarget() ?? $this->getArea();
-			$this->messages->add('error', Text::sprintf('At least one [%s] content repository must be configured with a [Write Branch] value in the repositories area, for the push function to operate correctly.', $target_network));
+			$this->messages->add('error', sprintf('At least one [%s] content repository must be configured with a [Write Branch] value in the repositories area, for the push function to operate correctly.', $target_network));
 			return false;
 		}
 
 		if (($items = $this->getLocalItems($guids)) === null)
 		{
-			$this->messages->add('warning', Text::sprintf('The %s item(s) could not be found.', strtolower($area)));
+			$this->messages->add('warning', sprintf('The %s item(s) could not be found.', strtolower($area)));
 			return false;
 		}
 
@@ -200,7 +200,7 @@
 		{
 			$this->tracker->set("message.{$table}", true);
 			$item_name = $counter == 1 ? 'item has' : 'items have';
-			$this->messages->add('success', Text::sprintf('%s %s been pushed successfully.', $area, $item_name));
+			$this->messages->add('success', sprintf('%s %s been pushed successfully.', $area, $item_name));
 		}
 
 		return $counter === count($items);
@@ -487,7 +487,7 @@
 		$guid_field = $this->getGuidField();
 		if (empty($item->{$guid_field}))
 		{
-			$this->messages->add('error', Text::sprintf('%s item [%s] id [%s] missing the ::%s:: key value.', $area, $item_name, $item_id, $guid_field));
+			$this->messages->add('error', sprintf('%s item [%s] id [%s] missing the ::%s:: key value.', $area, $item_name, $item_id, $guid_field));
 			return false;
 		}
 		$table = $this->getTable();
@@ -563,13 +563,13 @@
 				{
 					$repo_name = $this->getRepoName($repo);
 					$this->messages->add('error',
-						Text::sprintf('%s item [%s] id [%s] could not be ::created:: or ::found:: in repo(%s).',
+						sprintf('%s item [%s] id [%s] could not be ::created:: or ::found:: in repo(%s).',
 							$area, $item_name, $item_id, $repo_name));
 				}
 			} catch (\Throwable $e) {
 				$repo_name = $this->getRepoName($repo);
 				$this->messages->add('error',
-					Text::sprintf('%s item [%s] id [%s] encountered an ::error:: in repo(%s).<br>Error Message:<br>%s',
+					sprintf('%s item [%s] id [%s] encountered an ::error:: in repo(%s).<br>Error Message:<br>%s',
 						$area, $item_name, $item_id, $repo_name, $e->getMessage()));
 			} finally {
 				$this->git->reset_();
@@ -578,7 +578,7 @@
 
 		if (!$at_least_once && $not_approved)
 		{
-			$this->messages->add('warning', Text::sprintf('%s item [%s] id [%s] is not ::approved:: and therefore not ::linked:: to any repository.', $area, $item_name, $item_id));
+			$this->messages->add('warning', sprintf('%s item [%s] id [%s] is not ::approved:: and therefore not ::linked:: to any repository.', $area, $item_name, $item_id));
 		}
 
 		$this->tracker->set("save.{$table}.{$guid_field}|{$guid}", $at_least_once);

@@ -1063,7 +1063,7 @@
 		catch (\Exception $e)
 		{
 			$this->app->enqueueMessage(
-				Text::sprintf('<p>File at <b>%s/%s/%s/%s</b> gave the following error!<br />%s</p>', $this->contents->api(), $organisation, $repository, $path, $e->getMessage()),
+				sprintf('<p>File at <b>%s/%s/%s/%s</b> gave the following error!<br />%s</p>', $this->contents->api(), $organisation, $repository, $path, $e->getMessage()),
 				'Error'
 			);
 
