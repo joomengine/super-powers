@@ -18,6 +18,7 @@ abstract Grep  #Orange {
   # CMSApplication $app
   + __construct(Config $config, Contents $contents, ...)
   + get(string $guid, ?array $order = null, ...) : ?object
+  + validRepo(object $repository, ?string $networkTarget) : bool
   + getPath(string $guid) : ?object
   + getPaths() : ?array
   + getPathsIndexes() : ?array
@@ -87,56 +88,63 @@ note left of Grep::get
     ?object $repo = null
 end note
 
-note right of Grep::getPath
+note right of Grep::validRepo
+  Validate any repository
+
+  since: 5.1.4
+  return: bool
+end note
+
+note left of Grep::getPath
   Get the path/repo object
 
   since: 5.1.1
   return: ?object
 end note
 
-note left of Grep::getPaths
+note right of Grep::getPaths
   Get all the available repos
 
   since: 5.1.1
   return: ?array
 end note
 
-note right of Grep::getPathsIndexes
+note left of Grep::getPathsIndexes
   Get all paths + indexes (the active set)
 
   since: 5.1.1
   return: ?array
 end note
 
-note left of Grep::getPathIndexes
+note right of Grep::getPathIndexes
   Get the a path + indexes
 
   since: 5.1.1
   return: ?object
 end note
 
-note right of Grep::getRemoteIndex
+note left of Grep::getRemoteIndex
   Get the index of a repo
 
   since: 3.2.2
   return: ?object
 end note
 
-note left of Grep::resetEntityIndex
+note right of Grep::resetEntityIndex
   Reset the index of a entity
 
   since: 5.1.2
   return: void
 end note
 
-note right of Grep::getNetworkTarget
+note left of Grep::getNetworkTarget
   Get the network target name
 
   since: 5.1.1
   return: ?string
 end note
 
-note left of Grep::exists
+note right of Grep::exists
   Check if an item exists in any repo or in a specific repo.
 
   since: 3.2.2
@@ -148,28 +156,28 @@ note left of Grep::exists
     ?array $order = null
 end note
 
-note right of Grep::setBranchField
+note left of Grep::setBranchField
   Set the branch field
 
   since: 3.2.2
   return: void
 end note
 
-note left of Grep::setBranchDefaultName
+note right of Grep::setBranchDefaultName
   Set the DEFAULT branch name (only used if branch field is not found)
 
   since: 3.2.2
   return: void
 end note
 
-note right of Grep::setIndexPath
+note left of Grep::setIndexPath
   Set the index path
 
   since: 3.2.2
   return: void
 end note
 
-note left of Grep::loadApi
+note right of Grep::loadApi
   Loads API config using the provided base URL and token.
 This method checks if the base URL contains 'https://git.vdm.dev/'.
 If it does, it uses the token as is (which may be null).
@@ -184,7 +192,7 @@ If not, it ensures the token is not null by defaulting to an empty string.
     ?string $token
 end note
 
-note right of Grep::getValidGuids
+note left of Grep::getValidGuids
   Resolve and validate entity GUID values.
 - Empty values are ignored.
 - If the entity uses a GUID field, each value is validated:
@@ -196,7 +204,7 @@ note right of Grep::getValidGuids
   return: array
 end note
 
-note left of Grep::setRemoteIndexMessage
+note right of Grep::setRemoteIndexMessage
   Set repository messages and errors based on given conditions.
 
   since: 3.2.0
@@ -210,7 +218,7 @@ note left of Grep::setRemoteIndexMessage
     ?string $base
 end note
 
-note right of Grep::setRepoItemSha
+note left of Grep::setRepoItemSha
   Injects metadata SHA into the power params object.
 
   since: 5.1.1
@@ -224,14 +232,14 @@ note right of Grep::setRepoItemSha
     string $sourceKey
 end note
 
-note left of Grep::getFunctionName
+note right of Grep::getFunctionName
   Get function name
 
   since: 3.2.0
   return: ?string
 end note
 
-note right of Grep::searchSingleRepo
+note left of Grep::searchSingleRepo
   Search a single repository for an item
 
   since: 3.2.2
@@ -243,14 +251,14 @@ note right of Grep::searchSingleRepo
     object $repo
 end note
 
-note left of Grep::searchAllRepos
+note right of Grep::searchAllRepos
   Search all repositories for an item
 
   since: 3.2.2
   return: ?object
 end note
 
-note right of Grep::itemExistsInRepo
+note left of Grep::itemExistsInRepo
   Check if an item exists in a specific repository.
 
   since: 3.2.2
@@ -262,77 +270,77 @@ note right of Grep::itemExistsInRepo
     array $order
 end note
 
-note left of Grep::itemExistsInAllRepos
+note right of Grep::itemExistsInAllRepos
   Check if an item exists in any of the repositories.
 
   since: 3.2.2
   return: bool
 end note
 
-note right of Grep::getBranchField
+note left of Grep::getBranchField
   Get the branch field
 
   since: 3.2.2
   return: string
 end note
 
-note left of Grep::getBranchDefaultName
+note right of Grep::getBranchDefaultName
   Get the branch default name
 
   since: 3.2.2
   return: ?string
 end note
 
-note right of Grep::getBranchName
+note left of Grep::getBranchName
   Get the branch name
 
   since: 3.2.2
   return: ?string
 end note
 
-note left of Grep::getIndexPath
+note right of Grep::getIndexPath
   Get the index path
 
   since: 3.2.2
   return: string
 end note
 
-note right of Grep::getSettingsName
+note left of Grep::getSettingsName
   Get the settings name
 
   since: 3.2.2
   return: string
 end note
 
-note left of Grep::getGuidField
+note right of Grep::getGuidField
   Get GUID field
 
   since: 5.1.1
   return: string
 end note
 
-note right of Grep::getGuidHelperField
+note left of Grep::getGuidHelperField
   Get GUID Helper field
 
   since: 5.1.4
   return: ?string
 end note
 
-note left of Grep::getItemReadmeName
+note right of Grep::getItemReadmeName
   Get GUID field
 
   since: 5.1.1
   return: string
 end note
 
-note right of Grep::hasItemReadme
+note left of Grep::hasItemReadme
   Has item readme
 
   since: 5.1.1
   return: bool
 end note
 
-note left of Grep::itemExists
+note right of Grep::itemExists
   Check if an item exists in a specific repo and target.
 
   since: 3.2.2
@@ -344,56 +352,56 @@ note left of Grep::itemExists
     string $target
 end note
 
-note right of Grep::existsLocally
+note left of Grep::existsLocally
   Check if item exists locally
 
   since: 3.2.2
   return: ?object
 end note
 
-note left of Grep::existsRemotely
+note right of Grep::existsRemotely
   Check if item exists remotely
 
   since: 3.2.2
   return: ?object
 end note
 
-note right of Grep::existsLocal
+note left of Grep::existsLocal
   Determine whether an item exists in the local index.
 
   since: 3.2.2
   return: bool
 end note
 
-note left of Grep::existsRemote
+note right of Grep::existsRemote
   Determine whether an item exists in the remote index.
 
   since: 3.2.2
   return: bool
 end note
 
-note right of Grep::indexRemote
+note left of Grep::indexRemote
   Load the remote repository index of powers
 
   since: 3.2.0
   return: void
 end note
 
-note left of Grep::indexLocal
+note right of Grep::indexLocal
   Load the local repository index of powers
 
   since: 3.2.0
   return: void
 end note
 
-note right of Grep::initializeInstances
-  Set path details
+note left of Grep::initializeInstances
+  Update all path details and ensure they are valid
 
   since: 3.2.0
   return: void
 end note
 
-note left of Grep::loadRemoteFile
+note right of Grep::loadRemoteFile
   Load the remote file
 
   since: 3.2.0
@@ -406,7 +414,7 @@ note left of Grep::loadRemoteFile
     ?string $branch
 end note
 
-note right of Grep::getEntityGuid
+note left of Grep::getEntityGuid
   Resolve an entity GUID by searching one or more repositories.
 
   since: 5.1.4
@@ -418,7 +426,7 @@ note right of Grep::getEntityGuid
     ?object $repo
 end note
 
-note left of Grep::getGuidFromPath
+note right of Grep::getGuidFromPath
   Resolve a GUID from a single repository path by matching a property value.
 
   since: 5.1.4

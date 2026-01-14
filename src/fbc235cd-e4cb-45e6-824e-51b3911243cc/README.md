@@ -8,7 +8,10 @@
 class Image << (F,LightGreen) >> #RoyalBlue {
   + process(string $source, string $destinationDir, ...) : array
   + cropResize(string $source, string $destination, ...) : ?array
-  - {static} getImageType(string $path) : ?int
+  + info(string $path, string $request = 'type') : mixed
+  # resolveImageExtension(int $type) : ?string
+  # getImageType(string $path) : ?int
+  # normalizePath(string $path) : string
 }
 
 note right of Image::process
@@ -36,11 +39,38 @@ note right of Image::cropResize
     int $targetH
 end note
 
+note right of Image::info
+  Retrieve image metadata information from a given path.
+Supported requests:
+- type   : Image extension (jpg, png, gif, etc.)
+- width  : Image width in pixels
+- height : Image height in pixels
+- attr   : HTML width/height attribute string
+- all    : Full getimagesize() result array
+
+  since: 5.1.4
+  return: mixed
+end note
+
+note right of Image::resolveImageExtension
+  Resolve image extension from IMAGETYPE constant.
+
+  since: 5.1.4
+  return: ?string
+end note
+
 note right of Image::getImageType
   Get the image type constant from the file path
 
   since: 5.1.1
   return: ?int
+end note
+
+note right of Image::normalizePath
+  Normalize relative or absolute paths.
+
+  since: 5.1.4
+  return: string
 end note
 
 @enduml

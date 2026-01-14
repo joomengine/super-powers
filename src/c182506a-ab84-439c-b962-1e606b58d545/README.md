@@ -7,6 +7,8 @@
 
 interface GrepInterface  #Lavender {
   + get(string $guid, ?array $order = null, ...) : ?object
+  + validRepo(object $repository, ?string $networkTarget) : bool
+  + getValidGuids(array $values, ?object $repo) : array
   + getPath(string $guid) : ?object
   + getPaths() : ?array
   + getPathsIndexes() : ?array
@@ -19,7 +21,6 @@ interface GrepInterface  #Lavender {
   + setBranchDefaultName(?string $name) : void
   + setIndexPath(string $indexPath) : void
   + loadApi(Api $api, ?string $base, ...) : void
-  + getValidGuids(array $values, ?object $repo) : array
 }
 
 note right of GrepInterface::get
@@ -32,6 +33,25 @@ note right of GrepInterface::get
     string $guid
     ?array $order = null
     ?object $repo = null
+end note
+
+note left of GrepInterface::validRepo
+  Validate any repository
+
+  since: 5.1.4
+  return: bool
+end note
+
+note right of GrepInterface::getValidGuids
+  Resolve and validate entity GUID values.
+- Empty values are ignored.
+- If the entity uses a GUID field, each value is validated:
+- Valid GUIDs are accepted as-is.
+- Invalid GUIDs are resolved via a helper field when available.
+- If the entity does not use GUIDs, values are returned unchanged.
+
+  since: 5.1.4
+  return: array
 end note
 
 note left of GrepInterface::getPath
@@ -129,18 +149,6 @@ If not, it ensures the token is not null by defaulting to an empty string.
     Api $api
     ?string $base
     ?string $token
-end note
-
-note left of GrepInterface::getValidGuids
-  Resolve and validate entity GUID values.
-- Empty values are ignored.
-- If the entity uses a GUID field, each value is validated:
-- Valid GUIDs are accepted as-is.
-- Invalid GUIDs are resolved via a helper field when available.
-- If the entity does not use GUIDs, values are returned unchanged.
-
-  since: 5.1.4
-  return: array
 end note
 
 @enduml
