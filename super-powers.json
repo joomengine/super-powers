@@ -791,6 +791,17 @@
         "spk": "Super---5acded67_0e3d_4c6b_a6ea_b533b076de0c---Power",
         "guid": "5acded67-0e3d-4c6b-a6ea-b533b076de0c"
     },
+    "5d7ae740-483f-4b09-886b-81062ee085dd": {
+        "name": "IdentityTrait",
+        "type": "trait",
+        "namespace": "VDM\\Joomla\\Componentbuilder\\User",
+        "code": "src\/5d7ae740-483f-4b09-886b-81062ee085dd\/code.php",
+        "power": "src\/5d7ae740-483f-4b09-886b-81062ee085dd\/code.power",
+        "settings": "src\/5d7ae740-483f-4b09-886b-81062ee085dd\/settings.json",
+        "path": "src\/5d7ae740-483f-4b09-886b-81062ee085dd",
+        "spk": "Super---5d7ae740_483f_4b09_886b_81062ee085dd---Power",
+        "guid": "5d7ae740-483f-4b09-886b-81062ee085dd"
+    },
     "5f0205fa-5c43-424a-af7d-abc943c17c8c": {
         "name": "SchemaChecker",
         "type": "abstract class",

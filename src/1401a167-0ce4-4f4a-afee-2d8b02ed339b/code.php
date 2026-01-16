@@ -204,7 +204,7 @@ abstract class Grep implements GrepInterface
 	 * @return bool    True if valid path
 	 * @since  5.1.4
 	 */
-	public function validRepo(object &$repository, ?string $networkTarget): bool
+	public function validRepo(object &$repository, ?string $networkTarget = null): bool
 	{
 		if (($repository->grep_validated ?? false))
 		{

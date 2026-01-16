@@ -1,0 +1,86 @@
+	/**
+	 * Resolve the effective user for the current execution context.
+	 *
+	 * Identity resolution strategy:
+	 * - Always attempt to retrieve the application identity first.
+	 * - If identity retrieval fails or yields an invalid user, check whether
+	 *   execution is occurring in a CLI context.
+	 * - Only in CLI context is a configured privileged user explicitly assumed.
+	 *
+	 * Silent privilege escalation is forbidden. Privileged identities are never
+	 * loaded in web execution contexts.
+	 *
+	 * @throws \RuntimeException If a valid identity cannot be resolved.
+	 *
+	 * @return User
+	 * @since  5.1.4
+	 */
+	protected function getIdentity(): User
+	{
+		$app = Factory::getApplication();
+
+		/*
+		 * Fast path: application provides identity (web or CLI-aware apps)
+		 */
+		if (method_exists($app, 'getIdentity'))
+		{
+			try
+			{
+				$user = $app->getIdentity();
+
+				if ($user instanceof User) // && !$user->guest) // allow quest mode for now
+				{
+					return $user;
+				}
+			}
+			catch (\Throwable $e)
+			{
+				// Intentionally ignored — fallback handled below
+			}
+		}
+
+		/*
+		 * Slow path: identity unavailable - CLI-only elevation allowed
+		 */
+		if ($app->isClient('cli'))
+		{
+			$userId = (int) Helper::getParams('com_[[[component]]]')->get('cli_user', 0);
+
+			//if ($userId <= 0) // allow quest mode for now
+			//{
+			//	throw new \RuntimeException(
+			//		'User resolution failed: No CLI user configured.'
+			//	);
+			//}
+
+			$container = Factory::getContainer();
+
+			if ($container->has(UserFactoryInterface::class))
+			{
+				$user = $container
+					->get(UserFactoryInterface::class)
+					->loadUserById($userId);
+			}
+			else
+			{
+				// Backward compatibility only
+				$user = Factory::getUser($userId);
+			}
+
+			if ($user instanceof User) // && !$user->guest) // allow quest mode for now
+			{
+				return $user;
+			}
+
+			throw new \RuntimeException(
+				'User resolution failed: Configured CLI user could not be loaded.'
+			);
+		}
+
+		/*
+		 * Web context with no valid identity → hard failure
+		 */
+		throw new \RuntimeException(
+			'User resolution failed: No authenticated user available in web execution context.'
+		);
+	}

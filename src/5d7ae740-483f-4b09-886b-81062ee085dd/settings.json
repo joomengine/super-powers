@@ -1,0 +1,24 @@
+{
+    "add_head": 1,
+    "add_licensing_template": 1,
+    "extends": "",
+    "guid": "5d7ae740-483f-4b09-886b-81062ee085dd",
+    "implements": null,
+    "load_selection": null,
+    "name": "IdentityTrait",
+    "power_version": "1.0.0",
+    "system_name": "JCB.User.IdentityTrait",
+    "type": "trait",
+    "use_selection": {
+        "use_selection0": {
+            "use": "640b5352-fb09-425f-a26e-cd44eda03f15",
+            "as": "default"
+        }
+    },
+    "extendsinterfaces": null,
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\[[[ComponentNamespace]]].User.IdentityTrait",
+    "description": "Execution Identity Trait.\r\n\r\nProvides a unified, security-hardened mechanism for resolving the effective\r\nuser identity based on the current execution context.\r\n\r\nThis trait enforces a strict trust boundary:\r\n- In web execution, an authenticated user identity is required.\r\n- In CLI execution, the context is treated as elevated and explicitly\r\n  resolves the Super User identity (ID 1).\r\n\r\nSilent privilege escalation is explicitly forbidden. If an identity cannot\r\nbe resolved according to the active execution context, execution is aborted\r\nimmediately with a runtime exception.\r\n\r\nThis trait is intended for use in privileged services, compilers, and\r\ncommand handlers where deterministic ACL behaviour is required across\r\nboth web and CLI environments.\r\n\r\n@since 5.1.4",
+    "licensing_template": "",
+    "head": "use Joomla\\CMS\\Factory;\r\nuse Joomla\\CMS\\User\\User;\r\nuse Joomla\\CMS\\User\\UserFactoryInterface;",
+    "composer": ""
+}

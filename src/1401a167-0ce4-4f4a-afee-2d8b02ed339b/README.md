@@ -18,7 +18,7 @@ abstract Grep  #Orange {
   # CMSApplication $app
   + __construct(Config $config, Contents $contents, ...)
   + get(string $guid, ?array $order = null, ...) : ?object
-  + validRepo(object $repository, ?string $networkTarget) : bool
+  + validRepo(object $repository, ?string $networkTarget = null) : bool
   + getPath(string $guid) : ?object
   + getPaths() : ?array
   + getPathsIndexes() : ?array

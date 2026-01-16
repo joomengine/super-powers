@@ -135,7 +135,7 @@ abstract class Get extends Base implements GetInterface
 			// Check if item exists in the local database
 			if ($force === false && $this->item->table($table)->value($guid, $guid_field) !== null)
 			{
-				$logger['local'][$guid] = $guid;
+				$logger['local'][$guid] = $table;
 				continue;
 			}
 
@@ -144,14 +144,14 @@ abstract class Get extends Base implements GetInterface
 
 			if ($item === null)
 			{
-				$logger['not_found'][$guid] = $guid;
+				$logger['not_found'][$guid] = $table;
 				continue;
 			}
 
 			// Store the retrieved remote item into the local structure
 			$this->item->table($table)->set($item, $guid_field);
 
-			$logger['added'][$guid] = $guid;
+			$logger['added'][$guid] = $table;
 		}
 
 		return $logger;
