@@ -36,10 +36,10 @@
 	 * - "clean"
 	 * - "none"
 	 *
-	 * @var   string
+	 * @var   string|null
 	 * @since 5.1.4
 	 */
-	protected string $filter;
+	protected ?string $filter;
 
 	/**
 	 * Target filesystem path for uploads.
@@ -73,10 +73,10 @@
 	 * Required configuration keys:
 	 * - `field`
 	 * - `type`
-	 * - `filter`
 	 * - `path`
 	 *
 	 * Optional configuration keys:
+	 * - `filter`
 	 * - `formats`
 	 * - `crop`
 	 *
@@ -87,7 +87,7 @@
 	 */
 	public function __construct(array $config)
 	{
-		foreach (['field','type','filter','path'] as $key)
+		foreach (['field','type','path'] as $key)
 		{
 			if (empty($config[$key]))
 			{
@@ -97,7 +97,7 @@
 
 		$this->field   = (string) $config['field'];
 		$this->type    = (string) $config['type'];
-		$this->filter  = (string) $config['filter'];
+		$this->filter  = $config['filter'] ?? null;
 		$this->path    = rtrim((string) $config['path'], '/');
 		$this->formats = (array) ($config['formats'] ?? []);
 	}
@@ -127,10 +127,10 @@
 	/**
 	 * Get the upload filter mode.
 	 *
-	 * @return string
+	 * @return string|null
 	 * @since  5.1.4
 	 */
-	public function filter(): string
+	public function filter(): ?string
 	{
 		return $this->filter;
 	}
@@ -155,4 +155,25 @@
 	public function formats(): array
 	{
 		return $this->formats;
+	}
+
+	/**
+	 * Export the file type definition as an associative array.
+	 *
+	 * This returns the same structure used to construct the
+	 * base TypeDefinition instance, allowing the configuration
+	 * to be serialized, stored, or cloned cleanly.
+	 *
+	 * @return array  The configuration map.
+	 * @since  5.1.4
+	 */
+	public function toArray(): array
+	{
+		return [
+			'field'   => $this->field,
+			'type'    => $this->type,
+			'filter'  => $this->filter,
+			'path'    => $this->path,
+			'formats' => $this->formats,
+		];
 	}

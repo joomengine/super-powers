@@ -11,6 +11,7 @@ class Item << (F,LightGreen) >> #RoyalBlue {
   # Row $row
   + __construct(Validator $validator, DataItem $item, ...)
   + get(string $table, array $columns) : ?array
+  - processSubform2($storage, $counters, ...) : void
   - getImportValue(mixed $value, string $field, ...) : mixed
   - validImportValue(mixed $value, string $field, ...) : mixed
   - getLocalValue(mixed $value, array $link) : mixed|null
@@ -32,13 +33,30 @@ note right of Item::__construct
 end note
 
 note left of Item::get
-  Get the item from the import row values and ensure it is valid
+  Get the item from the import row values and ensure it is valid.
+Extracts mapped values from the current import row, processes normal
+and subform fields, validates importable values, and removes consumed
+values from the row buffer.
 
   since: 4.0.3
   return: ?array
 end note
 
-note right of Item::getImportValue
+note right of Item::processSubform2
+  Process subform level-2 field mapping.
+
+  since: 5.1.4
+  return: void
+  
+  arguments:
+    $storage
+    $counters
+    string $name
+    object $subform
+    mixed $value
+end note
+
+note left of Item::getImportValue
   Get the correct value needed for the import of the related row (item).
 
   since: 4.0.3
@@ -51,7 +69,7 @@ note right of Item::getImportValue
     ?array $link
 end note
 
-note left of Item::validImportValue
+note right of Item::validImportValue
   Make sure we have a valid import value
 
   since: 4.0.3
@@ -63,35 +81,35 @@ note left of Item::validImportValue
     string $table
 end note
 
-note right of Item::getLocalValue
+note left of Item::getLocalValue
   Helper function to get the local value from the database table.
 
   since: 4.0.3
   return: mixed|null
 end note
 
-note left of Item::isValueExists
+note right of Item::isValueExists
   Check if the value exists in the table for the given link.
 
   since: 4.0.3
   return: bool
 end note
 
-note right of Item::setLocalValue
+note left of Item::setLocalValue
   Create a new value in the database table if it doesn't already exist.
 
   since: 4.0.3
   return: mixed|null
 end note
 
-note left of Item::insertItemWithGuid
+note right of Item::insertItemWithGuid
   Insert a new item with a GUID.
 
   since: 4.0.3
   return: ?string
 end note
 
-note right of Item::insertItemWithId
+note left of Item::insertItemWithId
   Insert a new item with a non-numeric ID.
 
   since: 4.0.3

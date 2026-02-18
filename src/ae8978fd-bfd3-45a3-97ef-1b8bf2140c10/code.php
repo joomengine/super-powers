@@ -33,6 +33,14 @@ class Entity implements EntityInterface
 	protected int $startingRow = 2;
 
 	/**
+	 * The minimal column number
+	 *
+	 * @var   int
+	 * @since 5.1.4
+	 */
+	protected int $minimalColumns = 2;
+
+	/**
 	 * The parent table of each row.
 	 *
 	 * @var   string
@@ -94,6 +102,17 @@ class Entity implements EntityInterface
 	public function getStartingRow(): int
 	{
 		return $this->startingRow;
+	}
+
+	/**
+	 * Get the minimal columns number.
+	 *
+	 * @return int
+	 * @since  5.1.4
+	 */
+	public function getMinimalColumns(): int
+	{
+		return $this->minimalColumns;
 	}
 
 	/**
@@ -187,6 +206,26 @@ class Entity implements EntityInterface
 		}
 
 		$this->startingRow = $row;
+
+		return $this;
+	}
+
+	/**
+	 * Set the minimal columns number.
+	 *
+	 * @param  int  $number  The minimal columns number (must be >= 1).
+	 *
+	 * @return self
+	 * @since  5.1.4
+	 */
+	public function setMinimalColumns(int $number): self
+	{
+		if ($number < 1)
+		{
+			throw new \InvalidArgumentException('Minimal columns must be >= 1.');
+		}
+
+		$this->minimalColumns = $number;
 
 		return $this;
 	}

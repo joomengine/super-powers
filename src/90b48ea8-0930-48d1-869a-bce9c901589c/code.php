@@ -93,6 +93,11 @@ final class Mapper implements MapperInterface
 
 			$field = $this->table->get($mapping->table, $mapping->field);
 
+			if (!empty($mapping->column_value))
+			{
+				$field['subform_2'] = $mapping;
+			}
+
 			if ($mapping->table === $parentTable)
 			{
 				$this->parent[$row->column] = $field;
@@ -152,10 +157,33 @@ final class Mapper implements MapperInterface
 
 		[$table, $field] = $parts;
 
+		// Sub-from support (ONLY two values in subform)
+		if (strpos($field, '|') !== false)
+		{
+			$parts_ = array_map('trim', explode('|', $field));
+
+			if (count($parts_) === 4)
+			{
+				[$field, $value, $column, $columnValue] = $parts_;
+			}
+		}
+
 		// Validate table/field existence
 		if (!$this->table->exist($table, $field))
 		{
 			return null;
+		}
+
+		// ONLY two value sub-from mapping supported [table.field|value|column|column_value]
+		if (!empty($value) && !empty($column) && !empty($columnValue))
+		{
+			return (object) [
+				'table' => $table,
+				'field' => $field,
+				'value' => $value,
+				'column' => $column,
+				'column_value' => $columnValue
+			];
 		}
 
 		return (object) [

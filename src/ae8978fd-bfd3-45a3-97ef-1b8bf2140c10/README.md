@@ -7,6 +7,7 @@
 
 class Entity  #Gold {
   # int $startingRow
+  # int $minimalColumns
   # string $parentTable
   # string $parentKey
   # string $parentJoinKey
@@ -14,6 +15,7 @@ class Entity  #Gold {
   # string $dataKey
   # array $joinFields
   + getStartingRow() : int
+  + getMinimalColumns() : int
   + getParentTable() : string
   + getParentKey() : string
   + getParentJoinKey() : string
@@ -21,6 +23,7 @@ class Entity  #Gold {
   + getDataKey() : string
   + getJoinFields() : array
   + setStartingRow(int $row) : self
+  + setMinimalColumns(int $number) : self
   + setParentTable(string $table) : self
   + setParentKey(string $key) : self
   + setParentJoinKey(string $key) : self
@@ -36,42 +39,49 @@ note right of Entity::getStartingRow
   return: int
 end note
 
-note left of Entity::getParentTable
+note left of Entity::getMinimalColumns
+  Get the minimal columns number.
+
+  since: 5.1.4
+  return: int
+end note
+
+note right of Entity::getParentTable
   Get the parent table.
 
   since: 5.1.4
   return: string
 end note
 
-note right of Entity::getParentKey
+note left of Entity::getParentKey
   Get the parent key field.
 
   since: 5.1.4
   return: string
 end note
 
-note left of Entity::getParentJoinKey
+note right of Entity::getParentJoinKey
   Get the parent join key field.
 
   since: 5.1.4
   return: string
 end note
 
-note right of Entity::getLinkField
+note left of Entity::getLinkField
   Get the link field.
 
   since: 5.1.4
   return: string
 end note
 
-note left of Entity::getDataKey
+note right of Entity::getDataKey
   Get the data key.
 
   since: 5.1.4
   return: string
 end note
 
-note right of Entity::getJoinFields
+note left of Entity::getJoinFields
   Get the join tables key fields map.
 Defines how related tables link back to the parent entity
 during the import process.
@@ -80,8 +90,15 @@ during the import process.
   return: array
 end note
 
-note left of Entity::setStartingRow
+note right of Entity::setStartingRow
   Set the starting row.
+
+  since: 5.1.4
+  return: self
+end note
+
+note left of Entity::setMinimalColumns
+  Set the minimal columns number.
 
   since: 5.1.4
   return: self

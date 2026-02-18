@@ -91,6 +91,7 @@ This makes your logic both **reusable** and **component-aware**, without hardcod
 - **Namespace**: [VDM\Joomla\File](#vdm-joomla-file)
 
   - **final class Definition** | [Details](src/4d9c5f48-4ed4-485a-9d9a-f31212ddb135) | [Raw](src/4d9c5f48-4ed4-485a-9d9a-f31212ddb135/code.power) | [Settings](src/4d9c5f48-4ed4-485a-9d9a-f31212ddb135/settings.json) | SPK: `Super---4d9c5f48_4ed4_485a_9d9a_f31212ddb135---Power`
+  - **final class TypeDefinition** | [Details](src/ca7e1532-c285-4b4e-9b67-f485cc039bc7) | [Raw](src/ca7e1532-c285-4b4e-9b67-f485cc039bc7/code.power) | [Settings](src/ca7e1532-c285-4b4e-9b67-f485cc039bc7/settings.json) | SPK: `Super---ca7e1532_c285_4b4e_9b67_f485cc039bc7---Power`
   - **class Agent** | [Details](src/d4b415ad-20d7-4b33-a957-88024b56e3f0) | [Raw](src/d4b415ad-20d7-4b33-a957-88024b56e3f0/code.power) | [Settings](src/d4b415ad-20d7-4b33-a957-88024b56e3f0/settings.json) | SPK: `Super---d4b415ad_20d7_4b33_a957_88024b56e3f0---Power`
 - **Namespace**: [VDM\Joomla\Import](#vdm-joomla-import)
 

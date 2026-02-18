@@ -41,6 +41,14 @@ interface EntityInterface
 	public function getStartingRow(): int;
 
 	/**
+	 * Get the minimal columns number.
+	 *
+	 * @return int
+	 * @since  5.1.4
+	 */
+	public function getMinimalColumns(): int;
+
+	/**
 	 * Set the starting row number of the import.
 	 *
 	 * @param  int  $row  The starting row (must be >= 1).
@@ -49,6 +57,16 @@ interface EntityInterface
 	 * @since  5.1.4
 	 */
 	public function setStartingRow(int $row): self;
+
+	/**
+	 * Set the minimal columns number.
+	 *
+	 * @param  int  $number  The minimal columns number (must be >= 1).
+	 *
+	 * @return self
+	 * @since  5.1.4
+	 */
+	public function setMinimalColumns(int $number): self;
 
 	/* ==========================================================================
 	 * Parent Table Configuration

@@ -13,7 +13,7 @@ interface AgentInterface  #Lavender {
 
 note right of AgentInterface::type
   Bind a file-type definition to the drop operation.
-A file type **must** be assigned before calling `upload()`.
+A file type **must** be assigned before calling `get()`.
 
   since: 5.1.4
   return: self

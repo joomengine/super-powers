@@ -32,7 +32,7 @@ interface AgentInterface
 	/**
 	 * Bind a file-type definition to the drop operation.
 	 *
-	 * A file type **must** be assigned before calling `upload()`.
+	 * A file type **must** be assigned before calling `get()`.
 	 *
 	 * @param  Type  $type  Upload blueprint.
 	 *

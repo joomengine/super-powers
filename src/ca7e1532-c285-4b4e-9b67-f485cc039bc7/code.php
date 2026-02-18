@@ -9,7 +9,10 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace VDM\Joomla\Componentbuilder\File;
+namespace VDM\Joomla\File;
+
+
+use VDM\Joomla\Interfaces\File\TypeDefinitionInterface;
 
 
 /**
@@ -36,7 +39,7 @@ namespace VDM\Joomla\Componentbuilder\File;
  * 
  * @since  5.1.4
  */
-final class TypeDefinition
+final class TypeDefinition implements TypeDefinitionInterface
 {
 	/**
 	 * HTML form input field name.
@@ -76,10 +79,10 @@ final class TypeDefinition
 	 * - "clean"
 	 * - "none"
 	 *
-	 * @var   string
+	 * @var   string|null
 	 * @since 5.1.4
 	 */
-	protected string $filter;
+	protected ?string $filter;
 
 	/**
 	 * Target filesystem path for uploads.
@@ -113,10 +116,10 @@ final class TypeDefinition
 	 * Required configuration keys:
 	 * - `field`
 	 * - `type`
-	 * - `filter`
 	 * - `path`
 	 *
 	 * Optional configuration keys:
+	 * - `filter`
 	 * - `formats`
 	 * - `crop`
 	 *
@@ -127,7 +130,7 @@ final class TypeDefinition
 	 */
 	public function __construct(array $config)
 	{
-		foreach (['field','type','filter','path'] as $key)
+		foreach (['field','type','path'] as $key)
 		{
 			if (empty($config[$key]))
 			{
@@ -137,7 +140,7 @@ final class TypeDefinition
 
 		$this->field   = (string) $config['field'];
 		$this->type    = (string) $config['type'];
-		$this->filter  = (string) $config['filter'];
+		$this->filter  = $config['filter'] ?? null;
 		$this->path    = rtrim((string) $config['path'], '/');
 		$this->formats = (array) ($config['formats'] ?? []);
 	}
@@ -167,10 +170,10 @@ final class TypeDefinition
 	/**
 	 * Get the upload filter mode.
 	 *
-	 * @return string
+	 * @return string|null
 	 * @since  5.1.4
 	 */
-	public function filter(): string
+	public function filter(): ?string
 	{
 		return $this->filter;
 	}
@@ -195,6 +198,27 @@ final class TypeDefinition
 	public function formats(): array
 	{
 		return $this->formats;
+	}
+
+	/**
+	 * Export the file type definition as an associative array.
+	 *
+	 * This returns the same structure used to construct the
+	 * base TypeDefinition instance, allowing the configuration
+	 * to be serialized, stored, or cloned cleanly.
+	 *
+	 * @return array  The configuration map.
+	 * @since  5.1.4
+	 */
+	public function toArray(): array
+	{
+		return [
+			'field'   => $this->field,
+			'type'    => $this->type,
+			'filter'  => $this->filter,
+			'path'    => $this->path,
+			'formats' => $this->formats,
+		];
 	}
 }
 

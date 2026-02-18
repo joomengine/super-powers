@@ -7,7 +7,9 @@
 
 interface EntityInterface  #Lavender {
   + getStartingRow() : int
+  + getMinimalColumns() : int
   + setStartingRow(int $row) : self
+  + setMinimalColumns(int $number) : self
   + getParentTable() : string
   + setParentTable(string $table) : self
   + getParentKey() : string
@@ -31,8 +33,22 @@ This determines from which row the import engine begins reading data
   return: int
 end note
 
-note left of EntityInterface::setStartingRow
+note left of EntityInterface::getMinimalColumns
+  Get the minimal columns number.
+
+  since: 5.1.4
+  return: int
+end note
+
+note right of EntityInterface::setStartingRow
   Set the starting row number of the import.
+
+  since: 5.1.4
+  return: self
+end note
+
+note left of EntityInterface::setMinimalColumns
+  Set the minimal columns number.
 
   since: 5.1.4
   return: self

@@ -1,6 +1,6 @@
 ### JCB! Power
 # final class TypeDefinition (Details)
-> namespace: **VDM\Joomla\Componentbuilder\File**
+> namespace: **VDM\Joomla\File**
 
 ```uml
 @startuml
@@ -8,15 +8,16 @@
 class TypeDefinition << (F,LightGreen) >> #RoyalBlue {
   # string $field
   # string $type
-  # string $filter
+  # ?string $filter
   # string $path
   # array $formats
   + __construct(array $config)
   + field() : string
   + type() : string
-  + filter() : string
+  + filter() : ?string
   + path() : string
   + formats() : array
+  + toArray() : array
 }
 
 note right of TypeDefinition::__construct
@@ -24,9 +25,9 @@ note right of TypeDefinition::__construct
 Required configuration keys:
 - `field`
 - `type`
-- `filter`
 - `path`
 Optional configuration keys:
+- `filter`
 - `formats`
 - `crop`
 
@@ -51,7 +52,7 @@ note right of TypeDefinition::filter
   Get the upload filter mode.
 
   since: 5.1.4
-  return: string
+  return: ?string
 end note
 
 note right of TypeDefinition::path
@@ -63,6 +64,16 @@ end note
 
 note right of TypeDefinition::formats
   Get the allowed file extensions.
+
+  since: 5.1.4
+  return: array
+end note
+
+note right of TypeDefinition::toArray
+  Export the file type definition as an associative array.
+This returns the same structure used to construct the
+base TypeDefinition instance, allowing the configuration
+to be serialized, stored, or cloned cleanly.
 
   since: 5.1.4
   return: array

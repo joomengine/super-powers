@@ -219,7 +219,7 @@ class Persistent implements ItemProcessInterface
 			foreach ($this->importer->read($file->file_path, $this->entity->getStartingRow(), 100, $this->rowdata) as $row)
 			{
 				// ignore empty rows
-				if ($row === null || empty($row['values']) || count((array) $row['values']) <= 3 || empty($row['index']))
+				if ($row === null || empty($row['values']) || count((array) $row['values']) < $this->entity->getMinimalColumns() || empty($row['index']))
 				{
 					continue;
 				}

@@ -11719,8 +11719,8 @@ class Table extends BaseTable implements TableInterface
 						'type' => 'textarea',
 						'link' => NULL,
 					],
-					'languages' => [
-						'name' => 'languages',
+					'language' => [
+						'name' => 'language',
 						'type' => 'lang',
 						'link' => [
 							'type' => 1,
