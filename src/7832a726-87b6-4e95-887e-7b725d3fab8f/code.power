@@ -81,10 +81,10 @@
 		$lang->load('com_users', JPATH_SITE, 'en-GB', true);
 
 		// Handle custom registration mode
-		if ($mode === 2 && method_exists(ComponentbuilderHelper::class, 'registerUser'))
+		if ($mode === 2 && method_exists([[[Component]]]Helper::class, 'registerUser'))
 		{
 			$params['autologin'] = $autologin;
-			$userId = ComponentbuilderHelper::registerUser($credentials, $params);
+			$userId = [[[Component]]]Helper::registerUser($credentials, $params);
 
 			if (is_numeric($userId))
 			{
