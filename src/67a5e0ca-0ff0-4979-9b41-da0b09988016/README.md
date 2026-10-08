@@ -20,6 +20,9 @@ class Manager  #Gold {
   + delete(string $guid) : void
   + table(string $table) : self
   + getTable() : string
+  # allowedToAttach(string $entity, string $target) : bool
+  # allowedToDelete(object $file) : bool
+  # componentOption() : ?string
   # processImages(FileInterface $fileDefinition, string $guid, ...) : void
   # modelFileDefinition(FileInterface $fileDefinition, string $guid, ...) : object
   # getFileName(FileInterface $fileDefinition, string $entity) : string
@@ -91,7 +94,42 @@ note right of Manager::getTable
   return: string
 end note
 
-note left of Manager::processImages
+note left of Manager::allowedToAttach
+  Check that the active user may attach a file to this entity.
+Without this, any user allowed to upload at all could attach or replace
+files on a record owned by somebody else, because the only other test
+is the file type's view level, which says nothing about the record.
+A target that keeps no owner column cannot be judged here, so it is
+left to the component's own access control.
+
+  since: 6.1.7
+  return: bool
+end note
+
+note right of Manager::allowedToDelete
+  Check that the active user may remove this file.
+The view level only decides who may see a file, and it is Public on
+most file types, so on its own it lets any logged in user delete any
+other user's upload. Removing a file additionally requires that the
+user owns it, or holds a component permission that covers other
+people's records.
+
+  since: 6.1.7
+  return: bool
+end note
+
+note left of Manager::componentOption
+  Get the component to scope a permission check to.
+Resolving the option reads the request and then the application, so it
+is only available while one is running. A command line build or a test
+has neither, and a permission check is no reason to fail there, so the
+caller falls back to the root asset instead.
+
+  since: 6.1.7
+  return: ?string
+end note
+
+note right of Manager::processImages
   Process the image(s) as needed based on crop settings
 
   since: 5.1.1
@@ -105,7 +143,7 @@ note left of Manager::processImages
     TypeDefinition $typeDefinition
 end note
 
-note right of Manager::modelFileDefinition
+note left of Manager::modelFileDefinition
   model the file definition to store in the file table
 
   since: 5.1.4
@@ -119,7 +157,7 @@ note right of Manager::modelFileDefinition
     TypeDefinition $typeDefinition
 end note
 
-note left of Manager::getFileName
+note right of Manager::getFileName
   Get the file name without extension.
 If the original name is empty, return the entity GUID.
 If the name does not contain a '.', return the name as is.
@@ -129,7 +167,7 @@ Otherwise, return the name without the final extension.
   return: string
 end note
 
-note right of Manager::getFileNumber
+note left of Manager::getFileNumber
   Get the file number.
 NOTE:
 This logic assumes files are append-only.
@@ -139,7 +177,7 @@ Deletions will cause numbering inconsistencies.
   return: int
 end note
 
-note left of Manager::getRandomFileName
+note right of Manager::getRandomFileName
   Generate a unique random-like 12-character string for a given GUID.
 Guarantees:
 - The same GUID will *never* produce the same value twice, even across executions.
@@ -151,7 +189,7 @@ Guarantees:
   return: string
 end note
 
-note right of Manager::limitFileType
+note left of Manager::limitFileType
   Enforces a file-count limit per entity and removes oldest excess files.
 Also validates crop consistency for images.
 
@@ -165,7 +203,7 @@ Also validates crop consistency for images.
     string $target
 end note
 
-note left of Manager::applyFileLimit
+note right of Manager::applyFileLimit
   Applies the file limit logic and verifies crop consistency.
 
   since: 5.1.4
@@ -180,7 +218,7 @@ note left of Manager::applyFileLimit
     int $cropCount = 1
 end note
 
-note right of Manager::extractOldestFiles
+note left of Manager::extractOldestFiles
   Returns the oldest files exceeding the desired quantity.
 
   since: 5.1.4
@@ -216,4 +254,4 @@ Super---67a5e0ca_0ff0_4979_9b41_da0b09988016---Power
 ### Used in [Joomla Component Builder](https://www.joomlacomponentbuilder.com) - [Source](https://git.vdm.dev/joomla/Component-Builder) - [Mirror](https://github.com/vdm-io/Joomla-Component-Builder) - [Download](https://git.vdm.dev/joomla/pkg-component-builder/releases)
 
 ---
-[![Joomla Volunteer Portal](https://img.shields.io/badge/-Joomla-gold?logo=joomla)](https://volunteers.joomla.org/joomlers/1396-llewellyn-van-der-merwe "Join Llewellyn on the Joomla Volunteer Portal: Shaping the Future Together!") [![Octoleo](https://img.shields.io/badge/-Octoleo-black?logo=linux)](https://git.vdm.dev/octoleo "--quiet") [![Llewellyn](https://img.shields.io/badge/-Llewellyn-ffffff?logo=gitea)](https://git.vdm.dev/Llewellyn "Collaborate and Innovate with Llewellyn on Git: Building a Better Code Future!") [![Telegram](https://img.shields.io/badge/-Telegram-blue?logo=telegram)](https://t.me/Joomla_component_builder "Join Llewellyn and the Community on Telegram: Building Joomla Components Together!") [![Mastodon](https://img.shields.io/badge/-Mastodon-9e9eec?logo=mastodon)](https://joomla.social/@llewellyn "Connect and Engage with Llewellyn on Joomla Social: Empowering Communities, One Post at a Time!") [![X (Twitter)](https://img.shields.io/badge/-X-black?logo=x)](https://x.com/llewellynvdm "Join the Conversation with Llewellyn on X: Where Ideas Take Flight!") [![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github)](https://github.com/Llewellynvdm "Build, Innovate, and Thrive with Llewellyn on GitHub: Turning Ideas into Impact!") [![YouTube](https://img.shields.io/badge/-YouTube-ff0000?logo=youtube)](https://www.youtube.com/@OctoYou "Explore, Learn, and Create with Llewellyn on YouTube: Your Gateway to Inspiration!") [![n8n](https://img.shields.io/badge/-n8n-black?logo=n8n)](https://n8n.io/creators/octoleo "Effortless Automation and Impactful Workflows with Llewellyn on n8n!") [![Docker Hub](https://img.shields.io/badge/-Docker-grey?logo=docker)](https://hub.docker.com/u/llewellyn "Llewellyn on Docker: Containerize Your Creativity!") [![Open Collective](https://img.shields.io/badge/-Donate-green?logo=opencollective)](https://opencollective.com/joomla-component-builder "Donate towards JCB: Help Llewellyn financially so he can continue developing this great tool!") [![GPG Key](https://img.shields.io/badge/-GPG-blue?logo=gnupg)](https://git.vdm.dev/Llewellyn/gpg "Unlock Trust and Security with Llewellyn's GPG Key: Your Gateway to Verified Connections!")
+[![Joomla Volunteer Portal](https://img.shields.io/badge/-Joomla-gold?logo=joomla)](https://volunteers.joomla.org/joomlers/1396-llewellyn-van-der-merwe "Join Llewellyn on the Joomla Volunteer Portal: Shaping the Future Together!") [![GitHub](https://img.shields.io/badge/-Git-181717?logo=git)](https://github.com/joomengine "Build premium Joomla extensions with JoomEngine on GitHub: Help us raise Joomla extension standards!") [![Octoleo](https://img.shields.io/badge/-Octoleo-black?logo=linux)](https://git.vdm.dev/octoleo "--quiet") [![Llewellyn](https://img.shields.io/badge/-Llewellyn-ffffff?logo=gitea)](https://git.vdm.dev/Llewellyn "Collaborate and Innovate with Llewellyn on Git: Building a Better Code Future!") [![Telegram](https://img.shields.io/badge/-Telegram-blue?logo=telegram)](https://t.me/Joomla_component_builder "Join Llewellyn and the Community on Telegram: Building Joomla Components Together!") [![Mastodon](https://img.shields.io/badge/-Mastodon-9e9eec?logo=mastodon)](https://joomla.social/@llewellyn "Connect and Engage with Llewellyn on Joomla Social: Empowering Communities, One Post at a Time!") [![X (Twitter)](https://img.shields.io/badge/-X-black?logo=x)](https://x.com/llewellynvdm "Join the Conversation with Llewellyn on X: Where Ideas Take Flight!") [![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github)](https://github.com/Llewellynvdm "Build, Innovate, and Thrive with Llewellyn on GitHub: Turning Ideas into Impact!") [![YouTube](https://img.shields.io/badge/-YouTube-ff0000?logo=youtube)](https://www.youtube.com/@OctoYou "Explore, Learn, and Create with Llewellyn on YouTube: Your Gateway to Inspiration!") [![n8n](https://img.shields.io/badge/-n8n-black?logo=n8n)](https://n8n.io/creators/octoleo "Effortless Automation and Impactful Workflows with Llewellyn on n8n!") [![Docker Hub](https://img.shields.io/badge/-Docker-grey?logo=docker)](https://hub.docker.com/r/octoleo/joomengine "JoomEngine on Docker: Containerize Your Creativity!") [![Open Collective](https://img.shields.io/badge/-Donate-green?logo=opencollective)](https://opencollective.com/joomla-component-builder "Donate towards JCB: Help Llewellyn financially so he can continue developing this great tool!") [![GPG Key](https://img.shields.io/badge/-GPG-blue?logo=gnupg)](https://git.vdm.dev/Llewellyn/gpg "Unlock Trust and Security with Llewellyn's GPG Key: Your Gateway to Verified Connections!")

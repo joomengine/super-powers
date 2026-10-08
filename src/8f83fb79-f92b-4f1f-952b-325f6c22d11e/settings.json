@@ -1,16 +1,24 @@
 {
+    "system_name": "VDM.Data.Action.Update",
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Data.Action.Update",
+    "type": "class",
+    "power_version": "1.0.0",
+    "load_selection": null,
+    "description": "Data Update\r\n\r\n@since 3.2.2",
+    "composer": [],
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "extendsinterfaces_custom": "",
     "add_head": 0,
-    "add_licensing_template": 2,
     "extends": "",
-    "guid": "8f83fb79-f92b-4f1f-952b-325f6c22d11e",
+    "extendsinterfaces": null,
+    "extends_custom": "",
+    "implements_custom": "",
     "implements": [
         "68a41264-64c0-441a-a3d8-8a5e557b1883"
     ],
-    "load_selection": null,
-    "name": "Update",
-    "power_version": "1.0.0",
-    "system_name": "VDM.Data.Action.Update",
-    "type": "class",
+    "property_selection": null,
+    "method_selection": null,
+    "head": "",
     "use_selection": {
         "use_selection0": {
             "use": "8aef58c1-3f70-4bd4-b9e4-3f29fcd41cff",
@@ -21,10 +29,7 @@
             "as": "Database"
         }
     },
-    "extendsinterfaces": null,
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Data.Action.Update",
-    "description": "Data Update\r\n\r\n@since 3.2.2",
-    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "head": "",
-    "composer": ""
+    "add_licensing_template": 2,
+    "guid": "8f83fb79-f92b-4f1f-952b-325f6c22d11e",
+    "name": "Update"
 }

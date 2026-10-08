@@ -1,17 +1,25 @@
 {
+    "system_name": "VDM.Data.UsersSubform",
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Data.UsersSubform",
+    "type": "final class",
+    "power_version": "1.0.0",
+    "load_selection": null,
+    "description": "CRUD the user data of any sub-form to another view (table)\r\n\r\n@since  5.0.2",
+    "composer": [],
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2020\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "extendsinterfaces_custom": "",
     "add_head": 1,
-    "add_licensing_template": 2,
     "extends": "",
-    "guid": "46b98346-ec98-42b3-a393-96c7d1282b1c",
+    "extendsinterfaces": null,
+    "extends_custom": "",
+    "implements_custom": "",
     "implements": [
         "576685fd-263c-46bb-9fdc-1f5eb234cbb6",
         "34959721-415b-4b5e-8002-3d1fc84b3b2b"
     ],
-    "load_selection": null,
-    "name": "UsersSubform",
-    "power_version": "1.0.0",
-    "system_name": "VDM.Data.UsersSubform",
-    "type": "final class",
+    "property_selection": null,
+    "method_selection": null,
+    "head": "use Joomla\\CMS\\Factory;\r\nuse Joomla\\CMS\\User\\User;",
     "use_selection": {
         "use_selection0": {
             "use": "7212e4db-371f-4cfd-8122-32e9bb100d83",
@@ -34,10 +42,7 @@
             "as": "Component"
         }
     },
-    "extendsinterfaces": null,
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Data.UsersSubform",
-    "description": "CRUD the user data of any sub-form to another view (table)\r\n\r\n@since  5.0.2",
-    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2020\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
-    "head": "use Joomla\\CMS\\Factory;\r\nuse Joomla\\CMS\\User\\User;",
-    "composer": ""
+    "add_licensing_template": 2,
+    "guid": "46b98346-ec98-42b3-a393-96c7d1282b1c",
+    "name": "UsersSubform"
 }

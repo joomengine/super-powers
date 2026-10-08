@@ -1,21 +1,25 @@
 {
-    "add_head": 0,
-    "add_licensing_template": 2,
-    "extends": "",
-    "guid": "64e291c2-11f1-423d-a44d-837cc12cc017",
-    "implements": null,
-    "load_selection": null,
-    "name": "Registryinterface",
-    "power_version": "1.0.0",
     "system_name": "VDM.Interfaces.Registryinterface",
+    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Interfaces.Registryinterface",
     "type": "interface",
-    "use_selection": null,
+    "power_version": "1.0.0",
+    "load_selection": null,
+    "description": "The Registry Interface\r\n\r\n@since 3.2.0\r\n@since 5.0.4 Joomla Registry Compatible",
+    "composer": [],
+    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "extendsinterfaces_custom": "",
+    "add_head": 0,
+    "extends_custom": "",
+    "implements_custom": "",
+    "property_selection": null,
     "extendsinterfaces": [
         "af0eedbe-603b-4671-8e5a-28165d88254b"
     ],
-    "namespace": "[[[NamespacePrefix]]]\\Joomla\\Interfaces.Registryinterface",
-    "description": "The Registry Interface\r\n\r\n@since 3.2.0\r\n@since 5.0.4 Joomla Registry Compatible",
-    "licensing_template": "\/**\r\n * @package    Joomla.Component.Builder\r\n *\r\n * @created    4th September, 2022\r\n * @author     Llewellyn van der Merwe <https:\/\/dev.vdm.io>\r\n * @git        Joomla Component Builder <https:\/\/git.vdm.dev\/joomla\/Component-Builder>\r\n * @copyright  Copyright (C) 2015 Vast Development Method. All rights reserved.\r\n * @license    GNU General Public License version 2 or later; see LICENSE.txt\r\n *\/\r\n",
+    "extends": "",
+    "method_selection": null,
     "head": "",
-    "composer": ""
+    "use_selection": null,
+    "add_licensing_template": 2,
+    "guid": "64e291c2-11f1-423d-a44d-837cc12cc017",
+    "name": "Registryinterface"
 }
