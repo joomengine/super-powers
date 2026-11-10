@@ -23,7 +23,7 @@ class Guid << (F,LightGreen) >> #RoyalBlue {
   - getItemGuid(string $table, string $column, ...) : ?string
   - updateSubformValue(string $table, array $row, ...) : bool
   - getSubfromFields(string $xml) : ?array
-  - stringToIntArray(string $input) : array
+  - stringToIdentifierArray(string $input) : array
   - processJson(string $values, string $linkedTable, ...) : string
   - processArray(array $values, string $linkedTable, ...) : array
   - updateValue(string $table, string $column, ...) : bool
@@ -122,8 +122,8 @@ note right of Guid::getSubfromFields
   return: ?array
 end note
 
-note left of Guid::stringToIntArray
-  Convert a comma-separated string to an array of integers.
+note left of Guid::stringToIdentifierArray
+  Convert a comma-separated string to an array of numeric IDs and valid GUIDs.
 
   since: 5.1.1
   return: array
