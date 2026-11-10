@@ -442,8 +442,16 @@
 		$db_default = isset($expected['default']) ? $expected['default'] : null;
 		$newDefault = $this->getDefaultValue($type, $db_default, true);
 
-		// First, adjust existing rows to conform to the new default if necessary
-		if (is_numeric($newDefault) && $this->adjustExistingDefaults($table, $column, $current->Default, $newDefault))
+		// Removing a default changes the definition without rewriting existing values
+		if ($db_default === null)
+		{
+			return $current->Default !== null;
+		}
+
+		// Preserve numeric backfill, ignoring PHP type differences in the same default
+		if (is_numeric($newDefault) &&
+			($current->Default === null || (string) $current->Default !== $newDefault) &&
+			$this->adjustExistingDefaults($table, $column, $current->Default, $newDefault))
 		{
 			$this->success[] = "Success: updated the ($column) defaults in $table table.";
 
