@@ -616,7 +616,7 @@ final class Guid
 			$xml, 'fields="', '"'
 		);
 
-		if (($fields = $this->stringToIntArray($field_string)) === [])
+		if (($fields = $this->stringToIdentifierArray($field_string)) === [])
 		{
 			return null;
 		}
@@ -649,22 +649,32 @@ final class Guid
 	}
 
 	/**
-	 * Convert a comma-separated string to an array of integers.
+	 * Convert a comma-separated string to an array of numeric IDs and valid GUIDs.
 	 *
-	 * @param string $input Comma-separated string of values.
+	 * @param string $input Comma-separated string of identifiers.
 	 *
-	 * @return int[] Cleaned array of integers.
+	 * @return array<int, int|string> Numeric IDs and valid GUIDs in their original order.
 	 * @since  5.1.1
 	 */
-	private function stringToIntArray(string $input): array
+	private function stringToIdentifierArray(string $input): array
 	{
-		return array_values(array_filter(
-			array_map(
-				static fn($value) => is_numeric(trim($value)) ? (int) trim($value) : null,
-				explode(',', $input)
-			),
-			static fn($val) => $val !== null
-		));
+		$identifiers = [];
+
+		foreach (explode(',', $input) as $value)
+		{
+			$value = trim($value);
+
+			if (is_numeric($value))
+			{
+				$identifiers[] = (int) $value;
+			}
+			elseif ($this->validateGuid($value))
+			{
+				$identifiers[] = $value;
+			}
+		}
+
+		return $identifiers;
 	}
 
 	/**
@@ -691,6 +701,11 @@ final class Guid
 				{
 					$bucket[$key] = $val;
 					$hasUpdate = true;
+				}
+				else
+				{
+					// A null result means this value is already a valid GUID.
+					$bucket[$key] = $value;
 				}
 			}
 		}
@@ -721,6 +736,11 @@ final class Guid
 				{
 					$bucket[$key] = $val;
 					$hasUpdate = true;
+				}
+				else
+				{
+					// A null result means this value is already a valid GUID.
+					$bucket[$key] = $value;
 				}
 			}
 		}
