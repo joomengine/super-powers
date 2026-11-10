@@ -114,18 +114,44 @@ final class Subform implements GuidInterface, SubformInterface
 	 */
 	public function set(mixed $items, string $indexKey, string $linkKey, string $linkValue): bool
 	{
-		$items = $this->process($items, $indexKey, $linkKey, $linkValue);
+		return $this->setWithItems($items, $indexKey, $linkKey, $linkValue);
+	}
 
-		$this->purge($items, $indexKey, $linkKey, $linkValue);
+	/**
+	 * Save subform items and return their normalized values through the input.
+	 *
+	 * This optional capability lets nested subforms use the GUIDs accepted by
+	 * the ownership check. The input is replaced only after a successful save;
+	 * database-generated integer IDs are not returned by this method.
+	 *
+	 * @param mixed   $items      The submitted items, replaced with normalized rows on success.
+	 * @param string  $indexKey   The key used to select rows for insert, update and delete.
+	 * @param string  $linkKey    The column linking each row to its immediate parent.
+	 * @param string  $linkValue  The identity of the immediate parent.
+	 *
+	 * @return bool  True when the items were saved successfully.
+	 */
+	public function setWithItems(mixed &$items, string $indexKey, string $linkKey, string $linkValue): bool
+	{
+		// The index values already linked to this parent. A submitted index
+		// value outside this set belongs to another parent, or to nothing, so
+		// it must never be allowed to select the row that gets updated.
+		$owned = $this->items->table($this->getTable())
+			->values([$linkValue], $linkKey, $indexKey);
 
-		if (empty($items))
+		$resolved = $this->process($items, $indexKey, $linkKey, $linkValue, $owned ?? []);
+
+		$this->purge($resolved, $indexKey, $owned);
+
+		if ($resolved !== [] && !$this->items->table($this->getTable())->set($resolved, $indexKey))
 		{
-			return true; // nothing to set (already purged)
+			return false;
 		}
 
-		return $this->items->table($this->getTable())->set(
-			$items, $indexKey
-		);
+		// Publish the same identities used for persistence before saving descendants.
+		$items = $resolved;
+
+		return true;
 	}
 
 	/**
@@ -142,19 +168,15 @@ final class Subform implements GuidInterface, SubformInterface
 	/**
 	 * Purge all items no longer in subform
 	 *
-	 * @param array    $items      The list of items to set.
-	 * @param string   $indexKey   The index key on which the items should be observed as it relates to insert/update/delete
-	 * @param string   $linkKey    The link key on which the items where linked in the child table.
-	 * @param string   $linkValue  The value of the link key in child table.
+	 * @param array       $items               The list of items to set.
+	 * @param string      $indexKey            The index key on which the items should be observed as it relates to insert/update/delete
+	 * @param array|null  $currentIndexValues  The index values already linked to the parent.
 	 *
 	 * @return void
 	 * @since 3.2.2
 	 */
-	private function purge(array $items, string $indexKey, string $linkKey, string $linkValue): void
+	private function purge(array $items, string $indexKey, ?array $currentIndexValues): void
 	{
-		// Get the current index values from the database
-		$currentIndexValues = $this->items->table($this->getTable())->values([$linkValue], $linkKey, $indexKey);
-
 		if ($currentIndexValues !== null)
 		{
 			// Check if the items array is empty
@@ -238,11 +260,12 @@ final class Subform implements GuidInterface, SubformInterface
 	 * @param string   $indexKey   The index key on which the items should be observed as it relates to insert/update/delete
 	 * @param string   $linkKey    The link key on which the items where linked in the child table.
 	 * @param string   $linkValue  The value of the link key in child table.
+	 * @param array    $owned      The index values already linked to this parent.
 	 *
 	 * @return array  The processed array of arrays.
 	 * @since 3.2.2
 	 */
-	private function process($items, string $indexKey, string $linkKey, string $linkValue): array
+	private function process($items, string $indexKey, string $linkKey, string $linkValue, array $owned = []): array
 	{
 		$items = is_array($items) ? $items : [];
 		if ($items !== [] && !$this->isMultipleSets($items))
@@ -253,16 +276,19 @@ final class Subform implements GuidInterface, SubformInterface
 		foreach ($items as &$item)
 		{
 			$value = $item[$indexKey] ?? '';
+			// only an index value already linked to this parent may be reused,
+			// anything else becomes a new row under the parent being saved
+			$mine = $value !== '' && in_array((string) $value, array_map('strval', $owned), true);
 			switch ($indexKey) {
 				case 'guid':
-					if (empty($value))
+					if (empty($value) || !$mine)
 					{
 						// set INDEX
 						$item[$indexKey] = $this->getGuid($indexKey);
 					}
 					break;
 				case 'id':
-					if (empty($value))
+					if (empty($value) || !$mine)
 					{
 						$item[$indexKey] = 0;
 					}

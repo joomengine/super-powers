@@ -179,14 +179,14 @@ final class MultiSubform implements MultiSubformInterface
 	/**
 	 * Set data based on provided map configuration.
 	 *
-	 * @param array       $items     The list of items from the subform to set
+	 * @param array       $items     The submitted rows, updated with saved GUIDs when supported.
 	 * @param array       $map       The map to set the subfrom data
 	 * @param array|null  $coreData  The core data to be appended with subform data
 	 *
 	 * @return bool
 	 * @since 3.2.2
 	 */
-	private function setSubformData(array $items, array $map, ?array $coreData = null): bool
+	private function setSubformData(array &$items, array $map, ?array $coreData = null): bool
 	{
 		$map['linkValue'] = $this->setLinkValue($map['linkValue'], $coreData);
 
@@ -195,7 +195,21 @@ final class MultiSubform implements MultiSubformInterface
 			return false;
 		}
 
-		return $this->subform->table($map['table'])->set(
+		$subform = $this->subform->table($map['table']);
+
+		// Use the saved GUIDs when the provider offers this optional capability.
+		if (method_exists($subform, 'setWithItems') && is_callable([$subform, 'setWithItems']))
+		{
+			return $subform->setWithItems(
+				$items,
+				$map['indexKey'],
+				$map['linkKey'],
+				$map['linkValue']
+			);
+		}
+
+		// Keep the existing contract for other SubformInterface implementations.
+		return $subform->set(
 			$items,
 			$map['indexKey'],
 			$map['linkKey'],
@@ -403,7 +417,7 @@ final class MultiSubform implements MultiSubformInterface
 	 */
 	private function handleCoreSetMap(array $subform, array $map, string $key, string $table): bool
 	{
-		if (is_array($map['_core']) && $this->validGetMap($map['_core']))
+		if (is_array($map['_core']) && $this->validSetMap($map['_core']))
 		{
 			$map['_core']['linkValue'] = $this->setLinkValue($map['_core']['linkValue'], [$table => $subform]);
 
@@ -535,12 +549,18 @@ final class MultiSubform implements MultiSubformInterface
 	 */
 	private function prepLinkValue(array &$subform, array $setMap): void
 	{
-		$code_table = null;
+		$code_table = $setMap['_core']['table'] ?? null;
 		foreach ($setMap as $key => $map)
 		{
-			if ($key === '_core')
+			if ($key === '_core' || !is_array($map))
 			{
-				$code_table = $map['table'] ?? null;
+				continue;
+			}
+
+			// A nested subform declares its immediate parent link in its core map.
+			$map = $map['_core'] ?? $map;
+			if (!is_array($map) || !is_string($map['linkValue'] ?? null))
+			{
 				continue;
 			}
 

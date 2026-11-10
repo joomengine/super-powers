@@ -12,6 +12,7 @@ class Subform << (F,LightGreen) >> #RoyalBlue {
   + table(string $table) : self
   + get(string $linkValue, string $linkKey, ...) : ?array
   + set(mixed $items, string $indexKey, ...) : bool
+  + setWithItems(mixed &$items, string $indexKey, ...) : bool
   + getTable() : string
   - purge(array $items, string $indexKey, ...) : void
   - converter(array $items, array $keySet, ...) : array
@@ -54,6 +55,20 @@ note left of Subform::set
   
   arguments:
     mixed $items
+    string $indexKey
+    string $linkKey
+    string $linkValue
+end note
+
+note right of Subform::setWithItems
+  Save subform items and publish normalized rows on success.
+  Nested subforms can use the GUIDs accepted by the ownership check.
+  Database-generated integer IDs are not returned.
+
+  return: bool
+
+  arguments:
+    mixed &$items
     string $indexKey
     string $linkKey
     string $linkValue

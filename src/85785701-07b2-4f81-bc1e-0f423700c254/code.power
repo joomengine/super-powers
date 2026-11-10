@@ -87,24 +87,44 @@
 	 */
 	public function set(mixed $items, string $indexKey, string $linkKey, string $linkValue): bool
 	{
+		return $this->setWithItems($items, $indexKey, $linkKey, $linkValue);
+	}
+
+	/**
+	 * Save subform items and return their normalized values through the input.
+	 *
+	 * This optional capability lets nested subforms use the GUIDs accepted by
+	 * the ownership check. The input is replaced only after a successful save;
+	 * database-generated integer IDs are not returned by this method.
+	 *
+	 * @param mixed   $items      The submitted items, replaced with normalized rows on success.
+	 * @param string  $indexKey   The key used to select rows for insert, update and delete.
+	 * @param string  $linkKey    The column linking each row to its immediate parent.
+	 * @param string  $linkValue  The identity of the immediate parent.
+	 *
+	 * @return bool  True when the items were saved successfully.
+	 */
+	public function setWithItems(mixed &$items, string $indexKey, string $linkKey, string $linkValue): bool
+	{
 		// The index values already linked to this parent. A submitted index
 		// value outside this set belongs to another parent, or to nothing, so
 		// it must never be allowed to select the row that gets updated.
 		$owned = $this->items->table($this->getTable())
 			->values([$linkValue], $linkKey, $indexKey);
 
-		$items = $this->process($items, $indexKey, $linkKey, $linkValue, $owned ?? []);
+		$resolved = $this->process($items, $indexKey, $linkKey, $linkValue, $owned ?? []);
 
-		$this->purge($items, $indexKey, $owned);
+		$this->purge($resolved, $indexKey, $owned);
 
-		if (empty($items))
+		if ($resolved !== [] && !$this->items->table($this->getTable())->set($resolved, $indexKey))
 		{
-			return true; // nothing to set (already purged)
+			return false;
 		}
 
-		return $this->items->table($this->getTable())->set(
-			$items, $indexKey
-		);
+		// Publish the same identities used for persistence before saving descendants.
+		$items = $resolved;
+
+		return true;
 	}
 
 	/**
